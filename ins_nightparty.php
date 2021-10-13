@@ -5,6 +5,7 @@ $pass	=$_POST["pass"];
 $dbn	=$_POST["dbn"];
 $key	=$_POST["key"];
 
+$now=date("Y-m-d H:i:s");
 echo "data　".$db."<br>\n";
 echo "user　".$user."<br>\n";
 echo "pass　".$pass."<br>\n";
@@ -597,8 +598,7 @@ for($s1=0;$s1<720;$s1++){
 
 	$s6=$d[$s4].$d[$s5];
 	$dat[$s1]=$s6;
-}
-echo $s3."/1296<br>\n";
+}	
 shuffle($dat);
 $t0=0;	
 for($t1=0;$t1<20;$t1++){
@@ -616,9 +616,8 @@ for($n=0;$n<20;$n++){
 }
 $sql=substr($sql,0,-1);
 mysqli_query($mysqli, $sql);
-echo $sql;
 
-/*
+$sql=<<<SRI
 INSERT INTO `{$key}_config` (`id`, `config_key`, `config_value`) VALUES
 (1, 'start_time', ''),
 (2, 'start_week', ''),
@@ -641,23 +640,36 @@ INSERT INTO `{$key}_config` (`id`, `config_key`, `config_value`) VALUES
 (15, 'instagram_view', ''),
 (16, 'facebook', ''),
 (17, 'facebook_view', '')
+SRI;
+mysqli_query($mysqli, $sql);
 
 
+$sql=<<<SRJ
 INSERT INTO `{$key}_contact_table` (`log_0_name`, `log_0_type`, `log_1_name`, `log_1_type`, `log_2_name`, `log_2_type`, `log_3_name`, `log_3_type`, `log_4_name`, `log_4_type`, `log_5_name`, `log_5_type`, `log_6_name`, `log_6_type`, `log_7_name`, `log_7_type`, `log_8_name`, `log_8_type`, `log_9_name`, `log_9_type`, `return_mail_log`, `to_mail`, `call_mail_address1`, `call_mail_address2`, `call_mail_address3`, `call_mail_address4`, `call_mail_address5`) VALUES ('0', '0', '名前', '11', 'メールアドレス', '21', '住所', '10', '年齢', '30', '当店へのご質問', '40', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+SRJ;
+mysqli_query($mysqli, $sql);
 
-INSERT INTO `{$key}_contents` (`id`, `date`, `display_date`, `event_date`, `sort`, `page`, `category`, `contents_key`, `title`, `contents`, `tag`, `status`) VALUES
-('0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 0, 'policy', '', '0', 'プライバシーポリシー', '<div class=\"system_box\">\r\n『Night★Party』（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。\r\n</div>\r\n\r\n<div class=\"system_title\">第1条　個人情報</div>\r\n<div class=\"system_box\">\r\n「個人情報」とは，個人情報保護法にいう「個人情報」を指すものとし，生存する個人に関する情報であって，当該情報に含まれる氏名，生年月日，住所，電話番号，連絡先その他の記述等により特定の個人を識別できる情報及び容貌，指紋，声紋にかかるデータ，及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。\r\n</div>\r\n\r\n<div class=\"system_title\">第2条　個人情報の収集方法</div>\r\n<div class=\"system_box\">\r\n当社は，ユーザーが利用登録をする際に氏名，生年月日，住所，電話番号，メールアドレス，銀行口座番号，クレジットカード番号，運転免許証番号などの個人情報をお尋ねすることがあります。また，ユーザーと提携先などとの間でなされたユーザーの個人情報を含む取引記録や決済に関する情報を,当社の提携先（情報提供元，広告主，広告配信先などを含みます。以下，｢提携先｣といいます。）などから収集することがあります。\r\n</div>\r\n\r\n<div class=\"system_title\">第3条　個人情報の利用目的</div>\r\n<div class=\"system_box\">\r\n当社が個人情報を収集・利用する目的は，以下のとおりです。\r\n<span class=\"system_box_in\">\r\n当社サービスの提供・運営のため<br>\r\nユーザーからのお問い合わせに回答するため（本人確認を行うことを含む）<br>\r\nユーザーが利用中のサービスの新機能，更新情報，キャンペーン等及び当社が提供する他のサービスの案内のメールを送付するため<br>\r\nメンテナンス，重要なお知らせなど必要に応じたご連絡のため<br>\r\n利用規約に違反したユーザーや，不正・不当な目的でサービスを利用しようとするユーザーの特定をし，ご利用をお断りするため<br>\r\nユーザーにご自身の登録情報の閲覧や変更，削除，ご利用状況の閲覧を行っていただくため<br>\r\n</span>\r\n</div>\r\n', 0, 0),
-('2021-02-21 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 0, 'system', '', '0', 'SYSTEM', '<div class=\"system_title\">MAIN GUEST</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">18:00-20:00</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥8,000</span><br>\r\n<span class=\"system_box_1\">20:00-22:00</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥9,000</span><br>\r\n<span class=\"system_box_1\">22:00-LAST</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥12,000</span><br>\r\n<span class=\"system_box_1\">延長</span><span class=\"system_box_2\">30min</span><span class=\"system_box_3\">\\4000</span><br>\r\n</div>\r\n<div class=\"system_title\">V.I.P GUEST</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">18:00-LAST</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥12,000</span><br>\r\n<span class=\"system_box_1\">延長</span><span class=\"system_box_2\">30min</span><span class=\"system_box_3\">￥6,000</span><br>\r\n</div>\r\n<div class=\"system_title\">その他</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">場内指名</span><span class=\"system_box_2\">　</span><span class=\"system_box_3\">￥2,000</span><br>\r\n<span class=\"system_box_1\">本指名</span><span class=\"system_box_2\">　</span><span class=\"system_box_3\">￥3,000</span><br>\r\n</div>\r\n<div class=\"system_title\">クレジットカード</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">VISA</span><br>\r\n<span class=\"system_box_1\">JCB</span><br>\r\n<span class=\"system_box_1\">AMEX</span><br>\r\n</div>', 0, 0),
-('2021-02-21 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 3, 'recruit', 'list', '', '給与', '5,000円以上\r\n日払いあり', 0, 0),
-('2021-02-21 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 1, 'recruit', 'list', '', '職種', 'フロアレディ', 0, 0),
-('2021-02-21 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 2, 'recruit', 'list', '', '勤務時間', '20:00～LAST\r\n週1からOK\r\n終電上がり可\r\n', 0, 0),
-('2021-02-21 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 4, 'recruit', 'list', '', 'その他', '18歳以上（高校生不可）\r\n◇未経験者歓迎\r\n◇経験者超優遇\r\n◇学生・Wワーク・フリーターOK\r\n◇ブランクありOK\r\n◇即日体入OK\r\n◇友達同士の応募OK', 0, 0),
-('2021-06-15 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 0, 'access', 'map', '', 'ACCESS', '<h1 class=\"access_h1\">Night☆Party</h1>\r\n<div class=\"access_tag\">住所</div>\r\n<div class=\"access_box\">\r\n				〒160-0021<br>\r\n				東京都新宿区歌舞伎町1-1-1 新宿ビルB1F<br>\r\n			</div>\r\n			<div class=\"access_tag\">アクセス</div>\r\n			<div class=\"access_box\">\r\n				JR線 新宿駅東口より徒歩3分<br> \r\n				西武新宿線西武新宿駅より徒歩3分<br>\r\n			</div>\r\n			<div class=\"access_tag\">電話番号</div>\r\n			<div class=\"access_box\">\r\n				<span>03</span>-<span>6457</span>-<span>6156</span>\r\n			</div>\r\n			<div class=\"access_tag\">営業時間</div>\r\n			<div class=\"access_box\">\r\n				20:00～LAST<br>\r\n			</div>\r\n', 0, 0),
-('0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 0, 'recruit', 'mail', '', '', '', 0, 0),
-('0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 0, 'recruit', 'form', '1', '', '', 0, 0),
-('0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 0, 'recruit', 'line', '@onlyme_staff\r\n', '', '', 0, 0),
-('0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 0, 'recruit', 'tel', '03-1234-5678', '', '', 0, 0)
 
+
+$sql=<<<SRK
+INSERT INTO `{$key}_contents` (`date`, `display_date`, `event_date`, `sort`, `page`, `category`, `contents_key`, `title`, `contents`, `tag`, `status`) VALUES
+('{$now}', '{$now}', '0000-00-00', 0, 'policy', '', '0', 'プライバシーポリシー', '<div class=\"system_box\">\r\n『Night★Party』（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。\r\n</div>\r\n\r\n<div class=\"system_title\">第1条　個人情報</div>\r\n<div class=\"system_box\">\r\n「個人情報」とは，個人情報保護法にいう「個人情報」を指すものとし，生存する個人に関する情報であって，当該情報に含まれる氏名，生年月日，住所，電話番号，連絡先その他の記述等により特定の個人を識別できる情報及び容貌，指紋，声紋にかかるデータ，及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。\r\n</div>\r\n\r\n<div class=\"system_title\">第2条　個人情報の収集方法</div>\r\n<div class=\"system_box\">\r\n当社は，ユーザーが利用登録をする際に氏名，生年月日，住所，電話番号，メールアドレス，銀行口座番号，クレジットカード番号，運転免許証番号などの個人情報をお尋ねすることがあります。また，ユーザーと提携先などとの間でなされたユーザーの個人情報を含む取引記録や決済に関する情報を,当社の提携先（情報提供元，広告主，広告配信先などを含みます。以下，｢提携先｣といいます。）などから収集することがあります。\r\n</div>\r\n\r\n<div class=\"system_title\">第3条　個人情報の利用目的</div>\r\n<div class=\"system_box\">\r\n当社が個人情報を収集・利用する目的は，以下のとおりです。\r\n<span class=\"system_box_in\">\r\n当社サービスの提供・運営のため<br>\r\nユーザーからのお問い合わせに回答するため（本人確認を行うことを含む）<br>\r\nユーザーが利用中のサービスの新機能，更新情報，キャンペーン等及び当社が提供する他のサービスの案内のメールを送付するため<br>\r\nメンテナンス，重要なお知らせなど必要に応じたご連絡のため<br>\r\n利用規約に違反したユーザーや，不正・不当な目的でサービスを利用しようとするユーザーの特定をし，ご利用をお断りするため<br>\r\nユーザーにご自身の登録情報の閲覧や変更，削除，ご利用状況の閲覧を行っていただくため<br>\r\n</span>\r\n</div>\r\n', 0, 0),
+('{$now}', '{$now}', '0000-00-00', 0, 'system', '', '0', 'SYSTEM', '<div class=\"system_title\">MAIN GUEST</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">18:00-20:00</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥8,000</span><br>\r\n<span class=\"system_box_1\">20:00-22:00</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥9,000</span><br>\r\n<span class=\"system_box_1\">22:00-LAST</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥12,000</span><br>\r\n<span class=\"system_box_1\">延長</span><span class=\"system_box_2\">30min</span><span class=\"system_box_3\">\\4000</span><br>\r\n</div>\r\n<div class=\"system_title\">V.I.P GUEST</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">18:00-LAST</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥12,000</span><br>\r\n<span class=\"system_box_1\">延長</span><span class=\"system_box_2\">30min</span><span class=\"system_box_3\">￥6,000</span><br>\r\n</div>\r\n<div class=\"system_title\">その他</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">場内指名</span><span class=\"system_box_2\">　</span><span class=\"system_box_3\">￥2,000</span><br>\r\n<span class=\"system_box_1\">本指名</span><span class=\"system_box_2\">　</span><span class=\"system_box_3\">￥3,000</span><br>\r\n</div>\r\n<div class=\"system_title\">クレジットカード</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">VISA</span><br>\r\n<span class=\"system_box_1\">JCB</span><br>\r\n<span class=\"system_box_1\">AMEX</span><br>\r\n</div>', 0, 0),
+('{$now}', '{$now}', '0000-00-00', 3, 'recruit', 'list', '', '給与', '5,000円以上\r\n日払いあり', 0, 0),
+('{$now}', '{$now}', '0000-00-00', 1, 'recruit', 'list', '', '職種', 'フロアレディ', 0, 0),
+('{$now}', '{$now}', '0000-00-00', 2, 'recruit', 'list', '', '勤務時間', '20:00～LAST\r\n週1からOK\r\n終電上がり可\r\n', 0, 0),
+('{$now}', '{$now}', '0000-00-00', 4, 'recruit', 'list', '', 'その他', '18歳以上（高校生不可）\r\n◇未経験者歓迎\r\n◇経験者超優遇\r\n◇学生・Wワーク・フリーターOK\r\n◇ブランクありOK\r\n◇即日体入OK\r\n◇友達同士の応募OK', 0, 0),
+('{$now}', '{$now}', '0000-00-00', 0, 'access', 'map', '', 'ACCESS', '<h1 class=\"access_h1\">Night☆Party</h1>\r\n<div class=\"access_tag\">住所</div>\r\n<div class=\"access_box\">\r\n				〒160-0021<br>\r\n				東京都新宿区歌舞伎町1-1-1 新宿ビルB1F<br>\r\n			</div>\r\n			<div class=\"access_tag\">アクセス</div>\r\n			<div class=\"access_box\">\r\n				JR線 新宿駅東口より徒歩3分<br> \r\n				西武新宿線西武新宿駅より徒歩3分<br>\r\n			</div>\r\n			<div class=\"access_tag\">電話番号</div>\r\n			<div class=\"access_box\">\r\n				<span>03</span>-<span>6457</span>-<span>6156</span>\r\n			</div>\r\n			<div class=\"access_tag\">営業時間</div>\r\n			<div class=\"access_box\">\r\n				20:00～LAST<br>\r\n			</div>\r\n', 0, 0),
+('{$now}', '{$now}', '0000-00-00', 0, 'recruit', 'mail', '', '', '', 0, 0),
+('{$now}', '{$now}', '0000-00-00', 0, 'recruit', 'form', '1', '', '', 0, 0),
+('{$now}', '{$now}', '0000-00-00', 0, 'recruit', 'line', '@onlyme_staff\r\n', '', '', 0, 0),
+('{$now}', '{$now}', '0000-00-00', 0, 'recruit', 'tel', '03-1234-5678', '', '', 0, 0)
+SRK;
+mysqli_query($mysqli, $sql);
+
+
+
+$sql=<<<SRL
 INSERT INTO `{$key}_customer_item` (`gp`, `style`, `item_name`, `del`) VALUES
 (0, 1, '住まい', 0),
 (0, 2, '結婚', 0),
@@ -682,10 +694,56 @@ INSERT INTO `{$key}_customer_item` (`gp`, `style`, `item_name`, `del`) VALUES
 (1, 1, 'Instagram', 0),
 (1, 1, 'blog', 0),
 (1, 1, 'WEB', 0);
+SRL;
+mysqli_query($mysqli, $sql);
 
 
-//INSERT INTO `{$key}_encode` (`id`, `gp`, `key`, `value`, `etc`) VALUES
+$sql=<<<SRM
+INSERT INTO `{$key}_sch_table` (`in_out`, `sort`, `name`, `time`) VALUES
+('in', 0, '19:00', '1900'),
+('in', 1, '19:30', '1930'),
+('in', 2, '20:00', '2000'),
+('out', 0, '23:00', '2300'),
+('out', 1, '23:30', '2330'),
+('out', 2, '00:00', '0000'),
+('out', 3, 'LAST', '0030'),
+('out', 4, 'LAST', '0100'),
+('out', 5, 'LAST', '0130'),
+('out', 6, 'LAST', '0200')
+SRM;
+mysqli_query($mysqli, $sql);
+echo $sql;
 
+$sql=<<<SRN
+INSERT INTO `{$key}_tag` (`tag_group`, `sort`, `tag_name`, `tag_icon`, `del`) VALUES
+('ribbon', 1, '近日入店', '#0000d0', 0),
+('ribbon', 2, '本日入店', '#008000', 0),
+('ribbon', 3, '新人', '#d00000', 0),
+
+('blog', 1, 'Diary', '', 0),
+('blog', 2, '日常', '', 0),
+('blog', 3, 'お仕事', '', 0),
+('blog', 4, '趣味', '', 0),
+('blog', 5, '告知', '', 0),
+('blog', 6, '買い物', '', 0),
+('blog', 7, 'ファッション', '', 0),
+
+('news', 1, 'お知らせ', '#ffe0f0', 0),
+('news', 2, '入店情報', '#c0e0ff', 0),
+('news', 3, 'イベント', '#ffe090', 0),
+
+('cast_group', 1, '新宿昼', '', 0),
+('cast_group', 2, '新宿夜', '', 0),
+('cast_group', 3, '池袋昼', '', 0),
+('cast_group', 4, '池袋夜', '', 0),
+('cast_group', 5, 'スタッフ', '', 0),
+('notice_category', 1, '業務関連', '', 0),
+('notice_category', 2, 'イベント', '', 0),
+('notice_category', 3, '緊急', '', 0),
+('notice_category', 4, 'その他', '', 0)
+SRN;
+mysqli_query($mysqli, $sql);
+/*
 
 INSERT INTO `{$key}_item_color` (`id`, `item_id`, `item_group`, `item_color`, `del`) VALUES
 (1, 0, 'color', '#303030', 0),
@@ -717,46 +775,6 @@ INSERT INTO `{$key}_item_icon` (`id`, `item_id`, `item_group`, `item_icon`, `del
 (12, 11, 'icon', '', 0);
 
 
-INSERT INTO `{$key}_sch_table` (`in_out`, `sort`, `name`, `time`) VALUES
-('in', 0, '19:00', '1900'),
-('in', 1, '19:30', '1930'),
-('in', 2, '20:00', '2000'),
-('out', 0, '23:00', '2300'),
-('out', 1, '23:30', '2330'),
-('out', 2, '00:00', '0000'),
-('out', 3, 'LAST', '0030'),
-('out', 4, 'LAST', '0100'),
-('out', 5  'LAST', '0130'),
-('out', 6, 'LAST', '0200')
-;
-
-
-INSERT INTO `{$key}_tag` (`tag_group`, `sort`, `tag_name`, `tag_icon`, `del`) VALUES
-('ribbon', 1, '近日入店', '#0000d0', 0),
-('ribbon', 2, '本日入店', '#008000', 0),
-('ribbon', 3, '新人', '#d00000', 0),
-
-('blog', 1, 'Diary', '', 0),
-('blog', 2, '日常', '', 0),
-('blog', 3, 'お仕事', '', 0),
-('blog', 4, '趣味', '', 0),
-('blog', 5, '告知', '', 0),
-('blog', 6, '買い物', '', 0),
-('blog', 7, 'ファッション', '', 0),
-
-('news', 1, 'お知らせ', '#ffe0f0', 0),
-('news', 2, '入店情報', '#c0e0ff', 0),
-('news', 3, 'イベント', '#ffe090', 0),
-
-('cast_group', 1, '新宿昼', '', 0),
-('cast_group', 2, '新宿夜', '', 0),
-('cast_group', 3, '池袋昼', '', 0),
-('cast_group', 4, '池袋夜', '', 0),
-('cast_group', 5, 'スタッフ', '', 0),
-('notice_category', 1, '業務関連', '', 0),
-('notice_category', 2, 'イベント', '', 0),
-('notice_category', 3, '緊急', '', 0),
-('notice_category', 4, 'その他', '', 0),
 
 */
 }
