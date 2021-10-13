@@ -1,0 +1,499 @@
+
+
+CREATE DATABASE IF NOT EXISTS `tiltowait_np` DEFAULT CHARACTER SET utf8mb4_bin;
+USE `tiltowait_np`;
+
+-- --------------------------------------------------------
+
+
+CREATE DATABASE IF NOT EXISTS db_name
+CHARACTER SET utf8mb4 COLLATE utf8mb4_bin
+
+--
+-- テーブルの構造 `{$key}_cast`
+--
+CREATE TABLE animals (
+     id MEDIUMINT NOT NULL AUTO_INCREMENT,
+     name CHAR(30) NOT NULL,
+     PRIMARY KEY (id)
+);
+
+
+CREATE TABLE `{$key}_cast`(
+  `regist_id` int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `id` int(10) NOT NULL,
+  `ctime` varchar(8) NOT NULL,
+  `box_no` varchar(20) NOT NULL,
+  `genji` varchar(50) NOT NULL,
+  `genji_kana` varchar(50) NOT NULL,
+  `twitter` varchar(50) NOT NULL,
+  `facebook` varchar(50) NOT NULL,
+  `cast_mail` varchar(50) NOT NULL,
+  `castmail_pass` varchar(50) NOT NULL,
+  `cast_rank` int(3) NOT NULL,
+  `cast_group` int(2) NOT NULL,
+  `cast_sort` int(3) NOT NULL,
+  `cast_id` varchar(50) NOT NULL,
+  `cast_pass` varchar(50) NOT NULL,
+  `cast_status` int(10) NOT NULL COMMENT '0:通常/1:準備/2:休職/3:退職/4:停止/99:削除',
+  `del` int(1) NOT NULL,
+  `remove` int(2) NOT NULL,
+  `week_st` int(2) NOT NULL,
+  `times_st` int(2) NOT NULL,
+  `cast_salary` int(10) NOT NULL,
+  `ribbon_use` int(1) NOT NULL COMMENT '0:使う/1:使わない',
+  `cast_ribbon` int(2) NOT NULL,
+  index (regist_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+ALTER TABLE {$key}_cast AUTO_INCREMENT = 12345;
+
+
+CREATE TABLE `{$key}_cast_config0` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `cast_id` int(10) NOT NULL,
+  `c_sort_main` int(10) NOT NULL,
+  `c_sort_asc` int(10) NOT NULL,
+  `c_sort_group` int(10) NOT NULL,
+  index (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+
+CREATE TABLE `{$key}_cast_log` (
+  `log_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `date` datetime NOT NULL,
+  `sdate` date NOT NULL,
+  `stime` varchar(5) NOT NULL,
+  `edate` varchar(8) NOT NULL,
+  `etime` varchar(5) NOT NULL,
+  `cast_id` int(10) NOT NULL,
+  `customer_id` int(10) NOT NULL,
+  `action_id` int(10) NOT NULL,
+  `del` int(1) NOT NULL,
+  `log` varchar(500) NOT NULL,
+  `days` date NOT NULL,
+  `pts` int(8) NOT NULL,
+  index (log_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_bin;
+
+
+CREATE TABLE `{$key}_cast_log_list` (
+  `id` int(10) NOT NULL PRIMARY KEY,
+  `master_id` int(10) NOT NULL,
+  `action_id` int(10) NOT NULL,
+  `log_color` varchar(50) NOT NULL,
+  `log_icon` varchar(10) NOT NULL,
+  `log_comm` varchar(100) NOT NULL,
+  `log_price` varchar(10) NOT NULL,
+  `del` int(1) NOT NULL,
+  index (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_bin;
+
+
+
+CREATE TABLE `{$key}_cast_log_table` (
+  `id` int(10) NOT NULL PRIMARY KEY,
+  `cast_id` int(10) NOT NULL,
+  `item_name` varchar(12) NOT NULL,
+  `item_icon` int(5) NOT NULL,
+  `item_color` int(5) NOT NULL,
+  `price` int(10) NOT NULL,
+  `sort` int(10) NOT NULL,
+  `del` int(1) NOT NULL,
+  index (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_bin;
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO `{$key}_config` (`id`, `config_key`, `config_value`) VALUES
+(1, 'start_time', ''),
+(2, 'start_week', ''),
+
+(3, 'ribbon', ''),
+(4, 'new_commer_cnt', ''),
+(5, 'today_commer', ''),
+(6, 'coming_soon', ''),
+
+(7, 'open_day', ''),
+(8, 'main_url', ''),
+(9, 'store_name', ''),
+
+(10, 'jpg_select', ''),
+(11, 'webp_select', ''),
+
+(12, 'twitter', ''),
+(13, 'twitter_view', ''),
+(14, 'instagram', ''),
+(15, 'instagram_view', ''),
+(16, 'facebook', ''),
+(17, 'facebook_view', '')
+
+
+INSERT INTO `{$key}_contact_table` (`log_0_name`, `log_0_type`, `log_1_name`, `log_1_type`, `log_2_name`, `log_2_type`, `log_3_name`, `log_3_type`, `log_4_name`, `log_4_type`, `log_5_name`, `log_5_type`, `log_6_name`, `log_6_type`, `log_7_name`, `log_7_type`, `log_8_name`, `log_8_type`, `log_9_name`, `log_9_type`, `return_mail_log`, `to_mail`, `call_mail_address1`, `call_mail_address2`, `call_mail_address3`, `call_mail_address4`, `call_mail_address5`) VALUES ('0', '0', '名前', '11', 'メールアドレス', '21', '住所', '10', '年齢', '30', '当店へのご質問', '40', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+
+INSERT INTO `{$key}_contents` (`id`, `date`, `display_date`, `event_date`, `sort`, `page`, `category`, `contents_key`, `title`, `contents`, `tag`, `status`) VALUES
+('0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 0, 'policy', '', '0', 'プライバシーポリシー', '<div class=\"system_box\">\r\n『Night★Party』（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。\r\n</div>\r\n\r\n<div class=\"system_title\">第1条　個人情報</div>\r\n<div class=\"system_box\">\r\n「個人情報」とは，個人情報保護法にいう「個人情報」を指すものとし，生存する個人に関する情報であって，当該情報に含まれる氏名，生年月日，住所，電話番号，連絡先その他の記述等により特定の個人を識別できる情報及び容貌，指紋，声紋にかかるデータ，及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。\r\n</div>\r\n\r\n<div class=\"system_title\">第2条　個人情報の収集方法</div>\r\n<div class=\"system_box\">\r\n当社は，ユーザーが利用登録をする際に氏名，生年月日，住所，電話番号，メールアドレス，銀行口座番号，クレジットカード番号，運転免許証番号などの個人情報をお尋ねすることがあります。また，ユーザーと提携先などとの間でなされたユーザーの個人情報を含む取引記録や決済に関する情報を,当社の提携先（情報提供元，広告主，広告配信先などを含みます。以下，｢提携先｣といいます。）などから収集することがあります。\r\n</div>\r\n\r\n<div class=\"system_title\">第3条　個人情報の利用目的</div>\r\n<div class=\"system_box\">\r\n当社が個人情報を収集・利用する目的は，以下のとおりです。\r\n<span class=\"system_box_in\">\r\n当社サービスの提供・運営のため<br>\r\nユーザーからのお問い合わせに回答するため（本人確認を行うことを含む）<br>\r\nユーザーが利用中のサービスの新機能，更新情報，キャンペーン等及び当社が提供する他のサービスの案内のメールを送付するため<br>\r\nメンテナンス，重要なお知らせなど必要に応じたご連絡のため<br>\r\n利用規約に違反したユーザーや，不正・不当な目的でサービスを利用しようとするユーザーの特定をし，ご利用をお断りするため<br>\r\nユーザーにご自身の登録情報の閲覧や変更，削除，ご利用状況の閲覧を行っていただくため<br>\r\n</span>\r\n</div>\r\n', 0, 0),
+('2021-02-21 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 0, 'system', '', '0', 'SYSTEM', '<div class=\"system_title\">MAIN GUEST</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">18:00-20:00</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥8,000</span><br>\r\n<span class=\"system_box_1\">20:00-22:00</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥9,000</span><br>\r\n<span class=\"system_box_1\">22:00-LAST</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥12,000</span><br>\r\n<span class=\"system_box_1\">延長</span><span class=\"system_box_2\">30min</span><span class=\"system_box_3\">\\4000</span><br>\r\n</div>\r\n<div class=\"system_title\">V.I.P GUEST</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">18:00-LAST</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥12,000</span><br>\r\n<span class=\"system_box_1\">延長</span><span class=\"system_box_2\">30min</span><span class=\"system_box_3\">￥6,000</span><br>\r\n</div>\r\n<div class=\"system_title\">その他</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">場内指名</span><span class=\"system_box_2\">　</span><span class=\"system_box_3\">￥2,000</span><br>\r\n<span class=\"system_box_1\">本指名</span><span class=\"system_box_2\">　</span><span class=\"system_box_3\">￥3,000</span><br>\r\n</div>\r\n<div class=\"system_title\">クレジットカード</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">VISA</span><br>\r\n<span class=\"system_box_1\">JCB</span><br>\r\n<span class=\"system_box_1\">AMEX</span><br>\r\n</div>', 0, 0),
+('2021-02-21 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 3, 'recruit', 'list', '', '給与', '5,000円以上\r\n日払いあり', 0, 0),
+('2021-02-21 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 1, 'recruit', 'list', '', '職種', 'フロアレディ', 0, 0),
+('2021-02-21 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 2, 'recruit', 'list', '', '勤務時間', '20:00～LAST\r\n週1からOK\r\n終電上がり可\r\n', 0, 0),
+('2021-02-21 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 4, 'recruit', 'list', '', 'その他', '18歳以上（高校生不可）\r\n◇未経験者歓迎\r\n◇経験者超優遇\r\n◇学生・Wワーク・フリーターOK\r\n◇ブランクありOK\r\n◇即日体入OK\r\n◇友達同士の応募OK', 0, 0),
+('2021-06-15 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 0, 'access', 'map', '', 'ACCESS', '<h1 class=\"access_h1\">Night☆Party</h1>\r\n<div class=\"access_tag\">住所</div>\r\n<div class=\"access_box\">\r\n				〒160-0021<br>\r\n				東京都新宿区歌舞伎町1-1-1 新宿ビルB1F<br>\r\n			</div>\r\n			<div class=\"access_tag\">アクセス</div>\r\n			<div class=\"access_box\">\r\n				JR線 新宿駅東口より徒歩3分<br> \r\n				西武新宿線西武新宿駅より徒歩3分<br>\r\n			</div>\r\n			<div class=\"access_tag\">電話番号</div>\r\n			<div class=\"access_box\">\r\n				<span>03</span>-<span>6457</span>-<span>6156</span>\r\n			</div>\r\n			<div class=\"access_tag\">営業時間</div>\r\n			<div class=\"access_box\">\r\n				20:00～LAST<br>\r\n			</div>\r\n', 0, 0),
+('0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 0, 'recruit', 'mail', '', '', '', 0, 0),
+('0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 0, 'recruit', 'form', '1', '', '', 0, 0),
+('0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 0, 'recruit', 'line', '@onlyme_staff\r\n', '', '', 0, 0),
+('0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00', 0, 'recruit', 'tel', '03-1234-5678', '', '', 0, 0)
+-- --------------------------------------------------------
+
+INSERT INTO `{$key}_customer_item` (`gp`, `style`, `item_name`, `del`) VALUES
+(0, 1, '住まい', 0),
+(0, 2, '結婚', 0),
+(0, 1, '最寄り駅', 0),
+(0, 1, '出身地', 0),
+(0, 1, '会社名', 0),
+(0, 1, '役職', 0),
+(0, 1, '仕事内容', 0),
+(0, 3, '血液型', 0),
+(0, 1, '趣味', 0),
+(0, 1, '特技', 1),
+(0, 1, 'お酒', 0),
+(0, 1, '食べ物', 0),
+(0, 1, 'たばこ', 0),
+(0, 1, 'ブランド', 0),
+(0, 1, '車', 0),
+(1, 1, '電話番号', 0),
+(1, 1, 'メール', 0),
+(1, 1, 'LINE', 0),
+(1, 1, 'twitter', 0),
+(1, 1, 'FaceBook', 0),
+(1, 1, 'Instagram', 0),
+(1, 1, 'blog', 0),
+(1, 1, 'WEB', 0);
+
+
+//INSERT INTO `{$key}_encode` (`id`, `gp`, `key`, `value`, `etc`) VALUES
+
+
+INSERT INTO `{$key}_item_color` (`id`, `item_id`, `item_group`, `item_color`, `del`) VALUES
+(1, 0, 'color', '#303030', 0),
+(2, 1, 'color', '#000080', 0),
+(3, 2, 'color', '#008000', 0),
+(4, 3, 'color', '#9acd32', 0),
+(5, 4, 'color', '#800000', 0),
+(6, 5, 'color', '#500080', 0),
+(7, 6, 'color', '#b22222', 0),
+(8, 7, 'color', '#d2b48c', 0),
+(9, 8, 'color', '#c0c0c0', 0),
+(10, 9, 'color', '#ffd700', 0),
+(11, 10, 'color', '#ffc0cb', 0),
+(12, 11, 'color', '#b0e0e6', 0);
+
+
+INSERT INTO `{$key}_item_icon` (`id`, `item_id`, `item_group`, `item_icon`, `del`) VALUES
+(1, 0, 'icon', '', 0),
+(2, 1, 'icon', '', 0),
+(3, 2, 'icon', '', 0),
+(4, 3, 'icon', '', 0),
+(5, 4, 'icon', '', 0),
+(6, 5, 'icon', '', 0),
+(7, 6, 'icon', '', 0),
+(8, 7, 'icon', '', 0),
+(9, 8, 'icon', '', 0),
+(10, 9, 'icon', '', 0),
+(11, 10, 'icon', '', 0),
+(12, 11, 'icon', '', 0);
+
+
+INSERT INTO `{$key}_sch_table` (`in_out`, `sort`, `name`, `time`) VALUES
+('in', 0, '19:00', '1900'),
+('in', 1, '19:30', '1930'),
+('in', 2, '20:00', '2000'),
+('out', 0, '23:00', '2300'),
+('out', 1, '23:30', '2330'),
+('out', 2, '00:00', '0000'),
+('out', 3, 'LAST', '0030'),
+('out', 4, 'LAST', '0100'),
+('out', 5  'LAST', '0130'),
+('out', 6, 'LAST', '0200')
+;
+
+
+INSERT INTO `{$key}_tag` (`tag_group`, `sort`, `tag_name`, `tag_icon`, `del`) VALUES
+('ribbon', 1, '近日入店', '#0000d0', 0),
+('ribbon', 2, '本日入店', '#008000', 0),
+('ribbon', 3, '新人', '#d00000', 0),
+
+('blog', 1, 'Diary', '', 0),
+('blog', 2, '日常', '', 0),
+('blog', 3, 'お仕事', '', 0),
+('blog', 4, '趣味', '', 0),
+('blog', 5, '告知', '', 0),
+('blog', 6, '買い物', '', 0),
+('blog', 7, 'ファッション', '', 0),
+
+('news', 1, 'お知らせ', '#ffe0f0', 0),
+('news', 2, '入店情報', '#c0e0ff', 0),
+('news', 3, 'イベント', '#ffe090', 0),
+
+('cast_group', 1, '新宿昼', '', 0),
+('cast_group', 2, '新宿夜', '', 0),
+('cast_group', 3, '池袋昼', '', 0),
+('cast_group', 4, '池袋夜', '', 0),
+('cast_group', 5, 'スタッフ', '', 0),
+('notice_category', 1, '業務関連', '', 0),
+('notice_category', 2, 'イベント', '', 0),
+('notice_category', 3, '緊急', '', 0),
+('notice_category', 4, 'その他', '', 0),
+
+/*
+ALTER TABLE `{$key}_cast`
+  ADD PRIMARY KEY (`regist_id`);
+
+ALTER TABLE `{$key}_cast_config`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_cast_log`
+  ADD PRIMARY KEY (`log_id`);
+
+ALTER TABLE `{$key}_cast_log_list`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_cast_log_table`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_charm_sel`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_charm_table`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_check_list`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_check_main`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_check_sel`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_config`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_contact_list`
+  ADD UNIQUE KEY `id` (`list_id`);
+
+ALTER TABLE `{$key}_contact_table`
+  ADD UNIQUE KEY `id` (`id`);
+
+ALTER TABLE `{$key}_contents`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_customer`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_customer_flag`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_customer_group`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_customer_item`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_customer_list`
+  ADD UNIQUE KEY `id` (`id`);
+
+ALTER TABLE `{$key}_customer_memo`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_easytalk`
+  ADD PRIMARY KEY (`mail_id`);
+
+ALTER TABLE `{$key}_easytalk_tmpl`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_item_color`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_item_icon`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_log`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_notice`
+  ADD UNIQUE KEY `id` (`id`);
+
+ALTER TABLE `{$key}_notice_attach`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_notice_ck`
+  ADD PRIMARY KEY (`ck_id`);
+
+ALTER TABLE `{$key}_notice_res`
+  ADD UNIQUE KEY `id` (`id`);
+
+ALTER TABLE `{$key}_posts`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_schedule`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_schedule_memo`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_sch_table`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_service_table`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_set`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_set_cast`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_set_item`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_ssid`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `{$key}_staff`
+  ADD UNIQUE KEY `cast_id` (`staff_id`);
+
+ALTER TABLE `{$key}_tag`
+  ADD PRIMARY KEY (`id`);
+
+
+ALTER TABLE `{$key}_cast`
+  MODIFY `regist_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
+ALTER TABLE `{$key}_cast_config`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+ALTER TABLE `{$key}_cast_log`
+  MODIFY `log_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+ALTER TABLE `{$key}_cast_log_list`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+
+ALTER TABLE `{$key}_cast_log_table`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=393;
+
+ALTER TABLE `{$key}_charm_sel`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=552;
+
+ALTER TABLE `{$key}_charm_table`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+ALTER TABLE `{$key}_check_list`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+ALTER TABLE `{$key}_check_main`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+ALTER TABLE `{$key}_check_sel`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=651;
+
+ALTER TABLE `{$key}_config`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+ALTER TABLE `{$key}_contact_list`
+  MODIFY `list_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+ALTER TABLE `{$key}_contact_table`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+ALTER TABLE `{$key}_contents`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+
+ALTER TABLE `{$key}_customer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+ALTER TABLE `{$key}_customer_flag`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `{$key}_customer_group`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+ALTER TABLE `{$key}_customer_item`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+ALTER TABLE `{$key}_customer_list`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+
+ALTER TABLE `{$key}_customer_memo`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+ALTER TABLE `{$key}_easytalk`
+  MODIFY `mail_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+
+ALTER TABLE `{$key}_easytalk_tmpl`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT61;
+
+ALTER TABLE `{$key}_item_color`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+ALTER TABLE `{$key}_item_icon`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+ALTER TABLE `{$key}_log`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+ALTER TABLE `{$key}_notice`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+ALTER TABLE `{$key}_notice_attach`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `{$key}_notice_ck`
+  MODIFY `ck_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+ALTER TABLE `{$key}_notice_res`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+ALTER TABLE `{$key}_posts`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+ALTER TABLE `{$key}_schedule`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+ALTER TABLE `{$key}_schedule_memo`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+ALTER TABLE `{$key}_sch_table`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+ALTER TABLE `{$key}_service_table`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `{$key}_set`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `{$key}_set_cast`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `{$key}_set_item`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `{$key}_ssid`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+ALTER TABLE `{$key}_staff`
+  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+ALTER TABLE `{$key}_tag`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+COMMIT;
+*/

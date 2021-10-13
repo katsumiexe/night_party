@@ -1,0 +1,229 @@
+<?
+include_once('./library/sql.php');
+
+$ss=$_REQUEST["ss"];
+
+if($ss){
+	$sql	 ="SELECT * FROM wp01_0ssid";
+	$sql	.=" WHERE ssid='{$ss}'";
+	$sql	.=" AND del='0'";
+	$sql	.=" ORDER BY id DESC";
+	$sql	.=" LIMIT 1";
+
+	$res = mysqli_query($mysqli,$sql);
+	$ssid = mysqli_fetch_assoc($res);
+	if($ssid["id"]){
+/*
+		$sql ="SELECT * FROM wp01_0encode"; 
+		if($result = mysqli_query($mysqli,$sql)){
+			while($row = mysqli_fetch_assoc($result)){
+				$enc[$row["key"]]				=$row["value"];
+				$dec[$row["gp"]][$row["value"]]	=$row["key"];	
+				$rnd[$row["id"]]				=$row["value"];
+			}
+		}
+
+		$id_8=substr("00000000".$ssid["cast_id"],-8);
+		$id_0	=$ssid["cast_id"] % 20;
+
+		for($n=0;$n<8;$n++){
+			$tmp_id=substr($id_8,$n,1);
+			$box_no.=$dec[$id_0][$tmp_id];
+		}
+
+		$box_no.=$id_0;
+*/
+
+		$sql	 ="UPDATE wp01_0ssid SET";
+		$sql	.=" del='1'";
+		$sql	.=" WHERE id <'{$ssid["id"]}'";
+		$sql	.=" AND cast_id='{$ssid["cast_id"]}'";
+		$sql	.=" AND customer_id='{$ssid["customer_id"]}'";
+		mysqli_query($mysqli,$sql);
+
+		if (file_exists("./img/profile/{$ssid["cast_id"]}/0_s.jpg")) {
+			$face_link="./img/profile/{$ssid["cast_id"]}/0_s.jpg";			
+
+		}else{
+			$face_link="./img/cast_no_image.jpg";			
+		}
+
+		$cnt=0;
+		$sql	 ="SELECT * FROM wp01_0easytalk";
+		$sql	.=" WHERE customer_id='{$ssid["customer_id"]}' AND cast_id='{$ssid["cast_id"]}'";
+		$sql	.=" ORDER BY mail_id DESC";
+		$sql	.=" LIMIT 10";
+
+		if($res = mysqli_query($mysqli,$sql)){
+			while($a1 = mysqli_fetch_assoc($res)){
+				$dat[$cnt]=$a1;
+				$dat[$cnt]["log"]=str_replace("\n","<br>",$dat[$cnt]["log"]);
+				$dat[$cnt]["send_date"]=str_replace("-",".",$dat[$cnt]["send_date"]);
+				$dat[$cnt]["send_date"]=substr($dat[$cnt]["send_date"],0,16);
+
+				if($dat[$cnt]["watch_date"] =='0000-00-00 00:00:00'){
+					$dat[$cnt]["kidoku"]="<span class=\"midoku\">未読</span>";
+				}else{
+					$dat[$cnt]["kidoku"]="<span class=\"kidoku\">既読</span>";
+					$dat[$cnt]["bg"]=1;
+				}
+
+				if($dat[$n+1]["watch_date"] =='0000-00-00 00:00:00' && $dat[$cnt]["watch_date"] !='0000-00-00 00:00:00'){
+					$dat[$cnt]["border"]="<div class=\"mail_border\">----------ここから新着--------------</div>";
+					$html=$dat[$cnt]["watch_date"];
+				}
+				if($dat[$cnt]["img"]){
+					$dat[$cnt]["stamp"]="<img src=\"data:image/jpg;base64,{$dat[$cnt]["img"]}\" class=\"mail_box_stamp\">";
+				}
+				$cnt++;
+			}
+		}
+
+		$sql	 ="UPDATE wp01_0easytalk SET";
+		$sql	.=" watch_date='{$now}'";
+		$sql	.=" WHERE customer_id='{$ssid["customer_id"]}' AND cast_id='{$ssid["cast_id"]}' AND send_flg='1' AND watch_date='0000-00-00 00:00:00'";
+		mysqli_query($mysqli,$sql);
+
+	}else{
+		$err=1;
+	}
+
+}else{
+	$err=2;
+}
+?>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EasyTalk</title>
+<script>
+const ImgSrc="./img/customer_no_img.jpg?t_<?=time()?>";
+const CastId="<?=$ssid["cast_id"]?>";
+const CId="<?=$ssid["customer_id"]?>";
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="./js/jquery.ui.touch-punch.min.js?t=<?=time()?>"></script>
+<script src="./js/jquery.exif.js?t=<?=time()?>"></script>
+<script src="./js/easytalk.js?t=<?=time()?>" defer></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="./css/easytalk.css?t=<?=time()?>">
+<link rel="stylesheet" href="./css/easytalk_guest.css?t=<?=time()?>">
+
+<style>
+@font-face {
+	font-family: at_icon;
+	src: url("./font/font_1/fonts/icomoon.ttf") format('truetype');
+}
+</style>
+</head>
+<body class="body">
+<header class="head_easytalk"></header>
+<div class="main_easytalk">
+	<div class="main_mail">
+	<div class="main_mail_in">
+		<?if($err==2){?>
+			<div class="err_msg">
+				タイムアウトしました<br>
+				再度メールからログインしてください。<br>
+			</div>
+		<?}elseif($err==1){?>
+			<div class="err_msg">
+				ログインコードが無効です。<br>
+				最新のメールからログインしてください。<br>
+			</div>
+
+
+		<?}else{?>
+			<?for($n1=0;$n1<$cnt;$n1++){?>
+				<?if($dat[$n1]["send_flg"] == 1){?>
+					<?=$dat[$n1]["border"]?>
+					<div class="mail_box_a">		
+						<div class="mail_box_face">
+							<img src="<?=$face_link?>" class="mail_box_img">
+						</div>
+						<div class="mail_box_log_1">
+							<div class="mail_box_log_in">
+								<?=$dat[$n1]["log"]?>
+							</div>
+							<?=$dat[$n1]["stamp"]?>
+						</div>
+						<span class="mail_box_date_a"><?=$dat[$n1]["send_date"]?></span>
+					</div>
+
+				<?}else{?>
+					<div class="mail_box_b">		
+						<div class="mail_box_log_2 bg<?=$dat[$n1]["bg"]?>">
+							<div class="mail_box_log_in">
+								<?=$dat[$n1]["log"]?>
+							</div>
+							<?=$dat[$n1]["stamp"]?>
+						</div>
+						<span class="mail_box_date_b"><?=$dat[$n1]["kidoku"]?>　<?=$dat[$n1]["send_date"]?></span>
+					</div>
+				<? } ?>
+			<? } ?>
+		<? } ?>
+	</div>
+	<div class="mail_detail_in_btm"></div>
+	</div>
+
+
+	<div class="main_sub">
+		<?if(!$err){?>
+		<table class="send_img_table">
+			<tr>
+				<td class="send_img_td">
+					<img id="send_img" src="./img/blog_no_image.png?t_<?=time()?>" class="mail_img_view" alt="画像登録">
+				</td>
+				<td>
+					<textarea id="send_msg" class="mail_write_text"></textarea>
+				</td>
+			</tr>
+		</table>
+
+		<button id="send_mail" type="button" class="send_btn">メールを送る</button>
+		<input type="hidden" id="ssid" name="ss" value="<?=$ss?>">
+		<input type="hidden" id="img_code">
+		<? } ?>
+	</div>
+</div>
+
+<footer class="foot_easytalk"></footer>
+<div class="img_box">
+	<div id="img_close" class="btn_c2">×</div>　
+
+	<div class="img_box_in">
+		<canvas id="cvs1" width="800px" height="800px;"></canvas>
+		<div class="img_box_out1"></div>
+		<div class="img_box_out2"></div>
+		<div class="img_box_out3"></div>
+		<div class="img_box_out4"></div>
+		<div class="img_box_out5"></div>
+		<div class="img_box_out6"></div>
+		<div class="img_box_out7"></div>
+		<div class="img_box_out8"></div>
+	</div>
+
+	<div class="img_box_in2">
+		<label for="upd" class="upload_btn"><span class="upload_icon_p"></span><span class="upload_txt">画像選択</span></label>
+		<span class="upload_icon_p upload_rote"></span>
+		<span class="upload_icon_p upload_trush"></span>
+		<div class="img_box_in3">
+			<div class="zoom_mi">-</div>
+			<div class="zoom_rg"><input id="input_zoom" type="range" name="num" min="100" max="300" step="1" value="100" class="range_bar"></div>
+			<div class="zoom_pu">+</div><div class="zoom_box">100</div>
+		</div>
+		<div id="img_set" class="btn_c1">登録</div>　
+		<div id="img_reset" class="btn_c3">リセット</div>
+	</div>
+	<input id="upd" type="file" accept="image/*" style="display:none;">
+	<canvas id="cvs2" width="800px" height="800px;"></canvas>
+</div>
+<input id="easytalk_page" type="hidden" value="0">
+</body>	
+</html>
