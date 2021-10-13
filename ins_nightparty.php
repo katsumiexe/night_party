@@ -1,7 +1,4 @@
 <?php
-
-
-
 $db		=$_POST["db"];
 $user	=$_POST["user"];
 $pass	=$_POST["pass"];
@@ -48,10 +45,9 @@ $sql.="`cast_ribbon` int(2) NOT NULL,";
 $sql.="index (regist_id)";
 $sql.=") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;";
 mysqli_query($mysqli, $sql);
-echo $sql;
+
 $sql="ALTER TABLE `{$key}_cast` AUTO_INCREMENT = 12345";
 mysqli_query($mysqli, $sql);
-
 
 $sql=<<<SQA
 CREATE TABLE `{$key}_cast_config` (
@@ -64,7 +60,6 @@ CREATE TABLE `{$key}_cast_config` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 SQA;
 mysqli_query($mysqli, $sql);
-
 
 $sql=<<<SQB
 CREATE TABLE `{$key}_cast_log` (
@@ -89,7 +84,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQC
 CREATE TABLE `{$key}_cast_log_list` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `master_id` int(10) NOT NULL,
   `action_id` int(10) NOT NULL,
   `log_color` varchar(50) NOT NULL,
@@ -105,7 +100,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQD
 CREATE TABLE `{$key}_cast_log_table` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `cast_id` int(10) NOT NULL,
   `item_name` varchar(12) NOT NULL,
   `item_icon` int(5) NOT NULL,
@@ -121,7 +116,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQE
 CREATE TABLE `{$key}_charm_sel` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `list_id` int(10) NOT NULL,
   `cast_id` int(10) NOT NULL,
   `log` varchar(3000) NOT NULL,
@@ -133,7 +128,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQF
 CREATE TABLE `{$key}_charm_table` (
-  `id` int(3) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `sort` int(3) NOT NULL,
   `charm` varchar(50) NOT NULL,
   `style` int(1) NOT NULL,
@@ -147,7 +142,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQG
 CREATE TABLE `{$key}_check_list` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `host_id` int(10) NOT NULL,
   `list_sort` int(10) NOT NULL,
   `list_title` varchar(50) NOT NULL,
@@ -160,7 +155,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQH
 CREATE TABLE `{$key}_check_main` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `sort` int(10) NOT NULL,
   `title` varchar(20) NOT NULL,
   `style` int(1) NOT NULL,
@@ -173,7 +168,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQI
 CREATE TABLE `{$key}_check_sel` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `list_id` int(10) NOT NULL,
   `cast_id` int(10) NOT NULL,
   `sel` int(1) NOT NULL,
@@ -185,7 +180,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQJ
 CREATE TABLE `{$key}_config` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `config_key` varchar(100) NOT NULL,
   `config_value` varchar(200) NOT NULL,
   index (id)
@@ -196,7 +191,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQK
 CREATE TABLE `{$key}_contact_list` (
-  `list_id` int(11) NOT NULL PRIMARY KEY,
+  `list_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `date` datetime NOT NULL,
   `type` varchar(1000) NOT NULL,
   `log_0` varchar(1000) NOT NULL,
@@ -220,7 +215,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQL
 CREATE TABLE `{$key}_contact_table` (
-  `id` int(11) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `log_0_name` varchar(200) NOT NULL,
   `log_0_type` varchar(10) NOT NULL,
   `log_1_name` varchar(200) NOT NULL,
@@ -255,7 +250,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQM
 CREATE TABLE `{$key}_contents` (
-  `id` int(11) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `date` datetime NOT NULL,
   `display_date` datetime NOT NULL,
   `event_date` date NOT NULL,
@@ -274,7 +269,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQN
 CREATE TABLE `{$key}_customer` (
-  `id` int(11) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `cast_id` int(11) NOT NULL,
   `nickname` varchar(100) DEFAULT NULL,
   `name` varchar(50) DEFAULT NULL,
@@ -300,7 +295,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQO
 CREATE TABLE `{$key}_customer_flag` (
-  `id` int(11) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `cast_id` int(10) NOT NULL,
   `color` int(2) NOT NULL,
   `tag` varchar(20) NOT NULL,
@@ -313,48 +308,45 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQP
 CREATE TABLE `{$key}_customer_group` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `group_id` int(2) NOT NULL,
   `cast_id` int(10) NOT NULL,
   `sort` int(3) NOT NULL,
   `tag` varchar(20) NOT NULL,
   `del` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
 SQP;
 mysqli_query($mysqli, $sql);
 
 
 $sql=<<<SQQ
 CREATE TABLE `{$key}_customer_item` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `gp` int(3) NOT NULL,
   `style` int(3) NOT NULL,
   `item_name` varchar(30) NOT NULL,
   `del` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
 SQQ;
 mysqli_query($mysqli, $sql);
 
 
 $sql=<<<SQR
 CREATE TABLE `{$key}_customer_list` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `cast_id` int(10) NOT NULL,
   `customer_id` int(10) NOT NULL,
   `item` int(3) NOT NULL,
   `comm` varchar(500) NOT NULL,
   `del` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
 SQR;
 mysqli_query($mysqli, $sql);
 
 
 $sql=<<<SQS
 CREATE TABLE `{$key}_customer_memo` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `date` datetime NOT NULL,
   `cast_id` int(10) NOT NULL,
   `customer_id` int(10) NOT NULL,
@@ -362,14 +354,13 @@ CREATE TABLE `{$key}_customer_memo` (
   `log` varchar(1000) NOT NULL,
   `del` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
 SQS;
 mysqli_query($mysqli, $sql);
 
 
 $sql=<<<SQT
 CREATE TABLE `{$key}_easytalk` (
-  `mail_id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `send_date` datetime NOT NULL,
   `watch_date` datetime NOT NULL,
   `customer_id` int(10) NOT NULL,
@@ -379,27 +370,25 @@ CREATE TABLE `{$key}_easytalk` (
   `img` mediumtext  NOT NULL,
   `mail_del` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
 SQT;
 mysqli_query($mysqli, $sql);
 
 
 $sql=<<<SQU
 CREATE TABLE `{$key}_easytalk_tmpl` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `cast_id` int(10) NOT NULL,
   `sort` int(2) NOT NULL,
   `title` varchar(50) NOT NULL,
   `log` varchar(2000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
 SQU;
 mysqli_query($mysqli, $sql);
 
 
 $sql=<<<SQV
 CREATE TABLE `{$key}_encode` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `gp` int(3) NOT NULL,
   `key` varchar(2) NOT NULL,
   `value` varchar(1) NOT NULL,
@@ -411,7 +400,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQW
 CREATE TABLE `{$key}_item_color` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `item_id` int(10) NOT NULL,
   `item_group` varchar(50) NOT NULL,
   `item_color` varchar(50) NOT NULL,
@@ -423,7 +412,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQX
 CREATE TABLE `{$key}_item_icon` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `item_id` int(10) NOT NULL,
   `item_group` varchar(50) NOT NULL,
   `item_icon` varchar(50) NOT NULL,
@@ -435,7 +424,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQY
 CREATE TABLE `{$key}_log` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `date` datetime NOT NULL,
   `ref` varchar(500) NOT NULL,
   `ua` varchar(500) NOT NULL,
@@ -450,7 +439,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQZ
 CREATE TABLE `{$key}_notice` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `date` datetime NOT NULL,
   `title` varchar(30) NOT NULL,
   `log` varchar(1000) NOT NULL,
@@ -465,7 +454,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SRA
 CREATE TABLE `{$key}_notice_ck` (
-  `ck_id` int(11) NOT NULL PRIMARY KEY,
+  `ck_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `view_date` datetime NOT NULL,
   `notice_id` int(10) NOT NULL,
   `cast_id` int(10) NOT NULL,
@@ -477,7 +466,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SRB
 CREATE TABLE `{$key}_posts` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `blog_id` int(10) NOT NULL,
   `date` datetime NOT NULL,
   `view_date` datetime NOT NULL,
@@ -496,7 +485,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SRC
 CREATE TABLE `{$key}_schedule` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `date` datetime NOT NULL,
   `sche_date` varchar(8) NOT NULL,
   `cast_id` int(10) NOT NULL,
@@ -510,7 +499,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SRD
 CREATE TABLE `{$key}_schedule_memo` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `date_8` varchar(8) NOT NULL,
   `log` varchar(500) NOT NULL,
   `cast_id` int(10) NOT NULL,
@@ -522,7 +511,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SRE
 CREATE TABLE `{$key}_sch_table` (
-  `id` int(10) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `in_out` varchar(3) NOT NULL,
   `sort` int(10) NOT NULL,
   `name` varchar(6) NOT NULL,
@@ -534,7 +523,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SRF
 CREATE TABLE `{$key}_ssid` (
-  `id` int(11) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `ssid` varchar(100) NOT NULL,
   `cast_id` int(10) NOT NULL,
   `customer_id` int(10) NOT NULL,
@@ -549,7 +538,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SRG
 CREATE TABLE `{$key}_staff` (
-  `staff_id` int(11) NOT NULL PRIMARY KEY,
+  `staff_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `sort` int(10) NOT NULL,
   `name` varchar(50) NOT NULL,
   `kana` varchar(50) NOT NULL,
@@ -577,7 +566,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SRH
 CREATE TABLE `{$key}_tag` (
-  `id` int(11) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `tag_group` varchar(100) NOT NULL,
   `sort` int(11) NOT NULL,
   `tag_name` varchar(20) NOT NULL,
@@ -593,6 +582,41 @@ SRI;
 mysqli_query($mysqli, $sql);
 */
 
+
+$d=array("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
+for($s1=0;$s1<720;$s1++){
+	$rnd=rand(1,4);
+	if($rnd == 4){
+		$s3+=2;
+	}else{
+		$s3++;
+	}
+
+	$s4=floor($s3/36)+0;
+	$s5=$s3 % 36;
+
+	$s6=$d[$s4].$d[$s5];
+	$dat[$s1]=$s6;
+}
+echo $s3."/1296<br>\n";
+shuffle($dat);
+$t0=0;	
+for($t1=0;$t1<20;$t1++){
+	for($t2=0;$t2<36;$t2++){
+		$e_dat[$t1][$dat[$t0]]=$d[$t2];		
+		$t0++;
+	}
+}
+
+$sql="INSERT INTO {$key}_encode (`gp`, `key`, `value`) VALUES";
+for($n=0;$n<20;$n++){
+	foreach($e_dat[$n] as $a1 =>$a2){
+		$sql.="('{$n}','{$a1}','{$a2}'),";
+	}
+}
+$sql=substr($sql,0,-1);
+mysqli_query($mysqli, $sql);
+echo $sql;
 
 /*
 INSERT INTO `{$key}_config` (`id`, `config_key`, `config_value`) VALUES
