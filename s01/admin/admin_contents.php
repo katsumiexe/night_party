@@ -63,30 +63,34 @@ if($event_set_id){
 	}
 
 	if(isset($_FILES) && isset($_FILES['upd_img']) && is_uploaded_file($_FILES['upd_img']['tmp_name'])){
-
 		$img_reg=getimagesize($_FILES['upd_img']['tmp_name']);
+
 		if($img_reg["mime"] =="image/jpeg"){
+			$img_tmp 		= imagecreatetfromjpeg($_FILES['upd_img']['tmp_name']);
 			$kk=".jpg";
 
 		}elseif($img_reg["mime"] =="image/webp"){
+			$img_tmp 		= imagecreatetfromwebp($_FILES['upd_img']['tmp_name']);
 			$kk=".webp";
 
 		}elseif($img_reg["mime"] =="image/png"){
+			$img_tmp 		= imagecreatetfrompng($_FILES['upd_img']['tmp_name']);
 			$kk=".png";
 
 		}elseif($img_reg["mime"] =="image/gif"){
+			$img_tmp 		= imagecreatetfromgif($_FILES['upd_img']['tmp_name']);
 			$kk=".gif";
 		}
 
-		if($post_id=="recruit"){	
-		    $img_url = "../img/page/contents/recruit_{$tmp_auto}{$kk}";
+		if($post_id=="recruit"){
+			imagejpeg($img_tmp,"../img/page/contents/recruit_{$tmp_auto}.jpg",100);
+			imagewebp($img_tmp,"../img/page/contents/recruit_{$tmp_auto}.webp");
+
 		}else{
-		    $img_url = "../img/page/{$post_id}/{$post_id}_{$tmp_auto}{$kk}";
+			imagejpeg($img_tmp,"../img/page/{$post_id}/{$post_id}_{$tmp_auto}.jpg",100);
+			imagewebp($img_tmp,"../img/page/{$post_id}/{$post_id}_{$tmp_auto}.webp");
 		}
-		move_uploaded_file($_FILES['upd_img']['tmp_name'], $img_url);
-
-echo $img_url;
-
+//		move_uploaded_file($_FILES['upd_img']['tmp_name'], $img_url);
 	}
 
 
@@ -260,8 +264,6 @@ if($post_id == "news"){
 		}
 	}
 }
-
-
 ?>
 <style>
 
@@ -457,11 +459,11 @@ $(function(){
 				<td  class="event_td_5">
 					<span class="event_tag">リンク</span><select name="category" class="w140">
 						<option value="">なし</option>
-						<option value="info"  <?if($a2["category"] == "info"){?> selected="selected"<?}?>>インフォ</option>
-						<option value="event"  <?if($a2["category"] == "event"){?> selected="selected"<?}?>>イベント</option>
-						<option value="person" <?if($a2["category"] == "person"){?> selected="selected"<?}?>>CAST</option>
-						<option value="blog"   <?if($a2["category"] == "blog"){?> selected="selected"<?}?>>ブログ</option>
-						<option value="page"   <?if($a2["category"] == "page"){?> selected="selected"<?}?>>リンク</option>
+						<option value="info"  <?if($a2["category"] == "info"){  ?> selected="selected"<?}?>>インフォ</option>
+						<option value="event" <?if($a2["category"] == "event"){ ?> selected="selected"<?}?>>イベント</option>
+						<option value="person"<?if($a2["category"] == "person"){?> selected="selected"<?}?>>CAST</option>
+						<option value="blog"  <?if($a2["category"] == "blog"){  ?> selected="selected"<?}?>>ブログ</option>
+						<option value="page"  <?if($a2["category"] == "page"){  ?> selected="selected"<?}?>>リンク</option>
 					</select>
 					<input type="text" name="event_key" style="width:175px;margin-left:5px;" value=""> 
 				</td>
@@ -482,7 +484,6 @@ $(function(){
 					<td class="event_td_2" rowspan="2">
 						<input type="text" value="<?=$a2["sort"]?>" class="box_sort" disabled>
 					</td>
-
 
 					<td class="event_td_3">
 						<span class="event_tag">公開日</span>
@@ -628,7 +629,6 @@ $(function(){
 <!--■■■■■■■■■■■■■■■■■■■■■■■■■■■-->
 
 	<?}else{?>
-
 		<?if($post_id == "recruit"){?>
 			<div class="main_box">
 				<div  class="recruit_img_out">
@@ -644,7 +644,6 @@ $(function(){
 				<input type="hidden" name="category" value="image">
 				</form>
 				</div>
-
 				<table class="recuruit_table">
 					<form id="f<?=$recruit_id?>" action="./index.php" method="post">
 					<input type="hidden" name="post_id" value="recruit">
@@ -704,9 +703,6 @@ $(function(){
 				</form>
 			</div>
 		<?}?>
-
-
-
 
 	<div class="sub_box">
 		<div id="system"  class="sel_contents <?if($post_id == "system"){?> sel_ck<?}?>">SYSTEM</div>
