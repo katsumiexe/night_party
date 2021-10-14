@@ -6,9 +6,9 @@ ini_set('error_reporting', E_ALL);
 */
 $ss=$_REQUEST["ss"];
 if($ss){
-	$sql	 ="SELECT S.id, S.ssid, S.cast_id, S.customer_id, S.del, S.date, C.genji,U.block  FROM wp01_0ssid AS S";
-	$sql	.=" LEFT JOIN wp01_0cast AS C ON C.id=S.cast_id";
-	$sql	.=" LEFT JOIN wp01_0customer AS U ON U.id=S.customer_id";
+	$sql	 ="SELECT S.id, S.ssid, S.cast_id, S.customer_id, S.del, S.date, C.genji,U.block  FROM wp00000_ssid AS S";
+	$sql	.=" LEFT JOIN wp00000_cast AS C ON C.id=S.cast_id";
+	$sql	.=" LEFT JOIN wp00000_customer AS U ON U.id=S.customer_id";
 	$sql	.=" WHERE ssid='{$ss}'";
 	$sql	.=" AND S.del='0'";
 	$sql	.=" ORDER BY S.id DESC";
@@ -29,7 +29,7 @@ if($ss){
 			$box_no.=$id_0;
 
 
-		$sql	 ="UPDATE wp01_0ssid SET";
+		$sql	 ="UPDATE wp00000_ssid SET";
 		$sql	.=" del='1'";
 		$sql	.=" WHERE id <'{$ssid["id"]}'";
 		$sql	.=" AND cast_id='{$ssid["cast_id"]}'";
@@ -45,7 +45,7 @@ if($ss){
 		}
 
 		$cnt=0;
-		$sql	 ="SELECT * FROM wp01_0easytalk";
+		$sql	 ="SELECT * FROM wp00000_easytalk";
 		$sql	.=" WHERE customer_id='{$ssid["customer_id"]}' AND cast_id='{$ssid["cast_id"]}'";
 		$sql	.=" AND mail_del=0";
 		$sql	.=" ORDER BY mail_id DESC";
@@ -85,7 +85,7 @@ if($ss){
 
 
 
-		$sql	 ="UPDATE wp01_0easytalk SET";
+		$sql	 ="UPDATE wp00000_easytalk SET";
 		$sql	.=" watch_date='{$now}'";
 		$sql	.=" WHERE customer_id='{$ssid["customer_id"]}' AND cast_id='{$ssid["cast_id"]}' AND send_flg='1' AND watch_date='0000-00-00 00:00:00'";
 		mysqli_query($mysqli,$sql);

@@ -7,7 +7,7 @@ $group		=str_replace('_set','',$_POST['group']);
 
 if(!$color) $color="#ff90a0";
 
-$sql=" INSERT INTO wp01_0tag";
+$sql=" INSERT INTO wp00000_tag";
 $sql.=" (sort,	tag_group,tag_name,tag_icon)";
 $sql.=" VALUES('{$sort}','{$group}','{$name}','{$color}')";
 

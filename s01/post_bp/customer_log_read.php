@@ -2,7 +2,7 @@
 include_once('../library/sql_post.php');
 $c_id		=$_POST["c_id"];
 
-$sql	 ="SELECT * FROM wp01_0cast_log";
+$sql	 ="SELECT * FROM wp00000_cast_log";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND customer_id='{$c_id}'";
 $sql	.=" ORDER BY log_id DESC";
@@ -30,9 +30,9 @@ if($result = mysqli_query($mysqli,$sql)){
 
 
 
-		$sql	 ="SELECT * FROM wp01_0cast_log_list";
+		$sql	 ="SELECT * FROM wp00000_cast_log_list";
 		$sql	.=" WHERE master_id='{$dat1["log_id"]}'";
-		$sql	.=" ORDER BY wp01_0cast_log_list.id DESC";
+		$sql	.=" ORDER BY wp00000_cast_log_list.id DESC";
 
 		if($result2 = mysqli_query($mysqli,$sql)){
 			while($dat3 = mysqli_fetch_assoc($result2)){

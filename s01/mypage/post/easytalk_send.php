@@ -18,7 +18,7 @@ $now_dat		=date("Y.m.d H:i");
 $yesterday		=date("Y-m-d H:i:s",time()-86400);
 
 
-$sql	 ="SELECT watch_date FROM wp01_0easytalk";
+$sql	 ="SELECT watch_date FROM wp00000_easytalk";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND customer_id='{$customer_id}'";
 $sql	.=" AND send_flg='1'";
@@ -61,7 +61,7 @@ if($img_code){
 
 	//----------------------------------------
 /*
-	$sql ="SELECT * FROM wp01_0encode"; 
+	$sql ="SELECT * FROM wp00000_encode"; 
 	if($result = mysqli_query($mysqli,$sql)){
 		while($row = mysqli_fetch_assoc($result)){
 			$enc[$row["key"]]	=$row["value"];
@@ -92,7 +92,7 @@ $ssid_key=$rnd[$n0].$rnd[$n1].$rnd[$n2].$rnd[$n3].$rnd[$n4].$dec[$n5][$send];
 
 if($send_not != 1){
 
-	$sql	 ="INSERT INTO wp01_0ssid";
+	$sql	 ="INSERT INTO wp00000_ssid";
 	$sql	.="(ssid,cast_id,customer_id,`date`,`mail`)";
 	$sql	.="VALUES";
 	$sql	.="('{$ssid_key}','{$cast_id}','{$customer_id}','{$now}','{$customer_mail}')";
@@ -133,7 +133,7 @@ if($send_not != 1){
 }
 
 //------------------------------------------------
-$sql	 ="INSERT INTO wp01_0easytalk";
+$sql	 ="INSERT INTO wp00000_easytalk";
 $sql	.="(send_date,customer_id,cast_id,send_flg,log,img)";
 $sql	.="VALUES";
 $sql	.="('{$now}','{$customer_id}','{$cast_id}','{$send}','{$log}','{$img_name}')";

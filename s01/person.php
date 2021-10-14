@@ -13,7 +13,7 @@ $t_day=date("Ymd",$day_time);
 $n_day=date("Ymd",$day_time+(86400*7));
 
 $post_id=$_REQUEST["post_id"];
-$sql="SELECT * FROM wp01_0cast WHERE id='{$post_id}' AND cast_status<2 LIMIT 1";
+$sql="SELECT * FROM wp00000_cast WHERE id='{$post_id}' AND cast_status<2 LIMIT 1";
 if($res = mysqli_query($mysqli,$sql)){
 	$cast_data = mysqli_fetch_assoc($res);
 	if (file_exists("./img/profile/{$cast_data["id"]}/0.jpg")) {
@@ -37,7 +37,7 @@ if($res = mysqli_query($mysqli,$sql)){
 	}
 
 
-	$sql ="SELECT * FROM wp01_0sch_table";
+	$sql ="SELECT * FROM wp00000_sch_table";
 	$sql.=" ORDER BY sort ASC";
 
 	if($result = mysqli_query($mysqli,$sql)){
@@ -46,7 +46,7 @@ if($res = mysqli_query($mysqli,$sql)){
 		}
 	}
 
-	$sql	 ="SELECT * FROM wp01_0schedule";
+	$sql	 ="SELECT * FROM wp00000_schedule";
 	$sql	.=" WHERE sche_date BETWEEN '{$t_day}' AND '{$n_day}'";
 	$sql	.=" AND cast_id='{$post_id}'";
 	$sql	.=" ORDER BY id ASC";
@@ -72,11 +72,11 @@ if($res = mysqli_query($mysqli,$sql)){
 		}
 	}
 
-	$sql ="SELECT sort,charm,style,log FROM wp01_0charm_table";
-	$sql.=" LEFT JOIN `wp01_0charm_sel` ON wp01_0charm_table.id=list_id";
-	$sql.=" WHERE wp01_0charm_table.del='0'";
-	$sql.=" AND (wp01_0charm_sel.cast_id='{$post_id}' OR wp01_0charm_sel.cast_id='')";
-	$sql.=" ORDER BY wp01_0charm_table.sort ASC";
+	$sql ="SELECT sort,charm,style,log FROM wp00000_charm_table";
+	$sql.=" LEFT JOIN `wp00000_charm_sel` ON wp00000_charm_table.id=list_id";
+	$sql.=" WHERE wp00000_charm_table.del='0'";
+	$sql.=" AND (wp00000_charm_sel.cast_id='{$post_id}' OR wp00000_charm_sel.cast_id='')";
+	$sql.=" ORDER BY wp00000_charm_table.sort ASC";
 
 	if($res = mysqli_query($mysqli,$sql)){
 		while($a0 = mysqli_fetch_assoc($res)){
@@ -86,7 +86,7 @@ if($res = mysqli_query($mysqli,$sql)){
 		}
 	}
 
-	$sql ="SELECT id,title,style FROM wp01_0check_main";
+	$sql ="SELECT id,title,style FROM wp00000_check_main";
 	$sql.=" WHERE del='0'";
 	$sql.=" ORDER BY sort ASC";
 
@@ -101,8 +101,8 @@ if($res = mysqli_query($mysqli,$sql)){
 	}
 
 
-	$sql ="SELECT L.id, L.host_id, L.list_title, S.sel FROM wp01_0check_list AS L";
-	$sql.=" LEFT JOIN `wp01_0check_sel` AS S ON L.id=S.list_id";
+	$sql ="SELECT L.id, L.host_id, L.list_title, S.sel FROM wp00000_check_list AS L";
+	$sql.=" LEFT JOIN `wp00000_check_sel` AS S ON L.id=S.list_id";
 	$sql.=" AND del='0'";
 	$sql.=" AND (cast_id IS NULL OR cast_id='{$post_id}')";
 	$sql.=" ORDER BY host_id ASC, list_sort ASC, L.id ASC";
@@ -117,9 +117,9 @@ if($res = mysqli_query($mysqli,$sql)){
 		}
 	}
 
-	$sql ="SELECT P.id,view_date, title, img, cast, genji,tag_name,tag_icon FROM wp01_0posts AS P";
-	$sql.=" LEFT JOIN wp01_0cast AS C ON P.cast=C.id";
-	$sql.=" LEFT JOIN wp01_0tag AS T ON P.tag=T.id";
+	$sql ="SELECT P.id,view_date, title, img, cast, genji,tag_name,tag_icon FROM wp00000_posts AS P";
+	$sql.=" LEFT JOIN wp00000_cast AS C ON P.cast=C.id";
+	$sql.=" LEFT JOIN wp00000_tag AS T ON P.tag=T.id";
 	$sql.=" WHERE P.status=0";
 	$sql.=" AND C.cast_status<4";
 	$sql.=" AND view_date<='{$now}'";

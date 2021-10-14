@@ -5,7 +5,7 @@ $val	=$_POST['val'];
 
 $tmp=explode('-',$id);
 
-$sql=" UPDATE wp01_0charm_table SET";
+$sql=" UPDATE wp00000_charm_table SET";
 $sql.=" {$tmp[0]}='{$val}'";
 $sql.=" WHERE id='{$tmp[1]}'";
 

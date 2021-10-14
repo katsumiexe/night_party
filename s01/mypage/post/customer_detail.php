@@ -6,7 +6,7 @@ include_once('../../library/sql_post.php');
 $cus	=array();
 $c_id	=$_POST["c_id"];
 
-$sql	 ="SELECT * FROM wp01_0customer";
+$sql	 ="SELECT * FROM wp00000_customer";
 $sql	 .=" WHERE del=0";
 $sql	 .=" AND id='{$c_id}'";
 $sql	 .=" LIMIT 1";
@@ -55,7 +55,7 @@ if($dat["face"]){
 
 
 
-$sql	 ="SELECT * FROM wp01_0customer_group";
+$sql	 ="SELECT * FROM wp00000_customer_group";
 $sql	 .=" WHERE del=0";
 $sql	 .=" AND cast_id='{$c_id}'";
 $sql	 .=" ORDER BY sort";

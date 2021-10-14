@@ -7,9 +7,9 @@ ini_set('error_reporting', E_ALL);
 $ss=$_REQUEST["ss"];
 
 if($ss){
-	$sql	 ="SELECT S.id, S.ssid, S.cast_id, S.customer_id, S.del, S.date, C.genji, U.block  FROM wp01_0ssid AS S";
-	$sql	.=" LEFT JOIN wp01_0cast AS C ON C.id=S.cast_id";
-	$sql	.=" LEFT JOIN wp01_0customer AS U ON U.id=S.customer_id";
+	$sql	 ="SELECT S.id, S.ssid, S.cast_id, S.customer_id, S.del, S.date, C.genji, U.block  FROM wp00000_ssid AS S";
+	$sql	.=" LEFT JOIN wp00000_cast AS C ON C.id=S.cast_id";
+	$sql	.=" LEFT JOIN wp00000_customer AS U ON U.id=S.customer_id";
 	$sql	.=" WHERE ssid='{$ss}'";
 	$sql	.=" ORDER BY S.id DESC";
 	$sql	.=" LIMIT 1";

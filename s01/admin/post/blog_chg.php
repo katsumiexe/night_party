@@ -18,12 +18,12 @@ $img_del		=$_POST["img_del"];
 
 
 if($del == 4){
-	$sql="UPDATE wp01_0posts SET ";
+	$sql="UPDATE wp00000_posts SET ";
 	$sql.="status='4'";
 	$sql.=" WHERE id='{$id}'";
 }else{
 
-	$sql="UPDATE wp01_0posts SET ";
+	$sql="UPDATE wp00000_posts SET ";
 	$sql.="view_date='{$date}',";
 	$sql.="status='{$status}',";
 	$sql.="title='{$title}',";

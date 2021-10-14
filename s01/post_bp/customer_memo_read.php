@@ -6,7 +6,7 @@ include_once('../library/sql_post.php');
 
 $c_id		=$_POST["c_id"];
 
-$sql	 ="SELECT * FROM wp01_0customer_memo";
+$sql	 ="SELECT * FROM wp00000_customer_memo";
 $sql	 .=" WHERE del=0";
 $sql	 .=" AND customer_id='{$c_id}'";
 $sql	 .=" AND `log` IS NOT NULL";

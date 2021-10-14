@@ -38,8 +38,8 @@ if($c_s ==0){
 		$app_set.=" OR cast_status =4";
 	}
 
-	$sql	 ="SELECT id,staff_id,genji,genji_kana, cast_sort, `group`, ctime, login_id,cast_status,name,kana,cast_ribbon, S.mail FROM wp01_0staff AS S";
-	$sql	.=" INNER JOIN wp01_0cast AS C ON S.staff_id=C.id";
+	$sql	 ="SELECT id,staff_id,genji,genji_kana, cast_sort, `group`, ctime, login_id,cast_status,name,kana,cast_ribbon, S.mail FROM wp00000_staff AS S";
+	$sql	.=" INNER JOIN wp00000_cast AS C ON S.staff_id=C.id";
 	$sql	.=" WHERE (cast_status IS NULL";
 	$sql	.=$app_set;
 	$sql	.=")";
@@ -70,8 +70,8 @@ if($c_s ==0){
 	}
 
 }else{
-	$sql	 ="SELECT id, staff_id, name, kana, mail, tel, `group` FROM wp01_0staff AS S";
-	$sql	.=" LEFT JOIN wp01_0cast AS C ON S.staff_id=C.id";
+	$sql	 ="SELECT id, staff_id, name, kana, mail, tel, `group` FROM wp00000_staff AS S";
+	$sql	.=" LEFT JOIN wp00000_cast AS C ON S.staff_id=C.id";
 	$sql	.=" WHERE S.del=0";
 	$sql	.=" ORDER BY staff_id DESC";
 	if($result = mysqli_query($mysqli,$sql)){
@@ -87,7 +87,7 @@ if($c_s ==0){
 		}
 	}
 }
-	$sql	 ="SELECT * FROM wp01_0tag";
+	$sql	 ="SELECT * FROM wp00000_tag";
 	$sql	.=" WHERE del=0";
 	$sql	.=" and tag_group='cast_group' OR tag_group='ribbon'";
 	$sql	.=" ORDER BY sort ASC";

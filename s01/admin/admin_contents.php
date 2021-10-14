@@ -42,13 +42,13 @@ if($event_set_id){
 	$event_key		=$_POST["event_key"];
 
 	if($event_set_id == "new"){
-		$sql	 ="INSERT INTO wp01_0contents(`date`,`display_date`,`event_date`,`sort`,`page`,`category`,`title`,`contents`,`contents_key`,`tag`)";
+		$sql	 ="INSERT INTO wp00000_contents(`date`,`display_date`,`event_date`,`sort`,`page`,`category`,`title`,`contents`,`contents_key`,`tag`)";
 		$sql	.=" VALUES('{$now}','{$display_date}','{$event_date}','0','{$post_id}','{$category}','{$event_title}','{$event_contents}','{$event_key}','{$event_tag}')";
 		mysqli_query($mysqli,$sql);
 		$tmp_auto=mysqli_insert_id($mysqli);
 
 	}else{
-		$sql	 ="UPDATE wp01_0contents SET";
+		$sql	 ="UPDATE wp00000_contents SET";
 		$sql	.=" `title`='{$event_title}',";
 		$sql	.=" `event_date`='{$event_date}',";
 		$sql	.=" `display_date`='{$display_date}',";
@@ -96,14 +96,14 @@ echo $img_url;
 	$page_title	=$_POST["page_title"];
 	$page_key	=$_POST["page_key"];
 
-	$sql	 ="INSERT INTO  wp01_0contents (`date`,`page`,`title`,`contents`,`contents_key`)";
+	$sql	 ="INSERT INTO  wp00000_contents (`date`,`page`,`title`,`contents`,`contents_key`)";
 	$sql	.=" VALUES('{$now}','{$post_id}','{$page_title}','{$page_log}','{$page_key}')";
 	mysqli_query($mysqli,$sql);
 }
 
 
 if($post_id == "news"){
-	$sql	 ="SELECT * FROM wp01_0contents";
+	$sql	 ="SELECT * FROM wp00000_contents";
 	$sql	.=" WHERE page='{$post_id}'";
 	$sql	.=" AND status<4";
 	$sql	.=" ORDER BY event_date DESC";
@@ -127,7 +127,7 @@ if($post_id == "news"){
 
 
 
-	$sql	 ="SELECT * FROM wp01_0tag";
+	$sql	 ="SELECT * FROM wp00000_tag";
 	$sql	.=" WHERE tag_group='news'";
 	$sql	.=" AND del=0";
 	$sql	.=" ORDER BY sort ASC";
@@ -140,7 +140,7 @@ if($post_id == "news"){
 
 }if($post_id == "event"){
 
-	$sql	 ="SELECT * FROM wp01_0contents";
+	$sql	 ="SELECT * FROM wp00000_contents";
 	$sql	.=" WHERE page='{$post_id}'";
 	$sql	.=" AND status<4";
 	$sql	.=" ORDER BY sort ASC";
@@ -170,7 +170,7 @@ if($post_id == "news"){
 	}
 
 }elseif($post_id == "info"){
-	$sql	 ="SELECT * FROM wp01_0contents";
+	$sql	 ="SELECT * FROM wp00000_contents";
 	$sql	.=" WHERE page='{$post_id}'";
 	$sql	.=" AND status<4";
 	$sql	.=" ORDER BY sort ASC";
@@ -197,7 +197,7 @@ if($post_id == "news"){
 	}
 
 }elseif($post_id == "recruit"){
-	$sql	 ="SELECT * FROM wp01_0contents";
+	$sql	 ="SELECT * FROM wp00000_contents";
 	$sql	.=" WHERE page='{$post_id}'";
 	$sql	.=" AND status<4";
 	$sql	.=" ORDER BY sort ASC";
@@ -237,7 +237,7 @@ if($post_id == "news"){
 
 }else{
 
-	$sql	 ="SELECT * FROM wp01_0contents";
+	$sql	 ="SELECT * FROM wp00000_contents";
 	$sql	.=" WHERE page='{$post_id}'";
 	$sql	.=" AND status=0";
 	$sql	.=" ORDER BY date DESC";

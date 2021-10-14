@@ -29,7 +29,7 @@ $ana_y_m=substr($ana_ym,0,4)."-".substr($ana_ym,4,2);
 	$ana_t		=date("t",strtotime($ana_ym."01"));
 	$week=array("日","月","火","水","木","金","土");
 
-	$sql ="SELECT * FROM wp01_0sch_table";
+	$sql ="SELECT * FROM wp00000_sch_table";
 	$sql.=" ORDER BY sort ASC";
 	if($result = mysqli_query($mysqli,$sql)){
 		while($row = mysqli_fetch_assoc($result)){
@@ -39,7 +39,7 @@ $ana_y_m=substr($ana_ym,0,4)."-".substr($ana_ym,4,2);
 		}
 	}
 
-	$sql	 ="SELECT * FROM wp01_0schedule";
+	$sql	 ="SELECT * FROM wp00000_schedule";
 	$sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 	$sql	.=" AND sche_date LIKE '{$ana_ym}%'";
 	$sql   	.=" ORDER BY id ASC";
@@ -88,9 +88,9 @@ $ana_y_m=substr($ana_ym,0,4)."-".substr($ana_ym,4,2);
 	}
 
 //■------------------
-	$sql ="SELECT log_id, sdate, SUM(log_price) AS pts, nickname,name, A.days, customer_id FROM wp01_0cast_log AS A ";
-	$sql.=" LEFT JOIN wp01_0cast_log_list AS B ON B.master_id=A.log_id";
-	$sql.=" LEFT JOIN wp01_0customer AS C ON A.customer_id=C.id";
+	$sql ="SELECT log_id, sdate, SUM(log_price) AS pts, nickname,name, A.days, customer_id FROM wp00000_cast_log AS A ";
+	$sql.=" LEFT JOIN wp00000_cast_log_list AS B ON B.master_id=A.log_id";
+	$sql.=" LEFT JOIN wp00000_customer AS C ON A.customer_id=C.id";
 
 	$sql.=" WHERE A.cast_id='{$cast_data["id"]}'";
 	$sql.=" AND A.days LIKE '{$ana_y_m}%'";
@@ -183,9 +183,9 @@ $ana_y_m=substr($ana_ym,0,4)."-".substr($ana_ym,4,2);
 
 
 /*-----------------------------------------------------------------------------*/
-	$sql ="SELECT count(log_id) AS cnt, sum(pts) AS kin, sum(log_price) AS bk,nickname,name,L.customer_id FROM wp01_0cast_log AS L ";
-	$sql.=" LEFT JOIN wp01_0cast_log_list AS S ON L.log_id=S.master_id";
-	$sql.=" LEFT JOIN wp01_0customer AS C ON L.customer_id=C.id";
+	$sql ="SELECT count(log_id) AS cnt, sum(pts) AS kin, sum(log_price) AS bk,nickname,name,L.customer_id FROM wp00000_cast_log AS L ";
+	$sql.=" LEFT JOIN wp00000_cast_log_list AS S ON L.log_id=S.master_id";
+	$sql.=" LEFT JOIN wp00000_customer AS C ON L.customer_id=C.id";
 
 	$sql.=" WHERE L.del=0";
 	$sql.=" AND (S.del=0 OR S.del IS NULL)";
@@ -223,8 +223,8 @@ $ana_y_m=substr($ana_ym,0,4)."-".substr($ana_ym,4,2);
 	$dat["html"].="</div>";
 
 /*-----------------------------------------------------------------------------*/
-	$sql ="SELECT log_icon, log_comm, log_price, log_color, count(log_id) AS cnt, sum(log_price) AS bk FROM wp01_0cast_log_list AS S ";
-	$sql.=" LEFT JOIN wp01_0cast_log AS L ON L.log_id=S.master_id";
+	$sql ="SELECT log_icon, log_comm, log_price, log_color, count(log_id) AS cnt, sum(log_price) AS bk FROM wp00000_cast_log_list AS S ";
+	$sql.=" LEFT JOIN wp00000_cast_log AS L ON L.log_id=S.master_id";
 	$sql.=" WHERE L.del=0";
 	$sql.=" AND S.del=0";
 	$sql.=" AND S.log_comm<>''";

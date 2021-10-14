@@ -45,7 +45,7 @@ $sc_ed=date("Ym01",strtotime($c_month)+3456000);
 
 //---------------------------------------------------------------
 $b_month=substr($c_month,5,2);
-$sql	 ="SELECT * FROM wp01_0customer";
+$sql	 ="SELECT * FROM wp00000_customer";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND MID(birth_day,5,2)='{$b_month}'";
 $sql	.=" AND del='0'";
@@ -66,7 +66,7 @@ foreach($birth_hidden as $a1 => $a2){
 	$birth_app.="<input class=\"cal_b_{$birth_m}{$a1}\" type=\"hidden\" value=\"{$a2}\">";
 }
 //---------------------------------------------------------------
-$sql	 ="SELECT * FROM wp01_0schedule";
+$sql	 ="SELECT * FROM wp00000_schedule";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND sche_date>='{$sc_st}'";
 $sql	.=" AND sche_date<'{$sc_ed}'";
@@ -87,7 +87,7 @@ if($result = mysqli_query($mysqli,$sql)){
 $st_blog=$c_month." 00:00:00";
 $ed_blog=date("Y-m-01 00:00:00",strtotime($st_blog)+3456000);
 
-$sql	 ="SELECT id,view_date,status FROM wp01_0posts";
+$sql	 ="SELECT id,view_date,status FROM wp00000_posts";
 $sql	.=" WHERE cast='{$cast_data["id"]}'";
 $sql	.=" AND status<2";
 $sql	.=" AND view_date>='{$st_blog}'";
@@ -103,7 +103,7 @@ if($result = mysqli_query($mysqli,$sql)){
 $cal["test"]=$sql;
 
 //---------------------------------------------------------------
-$sql	 ="SELECT log,date_8 FROM wp01_0schedule_memo";
+$sql	 ="SELECT log,date_8 FROM wp00000_schedule_memo";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND date_8>='{$sc_st}'";
 $sql	.=" AND date_8<'{$sc_ed}'";

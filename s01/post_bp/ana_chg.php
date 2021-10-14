@@ -3,7 +3,7 @@ include_once('../library/sql_post.php');
 
 $t_month	=$_POST["t_month"];
 
-$sql	 ="SELECT * FROM wp01_0schedule";
+$sql	 ="SELECT * FROM wp00000_schedule";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND sche_date LIKE '{$t_month}%'";
 $sql   	.=" ORDER BY id ASC";
@@ -46,7 +46,7 @@ if(is_array($ana_time)){
 }
 
 //■------------------
-$sql ="SELECT * FROM wp01_0cast_log_table";
+$sql ="SELECT * FROM wp00000_cast_log_table";
 $sql.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql.=" ORDER BY sort ASC";
 
@@ -58,9 +58,9 @@ if($result = mysqli_query($mysqli,$sql)){
 	$log_list_cnt=substr($log_list_cnt,0,-1);
 }
 
-$sql ="SELECT log_id, sdate, SUM(log_price) AS pts, nickname,name, customer_id FROM wp01_0cast_log AS A ";
-$sql.=" LEFT JOIN wp01_0cast_log_list AS B ON B.master_id=A.log_id";
-$sql.=" LEFT JOIN wp01_0customer AS C ON A.customer_id=C.id";
+$sql ="SELECT log_id, sdate, SUM(log_price) AS pts, nickname,name, customer_id FROM wp00000_cast_log AS A ";
+$sql.=" LEFT JOIN wp00000_cast_log_list AS B ON B.master_id=A.log_id";
+$sql.=" LEFT JOIN wp00000_customer AS C ON A.customer_id=C.id";
 
 $sql.=" WHERE A.cast_id='{$cast_data["id"]}'";
 $sql.=" AND A.sdate LIKE '{$ana_ym}%'";

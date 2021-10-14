@@ -5,7 +5,7 @@ include_once('../../library/sql_post.php');
 	$staff	=$_POST['staff'];
 	$radio	=$_POST['radio'];
 
-	$app ="UPDATE `wp01_0contact_list` SET";
+	$app ="UPDATE `wp00000_contact_list` SET";
 	$app.=" res_log='{$log}',";
 	$app.=" res_radio='{$radio}',";
 	$app.=" staff='{$staff}',";

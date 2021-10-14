@@ -12,13 +12,13 @@ $st=substr($month,0,4)."-".substr($month,4,2)."-01 00:00:00";
 $ed=date("Y-m-01 00:00:00",strtotime($st)+3456000);
 
 
-$sql	 ="SELECT * FROM wp01_0notice";
-$sql	.=" LEFT JOIN wp01_0notice_ck ON wp01_0notice.id=wp01_0notice_ck.notice_id";
+$sql	 ="SELECT * FROM wp00000_notice";
+$sql	.=" LEFT JOIN wp00000_notice_ck ON wp00000_notice.id=wp00000_notice_ck.notice_id";
 $sql	.=" WHERE del='0'";
 $sql	.=" AND cast_id='{$cast_data["id"]}'";
 $sql	.=" AND status>0";
-$sql	.=" AND wp01_0notice.date BETWEEN '{$st}' AND '{$ed}'";
-$sql	.=" ORDER BY wp01_0notice.date DESC";
+$sql	.=" AND wp00000_notice.date BETWEEN '{$st}' AND '{$ed}'";
+$sql	.=" ORDER BY wp00000_notice.date DESC";
 $sql	.=" LIMIT {$page}, 6";
 
 if($result = mysqli_query($mysqli,$sql)){

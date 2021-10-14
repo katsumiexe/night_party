@@ -3,17 +3,17 @@ include_once('./library/sql.php');
 /*
 $st=20211001;
 $cnt=31;
-$sql_a=" INSERT INTO wp01_0schedule(`date`,`sche_date`,`cast_id`,`stime`,`etime`) VALUES";
+$sql_a=" INSERT INTO wp00000_schedule(`date`,`sche_date`,`cast_id`,`stime`,`etime`) VALUES";
 
 
-$sql=" SELECT * FROM wp01_0sch_table";
+$sql=" SELECT * FROM wp00000_sch_table";
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
 		$t_table[$row["in_out"]][$row["sort"]]=$row["time"];
 	}
 }
 
-$sql=" SELECT id, genji FROM wp01_0cast";
+$sql=" SELECT id, genji FROM wp00000_cast";
 $sql.=" WHERE cast_status=0";
 $sql.=" AND id>0";
 $sql.=" AND genji IS NOT NULL";
@@ -40,7 +40,7 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 */
 
-$sql="INSERT INTO wp01_0posts ";
+$sql="INSERT INTO wp00000_posts ";
 $sql.="(`date`, `view_date`, `title`, `log`, `cast`, `tag`, `img`, `status`)";
 $sql.="VALUES";
 

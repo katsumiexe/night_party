@@ -66,7 +66,7 @@ unlink($tmpfname);
 if($data) $img_64 = base64_encode($data);
 
 if($task=="chg"){
-	$sql ="UPDATE wp01_0customer SET";
+	$sql ="UPDATE wp00000_customer SET";
 	$sql .=" `face`='{$img_64}'";
 	$sql .=" WHERE `id`='{$post_id}'";
 	mysqli_query($mysqli,$sql);

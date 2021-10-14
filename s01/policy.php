@@ -1,7 +1,7 @@
 <?php
 include_once('./library/sql.php');
 
-$sql	 ="SELECT * FROM wp01_0contents";
+$sql	 ="SELECT * FROM wp00000_contents";
 $sql	.=" WHERE page='policy'";
 $sql	.=" AND status=0";
 $sql	.=" LIMIT 1";

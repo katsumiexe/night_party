@@ -5,7 +5,7 @@ $base_day	=$_POST['base_day']+86400*7;
 $sel_in		=$_POST['sel_in'];
 $sel_out	=$_POST['sel_out'];
 
-$sql_log="INSERT INTO wp01_0schedule ";
+$sql_log="INSERT INTO wp00000_schedule ";
 $sql_log.="(sche_date,date,cast_id,stime,etime)";
 $sql_log.="VALUES";
 

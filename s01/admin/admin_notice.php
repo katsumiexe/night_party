@@ -12,8 +12,8 @@ $notice_month	=$_POST["notice_month"];
 if(!$notice_month) $notice_month=date("Y-m");
 
 //■キャストリスト----
-$sql	 ="SELECT * FROM wp01_0staff AS S ";
-$sql	.=" LEFT JOIN wp01_0cast AS C ON S.staff_id=C.id";
+$sql	 ="SELECT * FROM wp00000_staff AS S ";
+$sql	.=" LEFT JOIN wp00000_cast AS C ON S.staff_id=C.id";
 $sql	.=" WHERE S.del=0";
 $sql	.=" ORDER BY S.sort ASC";
 
@@ -32,7 +32,7 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 //■グループ名・カテゴリ名----
-$sql	 ="SELECT id, tag_group, tag_name, sort FROM wp01_0tag";
+$sql	 ="SELECT id, tag_group, tag_name, sort FROM wp00000_tag";
 $sql	.=" WHERE del=0";
 $sql	.=" AND( tag_group='cast_group' OR tag_group='notice_category')";
 $sql	.=" ORDER BY sort ASC";
@@ -60,7 +60,7 @@ if($_POST["notice_set"]){
 	$display_date		=substr($display_date,0,10)." ".substr($display_date,11,5).":00";
 	$cast_group=substr($cast_group,0,-1);
 	
-	$sql	 ="INSERT INTO wp01_0notice(`date`,`title`,`log`,`category`,`cast_group`)";
+	$sql	 ="INSERT INTO wp00000_notice(`date`,`title`,`log`,`category`,`cast_group`)";
 	$sql	 .=" VALUES('{$display_date}','{$notice_title}','{$notice_contents}','{$notice_category}','{$cast_group}')";
 	mysqli_query($mysqli,$sql);
 	$tmp_auto=mysqli_insert_id($mysqli);
@@ -74,12 +74,12 @@ if($_POST["notice_set"]){
 	}
 	$app_ck=substr($app_ck,0,-1);
 		
-	$sql	 ="INSERT INTO wp01_0notice_ck(`notice_id`,`cast_id`,`status`) VALUES ";
+	$sql	 ="INSERT INTO wp00000_notice_ck(`notice_id`,`cast_id`,`status`) VALUES ";
 	$sql	 .=$app_ck;
 	mysqli_query($mysqli,$sql);
 }
 
-$sql	 ="SELECT * FROM wp01_0notice";
+$sql	 ="SELECT * FROM wp00000_notice";
 $sql	.=" WHERE del=0";
 $sql	.=" AND date LIKE '{$notice_month}%'";
 $sql	.=" ORDER BY `date` DESC";
@@ -100,8 +100,8 @@ if($result = mysqli_query($mysqli,$sql)){
 			$row["log"]=str_replace("\n","<br>",$row["log"]);
 			$row["date"]=str_replace("-",".",substr($row["date"],0,16));
 
-			$sql	 ="SELECT id, genji, cast_group, K.status FROM wp01_0notice_ck AS K";
-			$sql	.=" LEFT JOIN  wp01_0cast AS C ON K.cast_id=C.id";
+			$sql	 ="SELECT id, genji, cast_group, K.status FROM wp00000_notice_ck AS K";
+			$sql	.=" LEFT JOIN  wp00000_cast AS C ON K.cast_id=C.id";
 			$sql	.=" WHERE C.del=0";
 			$sql	.=" AND notice_id={$row["id"]}";
 			if($result2 = mysqli_query($mysqli,$sql)){

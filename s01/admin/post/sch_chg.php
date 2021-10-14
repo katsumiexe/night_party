@@ -10,7 +10,7 @@ $sch_d		=$_POST["sch_d"];
 
 $cast_id	=$_POST["cast_id"];
 
-$sql="INSERT INTO wp01_0schedule ";
+$sql="INSERT INTO wp00000_schedule ";
 $sql.="(`date`,`sche_date`,cast_id,stime,etime,signet) VALUES";
 
 foreach($chg_s as $a1 => $a2){

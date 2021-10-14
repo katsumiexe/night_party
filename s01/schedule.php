@@ -2,7 +2,7 @@
 include_once('./library/sql.php');
 $sort=array();
 
-$sql  ="SELECT id, tag_name, tag_icon,sort FROM wp01_0tag ";
+$sql  ="SELECT id, tag_name, tag_icon,sort FROM wp00000_tag ";
 $sql .=" WHERE tag_group='ribbon'";
 $sql.=" AND del='0'";
 
@@ -21,7 +21,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql=" SELECT id, genji,ctime,ribbon_use,cast_ribbon FROM wp01_0cast";
+$sql=" SELECT id, genji,ctime,ribbon_use,cast_ribbon FROM wp00000_cast";
 $sql.=" WHERE cast_status=0";
 $sql.=" AND id>0";
 $sql.=" AND genji IS NOT NULL";
@@ -63,7 +63,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql ="SELECT * FROM wp01_0sch_table";
+$sql ="SELECT * FROM wp00000_sch_table";
 $sql.=" ORDER BY sort ASC";
 
 if($result = mysqli_query($mysqli,$sql)){
@@ -73,7 +73,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql=" SELECT stime, etime, cast_id FROM wp01_0schedule AS S";
+$sql=" SELECT stime, etime, cast_id FROM wp00000_schedule AS S";
 $sql.=" WHERE sche_date='{$day_8}'";
 $sql.=" ORDER BY S.id ASC";
 

@@ -15,9 +15,9 @@ if($cast_list){
 	$category=2;
 }
 
-$sql ="SELECT view_date, title, log, img, img_del, cast, genji,tag_name,tag_icon FROM wp01_0posts AS P";
-$sql.=" LEFT JOIN wp01_0cast AS C ON P.cast=C.id";
-$sql.=" LEFT JOIN wp01_0tag AS T ON P.tag=T.id";
+$sql ="SELECT view_date, title, log, img, img_del, cast, genji,tag_name,tag_icon FROM wp00000_posts AS P";
+$sql.=" LEFT JOIN wp00000_cast AS C ON P.cast=C.id";
+$sql.=" LEFT JOIN wp00000_tag AS T ON P.tag=T.id";
 $sql.=" WHERE P.status=0";
 $sql.=" AND C.cast_status<4";
 $sql.=" AND view_date<='{$now}'";
@@ -43,9 +43,9 @@ if($result = mysqli_query($mysqli,$sql)){
 	$blog["date"]=substr(str_replace("-",".",$blog["view_date"]),0,16);
 }
 
-$sql ="SELECT P.id, view_date, title, img, img_del, cast, genji,tag_name,tag_icon FROM wp01_0posts AS P";
-$sql.=" LEFT JOIN wp01_0cast AS C ON P.cast=C.id";
-$sql.=" LEFT JOIN wp01_0tag AS T ON P.tag=T.id";
+$sql ="SELECT P.id, view_date, title, img, img_del, cast, genji,tag_name,tag_icon FROM wp00000_posts AS P";
+$sql.=" LEFT JOIN wp00000_cast AS C ON P.cast=C.id";
+$sql.=" LEFT JOIN wp00000_tag AS T ON P.tag=T.id";
 $sql.=" WHERE P.status=0";
 $sql.=" AND C.cast_status<4";
 $sql.=" AND view_date<='{$now}'";
@@ -80,7 +80,7 @@ if($result = mysqli_query($mysqli,$sql)){
 
 
 
-$sql ="SELECT * FROM wp01_0sch_table";
+$sql ="SELECT * FROM wp00000_sch_table";
 $sql.=" ORDER BY sort ASC";
 
 if($result = mysqli_query($mysqli,$sql)){
@@ -93,7 +93,7 @@ if($result = mysqli_query($mysqli,$sql)){
 $t_day=date("Ymd",$day_time);
 $n_day=date("Ymd",$day_time+(86400*7));
 
-$sql	 ="SELECT * FROM wp01_0schedule";
+$sql	 ="SELECT * FROM wp00000_schedule";
 $sql	.=" WHERE sche_date BETWEEN '{$t_day}' AND '{$n_day}'";
 $sql	.=" AND cast_id='{$blog["cast"]}'";
 $sql	.=" ORDER BY id ASC";

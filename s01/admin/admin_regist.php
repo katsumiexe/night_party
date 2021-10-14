@@ -1,5 +1,5 @@
 <?
-$sql	 ="SELECT * FROM wp01_0charm_table";
+$sql	 ="SELECT * FROM wp00000_charm_table";
 $sql	.=" WHERE del=0";
 $sql	.=" AND view=0";
 $sql	.=" ORDER BY sort ASC";
@@ -10,7 +10,7 @@ if($res = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql	 ="SELECT * FROM wp01_0check_main";
+$sql	 ="SELECT * FROM wp00000_check_main";
 $sql	.=" WHERE del=0";
 $sql	.=" ORDER BY sort ASC";
 if($res1 = mysqli_query($mysqli,$sql)){
@@ -18,7 +18,7 @@ if($res1 = mysqli_query($mysqli,$sql)){
 		$ck_main[$res1_a["id"]]=$res1_a;
 	}
 
-	$sql	 ="SELECT * FROM wp01_0check_list";
+	$sql	 ="SELECT * FROM wp00000_check_list";
 	$sql	.=" WHERE del=0";
 	$sql	.=" ORDER BY host_id ASC, list_sort ASC";
 
@@ -29,7 +29,7 @@ if($res1 = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql	 ="SELECT * FROM wp01_0tag";
+$sql	 ="SELECT * FROM wp00000_tag";
 $sql	.=" WHERE del=0";
 $sql	.=" and tag_group='cast_group'";
 $sql	.=" ORDER BY sort ASC";
@@ -40,7 +40,7 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 
-$sql	 ="SELECT * FROM wp01_0tag";
+$sql	 ="SELECT * FROM wp00000_tag";
 $sql	.=" WHERE del=0";
 $sql	.=" and tag_group='ribbon'";
 $sql	.=" and sort>'3'";

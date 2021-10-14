@@ -1,7 +1,7 @@
 <?php
 include_once('./library/sql.php');
 
-$sql="SELECT * FROM wp01_0contents WHERE page='recruit' ORDER BY sort ASC";
+$sql="SELECT * FROM wp00000_contents WHERE page='recruit' ORDER BY sort ASC";
 
 if($result = mysqli_query($mysqli,$sql)){
 	while($raw= mysqli_fetch_assoc($result)){
@@ -21,7 +21,7 @@ $ck_jq["1"]="nec_ck";
 $ck_re["1"]="required";
 
 if($dat_config["form"]){
-	$sql="SELECT * FROM wp01_0contact_table";
+	$sql="SELECT * FROM wp00000_contact_table";
 	$sql.=" WHERE id='{$dat_config["form"]["contents_key"]}'";
 
 	if($result = mysqli_query($mysqli,$sql)){

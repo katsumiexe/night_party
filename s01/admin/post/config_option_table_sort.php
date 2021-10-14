@@ -7,7 +7,7 @@ foreach($list as $a2){
 	$n++;
 	$tmp=str_replace("tbl","",$a2);
 
-	$sql="UPDATE `wp01_0check_main` SET";
+	$sql="UPDATE `wp00000_check_main` SET";
 	$sql.=" sort='{$n}'";
 	$sql.=" WHERE id={$tmp}";
 	mysqli_query($mysqli,$sql);

@@ -16,7 +16,7 @@ $chglist	=$_POST["chglist"];
 for($n=0;$n<count($chglist);$n++){
 	$n1=$n+1;
 	$tmp=str_replace("i","",$chglist[$n]);
-	$sql=" UPDATE wp01_0cast_log_table SET";
+	$sql=" UPDATE wp00000_cast_log_table SET";
 	$sql.=" item_name='{$item_name[$n]}',";
 	$sql.=" item_icon='{$item_icon[$n]}',";
 	$sql.=" item_color='{$item_color[$n]}',";

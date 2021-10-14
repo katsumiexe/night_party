@@ -20,7 +20,7 @@ if($send==1){
 }else{
 	$sid			=$_POST['sid'];
 
-	$sql	 ="SELECT cast_id, customer_id FROM wp01_0ssid";
+	$sql	 ="SELECT cast_id, customer_id FROM wp00000_ssid";
 	$sql	.=" WHERE ssid='{$sid}'";
 	$sql	.=" LIMIT 1";
 	if($result = mysqli_query($mysqli,$sql)){
@@ -31,7 +31,7 @@ if($send==1){
 }
 
 //----------------------------------------
-$sql ="SELECT * FROM wp01_0encode"; 
+$sql ="SELECT * FROM wp00000_encode"; 
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
 		$enc[$row["key"]]	=$row["value"];
@@ -59,7 +59,7 @@ $n5=rand(1, 9);
 $ssid_key=$rnd[$n0].$rnd[$n1].$rnd[$n2].$rnd[$n3].$rnd[$n4].$dec[$n5][$send];
 
 if($send==1){
-	$sql	 ="INSERT INTO wp01_0ssid";
+	$sql	 ="INSERT INTO wp00000_ssid";
 	$sql	.="(ssid,cast_id,customer_id,`date`,`mail`)";
 	$sql	.="VALUES";
 	$sql	.="('{$ssid_key}','{$cast_id}','{$customer_id}','{$now}','{$customer_mail}')";
@@ -109,7 +109,7 @@ if($img_code){
 	$link_url="<img src=\"{$link}\" class=\"mail_box_stamp\">";
 }
 
-$sql	 ="INSERT INTO wp01_0easytalk";
+$sql	 ="INSERT INTO wp00000_easytalk";
 $sql	.="(send_date,customer_id,cast_id,send_flg,log,img)";
 $sql	.="VALUES";
 $sql	.="('{$now}','{$customer_id}','{$cast_id}','{$send}','{$log}','{$img_key}')";

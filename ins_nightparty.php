@@ -15,7 +15,7 @@ echo "key 　".$key."<br>\n";
 if($user && $pass && $key && $db && $dbn){
 $mysqli = mysqli_connect($db, $user, $pass, $dbn);
 if(!$mysqli){
-	$msg="接続エラー";
+	$msg="接続エラー!";
 	die("接続エラー");
 }
 echo "DB SETUP<br>\n";

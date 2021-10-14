@@ -10,7 +10,7 @@ if($_POST["id"]){
 	$dat		=explode("_",$_POST["id"]);
 	$app=" {$dat[0]}='{$dat[1]}'";
 
-	$sql	 ="UPDATE wp01_0customer SET";
+	$sql	 ="UPDATE wp00000_customer SET";
 	$sql	.=$app;
 	$sql	.=" WHERE id='{$c_id}'";
 	mysqli_query($mysqli,$sql);
@@ -18,7 +18,7 @@ if($_POST["id"]){
 
 }else{
 
-	$sql	 ="UPDATE wp01_0customer SET";
+	$sql	 ="UPDATE wp00000_customer SET";
 	$sql	.=" del=1";
 	$sql	.=" WHERE id='{$c_id}'";
 	mysqli_query($mysqli,$sql);
@@ -73,8 +73,8 @@ if($sel==1){
 }
 
 //■カスタマーソート
-$sql	 ="SELECT id, nickname,name,regist_date,birth_day,fav,c_group,face,tel,mail,twitter,insta,facebook,line,web,block,MAX(L.sdate) AS h_date FROM wp01_0customer AS C";
-$sql	.=" LEFT JOIN wp01_0cast_log AS L ON C.id=L.customer_id";
+$sql	 ="SELECT id, nickname,name,regist_date,birth_day,fav,c_group,face,tel,mail,twitter,insta,facebook,line,web,block,MAX(L.sdate) AS h_date FROM wp00000_customer AS C";
+$sql	.=" LEFT JOIN wp00000_cast_log AS L ON C.id=L.customer_id";
 $sql	.=" WHERE C.cast_id='{$cast_data["id"]}'";
 $sql	.=" AND C.del=0";
 $sql	.=$app1;

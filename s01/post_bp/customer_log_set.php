@@ -21,17 +21,17 @@ $etime	=str_replace(":","",$_POST["local_ed"]);
 var_dump($_POST);
 
 if($del > 0){//■削除
-	$sql="DELETE FROM wp01_0cast_log WHERE log_id='{$del}'";
+	$sql="DELETE FROM wp00000_cast_log WHERE log_id='{$del}'";
 	mysqli_query($mysqli,$sql);
 
-	$sql="DELETE FROM wp01_0cast_log_list WHERE master_id='{$del}'";
+	$sql="DELETE FROM wp00000_cast_log_list WHERE master_id='{$del}'";
 	mysqli_query($mysqli,$sql);
 	exit();
 }
 
 
 if($chg){//■変更
-	$sql=" UPDATE wp01_0cast_log SET";
+	$sql=" UPDATE wp00000_cast_log SET";
 	$sql.=" sdate='{$sdate}',";
 	$sql.=" stime='{$stime}',";
 	$sql.=" etime='{$etime}',";
@@ -39,12 +39,12 @@ if($chg){//■変更
 	$sql.=" WHERE log_id='{$chg}'";
 	mysqli_query($mysqli,$sql);
 
-	$sql="DELETE FROM wp01_0cast_log_list WHERE master_id='{$chg}'";
+	$sql="DELETE FROM wp00000_cast_log_list WHERE master_id='{$chg}'";
 	mysqli_query($mysqli,$sql);
 	$tmp_auto=$chg;
 
 }else{//新規
-	$sql ="INSERT INTO wp01_0cast_log(`date`,`sdate`,`stime`,`etime`,`cast_id`,`customer_id`,`log`) VALUES ";
+	$sql ="INSERT INTO wp00000_cast_log(`date`,`sdate`,`stime`,`etime`,`cast_id`,`customer_id`,`log`) VALUES ";
 	$sql.=" ('{$now}','{$sdate}','{$stime}','{$etime}','{$cast_data["id"]}','{$c_id}','{$log}')";
 	mysqli_query($mysqli,$sql);
 	$tmp_auto=mysqli_insert_id($mysqli);
@@ -66,7 +66,7 @@ $dat.="</div>";
 $dat.="<div class=\"customer_log_list\">";
 
 if($item_name){
-	$sql_log ="INSERT INTO wp01_0cast_log_list(`master_id`,`log_color`,`log_icon`,`log_comm`,`log_price`) VALUES ";
+	$sql_log ="INSERT INTO wp00000_cast_log_list(`master_id`,`log_color`,`log_icon`,`log_comm`,`log_price`) VALUES ";
 
 	foreach($item_name as $a1 => $a2){
 		$item_color[$a1]=str_replace("rgb(","",$item_color[$a1]);

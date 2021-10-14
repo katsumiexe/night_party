@@ -33,8 +33,8 @@ if($fil_tag){
 if(!$post_filter) $post_filter="view_date";
 if(!$post_sort) $post_sort="DESC";
 
-$sql	 ="SELECT P.id,P.blog_id,P.date, P.view_date, P.title, P.log, P.cast, P.tag, P.img, P.img_del, P.status, C.genji,C.cast_status FROM wp01_0posts AS P";
-$sql	.=" LEFT JOIN wp01_0cast AS C ON P.cast=C.id";
+$sql	 ="SELECT P.id,P.blog_id,P.date, P.view_date, P.title, P.log, P.cast, P.tag, P.img, P.img_del, P.status, C.genji,C.cast_status FROM wp00000_posts AS P";
+$sql	.=" LEFT JOIN wp00000_cast AS C ON P.cast=C.id";
 $sql	.=" WHERE P.status<4 ";
 $sql	.=" AND P.log <>''";
 $sql	.=" AND P.title <>''";
@@ -62,7 +62,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql	 ="SELECT tag_name,tag_icon,id FROM wp01_0tag";
+$sql	 ="SELECT tag_name,tag_icon,id FROM wp00000_tag";
 $sql	.=" WHERE tag_group='blog'";
 $sql	.=" AND del=0";
 $sql	.=" ORDER BY sort ASC";

@@ -17,8 +17,8 @@ $sel=$_POST["sel"]+0;
 
 $open_day=substr($admin_config["open_day"],0,4)."-".substr($admin_config["open_day"],4,2)."-".substr($admin_config["open_day"],6,2);
 
-$sql	 ="SELECT tag_name, tag, tag_icon, `display_date`,event_date, category, contents_key, title, contents FROM wp01_0contents";
-$sql	.=" LEFT JOIN wp01_0tag ON tag=wp01_0tag.id";
+$sql	 ="SELECT tag_name, tag, tag_icon, `display_date`,event_date, category, contents_key, title, contents FROM wp00000_contents";
+$sql	.=" LEFT JOIN wp00000_tag ON tag=wp00000_tag.id";
 $sql	.=" WHERE status<3";
 $sql	.=" AND display_date<'{$now}'";
 $sql	.=" AND `event_date`>='{$open_day}'";
@@ -44,7 +44,7 @@ if($res1 = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql	 ="SELECT * FROM wp01_0tag";
+$sql	 ="SELECT * FROM wp00000_tag";
 $sql	.=" WHERE tag_group='news'";
 $sql	.=" AND del=0";
 $sql	.=" ORDER BY sort ASC";

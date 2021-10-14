@@ -3,8 +3,8 @@ include_once('../library/sql_post.php');
 $c_id	=$_POST['c_id'];
 $n=0;
 
-$sql	 ="SELECT nickname,name,face,mail_id,send_date,watch_date,log,img_1 FROM wp01_0castmail AS M";
-$sql	.=" LEFT JOIN wp01_0customer AS C ON M.customer_id=C.id";
+$sql	 ="SELECT nickname,name,face,mail_id,send_date,watch_date,log,img_1 FROM wp00000_castmail AS M";
+$sql	.=" LEFT JOIN wp00000_customer AS C ON M.customer_id=C.id";
 $sql	.=" WHERE M.customer_id='{$c_id}' AND M.cast_id='{$cast_data["id"]}'";
 $sql	.=" AND M.del='0'";
 $sql	.=" ORDER BY mail_id DESC";
@@ -30,7 +30,7 @@ if($result = mysqli_query($mysqli,$sql)){
 $dat=array_reverse($row2);
 
 
-$sql	 ="UPDATE wp01_0castmail SET";
+$sql	 ="UPDATE wp00000_castmail SET";
 $sql	.=" watch_date='{$now}'";
 $sql	.=" WHERE customer_id='{$c_id}'";
 $sql	.=" AND cast_id='{$cast_data["id"]}'";

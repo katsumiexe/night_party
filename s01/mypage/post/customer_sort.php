@@ -13,7 +13,7 @@ if($fil>0){
 	$app1=" AND c_group={$fil}";
 }
 
-$sql ="SELECT * FROM wp01_0cast_config";
+$sql ="SELECT * FROM wp00000_cast_config";
 $sql.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql.=" ORDER BY id DESC";
 $sql.=" LIMIT 1";
@@ -22,14 +22,14 @@ $result = mysqli_query($mysqli,$sql);
 $c_sort = mysqli_fetch_assoc($result);
 
 if($c_sort["cast_id"]){
-	$sql="UPDATE wp01_0cast_config SET";
+	$sql="UPDATE wp00000_cast_config SET";
 	$sql.=" c_sort_main='{$sel}',";
 	$sql.=" c_sort_asc='{$asc}'";
 	$sql.=" WHERE cast_id='{$cast_data["id"]}'";
 	mysqli_query($mysqli,$sql);
 
 }else{
-	$sql="INSERT INTO wp01_0cast_config ";
+	$sql="INSERT INTO wp00000_cast_config ";
 	$sql.="(cast_id, c_sort_main, c_sort_asc)";
 	$sql.="VALUES";
 	$sql.="('{$cast_data["id"]}','{$sel}','{$asc}')";
@@ -81,8 +81,8 @@ if($sel==1){
 
 
 //■カスタマーソート
-$sql	 ="SELECT id, nickname,name,regist_date,birth_day,fav,c_group,face,tel,mail,twitter,insta,facebook,line,web,block,MAX(L.sdate) AS h_date FROM wp01_0customer AS C";
-$sql	.=" LEFT JOIN wp01_0cast_log AS L ON C.id=L.customer_id";
+$sql	 ="SELECT id, nickname,name,regist_date,birth_day,fav,c_group,face,tel,mail,twitter,insta,facebook,line,web,block,MAX(L.sdate) AS h_date FROM wp00000_customer AS C";
+$sql	.=" LEFT JOIN wp00000_cast_log AS L ON C.id=L.customer_id";
 $sql	.=" WHERE C.cast_id='{$cast_data["id"]}'";
 $sql	.=" AND C.del=0";
 $sql	.=$app1;

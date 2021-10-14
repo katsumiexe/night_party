@@ -2,8 +2,8 @@
 include_once('../../library/sql_admin.php');
 	$id		=$_POST['id'];
 
-$sql	 ="SELECT S.staff_id, S.mail, C.genji, C.login_id, C.login_pass FROM wp01_0staff AS S";
-$sql	.=" LEFT JOIN wp01_0cast AS C ON S.staff_id=C.id";
+$sql	 ="SELECT S.staff_id, S.mail, C.genji, C.login_id, C.login_pass FROM wp00000_staff AS S";
+$sql	.=" LEFT JOIN wp00000_cast AS C ON S.staff_id=C.id";
 $sql	.=" WHERE staff_id='{$id}'";
 $sql	.=" LIMIT 1";
 

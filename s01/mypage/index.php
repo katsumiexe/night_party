@@ -77,7 +77,7 @@ if($cast_page == 1){
 	$page_title="トップページ";
 }
 
-$sql ="SELECT * FROM wp01_0cast_config";
+$sql ="SELECT * FROM wp00000_cast_config";
 $sql.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql.=" ORDER BY id DESC";
 $sql.=" LIMIT 1";
@@ -129,7 +129,7 @@ if($result = mysqli_query($mysqli,$sql)){
 
 /*--■スケジュール--*/
 $tmp_today[$day_8]="cc8";
-$sql ="SELECT * FROM wp01_0sch_table";
+$sql ="SELECT * FROM wp00000_sch_table";
 $sql.=" ORDER BY sort ASC";
 
 if($result = mysqli_query($mysqli,$sql)){
@@ -141,7 +141,7 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 //■カレンダー　スケジュール
-$sql	 ="SELECT * FROM wp01_0schedule";
+$sql	 ="SELECT * FROM wp00000_schedule";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND sche_date BETWEEN '{$month_st}' AND '{$month_ed}'";
 $sql   	.=" ORDER BY id ASC";
@@ -206,7 +206,7 @@ if(is_array($ana_time)){
 }
 
 //■------------------
-$sql ="SELECT * FROM wp01_0cast_log_table";
+$sql ="SELECT * FROM wp00000_cast_log_table";
 $sql.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql.=" ORDER BY sort ASC";
 
@@ -223,9 +223,9 @@ if($result = mysqli_query($mysqli,$sql)){
 
 $ana_y_m=substr($ana_ym,0,4)."-".substr($ana_ym,4,2);
 
-$sql ="SELECT log_id, sdate, SUM(log_price) AS pts, nickname,name, A.days, customer_id FROM wp01_0cast_log AS A ";
-$sql.=" LEFT JOIN wp01_0cast_log_list AS B ON B.master_id=A.log_id";
-$sql.=" LEFT JOIN wp01_0customer AS C ON A.customer_id=C.id";
+$sql ="SELECT log_id, sdate, SUM(log_price) AS pts, nickname,name, A.days, customer_id FROM wp00000_cast_log AS A ";
+$sql.=" LEFT JOIN wp00000_cast_log_list AS B ON B.master_id=A.log_id";
+$sql.=" LEFT JOIN wp00000_customer AS C ON A.customer_id=C.id";
 
 $sql.=" WHERE A.cast_id='{$cast_data["id"]}'";
 $sql.=" AND A.days LIKE '{$ana_y_m}%'";
@@ -251,9 +251,9 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql ="SELECT count(log_id) AS cnt, sum(pts) AS kin, sum(log_price) AS bk,nickname,name,L.customer_id FROM wp01_0cast_log AS L ";
-$sql.=" LEFT JOIN wp01_0cast_log_list AS S ON L.log_id=S.master_id";
-$sql.=" LEFT JOIN wp01_0customer AS C ON L.customer_id=C.id";
+$sql ="SELECT count(log_id) AS cnt, sum(pts) AS kin, sum(log_price) AS bk,nickname,name,L.customer_id FROM wp00000_cast_log AS L ";
+$sql.=" LEFT JOIN wp00000_cast_log_list AS S ON L.log_id=S.master_id";
+$sql.=" LEFT JOIN wp00000_customer AS C ON L.customer_id=C.id";
 
 $sql.=" WHERE L.del=0";
 $sql.=" AND (S.del=0 OR S.del IS NULL)";
@@ -273,8 +273,8 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 
-$sql ="SELECT log_icon, log_comm, log_price, log_color, count(log_id) AS cnt, sum(log_price) AS bk FROM wp01_0cast_log_list AS S ";
-$sql.=" LEFT JOIN wp01_0cast_log AS L ON L.log_id=S.master_id";
+$sql ="SELECT log_icon, log_comm, log_price, log_color, count(log_id) AS cnt, sum(log_price) AS bk FROM wp00000_cast_log_list AS S ";
+$sql.=" LEFT JOIN wp00000_cast_log AS L ON L.log_id=S.master_id";
 $sql.=" WHERE L.del=0";
 $sql.=" AND S.del=0";
 $sql.=" AND L.days LIKE '{$ana_y_m}%'";
@@ -301,7 +301,7 @@ for($n=$ana_ed;$n>$ana_st;$n--){
 }
 
 //■カレンダー　メモ
-$sql	 ="SELECT * FROM wp01_0schedule_memo";
+$sql	 ="SELECT * FROM wp00000_schedule_memo";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND date_8>='{$month_st}'";
 $sql	.=" AND date_8<'{$month_ed}'";
@@ -320,7 +320,7 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 //■カレンダー　ブログカウント
-$sql	 ="SELECT * FROM wp01_0posts";
+$sql	 ="SELECT * FROM wp00000_posts";
 $sql	.=" WHERE cast='{$cast_data["id"]}'";
 $sql	.=" AND status='0'";
 $sql	.=" AND view_date>='{$calendar[0]}'";
@@ -334,8 +334,8 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 //■カスタマーソート
-$sql	 ="SELECT id, nickname,name,regist_date,birth_day,fav,c_group,face,tel,mail,twitter,insta,facebook,line,web,block,MAX(L.date) AS h_date FROM wp01_0customer AS C";
-$sql	.=" LEFT JOIN wp01_0cast_log AS L ON C.id=L.customer_id";
+$sql	 ="SELECT id, nickname,name,regist_date,birth_day,fav,c_group,face,tel,mail,twitter,insta,facebook,line,web,block,MAX(L.date) AS h_date FROM wp00000_customer AS C";
+$sql	.=" LEFT JOIN wp00000_cast_log AS L ON C.id=L.customer_id";
 $sql	.=" WHERE C.cast_id='{$cast_data["id"]}'";
 $sql	.=" AND C.del=0";
 $sql	.=" GROUP BY C.id";
@@ -458,13 +458,13 @@ for($n=0;$n<3;$n++){
 
 $tmp=date("Y-m-01 00:00:00",strtotime($day_month)+3456000);
 
-$sql	 ="SELECT * FROM wp01_0notice";
-$sql	.=" LEFT JOIN wp01_0notice_ck ON wp01_0notice.id=wp01_0notice_ck.notice_id";
+$sql	 ="SELECT * FROM wp00000_notice";
+$sql	.=" LEFT JOIN wp00000_notice_ck ON wp00000_notice.id=wp00000_notice_ck.notice_id";
 $sql	.=" WHERE del='0'";
 $sql	.=" AND cast_id='{$cast_data["id"]}'";
 $sql	.=" AND status>0";
 $sql	.=" AND date between '{$day_month}' AND '{$tmp}'";
-$sql	.=" ORDER BY wp01_0notice.date DESC";
+$sql	.=" ORDER BY wp00000_notice.date DESC";
 $sql	.=" LIMIT 6";
 
 if($result = mysqli_query($mysqli,$sql)){
@@ -481,7 +481,7 @@ if($notice_count>5){
 
 //$notice_prev=" notice_prev";
 
-$sql	 ="SELECT * FROM wp01_0customer_item";
+$sql	 ="SELECT * FROM wp00000_customer_item";
 $sql	.=" WHERE del='0'";
 
 if($result = mysqli_query($mysqli,$sql)){
@@ -491,7 +491,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql	 ="SELECT * FROM wp01_0customer_group";
+$sql	 ="SELECT * FROM wp00000_customer_group";
 $sql	.=" WHERE `del`='0'";
 $sql	.=" AND group_id='1'";
 $sql	.=" AND cast_id='{$cast_data["id"]}'";
@@ -505,7 +505,7 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 //■Blog------------------
-$sql ="SELECT * FROM wp01_0posts";
+$sql ="SELECT * FROM wp00000_posts";
 $sql.=" WHERE cast='{$cast_data["id"]}'";
 $sql.=" AND status<4";
 $sql.=" AND log <>''";
@@ -523,7 +523,7 @@ if($result = mysqli_query($mysqli,$sql)){
 			$row["status"]=1; 
 		}
 
-		$sql ="SELECT LEFT(`date`,10) AS t_date,COUNT(id) as cnt, value FROM wp01_0log";
+		$sql ="SELECT LEFT(`date`,10) AS t_date,COUNT(id) as cnt, value FROM wp00000_log";
 		$sql.=" WHERE value='{$row["id"]}'";
 		$sql.=" AND page='article.php'";
 		$sql.=" GROUP BY t_date, ua, ip";
@@ -543,7 +543,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql ="SELECT * FROM wp01_0tag";
+$sql ="SELECT * FROM wp00000_tag";
 $sql.=" WHERE tag_group='blog'";
 $sql.=" ORDER BY sort ASC";
 
@@ -554,9 +554,9 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 $sql	 ="SELECT nickname,name, M.mail_del, M.customer_id, C.mail,C.block, M.log, MAX(M.send_date) AS last_date,COUNT((M.send_flg = 2 and M.watch_date='0000-00-00 00:00:00') or null) AS r_count,face,M.send_flg";
-$sql	.=" FROM wp01_0easytalk AS M";
-$sql	.=" INNER JOIN wp01_0customer AS C ON M.customer_id=C.id AND C.cast_id=M.cast_id";
-$sql	.=" LEFT JOIN wp01_0easytalk AS M2 ON (M.customer_id = M2.customer_id AND M.send_date < M2.send_date)";
+$sql	.=" FROM wp00000_easytalk AS M";
+$sql	.=" INNER JOIN wp00000_customer AS C ON M.customer_id=C.id AND C.cast_id=M.cast_id";
+$sql	.=" LEFT JOIN wp00000_easytalk AS M2 ON (M.customer_id = M2.customer_id AND M.send_date < M2.send_date)";
 $sql	.=" WHERE M.cast_id='{$cast_data["id"]}'";
 $sql	.=" AND M2.send_date IS NULL";
 $sql	.=" AND C.del='0'";
@@ -595,7 +595,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql	 ="SELECT * FROM wp01_0easytalk_tmpl";
+$sql	 ="SELECT * FROM wp00000_easytalk_tmpl";
 $sql	 .=" WHERE cast_id={$cast_data["id"]}";
 $sql	.=" ORDER BY sort ASC";
 if($result = mysqli_query($mysqli,$sql)){

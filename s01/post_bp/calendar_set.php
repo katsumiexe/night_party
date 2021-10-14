@@ -48,7 +48,7 @@ $sc_ed=date("Ym01",strtotime($c_month)+3456000);
 
 //---------------------------------------------------------------
 $b_month=substr($c_month,4,5);
-$sql	 ="SELECT * FROM wp01_0customer";
+$sql	 ="SELECT * FROM wp00000_customer";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND birth_day LIKE '%{$b_month}%'";
 $sql	.=" AND del='0'";
@@ -70,7 +70,7 @@ foreach($birth_hidden as $a1 => $a2){
 }
 
 //---------------------------------------------------------------
-$sql	 ="SELECT * FROM wp01_0schedule";
+$sql	 ="SELECT * FROM wp00000_schedule";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND sche_date>='{$sc_st}'";
 $sql	.=" AND sche_date<'{$sc_ed}'";
@@ -114,7 +114,7 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 //---------------------------------------------------------------
-$sql	 ="SELECT * FROM wp01_0schedule_memo";
+$sql	 ="SELECT * FROM wp00000_schedule_memo";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND date_8>='{$sc_st}'";
 $sql	.=" AND date_8<'{$sc_ed}'";

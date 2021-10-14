@@ -7,7 +7,7 @@ foreach($list as $a2){
 	$n++;
 	$tmp=str_replace("tr_p_","",$a2);
 
-	$sql="UPDATE `wp01_0charm_table` SET";
+	$sql="UPDATE `wp00000_charm_table` SET";
 	$sql.=" sort='{$n}'";
 	$sql.=" WHERE id={$tmp}";
 	mysqli_query($mysqli,$sql);

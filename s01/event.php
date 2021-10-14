@@ -1,7 +1,7 @@
 <?php
 include_once('./library/sql.php');
 $post_id=$_REQUEST["post_id"];
-$sql	 ="SELECT * FROM wp01_0contents";
+$sql	 ="SELECT * FROM wp00000_contents";
 $sql	.=" WHERE status<4";
 $sql	.=" AND id='{$post_id}'";
 $sql	.=" LIMIT 1";

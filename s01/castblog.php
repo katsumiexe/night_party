@@ -18,7 +18,7 @@ if($blog_day) $month=substr($blog_day,0,6);
 if(!$month) $month=substr($day_8,0,6);
 
 //■カレンダーカウント
-$sql ="SELECT view_date FROM wp01_0posts";
+$sql ="SELECT view_date FROM wp00000_posts";
 $sql.=" WHERE status=0";
 $sql.=" AND view_date LIKE '".substr($month,0,4)."-".substr($month,4,2)."%'";
 $sql.=" AND view_date<='{$now}'";
@@ -31,8 +31,8 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 //■ブログ件数カウント
-$sql ="SELECT  COUNT(P.id) AS cnt FROM wp01_0posts AS P";
-$sql.=" LEFT JOIN wp01_0cast AS C ON P.cast=C.id";
+$sql ="SELECT  COUNT(P.id) AS cnt FROM wp00000_posts AS P";
+$sql.=" LEFT JOIN wp00000_cast AS C ON P.cast=C.id";
 
 $sql.=" WHERE status=0";
 $sql.=" AND view_date<='{$now}'";
@@ -58,8 +58,8 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 //■キャスト件数カウント
-$sql ="SELECT cast, genji, COUNT(wp01_0posts.id) AS cnt ,MAX(view_date) AS b_date FROM wp01_0posts";
-$sql.=" LEFT JOIN wp01_0cast ON wp01_0posts.cast=wp01_0cast.id";
+$sql ="SELECT cast, genji, COUNT(wp00000_posts.id) AS cnt ,MAX(view_date) AS b_date FROM wp00000_posts";
+$sql.=" LEFT JOIN wp00000_cast ON wp00000_posts.cast=wp00000_cast.id";
 $sql.=" WHERE status=0";
 $sql.=" AND cast_status=0";
 $sql.=" AND view_date<='{$now}'";
@@ -84,15 +84,15 @@ if($res = mysqli_query($mysqli,$sql)){
 }
 
 //■カテゴリ件数カウント
-$sql ="SELECT tag_name, tag_icon, wp01_0tag.id, COUNT(wp01_0posts.id) AS cnt FROM wp01_0tag";
-//$sql ="SELECT wp01_0posts.id AS pid, tag_name, tag_icon, wp01_0tag.id FROM wp01_0tag";
-$sql.=" LEFT JOIN wp01_0posts ON wp01_0tag.id=wp01_0posts.tag";
-$sql.=" LEFT JOIN wp01_0cast ON wp01_0posts.cast=wp01_0cast.id";
+$sql ="SELECT tag_name, tag_icon, wp00000_tag.id, COUNT(wp00000_posts.id) AS cnt FROM wp00000_tag";
+//$sql ="SELECT wp00000_posts.id AS pid, tag_name, tag_icon, wp00000_tag.id FROM wp00000_tag";
+$sql.=" LEFT JOIN wp00000_posts ON wp00000_tag.id=wp00000_posts.tag";
+$sql.=" LEFT JOIN wp00000_cast ON wp00000_posts.cast=wp00000_cast.id";
 $sql.=" WHERE tag_group='blog'";
 $sql.=" AND (status=0 OR status IS NULL)";
 $sql.=" AND (view_date<='{$now}' OR view_date IS NULL)";
 $sql.=" AND cast_status=0";
-$sql.=" GROUP BY wp01_0tag.id";
+$sql.=" GROUP BY wp00000_tag.id";
 $sql.=" ORDER BY sort ASC";
 //$sql.=" ORDER BY pid ASC";
 
@@ -141,9 +141,9 @@ if($pg_max<=5 && $pg_max>1){
 	$p_list.="</div>";
 }
 
-$sql ="SELECT P.id,view_date, title, img, img_del, cast, genji,tag_name,tag_icon FROM wp01_0posts AS P";
-$sql.=" LEFT JOIN wp01_0cast AS C ON P.cast=C.id";
-$sql.=" LEFT JOIN wp01_0tag AS T ON P.tag=T.id";
+$sql ="SELECT P.id,view_date, title, img, img_del, cast, genji,tag_name,tag_icon FROM wp00000_posts AS P";
+$sql.=" LEFT JOIN wp00000_cast AS C ON P.cast=C.id";
+$sql.=" LEFT JOIN wp00000_tag AS T ON P.tag=T.id";
 
 $sql.=" WHERE P.status=0";
 $sql.=" AND C.cast_status=0";

@@ -1,9 +1,9 @@
 <?
-$mysqli = mysqli_connect('mysql57.night-party.sakura.ne.jp','night-party','npnp1941','night-party_np');
+$mysqli = mysqli_connect("mysql57.night-party.sakura.ne.jp","night-party","npnp1941","night-party_np");
 
 if(!$mysqli){
-	$msg="接続エラー";
-	die("接続エラー");
+	error_log('Connection error: ' . mysqli_connect_error());
+	die("接続error!!<br>\n");
 }
 mysqli_set_charset($mysqli,'utf8mb4'); 
 
@@ -13,7 +13,7 @@ ini_set('error_reporting', E_ALL);
 */
 
 /*--■乱数設定--*/
-$sql ="SELECT * FROM wp01_0encode"; 
+$sql ="SELECT * FROM wp00000_encode"; 
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
 		$enc[$row["key"]]	=$row["value"];
@@ -22,7 +22,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql ="SELECT config_key, config_value FROM wp01_0config";
+$sql ="SELECT config_key, config_value FROM wp00000_config";
 
 if($res	= mysqli_query($mysqli,$sql)){
 	while($row	= mysqli_fetch_assoc($res)){
@@ -87,7 +87,7 @@ $t_ua=$_SERVER['HTTP_USER_AGENT'];
 $t_ip=$_SERVER["REMOTE_ADDR"];
 if(!$t_re) $t_re="null";
 if(!$t_ua) $t_ua="null";
-$sql="INSERT INTO wp01_0log(`date`,`ref`,`ua`,`ip`,`page`,`parm`,`value`) VALUES('{$now}','{$t_re}','{$t_ua}','{$t_ip}','{$f_mark}','{$parm}','{$value}')";
+$sql="INSERT INTO wp00000_log(`date`,`ref`,`ua`,`ip`,`page`,`parm`,`value`) VALUES('{$now}','{$t_re}','{$t_ua}','{$t_ip}','{$f_mark}','{$parm}','{$value}')";
 mysqli_query($mysqli,$sql);
 
 ?>

@@ -18,8 +18,8 @@ for($n=0;$n<8;$n++){
 	$box_no2.=$id_0;
 
 
-$sql	 ="SELECT * FROM wp01_0easytalk AS M";
-$sql	.=" LEFT JOIN wp01_0customer AS C ON M.customer_id=C.id";
+$sql	 ="SELECT * FROM wp00000_easytalk AS M";
+$sql	.=" LEFT JOIN wp00000_customer AS C ON M.customer_id=C.id";
 $sql	.=" WHERE M.customer_id='{$c_id}' AND M.cast_id='{$cast_id}'";
 $sql	.=" AND M.mail_del=0";
 $sql	.=" AND (log <>'' OR img <>'')";
@@ -101,7 +101,7 @@ if($count_dat>0){
 	$html.="<div class=\"mail_detail_in_btm\"></div>";
 }
 
-$sql	 ="UPDATE wp01_0easytalk SET";
+$sql	 ="UPDATE wp00000_easytalk SET";
 $sql	.=" watch_date='{$now}'";
 $sql	.=" WHERE customer_id='{$c_id}'";
 $sql	.=" AND cast_id='{$cast_id}'";

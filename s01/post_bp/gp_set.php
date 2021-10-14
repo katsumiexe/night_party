@@ -3,7 +3,7 @@ include_once('../library/sql_post.php');
 $name		=$_POST["name"];
 $group_id	=$_POST["sort"];
 
-$sql	 =" INSERT INTO wp01_0customer_group(`group_id`,`cast_id`,`sort`,`tag`)";
+$sql	 =" INSERT INTO wp00000_customer_group(`group_id`,`cast_id`,`sort`,`tag`)";
 $sql	.=" VALUES('1','{$cast_data["id"]}','{$group_id}','{$name}')";
 mysqli_query($mysqli,$sql)
 

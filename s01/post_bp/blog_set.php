@@ -62,7 +62,7 @@ if($img_code){
 	$tmp_img="./img/blog_no_image.png";
 }
 
-$sql ="SELECT id, tag_name, tag_icon FROM wp01_0tag";
+$sql ="SELECT id, tag_name, tag_icon FROM wp00000_tag";
 $sql.=" WHERE tag_group='blog'";
 $sql.=" AND del='0'";
 if($result = mysqli_query($mysqli,$sql)){
@@ -73,7 +73,7 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 if($chg){
-	$sql ="UPDATE wp01_0posts SET";
+	$sql ="UPDATE wp00000_posts SET";
 	$sql.=" `date`='{$now}',";
 	$sql.=" view_date='{$view_date}',";
 	$sql.=" title='{$ttl}',";
@@ -86,7 +86,7 @@ if($chg){
 	mysqli_query($mysqli,$sql);
 
 }else{
-	$sql="INSERT INTO wp01_0posts ";
+	$sql="INSERT INTO wp00000_posts ";
 	$sql.="(`date`, `view_date`, `title`, `log`, `cast`, `tag`, `img`, `status`)";
 	$sql.="VALUES";
 	$sql.="('{$now}','{$view_date}','{$ttl}','{$log}','{$cast_data["id"]}','{$tag}','{$img_name}','{$status}')";

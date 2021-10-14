@@ -1,6 +1,6 @@
 <?
 
-$sql ="SELECT * FROM wp01_0check_main";
+$sql ="SELECT * FROM wp00000_check_main";
 $sql.=" WHERE del=0";
 $sql.=" ORDER BY sort ASC";
 if($result = mysqli_query($mysqli,$sql)){
@@ -9,14 +9,14 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql ="SELECT * FROM wp01_0config";
+$sql ="SELECT * FROM wp00000_config";
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
 		$config[$row["config_key"]]=$row["config_value"];
 	}
 }
 
-$sql ="SELECT * FROM wp01_0check_list";
+$sql ="SELECT * FROM wp00000_check_list";
 $sql.=" ORDER BY host_id ASC, list_sort ASC";
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
@@ -25,7 +25,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql ="SELECT * FROM wp01_0charm_table";
+$sql ="SELECT * FROM wp00000_charm_table";
 $sql.=" WHERE del<2";
 $sql.=" ORDER BY sort ASC";
 if($result = mysqli_query($mysqli,$sql)){
@@ -35,7 +35,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql ="SELECT * FROM wp01_0sch_table";
+$sql ="SELECT * FROM wp00000_sch_table";
 $sql.=" ORDER BY sort ASC";
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
@@ -45,7 +45,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql ="SELECT * FROM wp01_0tag";
+$sql ="SELECT * FROM wp00000_tag";
 $sql.=" WHERE del<2";
 $sql.=" ORDER BY sort ASC";
 

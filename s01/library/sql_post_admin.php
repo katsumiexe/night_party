@@ -10,7 +10,7 @@ ini_set( 'display_errors', 1 );
 ini_set('error_reporting', E_ALL);
 */
 
-$sql ="SELECT * FROM wp01_0encode"; 
+$sql ="SELECT * FROM wp00000_encode"; 
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
 		$enc[$row["key"]]	=$row["value"];
@@ -28,7 +28,7 @@ for($n=0;$n<8;$n++){
 }
 $box_no.=$id_0;
 
-$sql =" SELECT config_key, config_value FROM wp01_0config";
+$sql =" SELECT config_key, config_value FROM wp00000_config";
 if($res		= mysqli_query($mysqli,$sql)){
 	while($row	= mysqli_fetch_assoc($res)){
 		$config[$row["config_key"]]	=$row["config_value"];

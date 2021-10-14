@@ -19,7 +19,7 @@ if($date){
 	if($type == 1){
 		$app.=" AND regist_date LIKE '{$date}%'";
 	}elseif($type == 2){
-		$app_0.=" LEFT JOIN wp01_0cast_log AS L ON C.id=L.customer_id";
+		$app_0.=" LEFT JOIN wp00000_cast_log AS L ON C.id=L.customer_id";
 		$app_1.=" ,MAX(sdate) AS sd";
 		$app.=" AND days='{$date}'";
 
@@ -39,12 +39,12 @@ if($fav !=9){
 
 if($yet == 1){
 	$tmp_date=date("Y-m-d H:i:s",strtotime($day_8)+$config["start_time"]*3600);
-	$app_0.=" LEFT JOIN wp01_0easytalk AS E ON C.id=E.customer_id";
+	$app_0.=" LEFT JOIN wp00000_easytalk AS E ON C.id=E.customer_id";
 	$app_1.=" ,MAX(send_date) AS se";
 	$app.=" AND (send_flg=1 OR send_flg IS NULL)";
 }
 
-$sql	 ="SELECT C.id,C.name,C.nickname,C.face,C.mail,C.block {$app_1} FROM wp01_0customer AS C";
+$sql	 ="SELECT C.id,C.name,C.nickname,C.face,C.mail,C.block {$app_1} FROM wp00000_customer AS C";
 $sql	.=$app_0;
 $sql	.=" WHERE C.cast_id='{$cast_data["id"]}'";
 $sql	.=" AND `block`<2";

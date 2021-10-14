@@ -13,7 +13,7 @@ $c_id		=$_POST['c_id'];
 $st			=($_POST['st']+0)*10;
 
 
-$sql	 ="SELECT sort,title FROM wp01_0easytalk_tmpl";
+$sql	 ="SELECT sort,title FROM wp00000_easytalk_tmpl";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" ORDER BY sort DESC";
 
@@ -23,7 +23,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql	 ="SELECT block FROM wp01_0customer";
+$sql	 ="SELECT block FROM wp00000_customer";
 $sql	.=" WHERE id='{$c_id}'";
 
 if($result	= mysqli_query($mysqli,$sql)){
@@ -31,8 +31,8 @@ if($result	= mysqli_query($mysqli,$sql)){
 	$block	=$row["block"];	
 }
 
-$sql	 ="SELECT * FROM wp01_0easytalk AS M";
-$sql	.=" LEFT JOIN wp01_0customer AS C ON M.customer_id=C.id";
+$sql	 ="SELECT * FROM wp00000_easytalk AS M";
+$sql	.=" LEFT JOIN wp00000_customer AS C ON M.customer_id=C.id";
 $sql	.=" WHERE M.customer_id='{$c_id}' AND M.cast_id='{$cast_data["id"]}'";
 $sql	.=" AND M.mail_del=0";
 $sql	.=" AND (log <>'' OR img <>'')";
@@ -160,7 +160,7 @@ if($dat[$n]["mail_del"] == 1){
 }
 
 $html.=$app;
-$sql	 ="UPDATE wp01_0easytalk SET";
+$sql	 ="UPDATE wp00000_easytalk SET";
 $sql	.=" watch_date='{$now}'";
 $sql	.=" WHERE customer_id='{$c_id}'";
 $sql	.=" AND cast_id='{$cast_data["id"]}'";

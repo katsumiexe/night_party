@@ -21,7 +21,7 @@ if($id == "customer_group"){
 	$app=" `nickname`='{$param}'";
 }
 
-$sql ="UPDATE wp01_0customer SET";
+$sql ="UPDATE wp00000_customer SET";
 $sql.=$app;
 $sql.=" WHERE id={$c_id}";
 mysqli_query($mysqli,$sql);

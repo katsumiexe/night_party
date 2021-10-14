@@ -14,12 +14,12 @@ ini_set('error_reporting', E_ALL);
 $cast_data=array();
 $mysqli = mysqli_connect("mysql57.night-party.sakura.ne.jp", "night-party", "npnp1941", "night-party_np");
 if(!$mysqli){
-	$msg="接続エラー";
-	die("接続エラー");
+	error_log('Connection error: ' . mysqli_connect_error());
+	die("error!<br>\n");
 }
 mysqli_set_charset($mysqli,'utf8mb4'); 
 
-$sql ="SELECT * FROM wp01_0encode"; 
+$sql ="SELECT * FROM wp00000_encode"; 
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
 		$enc[$row["key"]]	=$row["value"];
@@ -64,14 +64,14 @@ if($_REQUEST["log_out"] == 1 || $_REQUEST["cast_page"] == 99){
 		}
 	}
 
-	$sql="SELECT * FROM wp01_0cast";
+	$sql="SELECT * FROM wp00000_cast";
 	$sql.=" WHERE login_id='{$ip[0]}' AND login_pass='{$ip[1]}'";
 	$sql.=" AND cast_status<3";
 	$sql.=" LIMIT 1";
 	$res = mysqli_query($mysqli,$sql);
 	$row= mysqli_fetch_assoc($res);
 	if($row["id"]){
-		$sql="SELECT mail FROM wp01_0staff";
+		$sql="SELECT mail FROM wp00000_staff";
 		$sql.=" WHERE staff_id='{$row["id"]}'";
 		$sql.=" LIMIT 1";
 
@@ -123,7 +123,7 @@ if($_REQUEST["log_out"] == 1 || $_REQUEST["cast_page"] == 99){
 	}
 
 	$chg_date=date("Y-m-d H:i:s",time()-3600);
-	$sql="SELECT * FROM wp01_0mail_change";
+	$sql="SELECT * FROM wp00000_mail_change";
 	$sql.=" WHERE n_mail='{$ip[0]}' AND n_pass='{$ip[1]}'";
 	$sql.=" AND cast_status<3";
 	$sql.=" AND `date`>'{$chg_date}'";
@@ -133,14 +133,14 @@ if($_REQUEST["log_out"] == 1 || $_REQUEST["cast_page"] == 99){
 	$row= mysqli_fetch_assoc($res);
 
 	if($row["id"]){
-		$sql="SELECT * FROM wp01_0cast";
+		$sql="SELECT * FROM wp00000_cast";
 		$sql.=" WHERE login_id='{$ip[0]}'";
 		$sql.=" AND cast_status<3";
 		$sql.=" LIMIT 1";
 		$res = mysqli_query($mysqli,$sql);
 		$row= mysqli_fetch_assoc($res);
 
-		$sql="SELECT mail FROM wp01_0staff";
+		$sql="SELECT mail FROM wp00000_staff";
 		$sql.=" WHERE staff_id='{$row["id"]}'";
 		$sql.=" LIMIT 1";
 
@@ -169,7 +169,7 @@ if($_REQUEST["log_out"] == 1 || $_REQUEST["cast_page"] == 99){
 	$_SESSION["cast_page"]=$cast_page;
 
 /*
-	$sql="SELECT * FROM wp01_0cast";
+	$sql="SELECT * FROM wp00000_cast";
 	$sql.=" WHERE id='{$_SESSION["id"]}'";
 	$sql.=" AND cast_status<3";
 	$sql.=" LIMIT 1";
@@ -180,7 +180,7 @@ if($_REQUEST["log_out"] == 1 || $_REQUEST["cast_page"] == 99){
 
 }elseif($_POST["log_in_set"] && $_POST["log_pass_set"]){
 
-	$sql="SELECT * FROM wp01_0cast";
+	$sql="SELECT * FROM wp00000_cast";
 	$sql.=" WHERE login_id='{$_POST["log_in_set"]}' AND login_pass='{$_POST["log_pass_set"]}'";
 	$sql.=" AND cast_status<3";
 	$sql.=" LIMIT 1";
@@ -188,7 +188,7 @@ if($_REQUEST["log_out"] == 1 || $_REQUEST["cast_page"] == 99){
 	$row= mysqli_fetch_assoc($res);
 	if($row["id"]){
 
-		$sql="SELECT mail FROM wp01_0staff";
+		$sql="SELECT mail FROM wp00000_staff";
 		$sql.=" WHERE staff_id='{$row["id"]}'";
 		$sql.=" LIMIT 1";
 
@@ -224,7 +224,7 @@ if($_SESSION){
 		$box_no.=$id_0;
 
 
-	$sql =" SELECT config_key, config_value FROM wp01_0config";
+	$sql =" SELECT config_key, config_value FROM wp00000_config";
 	if($res		= mysqli_query($mysqli,$sql)){
 		while($row	= mysqli_fetch_assoc($res)){
 			$config[$row["config_key"]]	=$row["config_value"];

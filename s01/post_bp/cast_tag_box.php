@@ -7,7 +7,7 @@ include_once('../library/sql.php');
 $sort=array();
 $date		=$_POST['date'];
 
-$sql=" SELECT id, genji,ctime FROM wp01_0cast";
+$sql=" SELECT id, genji,ctime FROM wp00000_cast";
 $sql.=" WHERE cast_status=0";
 $sql.=" AND id>0";
 $sql.=" AND genji IS NOT NULL";
@@ -40,8 +40,8 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 
-$sql=" SELECT stime, etime, cast_id, sort FROM wp01_0schedule AS S";
-$sql.=" LEFT JOIN wp01_0sch_table AS T ON S.stime=T.name";
+$sql=" SELECT stime, etime, cast_id, sort FROM wp00000_schedule AS S";
+$sql.=" LEFT JOIN wp00000_sch_table AS T ON S.stime=T.name";
 $sql.=" WHERE sche_date='{$date}'";
 $sql.=" AND in_out='in'";
 $sql.=" ORDER BY S.id ASC, T.sort ASC";

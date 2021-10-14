@@ -1,6 +1,6 @@
 <?php
-include_once('./library/sql.php');
-$sql  ="SELECT id, tag_name, tag_icon,sort FROM wp01_0tag ";
+include_once('./library/sql3.php');
+$sql  ="SELECT id, tag_name, tag_icon,sort FROM wp00000_tag ";
 $sql .=" WHERE tag_group='ribbon'";
 $sql.=" AND del='0'";
 
@@ -20,7 +20,7 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 
-$sql ="SELECT * FROM wp01_0sch_table";
+$sql ="SELECT * FROM wp00000_sch_table";
 $sql.=" ORDER BY sort ASC";
 
 if($result = mysqli_query($mysqli,$sql)){
@@ -30,12 +30,12 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 
-$sql=" SELECT wp01_0cast.id,sche_date, wp01_0schedule.cast_id, ribbon_use, cast_ribbon, stime, etime, ctime, genji,wp01_0cast.id FROM wp01_0schedule";
-$sql.=" LEFT JOIN wp01_0cast ON wp01_0schedule.cast_id=wp01_0cast.id";
+$sql=" SELECT wp00000_cast.id,sche_date, wp00000_schedule.cast_id, ribbon_use, cast_ribbon, stime, etime, ctime, genji,wp00000_cast.id FROM wp00000_schedule";
+$sql.=" LEFT JOIN wp00000_cast ON wp00000_schedule.cast_id=wp00000_cast.id";
 $sql.=" WHERE sche_date='{$day_8}'";
 $sql.=" AND del='0'";
 $sql.=" AND cast_status=0";
-$sql.=" ORDER BY wp01_0cast.cast_sort ASC, wp01_0schedule.id ASC";
+$sql.=" ORDER BY wp00000_cast.cast_sort ASC, wp00000_schedule.id ASC";
 
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
@@ -90,7 +90,7 @@ if(is_array($dat)){
 	}
 }
 
-$sql	 ="SELECT * FROM wp01_0contents";
+$sql	 ="SELECT * FROM wp00000_contents";
 $sql	.=" WHERE status=0";
 $sql	.=" AND display_date<'{$now}'";
 $sql	.=" AND page='event'";
@@ -126,8 +126,8 @@ if($res0 = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql	 ="SELECT tag_name, tag_icon, date, status, display_date,event_date, category, contents_key, title, contents FROM wp01_0contents";
-$sql	.=" LEFT JOIN wp01_0tag ON tag=wp01_0tag.id";
+$sql	 ="SELECT tag_name, tag_icon, date, status, display_date,event_date, category, contents_key, title, contents FROM wp00000_contents";
+$sql	.=" LEFT JOIN wp00000_tag ON tag=wp00000_tag.id";
 $sql	.=" WHERE status<3";
 $sql	.=" AND display_date<'{$now}'";
 $sql	.=" AND page='news'";
@@ -161,7 +161,7 @@ if($res1 = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql	 ="SELECT * FROM wp01_0contents";
+$sql	 ="SELECT * FROM wp00000_contents";
 $sql	.=" WHERE status<4";
 $sql	.=" AND display_date<'{$now}'";
 $sql	.=" AND page='info'";

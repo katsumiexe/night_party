@@ -2,7 +2,7 @@
 include_once('./library/sql.php');
 $code=$_REQUEST["code"];
 
-$sql	 ="SELECT * FROM wp01_0contents";
+$sql	 ="SELECT * FROM wp00000_contents";
 $sql	.=" WHERE id='{$code}'";
 $sql	.=" AND status=0";
 $sql	.=" LIMIT 1";

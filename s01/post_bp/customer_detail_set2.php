@@ -34,7 +34,7 @@ if($id == "customer_detail_ag"){
 
 $birth	=$yy.$mm.$dd;
 
-$sql_log ="UPDATE wp01_0customer SET";
+$sql_log ="UPDATE wp00000_customer SET";
 $sql_log .=" birth_day='{$birth}'";
 $sql_log .=" WHERE id={$c_id}";
 mysqli_query($mysqli,$sql_log);

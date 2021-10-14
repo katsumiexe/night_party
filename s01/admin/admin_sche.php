@@ -69,7 +69,7 @@ if($cl_f == 1){
 }
 
 
-$sql =" SELECT * FROM wp01_0sch_table";
+$sql =" SELECT * FROM wp00000_sch_table";
 $sql .=" ORDER BY sort ASC";
 
 if($result = mysqli_query($mysqli,$sql)){
@@ -82,7 +82,7 @@ if($result = mysqli_query($mysqli,$sql)){
 
 
 
-$sql =" SELECT id, ctime, genji,genji_kana FROM wp01_0cast";
+$sql =" SELECT id, ctime, genji,genji_kana FROM wp00000_cast";
 $sql.=" WHERE (cast_status=99";
 $sql.=$app;
 $sql.=")";
@@ -101,7 +101,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql ="SELECT cast_id, stime, etime, sche_date FROM wp01_0schedule";
+$sql ="SELECT cast_id, stime, etime, sche_date FROM wp00000_schedule";
 $sql.=" WHERE sche_date>='{$st_day}'";
 $sql.=" AND sche_date<='{$ed_day}'";
 $sql.=" ORDER BY id ASC";

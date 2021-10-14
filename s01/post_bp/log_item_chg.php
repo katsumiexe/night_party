@@ -22,7 +22,7 @@ if($cds){
 }
 
 
-$sql =" UPDATE wp01_0cast_log_table SET";
+$sql =" UPDATE wp00000_cast_log_table SET";
 $sql.=$app;
 $sql.=" WHERE sort='{$sort}'";
 $sql.=" AND cast_id='{$cast_data["id"]}'";

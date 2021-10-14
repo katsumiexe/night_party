@@ -9,7 +9,7 @@ $c_id		=$_POST['c_id'];
 $text		=$_POST['text'];
 $kind		=$_POST['kind'];
 
-$sql	="UPDATE wp01_0customer";
+$sql	="UPDATE wp00000_customer";
 $sql	.=" SET {$kind}='{$text}'";
 $sql	.=" WHERE id='{$c_id}'";
 mysqli_query($mysqli,$sql);

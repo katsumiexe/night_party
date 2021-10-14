@@ -7,7 +7,7 @@ include_once('../../library/sql_post.php');
 
 $c_id		=$_POST["c_id"];
 
-$sql	 ="SELECT block, opt FROM wp01_0customer";
+$sql	 ="SELECT block, opt FROM wp00000_customer";
 $sql	 .=" WHERE del=0";
 $sql	 .=" AND id='{$c_id}'";
 

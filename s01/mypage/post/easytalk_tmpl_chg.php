@@ -10,7 +10,7 @@ $title			=$_POST['title'];
 $log			=$_POST['log'];
 
 
-$sql	 ="UPDATE wp01_0easytalk_tmpl SET";
+$sql	 ="UPDATE wp00000_easytalk_tmpl SET";
 $sql	.=" title='{$title}',";
 $sql	.=" log='{$log}'";
 $sql	.=" WHERE cast_id={$cast_data["id"]}";

@@ -6,7 +6,7 @@ include_once('../library/sql_post.php');
 $cus	=array();
 $c_id	=$_POST["c_id"];
 
-$sql	 ="SELECT * FROM wp01_0customer_list";
+$sql	 ="SELECT * FROM wp00000_customer_list";
 $sql	 .=" WHERE del=0";
 $sql	 .=" AND customer_id='{$c_id}'";
 if($result = mysqli_query($mysqli,$sql)){
@@ -15,7 +15,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql	 ="SELECT * FROM wp01_0customer_item";
+$sql	 ="SELECT * FROM wp00000_customer_item";
 $sql	 .=" WHERE `del`=0";
 $sql	 .=" AND `gp`=0";
 

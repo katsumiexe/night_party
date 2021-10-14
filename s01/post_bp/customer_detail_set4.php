@@ -18,7 +18,7 @@ if(substr($tmp,0,2)=="m_"){
 	$code=str_replace("tbl_a_","",$tmp);
 }
 
-$sql ="SELECT id FROM wp01_0customer_list";
+$sql ="SELECT id FROM wp00000_customer_list";
 $sql .=" WHERE customer_id='{$c_id}'";
 $sql .=" AND item='{$code}'";
 
@@ -26,14 +26,14 @@ if($result = mysqli_query($mysqli,$sql)){
 	$row = mysqli_fetch_assoc($result);
 
 	if($row){
-		$sql ="UPDATE wp01_0customer_list SET";
+		$sql ="UPDATE wp00000_customer_list SET";
 		$sql .=" comm='{$value}'";
 		$sql .=" WHERE customer_id={$c_id}";
 		$sql .=" AND item='{$code}'";
 		mysqli_query($mysqli,$sql);
 	
 	}else{
-		$sql ="INSERT INTO wp01_0customer_list";
+		$sql ="INSERT INTO wp00000_customer_list";
 		$sql .=" (`customer_id`, `item`, `comm`)values";
 		$sql .=" ('{$c_id}','{$code}','{$value}')";
 		mysqli_query($mysqli,$sql);

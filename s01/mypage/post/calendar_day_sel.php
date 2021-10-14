@@ -11,7 +11,7 @@ $week[6]="土";
 $set_date	=$_POST["set_date"];
 $dat=array();
 //---------------------------------------------------------------
-$sql	 ="SELECT stime,etime FROM wp01_0schedule";
+$sql	 ="SELECT stime,etime FROM wp00000_schedule";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND sche_date='{$set_date}'";
 $sql	.=" ORDER BY id DESC";
@@ -37,7 +37,7 @@ $dat["date"]=substr($set_date,4,2)."月".substr($set_date,6,2)."日[".$week[$tmp
 $b_month=substr($set_date,4,4);
 
 $dat["birth"]="";
-$sql	 ="SELECT birth_day,id,name,nickname FROM wp01_0customer";
+$sql	 ="SELECT birth_day,id,name,nickname FROM wp00000_customer";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND birth_day LIKE '%{$b_month}'";
 $sql	.=" AND del='0'";
@@ -52,7 +52,7 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 //---------------------------------------------------------------
-$sql	 ="SELECT * FROM wp01_0schedule_memo";
+$sql	 ="SELECT * FROM wp00000_schedule_memo";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND date_8='{$set_date}'";
 $sql	.=" AND `log` IS NOT NULL";

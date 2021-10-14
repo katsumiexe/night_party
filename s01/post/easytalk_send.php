@@ -13,10 +13,10 @@ $img_key		="";
 
 $sid			=$_POST['sid'];
 
-$sql	 ="SELECT I.cast_id, I.customer_id, C.nickname, A.login_id, A.login_pass, C.name, S.mail,C.opt FROM wp01_0ssid AS I";
-$sql	.=" LEFT JOIN wp01_0staff AS S ON I.cast_id=S.staff_id";
-$sql	.=" LEFT JOIN wp01_0cast AS A ON I.cast_id=A.id";
-$sql	.=" LEFT JOIN wp01_0customer AS C ON I.customer_id=C.id";
+$sql	 ="SELECT I.cast_id, I.customer_id, C.nickname, A.login_id, A.login_pass, C.name, S.mail,C.opt FROM wp00000_ssid AS I";
+$sql	.=" LEFT JOIN wp00000_staff AS S ON I.cast_id=S.staff_id";
+$sql	.=" LEFT JOIN wp00000_cast AS A ON I.cast_id=A.id";
+$sql	.=" LEFT JOIN wp00000_customer AS C ON I.customer_id=C.id";
 $sql	.=" WHERE ssid='{$sid}'";
 $sql	.=" LIMIT 1";
 
@@ -135,7 +135,7 @@ if($img_code){
 
 
 
-$sql	 ="INSERT INTO wp01_0easytalk";
+$sql	 ="INSERT INTO wp00000_easytalk";
 $sql	.="(send_date,customer_id,cast_id,send_flg,log,img)";
 $sql	.="VALUES";
 $sql	.="('{$now}','{$dat["customer_id"]}','{$dat["cast_id"]}','{$send}','{$log}','{$img_name}')";

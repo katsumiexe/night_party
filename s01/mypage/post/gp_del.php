@@ -3,21 +3,21 @@ include_once('../../library/sql_post.php');
 $name		=$_POST["name"];
 $sort		=$_POST["sort"];
 
-$sql =" UPDATE wp01_0customer_group SET";
+$sql =" UPDATE wp00000_customer_group SET";
 $sql.=" del='1'";
 $sql.=" WHERE sort='{$sort}'";
 $sql.=" AND cast_id='{$cast_data["id"]}'";
 mysqli_query($mysqli,$sql)
 
 $n=0:
-$sql =" SELECT sort tag FROM wp01_0customer_group";
+$sql =" SELECT sort tag FROM wp00000_customer_group";
 $sql.=" WHERE del='0'";
 $sql.=" AND cast_id='{$cast_data["id"]}'";
 $sql.=" ORDER BY sort ASC";
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
 
-	$sql =" UPDATE wp01_0customer_group SET";
+	$sql =" UPDATE wp00000_customer_group SET";
 	$sql.=" sort='{$n}'";
 	$sql.=" WHERE id='{$row[$id]}'";
 	mysqli_query($mysqli,$sql)

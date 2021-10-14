@@ -25,7 +25,7 @@ $stime	=$hh_s.$ii_s;
 $etime	=$hh_e.$ii_e;
 
 if(!$chg_id){
-	$sql ="INSERT INTO wp01_0cast_log(`date`,`sdate`,`stime`,`etime`,`cast_id`,`customer_id`,`log`) VALUES ";
+	$sql ="INSERT INTO wp00000_cast_log(`date`,`sdate`,`stime`,`etime`,`cast_id`,`customer_id`,`log`) VALUES ";
 	$sql.="('{$now}','{$sdate}','{$stime}','{$etime}','{$cast_data["id"]}','{$c_id}','{$log}')";
 	mysqli_query($mysqli,$sql);
 	$tmp_auto=mysqli_insert_id($mysqli);
@@ -35,7 +35,7 @@ if(!$chg_id){
 	$dat.="<span class=\"sel_box_left\">{$log}</span>";
 	$dat.="<span class=\"sel_box_right\">";
 
-	$sql_log ="INSERT INTO wp01_0cast_log_list(`master_id`,`log_color`,`log_icon`,`log_comm`,`log_price`) VALUES ";
+	$sql_log ="INSERT INTO wp00000_cast_log_list(`master_id`,`log_color`,`log_icon`,`log_comm`,`log_price`) VALUES ";
 
 	foreach($item_name as $a1 => $a2){
 		$item_color[$a1]=str_replace("rgb(","",$item_color[$a1]);
@@ -62,7 +62,7 @@ if(!$chg_id){
 }else{
 	for($n=0;$n<count($chglist);$n++){
 		$tmp=str_replace("i","",$chglist[$n]);
-		$sql=" UPDATE wp01_0cast_log_table SET";
+		$sql=" UPDATE wp00000_cast_log_table SET";
 
 		$sql.=" item_name='{$item_name[$tmp]}',";
 		$sql.=" item_icon='{$item_icon[$tmp]}',";

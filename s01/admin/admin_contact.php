@@ -7,8 +7,8 @@ $radio_list[5]="返信不要";
 $radio_list[6]="保留";
 
 $s=0;
-$sql	 ="SELECT * FROM wp01_0contact_table AS T";
-$sql	.=" LEFT JOIN wp01_0contact_list AS L ON T.id=L.type ";
+$sql	 ="SELECT * FROM wp00000_contact_table AS T";
+$sql	.=" LEFT JOIN wp00000_contact_list AS L ON T.id=L.type ";
 $sql	.=" ORDER BY L.date DESC";
 $sql	.=" LIMIT 20";
 if($result = mysqli_query($mysqli,$sql)){

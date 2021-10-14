@@ -3,7 +3,7 @@ include_once('./library/sql.php');
 
 $ss=$_REQUEST["ss"];
 if($ss){
-	$sql	 ="SELECT * FROM wp01_0ssid";
+	$sql	 ="SELECT * FROM wp00000_ssid";
 	$sql	.=" WHERE ssid='{$ss}'";
 	$sql	.=" AND del='0'";
 	$sql	.=" ORDER BY id DESC";
@@ -12,7 +12,7 @@ if($ss){
 	if($res = mysqli_query($mysqli,$sql)){
 		$ssid = mysqli_fetch_assoc($res);
 
-		$sql ="SELECT * FROM wp01_0encode"; 
+		$sql ="SELECT * FROM wp00000_encode"; 
 		if($result = mysqli_query($mysqli,$sql)){
 			while($row = mysqli_fetch_assoc($result)){
 				$enc[$row["key"]]				=$row["value"];
@@ -30,7 +30,7 @@ if($ss){
 		}
 		$box_no.=$id_0;
 
-		$sql	 ="UPDATE wp01_0ssid SET";
+		$sql	 ="UPDATE wp00000_ssid SET";
 		$sql	.=" del='1'";
 		$sql	.=" WHERE id <'{$ssid["id"]}'";
 		$sql	.=" AND cast_id='{$ssid["cast_id"]}'";
@@ -45,7 +45,7 @@ if($ss){
 		}
 
 		$n=0;
-		$sql	 ="SELECT * FROM wp01_0easytalk";
+		$sql	 ="SELECT * FROM wp00000_easytalk";
 		$sql	.=" WHERE customer_id='{$ssid["customer_id"]}' AND cast_id='{$ssid["cast_id"]}'";
 		$sql	.=" ORDER BY mail_id DESC";
 		$sql	.=" LIMIT 10";
@@ -75,7 +75,7 @@ if($ss){
 			}
 		}
 
-		$sql	 ="UPDATE wp01_0easytalk SET";
+		$sql	 ="UPDATE wp00000_easytalk SET";
 		$sql	.=" watch_date='{$now}'";
 		$sql	.=" WHERE customer_id='{$ssid["customer_id"]}' AND cast_id='{$ssid["cast_id"]}' AND send_flg='1' AND watch_date='0000-00-00 00:00:00'";
 		mysqli_query($mysqli,$sql);

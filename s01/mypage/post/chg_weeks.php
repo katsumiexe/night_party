@@ -38,7 +38,7 @@ if($pre ==1){
 $base_day_sql		=date("Ymd",$add_day);
 $base_day_ed_sql	=date("Ymd",$add_day+86400*7);
 
-$sql	 ="SELECT * FROM wp01_0schedule";
+$sql	 ="SELECT * FROM wp00000_schedule";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND sche_date>='{$base_day_sql}'";
 $sql	.=" AND sche_date<'{$base_day_ed_sql}'";
@@ -54,7 +54,7 @@ if($result = mysqli_query($mysqli,$sql)){
 $cal["st"]=$sql;
 $cal["date"]=$base_day;
 
-$sql ="SELECT * FROM wp01_0sch_table";
+$sql ="SELECT * FROM wp00000_sch_table";
 $sql.=" ORDER BY sort ASC";
 
 if($result = mysqli_query($mysqli,$sql)){

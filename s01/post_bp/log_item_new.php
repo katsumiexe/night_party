@@ -10,7 +10,7 @@ $item_color	=$_POST["item_color"];
 
 $price		=$_POST["price"];
 
-$sql ="SELECT COUNT(`sort`) AS od FROM wp01_0cast_log_table";
+$sql ="SELECT COUNT(`sort`) AS od FROM wp00000_cast_log_table";
 $sql.=" WHERE cast_id='{$cast_data["id"]}'";
 if($result = mysqli_query($mysqli,$sql)){
 	$row = mysqli_fetch_assoc($result);
@@ -18,7 +18,7 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 $odr++;
 
-$sql ="INSERT INTO wp01_0cast_log_table(`cast_id`,`item_name`,`item_icon`,`item_color`,`price`,`sort`) VALUES ";
+$sql ="INSERT INTO wp00000_cast_log_table(`cast_id`,`item_name`,`item_icon`,`item_color`,`price`,`sort`) VALUES ";
 $sql.=" ('{$cast_id}','{$item_name}','{$item_icon}','{$item_color}','{$price}','{$odr}')";
 mysqli_query($mysqli,$sql);
 

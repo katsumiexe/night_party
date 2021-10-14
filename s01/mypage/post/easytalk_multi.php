@@ -44,7 +44,7 @@ if($img_code){
 
 $yesterday		=date("Y-m-d H:i:s",time()-86400);
 foreach($list as $a1){
-	$sql	 ="SELECT watch_date FROM wp01_0easytalk";
+	$sql	 ="SELECT watch_date FROM wp00000_easytalk";
 	$sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 	$sql	.=" AND customer_id='{$a1}'";
 	$sql	.=" AND send_flg='1'";
@@ -60,7 +60,7 @@ foreach($list as $a1){
 		}
 	}
 
-	$sql	 ="SELECT mail, name, nickname, block FROM wp01_0customer";
+	$sql	 ="SELECT mail, name, nickname, block FROM wp00000_customer";
 	$sql	.=" WHERE id='{$a1}'";
 	$sql	.=" LIMIT 1";
 
@@ -94,7 +94,7 @@ foreach($list as $a1){
 	$n5=rand(1, 9);
 	$ssid_key=$rnd[$n0].$rnd[$n1].$rnd[$n2].$rnd[$n3].$rnd[$n4].$dec[$n5][1];
 
-	$sql	 ="INSERT INTO wp01_0ssid";
+	$sql	 ="INSERT INTO wp00000_ssid";
 	$sql	.="(ssid,cast_id,customer_id,`date`,`mail`)";
 	$sql	.="VALUES";
 	$sql	.="('{$ssid_key}','{$cast_data["id"]}','{$a1}','{$now}','{$customer_data["mail"]}')";
@@ -134,7 +134,7 @@ foreach($list as $a1){
 	//------------------------------------------------
 	}
 
-	$sql	 ="INSERT INTO wp01_0easytalk";
+	$sql	 ="INSERT INTO wp00000_easytalk";
 	$sql	.="(send_date,customer_id,cast_id,send_flg,log,img)";
 	$sql	.="VALUES";
 	$sql	.="('{$now}','{$a1}','{$cast_data["id"]}','1','{$tmp_log}','{$tmp_img}')";

@@ -1,7 +1,7 @@
 <?php
 include_once('./library/sql.php');
 
-$sql="SELECT * FROM wp01_0contents WHERE page='system' AND status='0' ORDER BY id DESC LIMIT 1";
+$sql="SELECT * FROM wp00000_contents WHERE page='system' AND status='0' ORDER BY id DESC LIMIT 1";
 if($res = mysqli_query($mysqli,$sql)){
 $dat = mysqli_fetch_assoc($res);
 }

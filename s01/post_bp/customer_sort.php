@@ -15,7 +15,7 @@ if($fil>0){
 
 if($sel==1){
 	$app2	=" `date`";
-	$app4	=" LEFT JOIN wp01_0cast_log ON id=customer_id";
+	$app4	=" LEFT JOIN wp00000_cast_log ON id=customer_id";
 	$app5	=" ,MAX(`date`) AS log_date"; 
 
 	if($asc==1){
@@ -63,7 +63,7 @@ if($asc == 1){
 }
 
 if($ext){
-	$sql="UPDATE wp01_0cast_config SET";
+	$sql="UPDATE wp00000_cast_config SET";
 	$sql.=" c_sort_main='{$sel}',";
 	$sql.=" c_sort_asc='{$asc}',";
 	$sql.=" c_sort_group='{$fil}'";
@@ -71,18 +71,18 @@ if($ext){
 	mysqli_query($mysqli,$sql);
 
 }else{
-	$sql="INSERT INTO wp01_0cast_config ";
+	$sql="INSERT INTO wp00000_cast_config ";
 	$sql.="(cast_id, c_sort_main, c_sort_asc, c_sort_group)";
 	$sql.="VALUES";
 	$sql.="('{$cast_data["id"]}','{$sel}','{$asc}','{$fil}')";
 	mysqli_query($mysqli,$sql);
 }
 
-$sql	 ="SELECT *{$app5} FROM wp01_0customer";
+$sql	 ="SELECT *{$app5} FROM wp00000_customer";
 $sql	.=$app4;
-$sql	.=" WHERE wp01_0customer.cast_id='{$cast_data["id"]}'";
+$sql	.=" WHERE wp00000_customer.cast_id='{$cast_data["id"]}'";
 $sql	.=$app1;
-$sql	.=" GROUP BY wp01_0customer.id";
+$sql	.=" GROUP BY wp00000_customer.id";
 $sql	.=" ORDER BY";
 $sql	.=$app2;
 $sql	.=$app3;

@@ -4,8 +4,8 @@ $staff_id=$_REQUEST["staff_id"];
 $sql	 ="SELECT ";
 $sql	.=" S.name, S.kana, S.tel, S.line, S.mail, S.address, S.birthday, S.sex, S.registday, S.rank, S.group, S.position, S.del,";
 $sql	.=" C.id, C.ctime, C.genji, C.genji_kana, C.cast_group, C.cast_sort, C.login_id, C.login_pass, C.cast_status, C.cast_salary, C.cast_ribbon";
-$sql	.=" FROM wp01_0staff AS S";
-$sql	.=" LEFT JOIN wp01_0cast AS C ON S.staff_id=C.id";
+$sql	.=" FROM wp00000_staff AS S";
+$sql	.=" LEFT JOIN wp00000_cast AS C ON S.staff_id=C.id";
 $sql	.=" WHERE staff_id={$staff_id}";
 $sql	.=" LIMIT 1";
 
@@ -20,7 +20,7 @@ if($res = mysqli_query($mysqli,$sql) ){
 if($staff_data["id"]+0 >0){
 	$c_s=2;
 
-	$sql	 ="SELECT * FROM wp01_0check_main";
+	$sql	 ="SELECT * FROM wp00000_check_main";
 	$sql	.=" WHERE del=0";
 	$sql	.=" ORDER BY sort ASC";
 
@@ -30,8 +30,8 @@ if($staff_data["id"]+0 >0){
 		}
 	}
 
-	$sql	 ="SELECT L.id, host_id,list_sort,list_title,cast_id ,sel FROM wp01_0check_list AS L";
-	$sql	.=" LEFT JOIN wp01_0check_sel AS S ON L.id=S.list_id";
+	$sql	 ="SELECT L.id, host_id,list_sort,list_title,cast_id ,sel FROM wp00000_check_list AS L";
+	$sql	.=" LEFT JOIN wp00000_check_sel AS S ON L.id=S.list_id";
 	$sql	.=" AND(cast_id='{$staff_id}' OR cast_id IS NULL)";
 	$sql	.=" AND del=0";
 	$sql	.=" ORDER BY host_id ASC, list_sort ASC";
@@ -42,7 +42,7 @@ if($staff_data["id"]+0 >0){
 		}
 	}
 
-	$sql	 ="SELECT * FROM wp01_0charm_table";
+	$sql	 ="SELECT * FROM wp00000_charm_table";
 	$sql	.=" WHERE del=0";
 	$sql	.=" ORDER BY sort ASC";
 
@@ -52,7 +52,7 @@ if($staff_data["id"]+0 >0){
 		}
 	}
 
-	$sql	 ="SELECT * FROM wp01_0charm_sel";
+	$sql	 ="SELECT * FROM wp00000_charm_sel";
 	$sql	.=" WHERE cast_id='{$staff_id}'";
 	if($result = mysqli_query($mysqli,$sql)){
 		while($row = mysqli_fetch_assoc($result)){
@@ -69,7 +69,7 @@ if($staff_data["id"]+0 >0){
 	$c_s=1;
 }
 
-$sql	 ="SELECT * FROM wp01_0tag";
+$sql	 ="SELECT * FROM wp00000_tag";
 $sql	.=" WHERE del=0";
 $sql	.=" and tag_group='cast_group'";
 $sql	.=" ORDER BY sort ASC";
@@ -80,7 +80,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql	 ="SELECT * FROM wp01_0tag";
+$sql	 ="SELECT * FROM wp00000_tag";
 $sql	.=" WHERE del=0";
 $sql	.=" and tag_group='ribbon'";
 $sql	.=" and sort>'3'";

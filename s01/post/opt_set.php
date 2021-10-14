@@ -16,7 +16,7 @@ for($n=0;$n<8;$n++){
 }
 	$box_no2.=$id_0;
 
-$sql	 ="UPDATE wp01_0customer SET";
+$sql	 ="UPDATE wp00000_customer SET";
 $sql	.=" opt='{$ck}'";
 $sql	.=" WHERE customer_id='{$c_id}'";
 $sql	.=" AND cast_id='{$cast_id}'";
