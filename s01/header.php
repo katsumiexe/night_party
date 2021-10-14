@@ -16,7 +16,7 @@
 <style>
 @font-face {
 	font-family: at_icon;
-	src: url("./font/font_1/fonts/icomoon.ttf") format('truetype');
+	src: url("./font/font_0/fonts/icomoon.ttf") format('truetype');
 }
 
 @font-face {
@@ -24,9 +24,10 @@
 	src: url("./font/font_3/fonts/icomoon.ttf") format('truetype');
 }
 
+
 @font-face {
-	font-family: at_frame2;
-	src: url("./font/border/frame2.ttf") format('truetype');
+//	font-family: at_frame2;
+//	src: url("./font/border/frame2.ttf") format('truetype');
 }
 
 
