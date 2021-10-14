@@ -52,7 +52,11 @@ if($result = mysqli_query($mysqli,$sql)){
 			}
 		}
 
-		if (file_exists("./img/profile/{$row["id"]}/0.jpg")) {
+
+		if (file_exists("./img/profile/{$row["id"]}/0.webp") && $admin_config["webp_select"] == 1) {
+			$row["face"]="./img/profile/{$row["id"]}/0.webp";			
+
+		}elseif (file_exists("./img/profile/{$row["id"]}/0.jpg")) {
 			$row["face"]="./img/profile/{$row["id"]}/0.jpg?t={$day_time}";
 
 		}else{

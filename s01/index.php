@@ -1,5 +1,5 @@
 <?php
-include_once('./library/sql3.php');
+include_once('./library/sql.php');
 $sql  ="SELECT id, tag_name, tag_icon,sort FROM wp00000_tag ";
 $sql .=" WHERE tag_group='ribbon'";
 $sql.=" AND del='0'";
@@ -65,7 +65,7 @@ if($result = mysqli_query($mysqli,$sql)){
 				}
 			}
 
-			if (file_exists("./img/profile/{$row["id"]}/0.webp")) {
+			if (file_exists("./img/profile/{$row["id"]}/0.webp") && $admin_config["webp_select"] == 1) {
 				$row["face"]="./img/profile/{$row["id"]}/0.webp";			
 
 			}elseif (file_exists("./img/profile/{$row["id"]}/0.jpg")) {
@@ -112,7 +112,7 @@ if($res0 = mysqli_query($mysqli,$sql)){
 			$a1["link"]=$a1["contents_key"];
 		}
 
-		if (file_exists("./img/page/event/event_{$a1["id"]}.webp")) {
+		if (file_exists("./img/page/event/event_{$a1["id"]}.webp") && $admin_config["webp_select"] == 1) {
 			$a1["img"]="./img/page/event/event_{$a1["id"]}.webp?t={$day_time}";
 
 		}elseif (file_exists("./img/page/event/event_{$a1["id"]}.jpg")) {
@@ -181,10 +181,24 @@ if($res2 = mysqli_query($mysqli,$sql)){
 			$a1["link"]=$a1["contents_key"];
 		}
 
+		if (file_exists("./img/page/info/info_{$a1["id"]}.webp") && $admin_config["webp_select"] == 1) {
+			$a1["img"]="./img/page/info/info_{$a1["id"]}.webp?t={$day_time}";
+
+		}elseif (file_exists("./img/info/info_/event_{$a1["id"]}.jpg")) {
+			$a1["img"]="./img/page/info/info_{$a1["id"]}.jpg?t={$day_time}";
+
+		}elseif (file_exists("./img/info/info_/event_{$a1["id"]}.png")) {
+			$a1["img"]="./img/page/info/info_{$a1["id"]}.png?t={$day_time}";
+		}
+
+
+
 		$info[]=$a1;
 		$info_count++;
 	}
 }
+
+
 include_once('./header.php');
 ?>
 <style>
@@ -223,8 +237,6 @@ var NewCnt=1;
 		</div>
 	</div>
 
-
-
 <?}elseif($count_event ==2){?>
 	<div class="slide">
 		<div class="slide_img">
@@ -250,7 +262,6 @@ var NewCnt=1;
 		<div class="slide_img">
 			<?for($n=0;$n<$count_event;$n++){?>
 				<div id="slide_img<?=$n?>" s_link="<?=$event[$n]["link"]?>" s_code="<?=$event[$n]["code"]?>" class="top_img">
-				<!--div class="event_click">CLICK<span class="event_click_al"><span class="event_click_al_in"></span></span></div-->
 				<img src="<?=$event[$n]["img"]?>" class="top_img_in" alt="<?=$event[$n]["title"]?>">;
 				</div>
 			<?}?>	
@@ -273,20 +284,19 @@ var NewCnt=1;
 		<div class="main_b_top">
 			<?for($n=0;$n<$count_news;$n++){?>
 				<?if($news[$n]["category"]){?>
-					<table class="main_b_notice  <?=$news[$n]["caution"]?>" colspan="3">
+					<table class="main_b_notice <?=$news[$n]["caution"]?>" colspan="3">
 					<tr>
-					<td  class="main_b_td_1">
-						<span class="main_b_notice_date"><?=$news[$n]["date"]?></span>
-						<span class="main_b_notice_tag" style="background:<?=$news[$n]["tag_icon"]?>"><?=$news[$n]["tag_name"]?></span>
-					</td>
+						<td  class="main_b_td_1">
+							<span class="main_b_notice_date"><?=$news[$n]["date"]?></span>
+							<span class="main_b_notice_tag" style="background:<?=$news[$n]["tag_icon"]?>"><?=$news[$n]["tag_name"]?></span>
+						</td>
 
-					<td  class="main_b_td_2">
-						<a href="<?=$news[$n]["news_link"]?>" class="main_b_notice_link">
-							<span class="main_b_notice_title"><?=$news[$n]["title"]?></span>
-						</a>
-					</td>
-					<td class="main_b_td_3"><a href="<?=$news[$n]["news_link"]?>" class="main_b_notice_arrow">	</a>
-					</td>
+						<td  class="main_b_td_2">
+							<a href="<?=$news[$n]["news_link"]?>" class="main_b_notice_link">
+								<span class="main_b_notice_title"><?=$news[$n]["title"]?></span>
+							</a>
+						</td>
+						<td class="main_b_td_3"><a href="<?=$news[$n]["news_link"]?>" class="main_b_notice_arrow">	</a></td>
 					</tr>
 					</table>
 
@@ -306,7 +316,6 @@ var NewCnt=1;
 			<?}?>
 		</div>
 		<?}?>
-
 
 		<div class="main_b_title">本日の出勤キャスト</div>
 		<div class="main_b_in">
@@ -335,15 +344,16 @@ var NewCnt=1;
 			<? } ?>
 		</div>
 	</div>
-	<div class="main_c">
+
+ 	<div class="main_c">
 		<div class="info_box">
 			<?for($n=0;$n<$info_count;$n++){?>
 				<?if($info[$n]["link"]){?>
 					<a href="<?=$info[$n]["link"]?>" class="info_img_out">
-						<img src="./img/page/info/info_<?=$info[$n]["id"]?>.png?d=<?=time()?>" class="info_img">
+						<img src="<?=$info[$n]["img"]?>" class="info_img">
 					</a>
 				<?}else{?>	
-						<img src="./img/page/info/info_<?=$info[$n]["id"]?>.png?d=<?=time()?>" class="info_img">
+						<img src="<?=$info[$n]["img"]?>" class="info_img">
 				<?}?>
 			<?}?>
 		</div>

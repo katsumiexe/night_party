@@ -92,7 +92,6 @@ if($staff_set){
 		$sql.=" WHERE staff_id='{$staff_id}'";
 		mysqli_query($mysqli,$sql);
 
-echo $sql;
 
 	//新規STAFF
 	}else{

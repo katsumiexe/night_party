@@ -1,4 +1,8 @@
 <?
+$gd_info=gd_info();
+if($gd_info["WebP Support"] != 1){
+	$no_webp=1;
+}
 
 $sql ="SELECT * FROM wp00000_check_main";
 $sql.=" WHERE del=0";
@@ -496,6 +500,12 @@ $(function(){
 td{
 	padding:5px;
 }
+
+.no_alert{
+	font-size:12px;
+	color:#c00000;
+}
+
 </style>
 <header class="head">
 </header>
@@ -555,13 +565,14 @@ td{
 		<td class="config_prof_sort">
 		<label for="webp_select" class="ribbon_use">
 			<span class="check2">
-				<input id="webp_select" type="checkbox" class="ck0" value="1" <?if($config["webp_select"] ==1){?>checked="checked"<?}?>>
+				<input id="webp_select" type="checkbox" class="ck0" value="1" <?if($no_webp == 1){?>disabled<?}elseif($config["webp_select"] ==1){?>checked="checked"<?}?>>
 				<span class="check1"></span>
 			</span>
 		</label>
 		</td>
-		<td class="config_prof_name">webP</td>
+		<td class="config_prof_name">webP<?if($no_webp == 1){?><span class="no_alert"><br>※利用できません</span><?}?></td>
 	</tr>
+
 
 	<tr class="tr">
 		<td class="config_prof_sort">

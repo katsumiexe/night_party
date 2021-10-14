@@ -7,6 +7,8 @@ if(!$mysqli){
 }
 mysqli_set_charset($mysqli,'utf8mb4'); 
 
+
+
 /*
 ini_set( 'display_errors', 1 );
 ini_set('error_reporting', E_ALL);
@@ -36,6 +38,20 @@ if($res	= mysqli_query($mysqli,$sql)){
 	$msg="接続エラー";
 	die("接続エラー");
 }
+
+//■webPちぇっく------------------
+$ua_list=$_SERVER['HTTP_USER_AGENT'];
+
+$tmp=explode($ua_list," ");
+$tmp2=explode($tmp[5],"_");
+if($tmp2<14 && $tmp[3]=="iPhone"){
+	$admin_config["webp_select"]=0;
+}
+
+if (strstr($ua_list,'trident') || strstr($ua_list, 'msie')) {
+	$admin_config["webp_select"]=0;
+}
+//■webPちぇっく------------------
 
 $now		=date("Y-m-d H:i:s");
 $now_8		=date("Ymd");
