@@ -28,7 +28,7 @@ if($result = mysqli_query($mysqli,$sql)){
 		$count_list++;
 	}
 }
-
+/*
 $sql ="SELECT * FROM wp00000_charm_table";
 $sql.=" WHERE del<2";
 $sql.=" ORDER BY sort ASC";
@@ -38,6 +38,8 @@ if($result = mysqli_query($mysqli,$sql)){
 		$max_charm++;
 	}
 }
+*/
+
 
 $sql ="SELECT * FROM wp00000_sch_table";
 $sql.=" ORDER BY sort ASC";
@@ -73,7 +75,7 @@ $(function(){
 		$('#prof_b'+Tmp).css('order',Tmp2);
 	});
 
-	$('.chg0').on('change',function(){
+	$('.main_1').on('change','.chg0',function(){
 		Tmp=$(this).attr('id');
 		$.ajax({
 			url:'./post/config_chg.php',
@@ -351,7 +353,8 @@ $(function(){
 		}
 	});
 
-	$('#news_set,#ribbon_set').on('click',function() {
+
+	$('.set_btn').on('click',function() {
 		Tmp=$(this).attr('id');
 
 		if(!$('#'+Tmp + '_name').val()){
@@ -363,7 +366,6 @@ $(function(){
 				data:{
 					'name'	:$('#'+Tmp + '_name').val(),
 					'color'	:$('#'+Tmp + '_clr').val(),
-					'sort'  :$('#'+Tmp + '_list tr').length,
 					'group' :Tmp,
 				},
 
@@ -379,7 +381,7 @@ $(function(){
 		}
 	});
 
-	$('.tr').on('click','.view_btn',function() {
+	$('.main_1').on('click','.view_btn',function() {
 
 		Tmp=$(this).parent().parent().attr('id');
 
@@ -417,7 +419,8 @@ $(function(){
 		}
 	});
 
-	$('.tr').on('click','.del_btn',function() {
+	$('.main_1').on('click','.del_btn',function() {
+
 		if (!confirm('削除します。よろしいですか')) {
 			return false;
 		}else{
@@ -754,7 +757,7 @@ td{
 		<td class="config_prof_name" style=" background:#ffe0f0"><input id="ribbon_set_name" type="text" value="" class="prof_name"></td>
 		<td class="config_prof_style" style=" background:#ffe0f0"><input id="ribbon_set_clr" type="text" value="" class="prof_name bg<?=$a2["view"]?>"></td>
 		<td class="config_prof_style" style=" background:#ffe0f0">
-			<button id="ribbon_set" type="button" class="prof_btn">追加</button>
+			<button id="ribbon_set" type="button" class="prof_btn set_btn">追加</button>
 		</td>
 	</tr>
 </table>
@@ -796,10 +799,11 @@ td{
 		<td class="config_prof_name" style=" background:#ffe0f0"><input id="news_set_name" type="text" value="" class="prof_name"></td>
 		<td class="config_prof_style" style=" background:#ffe0f0"><input id="news_set_clr" type="text" value="" class="prof_name bg<?=$a2["view"]?>"></td>
 		<td class="config_prof_style" style=" background:#ffe0f0">
-			<button id="news_set" type="button" class="prof_btn">追加</button>
+			<button id="news_set" type="button" class="prof_btn set_btn">追加</button>
 		</td>
 	</tr>
 </table>
+
 
 <div class="config_title">プロフィール</div>
 <table class="config_sche">
@@ -814,18 +818,18 @@ td{
 </thead>
 
 
-<tbody id="prof" class="tb">
-<?foreach($charm_dat as $a1 => $a2){?>
+<tbody id="prof_set_list" class="tb">
+<?foreach($tag_dat["prof"] as $a1 => $a2){?>
 	<tr id="tr_p_<?=$a1?>" class="tr bg<?=$a2["del"]?>">
 		<input type="hidden" value="<?=$a2["del"]?>" name="prof_del">
 		<td class="config_prof_handle handle"></td>
 		<td class="config_prof_sort"><input type="text" value="<?=$a2["sort"]?>" class="prof_sort" disabled></td>
-		<td class="config_prof_name"><input id="charm-<?=$a1?>" type="text" name="prof_name[<?=$a1?>]" value="<?=$a2["charm"]?>" class="chg2 prof_name"></td>
+		<td class="config_prof_name"><input id="charm-<?=$a1?>" type="text" name="prof_name[<?=$a1?>]" value="<?=$a2["tag_name"]?>" class="chg2 prof_name"></td>
 		<td class="config_prof_style">
 
 			<select id="style-<?=$a1?>" name="prof_style[<?=$a1?>]" class="chg2 prof_option">
 				<option value="0">一行</option>
-				<option value="1" <?if($a2["style"]== 1){?>selected="selected"<?}?>>複数行</option>
+				<option value="1" <?if($a2["tag_icon"]== 1){?>selected="selected"<?}?>>複数行</option>
 			</select>
 		</td>
 		<td class="config_prof_style">
@@ -839,25 +843,25 @@ td{
 
 <table class="config_sche">
 	<tr>
-	<form id="new_prof_set" action="" method="post">
 	<input type="hidden" name="menu_post" value="config">
 	<input type="hidden" value="<?=$max_charm+1?>" name="prof_sort_new">
 		<td style="width:71px; background:#ffe0f0;text-align:center;font-weight:600;color:#900000;" colspan="2">追加</td>
-		<td class="config_prof_name" style=" background:#ffe0f0"><input id="prof_name_new" type="text" name="prof_name_new" value="" class="prof_name"></td>
+		<td class="config_prof_name" style=" background:#ffe0f0"><input id="prof_set_name" type="text" name="prof_name_new" value="" class="prof_name"></td>
 		<td class="config_prof_style" style=" background:#ffe0f0">
 
-			<select name="prof_style_new" class="prof_option">
-				<option value="0">コメント</option>
-				<option value="1">文章</option>
+			<select id="prof_set_clr" name="prof_style_new" class="prof_option">
+				<option value="0">一行</option>
+				<option value="1">複数行</option>
 			</select>
 
 		</td>
 		<td class="config_prof_style" style=" background:#ffe0f0">
-			<button id="prof_set" type="submit" class="prof_btn">追加</button>
+			<button id="prof_set" type="button" class="prof_btn set_btn">追加</button>
 		</td>
 	</form>
 	</tr>
 </table>
+
 
 <div class="config_title">オプション</div>
 <div id="sort_option_table">
