@@ -92,7 +92,8 @@ $(function(){
 		});
 	});
 
-	$('.chg1').on('change',function(){
+
+	$('.main_1').on('change','.chg1',function(){
 		Tmp=$(this).attr('id');
 		$.ajax({
 			url:'./post/config_tag_chg.php',

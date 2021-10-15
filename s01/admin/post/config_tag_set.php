@@ -2,7 +2,7 @@
 include_once('../../library/sql_post.php');
 $name		=$_POST['name'];
 $color		=$_POST['color'];
-$sort		=$_POST['sort'];
+$sort		=$_POST['sort']+1;
 $group		=str_replace('_set','',$_POST['group']);
 
 if(!$color) $color="#ff90a0";
@@ -14,9 +14,10 @@ $sql.=" VALUES('{$sort}','{$group}','{$name}','{$color}')";
 mysqli_query($mysqli,$sql);
 $tmp_auto=mysqli_insert_id($mysqli);
 
-if($group != "ribbon"){
+if($group != "ribbon" && $group != "news" ){
 	$al="<td class=\"config_prof_handle handle bg\"></td>";
 }
+
 echo <<< EOM
 	<tr id="tr_n_{$tmp_auto}" class="tr">
 		<input type="hidden" value="0" name="prof_view">
