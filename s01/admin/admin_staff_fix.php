@@ -42,6 +42,7 @@ if($staff_data["id"]+0 >0){
 		}
 	}
 
+/*
 	$sql	 ="SELECT * FROM wp00000_charm_table";
 	$sql	.=" WHERE del=0";
 	$sql	.=" ORDER BY sort ASC";
@@ -51,6 +52,8 @@ if($staff_data["id"]+0 >0){
 			$charm_main[$row["id"]]=$row;
 		}
 	}
+*/
+
 
 	$sql	 ="SELECT * FROM wp00000_charm_sel";
 	$sql	.=" WHERE cast_id='{$staff_id}'";
@@ -67,6 +70,17 @@ if($staff_data["id"]+0 >0){
 
 }else{
 	$c_s=1;
+}
+
+$sql	 ="SELECT * FROM wp00000_tag";
+$sql	.=" WHERE del=0";
+$sql	.=" and tag_group='prof'";
+$sql	.=" ORDER BY sort ASC";
+
+if($result = mysqli_query($mysqli,$sql)){
+	while($row = mysqli_fetch_assoc($result)){
+		$prof[$row["id"]]=$row;
+	}
 }
 
 $sql	 ="SELECT * FROM wp00000_tag";
@@ -416,14 +430,13 @@ CAST情報
 	<td class="table_title" colspan="2">プロフィール</td>
 </tr>	
 <tr>
-	<?foreach((array)$charm_main as $a1 => $a2){?>
+	<?foreach((array)$prof as $a1 => $a2){?>
 <td>
-	<div><?=$a2["charm"]?></div>
+	<div><?=$a2["tag_name"]?></div>
 	<?if($a2["style"] == 1){?>
-		<textarea name="charm_table[<?=$a2["id"]?>]" class="w000 tbox" autocomplete="off"><?=$charm_list[$a2["id"]]["log"]?></textarea>
+		<textarea name="charm_table[<?=$a1?>]" class="w000 tbox" autocomplete="off"><?=$charm_list[$a1]["log"]?></textarea>
 	<? }else{ ?>
-		<input type="text" name="charm_table[<?=$a2["id"]?>]" class="w000" value="<?=$charm_list[$a2["id"]]["log"]?>
-" autocomplete="off">
+		<input type="text" name="charm_table[<?=$1?>]" class="w000" value="<?=$charm_list[$a1]["log"]?>" autocomplete="off">
 	<? } ?>
 </td>
 

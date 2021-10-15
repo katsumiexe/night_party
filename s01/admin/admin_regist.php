@@ -1,4 +1,5 @@
 <?
+/*
 $sql	 ="SELECT * FROM wp00000_charm_table";
 $sql	.=" WHERE del=0";
 $sql	.=" AND view=0";
@@ -9,6 +10,8 @@ if($res = mysqli_query($mysqli,$sql)){
 		$charm_table[$res_a["id"]]=$res_a;
 	}
 }
+*/
+
 
 $sql	 ="SELECT * FROM wp00000_check_main";
 $sql	.=" WHERE del=0";
@@ -48,6 +51,16 @@ $sql	.=" ORDER BY sort ASC";
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
 		$cast_ribbon[$row["id"]]=$row["tag_name"];
+	}
+}
+
+$sql	 ="SELECT * FROM wp00000_tag";
+$sql	.=" WHERE del=0";
+$sql	.=" and tag_group='prof'";
+$sql	.=" ORDER BY sort ASC";
+if($result = mysqli_query($mysqli,$sql)){
+	while($row = mysqli_fetch_assoc($result)){
+		$cast_prof[$row["id"]]=$row;
 	}
 }
 
@@ -248,13 +261,13 @@ CAST情報
 </tr>	
 
 <tr>
-	<?foreach((array)$charm_table as $a1 => $a2){?>
+	<?foreach((array)$cast_prof as $a1 => $a2){?>
 <td>
-	<div><?=$a2["charm"]?></div>
-	<?if($a2["style"] == 1){?>
-		<textarea name="charm_table[<?=$a2["id"]?>]" class="w000 tbox" autocomplete="off"></textarea>
+	<div><?=$a2["tag_name"]?></div>
+	<?if($a2["tag_icon"] == 2){?>
+		<textarea name="charm_table[<?=$a1?>]" class="w000 tbox" autocomplete="off"></textarea>
 	<? }else{ ?>
-		<input type="text" name="charm_table[<?=$a2["id"]?>]" class="w000" autocomplete="off">
+		<input type="text" name="charm_table[<?=$a1?>]" class="w000" autocomplete="off">
 	<? } ?>
 </td>
 <?if(($cnt+0) % 2 ==1){?>

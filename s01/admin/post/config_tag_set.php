@@ -27,7 +27,7 @@ echo <<< EOM
 	<tr id="tr_n_{$tmp_auto}" class="tr bg0">
 		<input type="hidden" value="0" name="prof_del">
 		<td class="config_prof_handle handle"></td>
-		<td class="config_prof_sort"><input type="text" value="{$tmp_auto}" class="prof_sort" disabled></td>
+		<td class="config_prof_sort"><input type="text" value="{$sort}" class="prof_sort" disabled></td>
 		<td class="config_prof_name"><input id="charm-{$tmp_auto}" type="text" name="prof_name[{$tmp_auto}]" value="{$name}" class="chg2 prof_name"></td>
 		<td class="config_prof_style">
 			<select id="style-{$tmp_auto}" name="prof_style[{$tmp_auto}]" class="chg2 prof_option">

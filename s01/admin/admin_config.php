@@ -113,11 +113,11 @@ $(function(){
 			console.log(errorThrown);
 		});
 	});
-
+/*
 	$('.chg2').on('change',function(){
 		Tmp=$(this).attr('id');
 		$.ajax({
-			url:'./post/config_charm_chg.php',
+			url:'./post/config_tag_chg.php',
 			type: 'post',
 			data:{
 				'id':Tmp,
@@ -132,7 +132,7 @@ $(function(){
 			console.log(errorThrown);
 		});
 	});
-
+*/
 	$('.ck0').on('change',function(){
 		Tmp=$(this).attr('id');
 
@@ -240,7 +240,7 @@ $(function(){
 		});
 	});
 
-	$('#prof').sortable({
+	$('#prof_set_list').sortable({
 		axis: 'y',
         handle: '.handle',
 
@@ -368,6 +368,8 @@ $(function(){
 					'color'	:$('#'+Tmp + '_clr').val(),
 					'group' :Tmp,
 				},
+
+
 
 			}).done(function(data, textStatus, jqXHR){
 				$('#'+Tmp + '_name').val('');
@@ -723,10 +725,10 @@ td{
 <table class="config_sche">	
 <thead>
 	<tr>
-		<td class="config_sche_top">順番</td>
-		<td class="config_sche_top">名前</td>
-		<td class="config_sche_top">色コード</td>
-		<td class="config_sche_top"></td>
+		<td class="config_sche_top" style="width:30px">順番</td>
+		<td class="config_sche_top" style="width:240px">名前</td>
+		<td class="config_sche_top" style="width:240px">色コード</td>
+		<td class="config_sche_top" style="width:120px"></td>
 	</tr>
 </thead>
 
@@ -766,10 +768,10 @@ td{
 <table class="config_sche">	
 <thead>
 	<tr>
-		<td class="config_sche_top">順番</td>
-		<td class="config_sche_top">名前</td>
-		<td class="config_sche_top">色コード</td>
-		<td class="config_sche_top"></td>
+		<td class="config_sche_top" style="width:30px">順番</td>
+		<td class="config_sche_top" style="width:240px">名前</td>
+		<td class="config_sche_top" style="width:240px">色コード</td>
+		<td class="config_sche_top" style="width:120px"></td>
 	</tr>
 </thead>
 
@@ -809,11 +811,11 @@ td{
 <table class="config_sche">
 <thead>
 	<tr>
-		<td class="config_sche_top">替</td>
-		<td class="config_sche_top">順番</td>
-		<td class="config_sche_top">名前</td>
-		<td class="config_sche_top">スタイル</td>
-		<td class="config_sche_top"></td>
+		<td class="config_sche_top" style="width:30px">替</td>
+		<td class="config_sche_top" style="width:30px">順番</td>
+		<td class="config_sche_top" style="width:240px">名前</td>
+		<td class="config_sche_top" style="width:120px">スタイル</td>
+		<td class="config_sche_top" style="width:120px"></td>
 	</tr>
 </thead>
 
@@ -824,12 +826,12 @@ td{
 		<input type="hidden" value="<?=$a2["del"]?>" name="prof_del">
 		<td class="config_prof_handle handle"></td>
 		<td class="config_prof_sort"><input type="text" value="<?=$a2["sort"]?>" class="prof_sort" disabled></td>
-		<td class="config_prof_name"><input id="charm-<?=$a1?>" type="text" name="prof_name[<?=$a1?>]" value="<?=$a2["tag_name"]?>" class="chg2 prof_name"></td>
+		<td class="config_prof_name"><input id="tag_name-<?=$a1?>" type="text" name="prof_name[<?=$a1?>]" value="<?=$a2["tag_name"]?>" class="chg1 prof_name"></td>
 		<td class="config_prof_style">
 
-			<select id="style-<?=$a1?>" name="prof_style[<?=$a1?>]" class="chg2 prof_option">
-				<option value="0">一行</option>
-				<option value="1" <?if($a2["tag_icon"]== 1){?>selected="selected"<?}?>>複数行</option>
+			<select id="tag_icon-<?=$a1?>" name="prof_style[<?=$a1?>]" class="chg1 prof_option">
+				<option value="1">一行</option>
+				<option value="2" <?if($a2["tag_icon"]== 2){?>selected="selected"<?}?>>複数行</option>
 			</select>
 		</td>
 		<td class="config_prof_style">
@@ -850,8 +852,8 @@ td{
 		<td class="config_prof_style" style=" background:#ffe0f0">
 
 			<select id="prof_set_clr" name="prof_style_new" class="prof_option">
-				<option value="0">一行</option>
-				<option value="1">複数行</option>
+				<option value="1">一行</option>
+				<option value="2">複数行</option>
 			</select>
 
 		</td>
