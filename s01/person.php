@@ -72,11 +72,12 @@ if($res = mysqli_query($mysqli,$sql)){
 		}
 	}
 
-	$sql ="SELECT sort,charm,style,log FROM wp00000_charm_table";
-	$sql.=" LEFT JOIN `wp00000_charm_sel` ON wp00000_charm_table.id=list_id";
-	$sql.=" WHERE wp00000_charm_table.del='0'";
-	$sql.=" AND (wp00000_charm_sel.cast_id='{$post_id}' OR wp00000_charm_sel.cast_id='')";
-	$sql.=" ORDER BY wp00000_charm_table.sort ASC";
+	$sql ="SELECT sort,tag_name,tag_icon,log FROM wp00000_tag AS T";
+	$sql.=" LEFT JOIN `wp00000_charm_sel` AS S ON T.id=S.list_id";
+	$sql.=" WHERE T.del='0'";
+	$sql.=" AND (S.cast_id='{$post_id}' OR S.cast_id='')";
+	$sql.=" ORDER BY T.sort ASC";
+echo $sql;
 
 	if($res = mysqli_query($mysqli,$sql)){
 		while($a0 = mysqli_fetch_assoc($res)){
@@ -215,13 +216,13 @@ include_once('./header.php');
 				<td class="prof_r"><?=$cast_data["genji"]?></td>
 			</tr>
 		<?for($n=0;$n<$cnt_charm_table+0;$n++){?>
-			<?if($charm_table[$n]["style"] == 1){?>
+			<?if($charm_table[$n]["tag_icon"] == 2){?>
 				<tr><td class="prof_0" colspan="2"></td></tr>
-				<tr><td class="prof_l2" colspan="2"><?=$charm_table[$n]["charm"]?></td></tr>
+				<tr><td class="prof_l2" colspan="2"><?=$charm_table[$n]["tag_name"]?></td></tr>
 				<tr><td class="prof_r2" colspan="2"><?=$charm_table[$n]["log"]?></td></tr>
 			<?}else{?>
 				<tr>
-				<td class="prof_l"><?=$charm_table[$n]["charm"]?></td>
+				<td class="prof_l"><?=$charm_table[$n]["tag_name"]?></td>
 				<td class="prof_r"><?=$charm_table[$n]["log"]?></td>
 				</tr>
 			<?}?>

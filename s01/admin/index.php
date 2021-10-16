@@ -183,7 +183,7 @@ if($staff_set){
 				$p_date=$_REQUEST["news_date_c"]." 00:00:00";
 				$sql =" INSERT INTO wp00000_contents";
 				$sql .="(`date`, display_date, event_date, page, category, contents_key, title, contents,tag)";
-				$sql .=" VALUES('{$now}','{$p_date}','{$c_date}','news','person','{$staff_id}','{$title}','{$news_box}','2')";
+				$sql .=" VALUES('{$now}','{$p_date}','{$c_date}','news','person','{$staff_id}','{$title}','{$news_box}','12')";
 				mysqli_query($mysqli,$sql);
 			}
 		}

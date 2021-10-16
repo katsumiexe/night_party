@@ -74,7 +74,7 @@ if($staff_data["id"]+0 >0){
 
 $sql	 ="SELECT * FROM wp00000_tag";
 $sql	.=" WHERE del=0";
-$sql	.=" and tag_group='prof'";
+$sql	.=" AND tag_group='prof'";
 $sql	.=" ORDER BY sort ASC";
 
 if($result = mysqli_query($mysqli,$sql)){
@@ -433,7 +433,7 @@ CAST情報
 	<?foreach((array)$prof as $a1 => $a2){?>
 		<td>
 			<div><?=$a2["tag_name"]?></div>
-			<?if($a2["style"] == 1){?>
+			<?if($a2["tag_icon"] == 1){?>
 				<textarea name="charm_table[<?=$a1?>]" class="w000 tbox" autocomplete="off"><?=$charm_list[$a1]["log"]?></textarea>
 			<? }else{ ?>
 				<input type="text" name="charm_table[<?=$1?>]" class="w000" value="<?=$charm_list[$a1]["log"]?>" autocomplete="off">
