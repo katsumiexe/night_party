@@ -94,7 +94,6 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-var_dump($sql);
 
 
 $week[0]="(日)";

@@ -77,7 +77,6 @@ if($res = mysqli_query($mysqli,$sql)){
 	$sql.=" WHERE T.del='0'";
 	$sql.=" AND (S.cast_id='{$post_id}' OR S.cast_id='')";
 	$sql.=" ORDER BY T.sort ASC";
-echo $sql;
 
 	if($res = mysqli_query($mysqli,$sql)){
 		while($a0 = mysqli_fetch_assoc($res)){
