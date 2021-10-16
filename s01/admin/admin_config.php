@@ -325,7 +325,7 @@ $(function(){
 		}
 	});
 
-	$('.main_box').on('change','.sel_ck',function() {
+	$('.main_1').on('change','.sel_ck',function() {
 		if($(this).prop('checked')){
 			$(this).parents('.sel_flex').addClass('sel_ck_off');	
 			$(this).siblings().addClass('sel_ck_off');	
@@ -445,7 +445,7 @@ $(function(){
 		}
 	});
 
-	$('.main_box').on('click','.option_del',function() {
+	$('.main_1').on('click','.option_del',function() {
 		if (!confirm('削除します。よろしいですか')) {
 			return false;
 		}else{
@@ -465,8 +465,9 @@ $(function(){
 		}
 	});
 
-	$('.main_box').on('change','.option_ttl, .option_select, .sel_text',function() {
+	$('.main_1').on('change','.option_ttl, .option_select, .sel_text',function() {
 		Tmp=$(this).attr('id');
+console.log(Tmp);
 		$.post({
 			url:"./post/config_option_chg.php",
 			data:{

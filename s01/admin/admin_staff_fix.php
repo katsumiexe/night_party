@@ -431,22 +431,23 @@ CAST情報
 </tr>	
 <tr>
 	<?foreach((array)$prof as $a1 => $a2){?>
-<td>
-	<div><?=$a2["tag_name"]?></div>
-	<?if($a2["style"] == 1){?>
-		<textarea name="charm_table[<?=$a1?>]" class="w000 tbox" autocomplete="off"><?=$charm_list[$a1]["log"]?></textarea>
-	<? }else{ ?>
-		<input type="text" name="charm_table[<?=$1?>]" class="w000" value="<?=$charm_list[$a1]["log"]?>" autocomplete="off">
-	<? } ?>
-</td>
+		<td>
+			<div><?=$a2["tag_name"]?></div>
+			<?if($a2["style"] == 1){?>
+				<textarea name="charm_table[<?=$a1?>]" class="w000 tbox" autocomplete="off"><?=$charm_list[$a1]["log"]?></textarea>
+			<? }else{ ?>
+				<input type="text" name="charm_table[<?=$1?>]" class="w000" value="<?=$charm_list[$a1]["log"]?>" autocomplete="off">
+			<? } ?>
+		</td>
 
-<?if(($cnt+0) % 2 ==1){?>
-</tr><tr>
-<?}?>
-<?$cnt++;?>
+		<?if(($cnt+0) % 2 ==1){?>
+			</tr><tr>
+		<?}?>
+		<?$cnt++;?>
 	<? } ?>
 </tr>
 </table>
+
 <?if($ck_main){?>
 <?foreach($ck_main as $a1 => $a2){?>
 	<table style="width:720px;" class="cast_table">
@@ -459,6 +460,7 @@ CAST情報
 	</table>
 <? } ?>
 <? } ?>
+
 </div>
 
 

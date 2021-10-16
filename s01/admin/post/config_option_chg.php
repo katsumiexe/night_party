@@ -35,6 +35,6 @@ if($tmp[0] == "ttl"){
 	$tmp_auto=mysqli_insert_id($mysqli);
 	echo "itm_".$a1."_".$tmp_auto;
 }
-
+echo $sql;
 exit();
 ?>
