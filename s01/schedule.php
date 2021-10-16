@@ -73,9 +73,9 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql=" SELECT stime, etime, cast_id FROM wp00000_schedule AS S";
+$sql=" SELECT stime, etime, cast_id FROM wp00000_schedule";
 $sql.=" WHERE sche_date='{$day_8}'";
-$sql.=" ORDER BY S.id ASC";
+$sql.=" ORDER BY id ASC";
 
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
@@ -94,7 +94,8 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-asort($sort);
+var_dump($sql);
+
 
 $week[0]="(日)";
 $week[1]="(月)";
