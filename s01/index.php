@@ -135,28 +135,28 @@ $sql	.=" ORDER BY status DESC, event_date DESC";
 $sql	.=" LIMIT 5";
 
 if($res1 = mysqli_query($mysqli,$sql)){
-	while($a1 = mysqli_fetch_assoc($res1)){
+	while($a2 = mysqli_fetch_assoc($res1)){
 
-		$a1["date"]=substr(str_replace("-",".",$a1["event_date"]),0,10);
+		$a2["date"]=substr(str_replace("-",".",$a2["event_date"]),0,10);
 
-		if($a1["status"] ==2){
-			$a1["caution"]="news_caution";
+		if($a2["status"] ==2){
+			$a2["caution"]="news_caution";
 
 		} 
 
-		if($a1["category"] == "person"){
-			$a1["news_link"]="./person.php?post_id={$a1["contents_key"]}";
+		if($a2["category"] == "person"){
+			$a2["news_link"]="./person.php?post_id={$a2["contents_key"]}";
 
-		}elseif($a1["category"] == "outer"){
-			$a1["news_link"]=$a1["contents_key"];
+		}elseif($a2["category"] == "outer"){
+			$a2["news_link"]=$a2["contents_key"];
 
-		}elseif($a1["category"] == "event"){
-			$a1["news_link"]="./event.php?post_id={$a1["contents_key"]}";
+		}elseif($a2["category"] == "event"){
+			$a2["news_link"]="./event.php?post_id={$a2["contents_key"]}";
 
-		}elseif($a1["category"] == "page"){
-			$a1["news_link"]=$a1["contents_key"];
+		}elseif($a2["category"] == "page"){
+			$a2["news_link"]=$a2["contents_key"];
 		}
-		$news[]=$a1;
+		$news[]=$a2;
 		$count_news++;
 	}
 }
