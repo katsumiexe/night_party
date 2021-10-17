@@ -53,8 +53,6 @@ if($dat["face"]){
 	$face="<img id=\"customer_img\" src=\"../img/customer_no_image.png?t=".time()."\" class=\"customer_detail_img\" alt=\"会員\">";
 }
 
-
-
 $sql	 ="SELECT * FROM wp00000_customer_group";
 $sql	 .=" WHERE del=0";
 $sql	 .=" AND cast_id='{$c_id}'";

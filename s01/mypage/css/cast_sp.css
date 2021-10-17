@@ -1401,11 +1401,11 @@ select{
 	margin			:0;
 	border			:none;
 	font-size		:4.5vw;
-	width			:12.5vw;
-	padding-right	:0.5vw;
+	width			:13vw;
 	background		:none;
 	color			:#303030;
 	border-bottom	:1px solid #303030;
+	direction		:rtl;
 }
 
 
@@ -1416,10 +1416,10 @@ select{
 	border			:none;
 	font-size		:4.5vw;
 	width			:7.5vw;
-	padding-right	:0.5vw;
 	background		:none;
 	color			:#303030;
 	border-bottom	:1px solid #303030;
+	direction		:rtl;
 }
 
 .item_basebox_ag{
@@ -1432,7 +1432,7 @@ select{
 	background		:none;
 	color			:#909090;
 	font-weight		:700;
-	padding			:0 1vw;
+	direction		:rtl;
 }
 
 

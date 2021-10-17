@@ -13,6 +13,7 @@ $(function(){
 	var Chg			='';
 	var base_64		='';
 	var Box			=[];
+	var Tmp			='';
 
 	$('.color_picker,.icon_picker').hide();
 	$('.head_mymenu').on('click',function(){
