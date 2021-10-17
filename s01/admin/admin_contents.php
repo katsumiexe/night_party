@@ -61,26 +61,29 @@ if($event_set_id){
 		mysqli_query($mysqli,$sql);
 		$tmp_auto=$event_set_id;
 	}
+echo $sql;
 
 	if(isset($_FILES) && isset($_FILES['upd_img']) && is_uploaded_file($_FILES['upd_img']['tmp_name'])){
 		$img_reg=getimagesize($_FILES['upd_img']['tmp_name']);
 
+
 		if($img_reg["mime"] =="image/jpeg"){
-			$img_tmp 		= imagecreatetfromjpeg($_FILES['upd_img']['tmp_name']);
+			$img_tmp 		= imagecreatefromjpeg($_FILES['upd_img']['tmp_name']);
 			$kk=".jpg";
 
 		}elseif($img_reg["mime"] =="image/webp"){
-			$img_tmp 		= imagecreatetfromwebp($_FILES['upd_img']['tmp_name']);
+			$img_tmp 		= imagecreatefromwebp($_FILES['upd_img']['tmp_name']);
 			$kk=".webp";
 
 		}elseif($img_reg["mime"] =="image/png"){
-			$img_tmp 		= imagecreatetfrompng($_FILES['upd_img']['tmp_name']);
+			$img_tmp 		= imagecreatefrompng($_FILES['upd_img']['tmp_name']);
 			$kk=".png";
 
 		}elseif($img_reg["mime"] =="image/gif"){
-			$img_tmp 		= imagecreatetfromgif($_FILES['upd_img']['tmp_name']);
+			$img_tmp 		= imagecreatefromgif($_FILES['upd_img']['tmp_name']);
 			$kk=".gif";
 		}
+
 
 		if($post_id=="recruit"){
 			imagejpeg($img_tmp,"../img/page/contents/recruit_{$tmp_auto}.jpg",100);
@@ -92,7 +95,6 @@ if($event_set_id){
 		}
 //		move_uploaded_file($_FILES['upd_img']['tmp_name'], $img_url);
 	}
-
 
 }elseif($post_id_set){
 	$post_id	=$_POST["post_id_set"];
@@ -288,18 +290,19 @@ $(function(){
 		}
 	});
 
-
 	$('.upd_file').on('change',function(e){
 		Tmp=$(this).attr('id');
+
 		Ck=Tmp.substr(3,1);
 		if(Ck=="i"){
 			Ck_h=200;
 			Ck_w=600;
+
 		}else{
 			Ck_h=480;
 			Ck_w=1200;
 		}
-		
+
 		var file = e.target.files[0];	
 		var reader = new FileReader();
 
@@ -309,22 +312,24 @@ $(function(){
 		}
 		var img = new Image();
 
-		reader.onload = function (e) {
-			img.src = e.target.result;
-			if(img.height != Ck_h || img.width != Ck_w){
-				if (!confirm('画像が推奨サイズではありませんがよろしいですか\n※推奨サイズ　縦'+Ck_h+'px 横'+ Ck_w+'px')) {
-					return false;
-				}else{
-					$("#top_"+Tmp).attr('src', e.target.result);
+		reader.onload = (function(file){
+			return function(e){
+				img.src = e.target.result;
+				img.onload = function() {
+					if(img.height != Ck_h || img.width != Ck_w){
+						if (!confirm('画像が推奨サイズではありませんがよろしいですか\n※推奨サイズ　縦'+Ck_h+'px 横'+ Ck_w+'px' +img.height+'/'+img.width)) {
+							return false;
+						}else{
+							$("#top_"+Tmp).attr('src', e.target.result);
+						}
+					}else{
+							$("#top_"+Tmp).attr('src', e.target.result);
+					}
 				}
-			}else{
-					$("#top_"+Tmp).attr('src', e.target.result);
 			}
-
-		}
-		reader.readAsDataURL(e.target.files[0]);
+		})(file);
+		reader.readAsDataURL(file);
 	});
-
 
 	$('.event_tag_btn,.event_set_btn').on('click',function(){
 		Tmp	=$(this).attr('id').substr(0,3);
@@ -451,8 +456,8 @@ $(function(){
 				</td>
 
 				<td class="event_td_7" rowspan="2">
-					<label for="updnewi" class="info_img"><img id="top_updnewi" src="../img/info_no_image.png" style="width:210px; height:70px;"></label>
-			<input id="updnewi" name="upd_img" type="file" class="upd_file" style="display:none;">
+					<label for="updinew" class="info_img"><img id="top_updinew" src="../img/info_no_image.png" style="width:210px; height:70px;"></label>
+					<input id="updinew" name="upd_img" type="file" class="upd_file" style="display:none;">
 				</td>
 			</tr>
 
@@ -529,7 +534,6 @@ $(function(){
 			<input type="hidden" name="post_id" value="event">
 			<input type="hidden" name="menu_post" value="contents">
 			<input type="hidden" name="event_set_id" value="new">
-			<input name="upd_img" type="file" class="upd_file" style="display:none;">
 			<tr>
 				<td class="event_td_0" rowspan="4"><span class="event_td_0_in">新規作成</span></td>
 				<td class="event_td_3">
@@ -539,7 +543,8 @@ $(function(){
 				</td>
 
 				<td class="event_td_6" rowspan="3">
-					<label for="updnew" class="event_img"><img id="top_updnew" src="../img/event_no_image.png" style="width:275px; height:110px;"></span>
+					<label for="updenew" class="event_img"><img id="top_updenew" src="../img/event_no_image.png" style="width:275px; height:110px;"></label>
+					<input id="updenew" name="upd_img" type="file" class="upd_file" style="display:none;">
 				</td>
 
 			</tr><tr>
@@ -587,8 +592,8 @@ $(function(){
 					</td>
 
 					<td class="event_td_6" rowspan="3">
-						<label for="upd<?=$a1?>" class="event_img"><img id="top_upd<?=$a1?>" src="<?=$a2["img"]?>" style="width:275px; height:110px;"></span>
-						<input id="upd<?=$a1?>" name="upd_img" type="file" class="upd_file" style="display:none;">
+						<label for="upde<?=$a1?>" class="event_img"><img id="top_upde<?=$a1?>" src="<?=$a2["img"]?>" style="width:275px; height:110px;"></span>
+						<input id="upde<?=$a1?>" name="upd_img" type="file" class="upd_file" style="display:none;">
 					</td>
 				</tr><tr>
 					<td rowspan="3"  class="event_td_1 handle"></td>
