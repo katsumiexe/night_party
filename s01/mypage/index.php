@@ -1763,8 +1763,6 @@ $(function(){
 		</div>
 	<? } ?>
 </div>
-
-
 <div class="customer_detail">
 	<div class="customer_detail_in">
 		<table class="customer_base">
@@ -1796,6 +1794,7 @@ $(function(){
 				<td id="c_nick" class="customer_base_item"><input id="customer_detail_nick" name="cus_nick" type="text" class="item_basebox cas_set"></td>
 			</tr>
 			<tr>
+
 				<td class="customer_base_fav">
 					<span id="fav_1" class="customer_fav"></span>
 					<span id="fav_2" class="customer_fav"></span>
@@ -1803,7 +1802,7 @@ $(function(){
 					<span id="fav_4" class="customer_fav"></span>
 					<span id="fav_5" class="customer_fav"></span>
 				</td>
-				<td class="customer_base_tag">誕生日</td>
+				<td class="customer_base_tag">誕生</td>
 				<td id="c_birth" class="customer_base_item">
 				<select id="customer_detail_yy" name="cus_b_y" class="item_basebox_yy cas_set2">
 					<?for($n=1930;$n<date("Y");$n++){?>
@@ -1830,41 +1829,42 @@ $(function(){
 	</div>
 
 
-		<table class="customer_sns">
-			<tr>
-				<td class="customer_sns_1"><span id="customer_mail" class="customer_sns_btn"></span></td>
-				<td class="customer_sns_1"><span id="customer_line" class="customer_sns_btn"></span></td>
-				<td class="customer_sns_1"><span id="customer_twitter" class="customer_sns_btn"></span></td>
-				<td class="customer_sns_1"><span id="customer_insta" class="customer_sns_btn"></span></td>
-				<td class="customer_sns_1"><span id="customer_facebook" class="customer_sns_btn"></span></td>
-				<td class="customer_sns_1"><span id="customer_web" class="customer_sns_btn"></span></td>
-				<td class="customer_sns_1"><span id="customer_tel" class="customer_sns_btn"></span></td>
-			</tr>
-			<tr class="customer_sns_tr">
-				<td class="customer_sns_2"><span id="a_customer_mail" class="sns_arrow_a"></span></td>
-				<td class="customer_sns_2"><span id="a_customer_line" class="sns_arrow_a"></span></td>
-				<td class="customer_sns_2"><span id="a_customer_twitter" class="sns_arrow_a"></span></td>
-				<td class="customer_sns_2"><span id="a_customer_insta" class="sns_arrow_a"></span></td>
-				<td class="customer_sns_2"><span id="a_customer_facebook" class="sns_arrow_a"></span></td>
-				<td class="customer_sns_2"><span id="a_customer_web" class="sns_arrow_a"></span></td>
-				<td class="customer_sns_2"><span id="a_customer_tel" class="sns_arrow_a"></span></td>
-			</tr>
-		</table>
-		<div class="customer_sns_box">
-			<div class="sns_jump"><span class="regist_icon2"></span><span class="regist_txt2">移動</span></div>
-			<input type="text" class="sns_text" inputmode="url">
-			<div class="sns_btn"><span class="regist_icon2"></span><span class="regist_txt2">登録</span></div>
-			<div class="customer_sns_ttl"></div>
-		</div>
 
-		<div class="customer_tag">
-			<div id="tag_3" class="tag_set tag_set_ck"  style="height:8vw;">履歴</div>
-			<div id="tag_2" class="tag_set">メモ</div>
-			<div id="tag_1" class="tag_set">項目</div>
-			<div id="tag_4" class="tag_set">設定</div>
-			<div class="customer_memo_set"><span class="customer_set_icon"></span>新規</div>
-			<div class="customer_log_set"><span class="customer_set_icon"></span>新規</div>
-		</div>
+	<table class="customer_sns">
+		<tr>
+			<td class="customer_sns_1"><span id="customer_mail" class="customer_sns_btn"></span></td>
+			<td class="customer_sns_1"><span id="customer_line" class="customer_sns_btn"></span></td>
+			<td class="customer_sns_1"><span id="customer_twitter" class="customer_sns_btn"></span></td>
+			<td class="customer_sns_1"><span id="customer_insta" class="customer_sns_btn"></span></td>
+			<td class="customer_sns_1"><span id="customer_facebook" class="customer_sns_btn"></span></td>
+			<td class="customer_sns_1"><span id="customer_web" class="customer_sns_btn"></span></td>
+			<td class="customer_sns_1"><span id="customer_tel" class="customer_sns_btn"></span></td>
+		</tr>
+		<tr class="customer_sns_tr">
+			<td class="customer_sns_2"><span id="a_customer_mail" class="sns_arrow_a"></span></td>
+			<td class="customer_sns_2"><span id="a_customer_line" class="sns_arrow_a"></span></td>
+			<td class="customer_sns_2"><span id="a_customer_twitter" class="sns_arrow_a"></span></td>
+			<td class="customer_sns_2"><span id="a_customer_insta" class="sns_arrow_a"></span></td>
+			<td class="customer_sns_2"><span id="a_customer_facebook" class="sns_arrow_a"></span></td>
+			<td class="customer_sns_2"><span id="a_customer_web" class="sns_arrow_a"></span></td>
+			<td class="customer_sns_2"><span id="a_customer_tel" class="sns_arrow_a"></span></td>
+		</tr>
+	</table>
+	<div class="customer_sns_box">
+		<div class="sns_jump"><span class="regist_icon2"></span><span class="regist_txt2">移動</span></div>
+		<input type="text" class="sns_text" inputmode="url">
+		<div class="sns_btn"><span class="regist_icon2"></span><span class="regist_txt2">登録</span></div>
+		<div class="customer_sns_ttl"></div>
+	</div>
+
+	<div class="customer_tag">
+		<div id="tag_3" class="tag_set tag_set_ck"  style="height:8vw;">履歴</div>
+		<div id="tag_2" class="tag_set">メモ</div>
+		<div id="tag_1" class="tag_set">項目</div>
+		<div id="tag_4" class="tag_set">設定</div>
+		<div class="customer_memo_set"><span class="customer_set_icon"></span>新規</div>
+		<div class="customer_log_set"><span class="customer_set_icon"></span>新規</div>
+	</div>
 
 	<div class="pg3">
 		<div id="tag_3_tbl" class="customer_memo"></div>
@@ -1872,31 +1872,7 @@ $(function(){
 		<table id="tag_1_tbl" class="customer_memo"><tr><td></td></tr></table>
 		<div id="tag_4_tbl" class="customer_memo"></div>
 	</div>
-	<input id="h_customer_id" type="hidden" name="cus_id" value="0">
-	<input id="h_customer_set" type="hidden" name="cus_set" value="1">
-	<input id="h_customer_page" type="hidden" name="cus_page" value="1">
-	<input id="h_customer_fav" type="hidden" name="cus_fav" value="0">
-
-	<input id="h_customer_tel" type="hidden" value="">
-	<input id="h_customer_mail" type="hidden" value="">
-	<input id="h_customer_twitter" type="hidden" value="">
-	<input id="h_customer_facebook" type="hidden" value="">
-	<input id="h_customer_insta" type="hidden" value="">
-	<input id="h_customer_line" type="hidden" value="">
-	<input id="h_customer_web" type="hidden" value="">
-
-	<input id="n_customer_tel" type="hidden" value="">
-	<input id="n_customer_mail" type="hidden" value="">
-	<input id="n_customer_twitter" type="hidden" value="">
-	<input id="n_customer_facebook" type="hidden" value="">
-	<input id="n_customer_insta" type="hidden" value="">
-	<input id="n_customer_line" type="hidden" value="">
-	<input id="n_customer_web" type="hidden" value="">
 </div>
-
-
-
-
 
 <div class="sch_set_done">スケジュールが登録されました</div>
 <div class="set_back">

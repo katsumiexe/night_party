@@ -1706,7 +1706,7 @@ select{
 .customer_detail_in{
 	position	:fixed;
 	width		:100%;
-	height		:82vw;
+	height		:60vw;
 	background	:#d000d0;
 }
 

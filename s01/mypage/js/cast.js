@@ -71,6 +71,8 @@ $(function(){
 
 	$('.tag_set').on('click',function () {
 
+console.log("■");
+
 		if($(this).hasClass('tag_set_ck')!='true'){
 			$(window).scrollTop(0);
 
@@ -267,7 +269,7 @@ $(function(){
 		});
 	});
 
-	$('.customer_fav').on('click',function () {
+	$('.customer_detail').on('click','.customer_fav',function () {
 		if(Fav == 0){
 			Fav=$(this).attr('id').replace('fav_','');
 			$('.customer_base_fav').children().slice(0,Fav).css('color','#ff3030');
@@ -1236,8 +1238,8 @@ $(function(){
 		$('.set_back').fadeIn(100);
 	});
 
-	$('.customer_sns_btn').on('click',function(){
-console.log("▼");
+	$('.customer_detail').on('click','.customer_sns_btn',function(){
+
 		if($('.customer_sns_box').css('display') !== 'none'){
 
 			if($('#customer_up').css('display') !== 'none'){
@@ -1296,8 +1298,9 @@ console.log("▼");
 		}
 	});
 
-	$('.customer_detail').on('click','.jump_on',function(){
 
+
+	$('.customer_detail').on('click','.jump_on',function(){
 		if($(this).hasClass('c2_customer_mail')){
 			 window.location.href = './index.php?cast_page=3&c_id='+C_Id;
 
