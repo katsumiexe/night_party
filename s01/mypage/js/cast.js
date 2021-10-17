@@ -1237,6 +1237,7 @@ $(function(){
 	});
 
 	$('.customer_sns_btn').on('click',function(){
+console.log("▼");
 		if($('.customer_sns_box').css('display') !== 'none'){
 
 			if($('#customer_up').css('display') !== 'none'){

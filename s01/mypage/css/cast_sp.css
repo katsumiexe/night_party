@@ -1695,19 +1695,19 @@ select{
 	position		:fixed;
 	top				:0;
 	left			:100vw;
-	left			:0;
 	width			:100vw;
+	height			:100vh;
 	background		:linear-gradient(#ffe0f0,#ffe8f8);
 	z-index			:12;
 	padding			:0;
-	overflow-y:scroll;
+	overflow-y		:scroll;
 }
 
 .customer_detail_in{
-	position	:absolute;
+	position	:fixed;
 	width		:100%;
 	height		:82vw;
-	background:#d000d0;
+	background	:#d000d0;
 }
 
 .detail_age{

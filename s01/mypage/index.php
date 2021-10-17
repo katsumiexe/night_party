@@ -1827,6 +1827,9 @@ $(function(){
 				</td>
 			</tr>
 		</table>
+	</div>
+
+
 		<table class="customer_sns">
 			<tr>
 				<td class="customer_sns_1"><span id="customer_mail" class="customer_sns_btn"></span></td>
@@ -1862,7 +1865,6 @@ $(function(){
 			<div class="customer_memo_set"><span class="customer_set_icon"></span>新規</div>
 			<div class="customer_log_set"><span class="customer_set_icon"></span>新規</div>
 		</div>
-	</div>
 
 	<div class="pg3">
 		<div id="tag_3_tbl" class="customer_memo"></div>
