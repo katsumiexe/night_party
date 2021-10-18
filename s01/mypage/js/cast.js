@@ -1658,24 +1658,20 @@ $(function(){
 			$('.set_back').fadeIn(200);
 			$('.customer_log_in').animate({'top':'20vh'},200);
 
-		$dat.="<div id=\"tr_log_detail{$dat1["log_id"]}\" class=\"customer_memo_log_in\">";
-		$dat.="<div class=\"customer_log_memo\">";
-		$dat.="{$dat1["log"]}";
-		$dat.="</div>";
-
 			TmpLog=$('#tr_log_detail'+ Chg).children('.customer_log_memo').html().replace(/(<br>|<br \/>)/gi, '\n');
 			TmpPts=$('#tr_log_detail'+ Chg).children('.customer_log_item').children('.sel_log_price_s').text();
-
-
-
+			TmpD=$(this).prev('.customer_log_date_detail').text().substr(0,4)+"-"+$(this).prev('.customer_log_date_detail').text().substr(5,2)+"-"+$(this).prev('.customer_log_date_detail').text().substr(8,2);
+			$('#local_dt').val(TmpD);
+			$('#local_st').val($(this).prev('.customer_log_date_detail').text().substr(11,5));
+			$('#local_ed').val($(this).prev('.customer_log_date_detail').text().substr(17,5));
+			TmpTag=$('#tr_log_detail'+ Chg).children('.customer_log_list').html();
+/*
+//			TmpTag=$(this).next().next().next().next().html();
 //			TmpTag=$(this).next().next().next().next().html();
 //			TmpD=$(this).prev().children('.customer_log_date_detail').text().substr(0,4)+"-"+$(this).prev().children('.customer_log_date_detail').text().substr(5,2)+"-"+$(this).prev().children('.customer_log_date_detail').text().substr(8,2);
-
-
-
-			$('#local_dt').val(TmpD);
 			$('#local_st').val($(this).prev().children('.customer_log_date_detail').text().substr(11,5));
 			$('#local_ed').val($(this).prev().children('.customer_log_date_detail').text().substr(17,5));
+*/
 
 			$('#sel_log_area').val(TmpLog);
 			$('.customer_log_right').html(TmpTag);
@@ -1936,7 +1932,7 @@ $(function(){
 				$('#mail_box_'+ Del_ID).slideUp(200);
 
 			}else{
-				$('#tr_'+Flg+'_detail' + Del_ID).slideUp(200);
+				$('#tr_'+Flg+'_detail' + Del_ID).parents('.customer_memo_log').slideUp(200);
 			}
 
 			$.post({
@@ -2728,7 +2724,7 @@ console.log(data.html);
 		$('.customer_log_right').append('<div class="sel_log_option_s" style="color:'+colorS+';border:1px solid '+colorS+'"><span class="sel_log_icon_s">'+iconS+'</span><span class="sel_log_comm_s">'+commS+'</span><span class="sel_log_price_s">'+priceS+'</span><span class="sel_log_del_s"></span></div>');
 	});
 
-	$('.customer_log_right').on('click','.sel_log_del_s',function(){
+	$('.customer_detail').on('click','.sel_log_del_s',function(){
 		$(this).parent().remove()
 	});
 
