@@ -111,114 +111,81 @@ for($n=0;$n<100;$n++){
 
 
 $html = <<<INA
-	<div class="customer_detail_in">
-		<table class="customer_base">
-			<tr>
-				<td class="customer_base_img" rowspan="3">{$face}</td>
-				<td class="customer_base_tag">タグ</td>
-				<td class="customer_base_item">
-				<select id="customer_group" name="cus_group" class="item_group cas_set">
-				<option value="0">通常</option>
-				{$group}
-				</select>
-				</td>
-			</tr>
-			<tr>
-				<td class="customer_base_tag">名前</td>
-				<td id="c_name" class="customer_base_item">
-					<input type="text" id="customer_detail_name" name="cus_name" class="item_basebox cas_set" value="{$dat["name"]}">
-				</td>
-			</tr>
-			<tr>
-				<td class="customer_base_tag">呼び名</td>
-				<td id="c_nick" class="customer_base_item"><input id="customer_detail_nick" name="cus_nick" type="text" class="item_basebox cas_set" value="{$dat["nickname"]}"></td>
-			</tr>
-			<tr>
-				<td class="customer_base_fav">{$fav}</td>
-				<td class="customer_base_tag">誕生日</td>
-				<td id="c_birth" class="customer_base_item">
-				<select id="customer_detail_yy" name="cus_b_y" class="item_basebox_yy cas_set2">{$yy}</select>/<select id="customer_detail_mm" name="cus_b_m" class="item_basebox_mm cas_set2">{$mm}</select>/<select id="customer_detail_dd" name="cus_b_d" class="item_basebox_mm cas_set2">{$dd}</select><span class="detail_age"><select id="customer_detail_ag" name="cus_b_a" class="item_basebox_ag cas_set2">{$ag}</select>歳</span>
-				</td>
-			</tr>
-		</table>
-		<table class="customer_sns">
-			<tr>
-				<td class="customer_sns_1"><span id="customer_mail" class="customer_sns_btn{$mail_on}"></span></td>
-				<td class="customer_sns_1"><span id="customer_line" class="customer_sns_btn{$line_on}"></span></td>
-				<td class="customer_sns_1"><span id="customer_twitter" class="customer_sns_btn{$twitter_on}"></span></td>
-				<td class="customer_sns_1"><span id="customer_insta" class="customer_sns_btn{$insta_on}"></span></td>
-				<td class="customer_sns_1"><span id="customer_facebook" class="customer_sns_btn{$facebookl_on}"></span></td>
-				<td class="customer_sns_1"><span id="customer_web" class="customer_sns_btn{$web_on}"></span></td>
-				<td class="customer_sns_1"><span id="customer_tel" class="customer_sns_btn{$tel_on}"></span></td>
-			</tr>
-			<tr class="customer_sns_tr">
-				<td class="customer_sns_2"><span id="a_customer_mail" class="sns_arrow_a{$mail_on}"></span></td>
-				<td class="customer_sns_2"><span id="a_customer_line" class="sns_arrow_a{$line_on}"></span></td>
-				<td class="customer_sns_2"><span id="a_customer_twitter" class="sns_arrow_a{$twitter_on}"></span></td>
-				<td class="customer_sns_2"><span id="a_customer_insta" class="sns_arrow_a{$insta_on}"></span></td>
-				<td class="customer_sns_2"><span id="a_customer_facebook" class="sns_arrow_a{$facebook_on}"></span></td>
-				<td class="customer_sns_2"><span id="a_customer_web" class="sns_arrow_a{$web_on}"></span></td>
-				<td class="customer_sns_2"><span id="a_customer_tel" class="sns_arrow_a{$tel_on}"></span></td>
-			</tr>
-		</table>
-		<div class="customer_sns_box">
-			<div class="sns_jump"><span class="regist_icon2"></span><span class="regist_txt2">移動</span></div>
-			<input type="text" class="sns_text" inputmode="url">
-			<div class="sns_btn"><span class="regist_icon2"></span><span class="regist_txt2">登録</span></div>
-			<div class="customer_sns_ttl"></div>
-		</div>
-
-		<div class="customer_tag">
-			<div id="tag_3" class="tag_set tag_set_ck"  style="height:8vw;">履歴</div>
-			<div id="tag_2" class="tag_set">メモ</div>
-			<div id="tag_1" class="tag_set">項目</div>
-			<div id="tag_4" class="tag_set">設定</div>
-			<div class="customer_memo_set"><span class="customer_set_icon"></span>新規</div>
-			<div class="customer_log_set"><span class="customer_set_icon"></span>新規</div>
-		</div>
+<div class="customer_detail_in">
+	<table class="customer_base">
+		<tr>
+			<td class="customer_base_img" rowspan="3">{$face}</td>
+			<td class="customer_base_tag">タグ</td>
+			<td class="customer_base_item">
+			<select id="customer_group" name="cus_group" class="item_group cas_set">
+			<option value="0">通常</option>
+			{$group}
+			</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="customer_base_tag">名前</td>
+			<td id="c_name" class="customer_base_item">
+				<input type="text" id="customer_detail_name" name="cus_name" class="item_basebox cas_set" value="{$dat["name"]}">
+			</td>
+		</tr>
+		<tr>
+			<td class="customer_base_tag">呼び名</td>
+			<td id="c_nick" class="customer_base_item"><input id="customer_detail_nick" name="cus_nick" type="text" class="item_basebox cas_set" value="{$dat["nickname"]}"></td>
+		</tr>
+		<tr>
+			<td class="customer_base_fav">{$fav}</td>
+			<td class="customer_base_tag">誕生日</td>
+			<td id="c_birth" class="customer_base_item">
+			<select id="customer_detail_yy" name="cus_b_y" class="item_basebox_yy cas_set2">{$yy}</select>/<select id="customer_detail_mm" name="cus_b_m" class="item_basebox_mm cas_set2">{$mm}</select>/<select id="customer_detail_dd" name="cus_b_d" class="item_basebox_mm cas_set2">{$dd}</select><span class="detail_age"><select id="customer_detail_ag" name="cus_b_a" class="item_basebox_ag cas_set2">{$ag}</select>歳</span>
+			</td>
+		</tr>
+	</table>
+	<table class="customer_sns">
+		<tr>
+			<td class="customer_sns_1"><span id="customer_mail" class="customer_sns_btn{$mail_on}"></span></td>
+			<td class="customer_sns_1"><span id="customer_line" class="customer_sns_btn{$line_on}"></span></td>
+			<td class="customer_sns_1"><span id="customer_twitter" class="customer_sns_btn{$twitter_on}"></span></td>
+			<td class="customer_sns_1"><span id="customer_insta" class="customer_sns_btn{$insta_on}"></span></td>
+			<td class="customer_sns_1"><span id="customer_facebook" class="customer_sns_btn{$facebookl_on}"></span></td>
+			<td class="customer_sns_1"><span id="customer_web" class="customer_sns_btn{$web_on}"></span></td>
+			<td class="customer_sns_1"><span id="customer_tel" class="customer_sns_btn{$tel_on}"></span></td>
+		</tr>
+		<tr class="customer_sns_tr">
+			<td class="customer_sns_2"><span id="a_customer_mail" class="sns_arrow_a{$mail_on}"></span></td>
+			<td class="customer_sns_2"><span id="a_customer_line" class="sns_arrow_a{$line_on}"></span></td>
+			<td class="customer_sns_2"><span id="a_customer_twitter" class="sns_arrow_a{$twitter_on}"></span></td>
+			<td class="customer_sns_2"><span id="a_customer_insta" class="sns_arrow_a{$insta_on}"></span></td>
+			<td class="customer_sns_2"><span id="a_customer_facebook" class="sns_arrow_a{$facebook_on}"></span></td>
+			<td class="customer_sns_2"><span id="a_customer_web" class="sns_arrow_a{$web_on}"></span></td>
+			<td class="customer_sns_2"><span id="a_customer_tel" class="sns_arrow_a{$tel_on}"></span></td>
+		</tr>
+	</table>
+	<div class="customer_sns_box">
+		<div class="sns_jump"><span class="regist_icon2"></span><span class="regist_txt2">移動</span></div>
+		<input type="text" class="sns_text" inputmode="url">
+		<div class="sns_btn"><span class="regist_icon2"></span><span class="regist_txt2">登録</span></div>
+		<div class="customer_sns_ttl"></div>
 	</div>
-	<div class="customer_box">
-12<br>
-2<br>
-3<br>
-4<br>
-5<br>
-6<br>
-7<br>
-8<br>
-9<br>
-12<br>
-2<br>
-3<br>
-4<br>
-5<br>
-6<br>
-7<br>
-8<br>
-9<br>
-12<br>
-2<br>
-3<br>
-4<br>
-5<br>
-6<br>
-7<br>
-8<br>
-9<br>
-12<br>
-2<br>
-3<br>
-4<br>
-5<br>
-6<br>
-7<br>
-8<br>
-9<br>
 
-
+	<div class="customer_tag">
+		<div id="tag_1" class="tag_set tag_set_ck" style="height:8vw;">履歴</div>
+		<div id="tag_2" class="tag_set">メモ</div>
+		<div id="tag_3" class="tag_set">項目</div>
+		<div id="tag_4" class="tag_set">設定</div>
+		<div class="customer_memo_set"><span class="customer_set_icon"></span>新規</div>
+		<div class="customer_log_set"><span class="customer_set_icon"></span>新規</div>
 	</div>
+</div>
+<div id="tag_3_tbl" class="customer_memo"></div>
+<input id="h_customer_tel" type="hidden" value="{$dat["tel"]}">
+<input id="h_customer_mail" type="hidden" value="{$dat["mail"]}">
+<input id="h_customer_twitter" type="hidden" value="{$dat["twitter"]}">
+<input id="h_customer_facebook" type="hidden" value="{$dat["facebook"]}">
+<input id="h_customer_insta" type="hidden" value="{$dat["insta"]}">
+<input id="h_customer_line" type="hidden" value="{$dat["line"]}">
+<input id="h_customer_web" type="hidden" value="{$dat["web"]}">
 INA;
-
 echo $html;
 exit();
 ?>

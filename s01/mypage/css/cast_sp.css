@@ -1077,7 +1077,7 @@ select{
 }
 
 
-#tag_3{
+#tag_1{
 	left:2vw;
 }
 
@@ -1085,7 +1085,7 @@ select{
 	left:21.5vw;
 }
 
-#tag_1{
+#tag_3{
 	left:41vw;
 }
 
@@ -1093,9 +1093,6 @@ select{
 	left:60.5vw;
 }
 
-#tag_2_tbl,#tag_1_tbl,#tag_4_tbl{
-	display:none;
-}
 
 
 .sel_box_top{
@@ -1281,7 +1278,7 @@ select{
 .customer_log_del,.customer_log_chg,.customer_memo_del,.customer_memo_chg{
 	display			:inline-block;
 	position		:absolute;
-	top				:-7vw;
+	bottom			:0.5vw;
 	height			:6vw;
 	line-height		:6vw;
 	width			:8vw;
@@ -1755,7 +1752,7 @@ select{
 
 .customer_memo{
 	width			:100vw;
-	margin			:0vw auto;
+	margin			:81vw auto;
 }
 
 .customer_base,.customer_regist_base{
@@ -1801,7 +1798,6 @@ select{
 	margin			:auto;
 	overflow		:hidden;
 }
-
 
 .regist_img{
 	position		:absolute;
@@ -1991,24 +1987,49 @@ select{
 
 .customer_memo_td1{
 	position		:relative;
-	width			:92vw;
+	width			:94vw;
 	padding			:1vw;
 	font-size		:3.5vw;
-	line-height		:5vw;
+	line-height		:4vw;
+	background		:#f0f0ff;
+	min-height		:14vw;
+	border			:1px solid #906000;
+	margin			:10vw auto 3vw auto;
+	text-align		:left;
+}
+
+.customer_memo_log{
+	position		:relative;
+	width			:96vw;
+	padding			:2vw 0;
+	font-size		:0;
+	margin			:0 auto;
+}
+
+.customer_memo_log_in{
+	position		:relative;
+	width			:94vw;
+	padding			:1vw;
+	font-size		:3.5vw;
+	line-height		:4vw;
 	background		:#f0f0ff;
 	min-height		:12vw;
 	border			:1px solid #906000;
-	margin			:9vw auto 3vw auto;
-	text-align:left;
+	margin			:0 auto;
+	text-align		:left;
 }
 
+
 .customer_memo_date{
-	display			:inline-block;
-	position		:absolute;
-	left			:1vw;
-	top				:-5vw;
+	position		:relative;
+	display			:block;
+	height			:7vw;
+	line-height		:9vw;
+	width			:94vw;
 	font-size		:3.5vw;
 	font-weight		:600;
+	text-align		:left;
+	margin			:0 auto;
 }
 
 .customer_memo_del_back_in,.customer_log_del_back_in{
@@ -2523,6 +2544,11 @@ select{
 	max-width		:650px;
 	margin-top		:14.5vw;
 	padding-top		:1vw;
+}
+
+.pg2{
+	margin-top		:27vw;
+
 }
 
 .main_sch{

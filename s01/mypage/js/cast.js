@@ -70,103 +70,45 @@ $(function(){
 		}
 	});
 
-	$('.tag_set').on('click',function () {
-
-console.log("■");
-
+	$('.customer_detail').on('click','.tag_set',function () {
 		if($(this).hasClass('tag_set_ck')!='true'){
 			$(window).scrollTop(0);
+			$('.customer_log_set,.customer_memo_set').hide();
 
-			Tmp_tr=$(this).attr('id')+"_tbl";
 			$('.tag_set_ck').removeClass('tag_set_ck').animate({'height':'5.5vw'},200);
 			$(this).addClass('tag_set_ck').animate({'height':'8vw'},200);
 
-			$('.customer_memo').hide();
-			$('#'+Tmp_tr).fadeIn(300);
-
 			Tmp=$(this).attr('id').replace("tag_","");
-			$('#h_customer_page').val(Tmp);
 
-			if(Tmp == 2){
-				$('.customer_memo_set').show();
-				$('.customer_log_set').hide();
-				$.post({
-					url:"./post/customer_memo_read.php",
-					data:{
-						'cast_id'	:CastId,
-						'c_id':C_Id,
-					},
-				}).done(function(data, textStatus, jqXHR){
-					if(data){
-						$('#tag_2_tbl').html(data);
-					}
-				}).fail(function(jqXHR, textStatus, errorThrown){
-					console.log(textStatus);
-					console.log(errorThrown);
-				});
-
-			}else if(Tmp == 3){
+			if(Tmp ==1){
 				$('.customer_log_set').show();
-				$('.customer_memo_set').hide();
-				$.post({
-					url:"./post/customer_log_read.php",
-					data:{
-						'cast_id'	:CastId,
-						'c_id'		:C_Id,
-					},
-				}).done(function(data, textStatus, jqXHR){
-					if(data){
-						$('#tag_3_tbl').html(data);
-					}
-				}).fail(function(jqXHR, textStatus, errorThrown){
-					console.log(textStatus);
-					console.log(errorThrown);
-				});
 
-			}else if(Tmp == 4){
-				$('.customer_log_set').hide();
-				$('.customer_memo_set').hide();
-				$.post({
-					url:"./post/customer_config_read.php",
-					data:{
-						'c_id'		:C_Id,
-					},
-				}).done(function(data, textStatus, jqXHR){
-					if(data){
-						$('#tag_4_tbl').html(data);
-					}
-				}).fail(function(jqXHR, textStatus, errorThrown){
-					console.log(textStatus);
-					console.log(errorThrown);
-				});
+			}else if(Tmp ==2){
+				$('.customer_memo_set').show();
 
-			}else{
-				$('.customer_log_set').hide();
-				$('.customer_memo_set').hide();
-
-				$.post({
-					url:"./post/customer_detail_read.php",
-					data:{
-						'c_id':C_Id,
-					},
-
-				}).done(function(data, textStatus, jqXHR){
-					$('#tag_1_tbl').html(data);
-
-				}).fail(function(jqXHR, textStatus, errorThrown){
-					console.log(textStatus);
-					console.log(errorThrown);
-				});
 			}
+			$.post({
+				url:"./post/customer_log_read"+Tmp+".php",
+				data:{
+					'c_id':C_Id,
+				},
+
+			}).done(function(data, textStatus, jqXHR){
+				if(data){
+					$('.customer_memo').html(data);
+				}
+
+			}).fail(function(jqXHR, textStatus, errorThrown){
+				console.log(textStatus);
+				console.log(errorThrown);
+			});
 		}
 	});
 
-	$('#tag_4_tbl').on('change','.block_r',function () {
-
+	$('.customer_detail').on('change','.block_r',function () {
 		Tmp=$(this).attr('id');
 		$('#msg_'+Tmp).siblings().hide();
 		$('#msg_'+Tmp).show();
-
 
 		$.post({
 			url:"./post/customer_config_chg.php",
@@ -931,7 +873,6 @@ console.log("■");
 		$('#tag_2_tbl,#tag_1_tbl').empty();
 	});
 
-
 	$('.customer_detail').draggable({
 		axis: 'x',
 		handle:'.customer_detail_in',
@@ -1005,24 +946,32 @@ console.log("■");
 
 	$('.body').on('click','.clist',function(){
 		$('.head_mymenu_comm').addClass('arrow_customer').removeClass('arrow_top');
-		$('.customer_detail').animate({'left':'0'},200);
-
 		C_Id=$(this).attr('id').replace('clist','');
+
 		$.post({
 			url:"./post/customer_detail.php",
 			data:{
 				'c_id'		:C_Id,
 			},
-
 		}).done(function(data, textStatus, jqXHR){
 			$('.customer_detail').html(data);
+			$.post({
+				url:"./post/customer_log_read1.php",
+				data:{
+					'c_id'		:C_Id,
+				},
+			}).done(function(data2, textStatus, jqXHR){
+				$('.customer_memo').html(data2);
+				$('.customer_detail').animate({'left':'0'},200);
 
+			}).fail(function(jqXHR, textStatus, errorThrown){
+				console.log(textStatus);
+				console.log(errorThrown);
+			});
 		}).fail(function(jqXHR, textStatus, errorThrown){
 			console.log(textStatus);
 			console.log(errorThrown);
 		});
-
-
 	});
 
 /*
@@ -1200,7 +1149,7 @@ console.log("■");
 		});
 	});
 
-	$('.sns_btn').on('click',function(){
+	$('.customer_detail').on('click','.sns_btn',function(){
 		$.post({
 			url:"./post/customer_sns_set.php",
 			data:{
@@ -1679,7 +1628,7 @@ console.log("■");
 		$('#memo_chg_id').val('');
 	});
 
-	$('.customer_memo_set').on('click',function () {
+	$('.customer_detail').on('click','.customer_memo_set',function () {
 		if($('.set_back').css('display') ==='none'){
 			$('.set_back').fadeIn(200);
 			$('.customer_memo_in').animate({'top':'20vh'},200);
@@ -1691,7 +1640,7 @@ console.log("■");
 		}
 	});
 
-	$('.customer_log_set').on('click',function () {
+	$('.customer_detail').on('click','.customer_log_set',function () {
 		if($('.set_back').css('display') ==='none'){
 			$('.set_back').fadeIn(200);
 			$('.customer_log_in').animate({'top':'20vh'},200);
@@ -1702,7 +1651,7 @@ console.log("■");
 		}
 	});
 
-	$('#tag_3_tbl').on('click','.customer_log_chg',function () {
+	$('.customer_detail').on('click','.customer_log_chg',function () {
 		if($('.set_back').css('display') ==='none'){
 			Chg=$(this).attr('id').replace('l_chg','');
 			$('.set_back').fadeIn(200);
@@ -1781,7 +1730,6 @@ console.log("■");
 		$('.log_list_del_item').css({'color':$(this).next().next().next().css('color'),'border-color':$(this).next().next().next().css('color')});
 	});
 
-
 	$(".mail_detail_in").on('click','#easytalk_send',function(){
 		if($('#easytalk_text').val() || $('#img_hidden').val()){
 			$('#wait').show();
@@ -1852,7 +1800,7 @@ console.log("■");
 		Flg="mail";
 	});
 
-	$('#tag_2_tbl').on('click','.customer_memo_del',function () {
+	$('.customer_detail').on('click','.customer_memo_del',function () {
 		$('.set_back,.customer_memo_del_back_in').fadeIn(200);
 		Del_ID=$(this).attr('id').replace("m_del","");
 		Flg="memo";
@@ -1865,7 +1813,7 @@ console.log("■");
 	});
 
 
-	$('.cas_set').on('change',function () {
+	$('.customer_detail').on('change','.cas_set',function () {
 		if($(this).attr('id')=='customer_detail_name'){
 			$('#clist'+C_Id).children('.customer_list_name').html($(this).val()+' 様');
 
@@ -1887,7 +1835,7 @@ console.log("■");
 		});
 	});
 
-	$('.cas_set2').on('change',function () {
+	$('.customer_detail').on('change','.cas_set2',function () {
 		$.post({
 			url:"./post/customer_detail_set2.php",
 			data:{
@@ -1975,11 +1923,9 @@ console.log("■");
 
 		}else{
 			if(Flg == "mail"){
-console.log("△");
 				$('#mail_box_'+ Del_ID).slideUp(200);
 
 			}else{
-console.log("▲");
 				$('#tr_'+Flg+'_detail' + Del_ID).slideUp(200);
 			}
 
@@ -2800,7 +2746,6 @@ console.log(data.html);
 			N++;
 		});
 
-
 		$.post({
 			url:"./post/customer_log_set.php",
 			data:{
@@ -2847,7 +2792,7 @@ console.log(data.html);
 
 
 
-	$('#tag_3_tbl').on('click','.customer_log_del',function () {
+	$('.customer_detail').on('click','.customer_log_del',function () {
 		$('.set_back,.customer_memo_del_back_in').fadeIn(100);
 		Del_ID=$(this).attr('id').replace("l_del","");
 		Flg="log";

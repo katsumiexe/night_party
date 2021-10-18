@@ -55,10 +55,12 @@ if($chg){//■変更
 
 $log=str_replace("\n","<br>",$log);
 
-$dat.="<div id=\"customer_log_td_{$tmp_auto}\" class=\"customer_memo_td1\">";
-$dat.="<div class=\"customer_memo_date\"><span class=\"customer_log_icon\"></span><span class=\"customer_log_date_detail\">{$sdate} {$stime}-{$etime}</span></div>";
+$dat.="<div class=\"customer_memo_log\">";
+$dat.="<div class=\"customer_memo_date\"><span class=\"customer_log_icon\"></span><span class=\"customer_log_date_detail\">{$sdate} {$stime}-{$etime}</span>";
 $dat.="<div id=\"l_chg{$tmp_auto}\" class=\"customer_log_chg\"></div>";
 $dat.="<div id=\"l_del{$tmp_auto}\" class=\"customer_log_del\"></div>";
+$dat.="</div>";
+$dat.="<div id=\"tr_log_detail{$tmp_auto}\" class=\"customer_memo_log_in\">";
 
 $dat.="<div class=\"customer_log_memo\">";
 $dat.="{$log}";
@@ -69,7 +71,6 @@ $dat.="<span class=\"sel_log_icon_s\"></span>";
 $dat.="<span class=\"sel_log_comm_s\">利用総額</span>";
 $dat.="<span class=\"sel_log_price_s\">{$pts}</span>";
 $dat.="</div>";
-
 
 $dat.="<div class=\"customer_log_list\">";
 if($item_name){

@@ -4,7 +4,6 @@ MEMO2読み込み
 */
 
 include_once('../../library/sql_post.php');
-
 $c_id		=$_POST["c_id"];
 
 $sql	 ="SELECT block, opt FROM wp00000_customer";
@@ -40,7 +39,7 @@ $dat.="<div class=\"block_msg\">";
 $dat.="<span id=\"msg_block_0\" {$msg[0]}>EasyTalkのご利用が可能です</span>";
 $dat.="<span id=\"msg_block_1\" {$msg[1]}>EasyTalkのご利用は可能ですが、画像添付ができません</span>";
 $dat.="<span id=\"msg_block_2\" {$msg[2]}>EasyTalkのご利用はできません</span>";
-$dat.="<span id=\"msg_block_3\" {$msg[3]}>相手側がEasyTalkの受取りを拒否しています。</span>";
+$dat.="<span id=\"msg_block_3\" {$msg[3]}>相手側でEasyTalkの受取りを拒否しています。</span>";
 $dat.="</div>";
 
 $dat.="<div class=\"block_title\"><span class=\"block_title_in\"></span>Easy Talk通知設定</div>";

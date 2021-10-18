@@ -15,6 +15,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
+
 $sql	 ="SELECT * FROM wp00000_customer_item";
 $sql	 .=" WHERE `del`=0";
 $sql	 .=" AND `gp`=0";
@@ -31,7 +32,6 @@ if($result = mysqli_query($mysqli,$sql)){
 			$dat.="<input id=\"m_b\" type=\"radio\" name=\"cus{$row["id"]}\" value=\"2\" {$s2[2]} class=\"rd\"><label for=\"m_b\" class=\"cousomer_marrige\">未婚</label>";
 			$dat.="<input id=\"m_c\" type=\"radio\" name=\"cus{$row["id"]}\" value=\"3\" {$s2[3]} class=\"rd\"><label for=\"m_c\" class=\"cousomer_marrige\">離婚</label>";
 			$dat.="</td></tr>";
-
 			
 		}elseif($row["style"] == 3){
 			$s3[$cus[$row["id"]]]=" checked=\"checked\"";

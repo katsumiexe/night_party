@@ -1,7 +1,6 @@
 <?
 include_once('../../library/sql_post.php');
 $c_id		=$_POST["c_id"];
-
 $sql	 ="SELECT * FROM wp00000_cast_log";
 $sql	.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql	.=" AND customer_id='{$c_id}'";
@@ -17,11 +16,12 @@ if($result = mysqli_query($mysqli,$sql)){
 
 		$dat1["log"]=str_replace("\n","<br>",$dat1["log"]);
 
-		$dat.="<div id=\"tr_log_detail{$dat1["log_id"]}\" class=\"customer_memo_td1\">";
-		$dat.="<div class=\"customer_memo_date\"><span class=\"customer_log_icon\"></span><span class=\"customer_log_date_detail\">{$t_date} {$s_time}-{$e_time}</span></div>";
+		$dat.="<div class=\"customer_memo_log\">";
+		$dat.="<div class=\"customer_memo_date\"><span class=\"customer_log_icon\"></span><span class=\"customer_log_date_detail\">{$t_date} {$s_time}-{$e_time}</span>";
 		$dat.="<div id=\"l_chg{$dat1["log_id"]}\" class=\"customer_log_chg\"></div>";
 		$dat.="<div id=\"l_del{$dat1["log_id"]}\" class=\"customer_log_del\"></div>";
-
+		$dat.="</div>";
+		$dat.="<div id=\"tr_log_detail{$dat1["log_id"]}\" class=\"customer_memo_log_in\">";
 		$dat.="<div class=\"customer_log_memo\">";
 		$dat.="{$dat1["log"]}";
 		$dat.="</div>";
