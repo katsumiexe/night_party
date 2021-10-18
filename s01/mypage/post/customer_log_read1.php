@@ -21,6 +21,7 @@ if($result = mysqli_query($mysqli,$sql)){
 		$dat.="<div id=\"l_chg{$dat1["log_id"]}\" class=\"customer_log_chg\"></div>";
 		$dat.="<div id=\"l_del{$dat1["log_id"]}\" class=\"customer_log_del\"></div>";
 		$dat.="</div>";
+
 		$dat.="<div id=\"tr_log_detail{$dat1["log_id"]}\" class=\"customer_memo_log_in\">";
 		$dat.="<div class=\"customer_log_memo\">";
 		$dat.="{$dat1["log"]}";

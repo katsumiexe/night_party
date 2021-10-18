@@ -1652,16 +1652,26 @@ $(function(){
 	});
 
 	$('.customer_detail').on('click','.customer_log_chg',function () {
+
 		if($('.set_back').css('display') ==='none'){
 			Chg=$(this).attr('id').replace('l_chg','');
 			$('.set_back').fadeIn(200);
 			$('.customer_log_in').animate({'top':'20vh'},200);
 
-			TmpLog=$(this).next().next().html().replace(/(<br>|<br \/>)/gi, '\n');
-			TmpTag=$(this).next().next().next().next().html();
+		$dat.="<div id=\"tr_log_detail{$dat1["log_id"]}\" class=\"customer_memo_log_in\">";
+		$dat.="<div class=\"customer_log_memo\">";
+		$dat.="{$dat1["log"]}";
+		$dat.="</div>";
 
-			TmpPts=$(this).next().next().next().children('.sel_log_price_s').text();
-			TmpD=$(this).prev().children('.customer_log_date_detail').text().substr(0,4)+"-"+$(this).prev().children('.customer_log_date_detail').text().substr(5,2)+"-"+$(this).prev().children('.customer_log_date_detail').text().substr(8,2);
+			TmpLog=$('#tr_log_detail'+ Chg).children('.customer_log_memo').html().replace(/(<br>|<br \/>)/gi, '\n');
+			TmpPts=$('#tr_log_detail'+ Chg).children('.customer_log_item').children('.sel_log_price_s').text();
+
+
+
+//			TmpTag=$(this).next().next().next().next().html();
+//			TmpD=$(this).prev().children('.customer_log_date_detail').text().substr(0,4)+"-"+$(this).prev().children('.customer_log_date_detail').text().substr(5,2)+"-"+$(this).prev().children('.customer_log_date_detail').text().substr(8,2);
+
+
 
 			$('#local_dt').val(TmpD);
 			$('#local_st').val($(this).prev().children('.customer_log_date_detail').text().substr(11,5));
