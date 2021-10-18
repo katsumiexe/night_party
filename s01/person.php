@@ -100,7 +100,6 @@ if($res = mysqli_query($mysqli,$sql)){
 		}
 	}
 
-
 	$sql ="SELECT L.id, L.host_id, L.list_title, S.sel FROM wp00000_check_list AS L";
 	$sql.=" LEFT JOIN `wp00000_check_sel` AS S ON L.id=S.list_id";
 	$sql.=" AND del='0'";
