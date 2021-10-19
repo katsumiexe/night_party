@@ -111,7 +111,7 @@ for($n=0;$n<100;$n++){
 
 
 $html = <<<INA
-<div class="customer_detail_in">
+<div class="customer_detail_in customer_detail_box"></div>
 	<table class="customer_base">
 		<tr>
 			<td class="customer_base_img" rowspan="3">{$face}</td>
@@ -176,7 +176,7 @@ $html = <<<INA
 		<div class="customer_memo_set"><span class="customer_set_icon"></span>新規</div>
 		<div class="customer_log_set"><span class="customer_set_icon"></span>新規</div>
 	</div>
-</div>
+
 <div id="tag_3_tbl" class="customer_memo"></div>
 <input id="h_customer_tel" type="hidden" value="{$dat["tel"]}">
 <input id="h_customer_mail" type="hidden" value="{$dat["mail"]}">

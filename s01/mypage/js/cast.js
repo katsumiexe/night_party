@@ -876,6 +876,7 @@ $(function(){
 	$('.customer_detail').draggable({
 		axis: 'x',
 		handle:'.customer_detail_in',
+//		handle:'.customer_detail_box',
 		start: function( event, ui ) {
 			startPosition = ui.position.left;
 		},
@@ -1191,13 +1192,14 @@ $(function(){
 	$('.customer_detail').on('click','.customer_sns_btn',function(){
 
 		if($('.customer_sns_box').css('display') !== 'none'){
-
+/*
 			if($('#customer_up').css('display') !== 'none'){
 				$('.pg3').animate({'margin-top':'82vw'},100);
 			}else{
 				$('.pg3').animate({'margin-top':'38vw'},100);
 			}
-			$('.customer_sns_box').slideUp(100);
+*/
+			$('.customer_sns_box').slideUp(1000);
 			$('.customer_sns_tr').slideUp(100);
 			$('.sns_arrow_a').hide();
 			$('.sns_text').val('');
@@ -1237,12 +1239,13 @@ $(function(){
 			$('.customer_sns_tr').slideDown(200);
 //			$('.pg3').animate({'margin-top':'102vw'},200);
 
+/*
 			if($('#customer_up').css('display') !== 'none'){
 				$('.pg3').animate({'margin-top':'102vw'},200);
 			}else{
 				$('.pg3').animate({'margin-top':'58vw'},200);
 			}
-
+*/
 		}else{
 			Tmp='';
 		}
@@ -1309,7 +1312,7 @@ $(function(){
 		Task="regist";
 	});
 
-	$('.customer_detail_img').on('click',function(){
+	$('.customer_detail').on('click','.customer_detail_img',function(){
 		$('.img_box').animate({'top':'10vw'},200);
 		$('.set_back').fadeIn(100);
 		$('#img_code').val('');
@@ -2724,7 +2727,8 @@ console.log(data.html);
 		$('.customer_log_right').append('<div class="sel_log_option_s" style="color:'+colorS+';border:1px solid '+colorS+'"><span class="sel_log_icon_s">'+iconS+'</span><span class="sel_log_comm_s">'+commS+'</span><span class="sel_log_price_s">'+priceS+'</span><span class="sel_log_del_s"></span></div>');
 	});
 
-	$('.customer_detail').on('click','.sel_log_del_s',function(){
+	$('.set_back').on('click','.sel_log_del_s',function(){
+		console.log("■")
 		$(this).parent().remove()
 	});
 
