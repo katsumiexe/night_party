@@ -1538,13 +1538,13 @@ select{
 }
 
 .customer_sns_box{
-	display			:none;
 	position		:fixed;
-	width			:96vw;
-	height			:14vw;
+	width			:95vw;
+	height			:0;
 	background		:#c0c0c0;
-	margin			:73vw 2vw 3vw 2vw;
+	margin			:73vw 1.5vw 3vw 1.5vw;
 	z-index			:16;
+	overflow		:hidden;
 }
 
 .customer_sns_ttl{
