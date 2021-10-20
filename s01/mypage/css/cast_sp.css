@@ -1029,10 +1029,12 @@ select{
 }
 
 .customer_tag{
-	position		:fixed;
-	width			:100vw;
+	position		:absolute;
+	top				:72vw;
+	left			:0;
+	right			:0;
+	margin			:auto;
 	height			:9.5vw;
-	margin			:72vw 0 0 0;
 	border-bottom	:1vw solid #f17766;
 	overflow		:hidden;
 	font-size		:0;
@@ -1400,7 +1402,7 @@ select{
 	border			:none;
 	font-size		:4.5vw;
 	width			:12.5vw;
-	background		:none;
+	background		:#fafafa;
 	color			:#303030;
 	border-bottom	:1px solid #303030;
 	direction		:rtl;
@@ -1414,7 +1416,7 @@ select{
 	border			:none;
 	font-size		:4.5vw;
 	width			:7vw;
-	background		:none;
+	background		:#fafafa;
 	color			:#303030;
 	border-bottom	:1px solid #303030;
 	direction		:rtl;
@@ -1423,7 +1425,7 @@ select{
 .item_basebox_ag{
 	text-align		:right;
 	height			:7vw;
-	margin			:0 0 0 0.5vw;
+	margin			:0 0.5vw 0 0;
 	border			:none;
 	font-size		:4.5vw;
 	width			:8.5vw;
@@ -1473,15 +1475,15 @@ select{
 	height		:8vw;
 	line-height	:8vw;
 	color		:#f17766;
-	font-weight:700;
+	font-weight	:700;
 }
 
 .customer_regist_tbl{
-	border			:0.5vw solid #303030;
-	box-shadow		:0.5vw 0.5vw 0.5vw rgba(30,30,30,0.5);
-	width			:70vw;
-	height			:60vw;
-	background		:#fafafa;
+	border		:0.5vw solid #303030;
+	box-shadow	:0.5vw 0.5vw 0.5vw rgba(30,30,30,0.5);
+	width		:70vw;
+	height		:60vw;
+	background	:#fafafa;
 }
 
 .customer_regist_tag{
@@ -1502,24 +1504,27 @@ select{
 	font-weight	:700;
 	text-shadow	:1px 1px 0 rgba(30,30,30,0.5);
 	text-align	:center;
-	cursor:pointer;
+	cursor		:pointer;
 }
 
 .rd{
-	display:none;
+	display		:none;
 }
 
 .rd:checked+ label {
-	background		:#f17766;
-	color			:#fafafa;	
+	background	:#f17766;
+	color		:#fafafa;	
 } 
 
 .customer_sns{
-	position		:fixed;
+	position		:absolute;
+	top				:59.5vw;
+	left			:0;
+	right			:0;
+	margin			:auto;
 	width			:96vw;
 	height			:11vw;
 	line-height		:11vw;	
-	margin			:59.5vw 2vw 0 2vw;
 	text-align		:center;
 	border			:none;
 	border-collapse	:collapse;
@@ -1538,11 +1543,15 @@ select{
 }
 
 .customer_sns_box{
-	position		:fixed;
+	display			:none;
+	position		:absolute;
+	top				:73vw;
+	left			:0;
+	right			:0;
+	margin			:auto;
 	width			:95vw;
-	height			:0;
+	height			:14vw;
 	background		:#c0c0c0;
-	margin			:73vw 1.5vw 3vw 1.5vw;
 	z-index			:16;
 	overflow		:hidden;
 }
@@ -1710,7 +1719,15 @@ select{
 	width				:100%;
 	height				:82vw;
 	background			:#ffe0f0;
-	z-index				:15;
+	z-index				:14;
+}
+
+.customer_detail_in{
+	position		:absolute;
+	top				:0;
+	left			:0;
+	width			:100%;
+	height			:100%;
 }
 
 .detail_age{
@@ -1763,15 +1780,18 @@ select{
 }
 
 .customer_base,.customer_regist_base{
-	position		:fixed;
+	position		:absolute;
+	top				:15.5vw;
+	left			:0;
+	right			:0;
+	margin			:auto;
 	width			:96vw;
 	border-collapse	:separate;
 	border-spacing	:1vw 0;
-	margin			:15.5vw 2vw 2vw 2vw;
 	background		:#fafafa;
 	z-index			:16;
-
 }
+
 
 .customer_regist_base{
 	width			:96vw;
