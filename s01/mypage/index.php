@@ -187,7 +187,8 @@ if($result = mysqli_query($mysqli,$sql)){
 			$etime[$row["sche_date"]]="";
 
 			$ana_time[$row["sche_date"]]=0;
-			$ana_sche[$row["sche_date"]]="<span class=\"sche_s\"></span>";
+//			$ana_sche[$row["sche_date"]]="<span class=\"sche_s\"></span>";
+			$ana_sche[$row["sche_date"]]="<span class=\"sche_s\">休み</span>";
 		}
 	}
 }
@@ -251,25 +252,34 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql ="SELECT COUNT(log_id) AS cnt, SUM(MAX(pts)) AS kin, sum(log_price) AS bk,nickname,name,L.customer_id FROM wp00000_cast_log AS L ";
-$sql.=" LEFT JOIN wp00000_cast_log_list AS S ON L.log_id=S.master_id";
-$sql.=" LEFT JOIN wp00000_customer AS C ON L.customer_id=C.id";
+$sql ="SELECT log_id, pts, nickname, name, L.customer_id FROM wp00000_cast_log AS L";
+$sql.=" LEFT JOIN wp00000_customer AS S ON L.customer_id=S.id";
 
 $sql.=" WHERE L.del=0";
-$sql.=" AND (S.del=0 OR S.del IS NULL)";
 $sql.=" AND L.days LIKE '{$ana_y_m}%'";
-
 $sql.=" AND L.cast_id={$cast_data["id"]}";
-//$sql.=" GROUP BY L.customer_id";
-$sql.=" ORDER BY cnt DESC";
 
-echo $sql;
+
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
+
 		if(!$row["nickname"]){
 			$row["nickname"]=$row["name"];
 		}
-		$ana_customer[]=$row;
+
+		$sql ="SELECT SUM( log_price) AS kin2, master_id FROM wp00000_cast_log_list";
+		$sql.=" WHERE del=0";
+		$sql.=" AND master_id={$row["log_id"]}";
+		$sql.=" GROUP BY master_id";
+
+		$result2 = mysqli_query($mysqli,$sql);
+		$row2 = mysqli_fetch_assoc($result2);
+		$row["kin2"]=$row2["kin2"];
+
+		$ana_customer[$row["customer_id"]]["nickname"]=$row["nickname"];
+		$ana_customer[$row["customer_id"]]["kin"]+=$row["pts"];
+		$ana_customer[$row["customer_id"]]["ken"]++;
+		$ana_customer[$row["customer_id"]]["kin2"]+=$row["kin2"];
 	}
 }
 
@@ -1365,10 +1375,13 @@ $(function(){
 			$f_day="ana_f";
 		}
 	?>
+
+
+
 				<tr>
 					<td rowspan="2" class="ana_month <?=$f_day?> <?=$ana_line[$ana_week]?>"><?=$n?>(<?=$week[$ana_week]?>)</td>
-					<td rowspan="2" class="ana_sche <?=$f_day?> <?=$ana_line[$ana_week]?>"><?=$ana_sche[$ana_c]?></td>
-					<td class="ana_time <?=$f_day?> <?=$ana_line[$ana_week]?>"><?=$ana_time[$ana_c]?></td>
+					<td rowspan="2" class="ana_sche <?=$f_day?> <?=$ana_line[$ana_week]?>"><?if($ana_time[$ana_c]>0){print($ana_sche[$ana_c]);}?></td>
+					<td class="ana_time <?=$f_day?> <?=$ana_line[$ana_week]?>"><?if($ana_time[$ana_c]>0){print($ana_time[$ana_c]);}?></td>
 					<td class="ana_pay <?=$f_day?> <?=$ana_line[$ana_week]?>">	
 						<span class="ana_pay_all"><?=$ana_all?>円</span>
 					</td>
@@ -1405,12 +1418,12 @@ $(function(){
 			<div id="an3" class="ana_box">
 				<table class="ana"><tr><td class="ana_top" colspan="4">顧客別</td></tr>
 				<tr><td class="ana_top">名前</td><td class="ana_top">来店</td><td class="ana_top">利用金額</td><td class="ana_top">バック</td></tr>
-					<?foreach((array)$ana_customer as $a1){?>
+					<?foreach((array)$ana_customer as $a1 =>$a2){?>
 						<tr>
-							<td class="ana_name"><span id="clist<?=$a1["customer_id"]?>" class="cal_days_birth_in"><?=$a1["nickname"]?></a></td>
-							<td class="ana_ken"><?=$a1["cnt"]?></td>
-							<td class="ana_pts"><?=number_format($a1["kin"])?></td>
-							<td class="ana_pts"><?=number_format($a1["bk"])?></td>
+							<td class="ana_name"><span id="clist<?=$a1?>" class="cal_days_birth_in clist"><?=$a2["nickname"]?></span></td>
+							<td class="ana_ken"><?=$a2["ken"]?></td>
+							<td class="ana_pts"><?=number_format($a2["kin"])?></td>
+							<td class="ana_pts"><?=number_format($a2["kin2"])?></td>
 						</tr>
 					<?}?>
 				</table>
@@ -1823,7 +1836,6 @@ $(function(){
 			<div id="log_del_back" class="btn btn_c1">戻る</div>
 		</div>
 	</div>
-
 
 	<div class="log_list_del">
 		<div class="log_list_del_item">

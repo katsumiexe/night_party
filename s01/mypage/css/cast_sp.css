@@ -4809,31 +4809,30 @@ input[type=range]::-moz-range-thumb{
 }
 
 .sche_m{
-	display		:inline-block;
-	font-size	:3.5vw;
-	width		:3vw;
-	flex-basis	:3vw;
-	height		:7vw;
-	line-height	:7vw;
-	text-align	:center;
-
+	display			:inline-block;
+	font-size		:3.5vw;
+	width			:3vw;
+	flex-basis		:3vw;
+	height			:7vw;
+	line-height		:7vw;
+	text-align		:center;
 }
 
 .sche_e{
-	display		:inline-block;
-	font-size	:3.5vw;
-	width		:12vw;
-	flex-basis	:12vw;
-	height		:7vw;
-	line-height	:7vw;
-	text-align	:center;
+	display			:inline-block;
+	font-size		:3.5vw;
+	width			:12vw;
+	flex-basis		:12vw;
+	height			:7vw;
+	line-height		:7vw;
+	text-align		:center;
 }
 
 .ana_time{
 	width			:10vw;
 	border			:1px solid #666666;
 	text-align		:right;
-	padding-right	:0.5vw;
+	padding-right	:1vw;
 	font-size		:3.5vw;
 }
 
@@ -4846,7 +4845,6 @@ input[type=range]::-moz-range-thumb{
 	text-align		:right;
 	font-size		:3.5vw;
 }
-
 
 .ana_pay_all{
 	display			:inline-block;
@@ -4870,7 +4868,6 @@ input[type=range]::-moz-range-thumb{
 	background		:linear-gradient(#e0e0e0,#d0d0d0);
 	color			:#fafafa;
 }
-
 
 .ana_arrow{
 	position		:absolute;
