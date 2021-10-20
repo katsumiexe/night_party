@@ -25,7 +25,6 @@ select{
 
 }
 .body{
-	background	:#fff3f0;
 	background	:#fff4f6;
 	margin		:0;
 	padding		:0;
@@ -1119,6 +1118,22 @@ select{
 	vertical-align	:top;
 }
 
+.block_title{
+	position		:relative;
+	display			:block;
+	height			:10vw;
+	line-height		:10vw;
+	font-size		:4vw;
+	background		:#f0e8e0;
+	color			:#807870;
+	background		:#ffe0d8;
+	color			:#f17766;
+	text-align		:left;
+	padding-left	:6vw;
+	font-weight		:600;
+}
+
+
 .block_title_in{
 	position		:absolute;
 	top				:0;
@@ -1128,21 +1143,8 @@ select{
 	display			:inline-block;
 	width			:1vw;
 	height			:5vw;
-	background		:#807870;
+	background		:#f17766;
 }
-
-.block_title{
-	position		:relative;
-	display			:block;
-	height			:8vw;
-	line-height		:8vw;
-	font-size		:4vw;
-	background		:#f0e8e0;
-	color			:#807870;
-	text-align		:left;
-	padding-left	:6vw;
-}
-
 
 .block_flex{
 	display			:flex;
@@ -1167,31 +1169,27 @@ select{
 	display:none;
 }
 
-.block_r:checked + label{
-	background:linear-gradient(135deg,#00a000,#009000);
-}
 
 .block_radio{
 	display			:inline-block;
 	flex-basis		:20vw;
 	height			:8vw;
 	line-height		:8vw;
-	background		:#fafafa;
 	text-align		:center;
-	border			:0.5vw solid #807870;
+	border			:0.5vw solid #f17766;
 	border-radius	:1vw;
 	font-size		:4vw;
-	color			:#807870;
-	font-weight		:700;
+	color			:#f17766;
+	background		:#fafafa;
 	margin			:1vw;
 	cursor			:pointer;
 	font-weight		:600;
 }	
 
 .block_r:checked +label{
-	border			:0.5vw solid #908880;
-	background		:#908880;
-	    color		:#fafafa;
+	border			:0.5vw solid #f17766;
+	background		:#f17766;
+    color			:#fafafa;
 }
 
 
@@ -1215,6 +1213,7 @@ select{
 	border-bottom	:2px solid #ffe0f0;
 	padding-left	:1vw;
 	font-size		:4.5vw;
+	position		:relative;
 }
 
 .customer_memo_item{
@@ -1707,7 +1706,8 @@ select{
 	left			:100vw;
 	width			:100vw;
 	height			:100vh;
-	background		:linear-gradient(#ffe0f0,#ffe8f8);
+	background		:#fff4f6;
+	background		:#fff0f2;
 	z-index			:12;
 	padding			:0;
 	overflow-y		:scroll;
@@ -1776,7 +1776,6 @@ select{
 .customer_memo{
 	width			:100vw;
 	margin			:81vw auto 0 auto;
-	background		:#fafafa;
 }
 
 .customer_base,.customer_regist_base{
@@ -2016,17 +2015,16 @@ select{
 }
 
 
-.customer_memo_td1{
+.customer_memo_nodata{
 	position		:relative;
 	width			:94vw;
-	padding			:1vw;
 	font-size		:3.5vw;
-	line-height		:4vw;
+	height			:20vw;
+	line-height		:20vw;
 	background		:#f0f0ff;
-	min-height		:14vw;
 	border			:1px solid #906000;
-	margin			:10vw auto 3vw auto;
-	text-align		:left;
+	margin			:2vw auto;
+	text-align		:center;
 }
 
 .customer_memo_log{

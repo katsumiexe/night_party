@@ -20,12 +20,11 @@ $sql	 ="SELECT * FROM wp00000_customer_item";
 $sql	 .=" WHERE `del`=0";
 $sql	 .=" AND `gp`=0";
 
+$dat="<table style=\"margin:0 auto\"><tr><td colspan=\"2\" style=\"height:10px;\"></td></tr>";
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
-
 		if($row["style"] == 2){
 			$s2[$cus[$row["id"]]]=" checked=\"checked\"";
-
 			$dat.="<tr><td class=\"customer_memo_tag\">{$row["item_name"]}</td>";
 			$dat.="<td class=\"customer_memo_item\">";
 			$dat.="<input id=\"m_a\" type=\"radio\" name=\"cus{$row["id"]}\" value=\"1\" {$s2[1]} class=\"rd\"><label for=\"m_a\" class=\"cousomer_marrige\">既婚</label>";
@@ -49,7 +48,7 @@ if($result = mysqli_query($mysqli,$sql)){
 		}
 	}
 }
-
+$dat.="</table>";
 echo $dat;
 exit();
 ?>

@@ -1,5 +1,11 @@
 <?
-$mysqli = mysqli_connect("mysql57.night-party.sakura.ne.jp","night-party","npnp1941","night-party_np");
+
+$db		="localhost";
+$user	="MkcuE8E.S#9y77";
+$pass	="bjonvdlh";
+$dbn	="bjonvdlh_np";
+
+$mysqli = mysqli_connect($db,$pass,$user,$dbn);
 
 if(!$mysqli){
 	error_log('Connection error: ' . mysqli_connect_error());

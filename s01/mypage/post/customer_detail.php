@@ -169,7 +169,6 @@ $html = <<<INA
 		<div class="sns_btn"><span class="regist_icon2"></span><span class="regist_txt2">登録</span></div>
 		<div class="customer_sns_ttl"></div>
 	</div>
-
 	<div class="customer_tag">
 		<span class="customer_detail_in"></span>
 		<div id="tag_1" class="tag_set tag_set_ck" style="height:8vw;">履歴</div>

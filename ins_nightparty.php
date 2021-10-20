@@ -361,7 +361,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQT
 CREATE TABLE `{$key}_easytalk` (
-  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `mail_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `send_date` datetime NOT NULL,
   `watch_date` datetime NOT NULL,
   `customer_id` int(10) NOT NULL,

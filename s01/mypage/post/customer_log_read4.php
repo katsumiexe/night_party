@@ -28,7 +28,7 @@ $opt_sel[$row["opt"]]=" checked=\"checked\"";
 if($row["block"] == 3){
 	$bk=" disabled=\"disabled\"";
 }
-
+$dat.="<div style=\"height:5px\"></div>";
 $dat.="<div class=\"block_title\"><span class=\"block_title_in\"></span>Easy Talk送信設定</div>";
 $dat.="<div class=\"block_flex\">";
 $dat.="<input id=\"block_0\" class=\"block_r\" type=\"radio\" name=\"block\" value=\"0\"{$bk}{$sel[0]}><label for=\"block_0\" class=\"block_radio\"> 通　常 </label>";

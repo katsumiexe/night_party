@@ -8,6 +8,8 @@ $sql	.=" AND del='0'";
 $sql	.=" ORDER BY log_id DESC";
 $sql	.=" LIMIT 20";
 
+$dat="<span class=\"customer_detail_in\"></span>";
+
 if($result = mysqli_query($mysqli,$sql)){
 	while($dat1 = mysqli_fetch_assoc($result)){
 		$t_date=str_replace("-",".",$dat1["sdate"]);
@@ -50,12 +52,11 @@ if($result = mysqli_query($mysqli,$sql)){
 		$dat.="</div>";
 		$dat.="</div>";
 	}
-}
 
-if(!$dat){
-	$dat="<div id=\"customer_log_nodata\" class=\"customer_memo_td1\" style=\"text-align:center;\"><br>まだ何もありません</div>";
 }
-
+if($dat1["log_id"]){
+	$dat.="<div style=\"height:5px\"></div><div id=\"customer_log_nodata\" class=\"customer_memo_nodata\"\">まだ何もありません</div>";
+}
 echo $dat;
 exit();
 ?>
