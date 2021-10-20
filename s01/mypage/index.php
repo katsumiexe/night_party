@@ -223,7 +223,7 @@ if($result = mysqli_query($mysqli,$sql)){
 
 $ana_y_m=substr($ana_ym,0,4)."-".substr($ana_ym,4,2);
 
-$sql ="SELECT log_id, sdate, SUM(log_price) AS pts, nickname,name, A.days, customer_id FROM wp00000_cast_log AS A ";
+$sql ="SELECT C.id, log_id, sdate, SUM(log_price) AS pts, nickname,name, A.days, customer_id FROM wp00000_cast_log AS A ";
 $sql.=" LEFT JOIN wp00000_cast_log_list AS B ON B.master_id=A.log_id";
 $sql.=" LEFT JOIN wp00000_customer AS C ON A.customer_id=C.id";
 
@@ -251,7 +251,7 @@ if($result = mysqli_query($mysqli,$sql)){
 	}
 }
 
-$sql ="SELECT count(log_id) AS cnt, sum(pts) AS kin, sum(log_price) AS bk,nickname,name,L.customer_id FROM wp00000_cast_log AS L ";
+$sql ="SELECT COUNT(log_id) AS cnt, SUM(MAX(pts)) AS kin, sum(log_price) AS bk,nickname,name,L.customer_id FROM wp00000_cast_log AS L ";
 $sql.=" LEFT JOIN wp00000_cast_log_list AS S ON L.log_id=S.master_id";
 $sql.=" LEFT JOIN wp00000_customer AS C ON L.customer_id=C.id";
 
@@ -260,9 +260,10 @@ $sql.=" AND (S.del=0 OR S.del IS NULL)";
 $sql.=" AND L.days LIKE '{$ana_y_m}%'";
 
 $sql.=" AND L.cast_id={$cast_data["id"]}";
-$sql.=" GROUP BY L.customer_id";
+//$sql.=" GROUP BY L.customer_id";
 $sql.=" ORDER BY cnt DESC";
 
+echo $sql;
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
 		if(!$row["nickname"]){
@@ -271,7 +272,6 @@ if($result = mysqli_query($mysqli,$sql)){
 		$ana_customer[]=$row;
 	}
 }
-
 
 $sql ="SELECT log_icon, log_comm, log_price, log_color, count(log_id) AS cnt, sum(log_price) AS bk FROM wp00000_cast_log_list AS S ";
 $sql.=" LEFT JOIN wp00000_cast_log AS L ON L.log_id=S.master_id";
@@ -286,9 +286,6 @@ if($result = mysqli_query($mysqli,$sql)){
 		$ana_item[]=$row;
 	}
 }
-
-
-
 
 $ana_st=substr($cast_data["ctime"],0,6)-1;
 $ana_ed=date("Ym",strtotime($day_month)+3456000);
@@ -1391,8 +1388,9 @@ $(function(){
 					<?foreach((array)$dat_ana[$ana_c] as $a1){?>
 						<?$tmp_lc=$tmp_line % 2;?>
 							<span class="ana_list_c lc<?=$tmp_lc?>">
-								<span class="ana_list_item"><?=$a1["nickname"]?>様</span>
+								<span id="clist<?=$a1["id"]?>" class="ana_list_item clist"><?=$a1["nickname"]?>様</span>
 								<span class="ana_list_pts"><?=number_format($a1["pts"])?>円</span>
+
 							</span>
 						<?$tmp_line++;?>
 					<? } ?>
@@ -1409,7 +1407,7 @@ $(function(){
 				<tr><td class="ana_top">名前</td><td class="ana_top">来店</td><td class="ana_top">利用金額</td><td class="ana_top">バック</td></tr>
 					<?foreach((array)$ana_customer as $a1){?>
 						<tr>
-							<td class="ana_name"><a href="./index.php?c_id=<?=$a1["customer_id"]?>&cast_page=2" class="cal_days_birth_in"><?=$a1["nickname"]?></a></td>
+							<td class="ana_name"><span id="clist<?=$a1["customer_id"]?>" class="cal_days_birth_in"><?=$a1["nickname"]?></a></td>
 							<td class="ana_ken"><?=$a1["cnt"]?></td>
 							<td class="ana_pts"><?=number_format($a1["kin"])?></td>
 							<td class="ana_pts"><?=number_format($a1["bk"])?></td>
@@ -1722,10 +1720,10 @@ $(function(){
 					<div class="notice_box_birth">				
 						<?foreach((array)$birth_all[$tmp_4] as $a1 => $a2){?>
 						<?$tmp_age=$tmp_y - $a2["year"]?>
-						<a href="./index.php?cast_page=2&c_id=<?=$a1?>" id="c<?=$a1?>" class="cal_days_birth_in">
+						<span id="clist<?=$a1?>" class="cal_days_birth_in clist">
 							<span class="days_icon"></span>
 							<span class="days_birth"><?=$a2["name"]?>(<?=$tmp_age?>)</span>
-						</a>
+						</span>
 						<?}?>
 					</div>
 				</div>
