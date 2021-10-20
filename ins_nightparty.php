@@ -47,9 +47,11 @@ $sql.="index (regist_id)";
 $sql.=") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;";
 mysqli_query($mysqli, $sql);
 
+
+/*
 $sql="ALTER TABLE `{$key}_cast` AUTO_INCREMENT = 12345";
 mysqli_query($mysqli, $sql);
-
+*/
 $sql=<<<SQA
 CREATE TABLE `{$key}_cast_config` (
   `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -564,6 +566,8 @@ CREATE TABLE `{$key}_staff` (
 SRG;
 mysqli_query($mysqli, $sql);
 
+$sql="ALTER TABLE `{$key}_staff` AUTO_INCREMENT = 12345";
+mysqli_query($mysqli, $sql);
 
 $sql=<<<SRH
 CREATE TABLE `{$key}_tag` (
@@ -614,6 +618,7 @@ for($n=0;$n<20;$n++){
 		$sql.="('{$n}','{$a1}','{$a2}'),";
 	}
 }
+
 $sql=substr($sql,0,-1);
 mysqli_query($mysqli, $sql);
 

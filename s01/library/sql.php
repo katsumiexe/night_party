@@ -1,5 +1,4 @@
 <?
-
 $db		="localhost";
 $user	="MkcuE8E.S#9y77";
 $pass	="bjonvdlh";
@@ -31,7 +30,6 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 $sql ="SELECT config_key, config_value FROM wp00000_config";
-
 if($res	= mysqli_query($mysqli,$sql)){
 	while($row	= mysqli_fetch_assoc($res)){
 		$admin_config[$row["config_key"]]=$row["config_value"];
