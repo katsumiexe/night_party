@@ -143,6 +143,7 @@ input[type="checkbox"],input[type="radio"]{
 	border-right	:1px solid #d0d0ff;
 	border-bottom	:5px solid #d0d0ff;
 	color			: #303030;
+	cursor			:pointer;
 }
 .page_p{
 	flex-basis		:50px;
@@ -155,6 +156,7 @@ input[type="checkbox"],input[type="radio"]{
 	text-align		:center;
 	border-radius	:20px 0 0 20px;
 	color			:#303030;
+	cursor			:pointer;
 }
 .page_n{
 	flex-basis		:50px;
@@ -167,6 +169,12 @@ input[type="checkbox"],input[type="radio"]{
 	text-align		:center;
 	border-radius	:0 20px 20px 0;
 	color			:#303030;
+	cursor			:pointer;
+}
+
+.pg_on{
+	background		:#b0b0ff;
+	color			:#fafafa;
 }
 
 .td_top{

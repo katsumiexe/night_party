@@ -44,7 +44,7 @@ $result = mysqli_query($mysqli,$sql);
 $res	= mysqli_fetch_assoc($result);
 
 $res_max=$res["cnt"];
-$pg_max	=ceil($res["cnt"]);
+$pg_max	=ceil($res["cnt"]/20);
 
 if($pg_max<8){
 	$pager_st=1;

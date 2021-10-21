@@ -11,6 +11,8 @@ $sql.="(`date`,`type`,`log_0`,`log_1`,`log_2`,`log_3`,`log_4`,`log_5`,`log_6`,`l
 $sql.=" VALUES('{$now}','{$id}','{$dat[0]}','{$dat[1]}','{$dat[2]}','{$dat[3]}','{$dat[4]}','{$dat[5]}','{$dat[6]}','{$dat[7]}','{$dat[8]}','{$dat[9]}')";
 mysqli_query($mysqli,$sql);
 
+echo $sql;
+
 $sql="SELECT * FROM wp00000_contact_table";
 $sql.=" WHERE type='{$id}'";
 

@@ -1,4 +1,7 @@
 <?
+include_once('./library/sql.php');
+
+/*
 $d=array("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
 
 for($s1=0;$s1<720;$s1++){
@@ -39,4 +42,28 @@ for($n=0;$n<20;$n++){
 	}
 }
 $sql=substr($sql,0,-1);
+*/
+
+
+$id=1;
+
+$sql="INSERT INTO wp00000_contact_list ";
+$sql.="(`date`,`type`,`log_0`,`log_1`,`log_2`,`log_3`,`log_4`,`log_5`,`log_6`,`log_7`,`log_8`,`log_9`) VALUES";
+
+for($n=0;$n<120;$n++){
+
+$now1=date("Y-m-d H:i:s",time()+($n*40000));
+
+$dat[1]="ぽんすけ".$n;
+$dat[2]="mail@mail".$n;
+$dat[3]="大阪".$n;
+$dat[4]=$n;
+$dat[5]="わんわんこ";
+$sql.=" ('{$now1}','{$id}','{$dat[0]}','{$dat[1]}','{$dat[2]}','{$dat[3]}','{$dat[4]}','{$dat[5]}','{$dat[6]}','{$dat[7]}','{$dat[8]}','{$dat[9]}'),";
+}
+$sql=substr($sql,0,-1);
+mysqli_query($mysqli,$sql);
+
+echo $sql;
+
 ?>
