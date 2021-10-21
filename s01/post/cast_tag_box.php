@@ -104,6 +104,7 @@ asort($sort);
 
 foreach($sort as $b1=> $b2){
 	if($b2){
+		$ck=1;
 		$html.="<a href=\"./person.php?post_id={$b1}\" id=\"i{$b1}\" class=\"main_d_1\">";
 		$html.="<img src=\"{$cast_dat[$b1]["face"]}\" class=\"main_d_1_1\">";
 		$html.="<span class=\"main_d_1_2\">";
@@ -121,6 +122,11 @@ foreach($sort as $b1=> $b2){
 		}
 		$html.="</a>";
 	}
+}
+
+if(!$ck){
+	$html.="<span class=\"no_info\">待機予定はまだありません</span><br>";
+
 }
 
 echo $html;

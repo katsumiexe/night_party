@@ -216,14 +216,13 @@ include_once('./header.php');
 <script>
 var Cnt=<?=$count_event?>;
 var NewCnt=1;
-
 </script>
+
 <form id="form_1" method="get" action="">
 <input id="s_code" type="hidden" name="post_id">
 </form>
 <script src="./js/index.js?t=<?=time()?>"></script>
 <div class="main_top">
-
 <?if($count_event==1){?>
 	<div class="slide">
 		<div class="slide_img">

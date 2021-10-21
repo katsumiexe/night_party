@@ -513,7 +513,11 @@
 
 .main_b_notice_arrow{}
 
-.main_d,.main_b_in{}
+.main_d,.main_b_in{
+
+	min-height: calc( 100vh - 17vw - 44vw - 28vw );
+
+}
 
 .main_e{}
 
@@ -711,6 +715,15 @@
 	font-size		:3.8vw;
 	line-height		:5.5vw;
 }
+
+
+.no_info{
+	height		:10vw;
+	line-height	:10vw;
+	font-size		:3.8vw
+}
+
+
 
 .sys_box_ttl{
 	font-size		:4vw

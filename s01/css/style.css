@@ -1403,6 +1403,16 @@ a{
 	text-align		:left;
 }
 
+.no_info{
+	display			:block;
+	height			:100px;
+	line-height		:100px;
+	text-align		:center;
+	margin			:0 auto;
+	font-size		:18px;
+	color			:#c8c0b0;
+}
+
 .system_title{
 	display			:inline-block;
 	height			:30px;

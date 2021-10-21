@@ -41,7 +41,7 @@ include_once('./header.php');
 </div>
 <?}else{?>
 <div class="main_e">
-<span class="sys_box_log">情報はまだありません</span><br>
+<span class="no_info">情報はまだありません</span><br>
 </div>
 <?}?>
 <br>
