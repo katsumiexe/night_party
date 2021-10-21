@@ -63,6 +63,13 @@ if($pg_max<8){
 	$pager_ed=$pg+3;
 }
 
+if($pg>1){
+	$pg_p=$pg-1;
+}
+
+if($pg<$pg_max){
+	$pg_n=$pg+1;
+}
 
 
 $sql	 ="SELECT * FROM wp00000_contact_table AS T";
@@ -237,10 +244,19 @@ $(function(){
 			});
 		}
 	});
+
+
+	$('.pg_off').on('click',function(){
+		Tmp=$(this).attr('id').replace('pg','').replace('pp','').replace('nn','');
+		$('#pg').val(Tmp);
+		$('#main_form').submit();
+	});
 });
 </script>
 <header class="head">
-<form method="post">
+<form id="main_form" method="post">
+
+	<input id="pg" type="hidden" name="pg">
 	<input type="hidden" name="send" value="1">
 	<input type="hidden" name="menu_post" value="contact">
 	<span class="event_tag" style="margin:10px 0">開始</span><input type="date" name="st_ck" class="w140" value="<?=$st_ck?>" style="margin:10px 10px 10px 0" autocomplete="off">
@@ -256,15 +272,15 @@ $(function(){
 	<button  type="submit" class="event_reg_btn">検索</button>
 </form>
 <div class="pager">
-<div class="page_p">前へ</div>
+<div id="pp<?=$pg_p?>" class="page_p pg_off">前へ</div>
 <?for($s=$pager_st;$s<$pager_ed+1;$s++){?>
 <?if($pg == $s){?>
 <div class="page pg_on"><?=$s?></div>
 <?}else{?>
-<div class="page pg_off"><?=$s?></div>
+<div id="pg<?=$s?>" class="page pg_off"><?=$s?></div>
 <?}?>
 <?}?>
-<div class="page_n">次へ</div>
+<div id="nn<?=$pg_n?>" class="page_n pg_off">次へ</div>
 </div>
 </header>
 
