@@ -875,6 +875,7 @@ $(function(){
 
 	$('.customer_detail').draggable({
 		axis: 'x',
+
 		handle:'.customer_detail_in',
 //		handle:'.customer_detail_box',
 		start: function( event, ui ) {
@@ -926,23 +927,26 @@ $(function(){
 	$('#customer_up').on('click',function () {
 		$(this).fadeOut(150);
 		$('.customer_detail').animate({'top':'-44vw'},500);
-
+/*
 		if($('.customer_sns_box').css('display') !== 'none'){
-			$('.pg3').animate({'margin-top':'58vw'},500);
+//			$('.customer_memo').animate({'margin-top':'102vw'},500);
 		}else{
-			$('.pg3').animate({'margin-top':'38vw'},500);
+//			$('.customer_memo').animate({'margin-top':'58vw'},500);
 		}
+*/
 	});
 
 	$('#customer_down').on('click',function () {
 		$('#customer_up').fadeIn(150);
 		$('.customer_detail').animate({'top':'0'},500);
-
+/*
 		if($('.customer_sns_box').css('display') !== 'none'){
 			$('.pg3').animate({'margin-top':'102vw'},500);
 		}else{
 			$('.pg3').animate({'margin-top':'82vw'},500);
 		}
+*/
+
 	});
 
 	$('.body').on('click','.clist',function(){
@@ -1194,14 +1198,12 @@ $(function(){
 	$('.customer_detail').on('click','.customer_sns_btn',function(){
 
 		if($('.customer_sns_box').css('display') !== 'none'){
-			if($('#customer_up').css('display') !== 'none'){
-				$('.customer_memo').animate({'margin-top':'81vw'},100);
-			}else{
-				$('.customer_memo').animate({'margin-top':'38vw'},100);
-			}
 
-			$('.customer_detail_box').animate({'height':'82vw'},100);
-			$('.customer_tag').animate({'top':'72vw'},100);
+
+			$('.customer_memo').animate({'margin-top':'81vw'},100);
+
+			$('.customer_detail_box').animate({'height':'81vw'},100);
+			$('.customer_tag').animate({'top':'71vw'},100);
 
 			$('.customer_sns_box').slideUp(100);
 			$('.customer_sns_tr').slideUp(100);
@@ -1222,6 +1224,7 @@ $(function(){
 				
 				$('.sns_text').val($('#h_'+Tmp).val());
 				$('#a_'+Tmp).addClass('c_'+Tmp);
+
 				$('.customer_sns_box').addClass('c1_'+Tmp);
 
 				if(Tmp == 'customer_mail'){
@@ -1241,16 +1244,9 @@ $(function(){
 
 			$('.customer_sns_box').slideDown(200);
 			$('.customer_sns_tr').slideDown(200);
-			$('.customer_tag').animate({'top':'91vw'},200);
+			$('.customer_tag').animate({'top':'90vw'},200);
 			$('.customer_detail_box').animate({'height':'100vw'},200);
-			$('.customer_memo').animate({'margin-top':'102vw'},200);
-
-
-			if($('#customer_up').css('display') !== 'none'){
-				$('.customer_memo').animate({'margin-top':'102vw'},200);
-			}else{
-				$('.customer_memo').animate({'margin-top':'58vw'},200);
-			}
+			$('.customer_memo').animate({'margin-top':'100vw'},200);
 
 		}else{
 			Tmp='';
