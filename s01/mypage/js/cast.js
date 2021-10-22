@@ -946,6 +946,8 @@ $(function(){
 	});
 
 	$('.body').on('click','.clist',function(){
+		$('#regist_customer').fadeOut(150);
+
 		$('.head_mymenu_comm').addClass('arrow_customer').removeClass('arrow_top');
 		C_Id=$(this).attr('id').replace('clist','');
 
