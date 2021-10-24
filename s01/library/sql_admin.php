@@ -1,20 +1,14 @@
 <?
-$db		="localhost";
-$user	="MkcuE8E.S#9y77";
-$pass	="bjonvdlh";
-$dbn	="bjonvdlh_np";
-
-$mysqli = mysqli_connect($db,$pass,$user,$dbn);
+$mysqli = mysqli_connect("mysql57.night-party.sakura.ne.jp", "night-party", "npnp1941", "night-party_np");
 if(!$mysqli){
 	error_log('Connection error: ' . mysqli_connect_error());
 	die("接続エラー");
 }
 mysqli_set_charset($mysqli,'UTF-8'); 
-
-
+/*
 ini_set( 'display_errors', 1 );
 ini_set('error_reporting', E_ALL);
-
+*/
 
 $sql ="SELECT * FROM wp00000_encode"; 
 if($result = mysqli_query($mysqli,$sql)){

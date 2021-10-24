@@ -1,10 +1,5 @@
 <?
-$db		="localhost";
-$user	="MkcuE8E.S#9y77";
-$pass	="bjonvdlh";
-$dbn	="bjonvdlh_np";
-
-$mysqli = mysqli_connect($db,$pass,$user,$dbn);
+$mysqli = mysqli_connect("mysql57.night-party.sakura.ne.jp","night-party","npnp1941","night-party_np");
 
 if(!$mysqli){
 	error_log('Connection error: ' . mysqli_connect_error());
@@ -30,6 +25,7 @@ if($result = mysqli_query($mysqli,$sql)){
 }
 
 $sql ="SELECT config_key, config_value FROM wp00000_config";
+
 if($res	= mysqli_query($mysqli,$sql)){
 	while($row	= mysqli_fetch_assoc($res)){
 		$admin_config[$row["config_key"]]=$row["config_value"];
@@ -52,10 +48,12 @@ if($tmp2<14 && $tmp[3]=="iPhone"){
 	$admin_config["webp_select"]=0;
 }
 
+
 if (strstr($ua_list,'trident') || strstr($ua_list, 'msie')) {
 	$admin_config["webp_select"]=0;
 }
 //■webPちぇっく------------------
+
 
 $now		=date("Y-m-d H:i:s");
 $now_8		=date("Ymd");
