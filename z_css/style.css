@@ -66,17 +66,23 @@ header{
 
 }
 
-
 .box_bn_1{
 	background		:#fff0fa;
 	width			:100%;
-	margin-top:95vh;
+	margin-top		:95vh;
+	height			:120px;
+	position		:relative;
+
 }
 
 
 .box_bn_1_1{
-	position		:relative;
-	margin			:0 auto;
+	position		:absolute;
+	left			:0;
+	right			:0;
+	bottom			:0;
+	margin			:auto;
+
 	width			:1200px;
 	border-bottom	:5px solid #900000;
 	height			:80px;
@@ -126,6 +132,20 @@ header{
 }
 
 
+.box_1_0{
+	width			:700px;
+	border			:5px solid #FE7F9C;
+	border-radius	:10px;
+	background		:#fafafa;
+	height			:160px;
+	line-height		:24px;
+	text-align		:left;
+	color			:#202020;
+	font-size		:16px;
+	padding			:10px;
+	margin			:10px auto;
+}
+
 .box_1_1{
 	position		:relative;
 	width			:400px;
@@ -150,23 +170,6 @@ header{
 	font-size		:16px;
 	padding			:10px;
 }
-
-.box_1_0{
-	width			:700px;
-	border			:5px solid #FE7F9C;
-	border-radius	:10px;
-	background		:#fafafa;
-	height			:220px;
-	line-height		:24px;
-	text-align		:left;
-	color			:#202020;
-	font-size		:16px;
-	padding			:10px;
-	margin			:10px auto;}
-}
-
-
-
 
 .box_bn_2{
 	width			:100%;
@@ -287,20 +290,39 @@ header{
 }
 
 
-.box_3_1_title{
-	text-align		:left;
-	color			:#000000;
-	font-size		:16px;
-	padding			:10px;
-
+.box_3_title{
+	position	:relative;
+	background	:#e8f0ff;
+	color		:#fafafa;
+	font-weight	:800;
+	font-size	:18px;
+	height		:30px;
+	line-height	:30px;
+	margin		:0 auto;
+	padding-left:15px;
+	text-shadow	:1px 1px 0 #000090;
+	font-weight	:700;
 }
 
-.box_3_1_text{
-	line-height		:20px;
-	text-align		:left;
-	color			:#000000;
+.box_3_p{
 	font-size		:16px;
-	padding			:10px;
+	line-height		:24px;
+	padding			:8px;
+	margin			:0 auto;
+}
+
+.box_3_icon{
+	display		:inline-block;
+	position	:absolute;
+	bottom		:5px;
+	right		:5px;
+	margin		:auto;
+	font-size	:13px;
+	height		:24px;
+	padding		:0 5px;
+	background	:#a0c0ff;
+	border		:1px solid #ffffff;
+	color		:#ffffff;
 }
 
 
@@ -621,19 +643,18 @@ header{
 
 .menu{
 	display			:flex;
-	background		:#fafafa;
+	background		:rgba(250,250,250,0.8);
 	height			:36px;
 	width			:500px;
-	margin			:5px auto;
-	border-radius	:20px;	
+	margin			:0;
+	border-radius	:0 0 20px 0;
 	justify-content	:center;
-	border			:2px solid #fe7f9c;
+	border-bottom	:2px solid #fe7f9c;
+	border-right	:2px solid #fe7f9c;
 }
-
 
 .menu_in{
 	display			:block;
-	background		:#fafafa;
 	width			:80px;
 	flex-basis		:80px;
 	height			:20px;

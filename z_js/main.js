@@ -29,8 +29,11 @@ $(function(){
 		HGT=(HGT_base-SC)*(-0.2);
 		H1=$('.box_3_1').offset().top;
 		H2=$('.box_4_1').offset().top;
+		H0=$('.box_bn_1').offset().top;
 
-		console.log(H1+"▲"+VH+"▲"+SC);
+	//	console.log(H0+"▲"+VH+"▲"+SC);
+
+
 
 		if(SC > 850){
 			$("#back1").show().css('top',HGT);
@@ -42,7 +45,7 @@ $(function(){
 		}
 
 //------------------------------------------------------
-		if(SC > H1 - VH + 50 && Fls_1==0){
+		if(SC > H1 - VH + 30 && Fls_1==0){
 			Fls_1=1;
 			$({Deg:-10, Opc:0, Top:100, Lef:40}).animate({Deg:0, Opc:1, Top:0, Lef:10}, {
 				duration:800,
@@ -70,7 +73,7 @@ $(function(){
 			});
 		}
 
-		if(SC > H1 - VH + 250 && Fls_2==0){
+		if(SC > H1 - VH + 180 && Fls_2==0){
 			Fls_2=1;
 			$({Deg:-10, Opc:0, Top:260, Lef:40}).animate({Deg:0, Opc:1, Top:160, Lef:10}, {
 				duration:800,
@@ -97,7 +100,7 @@ $(function(){
 			});
 		}
 
-		if(SC > H1 - VH + 500 && Fls_3==0){
+		if(SC > H1 - VH + 330 && Fls_3==0){
 			Fls_3=1;
 			$({Deg:-10, Opc:0, Top:420, Lef:40}).animate({Deg:0, Opc:1, Top:320, Lef:10}, {
 				duration:800,
@@ -311,7 +314,9 @@ function DownBall() {
 	$({Tmp_d:0}).animate({Tmp_d:1350}, {
 		duration:1350,
 		progress:function() {
+
 			DBall=3;
+
 			if(this.Tmp_d < 251){ 
 				TmpR=10+this.Tmp_d / 8;
 				$(".ball_txt").css({'width':250 - this.Tmp_d*25 +"px","padding":0});
@@ -350,8 +355,10 @@ function DownBall() {
 					'left':TmpF +"px"
 				});
 
-				if(Tmp-500 > $(window).scrollTop()){
-					$('body, html').scrollTop(Tmp-500);
+	console.log(Tmp+"▼"+ H0);
+				if(Tmp < H0 +15){
+	console.log("▽");
+					$('body, html').scrollTop(Tmp);
 				}
 
 			}else{ 

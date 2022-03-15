@@ -128,44 +128,46 @@ Night-Party
 	<div id="box_3_a1" class="box_3_1">
 		<div class="box_3_title">イベント機能<button id="box_3_icon_1" type="button" class="box_3_icon">SAMPLE<span class="al"></span></button></div>
 		<p class="box_3_p">
-			トップページのスライドバナーにイベントを設定できます。
+			トップページにイベントを設定できます。イベントはバナーのみかリンク有か設定できます。<br>
 		</p>
 	</div>
 
 	<div id="box_3_a2" class="box_3_1">
 		<div class="box_3_title">ニュース機能<button id="box_3_icon_2" type="button" class="box_3_icon">SAMPLE<span class="al"></span></button></div>
 		<p class="box_3_p">
-イベント更新、キャストデビューなどが行われた際、自動で更新されます。
+イベント更新、キャストデビューなどが行われた際、自動で更新されます。<br>
+リンクのあり／なしと注目設定が可能です。注目ニュースは日付関係なくTOPに表示されます。
+
 		</p>
 	</div>
 
 	<div id="box_3_a3" class="box_3_1">
-		<div class="box_3_1_title">キャスト管理<button id="box_3_icon_3" type="button" class="box_3_icon">SAMPLE<span class="al"></span></button></div>
-		<p class="box_3_1_p">
-			キャストの登録やプロフィール内容等簡単に設定できます。
+		<div class="box_3_title">キャスト管理<button id="box_3_icon_3" type="button" class="box_3_icon">SAMPLE<span class="al"></span></button></div>
+		<p class="box_3_p">
+			キャストのプロフィールや写真のほか、管理に便利なステータスやキャストの個人情報等も登録できます。
+
 		</p>
 	</div>
 
 	<div id="box_3_a4" class="box_3_1">
-		<div class="box_3_1_title">シフト管理<button id="box_3_icon_3" type="button" class="box_3_icon">SAMPLE<span class="al"></span></button></div>
-		<p class="box_3_1_p">
-			キャストの登録やプロフィール内容等簡単に設定できます。
+		<div class="box_3_title">シフト管理<button id="box_3_icon_3" type="button" class="box_3_icon">SAMPLE<span class="al"></span></button></div>
+		<p class="box_3_p">
+			キャストのシフトを1週間単位で一覧で表示、変更することができます。<br>
+			※出勤シフトはHIME-Karteからのセットも可能です。
 		</p>
 	</div>
 
 	<div id="box_3_a5" class="box_3_1">
-		<div class="box_3_1_title">ブログ管理<button id="box_3_icon_5" type="button" class="box_3_icon">SAMPLE<span class="al"></span></button></div>
-		<p class="box_3_1_p">
-			写真付きブログの投稿、編集ができます。<br>
-			投稿写真は編集画面でリサイズ、調整、部分マスク等簡易調整が可能です。<br>
+		<div class="box_3_title">ブログ管理<button id="box_3_icon_5" type="button" class="box_3_icon">SAMPLE<span class="al"></span></button></div>
+		<p class="box_3_p">
+			キャストの投稿したブログの修正、削除、写真の非表示を行えます。
 		</p>
 	</div>
 
 	<div id="box_3_a6" class="box_3_1">
-		<div class="box_3_1_title">お問い合わせ<button id="box_3_icon_6" type="button" class="box_3_icon">SAMPLE<span class="al"></span></button></div>
-		<p class="box_3_1_p">
-			時給・バックから月の収入目安を算出します。<br>
-			バック項目や顧客ごとのランキング表示も可能です。<br>
+		<div class="box_3_title">お問い合わせ<button id="box_3_icon_6" type="button" class="box_3_icon">SAMPLE<span class="al"></span></button></div>
+		<p class="box_3_p">
+			キャストからのリクルートメール等を管理で受けられます。処理履歴も残せますので、誰が見てもわかるようにできます。
 		</p>
 	</div>
 </div>

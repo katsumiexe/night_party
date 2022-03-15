@@ -567,7 +567,7 @@ $sql	.=" LEFT JOIN wp00000_easytalk AS M2 ON (M.customer_id = M2.customer_id AND
 $sql	.=" WHERE M.cast_id='{$cast_data["id"]}'";
 $sql	.=" AND M2.send_date IS NULL";
 $sql	.=" AND C.del='0'";
-$sql	.=" AND M.mail_del='0'";
+//$sql	.=" AND M.mail_del='0'";
 $sql	.=" GROUP BY M.customer_id";
 $sql	.=" ORDER BY last_date DESC";
 
