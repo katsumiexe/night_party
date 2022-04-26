@@ -767,9 +767,6 @@ $(function(){
 	});
 });
 
-
-
-
 function UpBall() {
 	var VH=$(window).height();
 	$(".ball_txt").animate({'width':0,'padding':0},150).delay(700).animate({'width':'42.5vh',"padding-left":'10vh'},150);
@@ -785,7 +782,6 @@ function DownBall() {
 	$('#ball1').delay(200).animate({'left':'170vh','top':'-40vh'},400).animate({'left':'0px','top':'0'},300);
 	$('#ball2').delay(200).animate({'left':'170vh','top':'-40vh'},450).animate({'left':'0px','top':'0'},250);
 	$('#ball3').delay(200).animate({'left':'170vh','top':'-40vh'},500).animate({'left':'0px','top':'0'},200);
-
 }
 </script>
 </head>
@@ -806,10 +802,10 @@ function DownBall() {
 <div class="detail"></div>
 </article>
 
-
 <article id="block_1" class="box">
 	<div class="box_ab">
 		<div id="box_item_0" class="box_1_1"></div>
+
 		<div id="box_item_1" class="box_1_1">
 			<div id="ball1" class="box_1_ball"><span class="ball_txt">月額料金0円</span><span class="ball_icon"></span></div>
 			<p class="box_1_1_text">
@@ -891,13 +887,14 @@ function DownBall() {
 			<div class="box_item2">
 不要な機能を排除し、シンプルに簡単、便利さを追求しました。<br>
 サイト更新、キャスト管理、応募の確認、全てこれ一つでOKです。<br>
+
 			<img src="./z_img/img2.webp" class="box_item2_img">
 			</div>
 		</div>
 	</div>
-
-
 </article>
+
+
 
 <article id="block_3" class="box">
 	<div class="box_ab">
@@ -941,7 +938,7 @@ function DownBall() {
 				<div class="box_item_title">ブログ<button id="box_4_icon_5" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
 				<p class="box_item_p">
 					写真付きブログの投稿、編集ができます。<br>
-					投稿写真は編集画面でリサイズ、調整、部分マスク等簡易調整が可能です。<br>
+					投稿写真は編集画面でリサイズ、位置補正、部分マスク等の調整も可能です。<br>
 				</p>
 			</div>
 
@@ -957,7 +954,9 @@ function DownBall() {
 		<div id="box_right_b" class="box_flex_right">
 			<div class="box_item2">
 			キャストに働きやすい環境を提供するのもお店の務めです。<br>
-			「HIME-Karte（ヒメカルテ）」はお店で働くキャストの声を集められて作られた、サイト連動型のマイページです。<br>シフト登録や顧客管理などの業務をシステム化し、キャストの負担を減らします。<br>
+			「HIME-Karte（ヒメカルテ）」はお店で働くキャストの声を集められて作られた、サイト連動型のマイページです。<br>
+			急なシフトの登録やブログの投稿もHIME-Karteから直接可能<br>、
+			顧客管理もシステム化していますので、キャスト、スタッフの負担を大幅に減らせます。<br>
 			<img src="./z_img/img3.webp" class="box_item2_img">
 			</div>
 		</div>
