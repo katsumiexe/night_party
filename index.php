@@ -301,6 +301,21 @@ header{
 }
 
 
+	position		:absolute;
+	top				:11vh;
+	left			:2vh;
+	display			:block;
+	flex-wrap		:wrap;
+	width			:114vh;
+	height			:75vh;
+	padding			:1vh;
+	background		:#fafafa;
+	border			:1vh solid #0060a0;
+	border-radius	:2vh;
+
+
+$({Deg:-10, Opc:0, Top:20, Lef:5})
+
 #box_item_a1,#box_item_b1{
 	top			:150px;
 	left		:60px;
@@ -333,11 +348,11 @@ header{
 
 .box_item2_img{
 	position		:absolute;
-	bottom			:15px;
+	bottom			:1vh;
 	right			:0;
 	left			:0;
 	margin			:auto;
-	width			:260px;
+	width			:30vh;
 }
 
 
