@@ -268,7 +268,7 @@ SQK;
 mysqli_query($mysqli, $sql);
 
 $sql=<<<SQL
-CREATE TABLE `TBL_contact_list` (
+CREATE TABLE `{$key}_contact_list` (
 	`list_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`host_id` int(11) NOT NULL,
 	`date` datetime DEFAULT NULL,
