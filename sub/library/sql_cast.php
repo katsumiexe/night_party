@@ -64,7 +64,19 @@ $ob_holiday = json_decode($holiday,true);
 $day_md_1	=date("md",$day_time+86400);
 $day_md_2	=date("md",$day_time+172800);
 
-$chg_flg=$_REQUEST["chg_flg"];
+
+if($_SESSION["cast_time"] && $_SESSION["cast_time"]+10800+$jst<time()){
+	$_SESSION="";
+	session_destroy();
+
+}else{
+	$cast_page	=$_REQUEST["cast_page"];
+	$_SESSION["cast_time"]=time();
+	$_SESSION["cast_page"]=$cast_page;
+}
+
+
+
 
 $sql="SELECT mail FROM ".TABLE_KEY."_staff";
 $sql.=" WHERE staff_id='12345'";

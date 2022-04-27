@@ -2178,7 +2178,6 @@ $(function(){
 
 <form id="logout" method="post">
 	<input id="logout_count" type="hidden" value="1" name="log_out">
-
 </form>
 
 <form id="sns_form" action="" method="post" target="_blank"></form>
