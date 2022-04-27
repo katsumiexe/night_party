@@ -66,251 +66,26 @@ $day_md_2	=date("md",$day_time+172800);
 
 $chg_flg=$_REQUEST["chg_flg"];
 
-if($_REQUEST["log_out"] || $_REQUEST["cast_page"] == 99){
-	$_POST="";
-	$_SESSION="";
-	session_destroy();
+$sql="SELECT mail FROM ".TABLE_KEY."_staff";
+$sql.=" WHERE staff_id='12345'";
+$sql.=" LIMIT 1";
 
-}elseif($_POST["log_pass_chg"]){
+$res2 = mysqli_query($mysqli,$sql);
+$row2= mysqli_fetch_assoc($res2);
 
-	$id_e=explode("csc",$chg_flg);
-	for($n=0;$n<strlen($id_e[0])/2;$n++){
-		$ck=substr($id_e[0],$n*2,2);
-		$code_no.=$enc[$ck];	
-	}
+$row["mail"]=$row2["mail"];
+$row["cast_time"]=time();
+$_SESSION= $row;
 
-	for($n=0;$n<strlen($id_e[1]) / 2;$n++){
-		$ck=substr($id_e[1],$n*2,2);
-		$code_id.=$enc[$ck];	
-	}
+$cast_data=$_SESSION;
 
-	$t_date=date("Y-m-d H:i:s",$now_time-1800);
+$id_8=substr("00000000".$cast_data["id"],-8);
+$id_0	=$cast_data["id"] % 20;
 
-	$sql="SELECT new_mail FROM ".TABLE_KEY."_mypage_chg";
-	$sql.=" WHERE id='{$code_no}'";
-	$sql.=" AND cast_id='{$code_id}'";
-	$sql.=" AND date>'{$t_date}'";
-	$sql.=" AND new_pass='{$_POST["log_pass_chg"]}'";
-	$sql.=" ORDER BY id DESC";
-	$sql.=" LIMIT 1";
-	$res = mysqli_query($mysqli,$sql);
-	$row2= mysqli_fetch_assoc($res);
-
-	if($row2["new_mail"]){
-		$sql="UPDATE ".TABLE_KEY."_cast SET";
-		$sql.=" login_pass='{$_POST["log_pass_chg"]}'";
-		$sql.=" WHERE id='{$code_id}'";
-		mysqli_query($mysqli,$sql);
-
-		$sql="UPDATE ".TABLE_KEY."_staff SET";
-		$sql.=" `mail`='{$row2["new_mail"]}'";
-		$sql.=" WHERE staff_id='{$code_id}'";
-		mysqli_query($mysqli,$sql);
-
-		$sql="SELECT * FROM ".TABLE_KEY."_cast";
-		$sql.=" WHERE id='{$code_id}'";
-		$sql.=" AND cast_status<3";
-		$sql.=" LIMIT 1";
-		$res = mysqli_query($mysqli,$sql);
-		$row= mysqli_fetch_assoc($res);
-		if($row["id"]){
-			$row["mail"]=$row2["new_mail"];
-			$row["cast_time"]=time();
-			$_SESSION= $row;
-		}
-
-		$chg_flg="";
-
-	}else{
-		$err="IDもしくはパスワードが違います";
-	}
-
-
-}elseif($_REQUEST["easy_in"]){
-	$ky=0;
-	$easy_in=$_REQUEST["easy_in"];
-	$_REQUEST["easy_in"]="";
-
-	$easy_key=$enc[substr($easy_in,2,2)];
-	$easy_in=substr($easy_in,4);
-
-	$easy_list=floor(strlen($easy_in)/2);
-	$easy_key=$easy_list-$easy_key;
-
-	for($n=0;$n<$easy_list;$n++){
-		$tmp_key=substr($easy_in,$easy_key*2,2);
-
-		if($tmp_key == "0h"){
-			$ky++;
-
-		}elseif($tmp_key == "1h"){
-			$ky++;
-			$cast_page=3;
-			$c_id=$_REQUEST["c_id"];
-
-		}else{
-			$ip[$ky].=$enc[$tmp_key];
-		}
-
-		$easy_key++;
-		if($easy_key >=$easy_list){
-			$easy_key=0;
-		}
-	}
-
-	$sql="SELECT * FROM ".TABLE_KEY."_cast";
-	$sql.=" WHERE login_id='{$ip[0]}' AND login_pass='{$ip[1]}'";
-	$sql.=" AND cast_status<3";
-	$sql.=" LIMIT 1";
-	$res = mysqli_query($mysqli,$sql);
-	$row= mysqli_fetch_assoc($res);
-	if($row["id"]){
-		$sql="SELECT mail FROM ".TABLE_KEY."_staff";
-		$sql.=" WHERE staff_id='{$row["id"]}'";
-		$sql.=" LIMIT 1";
-
-		$res2 = mysqli_query($mysqli,$sql);
-		$row2= mysqli_fetch_assoc($res2);
-
-		$row["mail"]=$row2["mail"];
-		$row["cast_time"]=time();
-		$_SESSION= $row;
-
-	}else{
-		$err="IDもしくはパスワードが違います";
-		$_SESSION="";
-		session_destroy();
-	}
-
-
-}elseif($_REQUEST["chg_in"]){
-	$ky=0;
-	$easy_in=$_REQUEST["chg_in"];
-	$_REQUEST["chg_in"]="";
-
-	$easy_key=$enc[substr($easy_in,2,2)];
-	$easy_in=substr($easy_in,4);
-
-	$easy_list=floor(strlen($easy_in)/2);
-	$easy_key=$easy_list-$easy_key;
-
-	for($n=0;$n<$easy_list;$n++){
-		$tmp_key=substr($easy_in,$easy_key*2,2);
-
-		if($tmp_key == "0h"){
-			$ky++;
-
-		}elseif($tmp_key == "1h"){
-			$ky++;
-			$cast_page=3;
-			$c_id=$_REQUEST["c_id"];
-
-		}else{
-			$ip[$ky].=$enc[$tmp_key];
-		}
-
-		$easy_key++;
-		if($easy_key >=$easy_list){
-			$easy_key=0;
-		}
-	}
-
-	$chg_date=date("Y-m-d H:i:s",time()-3600);
-	$sql="SELECT * FROM ".TABLE_KEY."_mail_change";
-	$sql.=" WHERE n_mail='{$ip[0]}' AND n_pass='{$ip[1]}'";
-	$sql.=" AND cast_status<3";
-	$sql.=" AND `date`>'{$chg_date}'";
-	$sql.=" LIMIT 1";
-
-	$res = mysqli_query($mysqli,$sql);
-	$row= mysqli_fetch_assoc($res);
-
-	if($row["id"]){
-		$sql="SELECT * FROM ".TABLE_KEY."_cast";
-		$sql.=" WHERE login_id='{$ip[0]}'";
-		$sql.=" AND cast_status<3";
-		$sql.=" LIMIT 1";
-		$res = mysqli_query($mysqli,$sql);
-		$row= mysqli_fetch_assoc($res);
-
-		$sql="SELECT mail FROM ".TABLE_KEY."_staff";
-		$sql.=" WHERE staff_id='{$row["id"]}'";
-		$sql.=" LIMIT 1";
-
-		$res2 = mysqli_query($mysqli,$sql);
-		$row2= mysqli_fetch_assoc($res2);
-
-		$row["mail"]=$row2["mail"];
-		$row["cast_time"]=time();
-
-		$_SESSION= $row;
-
-	}else{
-		$err="IDもしくはパスワードが違います";
-		$_SESSION="";
-		session_destroy();
-	}
-
-}elseif($_SESSION["cast_time"]+10800+$jst>time()){
-	$cast_page	=$_REQUEST["cast_page"];
-	$c_id		=$_REQUEST["c_id"];
-
-	$_SESSION["cast_time"]=time();
-	$_SESSION["cast_page"]=$cast_page;
-
-/*
-	$sql="SELECT * FROM ".TABLE_KEY."_cast";
-	$sql.=" WHERE id='{$_SESSION["id"]}'";
-	$sql.=" AND cast_status<3";
-	$sql.=" LIMIT 1";
-	if($res = mysqli_query($mysqli,$sql)){
-		$_SESSION= mysqli_fetch_assoc($res);
-	}
-*/
-
-}elseif($_POST["log_in_set"] && $_POST["log_pass_set"]){
-
-	$sql="SELECT * FROM ".TABLE_KEY."_cast";
-	$sql.=" WHERE login_id='{$_POST["log_in_set"]}' AND login_pass='{$_POST["log_pass_set"]}'";
-	$sql.=" AND cast_status<3";
-	$sql.=" LIMIT 1";
-	$res = mysqli_query($mysqli,$sql);
-	$row= mysqli_fetch_assoc($res);
-	if($row["id"]){
-
-		$sql="SELECT mail FROM ".TABLE_KEY."_staff";
-		$sql.=" WHERE staff_id='{$row["id"]}'";
-		$sql.=" LIMIT 1";
-
-		$res2 = mysqli_query($mysqli,$sql);
-		$row2= mysqli_fetch_assoc($res2);
-
-		$row["mail"]=$row2["mail"];
-		$row["cast_time"]=time();
-		$_SESSION= $row;
-
-	}else{
-		$err="IDもしくはパスワードが違います";
-		$_SESSION="";
-		session_destroy();
-	}
-
-}else{
-	$_SESSION="";
-	session_destroy();
+for($n=0;$n<8;$n++){
+	$tmp_id=substr($id_8,$n,1);
+	$box_no.=$dec[$id_0][$tmp_id];
 }
+	$box_no.=$id_0;
 
-
-if($_SESSION){
-	$cast_data=$_SESSION;
-
-	$id_8=substr("00000000".$cast_data["id"],-8);
-	$id_0	=$cast_data["id"] % 20;
-
-	for($n=0;$n<8;$n++){
-		$tmp_id=substr($id_8,$n,1);
-		$box_no.=$dec[$id_0][$tmp_id];
-	}
-		$box_no.=$id_0;
-}
 ?>

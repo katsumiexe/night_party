@@ -29,13 +29,13 @@ a{
 }
 
 header{
-	position	:fixed;
-	top			:0;
-	left		:0;
-	right		:0;
-	margin		:auto;
-	height		:40px;
-	z-index		:10;
+	position		:fixed;
+	top				:0;
+	left			:0;
+	right			:0;
+	margin			:auto;
+	height			:40px;
+	z-index			:10;
 }
 
 .main{
@@ -441,17 +441,17 @@ $({Deg:-10, Opc:0, Top:20, Lef:5})
 }
 
 #ball1{
-	left			:11vh;
+	left			:1vh;
 	top				:-88vh;
 }
 
 #ball2{
-	left			:-50vh;
+	left			:-54.5vh;
 	top				:-77vh;
 }
 
 #ball3{
-	left			:-111vh;
+	left			:-110vh;
 	top				:-66vh;
 }
 
@@ -771,9 +771,9 @@ function UpBall() {
 	var VH=$(window).height();
 	$(".ball_txt").animate({'width':0,'padding':0},150).delay(700).animate({'width':'42.5vh',"padding-left":'10vh'},150);
 	$(".ball_icon").animate({'border-radius':'30px'},150).delay(700).animate({"border-radius":'10px'},150);
-	$('#ball1').delay(200).animate({'left':'170vh','top':'-40vh'},400).animate({'left':'11vh','top': "-88vh"},300);
-	$('#ball2').delay(200).animate({'left':'170vh','top':'-45vh'},450).animate({'left':'-50vh','top':"-77vh"},250);
-	$('#ball3').delay(200).animate({'left':'170vh','top':'-50vh'},500).animate({'left':'-111vh','top':"-66vh"},200);
+	$('#ball1').delay(200).animate({'left':'170vh','top':'-40vh'},400).animate({'left':'1vh','top': "-88vh"},300);
+	$('#ball2').delay(200).animate({'left':'170vh','top':'-45vh'},450).animate({'left':'-54.5vh','top':"-77vh"},250);
+	$('#ball3').delay(200).animate({'left':'170vh','top':'-50vh'},500).animate({'left':'-110vh','top':"-66vh"},200);
 }
 
 function DownBall() {
@@ -839,9 +839,9 @@ function DownBall() {
 		<div class="h2_s">　</div>
 		<div class="box_flex_left">
 			<div id="box_item_a1" class="box_item">
-				<div class="box_item_title">イベント機能<button id="box_3_icon_1" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+				<div class="box_item_title">バナー設定機能<button id="box_3_icon_1" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
 				<p class="box_item_p">
-					トップページにイベントを設定できます。イベントはバナーのみかリンク有か設定できます。<br>
+					ページトップに大バナー、ページ脇に小バナーの設定ができます。バナーはそれぞれイベントページへのリンクあり／無を設定ができます。<br>
 				</p>
 			</div>
 
@@ -849,7 +849,7 @@ function DownBall() {
 				<div class="box_item_title">ニュース機能<button id="box_3_icon_2" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
 				<p class="box_item_p">
 					イベント更新、キャストデビューなどが行われた際、自動で更新されます。<br>
-					リンクのあり／なしと注目設定が可能です。注目ニュースは日付関係なくTOPに表示されます。
+					リンクのあり／なしと注目設定が可能です。注目ニュースの設定も可能で、日付関係なくTOPに表示されます。
 				</p>
 			</div>
 
