@@ -91,8 +91,8 @@ $_SESSION= $row;
 
 $cast_data=$_SESSION;
 
-$id_8=substr("00000000".$cast_data["id"],-8);
-$id_0	=$cast_data["id"] % 20;
+$id_8=00012345;
+$id_0	=12345 % 20;
 
 for($n=0;$n<8;$n++){
 	$tmp_id=substr($id_8,$n,1);
