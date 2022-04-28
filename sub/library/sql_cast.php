@@ -75,12 +75,27 @@ if($_SESSION["cast_time"] && $_SESSION["cast_time"]+10800+$jst<time()){
 	$_SESSION["cast_page"]=$cast_page;
 }
 
+	$sql="SELECT * FROM ".TABLE_KEY."_cast";
+	$sql.=" WHERE id='12345'";
+	$sql.=" LIMIT 1";
+	$res = mysqli_query($mysqli,$sql);
+	$row= mysqli_fetch_assoc($res);
+	if($row["id"]){
+
+		$sql="SELECT mail FROM ".TABLE_KEY."_staff";
+		$sql.=" WHERE staff_id='{$row["id"]}'";
+		$sql.=" LIMIT 1";
+
+		$res2 = mysqli_query($mysqli,$sql);
+		$row2= mysqli_fetch_assoc($res2);
+
+		$row["mail"]=$row2["mail"];
+		$row["cast_time"]=time();
+		$_SESSION= $row;
+	}
 
 
 
-$sql="SELECT mail FROM ".TABLE_KEY."_staff";
-$sql.=" WHERE staff_id='12345'";
-$sql.=" LIMIT 1";
 
 $res2 = mysqli_query($mysqli,$sql);
 $row2= mysqli_fetch_assoc($res2);
