@@ -1,18 +1,4 @@
 <?
-/*
-$sql	 ="SELECT * FROM ".TABLE_KEY."_charm_table";
-$sql	.=" WHERE del=0";
-$sql	.=" AND view=0";
-$sql	.=" ORDER BY sort ASC";
-
-if($res = mysqli_query($mysqli,$sql)){
-	while($res_a = mysqli_fetch_assoc($res)){
-		$charm_table[$res_a["id"]]=$res_a;
-	}
-}
-*/
-
-
 $sql	 ="SELECT * FROM ".TABLE_KEY."_check_main";
 $sql	.=" WHERE del=0";
 $sql	.=" ORDER BY sort ASC";
@@ -83,7 +69,11 @@ td{
 #cast_l{
 	border-radius:0 10px 10px 0;
 }
-
+.ck_login_id_err{
+	font-size	:13px;
+	font-weight	:700;
+	color		:#a00000;
+}
 </style>
 <link rel="stylesheet" href="./css/admin_image.css?t=<?=time()?>">
 <script src="./js/image.js?_<?=time()?>"></script>
@@ -108,11 +98,40 @@ $(function(){
 	});
 
 	$('.staff_regist').on('click',function () {
-		$('#wait').show();
-		Tmp=$(this).attr('id');
-		$('#send').val(Tmp);
-		$('#form').submit();
+		if($('.ck_login_id_err').css("display") == "none"){
+			$('#wait').show();
+			Tmp=$(this).attr('id');
+			$('#send').val(Tmp);
+			$('#form').submit();
+		}else{
+			$('.ck_login_id_err').focus();
+		}
 	});
+
+	$('#ck_login_id').on('change',function () {
+		$(this).css("background-color","#fafafa");
+		$('.ck_login_id_err').hide();
+
+		$.ajax({
+			url:'./post/id_check.php',
+			type: 'post',
+			data:{
+				'id':$(this).val()
+			},
+
+		}).done(function(data, textStatus, jqXHR){
+			console.log(data);
+			if(data =="err"){
+				$('#ck_login_id').css("background-color","#fff0f0");
+				$('.ck_login_id_err').fadeIn(100);
+			}
+
+		}).fail(function(jqXHR, textStatus, errorThrown){
+			console.log(textStatus);
+			console.log(errorThrown);
+		});
+	});
+
 });
 </script>
 <form id="form" action="" method="post">
@@ -214,7 +233,7 @@ CAST情報
 </td>
 <tr>
 	<td>
-		<div>ログインID		</div><input id="ck_login_id" type="text" name="cast_id" value="" class="w000 d_ck" autocomplete="off">
+		<div>ログインID <span class="ck_login_id_err" style="display:none;">既に使われています</span></div><input id="ck_login_id" type="text" name="cast_id" value="" class="w000 d_ck" autocomplete="off">
 	</td>
 	<td>
 		<div>ログインPASS	</div><input type="text" name="cast_pass" value="" class="w000" autocomplete="new_password">
@@ -223,8 +242,7 @@ CAST情報
 		<div>リボン</div>
 		<select name="cast_ribbon" class="w000">
 			<option value="0">基本</option>
-			$cast_ribbon[$row["id"]]=$row["tag_name"];
-	<?foreach($cast_ribbon as $a1 => $a2){?>
+	<?foreach((array)$cast_ribbon as $a1 => $a2){?>
 			<option value="<?=$a1?>"<?if($staff_data["cast_ribbon"]==$a1){?> selected="selected"<?}?>><?=$a2?></option>
 	<?}?>
 		</select>
@@ -292,8 +310,8 @@ CAST情報
 	</tr>
 </table>
 <? } ?>
+<div style="height:20px;"></div>
 </div>
-
 
 <div class="main_box cast_table">
 	<div class="img_box_flex">
@@ -348,8 +366,6 @@ CAST情報
 
 					<input id="sx_stamp<?=$n?>" type="hidden" value="" name="st_left[<?=$n?>]">
 					<input id="sy_stamp<?=$n?>" type="hidden" value="" name="st_top[<?=$n?>]">
-
-
 				</td>
 			</tr>
 		</table>
@@ -362,15 +378,3 @@ CAST情報
 <input id="upd2" class="img_upd" type="file" accept="image/*" style="display:none;">
 <input id="upd3" class="img_upd" type="file" accept="image/*" style="display:none;">
 </div> 
-<div class="alert_d">
-	<div class="alert_d_1">
-		他のスタッフで利用されているため使えません。
-	</div>
-	<div class="alert_d_2_out"></div>
-	<div class="alert_d_3">
-		重複元を修正するか、登録情報を変更してください。<br>
-		このまま登録しますと、重複箇所は反映せずに登録されます。<br>
-		※重複元を修正した際は「更新」をクリックしてください。<br>
-	</div>
-	<button type="button" class="alert_d_4">更新</button>
-</div>

@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="./css/style.css?t=<?=time()?>">
 <link rel="stylesheet" href="./css/style_t.css?t=<?=time()?>">
 <link rel="stylesheet" href="./css/style_s.css?t=<?=time()?>">
- 
 <style>
 @font-face {
 	font-family: at_icon;
@@ -44,7 +43,6 @@
 		</h1>
 		<div class="head_b_3">電話番号　03<span>-</span>1234<span>-</span>5678</span></div>
 	</div>
-
 	<nav class="head_a">
 		<ul id="menu-main" class="menu">
 			<li class="menu_item"><a href="./index.php">Top Page</a></li>

@@ -1128,7 +1128,7 @@ $(function(){
 		</div>
 
 		<div class="customer_top">　</div>
-		<div class="sort_alert">非表示になっている顧客がいます</div>
+		<div class="sort_alert_out"><span class="sort_alert">非表示になっている顧客がいます</span></div>
 		<div class="customer_all_in">
 			<?if (is_array($customer)) {?>
 				<?for($n=0;$n<count($customer);$n++){?>
@@ -1833,24 +1833,6 @@ $(function(){
 		<input type="hidden" id="notice_page" value="1">
 	</div>
 <? } ?>
-
-<!--table class="mado">
-<tr>
-<td>window</td>
-<td id="mado_a"></td>
-</tr>
-
-<tr>
-<td>height</td>
-<td id="mado_b"></td>
-</tr>
-
-<tr>
-<td>scroll</td>
-<td id="mado_c"></td>
-</tr>
-</table-->
-
 <div class="customer_detail"></div>
 <div class="sch_set_done">スケジュールが登録されました</div>
 
@@ -2178,6 +2160,7 @@ $(function(){
 
 <form id="logout" method="post">
 	<input id="logout_count" type="hidden" value="1" name="log_out">
+
 </form>
 
 <form id="sns_form" action="" method="post" target="_blank"></form>

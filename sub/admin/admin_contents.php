@@ -160,14 +160,33 @@ if($event_set_id){
 
 
 if($post_id == "news"){
-	$hdn=$_POST["hdn"]+0;
+	$news_check1=$_POST["news_check1"];
+	$news_check2=$_POST["news_check2"];
+	$news_check3=$_POST["news_check3"];
+	$news_filter=$_POST["news_filter"]+0;
 
+	if($news_filter > 0){
+		$app	 =" AND `tag`='{$news_filter}'";	
+	}
+		$app	.=" AND (status=9999";
+
+	if($news_check1==1){
+		$app	.=" OR status=0";
+	}
+
+	if($news_check2==1){
+		$app	.=" OR status=2";
+	}
+
+	if($news_check3==1){
+		$app	.=" OR status=3";                                                                                                                           
+		$app	.=")";
+	}
+	
 	$sql	 ="SELECT * FROM ".TABLE_KEY."_contents";
 	$sql	.=" WHERE page='{$post_id}'";
-	$sql	.=" AND status<4";
-	if($hdn>0){
-	$sql	.=" AND `tag`={$hdn}";
-	}
+	$sql	.=$app;
+
 	$sql	.=" ORDER BY event_date DESC, id DESC";
 	$sql	.=" LIMIT {$pg_st}, 20";
 
@@ -384,271 +403,9 @@ if($res_max==0){
 
 ?>
 <style>
-<!--
-.rec_bg0, .rec_bg{
-	background	:#eeeeee;
-	color		:#808080;
-}
-
-.rec_bg1{
-	background	:#0000c0;
-	color		:#fafafa;
-}
-
--->
 </style>
 <script>
-
-$(function(){ 
-	$('.sel_contents').on('click',function(){
-		Tmp=$(this).attr('id');
-		$('#sel_ck').val(Tmp);
-		$('#form').submit();
-	});
-
-	$('#page_set_btn').on('click',function(){
-		if (!confirm('変更します。よろしいですか')) {
-			return false;
-		}else{
-			$('#page_set').submit();
-		}
-	});
-
-	$('.rec_tbl_chg').on('change',function(){
-		Tmp=$(this).attr('id');
-		$.ajax({
-			url:'./post/recruit_chg.php',
-			type: 'post',
-			data:{
-				'no'	:1,
-				'id'	:Tmp,
-				'dat'	:$(this).val(),
-			},
-
-		}).done(function(data, textStatus, jqXHR){
-			console.log(data);
-
-		}).fail(function(jqXHR, textStatus, errorThrown){
-			console.log(textStatus);
-			console.log(errorThrown);
-		});
-	});
-
-
-	$('.recruit_check').on('click',function(){
-		Tmp=$(this).attr('id');
-
-		if($(this).hasClass('rec_bg1')){
-			$(this).removeClass('rec_bg1').addClass('rec_bg0');
-			Dat=0;
-		}else{
-			$(this).removeClass('rec_bg0 rec_bg').addClass('rec_bg1');
-			Dat=1;
-		}
-
-		if(Tmp == "new_label"){
-			$('#new_ck').val(Dat);
-
-		}else{
-			$.ajax({
-				url:'./post/recruit_chg.php',
-				type: 'post',
-				data:{
-					'no'	:1,
-					'id'	:Tmp,
-					'dat'	:Dat,
-				},
-
-			}).done(function(data, textStatus, jqXHR){
-				console.log(data);
-
-			}).fail(function(jqXHR, textStatus, errorThrown){
-				console.log(textStatus);
-				console.log(errorThrown);
-			});
-		}
-	});
-
-	$('.recruit_check').on('click',function(){
-		Tmp=$(this).attr('id');
-
-		if($(this).hasClass('rec_bg1')){
-			$(this).removeClass('rec_bg1').addClass('rec_bg0');
-			Dat=0;
-
-		}else{
-			$(this).removeClass('rec_bg0 rec_bg').addClass('rec_bg1');
-			Dat=1;
-		}
-
-
-		if(Tmp == "new_label"){
-			$('#new_ck').val(Dat);
-
-		}else{
-			$.ajax({
-				url:'./post/recruit_chg.php',
-				type: 'post',
-				data:{
-					'no'	:1,
-					'id'	:Tmp,
-					'dat'	:Dat,
-				},
-
-			}).done(function(data, textStatus, jqXHR){
-				console.log(data);
-
-			}).fail(function(jqXHR, textStatus, errorThrown){
-				console.log(textStatus);
-				console.log(errorThrown);
-			});
-		}
-
-	});
-
-	$('.recruit_del').on('click',function(){
-		Tmp=$(this).attr('id').replace("del","");
-
-		if (!confirm('削除します。よろしいですか')) {
-			return false;
-		}else{
-			$.ajax({
-				url:'./post/recruit_del.php',
-				type: 'post',
-				data:{
-					'id'	:Tmp,
-				},
-
-			}).done(function(data, textStatus, jqXHR){
-				$("#contact_sort"+Tmp).remove();
-				console.log(data);
-
-			}).fail(function(jqXHR, textStatus, errorThrown){
-				console.log(textStatus);
-				console.log(errorThrown);
-			});
-		}
-	});
-
-	$('.main_box').on('change','.cate_v',function(){
-		Chk=$(this).val();
-		if( Chk=='person' || Chk=='blog' || Chk=='page'){
-
-			$(this).next('.cate_s').hide();
-		}else{
-			$(this).next('.cate_s').show();
-		}
-	});
-
-
-	$('.upd_file').on('change',function(e){
-		Tmp=$(this).attr('id');
-
-		Ck=Tmp.substr(3,1);
-		if(Ck=="i"){
-			Ck_h=200;
-			Ck_w=600;
-
-		}else{
-			Ck_h=480;
-			Ck_w=1200;
-		}
-
-		var file = e.target.files[0];	
-		var reader = new FileReader();
-
-		if(file.type.indexOf("image") < 0){
-			alert("NO IMAGE FILES");
-			return false;
-		}
-		var img = new Image();
-
-		reader.onload = (function(file){
-			return function(e){
-				img.src = e.target.result;
-				img.onload = function() {
-					if(img.height != Ck_h || img.width != Ck_w){
-						if (!confirm('画像が推奨サイズではありませんがよろしいですか\n※推奨サイズ　縦'+Ck_h+'px 横'+ Ck_w+'px' +img.height+'/'+img.width)) {
-							return false;
-						}else{
-							$("#top_"+Tmp).attr('src', e.target.result);
-						}
-					}else{
-							$("#top_"+Tmp).attr('src', e.target.result);
-					}
-				}
-			}
-		})(file);
-		reader.readAsDataURL(file);
-	});
-
-	$('.event_tag_btn,.event_set_btn').on('click',function(){
-		Tmp	=$(this).attr('id').substr(0,3);
-		Tmp2=$(this).attr('id').substr(3);
-
-		if(Tmp == 'chg'){
-			if (!confirm('変更します。よろしいですか')) {
-				return false;
-			}else{
-				$('#f'+Tmp2).submit();
-			}
-
-		}else if(Tmp == 'del'){
-			if (!confirm('削除します。よろしいですか')) {
-				return false;
-
-			}else{
-				$('#st'+Tmp2).val('4');
-				$('#f'+Tmp2).submit();
-			}
-
-		}else if(Tmp == 'cov'){
-			Tmp3=$('#st'+Tmp2).val();
-			if(Tmp3 == 3){
-				$('#st'+Tmp2).val('0');
-
-			}else{
-				$('#st'+Tmp2).val('3');
-			}
-			$('#f'+Tmp2).submit();
-		}
-	});
-
-	$(".event_tag_label").on("click",function(){
-		Tmp=$(this).attr("id").replace("sid","");
-		$(".event_tag_label").removeClass("c1");
-		$(this).addClass("c1");
-		$("#hdn").val(Tmp);
-	});
-
-	$('#new_set').on('click',function(){
-		if($("#new_name").val()){
-			$.ajax({
-				url:'./post/recruit_set.php',
-				type: 'post',
-				data:{
-					'name'	:$("#new_name").val(),
-					'type'	:$("#new_type").val(),
-					'ck'	:$("#new_ck").val(),
-				},
-
-			}).done(function(data, textStatus, jqXHR){
-				console.log(data);
-				$("#contact_sort").append(data);
-				$("#new_name").val("");
-				$("#new_type").val("1")
-				$("#new_ck").val("0")
-				$("#new_label").addClass('rec_bg0').removeClass('rec_bg1')
-
-			}).fail(function(jqXHR, textStatus, errorThrown){
-				console.log(textStatus);
-				console.log(errorThrown);
-			});
-		}
-	});
-});
 </script>
-
 <header class="head">
 <div id="event" class="sel_contents <?if($post_id == "event"){?> sel_ck<?}?>">イベント</div>
 <div id="news"  class="sel_contents <?if($post_id == "news"){?> sel_ck<?}?>">NEWS</div>
@@ -768,15 +525,20 @@ $(function(){
 								</td>
 							</tr>
 						</table>
-						<input id="hdn" type="hidden" name="hdn" value="<?=$hdn?>">
 					</form>
 				<?}?>
 			</div>
 		</div>
+
+<form id="news_select" method="post">
+		<input type="hidden" name="post_id" value="news">
+		<input type="hidden" name="menu_post" value="contents">
+		<input type="hidden" name="news_select" value="news_chg">
+
 		<div class="sub_box">
 			<label for="view0" class="ribbon_use news_tag_label">
 				<span class="check2">
-					<input id="view0" type="checkbox" class="ck0" value="1" checked="checked">
+					<input id="view0" type="checkbox" name="news_check1" class="ck0" value="1"<?if($news_check1 == 1){?> checked="checked"<?}?>>
 					<span class="check1"></span>
 				</span>
 				<span class="news_tag_label_in">表示</span>
@@ -784,7 +546,7 @@ $(function(){
 
 			<label for="view1" class="ribbon_use news_tag_label">
 				<span class="check2">
-					<input id="view1" type="checkbox" class="ck0" value="1" checked="checked">
+					<input id="view1" type="checkbox" name="news_check2" class="ck0" value="1"<?if($news_check2 == 1){?> checked="checked"<?}?>>
 					<span class="check1"></span>
 				</span>
 				<span class="news_tag_label_in">注目</span>
@@ -792,23 +554,26 @@ $(function(){
 
 			<label for="view2" class="ribbon_use news_tag_label">
 				<span class="check2">
-					<input id="view2" type="checkbox" class="ck0" value="1">
+					<input id="view2" type="checkbox" name="news_check3" class="ck0" value="1"<?if($news_check3 == 1){?> checked="checked"<?}?>>
 					<span class="check1"></span>
 				</span>
 				<span class="news_tag_label_in">非表示</span>
 			</label>
 
-			<span id="sid0" class="event_tag_label <?if($hdn == 0){?>c1<?}?>">全て</span><br>
+			<input id="sid0" type="radio" name="news_filter" class="news_chg" value="0"<?if($news_filter==0){?> checked="checked"<?}?>><label for="sid0" class="event_tag_label">全て</span><br>
 		<?foreach($tag as $a1 => $a2){?>
-			<span id="sid<?=$a1?>" class="event_tag_label <?if($hdn == $a1){?>c1<?}?>"><?=$a2["tag_name"]?></span><br>
+			<input id="sid<?=$a1?>" type="radio" name="news_filter" class="news_chg" value="<?=$a1?>"<?if($news_filter==$a1){?> checked="checked"<?}?>><label for="sid<?=$a1?>" class="event_tag_label"><?=$a2["tag_name"]?></span><br>
 		<?}?>
+
+
+
 		</div>
 
 
 <!--■■■■■■■■■■■■■■■■■■■■■■■■■■■-->
 	<?}elseif($post_id == "info"){?>
 		<div class="main_box">
-		<table class="event_table" style="background:#fafada; width:750px;">
+		<table class="event_table" style="background:#fafada; width:800px;">
 			<form id="fnew" action="./index.php" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="post_id" value="info">
 			<input type="hidden" name="menu_post" value="contents">
@@ -823,7 +588,7 @@ $(function(){
 				</td>
 
 				<td class="event_td_7" rowspan="2">
-					<label for="updinew" class="info_img"><img id="top_updinew" src="../img/info_no_image.png" style="width:210px; height:70px;"></label>
+					<label for="updinew" class="info_img"><img id="top_updinew" src="../img/info_no_image.png" style="width:280px; height:70px;"></label>
 					<input id="updinew" name="upd_img" type="file" class="upd_file" style="display:none;">
 				</td>
 			</tr>
@@ -845,7 +610,7 @@ $(function(){
 
 		<div id="contents_sort" class="main_list sort_main">
 			<?foreach($dat as $a1 => $a2){?>
-			<table id="sort_item<?=$a1?>" class="event_table sort_item c<?=$a2["status"]?>" style=" width:750px;">
+			<table id="sort_item<?=$a1?>" class="event_table sort_item c<?=$a2["status"]?>" style=" width:800px;">
 				<form id="f<?=$a1?>" action="./index.php" method="post" enctype="multipart/form-data">
 	
 				<input type="hidden" name="post_id" value="info">
@@ -869,7 +634,7 @@ $(function(){
 						</td>
 
 						<td class="event_td_7" rowspan="2">
-							<label for="updi<?=$a1?>" class="info_img"><img id="top_updi<?=$a1?>" src="<?=$a2["img"]?>" style="width:210px; height:70px;"></span>
+							<label for="updi<?=$a1?>" class="info_img"><img id="top_updi<?=$a1?>" src="<?=$a2["img"]?>" style="width:280px; height:70px;"></span>
 							<input id="updi<?=$a1?>" name="upd_img" type="file" class="upd_file" style="display:none;">
 							<input id="st<?=$a1?>" type="hidden" name="event_status" value="<?=$a2["status"]?>">
 						</td>

@@ -4762,14 +4762,20 @@ c}
 	background		:rgba(80,80,200,0.2);
 }
 
+.sort_alert_out{
+	width			:95vw;
+	height			:4vw;
+	line-height		:4vw;
+	margin			:0 auto;
+	text-align		:right;
+}
+
 .sort_alert{
 	display			:none;
 	text-align		:right;
-	width			:95vw;
 	font-size		:3vw;
 	color			:#d00000;
 	font-weight		:600;
-	padding-left	:2vw;
 }
 
 .h2_config{

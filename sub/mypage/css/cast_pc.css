@@ -3995,14 +3995,15 @@ input[type=range]::-moz-range-thumb{
 	border			:3px solid #0000d0;
 }
 
+.sort_alert_out{
+	width			:820px;
+	height			:24px;
+	line-height		:24px;
+}
+
 .sort_alert{
-	display			:none;
-	text-align		:right;
-	width			:95vw;
-	font-size		:3vw;
-	color			:#d00000;
-	font-weight		:600;
-	padding-left	:2vw;
+	width			:820px;
+	font-size		:16px;
 }
 
 .h2_config{

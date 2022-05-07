@@ -33,8 +33,6 @@ if($res = mysqli_query($mysqli,$sql)){
 	}else{
 		$face_a="<img src=\"./img/cast_no_image.jpg\" class=\"person_img_main\">";
 	}
-
-echo $admin_config["webp_select"];
 	for($n=1;$n<4;$n++){
 		if (file_exists("./img/profile/{$cast_data["id"]}/{$n}.webp") && $admin_config["webp_select"] == 1) {
 			$face_b.="<img id=\"i{$n}\" src=\"./img/profile/{$cast_data["id"]}/{$n}.webp?t={$cast_data["prm"]}\" class=\"person_img_sub\">";

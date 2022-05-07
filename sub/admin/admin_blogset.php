@@ -398,10 +398,10 @@ console.log(data);
 
 	$('.b_stamp_config_0').on('click',function(){	
 		if($(this).hasClass('color_10')){
-			$("#stamp"+TmpCtrl).children('.img_stamp_in').css('opacity',1);
+			$("#stamp"+TmpCtrl).children('.b_img_stamp_in').css('opacity',1);
 			$(this).removeClass('color_10');
 		}else{
-			$("#stamp"+TmpCtrl).children('.img_stamp_in').css('opacity',0.6);
+			$("#stamp"+TmpCtrl).children('.b_img_stamp_in').css('opacity',0.6);
 			$(this).addClass('color_10');
 		}
 	});
@@ -1188,7 +1188,7 @@ input[type=range]::-moz-range-thumb{
 	line-height		:32px;
 	font-size		:12px;
 	border-radius	:5px;
-	padding-left	:30px
+	padding-left	:30px;
 	cursor			:pointer;
 }
 
@@ -1251,6 +1251,8 @@ input[type=range]::-moz-range-thumb{
 	background		:#fafafa;
 }
 */
+.color_10{background:#ffd700;}
+
 </style>
 <header class="head">
 </header>

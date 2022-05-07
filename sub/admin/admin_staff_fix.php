@@ -143,8 +143,8 @@ $(function(){
 		ImgTop[<?=$a1?>]	=20;
 		Zoom[<?=$a1?>]		=100;
 		Rote[<?=$a1?>]		=0;
-		css_inX[<?=$a1?>]=25;
-		css_inY[<?=$a1?>]= 0;
+		css_inX[<?=$a1?>]	=25;
+		css_inY[<?=$a1?>]	= 0;
 
 		css_outX[<?=$a1?>]= 150;
 		css_outY[<?=$a1?>]= 200;
@@ -187,26 +187,56 @@ $(function(){
 	});
 
 	$('#fix_set').on('click',function(){
+		if($('.ck_login_id_err').css("display") == "none"){
+			if( $('#fix_select').val() == '5' ){
+				if(!confirm('削除します。よろしいですか\nデータはすべて削除され、復旧はできません。')){
+				    return false;
+				}else{
+					$('#wait').show();
+					$('#fix_form').submit();
+				}
 
-		if( $('#fix_select').val() == '5' ){
-			if(!confirm('削除します。よろしいですか\nデータはすべて削除され、復旧はできません。')){
-			    return false;
 			}else{
 				$('#wait').show();
 				$('#fix_form').submit();
 			}
-
 		}else{
-			$('#wait').show();
-			$('#fix_form').submit();
+			$('.ck_login_id_err').focus();
 		}
 	});
+
+	$('#ck_login_id').on('change',function () {
+		$(this).css("background-color","#fafafa");
+		$('.ck_login_id_err').hide();
+
+		$.ajax({
+			url:'./post/id_check.php',
+			type: 'post',
+			data:{
+				'set':"<?=$staff_id?>",
+				'id':$(this).val()
+			},
+
+		}).done(function(data, textStatus, jqXHR){
+			console.log(data);
+			if(data =="err"){
+				$('#ck_login_id').css("background-color","#fff0f0");
+				$('.ck_login_id_err').fadeIn(100);
+			}
+
+		}).fail(function(jqXHR, textStatus, errorThrown){
+			console.log(textStatus);
+			console.log(errorThrown);
+		});
+	});
+
 });
 </script>
 <form id="fix_form" action="" method="post" autocomplete="off">
 <input type="hidden" value="<?=$staff_data["prm"]?>" name="prm">
-<input type="hidden" value="<?=$staff_id?>" name="staff_id">
+<input id="staff_id" type="hidden" value="<?=$staff_id?>" name="staff_id">
 <input id="fix_flg" type="hidden" value="2" name="staff_set">
+
 <header class="head">
 <h2 class="head_ttl">スタッフ登録</h2>
 <select id="fix_select" class="w100" name="cast_status">
@@ -310,8 +340,10 @@ CAST情報
 </tr>
 <tr>
 	<td>
-		<div>ログインID		</div><input type="text" name="cast_id" value="<?=$staff_data["login_id"]?>" class="w000" autocomplete="off">
+		<div>ログインID	</div><input type="text" name="cast_id" value="<?=$staff_data["login_id"]?>" class="w000" autocomplete="off">
+		<div>ログインID <span class="ck_login_id_err" style="display:none;">既に使われています</span></div><input id="ck_login_id" type="text" name="cast_id" value="<?=$staff_data["login_id"]?>" class="w000 d_ck" autocomplete="off">
 	</td>
+
 	<td>
 		<div>ログインPASS	</div><input type="text" name="cast_pass" value="<?=$staff_data["login_pass"]?>" class="w000" autocomplete="new_password">
 	</td>
@@ -369,7 +401,7 @@ CAST情報
 	</table>
 <? } ?>
 <? } ?>
-
+<div style="height:20px;"></div>
 </div>
 
 

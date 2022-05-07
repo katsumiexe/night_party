@@ -7,18 +7,12 @@ ini_set( 'display_errors', 1 );
 ini_set('error_reporting', E_ALL);
 */
 
-/*
-#d0d0ff 
-#e6e6fa
-*/
-
 $staff_set	=$_POST["staff_set"];//１新規　２変更　３キャスト追加変更　４削除
 $staff_id	=$_POST["staff_id"];
 $menu_post	=$_POST["menu_post"];
 
 //■スタッフブログ
 if($menu_post == "blog_write"){
-
 	$writer		=$_POST["writer"];
 	$view_date	=str_replace("T"," ",$_POST["view_date"].":00");
 	$status		=$_POST["status"];
@@ -49,7 +43,6 @@ if($menu_post == "blog_write"){
 			imagewebp($img2,$img_link.".webp");
 		}
 
-
 		$img2	= imagecreatetruecolor(200,200);
 		ImageCopyResampled($img2, $img, 0, 0, 0, 0, 200, 200, 600, 600);
 		imagepng($img2,$img_link."_s.png");
@@ -59,7 +52,6 @@ if($menu_post == "blog_write"){
 		}
 		imagedestroy($img2);
 	}
-
 
 	$sql="INSERT INTO ".TABLE_KEY."_posts ";
 	$sql.="(`date`, `view_date`, `title`, `log`, `cast`, `tag`, `img`, `status`,`prm`)";
@@ -347,12 +339,6 @@ if($staff_set){
 						$left_n		=$st_left[$a1]-20;
 						$width_n	=$st_width[$a1];
 						$height_n	=$st_height[$a1];
-
-/*
-						if($st_op[$a1] < 1){
-							$stamp_url=str_replace(".png","a.png",$stamp_url);
-						}
-*/
 
 						$stamp_img	= imagecreatefrompng($stamp_url);	
 						imagealphablending($stamp_img, false);
