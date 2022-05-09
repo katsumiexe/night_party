@@ -1,5 +1,5 @@
 <?
-include_once('../../library/sql_post.php');
+include_once('../../library/sql_post_admin.php');
 
 $name	=$_POST['name'];
 $type	=$_POST['type'];

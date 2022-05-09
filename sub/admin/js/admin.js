@@ -54,36 +54,6 @@ $(function(){
 		});
 	});
 
-	$('.alert_d').draggable();
-
-	$('.d_ck').on('change',function(){	
-		Tmp =$(this).attr("id").replace("ck_","");
-		$("d_"+Tmp).remove();
-
-console.log(Tmp);
-console.log($(this).val());
-
-		$.post({
-			url:"./post/d_check.php",
-			data:{
-				'key'		:Tmp,
-				'value'		:$(this).val(),
-			},
-
-		}).done(function(data, textStatus, jqXHR){
-			console.log(data);
-			if(data){
-				$(this).css("background-color","#ff6060");
-				$(".alert_d").fadeIn(500);
-				$(".alert_d_2_out").prepend(data);
-			}
-
-		}).fail(function(jqXHR, textStatus, errorThrown){
-			console.log(textStatus);
-			console.log(errorThrown);
-		});
-	});
-
 	$('.sel_inout').on('change',function(){	
 		Tmp =$(this).attr("id").substr(2);
 		if($('#s_'+Tmp).val() == $('#hs_'+Tmp).val() && $('#e_'+Tmp).val() == $('#he_'+Tmp).val() ){
@@ -183,7 +153,6 @@ console.log($(this).val());
 				data:{
 					'list[]':ChgList,
 					'group':Tmp,
-					'fs':FS,
 				},
 //				dataType: 'json',
 
@@ -234,7 +203,248 @@ console.log($(this).val());
 		$('#main_form').submit();
 	});
 
+	$('.sel_contents').on('click',function(){
+		Tmp=$(this).attr('id');
+		$('#sel_ck').val(Tmp);
+		$('#form').submit();
+	});
 
+	$('#page_set_btn').on('click',function(){
+		if (!confirm('変更します。よろしいですか')) {
+			return false;
+		}else{
+			$('#page_set').submit();
+		}
+	});
+
+	$('.rec_tbl_chg').on('change',function(){
+		Tmp=$(this).attr('id');
+		$.ajax({
+			url:'./post/recruit_chg.php',
+			type: 'post',
+			data:{
+				'no'	:1,
+				'id'	:Tmp,
+				'dat'	:$(this).val(),
+			},
+
+		}).done(function(data, textStatus, jqXHR){
+			console.log(data);
+
+		}).fail(function(jqXHR, textStatus, errorThrown){
+			console.log(textStatus);
+			console.log(errorThrown);
+		});
+	});
+
+
+	$('.recruit_check').on('click',function(){
+		Tmp=$(this).attr('id');
+
+		if($(this).hasClass('rec_bg1')){
+			$(this).removeClass('rec_bg1').addClass('rec_bg0');
+			Dat=0;
+		}else{
+			$(this).removeClass('rec_bg0 rec_bg').addClass('rec_bg1');
+			Dat=1;
+		}
+
+		if(Tmp == "new_label"){
+			$('#new_ck').val(Dat);
+
+		}else{
+			$.ajax({
+				url:'./post/recruit_chg.php',
+				type: 'post',
+				data:{
+					'no'	:1,
+					'id'	:Tmp,
+					'dat'	:Dat,
+				},
+
+			}).done(function(data, textStatus, jqXHR){
+				console.log(data);
+
+			}).fail(function(jqXHR, textStatus, errorThrown){
+				console.log(textStatus);
+				console.log(errorThrown);
+			});
+		}
+	});
+
+	$('.recruit_check').on('click',function(){
+		Tmp=$(this).attr('id');
+
+		if($(this).hasClass('rec_bg1')){
+			$(this).removeClass('rec_bg1').addClass('rec_bg0');
+			Dat=0;
+
+		}else{
+			$(this).removeClass('rec_bg0 rec_bg').addClass('rec_bg1');
+			Dat=1;
+		}
+
+
+		if(Tmp == "new_label"){
+			$('#new_ck').val(Dat);
+
+		}else{
+			$.ajax({
+				url:'./post/recruit_chg.php',
+				type: 'post',
+				data:{
+					'no'	:1,
+					'id'	:Tmp,
+					'dat'	:Dat,
+				},
+
+			}).done(function(data, textStatus, jqXHR){
+				console.log(data);
+
+			}).fail(function(jqXHR, textStatus, errorThrown){
+				console.log(textStatus);
+				console.log(errorThrown);
+			});
+		}
+
+	});
+
+	$('.recruit_del').on('click',function(){
+		Tmp=$(this).attr('id').replace("del","");
+
+		if (!confirm('削除します。よろしいですか')) {
+			return false;
+		}else{
+			$.ajax({
+				url:'./post/recruit_del.php',
+				type: 'post',
+				data:{
+					'id'	:Tmp,
+				},
+
+			}).done(function(data, textStatus, jqXHR){
+				$("#contact_sort"+Tmp).remove();
+				console.log(data);
+
+			}).fail(function(jqXHR, textStatus, errorThrown){
+				console.log(textStatus);
+				console.log(errorThrown);
+			});
+		}
+	});
+
+	$('.main_box').on('change','.cate_v',function(){
+		Chk=$(this).val();
+		if( Chk=='person' || Chk=='blog' || Chk=='page'){
+
+			$(this).next('.cate_s').hide();
+		}else{
+			$(this).next('.cate_s').show();
+		}
+	});
+
+
+	$('.upd_file').on('change',function(e){
+		Tmp=$(this).attr('id');
+
+		Ck=Tmp.substr(3,1);
+		if(Ck=="i"){
+			Ck_h=150;
+			Ck_w=600;
+
+		}else{
+			Ck_h=480;
+			Ck_w=1200;
+		}
+
+		var file = e.target.files[0];	
+		var reader = new FileReader();
+
+		if(file.type.indexOf("image") < 0){
+			alert("NO IMAGE FILES");
+			return false;
+		}
+		var img = new Image();
+
+		reader.onload = (function(file){
+			return function(e){
+				img.src = e.target.result;
+				img.onload = function() {
+					if(img.height != Ck_h || img.width != Ck_w){
+						if (!confirm('画像が推奨サイズではありませんがよろしいですか\n※推奨サイズ　縦'+Ck_h+'px 横'+ Ck_w+'px' +img.height+'/'+img.width)) {
+							return false;
+						}else{
+							$("#top_"+Tmp).attr('src', e.target.result);
+						}
+					}else{
+							$("#top_"+Tmp).attr('src', e.target.result);
+					}
+				}
+			}
+		})(file);
+		reader.readAsDataURL(file);
+	});
+
+	$('.event_tag_btn,.event_set_btn').on('click',function(){
+		Tmp	=$(this).attr('id').substr(0,3);
+		Tmp2=$(this).attr('id').substr(3);
+
+		if(Tmp == 'chg'){
+			if (!confirm('変更します。よろしいですか')) {
+				return false;
+			}else{
+				$('#f'+Tmp2).submit();
+			}
+
+		}else if(Tmp == 'del'){
+			if (!confirm('削除します。よろしいですか')) {
+				return false;
+
+			}else{
+				$('#st'+Tmp2).val('4');
+				$('#f'+Tmp2).submit();
+			}
+
+		}else if(Tmp == 'cov'){
+			Tmp3=$('#st'+Tmp2).val();
+			if(Tmp3 == 3){
+				$('#st'+Tmp2).val('0');
+
+			}else{
+				$('#st'+Tmp2).val('3');
+			}
+			$('#f'+Tmp2).submit();
+		}
+	});
+
+	$(".event_tag_label").on("change",function(){
+		Tmp=$(this).attr("id").replace("sid","");
+		$("#news_chg").submit();
+	});
+
+	$('#new_set').on('click',function(){
+		if($("#new_name").val()){
+			$.ajax({
+				url:'./post/recruit_set.php',
+				type: 'post',
+				data:{
+					'name'	:$("#new_name").val(),
+					'type'	:$("#new_type").val(),
+					'ck'	:$("#new_ck").val(),
+				},
+
+			}).done(function(data, textStatus, jqXHR){
+				console.log(data);
+				$("#contact_sort").append(data);
+				$("#new_name").val("");
+				$("#new_type").val("1")
+				$("#new_ck").val("0")
+				$("#new_label").addClass('rec_bg0').removeClass('rec_bg1')
+
+			}).fail(function(jqXHR, textStatus, errorThrown){
+				console.log(textStatus);
+				console.log(errorThrown);
+			});
+		}
+	});
 });
-
-

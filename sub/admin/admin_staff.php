@@ -364,9 +364,6 @@ $(function(){
 				'fs':FS,
 			},
 		}).done(function(data, textStatus, jqXHR){
-
-console.log(data);
-
 		$('#wait').hide();
 			$('#staff_sort').html(data);
 

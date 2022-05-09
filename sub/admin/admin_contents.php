@@ -405,6 +405,10 @@ if($res_max==0){
 <style>
 </style>
 <script>
+$(function(){ 
+	var FS='<?=$page_st+0?>';
+});
+
 </script>
 <header class="head">
 <div id="event" class="sel_contents <?if($post_id == "event"){?> sel_ck<?}?>">イベント</div>
@@ -834,7 +838,7 @@ if($res_max==0){
 				<table class="recuruit_table">
 					<tbody id="contents_sort" class="sort_main">
 						<?foreach($dat as $a1 => $a2){?>
-							<tr id="contents_sort<?=$a1?>" class="tr sort_item">
+							<tr id="sort_item<?=$a1?>" class="tr sort_item">
 								<form id="f<?=$a1?>" action="./index.php" method="post">
 									<input type="hidden" name="post_id" value="recruit">
 									<input type="hidden" name="menu_post" value="contents">

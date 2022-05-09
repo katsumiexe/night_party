@@ -1,7 +1,7 @@
 <?
-include_once('../../library/sql_post.php');
-$id		=$_POST['id'];
+include_once('../../library/sql_post_admin.php');
 
+$id		=$_POST['id'];
 $sql	 ="SELECT id FROM ".TABLE_KEY."_contact_table";
 $sql	.=" WHERE del=0 OR del IS NULL";
 $sql	.=" ORDER BY sort ASC";

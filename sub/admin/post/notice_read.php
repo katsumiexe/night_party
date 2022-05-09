@@ -1,7 +1,7 @@
 <?
-include_once('../../library/sql_post.php');
-$id		=$_POST['id'];
+include_once('../../library/sql_post_admin.php');
 
+$id		=$_POST['id'];
 $sql ="SELECT cast_id, status FROM `".TABLE_KEY."_notice_ck`";
 $sql.=" WHERE notice_id='{$id}'";
 if($result = mysqli_query($mysqli,$sql)){

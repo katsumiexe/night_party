@@ -1,9 +1,10 @@
 <?
-include_once('../../library/sql_post.php');
+include_once('../../library/sql_post_admin.php');
 /*
 ini_set( 'display_errors', 1 );
 ini_set('error_reporting', E_ALL);
 */
+
 $filter		=$_POST["filter"];
 $view0		=$_POST["view0"];
 $view1		=$_POST["view1"];

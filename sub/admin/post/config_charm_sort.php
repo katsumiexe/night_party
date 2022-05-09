@@ -1,7 +1,7 @@
 <?
-include_once('../../library/sql_post.php');
-$list		=$_POST['list'];
+include_once('../../library/sql_post_admin.php');
 
+$list		=$_POST['list'];
 $n=0;
 foreach($list as $a2){
 	$n++;

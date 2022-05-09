@@ -1,12 +1,9 @@
 <?
-/*
-画像登録処理
-*/
+include_once('../../library/sql_post_admin.php');
 /*
 ini_set( 'display_errors', 1 );
 ini_set('error_reporting', E_ALL);
 */
-include_once('../../library/sql_post.php');
 $img_code	=$_POST["img_code"];
 
 $img_top	=str_replace("px","",$_POST["img_top"]);

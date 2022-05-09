@@ -1,5 +1,6 @@
 <?
-include_once('../../library/sql_post.php');
+include_once('../../library/sql_post_admin.php');
+
 $name		=$_POST['name'];
 $color		=$_POST['color'];
 $group		=str_replace('_set','',$_POST['group']);

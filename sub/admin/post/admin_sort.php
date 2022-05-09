@@ -1,9 +1,9 @@
 <?
-include_once('../../library/sql_post.php');
+include_once('../../library/sql_post_admin.php');
+
 $list		=$_POST['list'];
 $group		=$_POST['group'];
 $fs			=$_POST['fs'];
-
 
 if($group == "staff_sort"){
 	$sql="SELECT cast_sort, id FROM ".TABLE_KEY."_cast";
@@ -40,9 +40,6 @@ if($group == "staff_sort"){
 	$cl_d=$_POST["cl_d"];
 	$cl_e=$_POST["cl_e"];
 	$cl_f=$_POST["cl_f"];
-
-echo $cl_b."▼". $cl_c."▼". $cl_d."▼". $cl_e."▼". $cl_f."▼";
-
 	$sql="SELECT cast_sort, id FROM ".TABLE_KEY."_cast";
 	$sql.=" ORDER BY cast_sort ASC";
 	if($result = mysqli_query($mysqli,$sql)){
@@ -222,14 +219,13 @@ echo $html;
 		$sql.=" WHERE id={$a2}";
 		mysqli_query($mysqli,$sql);
 	}
-
 echo $sql;
 
 }else{
 	$n=0;
 	foreach($list as $a1 => $a2){
 		$n++;
-		$a2=str_replace($group,'',$a2);
+		$a2=str_replace("sort_item","",$a2);
 		$sql="UPDATE ".TABLE_KEY."_contents SET";
 		$sql.=" sort='{$n}'";
 		$sql.=" WHERE id={$a2}";

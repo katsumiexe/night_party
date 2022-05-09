@@ -3,7 +3,6 @@ include_once('../../library/sql_post_admin.php');
 
 $key		=$_POST["key"];
 $value		=$_POST["value"];
-
 $tmp=explode("_", $key);
 
 $a1=trim($tmp[1]);

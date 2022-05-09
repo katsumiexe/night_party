@@ -1,10 +1,8 @@
 <?
-include_once('../../library/sql_post.php');
+include_once('../../library/sql_post_admin.php');
+
 $id		=$_POST['id'];
 $val	=$_POST['val'];
-
-
-
 if(substr($id,0,5) == "schen"){
 	$tmp=substr($id,6);
 	$sql	 ="UPDATE `".TABLE_KEY."_sch_table` SET";
