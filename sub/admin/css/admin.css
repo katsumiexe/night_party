@@ -896,10 +896,14 @@ ul {
 	background		:#fafafa;
 	border			:1px solid #303030;
 	margin			:1px;
-	display			:inline-block;
 	padding			:0 10px;
 	cursor			:pointer;
 }
+
+.news_chg:checked + label{
+	background	:linear-gradient(#efdfff,#e0d0f0);
+}
+
 
 #view2{
 	margin-bottom:20px;
@@ -1061,7 +1065,7 @@ ul {
 .event_td_7{
 	position	:relative;
 	border-right:1px solid #303030;
-	width		:220px;
+	width		:290px;
 
 }
 
@@ -1081,7 +1085,7 @@ ul {
 	position		:absolute;
 	top				:5px;
 	left			:5px;
-	width			:210px;
+	width			:280px;
 	height			:70px;
 	margin			:auto;
 	overflow		:hidden;
@@ -1409,15 +1413,11 @@ ul {
 	margin			:5px auto;
 }
 
-
 .alert_d_4{
 	position		:absolute;
 	top				:4px;
 	right			:4px;
 }
-
-
-
 
 .handle{
 	font-family	:at_icon;
@@ -1428,6 +1428,18 @@ ul {
 	width:100%;
 	margin-bottom:5px;
 }
+.rec_bg0, .rec_bg{
+	background	:#eeeeee;
+	color		:#808080;
+}
+
+.rec_bg1{
+	background	:#0000c0;
+	color		:#fafafa;
+}
+
+
+
 .w40{width:40px;}
 .w50{width:50px;}
 .w60{width:60px;}
@@ -1458,10 +1470,6 @@ ul {
 .b3{background:#e0e0e0;}
 .b4{background:#e0e0e0;}
 .b5{background:#e0e0e0;}
-
-
-
-
 
 
 

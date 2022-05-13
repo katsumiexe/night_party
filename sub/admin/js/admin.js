@@ -113,6 +113,10 @@ $(function(){
 		$('.back,.pop').fadeOut(500);
 	});
 
+	$('.news_chg').on('change',function () {
+		$('#news_select').submit();
+	});
+
 
 	$('#pop_ok').on('click',function () {
 		$.post({
