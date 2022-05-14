@@ -40,7 +40,7 @@ if($dat_config["call"]["contents_key"]){
 
 			}elseif($c_form["type"]== 2){//comm
 				$form_dat.="<textarea id=\"contact{$c_form["id"]}\" name=\"contact{$c_form["id"]}\" class=\"contact_list contact_area {$ck_jq[$c_form["ck"]]}\" autocomplete=\"off\" size=\"600\" {$ck_re[$c_form["ck"]]}></textarea>";
-				$form_p.="<div id=\"pcontact{$c_form["id"]}\" class=\"contact_p\"></div>";
+				$form_p.="<div id=\"pcontact{$c_form["id"]}\" class=\"contact_p_area\"></div>";
 
 			}elseif($c_form["type"]== 3){//mail
 				$form_dat.="<input id=\"contact{$c_form["id"]}\" type=\"url\" name=\"contact{$c_form["id"]}\" class=\"contact_list contact v_mail {$ck_jq[$c_form["ck"]]}\" autocomplete=\"off\" {$ck_re[$c_form["ck"]]}>";
@@ -48,7 +48,7 @@ if($dat_config["call"]["contents_key"]){
 
 			}elseif($c_form["type"]== 4){//number
 				$form_dat.="<input id=\"contact{$c_form["id"]}\" type=\"number\" inputmode=\"numeric\" name=\"contact{$c_form["id"]}\" class=\"contact_list contact {$ck_jq[$c_form["ck"]]}\" autocomplete=\"off\" {$ck_re[$c_form["ck"]]}>";
-				$form_p.="<div id=\"pcontact{$c_form["id"]}\" class=\"contact_p\"></div>";
+				$form_p.="<div id=\"pcontact{$c_form["id"]}\" class=\"contact_p_num\"></div>";
 
 			}
 		}
@@ -90,9 +90,6 @@ $(function(){
 		$('.contact_list').each(function() {
 			Tmp=$(this).attr('id').replace('contact','');
 			PostList[Tmp]=$(this).val();
-
-console.log(Tmp+"■"+$(this).val());
-
 		});
 
 		$.post({

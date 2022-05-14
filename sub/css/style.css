@@ -2813,7 +2813,7 @@ a{
 	padding			:5px;
 	height			:100px;
 	line-height		:25px;
-	overflow		:scroll;
+	overflow-y		:scroll;
 
 }
 
