@@ -1283,7 +1283,7 @@ input[type=range]::-moz-range-thumb{
 					<option value="2">非公開</option>
 					<option value="3">非表示</option>
 				</select>
-				<button type="submit" class="event_set_btn w100" style="vertical-align:top;margin-left:15px;background:#ffe0e0">投稿</button>
+				<button type="submit" class="w100" style="vertical-align:top;margin-left:15px;background:#ffe0e0;height:30px;">投稿</button>
 			</td>
 			<td class="blog_td_img" rowspan="3">
 				<img id="blog_img" src="../img/blog_no_image.png" style="width:300px">

@@ -41,8 +41,6 @@ $sql	.=$app;
 $sql	.=" ORDER BY {$post_filter} {$post_sort}";
 $sql	.=" LIMIT {$pg_st}, 20";
 
-echo $sql;
-
 if($result = mysqli_query($mysqli,$sql)){
 	while($res = mysqli_fetch_assoc($result)){
 
@@ -128,8 +126,8 @@ if($pg<$pg_max){
 ?>
 <script>
 $(function(){ 
-	$('.event_set_btn').on('click',function(){
 
+	$('.event_set_btn_blog').on('click',function(){
 		Tmp	=$(this).attr('id').substr(0,3);
 		Tmp2=$(this).attr('id').substr(3);
 
@@ -277,8 +275,8 @@ $(function(){
 					<option value="2" <?if($a2["status"]==2){?> selected="selected"<?}?>>非公開</option>
 					<option value="3" <?if($a2["status"]==3){?> selected="selected"<?}?>>非表示</option>
 					</select>
-					<button id="chg<?=$a1?>" class="event_set_btn" style="vertical-align:top">更新</button>
-					<button id="del<?=$a1?>" class="event_set_btn" style="vertical-align:top">削除</button>
+					<button id="chg<?=$a1?>" class="event_set_btn_blog" style="vertical-align:top">更新</button>
+					<button id="del<?=$a1?>" class="event_set_btn_blog" style="vertical-align:top">削除</button>
 				</td>
 
 				<td class="blog_td_img" rowspan="3">
@@ -299,7 +297,7 @@ $(function(){
 					<span class="event_tag">タグ</span>
 					<select id="blog_tag<?=$a1?>" class="w160 news_box">
 					<?foreach($tag as $b1 => $b2){?>
-					<option value="<?=$b1?>"><?=$b2?></option>
+					<option value="<?=$b1?>" <?if($a2["tag"]==$b1){?> selected="selected"<?}?>><?=$b2?></option>
 					<?}?>
 					</select>
 				</td>

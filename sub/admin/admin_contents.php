@@ -38,7 +38,6 @@ $sel_id			=$_POST["sel_id"];
 $post_id		=$_POST["post_id"];
 
 if(!$post_id) $post_id="event";
-
 if($post_id == "page") $post_id="system";
 
 $event_set_id	=$_POST["event_set_id"];
@@ -176,6 +175,7 @@ if($post_id == "news"){
 	if($news_filter > 0){
 		$app0	 =" AND `tag`='{$news_filter}'";	
 	}
+		$app0	.=" AND (status=9999";
 
 	if($news_check1==1){
 		$app	.=" OR status=0";
@@ -188,19 +188,15 @@ if($post_id == "news"){
 	if($news_check3==1){
 		$app	.=" OR status=3";                                                                                                                           
 	}
+	$app	.=")";
 
 	
 	$sql	 ="SELECT * FROM ".TABLE_KEY."_contents";
 	$sql	.=" WHERE page='{$post_id}'";
 	$sql	.=$app0;
-	$sql	.=" AND (status=9999";
 	$sql	.=$app;
-	$sql	.=")";
-
 	$sql	.=" ORDER BY event_date DESC, id DESC";
 	$sql	.=" LIMIT {$pg_st}, 20";
-
-echo $sql;
 
 	if($result = mysqli_query($mysqli,$sql)){
 		while($res = mysqli_fetch_assoc($result)){
@@ -360,13 +356,17 @@ echo $sql;
 	if(!$recruit_id) $recruit_id="top";
 }
 
-
 $sql	 ="SELECT COUNT(id) AS cnt FROM ".TABLE_KEY."_contents";
 $sql	.=" WHERE status<4";
 $sql	.=" AND page='{$post_id}'";
+$sql	.=$app0;
+$sql	.=$app;
+
+echo $sql;
 
 $result = mysqli_query($mysqli,$sql);
 $res	= mysqli_fetch_assoc($result);
+
 
 $res_max=$res["cnt"]+0;
 $pg_max	=ceil($res["cnt"]/20);
@@ -404,12 +404,6 @@ $pg_st++;
 if($res_max==0){
 	$pg_st=0;
 	$pg_ed=0;
-
-}else if($pg_ed>$res_max){
-	$pg_ed=$count_dat;
-
-}else{
-	$pg_ed=$pg_st+19;
 }
 
 ?>
@@ -428,8 +422,9 @@ $(function(){
 
 <div id="page"  class="sel_contents <?if($post_id == "system" || $post_id == "access" || $post_id == "recruit" || $post_id == "policy"){?> sel_ck<?}?>">PAGE</div>
 <?if($post_id == "news" ||$post_id == "event" ||$post_id == "info"){?>
+
 <div class="pager">
-<div id="pp<?=$pg_p?>" class="page_p pg_off">前へ</div>
+<div id="pp<?=$pg_p?>" class="page_p <?if($pg>1){?>pg_off<?}?>">前へ</div>
 <?for($s=$pager_st;$s<$pager_ed+1;$s++){?>
 <?if($pg == $s){?>
 <div class="page pg_on"><?=$s?></div>
@@ -437,7 +432,7 @@ $(function(){
 <div id="pg<?=$s?>" class="page pg_off"><?=$s?></div>
 <?}?>
 <?}?>
-<div id="nn<?=$pg_n?>" class="page_n pg_off">次へ</div>
+<div id="nn<?=$pg_n?>" class="page_n <?if($pg<$pg_max){?>pg_off<?}?>">次へ</div>
 </div>
 <?}?>
 </header>
@@ -492,6 +487,7 @@ $(function(){
 					</tr>
 				</table>
 			</form>
+
 			<div id="news_list">
 				<?foreach($dat as $a1 => $a2){?>
 					<form id="f<?=$a2["id"]?>" action="./index.php" method="post">
@@ -551,43 +547,43 @@ $(function(){
 			</div>
 		</div>
 
-<form id="news_select" method="post">
-		<input type="hidden" name="post_id" value="news">
-		<input type="hidden" name="menu_post" value="contents">
-		<input type="hidden" name="news_select" value="news_chg">
+		<form id="news_select" method="post">
+			<input type="hidden" name="post_id" value="news">
+			<input type="hidden" name="menu_post" value="contents">
+			<input type="hidden" name="news_select" value="news_chg">
 
-		<div class="sub_box">
-			<label for="news_check0" class="ribbon_use news_tag_label">
-				<span class="check2">
-					<input id="news_check0" type="checkbox" name="news_check1" class="ck0 news_chg" value="1"<?if($news_check1 == 1){?> checked="checked"<?}?>>
-					<span class="check1"></span>
-				</span>
-				<span class="news_tag_label_in">表示</span>
-			</label>
+			<div class="sub_box">
+				<label for="news_check0" class="ribbon_use news_tag_label">
+					<span class="check2">
+						<input id="news_check0" type="checkbox" name="news_check1" class="ck0 news_chg" value="1"<?if($news_check1 == 1){?> checked="checked"<?}?>>
+						<span class="check1"></span>
+					</span>
+					<span class="news_tag_label_in">表示</span>
+				</label>
 
-			<label for="news_check1" class="ribbon_use news_tag_label">
-				<span class="check2">
-					<input id="news_check1" type="checkbox" name="news_check2" class="ck0 news_chg" value="1"<?if($news_check2 == 1){?> checked="checked"<?}?>>
-					<span class="check1"></span>
-				</span>
-				<span class="news_tag_label_in">注目</span>
-			</label>
+				<label for="news_check1" class="ribbon_use news_tag_label">
+					<span class="check2">
+						<input id="news_check1" type="checkbox" name="news_check2" class="ck0 news_chg" value="1"<?if($news_check2 == 1){?> checked="checked"<?}?>>
+						<span class="check1"></span>
+					</span>
+					<span class="news_tag_label_in">注目</span>
+				</label>
 
-			<label for="news_check2" class="ribbon_use news_tag_label">
-				<span class="check2">
-					<input id="news_check2" type="checkbox" name="news_check3" class="ck0 news_chg" value="1"<?if($news_check3 == 1){?> checked="checked"<?}?>>
-					<span class="check1"></span>
-				</span>
-				<span class="news_tag_label_in">非表示</span>
-			</label>
-			<ul>
-			
-			<input id="news_filter0" type="radio" name="news_filter" class="news_chg" value="0"<?if($news_filter==0){?> checked="checked"<?}?>><label for="news_filter0" class="event_tag_label">全て</label><br>
-		<?foreach($tag as $a1 => $a2){?>
-			<input id="news_filter<?=$a1?>" type="radio" name="news_filter" class="news_chg" value="<?=$a1?>"<?if($news_filter==$a1){?> checked="checked"<?}?>><label for="news_filter<?=$a1?>" class="event_tag_label"><?=$a2["tag_name"]?></label><br>
-		<?}?>
-	</div>
-
+				<label for="news_check2" class="ribbon_use news_tag_label">
+					<span class="check2">
+						<input id="news_check2" type="checkbox" name="news_check3" class="ck0 news_chg" value="1"<?if($news_check3 == 1){?> checked="checked"<?}?>>
+						<span class="check1"></span>
+					</span>
+					<span class="news_tag_label_in">非表示</span>
+				</label>
+				<ul>
+				
+				<input id="news_filter0" type="radio" name="news_filter" class="news_chg" value="0"<?if($news_filter==0){?> checked="checked"<?}?>><label for="news_filter0" class="event_tag_label">全て</label><br>
+			<?foreach($tag as $a1 => $a2){?>
+				<input id="news_filter<?=$a1?>" type="radio" name="news_filter" class="news_chg" value="<?=$a1?>"<?if($news_filter==$a1){?> checked="checked"<?}?>><label for="news_filter<?=$a1?>" class="event_tag_label"><?=$a2["tag_name"]?></label><br>
+			<?}?>
+			</div>
+		</form>
 <!--■■■■■■■■■■■■■■■■■■■■■■■■■■■-->
 	<?}elseif($post_id == "info"){?>
 		<div class="main_box">
@@ -925,7 +921,7 @@ $(function(){
 							</select>
 						</td>
 						<td class="config_prof_style" style=" background:#ffe0f0; width:140px">
-							<button id="new_label" type="button" class="prof_btn rec_bg0">必須</button>
+							<button id="new_label" type="button" class="recruit_check prof_btn rec_bg0">必須</button>
 							<button id="new_set" type="button" class="new_set_btn">追加</button>
 							<input type="hidden" id="new_ck" value="0">
 						</td>
@@ -993,9 +989,16 @@ $(function(){
 	<input type="hidden" name="post_id" value="<?=$post_id?>">
 	<input type="hidden" name="menu_post" value="contents">
 	<input type="hidden" name="sub_group">
+
+	<input type="hidden" name="news_check1" class="h_news_check1" value="<?=$news_check1?>">
+	<input type="hidden" name="news_check2" class="h_news_check2" value="<?=$news_check2?>">
+	<input type="hidden" name="news_check3" class="h_news_check3" value="<?=$news_check3?>">
+	<input type="hidden" name="news_filter" class="h_news_chg" value="<?=$news_filter?>">
+	<input type="hidden" name="news_select" value="news_chg">
 </form>
 
 <form id="form" method="post">
 	<input id="sel_ck" type="hidden" name="post_id">
 	<input type="hidden" name="menu_post" value="contents">
 </form>
+

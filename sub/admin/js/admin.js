@@ -203,6 +203,8 @@ $(function(){
 
 	$('.pg_off').on('click',function(){
 		Tmp=$(this).attr('id').replace('pg','').replace('pp','').replace('nn','');
+		console.log(Tmp);
+
 		$('#pg').val(Tmp);
 		$('#main_form').submit();
 	});
@@ -274,43 +276,6 @@ $(function(){
 				console.log(errorThrown);
 			});
 		}
-	});
-
-	$('.recruit_check').on('click',function(){
-		Tmp=$(this).attr('id');
-
-		if($(this).hasClass('rec_bg1')){
-			$(this).removeClass('rec_bg1').addClass('rec_bg0');
-			Dat=0;
-
-		}else{
-			$(this).removeClass('rec_bg0 rec_bg').addClass('rec_bg1');
-			Dat=1;
-		}
-
-
-		if(Tmp == "new_label"){
-			$('#new_ck').val(Dat);
-
-		}else{
-			$.ajax({
-				url:'./post/recruit_chg.php',
-				type: 'post',
-				data:{
-					'no'	:1,
-					'id'	:Tmp,
-					'dat'	:Dat,
-				},
-
-			}).done(function(data, textStatus, jqXHR){
-				console.log(data);
-
-			}).fail(function(jqXHR, textStatus, errorThrown){
-				console.log(textStatus);
-				console.log(errorThrown);
-			});
-		}
-
 	});
 
 	$('.recruit_del').on('click',function(){

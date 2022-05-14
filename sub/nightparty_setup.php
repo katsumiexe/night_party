@@ -28,6 +28,7 @@ echo "key 　".$key."<br>\n";
 */
 
 if($user && $pass && $key && $db && $dbn && $ad_id && $ad_ps && $ad_ml && $ad_f && $hime_f && $ad_f !== $hime_f){
+
 $mysqli = mysqli_connect($db, $user, $pass, $dbn);
 if(!$mysqli){
 	$msg="接続エラー!";
@@ -305,7 +306,7 @@ mysqli_query($mysqli, $sql);
 
 $sql=<<<SQM
 CREATE TABLE `{$key}_contact_table` (
-`id` int(10) NOT NULL,
+`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 `block` int(10) NOT NULL,
 `sort` int(2) NOT NULL,
 `name` varchar(30) COLLATE utf8mb4_bin NOT NULL,
@@ -362,7 +363,6 @@ INSERT INTO `{$key}_contents` (`date`, `display_date`, `event_date`, `sort`, `pa
 ('{$now}','{$now}','{$now}', 0, 'system', NULL, '', 'SYSTEM', '<div class=\"system_title\">MAIN GUEST</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">18:00-20:00</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥8,000</span><br>\r\n<span class=\"system_box_1\">20:00-22:00</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥9,000</span><br>\r\n<span class=\"system_box_1\">22:00-LAST</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥12,000</span><br>\r\n<span class=\"system_box_1\">延長</span><span class=\"system_box_2\">30min</span><span class=\"system_box_3\">￥4,000</span><br>\r\n</div>\r\n<div class=\"system_title\">V.I.P GUEST</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">18:00-LAST</span><span class=\"system_box_2\">60min</span><span class=\"system_box_3\">￥12,000</span><br>\r\n<span class=\"system_box_1\">延長</span><span class=\"system_box_2\">30min</span><span class=\"system_box_3\">￥6,000</span><br>\r\n</div>\r\n<div class=\"system_title\">その他</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">場内指名</span><span class=\"system_box_2\">　</span><span class=\"system_box_3\">￥2,000</span><br>\r\n<span class=\"system_box_1\">本指名</span><span class=\"system_box_2\">　</span><span class=\"system_box_3\">￥3,000</span><br>\r\n</div>\r\n<div class=\"system_title\">クレジットカード</div>\r\n<div class=\"system_box\">\r\n<span class=\"system_box_1\">VISA</span><br>\r\n<span class=\"system_box_1\">JCB</span><br>\r\n<span class=\"system_box_1\">AMEX</span><br>\r\n</div>', NULL, 0, NULL)
 SQO;
 mysqli_query($mysqli, $sql);
-
 
 $sql=<<<SQP
 CREATE TABLE `{$key}_customer` (
@@ -671,11 +671,13 @@ TQI;
 
 mysqli_query($mysqli, $sql);
 
+
 $sql=<<<TQJ
 INSERT INTO `{$key}_tag` (`tag_group`, `sort`, `tag_name`, `tag_icon`, `del`) VALUES
 ('ribbon', 1, '近日入店', '#0000d0', 0),
 ('ribbon', 2, '本日入店', '#008000', 0),
 ('ribbon', 3, '新人', '#d00000', 0),
+
 ('blog', 1, 'Diary', '', 0),
 ('blog', 2, '日常', '', 0),
 ('blog', 3, 'お仕事', '', 0),
@@ -683,11 +685,14 @@ INSERT INTO `{$key}_tag` (`tag_group`, `sort`, `tag_name`, `tag_icon`, `del`) VA
 ('blog', 5, '告知', '', 0),
 ('blog', 6, '買い物', '', 0),
 ('blog', 7, 'ファッション', '', 0),
+
 ('news', 1, 'お知らせ', '#ffe0f0', 0),
 ('news', 2, '入店情報', '#c0e0ff', 0),
 ('news', 3, 'イベント', '#ffe090', 0),
+
 ('cast_group', 1, 'キャスト', '', 0),
 ('cast_group', 2, 'スタッフ', '', 0),
+
 ('notice_category', 1, '業務関連', '', 0),
 ('notice_category', 2, 'イベント', '', 0),
 ('notice_category', 3, '緊急', '', 0),
@@ -696,6 +701,7 @@ TQJ;
 mysqli_query($mysqli, $sql);
 
 $f=file_get_contents("./library/connect.php");
+
 $f=str_replace("AAA",$db,$f);
 $f=str_replace("BBB",$user,$f);
 $f=str_replace("CCC",$pass,$f);

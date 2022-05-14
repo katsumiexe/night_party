@@ -474,15 +474,17 @@ $sel[$menu_post]="menu_sel";
 
 .admin_login{
 	margin		:50px auto 5 auto;
-	background	:#f0f0f0;
-	border		:2px solid #202020;
+	background	:#fafafa;
+	border		:1px solid #202020;
 	border-radius:3px;
 	text-align	:center;
 }
 
 .admin_login_1{
-	position:relative;
-	height:50px;
+	position	:relative;
+	height		:50px;
+	width		:300px;
+	text-align	:center;
 }
 
 .admin_login_1_in{
@@ -495,30 +497,26 @@ $sel[$menu_post]="menu_sel";
 	font-weight	:800;
 }
 
-.admin_login_2{
-	height		:40px;
-	line-height	:40px;
-	text-align	:right;
-	padding-right:10px;
-	font-size	:18px;
-	font-weight	:800;
-	width		:120px;
-}
-
-.admin_login_3{
-	width		:300px;	
-	text-align	:left;
-}
-
-.admin_login_3_in{
+.admin_login_tag{
+	display		:block;
 	width		:250px;
 	text-align	:left;
 	padding-left:5px;
-	font-size	:24px;
+	font-size	:15px;
+	margin		:5px auto 0 auto;
+}
+
+.admin_login_box{
+	width		:250px;
+	text-align	:left;
+	padding-left:5px;
+	font-size	:20px !important;
+	height		:40px !important;
+	margin		:0 auto 10px auto;
 }
 
 
-.admin_login_4{
+.admin_login_btn{
 	width		:250px;
 	text-align	:center;
 	height		:40px;
@@ -529,6 +527,19 @@ $sel[$menu_post]="menu_sel";
 	background	:linear-gradient(#c0c0ff,#a0a0ff);
 	color		:#fafafa;
 }
+
+.admin_login_chg{
+	display		:inline-block;
+	margin		:10px 25px;
+	padding		:2px;
+	border-bottom:1px solid #303030;
+	cursor		:pointer;
+	width		:196px;
+	text-align	:center;"
+
+}
+
+
 .err_msg{
 	font-weight	:700;
 	font-size	:16px;
@@ -577,30 +588,34 @@ $sel[$menu_post]="menu_sel";
 <form method="post">
 <table class="admin_login">
 <tr>
-<td class="admin_login_1" colspan="2"><span class="admin_login_1_in">Night-Party</span></td>
+<td class="admin_login_1"><span class="admin_login_1_in">Night-Party</span></td>
 </tr>
 
 <tr>
-<td class="admin_login_2">IDCODE:</td>
-<td class="admin_login_3"><input type="text" class="admin_login_3_in" name="admin_in"></td>
+<td class="admin_login_1">
+<span class="admin_login_tag">IDCODE</span>
+<input type="text" class="admin_login_box" name="admin_in">
+</td>
 </tr>
 
 <tr>
-<td class="admin_login_2">PASS:</td>
-<td class="admin_login_3"><input type="password" class="admin_login_3_in" name="admin_pass"></td>
+<td class="admin_login_1">
+<span class="admin_login_tag">PASS</span>
+<input type="password" class="admin_login_box" name="admin_pass">
+</td>
 </tr>
 <tr>
-<td class="admin_login_2"></td>
-<td class="admin_login_3">
-<button type="submit" class="admin_login_4">LOGIN</button><br>
-<span id="ps_ck" style="display:inline-block;margin:10px 25px;padding:2px;border-bottom:1px solid #303030;cursor:pointer;width:196px;text-align:center;"> ADMIN情報の確認・変更</span><br>
+<td class="admin_login_1">
+	<button type="submit" class="admin_login_btn">LOGIN</button><br>
+<span id="ps_ck" class="admin_login_chg"> ADMIN情報の確認・変更</span><br>
 </td>
 </tr>
 </table>
 <div class="err_msg"><?=$err_msg?></div>
 </form>
-<?}?>
 
+
+<?}?>
 <div class="back">
 	<div class="pop">
 		<div class="pop_out">×</div>

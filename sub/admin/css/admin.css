@@ -1113,7 +1113,7 @@ ul {
 	font-size		:20px;
 }
 
-.event_set_btn,.event_reg_btn{
+.event_set_btn,.event_set_btn_blog,.event_reg_btn{
 	width			:60px;
 	height			:30px;
 	margin			:0 5px;
