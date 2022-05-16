@@ -305,10 +305,10 @@ $(function(){
 	$('.main_box').on('change','.cate_v',function(){
 		Chk=$(this).val();
 		if( Chk=='person' || Chk=='blog' || Chk=='page'){
-
-			$(this).next('.cate_s').hide();
-		}else{
 			$(this).next('.cate_s').show();
+
+		}else{
+			$(this).next('.cate_s').hide();
 		}
 	});
 

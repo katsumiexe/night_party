@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	$('.main').fadeIn(600);
+//	$('.main').fadeIn(100);
 
 	if($('.main_b_notice').length >0){
 			$('.no_news').hide();
