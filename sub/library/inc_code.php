@@ -1,4 +1,5 @@
 <?php
+
 $c_code[0]="#000000";
 $c_code[1]="#000040";
 $c_code[2]="#000080";
@@ -79,7 +80,6 @@ $week_tag[3]="c2";
 $week_tag[4]="c2";
 $week_tag[5]="c2";
 $week_tag[6]="c3";
-
 $week_tag[7]="c4";
 
 $week_tag2[0]="ca1";
@@ -134,15 +134,7 @@ $i_code[37]="";
 $i_code[38]="";
 $i_code[39]="";
 
-$cast_status_select[0]="通常";
-$cast_status_select[1]="準備";
-$cast_status_select[2]="休職";
-$cast_status_select[3]="退職";
-$cast_status_select[4]="停止";
-
+$cast_status_select=array("通常","準備","休職","退職","停止");
 
 $ssid_key=array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
 ?>
-
-
-

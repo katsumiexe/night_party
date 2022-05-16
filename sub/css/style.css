@@ -2982,7 +2982,7 @@ a{
 
 .main{
     animation-name: fadein;
-    animation-duration: 3s;
+    animation-duration: 1s;
 }
 @keyframes fadein{
     from{

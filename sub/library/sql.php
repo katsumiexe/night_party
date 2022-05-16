@@ -110,4 +110,3 @@ if(!$t_ua) $t_ua="null";
 $sql="INSERT INTO ".TABLE_KEY."_log(`date`,`ref`,`ua`,`ip`,`page`,`parm`,`value`,`days`) VALUES('{$now}','{$t_re}','{$t_ua}','{$t_ip}','{$f_mark}','{$parm}','{$value}','{$now_8}')";
 mysqli_query($mysqli,$sql);
 ?>
-
