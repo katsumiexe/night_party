@@ -78,7 +78,7 @@ if($event_set_id){
 
 		if($_POST["news_check"] == 1 && $event_title){
 			$sql	 ="INSERT INTO ".TABLE_KEY."_contents(`date`,`display_date`,`event_date`,`sort`,`page`,`category`,`title`,`contents_key`,`tag`,`status`)";
-			$sql	.=" VALUES('{$now}','{$display_date}','{$event_date}','0','news','{$post_id}','{$event_title}','{$tmp_auto}','13','{$event_status}')";
+			$sql	.=" VALUES('{$now}','{$display_date}','{$event_date}','0','news','{$category}','{$event_title}','{$tmp_auto}','13','{$event_status}')";
 			mysqli_query($mysqli,$sql);
 		}
 
