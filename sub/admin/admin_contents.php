@@ -75,10 +75,13 @@ if($event_set_id){
 		mysqli_query($mysqli,$sql);
 		$tmp_auto=mysqli_insert_id($mysqli);
 
+		if(!$event_key){
+			$event_key=$tmp_auto;
+		}
 
 		if($_POST["news_check"] == 1 && $event_title){
 			$sql	 ="INSERT INTO ".TABLE_KEY."_contents(`date`,`display_date`,`event_date`,`sort`,`page`,`category`,`title`,`contents_key`,`tag`,`status`)";
-			$sql	.=" VALUES('{$now}','{$display_date}','{$event_date}','0','news','{$category}','{$event_title}','{$tmp_auto}','13','{$event_status}')";
+			$sql	.=" VALUES('{$now}','{$display_date}','{$event_date}','0','news','{$category}','{$event_title}','{$event_key}','13','{$event_status}')";
 			mysqli_query($mysqli,$sql);
 		}
 
@@ -123,10 +126,11 @@ if($event_set_id){
 		imagepalettetotruecolor($img_tmp);
 
 		if($post_id=="recruit"){
-
 			imagejpeg($img_tmp,"../img/page/contents/recruit_top.jpg",100);
-			imagewebp($img_tmp,"../img/page/contents/recruit_top.webp");
 
+			if($admin_config["webp_select"] == 1){
+				imagewebp($img_tmp,"../img/page/contents/recruit_top.webp");
+			}
 			$sql	 ="UPDATE ".TABLE_KEY."_contents SET";
 			$sql	.=" prm='{$prm}'";
 			$sql	.=" WHERE `page`='recruit'";
@@ -134,10 +138,12 @@ if($event_set_id){
 			mysqli_query($mysqli,$sql);
 
 		}else{
-
 			imagejpeg($img_tmp,"../img/page/{$post_id}/{$post_id}_{$tmp_auto}.jpg",100);
 			imagepng($img_tmp,"../img/page/{$post_id}/{$post_id}_{$tmp_auto}.png");
-			imagewebp($img_tmp,"../img/page/{$post_id}/{$post_id}_{$tmp_auto}.webp");
+
+			if($admin_config["webp_select"] == 1){
+				imagewebp($img_tmp,"../img/page/{$post_id}/{$post_id}_{$tmp_auto}.webp");
+			}
 		}
 	}
 
@@ -157,9 +163,7 @@ if($event_set_id){
 	mysqli_query($mysqli,$sql);
 }
 
-
 if($post_id == "news"){
-
 	if($_POST["news_select"] == "news_chg"){
 		$news_check1=$_POST["news_check1"];
 		$news_check2=$_POST["news_check2"];
@@ -247,7 +251,6 @@ if($post_id == "news"){
 			}else{
 				$res["img"]="../img/event_no_image.png";			
 			}
-
 			$dat[$res["id"]]=$res;
 		}
 	}
