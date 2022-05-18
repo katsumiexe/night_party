@@ -570,12 +570,13 @@ $sel[$menu_post]="menu_sel";
 .caution{
 	margin		:10px auto;
 	border		:1px solid #ff3030;
-	padding		:10px;
+	padding		:5px;
 	font-size	:13px;
 	line-height	:19px;
 	background	:#fafafa;
 	color		:#606060;
-	width		:160pxl;
+	width		:160px;
+	text-align	:left;
 }
 </style>
 </head>
