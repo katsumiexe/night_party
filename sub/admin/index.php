@@ -11,6 +11,28 @@ $staff_set	=$_POST["staff_set"];//１新規　２変更　３キャスト追加�
 $staff_id	=$_POST["staff_id"];
 $menu_post	=$_POST["menu_post"];
 
+$prm=$_POST["prm"];
+if($prm == "1"){
+	$post_id	="event";
+	$menu_post	="event";
+
+}else if($prm == "2"){
+	$post_id	="news";
+	$menu_post	="event";
+
+}else if($prm == "3"){
+	$menu_post	="staff_fix";
+
+}else if($prm == "4"){
+	$menu_post	="sche";
+
+}else if($prm == "5"){
+	$menu_post	="blog";
+
+}else if($prm == "6"){
+	$menu_post	="contact";
+}
+
 //■スタッフブログ
 if($menu_post == "blog_write"){
 	$writer		=$_POST["writer"];
@@ -515,7 +537,6 @@ $sel[$menu_post]="menu_sel";
 	margin		:0 auto 10px auto;
 }
 
-
 .admin_login_btn{
 	width		:250px;
 	text-align	:center;
@@ -536,9 +557,7 @@ $sel[$menu_post]="menu_sel";
 	cursor		:pointer;
 	width		:196px;
 	text-align	:center;"
-
 }
-
 
 .err_msg{
 	font-weight	:700;

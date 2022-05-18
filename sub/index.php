@@ -274,19 +274,19 @@ var NewCnt=1;
 			<?for($n=0;$n<$count_news;$n++){?>
 				<?if($news[$n]["category"]){?>
 					<table class="main_b_notice <?=$news[$n]["caution"]?>">
-					<tr>
-						<td  class="main_b_td_1">
-							<span class="main_b_notice_date"><?=$news[$n]["date"]?></span>
-							<span class="main_b_notice_tag" style="background:<?=$news[$n]["tag_icon"]?>"><?=$news[$n]["tag_name"]?></span>
-						</td>
+						<tr>
+							<td  class="main_b_td_1">
+								<span class="main_b_notice_date"><?=$news[$n]["date"]?></span>
+								<span class="main_b_notice_tag" style="background:<?=$news[$n]["tag_icon"]?>"><?=$news[$n]["tag_name"]?></span>
+							</td>
 
-						<td  class="main_b_td_2">
-							<a href="<?=$news[$n]["news_link"]?>" class="main_b_notice_link">
-								<span class="main_b_notice_title"><?=$news[$n]["title"]?></span>
-							</a>
-						</td>
-						<td class="main_b_td_3"><a href="<?=$news[$n]["news_link"]?>" class="main_b_notice_arrow">	</a></td>
-					</tr>
+							<td  class="main_b_td_2">
+								<a href="<?=$news[$n]["news_link"]?>" class="main_b_notice_link">
+									<span class="main_b_notice_title"><?=$news[$n]["title"]?></span>
+								</a>
+							</td>
+							<td class="main_b_td_3"><a href="<?=$news[$n]["news_link"]?>" class="main_b_notice_arrow">	</a></td>
+						</tr>
 					</table>
 
 				<?}else{?>
