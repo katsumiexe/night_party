@@ -434,10 +434,8 @@ if($admin_config["webp_select"] == 1){
 	$sql.=" sort='{$tmp_auto}'";
 	mysqli_query($mysqli,$sql);
 }
-
 if(!$menu_post) $menu_post="staff";
 $sel[$menu_post]="menu_sel";
-
 ?>
 <html lang="ja">
 <head>
@@ -492,7 +490,6 @@ $sel[$menu_post]="menu_sel";
 	0%{ transform:rotate(0);}
 	100%{ transform:rotate(360deg); }
 }
-
 
 .admin_login{
 	margin		:50px auto 5 auto;
