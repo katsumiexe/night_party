@@ -565,11 +565,22 @@ $sel[$menu_post]="menu_sel";
 	color		:#c00000;
 	text-align	:center;
 	margin		:0 auto;
+}
 
+.caution{
+	margin		:10px auto;
+	border		:1px solid #ff3030;
+	padding		:10px;
+	font-size	:13px;
+	line-height	:19px;
+	background	:#fafafa;
+	color		:#606060;
+	width		:160pxl;
 }
 </style>
 </head>
 <body class="body">
+
 <?if($manage){?>
 <div id="wait" class="wait">
 	<div class="wait_in"></div>
@@ -593,10 +604,8 @@ $sel[$menu_post]="menu_sel";
 		<li id="contact" class="menu <?=$sel["contact"]?>"><span class="menu_icon"></span><span class="menu_comm">お問合せ</span></li>
 		<li id="logout" class="menu"><span class="menu_icon"></span><span class="menu_comm">LOG OUT</span></li>
 	</ul>
-	<div class="head_menu">
-		<div class="menu_a"></div>
-		<div class="menu_b"></div>
-		<div class="menu_c"></div>
+	<div class="caution">
+	※操作は可能ですが、データの新規登録、変更は出来ません。
 	</div>
 </div>
 <form id="form_menu" method="post" action="./index.php">
