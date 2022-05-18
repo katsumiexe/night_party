@@ -12,16 +12,17 @@ $staff_id	=$_POST["staff_id"];
 $menu_post	=$_POST["menu_post"];
 
 $prm=$_POST["prm"];
+
 if($prm == "1"){
-	$post_id	="event";
+	$post_id	="contents";
 	$menu_post	="event";
 
 }else if($prm == "2"){
-	$post_id	="news";
+	$post_id	="contents";
 	$menu_post	="event";
 
 }else if($prm == "3"){
-	$menu_post	="staff_fix";
+	$menu_post	="staff";
 
 }else if($prm == "4"){
 	$menu_post	="sche";
