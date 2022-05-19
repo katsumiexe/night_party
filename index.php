@@ -477,19 +477,19 @@ header{
 
 .box_2_1_text{
 	position		:absolute;
-	bottom			:3vh;
+	bottom			:2vh;
 	left			:0;
 	right			:0;
 	margin			:auto;	
 	width			:40vh;
 	padding			:0;
-	height			:24vh;
+	height			:18vh;
 	border			:1px solid #303030;
 	border-radius	:5px;
 	line-height		:3vh;
 	text-align		:left;
 	color			:#384240;
-	font-size		:2.1vh;
+	font-size		:2vh;
 	padding			:1.5vh 1vh 1vh 1.5vh;
 	background		:#f0f0f0;
 
@@ -613,7 +613,7 @@ header{
 		<div class="box_ab">
 			<h2 class="h2">定額制サイトの「見えない罠」</h2>
 			<div class="box_1_0">
-				<span class="box_1_0_title">それは「御社」のものですか？</span><br>
+				<span class="box_1_0_title">そのホームページは「御社」のものですか？</span><br>
 				定額制サイトはその所有権が制作会社にあるため、使われている画像やロゴ等を<span class="border">自由に使う事が出来ません。</span><br>
 				更新の依頼や修正、イベントバナーの作成に至るまで他社に依頼ができないので<span class="border">必然的に囲いこまれてしまいます。</span><br>
 				そんな制作会社が最も力を入れるのは新規顧客の獲得。<span class="border">そのような環境に未来はありますか？</span><br>
@@ -637,7 +637,7 @@ header{
 			<div id="box_item_2" class="box_1_1">
 				<div id="ball2" class="box_1_ball"><span class="ball_txt">自動WebP変換</span><span class="ball_icon"></span></div>
 				<p class="box_1_1_text">
-				次世代画像フォーマット「Webp（ウェッピー）」に標準対応。CMSやキャストがアップロードした画像も全て自動でWebPに変換されます。<br>
+				次世代画像フォーマット「Webp（ウェッピー）」に標準対応。CMSからも、キャストがアップロードしたものも、全て自動でWebP変換します。<br>
 				</p>
 			</div>
 
@@ -656,8 +656,8 @@ header{
 		<div class="box_ab">
 			<h2 class="h2">サンプルサイト</h2>
 			<div class="box_1_0">
-				営業形態、出店エリア、対象顧客によって効果的なサイトの形式は千差万別です。<br>
-				「Night-Paty」は基本的にお客様の最も
+				営業形態や地域、対象顧客によって効果的なサイトの形式は千差万別です。<br>
+				「Night-Paty」は大きく3種類のテンプレートをご用意させていただいていますが、御社のイメージに合わせた形でカスタマイズさせていただいています。	<br>
 			</div>
 
 			<div class="box_2_0">
@@ -671,7 +671,7 @@ header{
 
 				<div class="box_2_1">
 				<div class="box_2_1_text">
-					店舗イベントの表示に特化したスタイルです。<br>
+					店舗イベントの告知に特化したスタイルです。<br>
 					キャストの露出は最小限にし、イベント告知を前面に押し出します。<br>
 					キャストの入れ替えが少なく、日替わりでイベントを告知したい店舗様には最適です。<br>
 				</div>
@@ -679,7 +679,7 @@ header{
 
 				<div class="box_2_1">
 				<div class="box_2_1_text">
-					Studio、ペライチ等のNoCode系CMSに多く見られる、シンプルな1ページベースのスタイルです。<br>
+					コンテンツを1ページにまとめた、シンプルなスタイルです。<br>
 					キャストスケジュール、ブログを廃し、更新関連はスタッフブログがメインとなります。<br>
 					キャスト数が少なく、サイトの更新自体を少なめにしたい店舗様用です。<br>
 				</div>
@@ -695,7 +695,7 @@ header{
 				<div id="box_item_a1" class="box_item">
 					<div class="box_item_title">イベント機能<button id="box_3_icon_1" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
 					<p class="box_item_p">
-						トップページにイベントを設定できます。イベントはバナーのみかリンク有かの設定できます。<br>
+						トップページに表示するイベントを設定できます。イベントはバナーのみかリンク有かの設定できます。<br>
 					</p>
 				</div>
 
@@ -803,10 +803,9 @@ header{
 
 			<div id="box_right_b" class="box_flex_right">
 				<div class="box_item2">
-				キャストに働きやすい環境を提供するのもお店の務めです。<br>
-				「HIME-Karte（ヒメカルテ）」はお客様ノートとスケジュール帳の機能を併せ持つ、サイト連動型のマイページです。<br>
+				HIME-Karte（ヒメカルテ）は『お客様ノート』と『スケジュール帳』の機能を併せ持つ、サイト連動型のキャスト用マイページです。<br>
 				実際働くキャストがどのようなものを望んでいるのか、何に困っているかなど、現場の声を多く集めて作られました。<br>
-				HIME-Karteを使う事で普段のルーティーン業務をシステム化し、ミスと負担を減らします。<br>
+				キャストに働きやすい環境を提供するのもお店の務めです。HIME-Karteを使う事で普段のルーティーン業務をシステム化し、ミスと負担を減らします。<br>
 				<img src="./z_img/img3.webp" class="box_item2_img" alt="cast_image">
 				</div>
 			</div>
