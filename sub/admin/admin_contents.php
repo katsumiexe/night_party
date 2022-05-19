@@ -37,7 +37,14 @@ $cat[4]="outer";
 $sel_id			=$_POST["sel_id"];
 $post_id		=$_POST["post_id"];
 
-if(!$post_id) $post_id="event";
+if($prm == 2){
+	$post_id	="news";
+
+}elseif(!$post_id){
+	$post_id	="event";
+}
+
+
 if($post_id == "page") $post_id="system";
 
 $event_set_id	=$_POST["event_set_id"];

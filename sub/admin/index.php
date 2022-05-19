@@ -14,12 +14,12 @@ $menu_post	=$_POST["menu_post"];
 $prm=$_POST["prm"];
 
 if($prm == "1"){
-	$post_id	="contents";
-	$menu_post	="event";
+	$post_id	="event";
+	$menu_post	="contents";
 
 }else if($prm == "2"){
-	$post_id	="contents";
-	$menu_post	="event";
+	$post_id	="news";
+	$menu_post	="contents";
 
 }else if($prm == "3"){
 	$menu_post	="staff";
