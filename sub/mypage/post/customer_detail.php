@@ -75,7 +75,7 @@ for($n=0;$n<4;$n++){
 }
 
 $sel[$dat["block"]]=" checked=\"checked\"";
-$opt_sel[$dat["opt"]]=" checked=\"checked\"";
+$opt_sel[$dat["infom"]]=" checked=\"checked\"";
 
 if($dat["block"] == 3){
 	$bk=" disabled=\"disabled\"";
@@ -287,13 +287,13 @@ $app4.="</div>";
 
 $app4.="<div class=\"block_title\"><span class=\"block_title_in\"></span>Easy Talk通知設定</div>";
 $app4.="<div class=\"block_flex\">";
-$app4.="<input id=\"opt_0\" class=\"block_r\" type=\"radio\" name=\"opt\" value=\"0\"{$bk}{$opt_sel[0]}><label for=\"opt_0\" class=\"block_radio\">通知ON</label>";
-$app4.="<input id=\"opt_1\" class=\"block_r\" type=\"radio\" name=\"opt\" value=\"1\"{$bk}{$opt_sel[1]}><label for=\"opt_1\" class=\"block_radio\">通知OFF</label>";
+$app4.="<input id=\"infom_0\" class=\"block_r\" type=\"radio\" name=\"opt\" value=\"0\"{$bk}{$opt_sel[0]}><label for=\"infom_0\" class=\"block_radio\">通知ON</label>";
+$app4.="<input id=\"infom_1\" class=\"block_r\" type=\"radio\" name=\"opt\" value=\"1\"{$bk}{$opt_sel[1]}><label for=\"infom_1\" class=\"block_radio\">通知OFF</label>";
 $app4.="</div>";
 
 $app4.="<div class=\"block_msg\">";
-$app4.="<span id=\"msg_opt_0\" {$msg_opt[0]}>EasyTalk受信時、登録アドレスにお知らせが入ります</span>";
-$app4.="<span id=\"msg_opt_1\" {$msg_opt[1]}>EasyTalk受信時のお知らせを受け取りません</span>";
+$app4.="<span id=\"msg_infom_0\" {$msg_opt[0]}>EasyTalk受信時、登録アドレスにお知らせが入ります</span>";
+$app4.="<span id=\"msg_infom_1\" {$msg_opt[1]}>EasyTalk受信時のお知らせを受け取りません</span>";
 $app4.="</div>";
 $app4.="</div>";
 

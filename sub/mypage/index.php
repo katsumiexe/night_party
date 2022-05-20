@@ -25,7 +25,7 @@ $calendar[2]=date("Y-m-01",strtotime($c_month)+3456000);
 $calendar[3]=date("Y-m-01",strtotime($calendar[2])+3456000);
 
 $month_ym[0]=substr(str_replace("-","",$calendar[0]),0,6);	
-$month_ym[1]=substr(str_replace("-","",$calendar[1]),0,6);	
+$month_ym[1]=substr(str_replace("-","",$calendar[1]),0,6);
 $month_ym[2]=substr(str_replace("-","",$calendar[2]),0,6);	
 
 $base_w		=$day_w-$admin_config["start_week"];
@@ -425,9 +425,7 @@ if($result = mysqli_query($mysqli,$sql)){
 			$row["face"]="<img src=\"../img/customer_no_image.png\" class=\"mail_img\" alt=\"会員\">";
 		}
 
-		if($c_id==$row["id"]){
-			$easy_cas=$row;
-		}
+
 		if(!$row["birth_day"] || $row["birth_day"]=="00000000"){
 			$row["yy"]="----";
 			$row["mm"]="--";
@@ -451,6 +449,14 @@ if($result = mysqli_query($mysqli,$sql)){
 		if($row["name"]){
 			$row["name"]=$row["name"]." 様";
 		}
+
+		if($c_id==$row["id"]){
+			$easy_cas=$row;
+			if(!$row["nickname"]){
+				$easy_cas["nickname"]=$row["name"];
+			} 
+		}
+
 		$customer[]=$row;
 		$cnt_coustomer++;
 	}
@@ -763,6 +769,7 @@ $set_b=substr($log_enc,$tmp_set*2);
 $log_enc=$set_b.$set_a;
 $log_enc="ss".$dec[$tmp_rnd][$tmp_set].$log_enc;
 }
+
 ?>
 <!DOCTYPE html lang="ja"><head>
 <meta charset="UTF-8">
@@ -822,9 +829,9 @@ $(function(){
 <?if($cast_page==3 && $c_id){?>
 	Page=1;
 	Customer_id		='<?=$c_id?>';
-	Customer_Nick	=$('#mail_hist<?=$c_id?>').children('.mail_nickname').text();
-	Customer_Name	=$('#mail_hist<?=$c_id?>').children('.mail_name').val();
-	Customer_mail	=$('#mail_hist<?=$c_id?>').children('.mail_address').val();
+	Customer_Nick	='<?=$easy_cas["nickname"]?>';
+	Customer_Name	='<?=$easy_cas["name"]?>';
+	Customer_mail	='<?=$easy_cas["mail"]?>';
 
 	$.post({
 		url:"./post/easytalk_hist.php",
@@ -1271,7 +1278,7 @@ $(function(){
 			</div>
 			<div class="easytalk_top">
 				<span class="al_l"><span class="al_l_in"></span></span><span class="easytalk_top_comm">一覧に戻る</span>
-				<span id="clist<?=$customer[$n]["id"]?>" class="easytalk_link clist"><span class="easytalk_top_name"></span>さんのProfile <span class="notice_icon"></span> </span>
+				<span id="clist<?=$customer[$n]["id"]?>" class="easytalk_link clist"><span class="easytalk_top_name"><?=$customer[$n]["nickname"]?></span>さんのProfile <span class="notice_icon"></span> </span>
 			</div>
 
 <!--■■■■■■■■-->

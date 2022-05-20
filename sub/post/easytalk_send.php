@@ -1,9 +1,9 @@
 <?
 include_once('../library/sql.php');
-
+/*
 ini_set( 'display_errors', 1 );
 ini_set('error_reporting', E_ALL);
-
+*/
 
 $send			=$_POST['send'];
 $log			=$_POST['log'];
@@ -14,7 +14,7 @@ $sid			=$_POST['sid'];
 
 if($log || $img_code){
 
-$sql	 ="SELECT I.cast_id, I.customer_id, C.nickname, A.login_id, A.login_pass, C.name, S.mail,C.opt FROM ".TABLE_KEY."_ssid AS I";
+$sql	 ="SELECT I.cast_id, I.customer_id, C.nickname, A.login_id, A.login_pass, C.name, S.mail,C.opt,C.infom FROM ".TABLE_KEY."_ssid AS I";
 $sql	.=" LEFT JOIN ".TABLE_KEY."_staff AS S ON I.cast_id=S.staff_id";
 $sql	.=" LEFT JOIN ".TABLE_KEY."_cast AS A ON I.cast_id=A.id";
 $sql	.=" LEFT JOIN ".TABLE_KEY."_customer AS C ON I.customer_id=C.id";
@@ -49,7 +49,7 @@ $n5=rand(1, 9);
 $ssid_key=$rnd[$n0].$rnd[$n1].$rnd[$n2].$rnd[$n3].$rnd[$n4].$dec[$n5][$send];
 */
 
-if($dat["mail"] && $dat["opt"] ==0){
+if($dat["mail"] && $dat["opt"] ==0 && $dat["infom"] ==0){
 
 	$c=strlen($dat["login_id"]);
 

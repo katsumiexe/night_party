@@ -23,8 +23,8 @@ if($yy && $mm && $dd){
 }
 
 
-$sql ="INSERT INTO ".TABLE_KEY."_customer (`cast_id`,`nickname`,`name`,`regist_date`,`birth_day`,`fav`,`c_group`,`del`,`block`,`opt`,`prm`)";
-$sql .=" VALUES('{$cast_data["id"]}','{$nick}','{$name}','{$now}','{$birth}','{$fav}','{$group}','0','0','0','0')";
+$sql ="INSERT INTO ".TABLE_KEY."_customer (`cast_id`,`nickname`,`name`,`regist_date`,`birth_day`,`fav`,`c_group`,`del`,`block`,`opt`,`infom`,`prm`)";
+$sql .=" VALUES('{$cast_data["id"]}','{$nick}','{$name}','{$now}','{$birth}','{$fav}','{$group}','0','0','0','0','0')";
 mysqli_query($mysqli,$sql);
 $tmp_auto=mysqli_insert_id($mysqli);
 
