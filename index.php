@@ -219,18 +219,29 @@ header{
 
 .box_item{
 	position		:absolute;
+	width			:57vh;
+	padding			:0;
+	height			:25vh;
+	transform		:rotate(-15deg);
+	opacity			:0;
+	transform-origin:top right;
+}
+
+.box_item_in{
+	position		:absolute;
+	top				:1vh;
+	left			:1vh;
+	right			:1vh;
+	bottom			:1vh;
+	margin			:auto;
 	width			:53vh;
+	height			:21vh;
 	border			:1vh solid #60a0f0;
 	padding			:0;
 	background		:linear-gradient(#fffafa,#fff0f0);
 	background		:#fafafa;
-	height			:21vh;
 	text-align		:left;
 	color			:#202020;
-	margin			:2vh;
-	transform		:rotate(-15deg);
-	opacity			:0;
-	transform-origin:top right;
 }
 
 
@@ -248,11 +259,13 @@ header{
 }
 
 .box_item_p{
+	dispaly			:block;
 	position		:relative;
 	height			:12.5vh;
+	width			:50vh;	
 	font-size		:2vh;
 	line-height		:3.2vh;
-	padding			:1.5vh;
+	padding			:1vh;
 	margin			:0 auto;
 	color			:#303030;
 }
@@ -265,7 +278,6 @@ header{
 	line-height		:2.5vh;
 	color			:#4040600;
 }
-
 
 .box_item_icon{
 	display			:inline-block;
@@ -302,10 +314,9 @@ header{
 }
 
 
-#block_4 .box_flex_left, #block_4 .box_flex_right, #block_4 .box_item{
+#block_4 .box_flex_left, #block_4 .box_flex_right, #block_4 .box_item_in{
 	border			:1vh solid #ffc0e0;
 }
-
 
 #block_4 .box_item_title{
 	background		:#ffe8f0;
@@ -336,7 +347,7 @@ header{
 }
 
 .box_1_0{
-	margin			:0.5vh auto 2.5vh auto;
+	margin			:4vh auto 2.5vh auto;
 	width			:135vh;
 	padding			:1.5vh;
 	background		:linear-gradient(135deg,#fafafa,#eaeaea);
@@ -347,6 +358,7 @@ header{
 	color			:#384240;
 	font-size		:2.5vh;
 	border-bottom	:3px solid #c00000;
+	opacity			:0;
 }
 
 .box_1_0_title{
@@ -601,25 +613,19 @@ header{
 </header>
 <section class="main">
 	<article id="block_0" class="box">
-		<h2 class="h2">接客業特化型CMS「Night-Party」</h2>
-		<div id="box_item_0" class="box_1_0">
-			Night-Partyはキャストを用いる接客業に特化した、パッケージ型CMSです。<br>
-			サイト更新にキャスト管理の他、キャストの顧客管理もシステム化することで店舗スタッフ、キャストの負担を大幅軽減。<br>
-			現場の「欲しい」の声を集め、具現化したCMSです。<br>
-		</div>
-	</article>
 
+	</article>
 	<article id="block_1" class="box">
 		<div class="box_ab">
 			<h2 class="h2">定額制サイトの「見えない罠」</h2>
-			<div class="box_1_0">
+			<div id="block_1_box_1" class="box_1_0">
 				<span class="box_1_0_title">そのホームページは「御社」のものですか？</span><br>
 				定額制サイトはその所有権が制作会社にあるため、使われている画像やロゴ等を<span class="border">自由に使う事が出来ません。</span><br>
 				更新の依頼や修正、イベントバナーの作成に至るまで他社に依頼ができないので<span class="border">必然的に囲いこまれてしまいます。</span><br>
 				そんな制作会社が最も力を入れるのは新規顧客の獲得。<span class="border">そのような環境に未来はありますか？</span><br>
 			</div>
 
-			<div class="box_1_0">
+			<div id="block_1_box_2" class="box_1_0">
 				<span class="box_1_0_title">管理は制作会社に任せずにご自身で！</span><br>
 				Night-Partyは買い切りシステムですので、<span class="border">完成したその時から全てが御社の所有物になります。</span><br>
 				月額管理費がかからない他、サイトの更新や変更の際は、弊社以外の他の制作会社に依頼することも可能です。<br>
@@ -679,7 +685,7 @@ header{
 
 				<div class="box_2_1">
 				<div class="box_2_1_text">
-					コンテンツを1ページにまとめた、シンプルなスタイルです。<br>
+					コンテンツを1ページにまとめたシンプルなスタイルです。<br>
 					キャストスケジュール、ブログを廃し、更新関連はスタッフブログがメインとなります。<br>
 					キャスト数が少なく、サイトの更新自体を少なめにしたい店舗様用です。<br>
 				</div>
@@ -693,47 +699,60 @@ header{
 			<div class="h2_s">　</div>
 			<div class="box_flex_left">
 				<div id="box_item_a1" class="box_item">
-					<div class="box_item_title">イベント機能<button id="box_3_icon_1" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
-					<p class="box_item_p">
-						トップページに表示するイベントを設定できます。イベントはバナーのみかリンク有かの設定できます。<br>
-					</p>
+					<div class="box_item_in">
+						<div class="box_item_title">イベント機能<button id="box_3_icon_1" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<p class="box_item_p">
+							トップページに表示するイベントを設定できます。イベントはバナーのみかリンク有かの設定できます。<br>
+						</p>
+					</div>
 				</div>
 
 				<div id="box_item_a2" class="box_item">
-					<div class="box_item_title">ニュース機能<button id="box_3_icon_2" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
-					<p class="box_item_p">
-						イベント更新、キャストデビューなどが行われた際、自動で更新されます。<br>
-						リンクのあり／なしと注目設定が可能です。注目ニュースは日付関係なくTOPに表示されます。
-					</p>
+					<div class="box_item_in">
+						<div class="box_item_title">ニュース機能<button id="box_3_icon_2" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<p class="box_item_p">
+							イベント更新、キャストデビューなどが行われた際、自動で更新されます。<br>
+							リンクのあり／なしと注目設定が可能です。注目ニュースは日付関係なくTOPに表示されます。
+						</p>
+					</div>
 				</div>
 
 				<div id="box_item_a3" class="box_item">
-					<div class="box_item_title">キャスト管理<button id="box_3_icon_3" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
-					<p class="box_item_p">
-						キャストのプロフィールや写真のほか、管理に便利なステータスやキャストの個人情報等も登録できます。
-					</p>
+					<div class="box_item_in">
+						<div class="box_item_title">キャスト管理<button id="box_3_icon_3" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<p class="box_item_p">
+							キャストのプロフィールや写真のほか、管理に便利なステータスやキャストの個人情報等も登録できます。
+						</p>
+					</div>
 				</div>
 
 				<div id="box_item_a4" class="box_item">
-					<div class="box_item_title">シフト管理<button id="box_3_icon_4" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
-					<p class="box_item_p">
-						キャストのシフトを1週間単位で一覧で表示、変更することができます。<br>
-					</p>
+					<div class="box_item_in">
+						<div class="box_item_title">シフト管理<button id="box_3_icon_4" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<p class="box_item_p">
+							キャストのシフトを1週間単位で一覧で表示、変更することができます。<br>
+						</p>
+					</div>
 				</div>
 
 				<div id="box_item_a5" class="box_item">
-					<div class="box_item_title">ブログ管理<button id="box_3_icon_5" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
-					<p class="box_item_p">
-						キャストブログ、スタッフブログの投稿、修正、削除、非表示を行えます。
-					</p>
+					<div class="box_item_in">
+						<div class="box_item_title">ブログ管理<button id="box_3_icon_5" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<p class="box_item_p">
+							キャストブログ、スタッフブログの投稿、修正、削除、非表示を行えます。
+						</p>
+					</div>
 				</div>
 
 				<div id="box_item_a6" class="box_item">
-					<div class="box_item_title">お問い合わせ<button id="box_3_icon_6" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
-					<p class="box_item_p">
-						キャストからの応募メールをCMSで確認することができます。対応日時、履歴も残せますので、誰が見てもわかるようにできます。
-					</p>
+					<div class="box_item_in">
+						<div class="box_item_title">お問い合わせ<button id="box_3_icon_6" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<p class="box_item_p">
+							キャストからの応募メールをCMSで確認することができます。対応日時、履歴も残せますので、誰が見てもわかるようにできます。
+						</p>
+					</div>
 				</div>
+
 			</div>
 
 			<div id="box_right_a" class="box_flex_right">
@@ -753,51 +772,63 @@ header{
 			<div class="h2_s">　</div>
 			<div class="box_flex_left">
 				<div id="box_item_b1" class="box_item">
-					<div class="box_item_title">TOP<button id="box_4_icon_1" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
-					<p class="box_item_p">
-						スケジュールと「顧客リスト」で登録したお客様の誕生日、本日より3日分が表示されます。<br>
-						お店からの連絡事項が表示されます。<br>
-					</p>
+					<div class="box_item_in">
+						<div class="box_item_title">TOP<button id="box_4_icon_1" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<p class="box_item_p">
+							スケジュールと「顧客リスト」で登録したお客様の誕生日、本日より3日分が表示されます。<br>
+							お店からの連絡事項が表示されます。<br>
+						</p>
+					</div>
 				</div>
 
 				<div id="box_item_b2" class="box_item">
-					<div class="box_item_title">カレンダー<button id="box_4_icon_2" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
-					<p class="box_item_p">
-						お客様の誕生日やシフトが表示され、日ごとの個人メモを残すことも可能です。<br>
-						シフト提出もここから行えます。<br>
-					</p>
+					<div class="box_item_in">
+						<div class="box_item_title">カレンダー<button id="box_4_icon_2" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<p class="box_item_p">
+							お客様の誕生日やシフトが表示され、日ごとの個人メモを残すことも可能です。<br>
+							シフト提出もここから行えます。<br>
+						</p>
+					</div>
 				</div>
 
 				<div id="box_item_b3" class="box_item">
-					<div class="box_item_title">顧客リスト<button id="box_4_icon_3" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
-					<p class="box_item_p">
-						お客様の詳細や、来店履歴、利用金額やバック額を記載できます。<br>
-						ランク評価、顔写真投稿、<span class="box_l">グループ分けも可能</span>ですので、わかりやすく管理することができます。<br>
-					</p>
+					<div class="box_item_in">
+						<div class="box_item_title">顧客リスト<button id="box_4_icon_3" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<p class="box_item_p">
+							お客様の詳細や、来店履歴、利用金額やバック額を記載できます。<br>
+							ランク評価、顔写真投稿、<span class="box_l">グループ分けも可能</span>ですので、わかりやすく管理することができます。<br>
+						</p>
+					</div>
 				</div>
 
 				<div id="box_item_b4" class="box_item">
-					<div class="box_item_title">EasyTalk<button id="box_4_icon_4" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
-					<p class="box_item_p">
-						タイムライン仕様のコミュニケーションツールで、キャストは自身のアカウントをお客様に伝えることなく利用できます。<br>
-						<span class="box_s">お客様側のメールアドレスが必要です。</span>
-					</p>
+					<div class="box_item_in">
+						<div class="box_item_title">EasyTalk<button id="box_4_icon_4" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<p class="box_item_p">
+							タイムライン仕様のコミュニケーションツールで、キャストは自身のアカウントをお客様に伝えることなく利用できます。<br>
+							<span class="box_s">お客様側のメールアドレスが必要です。</span>
+						</p>
+					</div>
 				</div>
 
 				<div id="box_item_b5" class="box_item">
-					<div class="box_item_title">ブログ<button id="box_4_icon_5" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
-					<p class="box_item_p">
-						写真付きブログの投稿、編集ができます。<br>
-						投稿写真は編集画面でリサイズ、調整、部分マスク等の簡易調整が可能です。<br>
-					</p>
+					<div class="box_item_in">
+						<div class="box_item_title">ブログ<button id="box_4_icon_5" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<p class="box_item_p">
+							写真付きブログの投稿、編集ができます。<br>
+							投稿写真は編集画面でリサイズ、調整、部分マスク等の簡易調整が可能です。<br>
+						</p>
+					</div>
 				</div>
 
 				<div id="box_item_b6" class="box_item">
-					<div class="box_item_title">アナリティクス<button id="box_4_icon_6" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
-					<p class="box_item_p">
-						時給・バックから月の収入目安を算出します。<br>
-						バック項目や顧客ごとのランキング表示も可能です。<br>
-					</p>
+					<div class="box_item_in">
+						<div class="box_item_title">アナリティクス<button id="box_4_icon_6" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<p class="box_item_p">
+							時給・バックから月の収入目安を算出します。<br>
+							バック項目や顧客ごとのランキング表示も可能です。<br>
+						</p>
+					</div>
 				</div>
 			</div>
 

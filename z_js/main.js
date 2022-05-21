@@ -27,6 +27,9 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 				},700,function(){
 					Lock=0;
 				});
+
+				$('#block_1_box_1').delay(800).animate({"opacity":"1","margin-top":"1vh"},1000);
+				$('#block_1_box_2').delay(1200).animate({"opacity":"1","margin-top":"1vh"},900);
 				DownBall();
 
 			}else{
@@ -37,9 +40,8 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 					Lock=0;
 				});
 
-
-				if(BoxView == 3){
-					$({Deg:-10, Opc:0, Top:20, Lef:5}).animate({Deg:0, Opc:1, Top:0, Lef:0}, {
+				 if(BoxView == 3){
+					$({Deg:-10, Opc:0, Top:20, Lef:5}).animate({Deg:0, Opc:1, Top:1, Lef:1}, {
 						duration:800,
 						progress:function() {
 							$('#box_item_a1').css({
@@ -52,7 +54,7 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 					});
 
 
-					$({Deg:-10, Opc:0, Top:20, Lef:67}).delay(200).animate({Deg:0, Opc:1, Top:0, Lef:57}, {
+					$({Deg:-10, Opc:0, Top:20, Lef:67}).delay(200).animate({Deg:0, Opc:1, Top:1, Lef:58}, {
 						duration:800,
 						progress:function() {
 							$('#box_item_a2').css({
@@ -65,7 +67,7 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 					});
 
 
-					$({Deg:-10, Opc:0, Top:45, Lef:5}).delay(200).animate({Deg:0, Opc:1, Top:25, Lef:0}, {
+					$({Deg:-10, Opc:0, Top:45, Lef:5}).delay(200).animate({Deg:0, Opc:1, Top:26, Lef:1}, {
 						duration:800,
 						progress:function() {
 							$('#box_item_a3').css({
@@ -77,7 +79,7 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 						},
 					});
 
-					$({Deg:-10, Opc:0, Top:45, Lef:67}).delay(400).animate({Deg:0, Opc:1, Top:25, Lef:57}, {
+					$({Deg:-10, Opc:0, Top:45, Lef:67}).delay(400).animate({Deg:0, Opc:1, Top:26, Lef:58}, {
 						duration:800,
 						progress:function() {
 							$('#box_item_a4').css({
@@ -89,7 +91,7 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 						},
 					});
 
-					$({Deg:-10, Opc:0, Top:70, Lef:5}).delay(400).animate({Deg:0, Opc:1, Top:50, Lef:0}, {
+					$({Deg:-10, Opc:0, Top:70, Lef:5}).delay(400).animate({Deg:0, Opc:1, Top:51, Lef:1}, {
 						duration:800,
 						progress:function() {
 							$('#box_item_a5').css({
@@ -102,7 +104,7 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 					});
 
 
-					$({Deg:-10, Opc:0, Top:70, Lef:67}).delay(600).animate({Deg:0, Opc:1, Top:50, Lef:57}, {
+					$({Deg:-10, Opc:0, Top:70, Lef:67}).delay(600).animate({Deg:0, Opc:1, Top:51, Lef:58}, {
 						duration:800,
 						progress:function() {
 							$('#box_item_a6').css({
@@ -117,7 +119,7 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 				}
 
 				if(BoxView == 4){
-					$({Deg:-10, Opc:0, Top:20, Lef:5}).animate({Deg:0, Opc:1, Top:0, Lef:0}, {
+					$({Deg:-10, Opc:0, Top:20, Lef:5}).animate({Deg:0, Opc:1, Top:1, Lef:1}, {
 						duration:800,
 						progress:function() {
 							$('#box_item_b1').css({
@@ -130,7 +132,7 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 					});
 
 
-					$({Deg:-10, Opc:0, Top:20, Lef:67}).delay(200).animate({Deg:0, Opc:1, Top:0, Lef:57}, {
+					$({Deg:-10, Opc:0, Top:20, Lef:67}).delay(200).animate({Deg:0, Opc:1, Top:1, Lef:58}, {
 						duration:800,
 						progress:function() {
 							$('#box_item_b2').css({
@@ -143,7 +145,7 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 					});
 
 
-					$({Deg:-10, Opc:0, Top:45, Lef:5}).delay(200).animate({Deg:0, Opc:1, Top:25, Lef:0}, {
+					$({Deg:-10, Opc:0, Top:45, Lef:5}).delay(200).animate({Deg:0, Opc:1, Top:26, Lef:1}, {
 						duration:800,
 						progress:function() {
 							$('#box_item_b3').css({
@@ -155,7 +157,7 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 						},
 					});
 
-					$({Deg:-10, Opc:0, Top:45, Lef:67}).delay(400).animate({Deg:0, Opc:1, Top:25, Lef:57}, {
+					$({Deg:-10, Opc:0, Top:45, Lef:67}).delay(400).animate({Deg:0, Opc:1, Top:26, Lef:58}, {
 						duration:800,
 						progress:function() {
 							$('#box_item_b4').css({
@@ -167,7 +169,7 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 						},
 					});
 
-					$({Deg:-10, Opc:0, Top:70, Lef:5}).delay(400).animate({Deg:0, Opc:1, Top:50, Lef:0}, {
+					$({Deg:-10, Opc:0, Top:70, Lef:5}).delay(400).animate({Deg:0, Opc:1, Top:51, Lef:1}, {
 						duration:800,
 						progress:function() {
 							$('#box_item_b5').css({
@@ -179,8 +181,7 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 						},
 					});
 
-
-					$({Deg:-10, Opc:0, Top:70, Lef:67}).delay(600).animate({Deg:0, Opc:1, Top:50, Lef:57}, {
+					$({Deg:-10, Opc:0, Top:70, Lef:67}).delay(600).animate({Deg:0, Opc:1, Top:51, Lef:58}, {
 						duration:800,
 						progress:function() {
 							$('#box_item_b6').css({
@@ -247,9 +248,15 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 		}
 	});
 
+	$(".box_item_in").hover(function () {
+        $(this).animate({'width':'54vh','height':'22vh','top':'0.5vh','left':'0.5vh'},500);
+    },
+
+    function() {
+        $(this).animate({'width':'53vh','height':'21vh','top':'1vh','left':'1vh'},200);
+	});
 
 	$(".box_item_icon").on('click',function () {
-//box_4_icon_2
 		Tmp=$(this).attr('id').substr(0,5);
 		Tmp2=$(this).attr('id').substr(-1,1);
 
@@ -271,7 +278,6 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 	});
 });
 
-
 function UpBall() {
 	$(".ball_txt").animate({'width':0,'padding':0},150).delay(700).animate({'width':'42.5vh',"padding-left":'10vh'},150);
 	$(".ball_icon").animate({'border-radius':'30px'},150).delay(700).animate({"border-radius":'10px'},150);
@@ -283,6 +289,7 @@ function UpBall() {
 
 function DownBall() {
 	$(".ball_icon").animate({"border-radius":'5vh'},150).delay(700).animate({"border-radius":'1vh'},150);
+
 	$('#ball1').delay(200).animate({'left':'170vh','top':'-40vh'},400).animate({'left':'0px','top':'0'},250);
 	$('#ball2').delay(250).animate({'left':'170vh','top':'-40vh'},500).animate({'left':'0px','top':'0'},250);
 	$('#ball3').delay(300).animate({'left':'170vh','top':'-40vh'},600).animate({'left':'0px','top':'0'},250);

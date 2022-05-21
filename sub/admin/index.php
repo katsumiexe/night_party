@@ -579,8 +579,6 @@ $sel[$menu_post]="menu_sel";
 </style>
 </head>
 <body class="body">
-
-<?if($manage){?>
 <div id="wait" class="wait">
 	<div class="wait_in"></div>
 </div>
@@ -611,38 +609,7 @@ $sel[$menu_post]="menu_sel";
 <input id="menu_post" type="hidden" name="menu_post">
 </form>
 
-<?}else{?>
-<form method="post">
-<table class="admin_login">
-<tr>
-<td class="admin_login_1"><span class="admin_login_1_in">Night-Party</span></td>
-</tr>
 
-<tr>
-<td class="admin_login_1">
-<span class="admin_login_tag">IDCODE</span>
-<input type="text" class="admin_login_box" name="admin_in">
-</td>
-</tr>
-
-<tr>
-<td class="admin_login_1">
-<span class="admin_login_tag">PASS</span>
-<input type="password" class="admin_login_box" name="admin_pass">
-</td>
-</tr>
-<tr>
-<td class="admin_login_1">
-	<button type="submit" class="admin_login_btn">LOGIN</button><br>
-<span id="ps_ck" class="admin_login_chg"> ADMIN情報の確認・変更</span><br>
-</td>
-</tr>
-</table>
-<div class="err_msg"><?=$err_msg?></div>
-</form>
-
-
-<?}?>
 <div class="back">
 	<div class="pop">
 		<div class="pop_out">×</div>
