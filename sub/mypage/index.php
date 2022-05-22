@@ -1020,6 +1020,11 @@ $(function(){
 	</ul>
 </div>
 
+
+
+
+
+
 <div class="body_in">
 <?if($cast_page==1){?>
 	<div class="main_sch">

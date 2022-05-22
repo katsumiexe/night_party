@@ -186,6 +186,18 @@ header{
 	background:		rgba(255,255,255,0.5);
 }
 
+.box_top{
+	position		:fixed;
+	top				:0;
+	left			:0;
+	right			:0;
+	margin			:auto;
+	display			:block;
+	width			:170vh;
+	height			:100vh;
+	background		:rgba(255,255,255,0.5);
+}
+
 .box_flex_left{
 	position		:absolute;
 	top				:11vh;
@@ -650,6 +662,34 @@ header{
 	line-height		:3.5vh;
 	color			:#e00000;
 }
+
+.top_comm{
+	position	:absolute;
+	left		:5vh;
+	top			:40vh;
+	width		:66vh;
+	height		:16vh;
+	background	:rgba(240,240,240,0.8);
+	padding		:2vh;
+}
+
+.top_title{
+	font-size	:4vh;
+	font-weight	:900;
+	text-align	:left;
+	margin		:0 0 1vh 0;
+	padding		:0; 
+}
+
+.top_p{
+	font-size	:2.2vh;
+	text-align	:left;
+	line-height	:3.5vh;
+	padding		:0;
+	margin		:0;
+}
+
+
 </style>
 </head>
 
@@ -666,9 +706,17 @@ header{
 	</div>
 </header>
 <section class="main">
-	<article id="block_0" class="box">
-
+	<article id="block_0" class="box_top">
+		<div class="top_comm">
+			<h2 class="top_title">管理型CMS「Night-Party」</h2>
+			<p class="top_p">
+				Night-Partyは、ナイトワークに特化したCMS連動型サイトです。<br>
+				キャバクラ、デリヘル、メンズエステ、ガールズバーなど、<br>
+				キャストを売り込むタイプの接客業を対象に作られました。<br>
+			</p>
+		</div>
 	</article>
+
 	<article id="block_1" class="box">
 		<div class="box_ab">
 			<h2 class="h2">定額制サイトの「見えない罠」</h2>
@@ -1010,6 +1058,7 @@ header{
 		<div class="box_flex">
 			<h2 class="h2">ご依頼・お問合せ</h2>
 			<div class="h2_s">ただいまお問合せ、ご依頼は「Coconara（ココナラ）様にて承っています。</div>
+
 		</div>
 	</article>
 </section>

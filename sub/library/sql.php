@@ -6,7 +6,6 @@ ini_set('error_reporting', E_ALL);
 include_once('connect.php');
 
 $sql ="SELECT * FROM ".TABLE_KEY."_encode"; 
-
 if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
 		$enc[$row["key"]]	=$row["value"];
@@ -14,6 +13,7 @@ if($result = mysqli_query($mysqli,$sql)){
 		$rnd[$row["id"]]				=$row["value"];
 	}
 }
+
 
 $sql ="SELECT config_key, config_value FROM ".TABLE_KEY."_config";
 
@@ -37,6 +37,7 @@ $tmp=explode($ua_list," ");
 if($tmp[5]){
 	$tmp2=explode($tmp[5],"_");
 }
+
 if($tmp2<14 && $tmp[3]=="iPhone"){
 	$admin_config["webp_select"]=0;
 }
