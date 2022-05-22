@@ -848,7 +848,10 @@ header{
 			<h2 class="h2">お見積り</h2>
 			<div class="h2_s">　</div>
 			<div class="box_4_1">
-				<div class="box_4_title">基本料金<span class="box_4_title_s">(システム一式・サイト構築)</span><span class="box_4_title_p">120,000円</span></div>
+				<div class="box_4_title">基本料金<span class="box_4_title_p">120,000円</span></div>
+				<div class="box_4_1_title">「Night-party」システム一式<span class="box_4_1_title_p">50,000円</span></div>
+				<div class="box_4_1_title" style="margin-bottom:3vh;">基本制作費<span class="box_4_1_title_p">70,000円</span></div>
+
 				<div class="box_4_1_title">ページ構成　<span class="box_4_1_title_s">※仕様により変わることがあります</span></div>
 				<p class="comm_p">
 				▼TOPページ(index.php)<br>
@@ -882,7 +885,7 @@ header{
 			</div>
 
 			<div class="box_4_1">
-				<div style="height:7.5vh"></div>
+				<div style="height:18.6vh"></div>
 				<div class="box_4_1_title">その他</div>
 
 				<p class="comm_p">

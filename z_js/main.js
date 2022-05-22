@@ -249,11 +249,11 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 	});
 
 	$(".box_item_in").hover(function () {
-        $(this).animate({'width':'54vh','height':'22vh','top':'0.5vh','left':'0.5vh'},500);
+        $(this).animate({'width':'54vh','height':'22vh','top':'0.5vh','left':'0.5vh'},50);
     },
 
     function() {
-        $(this).animate({'width':'53vh','height':'21vh','top':'1vh','left':'1vh'},200);
+        $(this).animate({'width':'53vh','height':'21vh','top':'1vh','left':'1vh'},100);
 	});
 
 	$(".box_item_icon").on('click',function () {
