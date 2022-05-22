@@ -520,19 +520,45 @@ header{
 	color			:#101520;
 }
 
+.box_4_left{
+	position			:relative;
+	margin				:1vh auto;
+	display				:flex;
+	flex-wrap			:wrap;
+	width				:111vh;
+	flex-basis			:111vh;
+	justify-content		:flex-start;
+	align-items			:flex-start;
+	align-content		:flex-start;
+}
+
+.box_4_right{
+	position			:relative;
+	margin				:1vh auto;
+	flex-wrap			:wrap;
+	display				:flex;
+	width				:55vh;
+	flex-basis			:55vh;
+	justify-content		:flex-start;
+	align-items			:flex-start;
+	align-content		:flex-start;
+}
+
+
+
 .box_4_title{
 	position		:relative;
-	margin			:0 auto;
+	margin			:0 auto 1vh auto;
 	width			:111vh;
 	height			:6vh;
 	line-height		:7vh;
 	border-bottom	:0.5vh solid #202020;
-	margin-bottom	:2vh;
 	font-size		:3.5vh;
 	font-weight		:700;
 	color			:#101520;
 	text-align		:left;
 }
+
 
 .box_4_title_s{
 	display			:inline-block;
@@ -556,11 +582,25 @@ header{
 	text-align		:right;
 }
 
+.box_4_0_title{
+	position		:relative;
+	margin			:1vh auto;
+	width			:110vh;
+	flex-basis		:110vh;
+	text-align		:left;
+	font-size		:2.5vh;
+	font-weight		:700;
+	height			:4.5vh;
+	line-height		:5.5vh;
+	border-bottom	:1px solid #101010;
+}
+
+
 .box_4_1{
 	position		:relative;
 	margin			:1vh;
-	width			:55vh;
-	flex-basis		:55vh;
+	width			:53vh;
+	flex-basis		:53vh;
 	text-align		:left;
 }
 
@@ -585,15 +625,29 @@ header{
 	line-height		:4vh;
 }
 
+.box_4_0_title_p{
+	position		:absolute;
+	right			:0.5vh;
+	bottom			:0vh;
+	width			:53vh;
+	text-align		:right;
+	font-size		:2.8vh;
+	font-weight		:700;
+		height		:3.5vh;
+	line-height		:3.5vh;
+	color			:#e00000;
+}
+
 .box_4_1_title_p{
 	position		:absolute;
 	right			:0.5vh;
+	bottom			:0vh;
 	width			:53vh;
 	text-align		:right;
-	font-size		:16px;
+	font-size		:2.2vh;
 	font-weight		:700;
-	height			:24px;
-	line-height		:24px;
+	height			:3.5vh;
+	line-height		:3.5vh;
 	color			:#e00000;
 }
 </style>
@@ -847,107 +901,111 @@ header{
 		<div class="box_flex">
 			<h2 class="h2">お見積り</h2>
 			<div class="h2_s">　</div>
-			<div class="box_4_1">
+			<div class="box_4_left">
 				<div class="box_4_title">基本料金<span class="box_4_title_p">120,000円</span></div>
-				<div class="box_4_1_title">「Night-party」システム一式<span class="box_4_1_title_p">50,000円</span></div>
-				<div class="box_4_1_title" style="margin-bottom:3vh;">基本制作費<span class="box_4_1_title_p">70,000円</span></div>
+				<div class="box_4_0_title">Night-partyシステム一式<span class="box_4_0_title_p">50,000円</span></div>
+				<div class="box_4_0_title">基本制作費<span class="box_4_0_title_p">70,000円</span></div>
 
-				<div class="box_4_1_title">ページ構成　<span class="box_4_1_title_s">※仕様により変わることがあります</span></div>
-				<p class="comm_p">
-				▼TOPページ(index.php)<br>
-				　┗イベント(event.php)<br>
-				　┗ニュース一覧(news_list.php)<br>
-				　┗プライバシーポリシー(policy.php)<br>
-				</p>
-				<p class="comm_p">
-				▼システム(system.php)<br>
-				</p>
-				<p class="comm_p">
-				▼キャスト一覧(cast.php)<br>
-				　┗キャスト個別(person.php)<br>
-				</p>
-				<p class="comm_p">
-				▼キャストスケジュール(schedule.php)<br>
-				</p>
-				<p class="comm_p">
-				▼ブログ一覧(castblog.php)<br>
-				　┗ブログ個別(article.php)<br>
-				</p>
-				<p class="comm_p">
-				▼アクセス(access.php)<br>
-				</p>
-				<p class="comm_p">
-				▼求人(recruit.php)<br>
-				</p>
-				<p class="comm_p">
-				▼EasyTalk(easytalk.php)<br>
-				</p>
+				<div class="box_4_1">
+					<div class="box_4_1_title">ページ構成　<span class="box_4_1_title_s">※仕様により変わることがあります</span></div>
+					<p class="comm_p">
+					▼TOPページ(index.php)<br>
+					　┗イベント(event.php)<br>
+					　┗ニュース一覧(news_list.php)<br>
+					　┗プライバシーポリシー(policy.php)<br>
+					</p>
+					<p class="comm_p">
+					▼システム(system.php)<br>
+					</p>
+					<p class="comm_p">
+					▼キャスト一覧(cast.php)<br>
+					　┗キャスト個別(person.php)<br>
+					</p>
+					<p class="comm_p">
+					▼キャストスケジュール(schedule.php)<br>
+					</p>
+					<p class="comm_p">
+					▼ブログ一覧(castblog.php)<br>
+					　┗ブログ個別(article.php)<br>
+					</p>
+					<p class="comm_p">
+					▼アクセス(access.php)<br>
+					</p>
+					<p class="comm_p">
+					▼求人(recruit.php)<br>
+					</p>
+					<p class="comm_p">
+					▼EasyTalk(easytalk.php)<br>
+					</p>
+				</div>
+
+				<div class="box_4_1">
+					<div class="box_4_1_title">その他</div>
+
+					<p class="comm_p">
+					専用CMS<br>
+					　※パソコン専用のサイトになります
+					</p>
+
+					<p class="comm_p">
+					HIME-Karte<br>
+					　※レスポンシブはパソコン/スマホの二段階になります<br>
+					</p>
+
+					<p class="comm_p">
+					トップバナー(1200px×480px)1枚<br>
+					サイドバナー(600px×150px)1枚<br>
+					SSL化<br>
+					内部SEO対策<br>
+					sitemap.xml<br>
+					Google アナリティクス導入<br>
+					Google サーチコンソール導入<br>
+					Twitterタイムラインの埋め込み<br>
+					FAVICON設定<br>
+					スタッフデータ入力代行<br>
+					</p>
+				</div>
 			</div>
 
-			<div class="box_4_1">
-				<div style="height:18.6vh"></div>
-				<div class="box_4_1_title">その他</div>
+			<div class="box_4_right">
+				<div class="box_4_title" style="width:53vh;flex-basis:53vh;">有料オプション</div>
 
-				<p class="comm_p">
-				専用CMS<br>
-				　※パソコン専用のサイトになります
-				</p>
+				<div class="box_4_1">
+					<div class="box_4_1_title">レンタルサーバー・ドメイン取得<span class="box_4_1_title_p">10,000円</span></div>
+					<p class="comm_p">
+						WebP対応、アダルトOKのSSD高速レンタルサーバー、comドメインで手配させていただきます。<br>
+						<span style="font-weight:700">初回10カ月分込み</span>。それ以降はサーバー、ドメイン併せて年間で10000円前後かかります。<br>
+					</p>
 
-				<p class="comm_p">
-				HIME-Karte<br>
-				　※レスポンシブはパソコン/スマホの二段階になります<br>
-				</p>
+					<div class="box_4_1_title">トップバナー追加(1200px × 480px)<span class="box_4_1_title_p">10,000円</span></div>
+					<p class="comm_p">
+					2枚目以降はスライド表示となります。<br>
+					</p>
 
-				<p class="comm_p">
-				トップバナー(1200px×480px)1枚<br>
-				サイドバナー(600px×150px)1枚<br>
-				SSL化<br>
-				内部SEO対策<br>
-				sitemap.xml<br>
-				Google アナリティクス導入<br>
-				Google サーチコンソール導入<br>
-				Twitterタイムラインの埋め込み<br>
-				FAVICON設定<br>
-				スタッフデータ入力代行<br>
-				</p>
-			</div>
+					<div class="box_4_1_title">サイドバナー追加(600px × 150px)<span class="box_4_1_title_p">5,000円</span></div>
+					<p class="comm_p">
+					2枚目以降は下に並びます。<br>
+					</p>
 
-			<div class="box_4_1">
-				<div class="box_4_title" style="width:53vh;">有料オプション</div>
+					<div class="box_4_1_title">ページ追加<span class="box_4_1_title_p">12,000円～</span></div>
+					<p class="comm_p">ご相談下さい。</p>
 
-				<div class="box_4_1_title">レンタルサーバー・ドメイン取得<span class="box_4_1_title_p">10,000円</span></div>
-				<p class="comm_p">
-					WebP対応、アダルトOKのSSD高速レンタルサーバー、comドメインで手配させていただきます。<br>
-					<span style="font-weight:700">初回10カ月分込み</span>。それ以降はサーバー、ドメイン併せて年間で10000円前後かかります。<br>
-				</p>
-
-				<div class="box_4_1_title">トップバナー追加(1200px × 480px)<span class="box_4_1_title_p">10,000円</span></div>
-				<p class="comm_p">
-				2枚目以降はスライド表示となります。<br>
-				</p>
-
-				<div class="box_4_1_title">サイドバナー追加(600px × 150px)<span class="box_4_1_title_p">5,000円</span></div>
-				<p class="comm_p">
-				2枚目以降は下に並びます。<br>
-				</p>
-
-				<div class="box_4_1_title">ページ追加<span class="box_4_1_title_p">12,000円～</span></div>
-				<p class="comm_p">ご相談下さい。</p>
-
-				<div class="box_4_1_title">出張撮影<span class="box_4_1_title_p">20,000円</span></div>
-				<p class="comm_p">
-				キャスト・お食事・店内撮影など。2時間<br>
-				お時間、曜日はご相談下さい。場所は東京都・神奈川県・千葉県・埼玉県に限らせていただきます。<br>
-				撮影した写真の著作権は譲渡致します。サイト以外でもご自由にご利用いただけます。<br>
-				</p>
-				<div class="box_4_1_title">ロゴ作成<span class="box_4_1_title_p">10,000円</span></div>
-				<p class="comm_p">
-				1200px × 1200px 単色<br>
-				著作権は譲渡致します。サイト以外でもご自由にご利用いただけます。<br>
-				</p>
+					<div class="box_4_1_title">出張撮影<span class="box_4_1_title_p">20,000円</span></div>
+					<p class="comm_p">
+					キャスト・お食事・店内撮影など。2時間<br>
+					お時間、曜日はご相談下さい。場所は東京都・神奈川県・千葉県・埼玉県に限らせていただきます。<br>
+					撮影した写真の著作権は譲渡致します。サイト以外でもご自由にご利用いただけます。<br>
+					</p>
+					<div class="box_4_1_title">ロゴ作成<span class="box_4_1_title_p">10,000円</span></div>
+					<p class="comm_p">
+					1200px × 1200px 単色<br>
+					著作権は譲渡致します。サイト以外でもご自由にご利用いただけます。<br>
+					</p>
+				</div>
 			</div>
 		</div>
 	</article>
+
 	<article id="block_6" class="box">
 		<div class="box_flex">
 			<h2 class="h2">ご依頼・お問合せ</h2>
