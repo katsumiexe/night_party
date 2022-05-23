@@ -40,7 +40,7 @@ header{
 
 @font-face {
 	font-family: at_icon;
-	src: url("./z_font/nightparty_icon.ttf") format('truetype');
+	src: url("../z_font/nightparty_icon.ttf") format('truetype');
 }
 
 .menu{
