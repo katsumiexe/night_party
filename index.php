@@ -26,6 +26,7 @@
 	</div>
 </header>
 <section class="main">
+<img src="./z_img/top_img.webp" class="main_img" alt="top写真">
 	<article id="block_0" class="box_top">
 		<div class="top_comm">
 			<h2 class="top_title">管理型CMS「Night-Party」</h2>

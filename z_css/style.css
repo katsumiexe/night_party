@@ -38,6 +38,15 @@ header{
 	overflow	:hidden;
 }
 
+.main_img{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	margin:auto;
+	height:100vh;
+}
+
 @font-face {
 	font-family: at_icon;
 	src: url("../z_font/nightparty_icon.ttf") format('truetype');
