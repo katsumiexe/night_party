@@ -9,6 +9,7 @@
 <script src="./z_js/main.js?t=<?=time()?>"></script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet" href="./z_css/style.css">
+<link rel="stylesheet" href="./z_css/style_s.css">
 
 <style>
 </style>
@@ -78,7 +79,6 @@
 				</p>
 			</div>
 		</div>
-		<div class="detail"></div>
 	</article>
 
 	<article id="block_2" class="box">
