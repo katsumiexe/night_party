@@ -44,7 +44,7 @@ header{
 	left:0;
 	right:0;
 	margin:auto;
-	height:100vh;
+	width:100vw;
 }
 
 @font-face {
@@ -190,7 +190,7 @@ header{
 	right			:0;
 	margin			:auto;
 	display			:block;
-	width			:170vh;
+	width			:170vw;
 	height			:100vh;
 //	background		:rgba(255,255,255,0.5);
 }

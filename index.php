@@ -379,8 +379,10 @@
 	<article id="block_6" class="box">
 		<div class="box_flex">
 			<h2 class="h2">ご依頼・お問合せ</h2>
-			<div class="h2_s">ただいまお問合せ、ご依頼は「Coconara（ココナラ）様にて承っています。</div>
+			<div class="h2_s">ただいまお問合せ、ご依頼は「Coconara（ココナラ）」様にて承っています。</div>
 		</div>
+
+
 	</article>
 </section>
 
