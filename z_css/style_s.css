@@ -190,9 +190,9 @@ header{
 
 .box_item{
 	position		:absolute;
-	width			:45vw;
+	width			:48vw;
 	padding			:0;
-	height			:50vw;
+	height			:60vw;
 	transform		:rotate(-15deg);
 	opacity			:0;
 	transform-origin:top right;
@@ -200,45 +200,29 @@ header{
 
 .box_item_in{
 	position		:absolute;
-	top				:1vh;
-	left			:1vh;
-	right			:1vh;
-	bottom			:1vh;
-	margin			:auto;
-	width			:53vh;
-	height			:21vh;
-	border			:1vh solid #60a0f0;
-	padding			:0;
-	background		:linear-gradient(#fffafa,#fff0f0);
-	background		:#fafafa;
-	text-align		:left;
-	color			:#202020;
+	top				:1vw;
+	left			:1vw;
+	right			:1vw;
+	bottom			:1vw;
+	width			:44vw;
+	height			:50vw;
+	border			:1vw solid #60a0f0;
 }
 
 
 .box_item_title{
-	position		:relative;
-	background		:#e8f0ff;
-	color			:#0000c0;
-	font-weight		:800;
-	font-size		:2.5vh;
-	height			:5vh;
-	line-height		:5vh;
-	margin			:0 auto;
-	padding-left	:2vh;
-	font-weight		:700;
+	font-size		:3.8vw;
+	height			:6vw;
+	line-height		:6vw;
+	padding-left	:1vw;
 }
 
 .box_item_p{
-	dispaly			:block;
-	position		:relative;
-	height			:12.5vh;
-	width			:50vh;	
-	font-size		:2vh;
-	line-height		:3.2vh;
-	padding			:1vh;
-	margin			:0 auto;
-	color			:#303030;
+	height			:48vw;
+	width			:42vw;	
+	font-size		:3.5vw;
+	line-height		:5vw;
+	padding			:1vw;
 }
 
 .box_s{

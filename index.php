@@ -78,6 +78,7 @@
 					タブレット利用者も増えています。「スマホと同じでいいや」では大事なお客様を逃がしてしまいます。
 				</p>
 			</div>
+
 		</div>
 	</article>
 
@@ -188,7 +189,6 @@
 			</div>
 		</div>
 	</article>
-
 
 	<article id="block_4" class="box">
 		<div class="box_ab">
@@ -376,13 +376,13 @@
 		</div>
 	</article>
 
+
 	<article id="block_6" class="box">
 		<div class="box_flex">
 			<h2 class="h2">ご依頼・お問合せ</h2>
-			<div class="h2_s">ただいまお問合せ、ご依頼は「Coconara（ココナラ）」様にて承っています。</div>
+			<div class="h2_s">　</div>
+				ただいまお問合せ、ご依頼は「Coconara（ココナラ）」様にて承っています。
 		</div>
-
-
 	</article>
 </section>
 
