@@ -1,4 +1,7 @@
 $(function(){ 
+
+var Width=$(window).width();
+
 var SC=0;
 var Tmp=0;
 var Tmp_d=0;
@@ -10,11 +13,9 @@ var BoxView=0;
 var BoxView=0;
 var Lock=0;
 
-//var BgColor=["","#c8b880","#f0e0ff","#609070","#ffe8f8","#da70d6","#c00020"];
-
 var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 
-
+if(Width > 959){
 	$(window).on('scroll',function () {
 		if(200 < $(this).scrollTop() && BoxView<6 && Lock == 0){//■■↓
 			Lock=1;
@@ -251,10 +252,10 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 	$(".box_item_in").hover(function () {
         $(this).animate({'width':'54vh','height':'22vh','top':'0.5vh','left':'0.5vh'},50);
     },
-
     function() {
         $(this).animate({'width':'53vh','height':'21vh','top':'1vh','left':'1vh'},100);
 	});
+
 
 	$(".box_item_icon").on('click',function () {
 		Tmp=$(this).attr('id').substr(0,5);
@@ -278,6 +279,8 @@ var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 			SC=$(this).scrollTop();
 		}
 	});
+	}
+
 });
 
 function UpBall() {

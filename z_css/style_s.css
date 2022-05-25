@@ -63,6 +63,7 @@ header{
 }
 
 .main{
+	height		:auto;
 }
 
 .main_img{
@@ -102,12 +103,10 @@ header{
 }
 
 .box{
-/*
+
 	position	:relative;
 	width		:100vw;
 	margin		:0 auto;
-*/
-
 }
 
 #block_0{
@@ -150,7 +149,7 @@ header{
 }
 
 .box_ab{
-	width			:98vw;
+	width			:96vw;
 	height			:95vh;
 	padding-top		:5vh;
 }
@@ -307,23 +306,19 @@ header{
 }
 
 .box_1_0{
-	margin			:4vh auto 2.5vh auto;
-	width			:135vh;
-	padding			:1.5vh;
-	background		:linear-gradient(135deg,#fafafa,#eaeaea);
-	background		:#fcfcfc;
-	height			:18vh;
-	line-height		:4.5vh;
-	text-align		:left;
-	color			:#384240;
-	font-size		:2.5vh;
-	border-bottom	:3px solid #c00000;
+	margin			:10vw auto 3vw auto;
+	width			:94vw;
+	padding			:2vw;
+	height			:38vw;
+	line-height		:5.2vw;
+	font-size		:3.2vw;
+	border-bottom	:1vw solid #c00000;
 	opacity			:0;
 }
 
 .box_1_0_title{
 	font-weight	:800; 
-	font-size	:2.5vh;
+	font-size	:3.8vw;
 }
 
 .border{
