@@ -10,15 +10,104 @@ var BoxView=0;
 var Lock=0;
 var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 
+var Height=$(window).height()*0.8;
+
 if (window.matchMedia('(max-width: 960px)').matches) {
 	$(window).on('scroll',function () {
+		
+console.log($(this).scrollTop()+"▼"+$("#block_1").offset().top+"▼"+$("#block_3").offset().top+"▼"+Height);
+		
 
-console.log($(this).scrollTop()+"▼"+$("#block_1").offset().top+"▼"+$("#block_2").offset().top)
+		if($(this).scrollTop()> ($('#block_1').offset().top - Height)){
+			$('#block_1_box_1').animate({"opacity":"1","margin-top":"2vw"},1200);
+			$('#block_1_box_2').delay(500).animate({"opacity":"1","margin-top":"2vw"},1000);
 
-		if($(this).scrollTop()> ($('#block_1').offset().top / 4)){
-			$('#block_1_box_1').delay(800).animate({"opacity":"1","margin-top":"2vw"},1200);
-			$('#block_1_box_2').delay(1200).animate({"opacity":"1","margin-top":"2vw"},1000);
+		}else if($(this).scrollTop()> ($('#block_2').offset().top - Height)){
+
+
+		}else if($(this).scrollTop()> ($('#block_3').offset().top - Height)){
+
+console.log("◆");
+
+			$({Deg:-10, Opc:0, Top:20, Lef:5}).animate({Deg:0, Opc:1, Top:1, Lef:1}, {
+				duration:800,
+				progress:function() {
+					$('#box_item_a1').css({
+						'transform':'rotate(' + this.Deg + 'deg)',
+						'opacity':this.Opc,
+						'top':this.Top+"vw",
+						'left':this.Lef+"vw",
+					});
+				},
+			});
+
+
+			$({Deg:-10, Opc:0, Top:20, Lef:67}).delay(200).animate({Deg:0, Opc:1, Top:1, Lef:50}, {
+				duration:800,
+				progress:function() {
+					$('#box_item_a2').css({
+						'transform':'rotate(' + this.Deg + 'deg)',
+						'opacity':this.Opc,
+						'top':this.Top+"vw",
+						'left':this.Lef+"vw",
+					});
+				},
+			});
+
+
+			$({Deg:-10, Opc:0, Top:45, Lef:5}).delay(200).animate({Deg:0, Opc:1, Top:26, Lef:1}, {
+				duration:800,
+				progress:function() {
+					$('#box_item_a3').css({
+						'transform':'rotate(' + this.Deg + 'deg)',
+						'opacity':this.Opc,
+						'top':this.Top+"vw",
+						'left':this.Lef+"vw",
+					});
+				},
+			});
+
+			$({Deg:-10, Opc:0, Top:45, Lef:67}).delay(400).animate({Deg:0, Opc:1, Top:26, Lef:50}, {
+				duration:800,
+				progress:function() {
+					$('#box_item_a4').css({
+						'transform':'rotate(' + this.Deg + 'deg)',
+						'opacity':this.Opc,
+						'top':this.Top+"vw",
+						'left':this.Lef+"vw",
+					});
+				},
+			});
+
+			$({Deg:-10, Opc:0, Top:70, Lef:5}).delay(400).animate({Deg:0, Opc:1, Top:51, Lef:1}, {
+				duration:800,
+				progress:function() {
+					$('#box_item_a5').css({
+						'transform':'rotate(' + this.Deg + 'deg)',
+						'opacity':this.Opc,
+						'top':this.Top+"vw",
+						'left':this.Lef+"vw",
+					});
+				},
+			});
+
+
+			$({Deg:-10, Opc:0, Top:70, Lef:67}).delay(600).animate({Deg:0, Opc:1, Top:51, Lef:50}, {
+				duration:800,
+				progress:function() {
+					$('#box_item_a6').css({
+						'transform':'rotate(' + this.Deg + 'deg)',
+						'opacity':this.Opc,
+						'top':this.Top+"vw",
+						'left':this.Lef+"vw",
+					});
+				},
+			});
+
+			$('#box_right_a').delay(600).animate({"right":"1vw","opacity":"1"},800);
 		}
+
+
 
 
 /*

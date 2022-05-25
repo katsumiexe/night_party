@@ -91,27 +91,27 @@
 
 			<div class="box_2_0">
 				<div class="box_2_1">
-				<div class="box_2_1_text">
-					キャスト情報を前面に出す、オーソドックスなスタイルです。<br>
-					ページ構成は複雑になりますが、多くのキャストを表示したい際には最適です。<br>
-					キャスト数が多く、入れ替えも頻繁でキャストの露出を増やしていきたい店舗様用です。<br>
-				</div>
-				</div>
-
-				<div class="box_2_1">
-				<div class="box_2_1_text">
-					店舗イベントの告知に特化したスタイルです。<br>
-					キャストの露出は最小限にし、イベント告知を前面に押し出します。<br>
-					キャストの入れ替えが少なく、日替わりでイベントを告知したい店舗様には最適です。<br>
-				</div>
+					<div class="box_2_1_text">
+						キャスト情報を前面に出す、オーソドックスなスタイルです。<br>
+						ページ構成は複雑になりますが、多くのキャストを表示したい際には最適です。<br>
+						キャスト数が多く、入れ替えも頻繁でキャストの露出を増やしていきたい店舗様用です。<br>
+					</div>
 				</div>
 
 				<div class="box_2_1">
-				<div class="box_2_1_text">
-					コンテンツを1ページにまとめたシンプルなスタイルです。<br>
-					キャストスケジュール、ブログを廃し、更新関連はスタッフブログがメインとなります。<br>
-					キャスト数が少なく、サイトの更新自体を少なめにしたい店舗様用です。<br>
+					<div class="box_2_1_text">
+						店舗イベントの告知に特化したスタイルです。<br>
+						キャストの露出は最小限にし、イベント告知を前面に押し出します。<br>
+						キャストの入れ替えが少なく、日替わりでイベントを告知したい店舗様には最適です。<br>
+					</div>
 				</div>
+
+				<div class="box_2_1">
+					<div class="box_2_1_text">
+						コンテンツを1ページにまとめたシンプルなスタイルです。<br>
+						キャストスケジュール、ブログを廃し、更新関連はスタッフブログがメインとなります。<br>
+						キャスト数が少なく、サイトの更新自体を少なめにしたい店舗様用です。<br>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -124,7 +124,7 @@
 			<div class="box_flex_left">
 				<div id="box_item_a1" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">イベント機能<button id="box_3_icon_1" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<div class="box_item_title">イベント機能<button id="box_3_icon_1" type="button" class="box_item_icon pc_only">SAMPLE<span class="al"></span></button></div>
 						<p class="box_item_p">
 							トップページに表示するイベントを設定できます。イベントはバナーのみかリンク有かの設定できます。<br>
 						</p>
@@ -133,7 +133,7 @@
 
 				<div id="box_item_a2" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">ニュース機能<button id="box_3_icon_2" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<div class="box_item_title">ニュース機能<button id="box_3_icon_2" type="button" class="box_item_icon pc_only">SAMPLE<span class="al"></span></button></div>
 						<p class="box_item_p">
 							イベント更新、キャストデビューなどが行われた際、自動で更新されます。<br>
 							リンクのあり／なしと注目設定が可能です。注目ニュースは日付関係なくTOPに表示されます。
@@ -143,7 +143,7 @@
 
 				<div id="box_item_a3" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">キャスト管理<button id="box_3_icon_3" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<div class="box_item_title">キャスト管理<button id="box_3_icon_3" type="button" class="box_item_icon pc_only">SAMPLE<span class="al"></span></button></div>
 						<p class="box_item_p">
 							キャストのプロフィールや写真のほか、管理に便利なステータスやキャストの個人情報等も登録できます。
 						</p>
@@ -152,7 +152,7 @@
 
 				<div id="box_item_a4" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">シフト管理<button id="box_3_icon_4" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<div class="box_item_title">シフト管理<button id="box_3_icon_4" type="button" class="box_item_icon pc_only">SAMPLE<span class="al"></span></button></div>
 						<p class="box_item_p">
 							キャストのシフトを1週間単位で一覧で表示、変更することができます。<br>
 						</p>
@@ -161,7 +161,7 @@
 
 				<div id="box_item_a5" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">ブログ管理<button id="box_3_icon_5" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<div class="box_item_title">ブログ管理<button id="box_3_icon_5" type="button" class="box_item_icon pc_only">SAMPLE<span class="al"></span></button></div>
 						<p class="box_item_p">
 							キャストブログ、スタッフブログの投稿、修正、削除、非表示を行えます。
 						</p>
@@ -170,7 +170,7 @@
 
 				<div id="box_item_a6" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">お問い合わせ<button id="box_3_icon_6" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
+						<div class="box_item_title">お問い合わせ<button id="box_3_icon_6" type="button" class="box_item_icon pc_only">SAMPLE<span class="al"></span></button></div>
 						<p class="box_item_p">
 							キャストからの応募メールをCMSで確認することができます。対応日時、履歴も残せますので、誰が見てもわかるようにできます。
 						</p>
