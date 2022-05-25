@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet" href="./z_css/style.css">
 <link rel="stylesheet" href="./z_css/style_s.css">
-
 <style>
 </style>
 </head>
@@ -78,7 +77,6 @@
 					タブレット利用者も増えています。「スマホと同じでいいや」では大事なお客様を逃がしてしまいます。
 				</p>
 			</div>
-
 		</div>
 	</article>
 
@@ -376,12 +374,14 @@
 		</div>
 	</article>
 
-
 	<article id="block_6" class="box">
 		<div class="box_flex">
 			<h2 class="h2">ご依頼・お問合せ</h2>
 			<div class="h2_s">　</div>
+			<div class="box_6">
 				ただいまお問合せ、ご依頼は「Coconara（ココナラ）」様にて承っています。
+				<div class="box_6_btn">ココナラへ移動する</div>
+			</div>
 		</div>
 	</article>
 </section>
