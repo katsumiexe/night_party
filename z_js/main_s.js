@@ -10,8 +10,18 @@ var BoxView=0;
 var Lock=0;
 var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 
-if (window.matchMedia('(min-width: 959px)').matches) {
+if (window.matchMedia('(max-width: 960px)').matches) {
 	$(window).on('scroll',function () {
+
+console.log($(this).scrollTop()+"▼"+$("#block_1").offset().top+"▼"+$("#block_2").offset().top)
+
+		if($(this).scrollTop()> ($('#block_1').offset().top / 4)){
+			$('#block_1_box_1').delay(800).animate({"opacity":"1","margin-top":"2vw"},1200);
+			$('#block_1_box_2').delay(1200).animate({"opacity":"1","margin-top":"2vw"},1000);
+		}
+
+
+/*
 		if(200 < $(this).scrollTop() && BoxView<6 && Lock == 0){//■■↓
 			Lock=1;
 			BoxView++;
@@ -24,8 +34,6 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 					Lock=0;
 				});
 
-				$('#block_1_box_1').delay(800).animate({"opacity":"1","margin-top":"1vh"},1000);
-				$('#block_1_box_2').delay(1200).animate({"opacity":"1","margin-top":"1vh"},900);
 				DownBall();
 
 			}else{
@@ -260,8 +268,6 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 		$("#form_" + Tmp).submit();
 	});
 
-
-
 	$(window).on('scroll',function () {
 		if($(this).scrollTop() < SC+200 && BoxView>0){
 			N=BoxView--;
@@ -294,6 +300,9 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 		$("#ball2 > .ball_txt").animate({'width':0,'padding':0},200).delay(900).animate({'width':'42.5vh',"padding-left":'10vh'},150);
 		$("#ball3 > .ball_txt").animate({'width':0,'padding':0},250).delay(1000).animate({'width':'42.5vh',"padding-left":'10vh'},150);
 	}
-}
 
+*/
+
+});
+}
 });
