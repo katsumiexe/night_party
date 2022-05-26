@@ -73,13 +73,18 @@ header{
 	overflow	:hidden;
 }
 
-.main_img{
+.top_0{
+	position	:fixed;
+	top			:0;
+	right		:0;
+	height		:100vh;
+}
+
+.top_1{
 	position	:fixed;
 	top			:0;
 	left		:0;
-	right		:0;
-	margin		:auto;
-	width		:100vw;
+	height		:100vh;
 }
 
 .h2{
