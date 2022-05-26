@@ -67,6 +67,7 @@ header{
 }
 
 .top_0{
+	right		:-40vw;
 }
 
 .top_1{
@@ -107,6 +108,7 @@ header{
 .box{
 	position	:relative;
 	width		:100vw;
+	height:auto;
 	margin		:0 auto;
 	background	:#f0f8ff;
 }
@@ -152,7 +154,7 @@ header{
 
 .box_ab{
 	width			:96vw;
-	height			:95vh;
+	height			:auto;
 	padding-top		:5vh;
 }
 
@@ -329,34 +331,28 @@ header{
 	background		:linear-gradient(transparent 50%, #f0f030 50%,#f0f030 100%);
 }
 
-#box_item_1{
-	left			:3vh;
-}
-
-#box_item_2{
-	left			:58.5vh;
-}
-
-#box_item_3{
-	left			:114vh;
+#box_item_1,#box_item_2,#box_item_3{
+	left			:0;
 }
 
 .box_1_1{
 	position		:relative;
 	width			:96vw;
 	padding			:0;
-	height			:30vh;
+	height			:42vw;
+	top				:0;
+	left			:0;
 }
 
 .box_1_1_text{
 	position		:absolute;
 	top				:10vw;
 	left			:0;
-	width			:96vw;
+	width			:92vw;
 	border			:1vw solid #FE7F9C;
 	border-radius	:2vw;
 	background		:#fafafa;
-	height			:20vw;
+	height			:27vw;
 	line-height		:5.5vw;
 	text-align		:left;
 	color			:#202020;
