@@ -66,10 +66,12 @@ header{
 	height		:auto;
 }
 
-.main_img{
-	right		:auto;
-	margin		:auto;
-	width		:auto;
+.top_0{
+}
+
+.top_1{
+	right		:50vw;
+	left		:auto;
 	height		:100vh;
 }
 
@@ -103,10 +105,10 @@ header{
 }
 
 .box{
-
 	position	:relative;
 	width		:100vw;
 	margin		:0 auto;
+	background	:#f0f8ff;
 }
 
 #block_0{
@@ -307,7 +309,7 @@ header{
 
 .box_1_0{
 	margin			:20vw auto 3vw auto;
-	width			:94vw;
+	width			:92vw;
 	padding			:2vw;
 	height			:38vw;
 	line-height		:5.2vw;
@@ -340,28 +342,27 @@ header{
 }
 
 .box_1_1{
-	position		:absolute;
-	top				:67vh;
-	width			:53vh;
+	position		:relative;
+	width			:96vw;
 	padding			:0;
 	height			:30vh;
 }
 
 .box_1_1_text{
 	position		:absolute;
-	top				:9.5vh;
+	top				:10vw;
 	left			:0;
-	width			:49vh;
-	border			:1vh solid #FE7F9C;
-	border-radius	:2vh;
+	width			:96vw;
+	border			:1vw solid #FE7F9C;
+	border-radius	:2vw;
 	background		:#fafafa;
-	height			:16vh;
-	line-height		:2.7vh;
+	height			:20vw;
+	line-height		:5.5vw;
 	text-align		:left;
 	color			:#202020;
-	font-size		:2vh;
-	padding			:1vh;
-	margin:0;
+	font-size		:3.5vw;
+	padding			:1vw;
+	margin			:0;
 }
 
 .box_1_ball{

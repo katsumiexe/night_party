@@ -26,6 +26,7 @@
 		<span id="menu6" class="menu_in">お問合せ</span>
 	</div>
 </header>
+
 <section class="main">
 <img src="./z_img/top_0.webp" class="top_0" alt="top写真0">
 <img src="./z_img/top_1.png" class="top_1" alt="top写真1">

@@ -96,7 +96,7 @@ console.log($(this).scrollTop()+"▼"+$("#block_1").offset().top+"▼"+$("#block
 			$('#box_right_a').delay(600).animate({"right":"1vw","opacity":"1"},800);
 
 		}else if($(this).scrollTop()> ($('#block_1').offset().top - Height)){
-			$('#block_1_box_1').animate({"opacity":"1","margin-top":"2vw"},1200);
+			$('#block_1_box_1').animate({"opacity":"1","margin-top":"4vw"},1200);
 			$('#block_1_box_2').delay(500).animate({"opacity":"1","margin-top":"2vw"},1000);
 
 		}else if($(this).scrollTop()> ($('#block_2').offset().top - Height)){
