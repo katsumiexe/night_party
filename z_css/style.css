@@ -466,9 +466,23 @@ header{
 }
 
 .box_2_0{
+	display			:block;
+	margin			:10vh auto 1vh auto;
+	width			:132vh;
+	padding			:1.5vh;
+	font-size		:2.5vh;
+	height			:22vh;
+	border			:1px solid #0000c0;
+	color			:#384240;
+	background		:linear-gradient(135deg,#fafafa,#f0f0f0);
+	text-align		:left;
+	opacity			:0;
+}
+
+.box_2_flex{
 	display			:flex;
 	justify-content	:space-between;
-	margin			:10vh auto 1vh auto;
+	margin			:2vh auto 1vh auto;
 	width			:160vh;
 	padding			:0;
 	height			:50vh;
@@ -479,13 +493,15 @@ header{
 	width			:46vh;
 	padding			:0;
 	height			:46vh;
-	border			:2vh solid #e0c0f0;
-	border-radius	:3vh;
+	border			:1.5vh solid #e0c0f0;
+	border-radius	:2vh;
 	line-height		:3vh;
 	text-align		:left;
 	color			:#384240;
 	font-size		:2.1vh;
 	background		:linear-gradient(135deg,#e0e8f0,#d0d8e0);
+	margin-top		:10vh;
+	opacity			:0;
 }
 
 .box_2_1_text{

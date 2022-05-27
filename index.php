@@ -86,13 +86,16 @@
 	<article id="block_2" class="box">
 		<div class="box_ab">
 			<h2 class="h2">サンプルサイト</h2>
-			<div class="box_1_0">
-				営業形態や地域、対象顧客によって効果的なサイトの形式は千差万別です。<br>
-				「Night-Paty」は大きく3種類のテンプレートをご用意させていただいていますが、御社のイメージに合わせた形でカスタマイズさせていただいています。	<br>
+			<div id="block_2_box_0" class="box_2_0">
+				「Night-Paty」は大きく3種類のテーマをご用意させていただきました。ここからお店の形態やイメージに合わせてカスタマイズさせていただきます。<br>
+				同じデザインを他店舗で使用することはありませんのでオリジナリティを出すことができます。<br>
+				完全オリジナルデザインも大歓迎です。担当にお客様のイメージをお伝えくださいませ。<br>
 			</div>
 
-			<div class="box_2_0">
-				<div class="box_2_1">
+			<div class="box_2_flex">
+				<div id="block_2_box_1" class="box_2_1">
+ソワレ
+
 					<div class="box_2_1_text">
 						キャスト情報を前面に出す、オーソドックスなスタイルです。<br>
 						ページ構成は複雑になりますが、多くのキャストを表示したい際には最適です。<br>
@@ -100,7 +103,8 @@
 					</div>
 				</div>
 
-				<div class="box_2_1">
+				<div id="block_2_box_2" class="box_2_1">
+フェスタ
 					<div class="box_2_1_text">
 						店舗イベントの告知に特化したスタイルです。<br>
 						キャストの露出は最小限にし、イベント告知を前面に押し出します。<br>
@@ -108,7 +112,8 @@
 					</div>
 				</div>
 
-				<div class="box_2_1">
+				<div id="block_2_box_3" class="box_2_1">
+コーマ
 					<div class="box_2_1_text">
 						コンテンツを1ページにまとめたシンプルなスタイルです。<br>
 						キャストスケジュール、ブログを廃し、更新関連はスタッフブログがメインとなります。<br>
@@ -335,10 +340,6 @@
 					</p>
 				</div>
 			</div>
-
-
-
-
 
 			<div class="box_4_right">
 				<div id="box_4_5" class="box_4_title" style="width:53vh;flex-basis:53vh;">有料オプション</div>
