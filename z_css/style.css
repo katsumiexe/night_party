@@ -552,7 +552,7 @@ header{
 
 .box_4_title{
 	position		:relative;
-	margin			:0 auto 1vh auto;
+	margin			:10vh auto 1vh auto;
 	width			:111vh;
 	height			:6vh;
 	line-height		:7vh;
@@ -561,6 +561,7 @@ header{
 	font-weight		:700;
 	color			:#101520;
 	text-align		:left;
+	opacity			:0;
 }
 
 .box_4_title_s{
@@ -587,7 +588,7 @@ header{
 
 .box_4_0_title{
 	position		:relative;
-	margin			:1vh auto;
+	margin			:10vh auto 1vh auto;
 	width			:110vh;
 	flex-basis		:110vh;
 	text-align		:left;
@@ -596,15 +597,17 @@ header{
 	height			:4.5vh;
 	line-height		:5.5vh;
 	border-bottom	:1px solid #101010;
+	opacity			:0;
 }
 
 
 .box_4_1{
 	position		:relative;
-	margin			:1vh;
+	margin			:10vh auto 1vh auto;
 	width			:53vh;
 	flex-basis		:53vh;
 	text-align		:left;
+	opacity			:0;
 }
 
 .box_4_1_title{

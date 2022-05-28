@@ -276,11 +276,11 @@
 			<h2 class="h2">お見積り</h2>
 			<div class="h2_s">　</div>
 			<div class="box_4_left">
-				<div id="box_4_0" class="box_4_title">基本料金<span class="box_4_title_p">120,000円</span></div>
-				<div id="box_4_1" class="box_4_0_title">Night-partyシステム一式<span class="box_4_0_title_p">50,000円</span></div>
-				<div id="box_4_2" class="box_4_0_title">基本制作費<span class="box_4_0_title_p">70,000円</span></div>
+				<div id="block_5_box_0" class="box_4_title">基本料金<span class="box_4_title_p">120,000円</span></div>
+				<div id="block_5_box_1" class="box_4_0_title">Night-partyシステム一式<span class="box_4_0_title_p">50,000円</span></div>
+				<div id="block_5_box_2" class="box_4_0_title">基本制作費<span class="box_4_0_title_p">70,000円</span></div>
 
-				<div id="box_4_3" class="box_4_1">
+				<div id="block_5_box_3" class="box_4_1">
 					<div class="box_4_1_title">ページ構成　<span class="box_4_1_title_s">※仕様により変わることがあります</span></div>
 					<p class="comm_p">
 					▼TOPページ(index.php)<br>
@@ -313,9 +313,8 @@
 					</p>
 				</div>
 
-				<div id="box_4_4" class="box_4_1">
+				<div id="block_5_box_4" class="box_4_1">
 					<div class="box_4_1_title">その他</div>
-
 					<p class="comm_p">
 					専用CMS<br>
 					　※パソコン専用のサイトになります
@@ -342,9 +341,9 @@
 			</div>
 
 			<div class="box_4_right">
-				<div id="box_4_5" class="box_4_title" style="width:53vh;flex-basis:53vh;">有料オプション</div>
+				<div id="block_5_box_5" class="box_4_title" style="width:53vh;flex-basis:53vh;">有料オプション</div>
 
-				<div id="box_4_6" class="box_4_1">
+				<div id="block_5_box_6" class="box_4_1">
 					<div class="box_4_1_title">レンタルサーバー・ドメイン取得<span class="box_4_1_title_p">10,000円</span></div>
 					<p class="comm_p">
 						WebP対応、アダルトOKのSSD高速レンタルサーバー、comドメインで手配させていただきます。<br>
