@@ -749,7 +749,7 @@ console.log("▲");
 
 		}else{
 console.log("△");
-//			window.location.href = './index.php?cast_page='+Tmp;
+			window.location.href = './index.php?cast_page='+Tmp;
 		}
 	});
 

@@ -209,7 +209,7 @@ header{
 	height			:75vh;
 	padding			:1vh;
 	font-size		:2vh;
-	line-height		:2.8vh;
+	line-height		:3vh;
 	text-align		:left;
 	background		:#fafafa;
 	border			:1vh solid #60a0f0;
@@ -264,7 +264,7 @@ header{
 	height			:12.5vh;
 	width			:50vh;	
 	font-size		:2vh;
-	line-height		:3.2vh;
+	line-height		:3vh;
 	padding			:1vh;
 	margin			:0 auto;
 	color			:#303030;
@@ -353,10 +353,10 @@ header{
 	background		:linear-gradient(135deg,#fafafa,#eaeaea);
 	background		:#fcfcfc;
 	height			:18vh;
-	line-height		:4.5vh;
+	line-height		:4vh;
 	text-align		:left;
 	color			:#384240;
-	font-size		:2.5vh;
+	font-size		:2.2vh;
 	border-bottom	:3px solid #c00000;
 	opacity			:0;
 }
@@ -470,7 +470,8 @@ header{
 	margin			:10vh auto 1vh auto;
 	width			:132vh;
 	padding			:1.5vh;
-	font-size		:2.5vh;
+	font-size		:2.2vh;
+	line-height		:3.5vh;
 	height			:22vh;
 	border			:1px solid #0000c0;
 	color			:#384240;

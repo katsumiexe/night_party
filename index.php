@@ -131,19 +131,23 @@
 			<div class="box_flex_left">
 				<div id="box_item_a1" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">イベント機能<button id="box_3_icon_1" type="button" class="box_item_icon pc_only">SAMPLE<span class="al"></span></button></div>
+						<div class="box_item_title">ページ管理機能<button id="box_3_icon_1" type="button" class="box_item_icon pc_only">SAMPLE<span class="al"></span></button></div>
 						<p class="box_item_p">
-							トップページに表示するイベントを設定できます。イベントはバナーのみかリンク有かの設定できます。<br>
+							バナーやニュース、トップあいさつ等の管理<br>
+							アクセス、リクルート、プライバシーポリシーなどの固定ページの更新がここからできます。
+
+
+
 						</p>
 					</div>
 				</div>
 
 				<div id="box_item_a2" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">ニュース機能<button id="box_3_icon_2" type="button" class="box_item_icon pc_only">SAMPLE<span class="al"></span></button></div>
+						<div class="box_item_title">コンフィグ<button id="box_3_icon_2" type="button" class="box_item_icon pc_only">SAMPLE<span class="al"></span></button></div>
 						<p class="box_item_p">
-							イベント更新、キャストデビューなどが行われた際、自動で更新されます。<br>
-							リンクのあり／なしと注目設定が可能です。注目ニュースは日付関係なくTOPに表示されます。
+リボンの設定や、日付や曜日切替日の設定が可能です。
+また、ここからキャストのプロフィール項目、やチェックボックスなどを編集や追加が可能です。
 						</p>
 					</div>
 				</div>
