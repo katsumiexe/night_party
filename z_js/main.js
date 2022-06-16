@@ -252,12 +252,11 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 	});
 
 	$(".box_item_in").hover(function () {
-        $(this).animate({'width':'54vh','height':'22vh','top':'0.5vh','left':'0.5vh'},50);
+        $(this).find('.box_item_icon').animate({'box-shadow':'-5px -5px 5px rgba(255,255,255,0.5) inset, 5px 5px 5px rgba(255,255,255,0.5) inset'},50);
     },
     function() {
-        $(this).animate({'width':'53vh','height':'21vh','top':'1vh','left':'1vh'},100);
+        $(this).find('.box_item_icon').css({'box-shadow':'none'});
 	});
-
 
 	$(".box_item_icon").on('click',function () {
 		Tmp=$(this).attr('id').substr(0,5);
@@ -266,8 +265,6 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 		$("#h_" + Tmp).val(Tmp2);
 		$("#form_" + Tmp).submit();
 	});
-
-
 
 	$(window).on('scroll',function () {
 		if($(this).scrollTop() < SC+200 && BoxView>0){

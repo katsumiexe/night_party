@@ -87,7 +87,7 @@
 		<div class="box_ab">
 			<h2 class="h2">サンプルサイト</h2>
 			<div id="block_2_box_0" class="box_2_0">
-				「Night-Paty」は大きく3種類のテーマをご用意させていただきました。ここからお店の形態やイメージに合わせてカスタマイズさせていただきます。<br>
+				「Night-Paty」は大きく2種類のテーマをご用意させていただきました。ここからお店の形態やイメージに合わせてカスタマイズさせていただきます。<br>
 				同じデザインを他店舗で使用することはありませんのでオリジナリティを出すことができます。<br>
 				完全オリジナルデザインも大歓迎です。担当にお客様のイメージをお伝えくださいませ。<br>
 			</div>
@@ -146,8 +146,7 @@
 					<div class="box_item_in">
 						<div class="box_item_title">コンフィグ<button id="box_3_icon_2" type="button" class="box_item_icon pc_only">SAMPLE<span class="al"></span></button></div>
 						<p class="box_item_p">
-リボンの設定や、日付や曜日切替日の設定が可能です。
-また、ここからキャストのプロフィール項目、やチェックボックスなどを編集や追加が可能です。
+							一日の切り替え時間、リボンの設定、キャストのプロフィール項目やチェックボックスなどの編集や追加が可能です。
 						</p>
 					</div>
 				</div>
@@ -207,8 +206,8 @@
 					<div class="box_item_in">
 						<div class="box_item_title">TOP<button id="box_4_icon_1" type="button" class="box_item_icon">SAMPLE<span class="al"></span></button></div>
 						<p class="box_item_p">
-							スケジュールと「顧客リスト」で登録したお客様の誕生日、本日より3日分が表示されます。<br>
-							お店からの連絡事項が表示されます。<br>
+							スケジュールと「顧客リスト」で登録したお客様の誕生日が、本日より3日分が表示されます。<br>
+							また、お店からの連絡事項を確認できます。<br>
 						</p>
 					</div>
 				</div>
@@ -350,7 +349,7 @@
 				<div id="block_5_box_6" class="box_4_1">
 					<div class="box_4_1_title">レンタルサーバー・ドメイン取得<span class="box_4_1_title_p">10,000円</span></div>
 					<p class="comm_p">
-						WebP対応、アダルトOKのSSD高速レンタルサーバー、comドメインで手配させていただきます。<br>
+						WebP対応、アダルトOKのSSD高速レンタルサーバーをcomドメインで手配させていただきます。<br>
 						<span style="font-weight:700">初回10カ月分込み</span>。それ以降はサーバー、ドメイン併せて年間で10000円前後かかります。<br>
 					</p>
 
@@ -394,13 +393,3 @@
 		</div>
 	</article>
 </section>
-
-<form id="form_box_4" action="./sub/mypage/index.php" method="post" target="_blank">
-	<input type="hidden" id="h_box_4" name="prm" value="0">
-</form>
-
-<form id="form_box_3" action="./sub/admin/index.php" method="post" target="_blank">
-	<input type="hidden" id="h_box_3" name="prm" value="0">
-</form>
-</body>
-</html>
