@@ -258,8 +258,8 @@ if (window.matchMedia('(min-width: 959px)').matches) {
         $(this).find('.box_item_icon').css({'box-shadow':'none'});
 	});
 
-	$(".box_item_icon").on('click',function () {
-		Tmp=$(this).attr('id').substr(0,5);
+	$(".box_item").on('click',function () {
+		Tmp=$(this).attr('id').substr(-2,1);
 		Tmp2=$(this).attr('id').substr(-1,1);
 
 		$("#h_" + Tmp).val(Tmp2);
