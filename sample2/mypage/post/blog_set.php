@@ -67,8 +67,8 @@ if($img_code){
 		imagewebp($img2,$img_link.".webp");
 	}
 
-	$img2	= imagecreatetruecolor(200,200);
-	ImageCopyResampled($img2, $img, 0, 0, 0, 0, 200, 200, 600, 600);
+	$img2	= imagecreatetruecolor(300,300);
+	ImageCopyResampled($img2, $img, 0, 0, 0, 0, 300, 300, 600, 600);
 
 	imagepng($img2,$img_link."_s.png");
 		$tmp_img="../img/profile/{$cast_data["id"]}/{$img_name}_s.png?t=00";
@@ -80,7 +80,6 @@ if($img_code){
 		$tmp_img2="../img/profile/{$cast_data["id"]}/{$img_name}.webp?t=00";
 	}
 	$app=" img='{$img_name}',";
-
 
 }elseif(!$img_id){
 	unlink("../../img/profile/{$cast_data["id"]}/{$row["img"]}_s.png");

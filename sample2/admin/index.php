@@ -7,32 +7,10 @@ ini_set( 'display_errors', 1 );
 ini_set('error_reporting', E_ALL);
 */
 
+
 $staff_set	=$_POST["staff_set"];//１新規　２変更　３キャスト追加変更　４削除
 $staff_id	=$_POST["staff_id"];
 $menu_post	=$_POST["menu_post"];
-
-$prm=$_POST["prm"];
-
-if($prm == "1"){
-	$post_id	="event";
-	$menu_post	="contents";
-
-}else if($prm == "2"){
-	$post_id	="news";
-	$menu_post	="contents";
-
-}else if($prm == "3"){
-	$menu_post	="staff";
-
-}else if($prm == "4"){
-	$menu_post	="sche";
-
-}else if($prm == "5"){
-	$menu_post	="blog";
-
-}else if($prm == "6"){
-	$menu_post	="contact";
-}
 
 //■スタッフブログ
 if($menu_post == "blog_write"){
@@ -435,8 +413,10 @@ if($admin_config["webp_select"] == 1){
 	$sql.=" sort='{$tmp_auto}'";
 	mysqli_query($mysqli,$sql);
 }
+
 if(!$menu_post) $menu_post="staff";
 $sel[$menu_post]="menu_sel";
+
 ?>
 <html lang="ja">
 <head>
@@ -492,6 +472,7 @@ $sel[$menu_post]="menu_sel";
 	100%{ transform:rotate(360deg); }
 }
 
+
 .admin_login{
 	margin		:50px auto 5 auto;
 	background	:#fafafa;
@@ -535,6 +516,7 @@ $sel[$menu_post]="menu_sel";
 	margin		:0 auto 10px auto;
 }
 
+
 .admin_login_btn{
 	width		:250px;
 	text-align	:center;
@@ -555,7 +537,9 @@ $sel[$menu_post]="menu_sel";
 	cursor		:pointer;
 	width		:196px;
 	text-align	:center;"
+
 }
+
 
 .err_msg{
 	font-weight	:700;
@@ -563,22 +547,12 @@ $sel[$menu_post]="menu_sel";
 	color		:#c00000;
 	text-align	:center;
 	margin		:0 auto;
-}
 
-.caution{
-	margin		:10px auto;
-	border		:1px solid #ff3030;
-	padding		:5px;
-	font-size	:13px;
-	line-height	:19px;
-	background	:#fafafa;
-	color		:#606060;
-	width		:160px;
-	text-align	:left;
 }
 </style>
 </head>
 <body class="body">
+<?if($manage){?>
 <div id="wait" class="wait">
 	<div class="wait_in"></div>
 </div>
@@ -601,15 +575,47 @@ $sel[$menu_post]="menu_sel";
 		<li id="contact" class="menu <?=$sel["contact"]?>"><span class="menu_icon"></span><span class="menu_comm">お問合せ</span></li>
 		<li id="logout" class="menu"><span class="menu_icon"></span><span class="menu_comm">LOG OUT</span></li>
 	</ul>
-	<div class="caution">
-	※操作は可能ですが、データの新規登録、変更は出来ません。
+	<div class="head_menu">
+		<div class="menu_a"></div>
+		<div class="menu_b"></div>
+		<div class="menu_c"></div>
 	</div>
 </div>
 <form id="form_menu" method="post" action="./index.php">
 <input id="menu_post" type="hidden" name="menu_post">
 </form>
 
+<?}else{?>
+<form method="post">
+	<table class="admin_login">
+		<tr>
+			<td class="admin_login_1"><span class="admin_login_1_in">Night-Party</span></td>
+		</tr>
 
+		<tr>
+			<td class="admin_login_1">
+				<span class="admin_login_tag">IDCODE</span>
+				<input type="text" class="admin_login_box" name="admin_in">
+			</td>
+		</tr>
+
+		<tr>
+			<td class="admin_login_1">
+				<span class="admin_login_tag">PASS</span>
+				<input type="password" class="admin_login_box" name="admin_pass">
+			</td>
+		</tr>
+
+		<tr>
+			<td class="admin_login_1">
+				<button type="submit" class="admin_login_btn">LOGIN</button><br>
+				<span id="ps_ck" class="admin_login_chg"> ADMIN情報の確認・変更</span><br>
+			</td>
+		</tr>
+	</table>
+	<div class="err_msg"><?=$err_msg?></div>
+</form>
+<?}?>
 <div class="back">
 	<div class="pop">
 		<div class="pop_out">×</div>

@@ -134,7 +134,7 @@
 	width			:830px;
 	font-size		:0;
 	text-align		:left;
-	padding:10px;
+	padding			:0 10px 10px 10px;
 }
 
 .head_mymenu_ttl{
@@ -3997,8 +3997,8 @@ input[type=range]::-moz-range-thumb{
 
 .sort_alert_out{
 	width			:820px;
-	height			:24px;
-	line-height		:24px;
+	height			:36px;
+	line-height		:40px;
 }
 
 .sort_alert{

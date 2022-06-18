@@ -32,13 +32,13 @@ input, textarea {
 }
 
 input:focus{
-	border-color:#fafafa;
-	background:#f0f0ff;
+	border-color	:#fafafa;
+	background		:#f0f0ff;
 }
 
 select{
-	border:1px solid #303030;
-	color:#303030;
+	border			:1px solid #303030;
+	color:	#303030;
 	background:#fffdef;
 
 }

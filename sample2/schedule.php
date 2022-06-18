@@ -117,6 +117,8 @@ for($e=0;$e<7;$e++){
 $inc_title="｜キャストスケジュール";
 include_once('./header.php');
 ?>
+</header>
+<div class="main">
 <div class="footmark">
 	<a href="./index.php" class="footmark_box box_a">
 		<span class="footmark_icon"></span>

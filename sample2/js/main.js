@@ -1,5 +1,6 @@
 $(document).ready(function () {
-//	$('.main').fadeIn(100);
+	var PostList=[];
+	var TmpScroll=0;
 
 	if($('.main_b_notice').length >0){
 			$('.no_news').hide();
@@ -112,6 +113,7 @@ $(document).ready(function () {
 			}
 		}
 	});	
+
 	$('#sel_year').on('change',function(){
 		$('.main_b_top').hide();
 		$.post({
@@ -141,7 +143,7 @@ $(document).ready(function () {
 		});
 	});
 
-	$(window).scroll(function () {
+	$(window).on('scroll',function () {
 		if ($(this).scrollTop() > 100) {
 			$('.to_top').slideDown(100);
 		} else {
@@ -154,9 +156,79 @@ $(document).ready(function () {
 		}
 	});
 
-
 	$('.to_top').on('click',function () {
 		$('body, html').animate({ scrollTop: 0 }, 500);
 		return false;
 	});
+
+	$('#recruit_send').on('click',function(){
+		var Err="";
+		$('.contact_list').each(function() {
+			Tmp=$(this).attr('id');
+			$('#p'+Tmp).text($(this).val());
+	
+			if($(this).val()  == '' && $(this).hasClass('nec_ck')){
+				$(this).prev().addClass('err_on');	
+				Err=1;
+			}
+		});	
+		if(Err == ""){
+			$('.recruit_pop').fadeIn(200);
+		}
+	});
+
+	$('.nec_ck').on('keyup',function(){
+		$(this).prev().removeClass('err_on');
+	});
+
+	$('#recruit_ok').on('click',function(){
+		$('.contact_list').each(function() {
+			Tmp=$(this).attr('id').replace('contact','');
+			PostList[Tmp]=$(this).val();
+		});
+
+		$.post({
+			url:"./post/contact_send.php",
+			data:{
+				'id':$('#contact_id').val(),
+				'dat[]':PostList,
+			},
+
+		}).done(function(data, textStatus, jqXHR){
+			console.log(data);
+			$('.recruit_pop_in').fadeOut(0).delay(3100).fadeIn(0);
+			$('.recruit_pop_in2').fadeIn(0).delay(3100).fadeOut(0);
+			$('.recruit_pop').delay(2000).fadeOut(1000);
+
+			$('.contact_list').val();
+
+		});
+	});
+
+	$('#recruit_ng').on('click',function(){
+		$('.recruit_pop').fadeOut(200);
+	});
+
+
+	$('.main_a').hover(function(){
+
+		$(this).find('.main_a_img').animate({Cnt:0}, {
+
+		$({Cnt:0}).animate({Cnt:20}, {
+			duration:100,
+			progress:function() {
+				$(this)find('.main_a_img').css({
+					'transform':'rotate(' + this.Rote + 'deg)',
+					'width':this.Top+"px",
+					'heght':this.Lef+"px",
+				});
+			},
+			});
+
+
+	},{
+
+	});
+
+
 });

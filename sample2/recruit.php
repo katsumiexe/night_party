@@ -40,7 +40,7 @@ if($dat_config["call"]["contents_key"]){
 
 			}elseif($c_form["type"]== 2){//comm
 				$form_dat.="<textarea id=\"contact{$c_form["id"]}\" name=\"contact{$c_form["id"]}\" class=\"contact_list contact_area {$ck_jq[$c_form["ck"]]}\" autocomplete=\"off\" size=\"600\" {$ck_re[$c_form["ck"]]}></textarea>";
-				$form_p.="<div id=\"pcontact{$c_form["id"]}\" class=\"contact_p_area\"></div>";
+				$form_p.="<div id=\"pcontact{$c_form["id"]}\" class=\"contact_p\"></div>";
 
 			}elseif($c_form["type"]== 3){//mail
 				$form_dat.="<input id=\"contact{$c_form["id"]}\" type=\"url\" name=\"contact{$c_form["id"]}\" class=\"contact_list contact v_mail {$ck_jq[$c_form["ck"]]}\" autocomplete=\"off\" {$ck_re[$c_form["ck"]]}>";
@@ -48,7 +48,7 @@ if($dat_config["call"]["contents_key"]){
 
 			}elseif($c_form["type"]== 4){//number
 				$form_dat.="<input id=\"contact{$c_form["id"]}\" type=\"number\" inputmode=\"numeric\" name=\"contact{$c_form["id"]}\" class=\"contact_list contact {$ck_jq[$c_form["ck"]]}\" autocomplete=\"off\" {$ck_re[$c_form["ck"]]}>";
-				$form_p.="<div id=\"pcontact{$c_form["id"]}\" class=\"contact_p_num\"></div>";
+				$form_p.="<div id=\"pcontact{$c_form["id"]}\" class=\"contact_p\"></div>";
 
 			}
 		}
@@ -63,58 +63,8 @@ if($dat_config["call"]["contents_key"]){
 $inc_title="｜キャスト募集";
 include_once('./header.php');
 ?>
-<script>
-var PostList=[];
-$(function(){ 
-	$('#recruit_send').on('click',function(){
-		var Err="";
-		$('.contact_list').each(function() {
-			Tmp=$(this).attr('id');
-			$('#p'+Tmp).text($(this).val());
-	
-			if($(this).val()  == '' && $(this).hasClass('nec_ck')){
-				$(this).prev().addClass('err_on');	
-				Err=1;
-			}
-		});	
-		if(Err == ""){
-			$('.recruit_pop').fadeIn(200);
-		}
-	});
-
-	$('.nec_ck').on('keyup',function(){
-		$(this).prev().removeClass('err_on');
-	});
-
-	$('#recruit_ok').on('click',function(){
-		$('.contact_list').each(function() {
-			Tmp=$(this).attr('id').replace('contact','');
-			PostList[Tmp]=$(this).val();
-		});
-
-		$.post({
-			url:"./post/contact_send.php",
-			data:{
-				'id':$('#contact_id').val(),
-				'dat[]':PostList,
-			},
-
-		}).done(function(data, textStatus, jqXHR){
-			console.log(data);
-			$('.recruit_pop_in').fadeOut(0).delay(3100).fadeIn(0);
-			$('.recruit_pop_in2').fadeIn(0).delay(3100).fadeOut(0);
-			$('.recruit_pop').delay(2000).fadeOut(1000);
-
-			$('.contact_list').val();
-
-		});
-	});
-
-	$('#recruit_ng').on('click',function(){
-		$('.recruit_pop').fadeOut(200);
-	});
-});
-</script>
+</header>
+<div class="main">
 <style>
 </style>
 <div class="footmark">

@@ -167,6 +167,7 @@ $(function(){
 				$('.blog_open_yes').addClass('yes_on');
 			}
 
+
 		}else{
 			$('#blog_open').val('0');
 			$('.hist_log').slideUp(200);
@@ -742,15 +743,7 @@ $(function(){
 	$('.menu_1').on('click',function () {
 		$('.slide').animate({'left':'-70vw'},10);
 		Tmp=$(this).attr('id').replace('m','');
-
-		if(Tmp == 99){
-console.log("▲");
-			window.open('about:blank', '_self').close(); 
-
-		}else{
-console.log("△");
-			window.location.href = './index.php?cast_page='+Tmp;
-		}
+		 window.location.href = './index.php?cast_page='+Tmp;
 	});
 
 	$('#regist_customer,#regist_customer_pc').on('click',function () {

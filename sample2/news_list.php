@@ -9,7 +9,6 @@ if($code){
 
 $sel_year=$_POST["sel_year"];
 if(!$sel_year) $sel_year=date("Y");
-
 $now_year		=date("Y");
 
 $start_year=substr($admin_config["open_day"],0,4);
@@ -25,26 +24,38 @@ $sql	.=" AND page='news'";
 $sql	.=" ORDER BY `event_date` DESC";
 
 if($res1 = mysqli_query($mysqli,$sql)){
-	while($a1 = mysqli_fetch_assoc($res1)){
+	while($row = mysqli_fetch_assoc($res1)){
 
-		$a1["news_date"]=str_replace("-",".",$a1["event_date"]);
+		$row["news_date"]=str_replace("-",".",$row["event_date"]);
 
 		if($a2["status"] ==2){
 			$a2["caution"]="news_caution";
 		} 
 
-		if($a1["category"] == "person"){
-			$a1["news_link"]="./person.php?post_id={$a1["contents_key"]}";
+		if($row["category"] == "person"){
+			$row["news_link"]="./person.php?post_id={$row["contents_key"]}";
 
-		}elseif($a1["category"] == "outer"){
-			$a1["news_link"]=$a1["contents_key"];
+		}elseif($row["category"] == "outer"){
+			$row["news_link"]=$row["contents_key"];
 
-		}elseif($a1["category"] == "event"){
-			$a1["news_link"]="./event.php?post_id={$a1["contents_key"]}";
+		}elseif($row["category"] == "event"){
+			$row["news_link"]="./event.php?post_id={$row["contents_key"]}";
 		}
 		
-		$news[]=$a1;
+		$news[]=$row;
 		$count_news++;
+	}
+}
+
+$sql	 ="SELECT substring(event_date, 1,4) AS gp_date, count(id) AS cnt FROM ".TABLE_KEY."_contents";
+$sql	.=" WHERE status<3";
+$sql	.=" AND display_date<'{$now}'";
+$sql	.=" AND page='news'";
+$sql	.=" GROUP BY gp_date";
+
+if($res1 = mysqli_query($mysqli,$sql)){
+	while($row = mysqli_fetch_assoc($res1)){
+		$hist_log[$row["gp_date"]]=$row["cnt"];
 	}
 }
 
@@ -63,7 +74,8 @@ if($result = mysqli_query($mysqli,$sql)){
 $inc_title="｜過去のニュース一覧";
 include_once('./header.php');
 ?>
-
+</header>
+<div class="main">
 <style>
 <?if($sel > 0){?>
 .main_b_notice{
@@ -85,23 +97,22 @@ include_once('./header.php');
 		<span class="footmark_icon"></span>
 		<span class="footmark_text">NEWS</span>
 	</div>
-	<?if($now_year > $start_year){?>
-		<select id="sel_year" name="sel_year" class="sel_year">
-			<?for($n=$start_year;$n<$now_year+1;$n++){?>
-				<option value="<?=$n?>" <?if($sel_year == $n){?>selected="selcted"<?}?>><?=$n?></option>
-			<?}?>
-		</select>
-		<input id="sel" type="hidden" name="sel" value="0">
-	<?}?>
+
+	<select id="sel_year" name="sel_year" class="sel_news_year">
+		<?foreach($hist_log as $a1 => $a2){?>
+			<option value="<?=$a1?>" <?if($sel_year == $a1){?>selected="selcted"<?}?>><?=$a1?>年(<?=$a2?>件)</option>
+		<?}?>
+	</select>
+	<input id="sel" type="hidden" name="sel" value="0">
 </div>
 
+
 <div class="main_top_flex">
-	<div class="main_flex_a news_a">
+	<div class="news_a">
 		<div class="main_b_title pc_only">NEWS</div>
 		<div class="main_b_top">
 			<?for($n=0;$n<$count_news;$n++){?>
 				<?if($news[$n]["category"]){?>
-
 					<table  class="main_b_notice tag<?=$news[$n]["tag"]?>"> <?=$news[$n]["caution"]?>">
 						<tr>
 							<td  class="main_b_td_1">
@@ -137,7 +148,7 @@ include_once('./header.php');
 			<div class="no_news">まだありません</div>
 		</div>
 	</div>
-	<div class="news_main_b news_b">
+	<div class="news_b">
 		<?if($tag){?>
 			<div class="news_tag">
 					<div id="tag0" class="news_tag_list<?if($sel+0== 0){?> cast_tag_box_sel<?}?>">全て</div>

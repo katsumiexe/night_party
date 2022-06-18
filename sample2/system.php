@@ -7,6 +7,8 @@ $dat = mysqli_fetch_assoc($res);
 $inc_title="｜システム・料金案内";
 include_once('./header.php');
 ?>
+</header>
+<div class="main">
 <div class="footmark">
 	<a href="./index.php" class="footmark_box box_a">
 		<span class="footmark_icon"></span>

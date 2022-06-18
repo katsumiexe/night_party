@@ -61,14 +61,30 @@ $holiday = curl_exec($cp);
 curl_close($cp);
 $ob_holiday = json_decode($holiday,true);
 
-if($_POST["menu_post"] === "logout"){
+
+if($_REQUEST["code"]){
+
+}elseif($_POST["menu_post"] === "logout"){
 	$_POST="";
 	$_SESSION="";
 	session_destroy();
 	$manage="";
 
-}else{
+}elseif(($_POST["admin_in"] == $admin_config["admin_id"] || $_POST["admin_pass"] == $admin_config["admin_pass"]) && ($_POST["admin_in"] || $_POST["admin_pass"])){
+	$_SESSION["session_time"]=time();
 	$manage=$_SESSION;
-}
 
+}elseif($_SESSION["session_time"]+10800+$jst>time()){
+	$_SESSION["session_time"]=time();
+	$manage=$_SESSION;
+
+}else{
+	if($_POST["admin_in"] || $_POST["admin_pass"]){
+		$err_msg="IDもしくはPASSWORDが一致しません";
+	}
+	$_POST="";
+	$_SESSION="";
+	session_destroy();
+	$manage="";
+}
 ?>

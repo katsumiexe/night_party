@@ -3,6 +3,7 @@ var Vw	=$(window).width();
 var Vh	=$(window).height();
 var TmpLink="";
 
+var TmpScroll=0;
 if(Vw <1200){
 	TopW=Vw;
 
@@ -154,7 +155,6 @@ $(function(){
 					timerId = setInterval(Fnc_s,TMR);
 				});
 			}
-
 		}
 	});
 
@@ -197,6 +197,25 @@ $(function(){
 				timerId = setInterval(Fnc_s,TMR);
 			});
 		}
+	});
+
+	$(window).on('scroll',function () {
+		if($(this).scrollTop() < TmpScroll){
+			$('.menu').stop(true,true).animate({"top":"200px"},1000);
+			TmpScroll=$(this).scrollTop();
+
+		}else{
+			$('.menu').stop(true,true).animate({"top":"100px"},1000);
+			TmpScroll=$(this).scrollTop();
+		}
+		$('.menu').stop(true,true).animate({"top":"150px"},500);
+	});
+
+	$('.menu_item').on('click',function () {
+		Tmp=$(this).attr("id").replace("menu","box_");
+		Top=$("#"+Tmp).offset().top-100;
+		$('body, html').animate({ scrollTop:Top}, 1000);
+
 	});
 });
 

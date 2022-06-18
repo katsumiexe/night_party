@@ -10,9 +10,6 @@ st
 2 非表示
 3 削除
 
-
-
-
 contact_form
 20 date
 21 res_check
@@ -37,15 +34,8 @@ $cat[4]="outer";
 $sel_id			=$_POST["sel_id"];
 $post_id		=$_POST["post_id"];
 
-if($prm == 2){
-	$post_id	="news";
-
-}elseif(!$post_id){
-	$post_id	="event";
-}
-
-
-if($post_id == "page") $post_id="system";
+if(!$post_id) $post_id="event";
+if($post_id == "page") $post_id="top";
 
 $event_set_id	=$_POST["event_set_id"];
 $page_log		=$_POST["page_log"];
@@ -430,7 +420,7 @@ $(function(){
 <div id="news"  class="sel_contents <?if($post_id == "news"){?> sel_ck<?}?>">NEWS</div>
 <div id="info"  class="sel_contents <?if($post_id == "info"){?> sel_ck<?}?>">INFO</div>
 
-<div id="page"  class="sel_contents <?if($post_id == "system" || $post_id == "access" || $post_id == "recruit" || $post_id == "policy"){?> sel_ck<?}?>">PAGE</div>
+<div id="page"  class="sel_contents <?if($post_id == "top" || $post_id == "system" || $post_id == "access" || $post_id == "recruit" || $post_id == "policy"){?> sel_ck<?}?>">PAGE</div>
 <?if($post_id == "news" ||$post_id == "event" ||$post_id == "info"){?>
 
 <div class="pager">
@@ -686,86 +676,33 @@ $(function(){
 <!--■■■■■■■■■■■■■■■■■■■■■■■■■■■-->
 	<?}elseif($post_id == "event"){?>
 		<div class="main_box">
-		<table class="event_table" style="background:#fafada;">
-			<form id="fnew" action="./index.php" method="post" enctype="multipart/form-data">
-			<input type="hidden" name="post_id" value="event">
-			<input type="hidden" name="menu_post" value="contents">
-			<input type="hidden" name="event_set_id" value="new">
-			<tr>
-				<td class="event_td_0" rowspan="4"><span class="event_td_0_in">新規作成</span></td>
-				<td class="event_td_3">
-					<span class="event_tag">公開日</span>
-					<input type="date" name="display_date" class="w140" value="<?=$base_now?>" autocomplete="off">
-					<button  type="submit" class="event_reg_btn">登録</button>
-
-					<label for="news_check" class="ribbon_use" style="margin-left:30px;display:inline-block">
-						<span class="check2">
-							<input id="news_check" type="checkbox" name="news_check" class="ck0" value="1" checked="checked">
-							<span class="check1"></span>
-						</span>
-						<span>NEWS登録</span>
-					</label>
-				</td>
-
-				<td class="event_td_6" rowspan="3">
-					<label for="updenew" class="event_img"><img id="top_updenew" src="../img/event_no_image.png" style="width:275px; height:110px;"></label>
-					<input id="updenew" name="upd_img" type="file" class="upd_file" style="display:none;">
-				</td>
-
-			</tr><tr>
-				<td  class="event_td_5">
-					<span class="event_tag">リンク</span><select name="category" class="cate_v w140">
-						<option value="">なし</option>
-						<option value="event"  <?if($a2["category"] == "event"){?> selected="selected"<?}?>>イベント</option>
-						<option value="person" <?if($a2["category"] == "person"){?> selected="selected"<?}?>>CAST</option>
-						<option value="blog"   <?if($a2["category"] == "blog"){?> selected="selected"<?}?>>ブログ</option>
-						<option value="page"   <?if($a2["category"] == "page"){?> selected="selected"<?}?>>リンク</option>
-					</select>
-					<input type="text" name="event_key" class="cate_s" style="width:200px;margin-left:5px;" value=""> 
-				</td>
-
-			</tr><tr>
-				<td  class="event_td_5">
-					<span class="event_tag">TITLE</span>
-					<input type="text" name="event_title" style="width:345px;" value="<?=$a2["title"]?>">
-				</td>
-
-			</tr><tr>
-				<td  class="event_td_4" colspan="2"><textarea name="event_contents" class="event_td_4_in"><?=$a2["contents"]?></textarea></td>
-			</tr>
-			</form>
-		</table>
-
-		<div id="contents_sort" class="main_list sort_main">
-			<?foreach($dat as $a1 => $a2){?>
-			<table id="sort_item<?=$a1?>" class="event_table sort_item c<?=$a2["status"]?>">
-				<form id="f<?=$a1?>" action="./index.php" method="post" enctype="multipart/form-data">
+			<table class="event_table" style="background:#fafada;">
+				<form id="fnew" action="./index.php" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="post_id" value="event">
 				<input type="hidden" name="menu_post" value="contents">
-				<input type="hidden" name="event_set_id" value="<?=$a1?>">
-				<input id="st<?=$a1?>" type="hidden" name="event_status" value="<?=$a2["status"]?>">
-				<input type="hidden" name="prm" value="<?=$a2["prm"]?>">
-				<tbody>
+				<input type="hidden" name="event_set_id" value="new">
 				<tr>
-					<td class="event_td_0" colspan="2"><span class="event_td_0_in"><?=$a2["id"]?></span></td>
-						<td class="event_td_3">
+					<td class="event_td_0" rowspan="4"><span class="event_td_0_in">新規作成</span></td>
+					<td class="event_td_3">
 						<span class="event_tag">公開日</span>
-						<input type="date" name="display_date" class="w140" value="<?=$a2["display_date"]?>" autocomplete="off">
-						<button id="cov<?=$a1?>" type="button" class="event_set_btn"><?=$st[$a2["status"]]?></button>
-						<button id="chg<?=$a1?>" type="button" class="event_set_btn">更新</button>
-						<button id="del<?=$a1?>" type="button" class="event_set_btn">削除</button>
+						<input type="date" name="display_date" class="w140" value="<?=$base_now?>" autocomplete="off">
+						<button  type="submit" class="event_reg_btn">登録</button>
+
+						<label for="news_check" class="ribbon_use" style="margin-left:30px;display:inline-block">
+							<span class="check2">
+								<input id="news_check" type="checkbox" name="news_check" class="ck0" value="1" checked="checked">
+								<span class="check1"></span>
+							</span>
+							<span>NEWS登録</span>
+						</label>
 					</td>
 
 					<td class="event_td_6" rowspan="3">
-						<label for="upde<?=$a1?>" class="event_img"><img id="top_upde<?=$a1?>" src="<?=$a2["img"]?>" style="width:275px; height:110px;"></span>
-						<input id="upde<?=$a1?>" name="upd_img" type="file" class="upd_file" style="display:none;">
-					</td>
-				</tr><tr>
-					<td rowspan="3"  class="event_td_1 handle"></td>
-					<td rowspan="3"  class="event_td_2">
-						<input type="text" value="<?=$a2["sort"]?>" class="box_sort" disabled>
+						<label for="updenew" class="event_img"><img id="top_updenew" src="../img/event_no_image.png" style="width:275px; height:110px;"></label>
+						<input id="updenew" name="upd_img" type="file" class="upd_file" style="display:none;">
 					</td>
 
+				</tr><tr>
 					<td  class="event_td_5">
 						<span class="event_tag">リンク</span><select name="category" class="cate_v w140">
 							<option value="">なし</option>
@@ -773,9 +710,8 @@ $(function(){
 							<option value="person" <?if($a2["category"] == "person"){?> selected="selected"<?}?>>CAST</option>
 							<option value="blog"   <?if($a2["category"] == "blog"){?> selected="selected"<?}?>>ブログ</option>
 							<option value="page"   <?if($a2["category"] == "page"){?> selected="selected"<?}?>>リンク</option>
-
 						</select>
-						<input type="text" name="event_key" class="cate_s" style="width:200px;margin-left:5px;" value="<?=$a2["contents_key"]?>"> 
+						<input type="text" name="event_key" class="cate_s" style="width:200px;margin-left:5px;" value=""> 
 					</td>
 
 				</tr><tr>
@@ -787,17 +723,69 @@ $(function(){
 				</tr><tr>
 					<td  class="event_td_4" colspan="2"><textarea name="event_contents" class="event_td_4_in"><?=$a2["contents"]?></textarea></td>
 				</tr>
-				</tbody>
 				</form>
 			</table>
-			<? } ?>
-		</div>
-		</div>
 
+			<div id="contents_sort" class="main_list sort_main">
+				<?foreach($dat as $a1 => $a2){?>
+				<table id="sort_item<?=$a1?>" class="event_table sort_item c<?=$a2["status"]?>">
+					<form id="f<?=$a1?>" action="./index.php" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="post_id" value="event">
+					<input type="hidden" name="menu_post" value="contents">
+					<input type="hidden" name="event_set_id" value="<?=$a1?>">
+					<input id="st<?=$a1?>" type="hidden" name="event_status" value="<?=$a2["status"]?>">
+					<input type="hidden" name="prm" value="<?=$a2["prm"]?>">
+					<tbody>
+					<tr>
+						<td class="event_td_0" colspan="2"><span class="event_td_0_in"><?=$a2["id"]?></span></td>
+							<td class="event_td_3">
+							<span class="event_tag">公開日</span>
+							<input type="date" name="display_date" class="w140" value="<?=$a2["display_date"]?>" autocomplete="off">
+							<button id="cov<?=$a1?>" type="button" class="event_set_btn"><?=$st[$a2["status"]]?></button>
+							<button id="chg<?=$a1?>" type="button" class="event_set_btn">更新</button>
+							<button id="del<?=$a1?>" type="button" class="event_set_btn">削除</button>
+						</td>
+
+						<td class="event_td_6" rowspan="3">
+							<label for="upde<?=$a1?>" class="event_img"><img id="top_upde<?=$a1?>" src="<?=$a2["img"]?>" style="width:275px; height:110px;"></span>
+							<input id="upde<?=$a1?>" name="upd_img" type="file" class="upd_file" style="display:none;">
+						</td>
+					</tr><tr>
+						<td rowspan="3"  class="event_td_1 handle"></td>
+						<td rowspan="3"  class="event_td_2">
+							<input type="text" value="<?=$a2["sort"]?>" class="box_sort" disabled>
+						</td>
+
+						<td  class="event_td_5">
+							<span class="event_tag">リンク</span><select name="category" class="cate_v w140">
+								<option value="">なし</option>
+								<option value="event"  <?if($a2["category"] == "event"){?> selected="selected"<?}?>>イベント</option>
+								<option value="person" <?if($a2["category"] == "person"){?> selected="selected"<?}?>>CAST</option>
+								<option value="blog"   <?if($a2["category"] == "blog"){?> selected="selected"<?}?>>ブログ</option>
+								<option value="page"   <?if($a2["category"] == "page"){?> selected="selected"<?}?>>リンク</option>
+
+							</select>
+							<input type="text" name="event_key" class="cate_s" style="width:200px;margin-left:5px;" value="<?=$a2["contents_key"]?>"> 
+						</td>
+
+					</tr><tr>
+						<td  class="event_td_5">
+							<span class="event_tag">TITLE</span>
+							<input type="text" name="event_title" style="width:345px;" value="<?=$a2["title"]?>">
+						</td>
+
+					</tr><tr>
+						<td  class="event_td_4" colspan="2"><textarea name="event_contents" class="event_td_4_in"><?=$a2["contents"]?></textarea></td>
+					</tr>
+					</tbody>
+					</form>
+				</table>
+				<? } ?>
+			</div>
+		</div>
 		<div class="sub_box">
 			<div>新規作成</div>
 		</div>
-
 <!--■■■■■■■■■■■■■■■■■■■■■■■■■■■-->
 	<?}else{?>
 		<?if($post_id == "recruit"){?>
@@ -808,7 +796,6 @@ $(function(){
 						<button id="delimg" type="button" class="event_set_btn">削除</button>
 						<label for="updr_img" class="recruit_img"><img id="top_updr_img" src="<?=$recruit_img?>" style="width:800px" ></label>
 						<input id="updr_img" name="upd_img" type="file" class="upd_file" style="display:none;">
-
 						<input type="hidden" name="prm" value="<?=$prm?>">
 						<input type="hidden" name="post_id" value="recruit">
 						<input type="hidden" name="menu_post" value="contents">
@@ -961,35 +948,33 @@ $(function(){
 				</table>
 			</div>
 
-	<!--■■■■■■■■■■■■■■■■■■■■■■■■■■■-->
 		<?}else{?>
 			<div class="main_box">
 				<form id="page_set" method="post">
 					<div class="page_top">
 						<div style="font-size:15px;font-weight:600;margin-top:10px;">TITLE</div>
-						<input type="text" name="page_title" style="width:640px;" value="<?=$dat[0]["title"]?>"><button id="page_set_btn" type="button" class="event_set_btn">変更</button>
+						<input type="text" name="page_title" style="width:640px;" value="<?=$dat[0]["title"]?>">
+						<button id="page_set_btn" type="button" class="event_set_btn">変更</button>
 						<div style="font-size:15px;font-weight:600;margin-top:10px;">本文</div>
 						<textarea class="page_area" name="page_log"><?=$dat[0]["contents"]?></textarea><br>
-
-<?if($post_id =="access"){?>
-						<div style="font-size:15px;font-weight:600;margin-top:10px;">MAP</div>
-						<textarea name="page_key" class="rec_link"><?=$dat[0]["contents_key"]?></textarea>				
-<?}?>
+						<?if($post_id =="access"){?>
+							<div style="font-size:15px;font-weight:600;margin-top:10px;">MAP</div>
+							<textarea name="page_key" class="rec_link"><?=$dat[0]["contents_key"]?></textarea>				
+						<?}?>
 					<input type="hidden" name="post_id_set" value="<?=$post_id?>">
 					<input type="hidden" name="menu_post" value="contents">
 					</div>			
 				</form>
 			</div>
 		<?}?>
-
-	<div class="sub_box">
-		<div id="system"  class="sel_contents <?if($post_id == "system"){?> sel_ck<?}?>">SYSTEM</div>
-		<div id="access"  class="sel_contents <?if($post_id == "access"){?> sel_ck<?}?>">ACCESS</div>
-		<div id="recruit" class="sel_contents <?if($post_id == "recruit"){?> sel_ck<?}?>">RECRUIT</div>
-		<div id="policy"  class="sel_contents <?if($post_id == "policy"){?> sel_ck<?}?>">ポリシー</div>
-	</div>
-
 <!--■■■■■■■■■■■■■■■■■■■■■■■■■■■-->
+		<div class="sub_box">
+			<div id="top"  class="sel_contents <?if($post_id == "top"){?> sel_ck<?}?>">TOP挨拶</div>
+			<div id="system"  class="sel_contents <?if($post_id == "system"){?> sel_ck<?}?>">SYSTEM</div>
+			<div id="access"  class="sel_contents <?if($post_id == "access"){?> sel_ck<?}?>">ACCESS</div>
+			<div id="recruit" class="sel_contents <?if($post_id == "recruit"){?> sel_ck<?}?>">RECRUIT</div>
+			<div id="policy"  class="sel_contents <?if($post_id == "policy"){?> sel_ck<?}?>">ポリシー</div>
+		</div>
 	<? } ?>
 </div>
 
@@ -1011,4 +996,3 @@ $(function(){
 	<input id="sel_ck" type="hidden" name="post_id">
 	<input type="hidden" name="menu_post" value="contents">
 </form>
-

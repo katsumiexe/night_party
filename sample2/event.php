@@ -24,7 +24,8 @@ if($res0 = mysqli_query($mysqli,$sql)){
 $inc_title="｜{$event["title"]}";
 include_once('./header.php');
 ?>
-
+</header>
+<div class="main">
 <div class="footmark">
 	<a href="./index.php" class="footmark_box box_a">
 		<span class="footmark_icon"></span>
