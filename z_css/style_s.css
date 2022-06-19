@@ -1,11 +1,4 @@
 @media screen and (max-width: 959px){
-.pc_only{
-	display		:none;
-}
-.sp_only{
-	display		:block;
-}
-
 html {
   touch-action: manipulation;
 }
@@ -71,7 +64,7 @@ header{
 }
 
 .top_1{
-	right		:50vw;
+	right		:30vw;
 	left		:auto;
 	height		:100vh;
 }
@@ -108,7 +101,6 @@ header{
 .box{
 	position	:relative;
 	width		:100vw;
-	height:auto;
 	margin		:0 auto;
 	background	:#f0f8ff;
 }
@@ -159,13 +151,10 @@ header{
 }
 
 .box_top{
-	position		:fixed;
-	top				:0;
-	left			:0;
-	right			:0;
-	margin			:auto;
+	position		:relative;
+	margin			:0;
 	display			:block;
-	width			:170vw;
+	width			:100vw;
 	height			:100vh;
 }
 
@@ -200,7 +189,7 @@ header{
 	position		:absolute;
 	width			:48vw;
 	padding			:0;
-	height			:60vw;
+	height			:40vw;
 	transform		:rotate(-15deg);
 	opacity			:0;
 	transform-origin:top right;
@@ -213,22 +202,22 @@ header{
 	right			:1vw;
 	bottom			:1vw;
 	width			:44vw;
-	height			:50vw;
+	height			:40vw;
 	border			:1vw solid #60a0f0;
 }
 
 
 .box_item_title{
-	font-size		:3.8vw;
-	height			:6vw;
-	line-height		:6vw;
+	font-size		:3.5vw;
+	height			:7vw;
+	line-height		:7vw;
 	padding-left	:1vw;
 }
 
 .box_item_p{
 	height			:48vw;
-	width			:42vw;	
-	font-size		:3.5vw;
+	width			:40vw;	
+	font-size		:3vw;
 	line-height		:5vw;
 	padding			:1vw;
 }
@@ -311,12 +300,12 @@ header{
 
 .box_1_0{
 	margin			:20vw auto 3vw auto;
-	width			:92vw;
+	width			:88vw;
 	padding			:2vw;
-	height			:38vw;
-	line-height		:5.2vw;
-	font-size		:3.2vw;
-	border-bottom	:1vw solid #c00000;
+	height			:52vw;
+	line-height		:5.8vw;
+	font-size		:3.5vw;
+	border			:1px solid #303030;
 	opacity			:0;
 }
 
@@ -331,24 +320,27 @@ header{
 	background		:linear-gradient(transparent 50%, #f0f030 50%,#f0f030 100%);
 }
 
-#box_item_1,#box_item_2,#box_item_3{
-	left			:0;
-}
-
 .box_1_1{
 	position		:relative;
-	width			:96vw;
+	width			:92vw;
 	padding			:0;
 	height			:42vw;
-	top				:0;
-	left			:0;
+	margin			:3vw auto;
 }
+
+#box_item_1,#box_item_2,#box_item_3{
+	top				:auto;
+	left			:auto;
+
+}
+
+
 
 .box_1_1_text{
 	position		:absolute;
 	top				:10vw;
 	left			:0;
-	width			:92vw;
+	width			:88vw;
 	border			:1vw solid #FE7F9C;
 	border-radius	:2vw;
 	background		:#fafafa;
@@ -402,20 +394,11 @@ header{
 	color			:#FE7F9C;
 }
 
-#ball1{
-	left			:1vh;
-	top				:-102vh;
+#ball1,#ball2,#ball3{
+	top				:0;
+	left			:0;
 }
 
-#ball2{
-	left			:-54.5vh;
-	top				:-91vh;
-}
-
-#ball3{
-	left			:-110vh;
-	top				:-80vh;
-}
 
 .box_2_0{
 	display			:flex;
@@ -601,13 +584,11 @@ header{
 }
 
 .top_comm{
-	position	:absolute;
-	left		:5vh;
-	top			:40vh;
-	width		:66vh;
-	height		:16vh;
-	background	:rgba(240,240,240,0.8);
-	padding		:2vh;
+	position	:fixed;
+	left		:0vh;
+	top			:50vh;
+	width		:60vh;
+	height		:20vh;
 }
 
 .top_title{
