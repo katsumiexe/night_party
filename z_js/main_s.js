@@ -22,7 +22,7 @@ console.log(Lock);
 
 		if( $(this).scrollTop() > $('#block_3').offset().top - Height && Flag_3==0){
 			Flag_3=1;
-			$({Deg:-10, Opc:0, Top:22, Lef:21}).animate({Deg:0, Opc:1, Top:2, Lef:1}, {
+			$({Deg:-10, Opc:0, Top:22, Lef:21}).animate({Deg:0, Opc:1, Top:2, Lef:2}, {
 				duration:800,
 				progress:function() {
 					$('#box_item_a1').css({
@@ -35,7 +35,7 @@ console.log(Lock);
 			});
 
 
-			$({Deg:-10, Opc:0, Top:22, Lef:70}).delay(200).animate({Deg:0, Opc:1, Top:2, Lef:50}, {
+			$({Deg:-10, Opc:0, Top:22, Lef:70}).delay(200).animate({Deg:0, Opc:1, Top:2, Lef:49}, {
 				duration:800,
 				progress:function() {
 					$('#box_item_a2').css({
@@ -48,7 +48,7 @@ console.log(Lock);
 			});
 
 
-			$({Deg:-10, Opc:0, Top:66, Lef:21}).delay(200).animate({Deg:0, Opc:1, Top:46, Lef:1}, {
+			$({Deg:-10, Opc:0, Top:66, Lef:21}).delay(200).animate({Deg:0, Opc:1, Top:44, Lef:2}, {
 				duration:800,
 				progress:function() {
 					$('#box_item_a3').css({
@@ -60,7 +60,7 @@ console.log(Lock);
 				},
 			});
 
-			$({Deg:-10, Opc:0, Top:66, Lef:70}).delay(400).animate({Deg:0, Opc:1, Top:46, Lef:50}, {
+			$({Deg:-10, Opc:0, Top:66, Lef:70}).delay(400).animate({Deg:0, Opc:1, Top:44, Lef:49}, {
 				duration:800,
 				progress:function() {
 					$('#box_item_a4').css({
@@ -72,7 +72,7 @@ console.log(Lock);
 				},
 			});
 
-			$({Deg:-10, Opc:0, Top:110, Lef:21}).delay(400).animate({Deg:0, Opc:1, Top:90, Lef:1}, {
+			$({Deg:-10, Opc:0, Top:110, Lef:21}).delay(400).animate({Deg:0, Opc:1, Top:86, Lef:2}, {
 				duration:800,
 				progress:function() {
 					$('#box_item_a5').css({
@@ -85,7 +85,7 @@ console.log(Lock);
 			});
 
 
-			$({Deg:-10, Opc:0, Top:110, Lef:70}).delay(600).animate({Deg:0, Opc:1, Top:90, Lef:50}, {
+			$({Deg:-10, Opc:0, Top:110, Lef:70}).delay(600).animate({Deg:0, Opc:1, Top:86, Lef:49}, {
 				duration:800,
 				progress:function() {
 					$('#box_item_a6').css({

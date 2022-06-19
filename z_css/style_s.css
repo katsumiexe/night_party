@@ -100,7 +100,9 @@ header{
 
 .box{
 	position	:relative;
+	top			:0;
 	width		:100vw;
+	height 		:auto;
 	margin		:0 auto;
 	background	:#f0f8ff;
 }
@@ -164,7 +166,7 @@ header{
 	top				:45vw;
 	left			:1vw;
 	width			:94vw;
-	height			:150vw;
+	height			:125vw;
 	padding			:1vw;
 	border			:1vw solid #60a0f0;
 	border-radius	:2vw;
@@ -201,11 +203,11 @@ header{
 	position		:absolute;
 	top				:0;
 	left			:0;
-	right			:0;
-	bottom			:0;
+	right			:auto;
+	bottom			:auto;
 	width			:44vw;
 	height			:38vw;
-	border			:1vw solid #60a0f0;
+	border			:0.5vw solid #60a0f0;
 }
 
 
@@ -326,7 +328,7 @@ header{
 	position		:relative;
 	width			:92vw;
 	padding			:0;
-	height			:42vw;
+	height			:48vw;
 	margin			:3vw auto;
 }
 
@@ -340,7 +342,7 @@ header{
 
 .box_1_1_text{
 	position		:absolute;
-	top				:10vw;
+	top				:13vw;
 	left			:0;
 	width			:88vw;
 	border			:1vw solid #FE7F9C;
@@ -357,42 +359,42 @@ header{
 
 .box_1_ball{
 	position		:absolute;
-	width			:49vh;
-	height			:9vh;
+	width			:96vw;
+	height			:12vw;
 	color			:#fafafa;
 }
 
 .ball_txt{
 	position		:absolute;
-	bottom			:0.5vh;
+	bottom			:0.5vw;
 	left			:0;
 	display			:inline-block;
-	width			:42.5vh;
-	height			:7.5vh;
-	line-height		:7.5vh;
+	width			:77vw;
+	height			:10vw;
+	line-height		:10vw;
 	text-align		:left;
-	font-size		:4.5vh;
+	font-size		:5vw;
 	font-weight		:800;
 	background		:#FE7F9C;
-	box-shadow		:3px 3px 5px #e05070;
-	border-radius	:1vh;
+	box-shadow		:none;
+	border-radius	:2vw;
 	overflow		:hidden;
-	padding-left	:10vh;
+	padding-left	:15vw;
 }
 
 .ball_icon{
 	font-family		:at_icon;
-	height			:8vh;
-	line-height		:8vh;
-	width			:8vh;
+	height			:12vw;
+	line-height		:12vw;
+	width			:12vw;
 	text-align		:center;
-	font-size		:7vh;
+	font-size		:10vw;
 	background		:#fafafa;
-	border-radius	:1vh;
+	border-radius	:2vw;
 	position		:absolute;
-	bottom			:0.5vh;
+	bottom			:0.5vw;
 	left			:0px;
-	border			:0.5vh solid #FE7F9C;
+	border			:1vw solid #FE7F9C;
 	color			:#FE7F9C;
 }
 
@@ -589,12 +591,13 @@ header{
 	position	:fixed;
 	left		:0vh;
 	top			:50vh;
-	width		:60vh;
-	height		:20vh;
+	width		:70vw;
+	height		:37vw;
+	padding		:2vw;
 }
 
 .top_title{
-	font-size	:4vh;
+	font-size	:5vw;
 	font-weight	:900;
 	text-align	:left;
 	margin		:0 0 1vh 0;
@@ -602,9 +605,9 @@ header{
 }
 
 .top_p{
-	font-size	:2.2vh;
+	font-size	:3.2vw;
 	text-align	:left;
-	line-height	:3.5vh;
+	line-height	:5vw;
 	padding		:0;
 	margin		:0;
 }
