@@ -132,7 +132,14 @@
 
 				<div id="box_item_a1" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">ページ管理機能<span id="box_3_icon_1" type="span" class="box_item_icon pc_only">SAMPLE<span class="al"></span></span></div>
+						<div class="box_item_title">ページ管理
+							<span id="box_3_icon_1" class="box_item_icon pc_only">
+								<span class="box_item_icon_1"></span>
+								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="al"></span>
+							</span>
+						</div>
+
 						<p class="box_item_p">
 							バナーやニュース、トップあいさつ等の管理<br>
 							アクセス、リクルート、プライバシーポリシーなどの固定ページの更新がここからできます。
@@ -142,7 +149,14 @@
 
 				<div id="box_item_a2" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">コンフィグ<span id="box_3_icon_2" type="span" class="box_item_icon pc_only">SAMPLE<span class="al"></span></span></div>
+						<div class="box_item_title">コンフィグ
+							<span id="box_3_icon_2" class="box_item_icon pc_only">
+								<span class="box_item_icon_1"></span>
+								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="al"></span>
+							</span>
+						</div>
+
 						<p class="box_item_p">
 リボンの設定や、日付や曜日切替日の設定が可能です。
 また、ここからキャストのプロフィール項目、やチェックボックスなどを編集や追加が可能です。
@@ -152,7 +166,13 @@
 
 				<div id="box_item_a3" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">キャスト管理<span id="box_3_icon_3" type="span" class="box_item_icon pc_only">SAMPLE<span class="al"></span></span></div>
+						<div class="box_item_title">キャスト管理
+							<span id="box_3_icon_3" class="box_item_icon pc_only">
+								<span class="box_item_icon_1"></span>
+								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="al"></span>
+							</span>
+						</div>
 						<p class="box_item_p">
 							キャストのプロフィールや写真のほか、管理に便利なステータスやキャストの個人情報等も登録できます。
 						</p>
@@ -161,7 +181,13 @@
 
 				<div id="box_item_a4" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">シフト管理<span id="box_3_icon_4" type="span" class="box_item_icon pc_only">SAMPLE<span class="al"></span></span></div>
+						<div class="box_item_title">シフト管理
+							<span id="box_3_icon_4" class="box_item_icon pc_only">
+								<span class="box_item_icon_1"></span>
+								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="al"></span>
+							</span>
+						</div>
 						<p class="box_item_p">
 							キャストのシフトを1週間単位で一覧で表示、変更することができます。<br>
 						</p>
@@ -170,8 +196,13 @@
 
 				<div id="box_item_a5" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">ブログ管理<span id="box_3_icon_5" type="span" class="box_item_icon pc_only">SAMPLE<span class="al"></span></span></div>
-						<p class="box_item_p">
+						<div class="box_item_title">ブログ管理
+							<span id="box_3_icon_5" class="box_item_icon pc_only">
+								<span class="box_item_icon_1"></span>
+								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="al"></span>
+							</span>
+						</div>						<p class="box_item_p">
 							キャストブログ、スタッフブログの投稿、修正、削除、非表示を行えます。
 						</p>
 					</div>
@@ -179,7 +210,13 @@
 
 				<div id="box_item_a6" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">お問い合わせ<span id="box_3_icon_6" type="span" class="box_item_icon pc_only">SAMPLE<span class="al"></span></span></div>
+						<div class="box_item_title">お問い合わせ
+							<span id="box_3_icon_6" class="box_item_icon pc_only">
+								<span class="box_item_icon_1"></span>
+								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="al"></span>
+							</span>
+						</div>
 						<p class="box_item_p">
 							キャストからの応募メールをCMSで確認することができます。対応日時、履歴も残せますので、誰が見てもわかるようにできます。
 						</p>
@@ -202,8 +239,15 @@
 			<div class="h2_s">　</div>
 			<div class="box_flex_left">
 				<div id="box_item_b1" class="box_item">
+
 					<div class="box_item_in">
-						<div class="box_item_title">TOP<span id="box_4_icon_1" type="span" class="box_item_icon">SAMPLE<span class="al"></span></span></div>
+						<div class="box_item_title">TOP
+							<span id="box_4_icon_1" class="box_item_icon pc_only">
+								<span class="box_item_icon_3"></span>
+								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="al"></span>
+							</span>
+						</div>
 						<p class="box_item_p">
 							スケジュールと「顧客リスト」で登録したお客様の誕生日、本日より3日分が表示されます。<br>
 							お店からの連絡事項が表示されます。<br>
@@ -213,7 +257,13 @@
 
 				<div id="box_item_b2" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">カレンダー<span id="box_4_icon_2" type="span" class="box_item_icon">SAMPLE<span class="al"></span></span></div>
+						<div class="box_item_title">カレンダー
+							<span id="box_4_icon_2" class="box_item_icon pc_only">
+								<span class="box_item_icon_3"></span>
+								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="al"></span>
+							</span>
+						</div>
 						<p class="box_item_p">
 							お客様の誕生日やシフトが表示され、日ごとの個人メモを残すことも可能です。<br>
 							シフト提出もここから行えます。<br>
@@ -223,7 +273,13 @@
 
 				<div id="box_item_b3" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">顧客リスト<span id="box_4_icon_3" type="span" class="box_item_icon">SAMPLE<span class="al"></span></span></div>
+						<div class="box_item_title">顧客リスト
+							<span id="box_4_icon_3" class="box_item_icon pc_only">
+								<span class="box_item_icon_3"></span>
+								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="al"></span>
+							</span>
+						</div>
 						<p class="box_item_p">
 							お客様の詳細や、来店履歴、利用金額やバック額を記載できます。<br>
 							ランク評価、顔写真投稿、<span class="box_l">グループ分けも可能</span>ですので、わかりやすく管理することができます。<br>
@@ -233,7 +289,13 @@
 
 				<div id="box_item_b4" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">EasyTalk<span id="box_4_icon_4" type="span" class="box_item_icon">SAMPLE<span class="al"></span></span></div>
+						<div class="box_item_title">EasyTalk
+							<span id="box_4_icon_4" class="box_item_icon pc_only">
+								<span class="box_item_icon_3"></span>
+								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="al"></span>
+							</span>
+						</div>
 						<p class="box_item_p">
 							タイムライン仕様のコミュニケーションツールで、キャストは自身のアカウントをお客様に伝えることなく利用できます。<br>
 							<span class="box_s">お客様側のメールアドレスが必要です。</span>
@@ -243,7 +305,14 @@
 
 				<div id="box_item_b5" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">ブログ<span id="box_4_icon_5" type="span" class="box_item_icon">SAMPLE<span class="al"></span></span></div>
+						<div class="box_item_title">ブログ
+							<span id="box_4_icon_5" class="box_item_icon">
+								<span class="box_item_icon_3"></span>
+								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="al"></span>
+							</span>
+						</div>
+
 						<p class="box_item_p">
 							写真付きブログの投稿、編集ができます。<br>
 							投稿写真は編集画面でリサイズ、調整、部分マスク等の簡易調整が可能です。<br>
@@ -253,7 +322,13 @@
 
 				<div id="box_item_b6" class="box_item">
 					<div class="box_item_in">
-						<div class="box_item_title">アナリティクス<span id="box_4_icon_6" type="span" class="box_item_icon">SAMPLE<span class="al"></span></span></div>
+						<div class="box_item_title">アナリティクス
+							<span id="box_4_icon_6" class="box_item_icon">
+								<span class="box_item_icon_3"></span>
+								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="al"></span>
+							</span>
+						</div>
 						<p class="box_item_p">
 							時給・バックから月の収入目安を算出します。<br>
 							バック項目や顧客ごとのランキング表示も可能です。<br>
@@ -393,12 +468,12 @@
 	</article>
 </section>
 
-<form id="form_b" action="./sub/mypage/index.php" method="post" target="_blank">
-	<input type="hidden" id="h_b" name="prm" value="0">
+<form id="form_4" action="./sub/mypage/index.php" method="post" target="_blank">
+	<input type="hidden" id="h_4" name="prm" value="0">
 </form>
 
-<form id="form_a" action="./sub/admin/index.php" method="post" target="_blank">
-	<input type="hidden" id="h_a" name="prm" value="0">
+<form id="form_3" action="./sub/admin/index.php" method="post" target="_blank">
+	<input type="hidden" id="h_3" name="prm" value="0">
 </form>
 
 </body>

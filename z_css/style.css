@@ -249,7 +249,6 @@ header{
 	position		:relative;
 	background		:#e8f0ff;
 	color			:#0000c0;
-	font-weight		:800;
 	font-size		:2.5vh;
 	height			:5vh;
 	line-height		:5vh;
@@ -286,16 +285,42 @@ header{
 	bottom			:0;
 	right			:1vh;
 	margin			:auto;
+	height			:3.5vh;
+	width			:12vh;
+	background		:#a0c0ff;
+	border			:0.2vh solid #ffffff;
+	overflow		:hidden;
+	cursor:pointer;
+}
+
+.box_item_icon_1,.box_item_icon_3{
+	position		:absolute;
+	top				:-3vh;
+	right			:15vh;
+	width			:14vh;
+	height			:11vh;
+	background		:linear-gradient(30deg,#0000c0,#000080);
+	transform		:rotate(-30deg);
+}
+
+.box_item_icon_3{
+	background		:linear-gradient(30deg,#c00080,#900050);
+}
+
+.box_item_icon_2{
+	display			:inline-block;
+	position		:absolute;
+	top				:0;
+	left			:1vh;
 	font-size		:2vh;
 	height			:3.5vh;
 	line-height		:3.5vh;
 	width			:12vh;
-	background		:#a0c0ff;
-	border			:0.2vh solid #ffffff;
 	color			:#ffffff;
 	text-align		:left;
-	padding			:0 0 0 0.5vh;
+	width			:11vh;
 }
+
 
 .al{
 	display		:block;
@@ -311,6 +336,7 @@ header{
 	border-bottom	:2px solid #ffffff;
 	border-right	:2px solid #ffffff;
 	transform		:rotate(-45deg);
+	transform-origin:center;
 }
 
 

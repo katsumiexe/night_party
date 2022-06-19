@@ -252,16 +252,15 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 	});
 
 	$(".box_item_in").hover(function () {
-        $(this).find('.box_item_icon').animate({'box-shadow':'-5px -5px 5px rgba(255,255,255,0.5) inset, 5px 5px 5px rgba(255,255,255,0.5) inset'},50);
+        $(this).find('.box_item_icon_1, .box_item_icon_3').animate({'right':'-1vh'},100);
     },
     function() {
-        $(this).find('.box_item_icon').css({'box-shadow':'none'});
+        $(this).find('.box_item_icon_1, .box_item_icon_3').animate({'right':'15vh'},100);
 	});
 
-	$(".box_item").on('click',function () {
-		Tmp=$(this).attr('id').substr(-2,1);
-		Tmp2=$(this).attr('id').substr(-1,1);
-
+	$(".box_item_icon").on('click',function () {
+		Tmp=$(this).attr('id').substr(4,1);
+		Tmp2=$(this).attr('id').substr(11,1);
 		$("#h_" + Tmp).val(Tmp2);
 		$("#form_" + Tmp).submit();
 	});
