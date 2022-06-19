@@ -8,17 +8,21 @@ var DBall=0;
 
 var BoxView=0;
 var Lock=0;
-var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
+var Flag_3=0;
 
+var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
 var Height=$(window).height()*0.8;
+
 
 if (window.matchMedia('(max-width: 960px)').matches) {
 	$(window).on('scroll',function () {
-		
-console.log($(this).scrollTop()+"▼"+$("#block_1").offset().top+"▼"+$("#block_3").offset().top+"▼"+Height);
 
-		if( $(this).scrollTop()> ( $('#block_3').offset().top - Height )){
-			$({Deg:-10, Opc:0, Top:20, Lef:5}).animate({Deg:0, Opc:1, Top:1, Lef:1}, {
+console.log(Flag_3);
+console.log(Lock);
+
+		if( $(this).scrollTop() > $('#block_3').offset().top - Height && Flag_3==0){
+			Flag_3=1;
+			$({Deg:-10, Opc:0, Top:22, Lef:21}).animate({Deg:0, Opc:1, Top:2, Lef:1}, {
 				duration:800,
 				progress:function() {
 					$('#box_item_a1').css({
@@ -31,7 +35,7 @@ console.log($(this).scrollTop()+"▼"+$("#block_1").offset().top+"▼"+$("#block
 			});
 
 
-			$({Deg:-10, Opc:0, Top:20, Lef:67}).delay(200).animate({Deg:0, Opc:1, Top:1, Lef:50}, {
+			$({Deg:-10, Opc:0, Top:22, Lef:70}).delay(200).animate({Deg:0, Opc:1, Top:2, Lef:50}, {
 				duration:800,
 				progress:function() {
 					$('#box_item_a2').css({
@@ -44,7 +48,7 @@ console.log($(this).scrollTop()+"▼"+$("#block_1").offset().top+"▼"+$("#block
 			});
 
 
-			$({Deg:-10, Opc:0, Top:45, Lef:5}).delay(200).animate({Deg:0, Opc:1, Top:26, Lef:1}, {
+			$({Deg:-10, Opc:0, Top:66, Lef:21}).delay(200).animate({Deg:0, Opc:1, Top:46, Lef:1}, {
 				duration:800,
 				progress:function() {
 					$('#box_item_a3').css({
@@ -56,7 +60,7 @@ console.log($(this).scrollTop()+"▼"+$("#block_1").offset().top+"▼"+$("#block
 				},
 			});
 
-			$({Deg:-10, Opc:0, Top:45, Lef:67}).delay(400).animate({Deg:0, Opc:1, Top:26, Lef:50}, {
+			$({Deg:-10, Opc:0, Top:66, Lef:70}).delay(400).animate({Deg:0, Opc:1, Top:46, Lef:50}, {
 				duration:800,
 				progress:function() {
 					$('#box_item_a4').css({
@@ -68,7 +72,7 @@ console.log($(this).scrollTop()+"▼"+$("#block_1").offset().top+"▼"+$("#block
 				},
 			});
 
-			$({Deg:-10, Opc:0, Top:70, Lef:5}).delay(400).animate({Deg:0, Opc:1, Top:51, Lef:1}, {
+			$({Deg:-10, Opc:0, Top:110, Lef:21}).delay(400).animate({Deg:0, Opc:1, Top:90, Lef:1}, {
 				duration:800,
 				progress:function() {
 					$('#box_item_a5').css({
@@ -81,7 +85,7 @@ console.log($(this).scrollTop()+"▼"+$("#block_1").offset().top+"▼"+$("#block
 			});
 
 
-			$({Deg:-10, Opc:0, Top:70, Lef:67}).delay(600).animate({Deg:0, Opc:1, Top:51, Lef:50}, {
+			$({Deg:-10, Opc:0, Top:110, Lef:70}).delay(600).animate({Deg:0, Opc:1, Top:90, Lef:50}, {
 				duration:800,
 				progress:function() {
 					$('#box_item_a6').css({

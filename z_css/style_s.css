@@ -118,7 +118,8 @@ header{
 }
 
 #block_3{
-	z-index:4;
+	height:300vw;
+
 }
 
 #block_4{
@@ -145,9 +146,9 @@ header{
 }
 
 .box_ab{
-	width			:96vw;
+	width			:100vw;
 	height			:auto;
-	padding-top		:5vh;
+	padding-top		:12vw;
 }
 
 .box_top{
@@ -159,10 +160,11 @@ header{
 }
 
 .box_flex_left{
-	top				:10vw;
+	position		:absolute;
+	top				:45vw;
 	left			:1vw;
-	width			:98vw;
-	height			:70vw;
+	width			:94vw;
+	height			:150vw;
 	padding			:1vw;
 	border			:1vw solid #60a0f0;
 	border-radius	:2vw;
@@ -170,11 +172,11 @@ header{
 
 .box_flex_right{
 	position		:absolute;
-	top				:11vh;
+	top				:15vw;
 	right			:-20vh;
 	display			:block;
-	width			:98vw;
-	height			:30vw;
+	width			:94vw;
+	height			:24vw;
 	padding			:1vw;
 	font-size		:3.5vw;
 	line-height		:5.5vw;
@@ -187,7 +189,7 @@ header{
 
 .box_item{
 	position		:absolute;
-	width			:48vw;
+	width			:46vw;
 	padding			:0;
 	height			:40vw;
 	transform		:rotate(-15deg);
@@ -197,12 +199,12 @@ header{
 
 .box_item_in{
 	position		:absolute;
-	top				:1vw;
-	left			:1vw;
-	right			:1vw;
-	bottom			:1vw;
+	top				:0;
+	left			:0;
+	right			:0;
+	bottom			:0;
 	width			:44vw;
-	height			:40vw;
+	height			:38vw;
 	border			:1vw solid #60a0f0;
 }
 
@@ -215,7 +217,7 @@ header{
 }
 
 .box_item_p{
-	height			:48vw;
+	height			:31vw;
 	width			:40vw;	
 	font-size		:3vw;
 	line-height		:5vw;
@@ -281,21 +283,21 @@ header{
 }
 
 .box_item2{
-	margin			:1.5vh;
-	width			:39vh;
-	height			:40vh
-	font-size		:2vh;
-	line-height		:3vh;
+	margin			:2vw;
+	width			:60vw;
+	height			:22vw;
+	font-size		:3vw;
+	line-height		:5vw;
 	color			:#303030;	
 }
 
 .box_item2_img{
 	position		:absolute;
-	bottom			:1vh;
+	bottom			:0;
 	right			:0;
-	left			:0;
+	left			:auto;
 	margin			:auto;
-	width			:38vh;
+	width			:24vw;
 }
 
 .box_1_0{
@@ -605,6 +607,10 @@ header{
 	line-height	:3.5vh;
 	padding		:0;
 	margin		:0;
+}
+
+.pc_only{
+	display:none;
 }
 
 }
