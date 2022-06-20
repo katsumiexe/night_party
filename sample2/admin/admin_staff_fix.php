@@ -208,6 +208,7 @@ $(function(){
 	$('#ck_login_id').on('change',function () {
 		$(this).css("background-color","#fafafa");
 		$('.ck_login_id_err').hide();
+		$('#id_check').val("0");
 
 		$.ajax({
 			url:'./post/id_check.php',
@@ -221,6 +222,7 @@ $(function(){
 			console.log(data);
 			if(data =="err"){
 				$('#ck_login_id').css("background-color","#fff0f0");
+				$('#id_check').val("1");
 				$('.ck_login_id_err').fadeIn(100);
 			}
 
@@ -236,6 +238,7 @@ $(function(){
 <input type="hidden" value="<?=$staff_data["prm"]?>" name="prm">
 <input id="staff_id" type="hidden" value="<?=$staff_id?>" name="staff_id">
 <input id="fix_flg" type="hidden" value="2" name="staff_set">
+<input id="id_check" type="hidden" value="0" name="id_check">
 
 <header class="head">
 <h2 class="head_ttl">スタッフ登録</h2>
@@ -340,9 +343,9 @@ CAST情報
 </tr>
 <tr>
 	<td>
-		<div>ログインID	</div><input type="text" name="cast_id" value="<?=$staff_data["login_id"]?>" class="w000" autocomplete="off">
 		<div>ログインID <span class="ck_login_id_err" style="display:none;">既に使われています</span></div><input id="ck_login_id" type="text" name="cast_id" value="<?=$staff_data["login_id"]?>" class="w000 d_ck" autocomplete="off">
 	</td>
+
 
 	<td>
 		<div>ログインPASS	</div><input type="text" name="cast_pass" value="<?=$staff_data["login_pass"]?>" class="w000" autocomplete="new_password">

@@ -119,14 +119,11 @@ header{
 	z-index:3;
 }
 
-#block_3{
-	height:300vw;
+#block_3,#block_4{
+	height:200vw;
 
 }
 
-#block_4{
-	z-index:5;
-}
 
 #block_5{
 	z-index:6;
@@ -150,7 +147,8 @@ header{
 .box_ab{
 	width			:100vw;
 	height			:auto;
-	padding-top		:12vw;
+	padding			:12vw 0 3vw 0;
+	background		:none;
 }
 
 .box_top{
@@ -163,7 +161,7 @@ header{
 
 .box_flex_left{
 	position		:absolute;
-	top				:45vw;
+	top				:53vw;
 	left			:1vw;
 	width			:94vw;
 	height			:125vw;
@@ -178,7 +176,7 @@ header{
 	right			:-20vh;
 	display			:block;
 	width			:94vw;
-	height			:24vw;
+	height			:32vw;
 	padding			:1vw;
 	font-size		:3.5vw;
 	line-height		:5.5vw;
@@ -219,20 +217,20 @@ header{
 }
 
 .box_item_p{
-	height			:31vw;
+	height			:28.5vw;
 	width			:40vw;	
 	font-size		:3vw;
-	line-height		:5vw;
+	line-height		:4.2vw;
 	padding			:1vw;
 }
 
 .box_s{
 	position		:absolute;
-	bottom			:0vh;
-	left			:2vh;
-	font-size		:1.8vh;
-	line-height		:2.5vh;
-	color			:#4040600;
+	bottom			:0;
+	left			:1vw;
+	font-size		:3vw;
+	line-height		:3vw;
+	color			:#000090;
 }
 
 .box_item_icon{
@@ -286,10 +284,9 @@ header{
 
 .box_item2{
 	margin			:2vw;
-	width			:60vw;
-	height			:22vw;
+	width			:65vw;
 	font-size		:3vw;
-	line-height		:5vw;
+	line-height		:4.2vw;
 	color			:#303030;	
 }
 
@@ -303,7 +300,7 @@ header{
 }
 
 .box_1_0{
-	margin			:20vw auto 3vw auto;
+	margin			:10vw auto;
 	width			:88vw;
 	padding			:2vw;
 	height			:52vw;

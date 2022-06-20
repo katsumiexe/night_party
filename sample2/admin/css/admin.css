@@ -36,6 +36,13 @@ input[type="checkbox"],input[type="radio"]{
 	z-index			:100;
 }
 
+
+.ck_login_id_err{
+	font-size	:13px;
+	font-weight	:700;
+	color		:#a00000;
+}
+
 .pop{
 	display			:none;
 	position		:absolute;

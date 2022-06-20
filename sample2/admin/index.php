@@ -44,8 +44,8 @@ if($menu_post == "blog_write"){
 			imagewebp($img2,$img_link.".webp");
 		}
 
-		$img2	= imagecreatetruecolor(200,200);
-		ImageCopyResampled($img2, $img, 0, 0, 0, 0, 200, 200, 600, 600);
+		$img2	= imagecreatetruecolor(300,300);
+		ImageCopyResampled($img2, $img, 0, 0, 0, 0, 300, 300, 600, 600);
 		imagepng($img2,$img_link."_s.png");
 
 		if($admin_config["webp_select"] == 1){
@@ -85,6 +85,8 @@ if($staff_set){
 	$staff_mail		=$_POST["staff_mail"];
 	$staff_address	=$_POST["staff_address"];
 	$staff_registday=$_POST["staff_registday"];
+
+	$id_check		=$_POST["id_check"];
 
 	$b_date			=$_POST["b_date"];
 
@@ -177,7 +179,9 @@ if($staff_set){
 			$sql.=" `genji`='{$genji}',";
 			$sql.=" `genji_kana`='{$genji_kana}',";
 
+if($id_check != 1){
 			$sql.=" `login_id`='{$cast_id}',";
+}
 			$sql.=" `login_pass`='{$cast_pass}',";
 			$sql.=" `cast_mail`='{$cast_mail}',";
 			$sql.=" `cast_status`='{$cast_status}',";
@@ -197,6 +201,11 @@ if($staff_set){
 			mysqli_query($mysqli,$sql);
 
 		}else{//新規１　かCAST追加3
+
+if($id_check == 1){
+			$cast_id="";
+}
+
 			$sql="INSERT INTO ".TABLE_KEY."_cast (`id`,`genji`,`genji_kana`,`login_id`,`login_pass`,`cast_mail`,`cast_status`,`ctime`,`cast_sort`,`cast_salary`,`ribbon_use`,`cast_ribbon`,`del`)";
 			$sql.="VALUES('{$staff_id}','{$genji}','{$genji_kana}','{$cast_id}','{$cast_pass}','{$cast_mail}','0','{$ctime}','0','{$cast_salary}','{$ribbon_use}','{$cast_ribbon}',0)";
 			mysqli_query($mysqli,$sql);

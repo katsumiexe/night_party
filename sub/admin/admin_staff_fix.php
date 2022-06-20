@@ -341,7 +341,7 @@ CAST情報
 <tr>
 	<td>
 		<div>ログインID	</div><input type="text" name="cast_id" value="<?=$staff_data["login_id"]?>" class="w000" autocomplete="off">
-		<div>ログインID <span class="ck_login_id_err" style="display:none;">既に使われています</span></div><input id="ck_login_id" type="text" name="cast_id" value="<?=$staff_data["login_id"]?>" class="w000 d_ck" autocomplete="off">
+		<span class="ck_login_id_err" style="display:none;">既に使われています</span>
 	</td>
 
 	<td>

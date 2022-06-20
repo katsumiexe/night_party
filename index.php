@@ -245,7 +245,7 @@
 
 					<div class="box_item_in">
 						<div class="box_item_title">TOP
-							<span id="box_4_icon_1" class="box_item_icon pc_only">
+							<span id="box_4_icon_1" class="box_item_icon">
 								<span class="box_item_icon_3"></span>
 								<span class="box_item_icon_2">SAMPLE</span>
 								<span class="al"></span>
@@ -261,7 +261,7 @@
 				<div id="box_item_b2" class="box_item">
 					<div class="box_item_in">
 						<div class="box_item_title">カレンダー
-							<span id="box_4_icon_2" class="box_item_icon pc_only">
+							<span id="box_4_icon_2" class="box_item_icon">
 								<span class="box_item_icon_3"></span>
 								<span class="box_item_icon_2">SAMPLE</span>
 								<span class="al"></span>
@@ -277,15 +277,15 @@
 				<div id="box_item_b3" class="box_item">
 					<div class="box_item_in">
 						<div class="box_item_title">顧客リスト
-							<span id="box_4_icon_3" class="box_item_icon pc_only">
+							<span id="box_4_icon_3" class="box_item_icon">
 								<span class="box_item_icon_3"></span>
 								<span class="box_item_icon_2">SAMPLE</span>
 								<span class="al"></span>
 							</span>
 						</div>
 						<p class="box_item_p">
-							お客様の詳細や、来店履歴、利用金額やバック額を記載できます。<br>
-							ランク評価、顔写真投稿、<span class="box_l">グループ分けも可能</span>ですので、わかりやすく管理することができます。<br>
+							お客様の詳細や、来店履歴、利用の詳細を記載できます。<br>
+							ランク評価、顔写真投稿、グループ分けも可能ですので、わかりやすく管理することができます。<br>
 						</p>
 					</div>
 				</div>
@@ -293,7 +293,7 @@
 				<div id="box_item_b4" class="box_item">
 					<div class="box_item_in">
 						<div class="box_item_title">EasyTalk
-							<span id="box_4_icon_4" class="box_item_icon pc_only">
+							<span id="box_4_icon_4" class="box_item_icon">
 								<span class="box_item_icon_3"></span>
 								<span class="box_item_icon_2">SAMPLE</span>
 								<span class="al"></span>
@@ -343,7 +343,7 @@
 			<div id="box_right_b" class="box_flex_right">
 				<div class="box_item2">
 				HIME-Karte（ヒメカルテ）は『お客様ノート』と『スケジュール帳』の機能を併せ持つ、サイト連動型のキャスト用マイページです。<br>
-				実際働くキャストがどのようなものを望んでいるのか、何に困っているかなど、現場の声を多く集めて作られました。<br>
+				<span class="pc_only">働くキャストがどのようなものを望んでいるのか、何に困っているかなど、現場の声を多く集めて作られました。<br></span>
 				キャストに働きやすい環境を提供するのもお店の務めです。HIME-Karteを使う事で普段のルーティーン業務をシステム化し、ミスと負担を減らします。<br>
 				<img src="./z_img/img3.webp" class="box_item2_img" alt="cast_image">
 				</div>
