@@ -290,7 +290,8 @@ header{
 	background		:#a0c0ff;
 	border			:0.2vh solid #ffffff;
 	overflow		:hidden;
-	cursor:pointer;
+	cursor			:pointer;
+	border-radius	:1vh;
 }
 
 .box_item_icon_1,.box_item_icon_3{
@@ -313,26 +314,15 @@ header{
 	position		:absolute;
 	top				:0;
 	left			:0;
-	font-size		:2.5vh;
+	font-size		:3vh;
 	height			:3.5vh;
 	line-height		:3.5vh;
 	color			:#ffffff;
 	text-align		:center;
 	width			:5vh;
+	font-family		:at_icon;
+	
 }
-
-.box_item_icon_4{
-	position	:absolute;
-	top			:0;
-	left		:1vh;
-	bottom		:0;
-	margin		:auto;
-	height:		:3vh;
-	width		:3vh;
-	font-size	:2.5vw;
-	font-family	:at_icon;
-}
-
 
 .al{
 	display		:block;

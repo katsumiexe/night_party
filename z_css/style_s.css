@@ -126,14 +126,12 @@ header{
 }
 
 .box_flex{
-	position			:relative;
+	display				:block;
 	margin				:0 auto;
-	display				:flex;
-	width				:170vh;
-	height				:90vh;
-	padding-top			:10vh;
-	background			:rgba(255,255,255,0.6);
-	justify-content		:space-between;
+	width				:100vw;
+	height				:360vw;
+	padding-top			:10vw;
+	background			:none;
 }
 
 .box_ab{
@@ -223,11 +221,12 @@ header{
 .box_item_icon{
 	right			:1vw;
 	height			:5vw;
-	width			:20vw;
+	width			:6vw;
 	background		:#a0c0ff;
 	border			:1px solid #ffffff;
 	overflow		:hidden;
 	cursor			:pointer;
+	border-radius	:1vw;
 }
 
 .box_item_icon_1,.box_item_icon_3{
@@ -235,18 +234,16 @@ header{
 }
 
 .box_item_icon_2{
-	left			:1.5vw;
-	font-size		:3vw;
+	font-size		:4vw;
 	height			:5vw;
 	line-height		:5vw;
 	width			:6vw;
 	color			:#ffffff;
-	text-align		:left;
 }
 
 
 .al{
-	display		:block;
+	display		:none;
 	position	:absolute;
 	top			:0;
 	bottom		:0;
@@ -446,24 +443,23 @@ header{
 
 .box_5_left{
 	margin				:1vw auto;
-	width				:98vw;
-	flex-basis			:98vw;
+	width				:100vw;
 }
 
 .box_5_right{
 	margin				:1vw auto;
-	width				:98vw;
-	flex-basis			:98vw;
+	width				:100vw;
 }
+
 
 .box_5_title{
 	position		:relative;
 	margin			:0 auto 1vh auto;
-	width			:111vh;
-	height			:6vh;
-	line-height		:7vh;
-	border-bottom	:0.5vh solid #202020;
-	font-size		:3.5vh;
+	width			:94vw;
+	height			:10vw;
+	line-height		:12vw;
+	border-bottom	:0.5vw solid #202020;
+	font-size		:5vw;
 	font-weight		:700;
 	color			:#101520;
 	text-align		:left;
@@ -471,10 +467,10 @@ header{
 
 .box_5_title_s{
 	display			:inline-block;
-	margin			:0 0.5vh;
-	height			:6vh;
-	line-height		:9vh;
-	font-size		:2vh;
+	margin			:0 0.5vw;
+	height			:6vw;
+	line-height		:9vw;
+	font-size		:4vw;
 	color			:#101520;
 	text-align		:left;
 }
@@ -482,68 +478,59 @@ header{
 .box_5_title_p{
 	position		:absolute;
 	bottom			:0px;
-	right			:1vh;
-	height			:6vh;
-	line-height		:6vh;
-	font-size		:4.5vh;
+	right			:1vw;
+	height			:10vw;
+	line-height		:12vw;
+	font-size		:6vw;
 	font-weight		:700;
 	color			:#d00000;
 	text-align		:right;
 }
 
 .box_5_0_title{
-	position		:relative;
-	margin			:1vh auto;
-	width			:110vh;
-	flex-basis		:110vh;
-	text-align		:left;
-	font-size		:2.5vh;
-	font-weight		:700;
-	height			:4.5vh;
-	line-height		:5.5vh;
+	margin			:1vw auto;
+	width			:94vw;
+	flex-basis		:94vw;
+	font-size		:4.5vw;
+	height			:7vw;
+	line-height		:8vw;
 	border-bottom	:1px solid #101010;
 }
 
 
 .box_5_1{
 	position		:relative;
-	margin			:1vw;
-	width			:98vw;
-	flex-basis		:98vw;
+	margin			:1vw auto;
+	width			:96vw;
+	flex-basis		:96vw;
 	text-align		:left;
 }
 
 5.box_5_1_title{
 	position		:relative;
-	margin			:1vh auto 0 auto;
-	width			:53vh;
-	flex-basis		:53vh;
-	text-align		:left;
-	font-size		:2.2vh;
+	margin			:2vw auto 0 auto;
+	width			:96vw;
+	flex-basis		:96vw;
+	font-size		:3.5vw;
 	font-weight		:700;
-	height			:3.5vh;
-	line-height		:3.5vh;
+	height			:7vw;
+	line-height		:8vw;
 	border-bottom	:1px solid #101010;
 }
 
 .box_5_1_title_s{
-	margin			:0;
-	text-align		:left;
-	font-size		:1.8vh;
-	height			:3.5vh;
-	line-height		:4vh;
+	font-size		:3.5vw;
+	height			:5.5vw;
+	line-height		:6.5vw;
 }
 
 .box_5_0_title_p{
 	position		:absolute;
-	right			:0.5vh;
-	bottom			:0vh;
-	width			:53vh;
-	text-align		:right;
-	font-size		:2.8vh;
-	font-weight		:700;
-		height		:3.5vh;
-	line-height		:3.5vh;
+	right			:1vw;
+	width			:30vw;
+	font-size		:5vw;
+		height		:6vw;
+	line-height		:6vw;
 	color			:#e00000;
 }
 
