@@ -90,7 +90,7 @@
 		<div class="box_ab">
 			<h2 class="h2">サンプルサイト</h2>
 			<div id="block_2_box_0" class="box_2_0">
-				「Night-Paty」は大きく3種類のテーマをご用意させていただきました。ここからお店の形態やイメージに合わせてカスタマイズさせていただきます。<br>
+				「Night-Paty」は大きく2種類のテーマをご用意させていただきました。ここからお店の形態やイメージに合わせてカスタマイズさせていただきます。<br>
 				同じデザインを他店舗で使用することはありませんのでオリジナリティを出すことができます。<br>
 				完全オリジナルデザインも大歓迎です。担当にお客様のイメージをお伝えくださいませ。<br>
 			</div>
@@ -98,24 +98,14 @@
 			<div class="box_2_flex">
 				<div id="block_2_box_1" class="box_2_1">
 ソワレ
-
 					<div class="box_2_1_text">
 						キャスト情報を前面に出す、オーソドックスなスタイルです。<br>
-						ページ構成は複雑になりますが、多くのキャストを表示したい際には最適です。<br>
-						キャスト数が多く、入れ替えも頻繁でキャストの露出を増やしていきたい店舗様用です。<br>
+						スケジュールや写真ブログでキャストの露出を高めてアピールします。<br>
+						キャスト数が多く、入れ替えも頻繁な店舗様用です。<br>
 					</div>
 				</div>
 
 				<div id="block_2_box_2" class="box_2_1">
-フェスタ
-					<div class="box_2_1_text">
-						店舗イベントの告知に特化したスタイルです。<br>
-						キャストの露出は最小限にし、イベント告知を前面に押し出します。<br>
-						キャストの入れ替えが少なく、日替わりでイベントを告知したい店舗様には最適です。<br>
-					</div>
-				</div>
-
-				<div id="block_2_box_3" class="box_2_1">
 コーマ
 					<div class="box_2_1_text">
 						コンテンツを1ページにまとめたシンプルなスタイルです。<br>
@@ -342,9 +332,8 @@
 
 			<div id="box_right_b" class="box_flex_right">
 				<div class="box_item2">
-				HIME-Karte（ヒメカルテ）は『お客様ノート』と『スケジュール帳』の機能を併せ持つ、サイト連動型のキャスト用マイページです。<br>
-				<span class="pc_only">働くキャストがどのようなものを望んでいるのか、何に困っているかなど、現場の声を多く集めて作られました。<br></span>
-				キャストに働きやすい環境を提供するのもお店の務めです。HIME-Karteを使う事で普段のルーティーン業務をシステム化し、ミスと負担を減らします。<br>
+				HIME-Karte（ヒメカルテ）は『お客様ノート』と『スケジュール帳』の機能を併せ持つ、キャスト用マイページです。<br>
+				シフト提出やブログ投稿もHIME-Karteから可能ですので、キャストの負担を大きく減らすことができます。
 				<img src="./z_img/img3.webp" class="box_item2_img" alt="cast_image">
 				</div>
 			</div>
@@ -470,14 +459,11 @@
 		</div>
 	</article>
 </section>
-
 <form id="form_4" action="./sub/mypage/index.php" method="post" target="_blank">
 	<input type="hidden" id="h_4" name="prm" value="0">
 </form>
-
 <form id="form_3" action="./sub/admin/index.php" method="post" target="_blank">
 	<input type="hidden" id="h_3" name="prm" value="0">
 </form>
-
 </body>
 </html>

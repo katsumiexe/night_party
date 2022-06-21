@@ -315,7 +315,6 @@ header{
 	font-size		:2vh;
 	height			:3.5vh;
 	line-height		:3.5vh;
-	width			:12vh;
 	color			:#ffffff;
 	text-align		:left;
 	width			:11vh;
@@ -517,7 +516,7 @@ header{
 
 .box_2_1{
 	position		:relative;
-	width			:46vh;
+	width			:70vh;
 	padding			:0;
 	height			:46vh;
 	border			:1.5vh solid #e0c0f0;

@@ -72,30 +72,22 @@ header{
 .h2{
 	position		:absolute;
 	top				:1vw;
-	left			:-1vw;
-	width			:70vw;
-	height			:8vw;
-	line-height		:8vw;
+	left			:2vw;
+	width			:75vw;
+	height			:10vw;
+	line-height		:10vw;
 	text-align		:left;
 	background		:linear-gradient(#cc0000,#900000);	
 	color			:#fafafa;
 	font-size		:4vw;
-	border-radius	:1vw 4vw 4vw 1vw;
+	border-radius	:1vw 5vw 5vw 1vw;
 	margin			:0;
-	padding-left 	:1vw;
+	padding-left 	:2vw;
 	box-shadow		:2px 2px 2px rgba(30,30,30,0.6);
 }
 
 .h2_s{
-	position			:absolute;
-	top					:6vh;
-	left				:-2vh;
-	width				:2.4vh;
-	height				:3vh;
-	z-index				:-1;
-	background			:#101520;	
-	transform-origin	:left bottom;
-	transform			:rotate(20deg);
+	display:none;
 }
 
 .box{
@@ -219,8 +211,8 @@ header{
 .box_item_p{
 	height			:28.5vw;
 	width			:40vw;	
-	font-size		:3vw;
-	line-height		:4.2vw;
+	font-size		:3.5vw;
+	line-height		:5vw;
 	padding			:1vw;
 }
 
@@ -234,22 +226,29 @@ header{
 }
 
 .box_item_icon{
-	display			:inline-block;
-	position		:absolute;
-	top				:0;
-	bottom			:0;
-	right			:1vh;
-	margin			:auto;
-	font-size		:2vh;
-	height			:3.5vh;
-	line-height		:3.3vh;
-	width			:12vh;
+	right			:1vw;
+	height			:5vw;
+	width			:20vw;
 	background		:#a0c0ff;
-	border			:0.2vh solid #ffffff;
+	border			:1px solid #ffffff;
+	overflow		:hidden;
+	cursor			:pointer;
+}
+
+.box_item_icon_1,.box_item_icon_3{
+	display:none;
+}
+
+.box_item_icon_2{
+	left			:1.5vw;
+	font-size		:3vw;
+	height			:5vw;
+	line-height		:5vw;
+	width			:12vw;
 	color			:#ffffff;
 	text-align		:left;
-	padding			:0 0 0 0.5vh;
 }
+
 
 .al{
 	display		:block;
@@ -268,8 +267,12 @@ header{
 }
 
 
-#block_4 .box_flex_left, #block_4 .box_flex_right, #block_4 .box_item_in{
-	border			:1vh solid #ffc0e0;
+#block_4 .box_flex_left, #block_4 .box_flex_right{
+	border			:1vw solid #ffc0e0;
+}
+
+#block_4 .box_item_in{
+	border			:0.5vw solid #ffc0e0;
 }
 
 #block_4 .box_item_title{
@@ -285,8 +288,8 @@ header{
 .box_item2{
 	margin			:2vw;
 	width			:65vw;
-	font-size		:3vw;
-	line-height		:4.2vw;
+	font-size		:3.5vw;
+	line-height		:5vw;
 	color			:#303030;	
 }
 

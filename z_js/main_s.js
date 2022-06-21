@@ -95,7 +95,7 @@ if (window.matchMedia('(max-width: 960px)').matches) {
 				},
 			});
 
-			$('#box_right_a').delay(600).animate({"right":"1vw","opacity":"1"},800);
+			$('#box_right_a').animate({"right":"1vw","opacity":"1"},1200);
 
 
 		}else if( $(this).scrollTop() > $('#block_4').offset().top - Height && Flag_4==0){
@@ -175,7 +175,7 @@ if (window.matchMedia('(max-width: 960px)').matches) {
 				},
 			});
 
-			$('#box_right_b').delay(600).animate({"right":"1vw","opacity":"1"},800);
+			$('#box_right_b').animate({"right":"1vw","opacity":"1"},1200);
 
 
 
