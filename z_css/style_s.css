@@ -163,20 +163,15 @@ header{
 }
 
 .box_flex_right{
-	position		:absolute;
 	top				:15vw;
 	right			:-20vh;
-	display			:block;
 	width			:94vw;
 	height			:32vw;
 	padding			:1vw;
 	font-size		:3.5vw;
 	line-height		:5.5vw;
-	text-align		:left;
-	background		:#fafafa;
 	border			:1vw solid #60a0f0;
 	border-radius	:2vw;
-	opacity			:0;
 }
 
 .box_item{
@@ -244,7 +239,7 @@ header{
 	font-size		:3vw;
 	height			:5vw;
 	line-height		:5vw;
-	width			:12vw;
+	width			:6vw;
 	color			:#ffffff;
 	text-align		:left;
 }
@@ -299,7 +294,7 @@ header{
 	right			:0;
 	left			:auto;
 	margin			:auto;
-	width			:24vw;
+	width			:28vw;
 }
 
 .box_1_0{
@@ -449,31 +444,19 @@ header{
 
 }
 
-.box_4_left{
-	position			:relative;
-	margin				:1vh auto;
-	display				:flex;
-	flex-wrap			:wrap;
-	width				:111vh;
-	flex-basis			:111vh;
-	justify-content		:flex-start;
-	align-items			:flex-start;
-	align-content		:flex-start;
+.box_5_left{
+	margin				:1vw auto;
+	width				:98vw;
+	flex-basis			:98vw;
 }
 
-.box_4_right{
-	position			:relative;
-	margin				:1vh auto;
-	flex-wrap			:wrap;
-	display				:flex;
-	width				:55vh;
-	flex-basis			:55vh;
-	justify-content		:flex-start;
-	align-items			:flex-start;
-	align-content		:flex-start;
+.box_5_right{
+	margin				:1vw auto;
+	width				:98vw;
+	flex-basis			:98vw;
 }
 
-.box_4_title{
+.box_5_title{
 	position		:relative;
 	margin			:0 auto 1vh auto;
 	width			:111vh;
@@ -486,7 +469,7 @@ header{
 	text-align		:left;
 }
 
-.box_4_title_s{
+.box_5_title_s{
 	display			:inline-block;
 	margin			:0 0.5vh;
 	height			:6vh;
@@ -496,7 +479,7 @@ header{
 	text-align		:left;
 }
 
-.box_4_title_p{
+.box_5_title_p{
 	position		:absolute;
 	bottom			:0px;
 	right			:1vh;
@@ -508,7 +491,7 @@ header{
 	text-align		:right;
 }
 
-.box_4_0_title{
+.box_5_0_title{
 	position		:relative;
 	margin			:1vh auto;
 	width			:110vh;
@@ -522,15 +505,15 @@ header{
 }
 
 
-.box_4_1{
+.box_5_1{
 	position		:relative;
-	margin			:1vh;
-	width			:53vh;
-	flex-basis		:53vh;
+	margin			:1vw;
+	width			:98vw;
+	flex-basis		:98vw;
 	text-align		:left;
 }
 
-.box_4_1_title{
+5.box_5_1_title{
 	position		:relative;
 	margin			:1vh auto 0 auto;
 	width			:53vh;
@@ -543,7 +526,7 @@ header{
 	border-bottom	:1px solid #101010;
 }
 
-.box_4_1_title_s{
+.box_5_1_title_s{
 	margin			:0;
 	text-align		:left;
 	font-size		:1.8vh;
@@ -551,7 +534,7 @@ header{
 	line-height		:4vh;
 }
 
-.box_4_0_title_p{
+.box_5_0_title_p{
 	position		:absolute;
 	right			:0.5vh;
 	bottom			:0vh;
@@ -564,7 +547,7 @@ header{
 	color			:#e00000;
 }
 
-.box_4_1_title_p{
+.box_5_1_title_p{
 	position		:absolute;
 	right			:0.5vh;
 	bottom			:0vh;

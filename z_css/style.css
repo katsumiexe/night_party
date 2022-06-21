@@ -211,7 +211,7 @@ header{
 	font-size		:2vh;
 	line-height		:3vh;
 	text-align		:left;
-	background		:#fafafa;
+	background		:#ffffff;
 	border			:1vh solid #60a0f0;
 	border-radius	:2vh;
 	opacity			:0;
@@ -286,7 +286,7 @@ header{
 	right			:1vh;
 	margin			:auto;
 	height			:3.5vh;
-	width			:12vh;
+	width			:5vh;
 	background		:#a0c0ff;
 	border			:0.2vh solid #ffffff;
 	overflow		:hidden;
@@ -297,10 +297,11 @@ header{
 	position		:absolute;
 	top				:-3vh;
 	right			:15vh;
-	width			:14vh;
+	width			:17vh;
 	height			:11vh;
 	background		:linear-gradient(30deg,#0000c0,#000080);
 	transform		:rotate(-30deg);
+	padding-left	:3vh;
 }
 
 .box_item_icon_3{
@@ -311,13 +312,25 @@ header{
 	display			:inline-block;
 	position		:absolute;
 	top				:0;
-	left			:1vh;
-	font-size		:2vh;
+	left			:0;
+	font-size		:2.5vh;
 	height			:3.5vh;
 	line-height		:3.5vh;
 	color			:#ffffff;
-	text-align		:left;
-	width			:11vh;
+	text-align		:center;
+	width			:5vh;
+}
+
+.box_item_icon_4{
+	position	:absolute;
+	top			:0;
+	left		:1vh;
+	bottom		:0;
+	margin		:auto;
+	height:		:3vh;
+	width		:3vh;
+	font-size	:2.5vw;
+	font-family	:at_icon;
 }
 
 
@@ -552,7 +565,7 @@ header{
 
 }
 
-.box_4_left{
+.box_5_left{
 	position			:relative;
 	margin				:1vh auto;
 	display				:flex;
@@ -564,7 +577,7 @@ header{
 	align-content		:flex-start;
 }
 
-.box_4_right{
+.box_5_right{
 	position			:relative;
 	margin				:1vh auto;
 	flex-wrap			:wrap;
@@ -576,7 +589,7 @@ header{
 	align-content		:flex-start;
 }
 
-.box_4_title{
+.box_5_title{
 	position		:relative;
 	margin			:10vh auto 1vh auto;
 	width			:111vh;
@@ -590,7 +603,7 @@ header{
 	opacity			:0;
 }
 
-.box_4_title_s{
+.box_5_title_s{
 	display			:inline-block;
 	margin			:0 0.5vh;
 	height			:6vh;
@@ -600,7 +613,7 @@ header{
 	text-align		:left;
 }
 
-.box_4_title_p{
+.box_5_title_p{
 	position		:absolute;
 	bottom			:0px;
 	right			:1vh;
@@ -612,7 +625,7 @@ header{
 	text-align		:right;
 }
 
-.box_4_0_title{
+.box_5_0_title{
 	position		:relative;
 	margin			:10vh auto 1vh auto;
 	width			:110vh;
@@ -627,7 +640,7 @@ header{
 }
 
 
-.box_4_1{
+.box_5_1{
 	position		:relative;
 	margin			:10vh auto 1vh auto;
 	width			:53vh;
@@ -636,7 +649,7 @@ header{
 	opacity			:0;
 }
 
-.box_4_1_title{
+.box_5_1_title{
 	position		:relative;
 	margin			:1vh auto 0 auto;
 	width			:53vh;
@@ -649,7 +662,7 @@ header{
 	border-bottom	:1px solid #101010;
 }
 
-.box_4_1_title_s{
+.box_5_1_title_s{
 	margin			:0;
 	text-align		:left;
 	font-size		:1.8vh;
@@ -657,7 +670,7 @@ header{
 	line-height		:4vh;
 }
 
-.box_4_0_title_p{
+.box_5_0_title_p{
 	position		:absolute;
 	right			:0.5vh;
 	bottom			:0vh;
@@ -670,7 +683,7 @@ header{
 	color			:#e00000;
 }
 
-.box_4_1_title_p{
+.box_5_1_title_p{
 	position		:absolute;
 	right			:0.5vh;
 	bottom			:0vh;

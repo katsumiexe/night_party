@@ -128,7 +128,7 @@
 						<div class="box_item_title">ページ管理
 							<span id="box_3_icon_1" class="box_item_icon pc_only">
 								<span class="box_item_icon_1"></span>
-								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="box_item_icon_2"></span>
 								<span class="al"></span>
 							</span>
 						</div>
@@ -145,7 +145,7 @@
 						<div class="box_item_title">コンフィグ
 							<span id="box_3_icon_2" class="box_item_icon pc_only">
 								<span class="box_item_icon_1"></span>
-								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="box_item_icon_2"></span>
 								<span class="al"></span>
 							</span>
 						</div>
@@ -162,7 +162,7 @@
 						<div class="box_item_title">キャスト管理
 							<span id="box_3_icon_3" class="box_item_icon pc_only">
 								<span class="box_item_icon_1"></span>
-								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="box_item_icon_2"></span>
 								<span class="al"></span>
 							</span>
 						</div>
@@ -177,7 +177,7 @@
 						<div class="box_item_title">シフト管理
 							<span id="box_3_icon_4" class="box_item_icon pc_only">
 								<span class="box_item_icon_1"></span>
-								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="box_item_icon_2"></span>
 								<span class="al"></span>
 							</span>
 						</div>
@@ -192,7 +192,7 @@
 						<div class="box_item_title">ブログ管理
 							<span id="box_3_icon_5" class="box_item_icon pc_only">
 								<span class="box_item_icon_1"></span>
-								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="box_item_icon_2"></span>
 								<span class="al"></span>
 							</span>
 						</div>						<p class="box_item_p">
@@ -206,7 +206,7 @@
 						<div class="box_item_title">お問い合わせ
 							<span id="box_3_icon_6" class="box_item_icon pc_only">
 								<span class="box_item_icon_1"></span>
-								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="box_item_icon_2"></span>
 								<span class="al"></span>
 							</span>
 						</div>
@@ -237,7 +237,7 @@
 						<div class="box_item_title">TOP
 							<span id="box_4_icon_1" class="box_item_icon">
 								<span class="box_item_icon_3"></span>
-								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="box_item_icon_2"></span>
 								<span class="al"></span>
 							</span>
 						</div>
@@ -253,7 +253,7 @@
 						<div class="box_item_title">カレンダー
 							<span id="box_4_icon_2" class="box_item_icon">
 								<span class="box_item_icon_3"></span>
-								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="box_item_icon_2"></span>
 								<span class="al"></span>
 							</span>
 						</div>
@@ -269,7 +269,7 @@
 						<div class="box_item_title">顧客リスト
 							<span id="box_4_icon_3" class="box_item_icon">
 								<span class="box_item_icon_3"></span>
-								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="box_item_icon_2"></span>
 								<span class="al"></span>
 							</span>
 						</div>
@@ -285,7 +285,7 @@
 						<div class="box_item_title">EasyTalk
 							<span id="box_4_icon_4" class="box_item_icon">
 								<span class="box_item_icon_3"></span>
-								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="box_item_icon_2"></span>
 								<span class="al"></span>
 							</span>
 						</div>
@@ -301,7 +301,7 @@
 						<div class="box_item_title">ブログ
 							<span id="box_4_icon_5" class="box_item_icon">
 								<span class="box_item_icon_3"></span>
-								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="box_item_icon_2"></span>
 								<span class="al"></span>
 							</span>
 						</div>
@@ -318,7 +318,7 @@
 						<div class="box_item_title">アナリティクス
 							<span id="box_4_icon_6" class="box_item_icon">
 								<span class="box_item_icon_3"></span>
-								<span class="box_item_icon_2">SAMPLE</span>
+								<span class="box_item_icon_2"></span>
 								<span class="al"></span>
 							</span>
 						</div>
@@ -344,13 +344,13 @@
 		<div class="box_flex">
 			<h2 class="h2">お見積り</h2>
 			<div class="h2_s">　</div>
-			<div class="box_4_left">
-				<div id="block_5_box_0" class="box_4_title">基本料金<span class="box_4_title_p">120,000円</span></div>
-				<div id="block_5_box_1" class="box_4_0_title">Night-partyシステム一式<span class="box_4_0_title_p">50,000円</span></div>
-				<div id="block_5_box_2" class="box_4_0_title">基本制作費<span class="box_4_0_title_p">70,000円</span></div>
+			<div class="box_5_left">
+				<div id="block_5_box_0" class="box_5_title">基本料金<span class="box_5_title_p">120,000円</span></div>
+				<div id="block_5_box_1" class="box_5_0_title">Night-partyシステム一式<span class="box_5_0_title_p">50,000円</span></div>
+				<div id="block_5_box_2" class="box_5_0_title">基本制作費<span class="box_5_0_title_p">70,000円</span></div>
 
-				<div id="block_5_box_3" class="box_4_1">
-					<div class="box_4_1_title">ページ構成　<span class="box_4_1_title_s">※仕様により変わることがあります</span></div>
+				<div id="block_5_box_3" class="box_5_1">
+					<div class="box_5_1_title">ページ構成　<span class="box_5_1_title_s">※仕様により変わることがあります</span></div>
 					<p class="comm_p">
 					▼TOPページ(index.php)<br>
 					　┗イベント(event.php)<br>
@@ -382,8 +382,8 @@
 					</p>
 				</div>
 
-				<div id="block_5_box_4" class="box_4_1">
-					<div class="box_4_1_title">その他</div>
+				<div id="block_5_box_4" class="box_5_1">
+					<div class="box_5_1_title">その他</div>
 					<p class="comm_p">
 					専用CMS<br>
 					　※パソコン専用のサイトになります
