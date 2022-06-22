@@ -447,10 +447,10 @@
 		</div>
 	</article>
 </section>
-<form id="form_4" action="./sub/mypage/index.php" method="post" target="_blank">
+<form id="form_4" action="./sample1/mypage/index.php" method="post" target="_blank">
 	<input type="hidden" id="h_4" name="prm" value="0">
 </form>
-<form id="form_3" action="./sub/admin/index.php" method="post" target="_blank">
+<form id="form_3" action="./sample2/admin/index.php" method="post" target="_blank">
 	<input type="hidden" id="h_3" name="prm" value="0">
 </form>
 </body>

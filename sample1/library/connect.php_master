@@ -1,0 +1,9 @@
+<?
+define("TABLE_KEY", "EEE");
+$mysqli = mysqli_connect("AAA","BBB","CCC","DDD");
+if(!$mysqli){
+	$msg="接続エラー";
+	die("接続エラー");
+}
+mysqli_set_charset($mysqli,'UTF-8'); 
+?>
