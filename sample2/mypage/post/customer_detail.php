@@ -156,40 +156,38 @@ if($result = mysqli_query($mysqli,$sql)){
 		$dat1["log"]=str_replace("\n","<br>",$dat1["log"]);
 
 		$app1.="<div class=\"customer_memo_log\">";
-			$app1.="<span class=\"customer_detail_in\"></span>";
-			$app1.="<div class=\"customer_memo_date\"><span class=\"customer_detail_in\"></span><span class=\"customer_log_icon\"></span><span class=\"customer_log_date_detail\">{$t_date} {$s_time}-{$e_time}</span>";
-				$app1.="<div id=\"l_chg{$dat1["log_id"]}\" class=\"customer_log_chg\"></div>";
-				$app1.="<div id=\"l_del{$dat1["log_id"]}\" class=\"customer_log_del\"></div>";
-			$app1.="</div>";
+		$app1.="<div class=\"customer_memo_date\"><span class=\"customer_log_icon\"></span><span class=\"customer_log_date_detail\">{$t_date} {$s_time}-{$e_time}</span>";
+		$app1.="<div id=\"l_chg{$dat1["log_id"]}\" class=\"customer_log_chg\"></div>";
+		$app1.="<div id=\"l_del{$dat1["log_id"]}\" class=\"customer_log_del\"></div>";
+		$app1.="</div>";
 
 		$app1.="<div id=\"tr_log_detail{$dat1["log_id"]}\" class=\"customer_memo_log_in\">";
-			$app1.="<div class=\"customer_log_memo customer_detail_in\">";
-			$app1.="{$dat1["log"]}";
-			$app1.="</div>";
+		$app1.="<div class=\"customer_log_memo\">";
+		$app1.="{$dat1["log"]}";
+		$app1.="</div>";
 
-			$app1.="<div class=\"customer_log_item item_pts\" style=\"border:1px solid #606090; background:#606090; color:#fafafa;\">";
-			$app1.="<span class=\"customer_detail_in\"></span>";
-			$app1.="<span class=\"sel_log_icon_s\"></span>";
-			$app1.="<span class=\"sel_log_comm_s\">利用総額</span>";
-			$app1.="<span class=\"sel_log_price_s\">{$dat1["pts"]}</span>";
-			$app1.="</div>";
+		$app1.="<div class=\"customer_log_item item_pts\" style=\"border:1px solid #606090; background:#606090; color:#fafafa;\">";
+		$app1.="<span class=\"sel_log_icon_s\"></span>";
+		$app1.="<span class=\"sel_log_comm_s\">利用総額</span>";
+		$app1.="<span class=\"sel_log_price_s\">{$dat1["pts"]}</span>";
+		$app1.="</div>";
 
 
-			$app1.="<div class=\"customer_log_list\"　>";
-			$sql	 ="SELECT * FROM ".TABLE_KEY."_cast_log_list";
-			$sql	.=" WHERE master_id='{$dat1["log_id"]}'";
-			$sql	.=" ORDER BY ".TABLE_KEY."_cast_log_list.id DESC";
+		$app1.="<div class=\"customer_log_list\"　>";
+		$sql	 ="SELECT * FROM ".TABLE_KEY."_cast_log_list";
+		$sql	.=" WHERE master_id='{$dat1["log_id"]}'";
+		$sql	.=" ORDER BY ".TABLE_KEY."_cast_log_list.id DESC";
 
-			if($result2 = mysqli_query($mysqli,$sql)){
-				while($dat3 = mysqli_fetch_assoc($result2)){
-					$app1.="<div class=\"customer_log_item\" style=\"border:1px solid {$dat3["log_color"]}; color:{$dat3["log_color"]};\">";
-					$app1.="<span class=\"sel_log_icon_s\">{$dat3["log_icon"]}</span>";
-					$app1.="<span class=\"sel_log_comm_s\">{$dat3["log_comm"]}</span>";
-					$app1.="<span class=\"sel_log_price_s\">{$dat3["log_price"]}</span>";
-					$app1.="</div>";
-				}
+		if($result2 = mysqli_query($mysqli,$sql)){
+			while($dat3 = mysqli_fetch_assoc($result2)){
+				$app1.="<div class=\"customer_log_item\" style=\"border:1px solid {$dat3["log_color"]}; color:{$dat3["log_color"]};\">";
+				$app1.="<span class=\"sel_log_icon_s\">{$dat3["log_icon"]}</span>";
+				$app1.="<span class=\"sel_log_comm_s\">{$dat3["log_comm"]}</span>";
+				$app1.="<span class=\"sel_log_price_s\">{$dat3["log_price"]}</span>";
+				$app1.="</div>";
 			}
-			$app1.="</div>";
+		}
+		$app1.="</div>";
 		$app1.="</div>";
 		$app1.="</div>";
 	}
