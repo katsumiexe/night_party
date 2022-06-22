@@ -7,7 +7,6 @@ ini_set( 'display_errors', 1 );
 ini_set('error_reporting', E_ALL);
 */
 
-
 include_once('../../library/sql_post.php');
 $cus	=array();
 $c_id	=$_POST["c_id"];
