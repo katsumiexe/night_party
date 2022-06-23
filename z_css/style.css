@@ -615,22 +615,23 @@ header{
 
 .box_5_0{
 	position		:relative;
-	margin			:5vh auto;
+	margin			:2vh auto;
 	width			:110vh;
 	flex-basis		:110vh;
-	height			:8vh;
 	border			:1px solid #101010;
 	opacity			:0;
+	background:#fefefe;
 }
 
 .box_5_0_title{
 	position		:relative;
-	margin			:2vh auto;
-	width			:110vh;
+	margin			:1vh auto;
+	width			:108vh;
 	text-align		:left;
 	font-size		:2.5vh;
 	height			:4vh;
 	line-height		:4vh;
+	font-weight		:700;
 }
 
 .box_5_0_title_p{
@@ -690,6 +691,16 @@ header{
 }
 
 .comm_p{
+	width			:53vh;
+	margin			:0 auto;
+	padding			:0.5vh 0.5vh 1vh 0.5vh;
+	text-align		:left;
+	line-height		:3.2vh;
+	font-size		:2.2vh;
+	color			:#101520;
+}
+
+.comm_p2{
 	width			:53vh;
 	margin			:0 auto;
 	padding			:0.5vh 0.5vh 1vh 0.5vh;

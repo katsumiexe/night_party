@@ -1,9 +1,5 @@
 <?
 include_once('../../library/sql_post_admin.php');
-/*
-ini_set( 'display_errors', 1 );
-ini_set('error_reporting', E_ALL);
-*/
 
 $id		=$_POST['id'];
 $val	=$_POST['val'];

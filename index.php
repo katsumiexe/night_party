@@ -405,32 +405,32 @@
 
 				<div id="block_5_box_6" class="box_5_1">
 					<div class="box_5_1_title">レンタルサーバー・ドメイン取得<span class="box_5_1_title_p">10,000円</span></div>
-					<p class="comm_p">
+					<p class="comm_p2">
 						WebP対応、アダルトOKのSSD高速レンタルサーバー、comドメインで手配させていただきます。<br>
 						<span style="font-weight:700">初回10カ月分込み</span>。それ以降はサーバー、ドメイン併せて年間で10000円前後かかります。<br>
 					</p>
 
 					<div class="box_5_1_title">トップバナー追加(1200px × 480px)<span class="box_5_1_title_p">10,000円</span></div>
-					<p class="comm_p">
+					<p class="comm_p2">
 					2枚目以降はスライド表示となります。<br>
 					</p>
 
 					<div class="box_5_1_title">サイドバナー追加(600px × 150px)<span class="box_5_1_title_p">5,000円</span></div>
-					<p class="comm_p">
+					<p class="comm_p2">
 					2枚目以降は下に並びます。<br>
 					</p>
 
 					<div class="box_5_1_title">ページ追加<span class="box_5_1_title_p">12,000円～</span></div>
-					<p class="comm_p">ご相談下さい。</p>
+					<p class="comm_p2">ご相談下さい。</p>
 
 					<div class="box_5_1_title">出張撮影<span class="box_5_1_title_p">20,000円</span></div>
-					<p class="comm_p">
+					<p class="comm_p2">
 					キャスト・お食事・店内撮影など。2時間<br>
 					お時間、曜日はご相談下さい。場所は東京都・神奈川県・千葉県・埼玉県に限らせていただきます。<br>
 					撮影した写真の著作権は譲渡します。サイト以外でもご自由にご利用いただけます。<br>
 					</p>
 					<div class="box_5_1_title">ロゴ作成<span class="box_5_1_title_p">10,000円</span></div>
-					<p class="comm_p">
+					<p class="comm_p2">
 					1200px × 1200px 単色<br>
 					著作権は譲渡します。サイト以外でもご自由にご利用いただけます。<br>
 					</p>
@@ -453,7 +453,7 @@
 <form id="form_4" action="./sample1/mypage/index.php" method="post" target="_blank">
 	<input type="hidden" id="h_4" name="prm" value="0">
 </form>
-<form id="form_3" action="./sample2/admin/index.php" method="post" target="_blank">
+<form id="form_3" action="./sample1/admin/index.php" method="post" target="_blank">
 	<input type="hidden" id="h_3" name="prm" value="0">
 </form>
 </body>

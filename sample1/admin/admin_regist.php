@@ -69,11 +69,6 @@ td{
 #cast_l{
 	border-radius:0 10px 10px 0;
 }
-.ck_login_id_err{
-	font-size	:13px;
-	font-weight	:700;
-	color		:#a00000;
-}
 </style>
 <link rel="stylesheet" href="./css/admin_image.css?t=<?=time()?>">
 <script src="./js/image.js?_<?=time()?>"></script>
@@ -111,6 +106,7 @@ $(function(){
 	$('#ck_login_id').on('change',function () {
 		$(this).css("background-color","#fafafa");
 		$('.ck_login_id_err').hide();
+		$('#id_check').val("0");
 
 		$.ajax({
 			url:'./post/id_check.php',
@@ -124,6 +120,7 @@ $(function(){
 			if(data =="err"){
 				$('#ck_login_id').css("background-color","#fff0f0");
 				$('.ck_login_id_err').fadeIn(100);
+				$('#id_check').val("1");
 			}
 
 		}).fail(function(jqXHR, textStatus, errorThrown){
@@ -137,6 +134,8 @@ $(function(){
 <form id="form" action="" method="post">
 <input type="hidden" value="1" name="staff_set">
 <input id="send" type="hidden" value="" name="send">
+<input id="id_check" type="hidden" value="0" name="id_check">
+
 <header class="head">
 <h2 class="head_ttl">スタッフ登録</h2>
 <button id="set" type="button" class="submit_btn staff_regist">保存</button>

@@ -74,6 +74,7 @@ if($pg<$pg_max){
 $sql	 ="SELECT * FROM ".TABLE_KEY."_contact_list";
 $sql	.=" WHERE list_id>0";
 $sql	.= $app;
+$sql	.= " ORDER BY list_id DESC";
 $sql	.= " LIMIT {$pg_st},30";
 
 if($result = mysqli_query($mysqli,$sql)){
