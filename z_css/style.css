@@ -613,17 +613,24 @@ header{
 	text-align		:right;
 }
 
-.box_5_0_title{
+.box_5_0{
 	position		:relative;
-	margin			:10vh auto 1vh auto;
+	margin			:5vh auto;
 	width			:110vh;
 	flex-basis		:110vh;
+	height			:8vh;
+	border			:1px solid #101010;
+	opacity			:0;
+}
+
+.box_5_0_title{
+	position		:relative;
+	margin			:2vh auto;
+	width			:110vh;
 	text-align		:left;
 	font-size		:2.5vh;
 	height			:4vh;
-	line-height		:5vh;
-	border-bottom	:1px solid #101010;
-	opacity			:0;
+	line-height		:4vh;
 }
 
 .box_5_0_title_p{
