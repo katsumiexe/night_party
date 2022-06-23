@@ -334,6 +334,7 @@
 
 			<div class="box_5_left">
 				<div id="block_5_box_0" class="box_5_title">基本料金<span class="box_5_title_p">120,000円</span></div>
+
 				<div id="block_5_box_1" class="box_5_0_title">Night-partyシステム一式<span class="box_5_0_title_p">50,000円</span></div>
 				<div id="block_5_box_2" class="box_5_0_title">基本制作費<span class="box_5_0_title_p">70,000円</span></div>
 

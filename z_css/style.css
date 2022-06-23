@@ -620,11 +620,21 @@ header{
 	flex-basis		:110vh;
 	text-align		:left;
 	font-size		:2.5vh;
-	font-weight		:700;
-	height			:4.5vh;
-	line-height		:5.5vh;
+	height			:4vh;
+	line-height		:5vh;
 	border-bottom	:1px solid #101010;
 	opacity			:0;
+}
+
+.box_5_0_title_p{
+	position		:absolute;
+	right			:0.5vh;
+	bottom			:0vh;
+	width			:53vh;
+	text-align		:right;
+	font-size		:2.8vh;
+	height			:3.5vh;
+	line-height		:3.5vh;
 }
 
 
@@ -658,18 +668,6 @@ header{
 	line-height		:4vh;
 }
 
-.box_5_0_title_p{
-	position		:absolute;
-	right			:0.5vh;
-	bottom			:0vh;
-	width			:53vh;
-	text-align		:right;
-	font-size		:2.8vh;
-	font-weight		:700;
-		height		:3.5vh;
-	line-height		:3.5vh;
-	color			:#e00000;
-}
 
 .box_5_1_title_p{
 	position		:absolute;
