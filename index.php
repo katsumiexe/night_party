@@ -443,23 +443,24 @@
 		<div class="box_ab">
 			<h2 class="h2">ご依頼・お問合せ</h2>
 			<div class="h2_s">　</div>
-
-			<div id="block_6_box_0" class="box_6_0">
+			<div class="box_6_0">
+				<div id="block_6_box_0" class="box_6_0_1">
 				ただいまお問合せ、ご依頼は「Coconara（ココナラ）」様にて承っています。
 				<div class="box_6_1">ココナラへ移動する</div>
+				</div>
 			</div>
 		</div>
 	</article>
 </section>
+<footer class="footer">
+
+
+</footer>
 <form id="form_4" action="./sample1/mypage/index.php" method="post" target="_blank">
 	<input type="hidden" id="h_4" name="prm" value="0">
 </form>
 <form id="form_3" action="./sample1/admin/index.php" method="post" target="_blank">
 	<input type="hidden" id="h_3" name="prm" value="0">
 </form>
-<footer class="footer">
-
-
-</footer>
 </body>
 </html>

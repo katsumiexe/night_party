@@ -195,6 +195,9 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 				$('#block_5_box_4').delay(1000).animate({"opacity":"1","margin-top":"1vh"},600);
 				$('#block_5_box_5').delay(400).animate({"opacity":"1","margin-top":"1vh"},900);
 				$('#block_5_box_6').delay(1000).animate({"opacity":"1","margin-top":"1vh"},600);
+
+			}else if(BoxView == 6){
+				$('#block_6_box_0').delay(200).animate({"opacity":"1","margin-top":"5vh"},900);
 			}
 
 

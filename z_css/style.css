@@ -705,13 +705,25 @@ header{
 	width		:60vh;
 	height		:40vh;
 	text-align	:left;
-	padding		:5vh 10vh auto 10vh;
 	border		:0.5vh solid #c0a0e0;
-	font-size	:2vh;
-	color		:#606060;
-	margin		:10vh auto 1vh auto;
+	margin		:3vh auto;
 	background:#fafafa;
 }
+
+.box_6_0_1{
+	position	:absolute;
+	top			:15vh;
+	left		:0;
+	right		:0;
+	font-size	:2vh;
+	color		:#606060;
+	display		:block;
+	width		:30vh;
+	height		:20vh;
+	text-align	:center;
+	margin		:auto;
+}
+
 
 .box_6_1{
 	position	:absolute;
@@ -731,8 +743,15 @@ header{
 	font-weight:700;
 }
 
-
-
+.footer{
+	position	:sticky;
+	bottom		:0;
+	display		:block;
+	width		:1200px;
+	height		:10vh;
+	margin-top	:5vh;
+	background	:#903000;
+}
 
 .comm_p{
 	width			:53vh;
