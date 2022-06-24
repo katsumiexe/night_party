@@ -6,16 +6,15 @@
 <title>Night-Party</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet" href="./z_css/style.css?t=<?=time()?>">
 <link rel="stylesheet" href="./z_css/style_s.css?t=<?=time()?>">
-<style>
-</style>
-<script>
-</script>
+
+
+<style></style>
 <script src="./z_js/main.js?t=<?=time()?>"></script>
 <script src="./z_js/main_s.js?t=<?=time()?>"></script>
-
 </head>
 <body class="body">
 <header id="header">
@@ -148,8 +147,7 @@
 						</div>
 
 						<p class="box_item_p">
-リボンの設定や、日付や曜日切替日の設定が可能です。
-また、ここからキャストのプロフィール項目、やチェックボックスなどを編集や追加が可能です。
+こちらでサイトや、キャストのプロフィール項目等の設定を行えます。
 						</p>
 					</div>
 				</div>
@@ -163,7 +161,9 @@
 							</span>
 						</div>
 						<p class="box_item_p">
+
 							キャストのプロフィールや写真のほか、管理に便利なステータスやキャストの個人情報等も登録できます。
+
 						</p>
 					</div>
 				</div>
@@ -204,7 +204,7 @@
 							</span>
 						</div>
 						<p class="box_item_p">
-							キャストからの応募メールをCMSで確認することができます。対応日時、履歴も残せますので、誰が見てもわかるようにできます。
+							キャストの応募メールをCMSで確認することができます。対応日時、履歴も残せますので、誰が見てもわかるようにできます。
 						</p>
 					</div>
 				</div>
@@ -280,7 +280,6 @@
 						</div>
 						<p class="box_item_p">
 							タイムライン仕様のコミュニケーションツールで、キャストは自身のアカウントをお客様に伝えることなく利用できます。<br>
-							<span class="box_s">お客様側のメールアドレスが必要です。</span>
 						</p>
 					</div>
 				</div>
@@ -441,12 +440,13 @@
 	</article>
 
 	<article id="block_6" class="box">
-		<div class="box_flex">
+		<div class="box_ab">
 			<h2 class="h2">ご依頼・お問合せ</h2>
 			<div class="h2_s">　</div>
-			<div class="box_6">
+
+			<div id="block_6_box_0" class="box_6_0">
 				ただいまお問合せ、ご依頼は「Coconara（ココナラ）」様にて承っています。
-				<div class="box_6_btn">ココナラへ移動する</div>
+				<div class="box_6_1">ココナラへ移動する</div>
 			</div>
 		</div>
 	</article>
@@ -457,5 +457,9 @@
 <form id="form_3" action="./sample1/admin/index.php" method="post" target="_blank">
 	<input type="hidden" id="h_3" name="prm" value="0">
 </form>
+<footer class="footer">
+
+
+</footer>
 </body>
 </html>

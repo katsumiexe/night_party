@@ -172,7 +172,7 @@ header{
 	width			:170vh;
 	height			:90vh;
 	padding-top		:10vh;
-	background:		rgba(255,255,255,0.5);
+	background		:rgba(255,255,255,0.5);
 }
 
 .box_top{
@@ -396,8 +396,8 @@ header{
 
 .border{
 	padding			:0 0.5vh;
-	font-weight		:700;
-	background		:linear-gradient(transparent 50%, #f0f030 50%,#f0f030 100%);
+//	font-weight		:700;
+	background		:linear-gradient(transparent 50%, #ffe0e8 50%, #ffe0e8 100%);
 }
 
 #box_item_1{
@@ -698,6 +698,41 @@ header{
 	line-height		:3.5vh;
 	color			:#e00000;
 }
+
+.box_6_0{
+	position	:relative;
+	display		:block;
+	width		:60vh;
+	height		:40vh;
+	text-align	:left;
+	padding		:5vh 10vh auto 10vh;
+	border		:0.5vh solid #c0a0e0;
+	font-size	:2vh;
+	color		:#606060;
+	margin		:10vh auto 1vh auto;
+	background:#fafafa;
+}
+
+.box_6_1{
+	position	:absolute;
+	bottom		:0;
+	left		:0;
+	right		:0;
+	display		:block;
+	width		:30vh;
+	height		:12vh;
+	text-align	:center;
+
+	border-radius:6vh;
+	font-size	:2.5vh;
+	background	:#e0d0ff;
+	color		:#fafafa;
+	margin		:auto;
+	font-weight:700;
+}
+
+
+
 
 .comm_p{
 	width			:53vh;

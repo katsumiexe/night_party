@@ -311,9 +311,7 @@ header{
 }
 
 .border{
-	padding			:0 0.5vh;
-	font-weight		:700;
-	background		:linear-gradient(transparent 50%, #f0f030 50%,#f0f030 100%);
+	padding			:0 1vw;
 }
 
 .box_1_1{
@@ -553,6 +551,35 @@ header{
 	height			:5.5vw;	
 	line-height		:5.5vw;
 	color			:#e00000;
+}
+
+.box_6_0{
+	width		:50vw;
+	height		:25vw;
+	padding		:10vw 15vw;
+	border		:0.1px solid #c0a0e0;
+	font-size	:3.5vw;
+	color		:#606060;
+	margin		:10vw auto 1vw auto;
+}
+
+.box_6_1{
+	position	:absolute;
+	bottom		:5vw;
+	left		:0;
+	right		:0;
+	display		:block;
+	width		:50vw;
+	height		:12vw;
+	line-height	:12vw;
+	text-align	:center;
+
+	border-radius:4vw;
+	font-size	:4vw;
+	background	:#0000a0;
+	color		:#fafafa;
+	margin		:auto;
+	font-weight:700;
 }
 
 .comm_p,.comm_p2{

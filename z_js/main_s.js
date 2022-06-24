@@ -188,6 +188,7 @@ if (window.matchMedia('(max-width: 960px)').matches) {
 
 			$('#box_right_b').animate({"right":"1vw","opacity":"1"},1200);
 
+
 		}else if( $(this).scrollTop() > $('#block_5').offset().top - Height && Flag_5==0){
 			Flag_5=1;
 			$('#block_5_box_0').delay(400).animate({"opacity":"1","margin-top":"1vw"},900);
@@ -197,6 +198,11 @@ if (window.matchMedia('(max-width: 960px)').matches) {
 			$('#block_5_box_4').delay(1000).animate({"opacity":"1","margin-top":"1vw"},600);
 			$('#block_5_box_5').delay(400).animate({"opacity":"1","margin-top":"1vw"},900);
 			$('#block_5_box_6').delay(1000).animate({"opacity":"1","margin-top":"1vw"},600);
+
+
+		}else if( $(this).scrollTop() > $('#block_6').offset().top - Height && Flag_6==0){
+			Flag_6=1;
+			$('#block_6_box_0').delay(400).animate({"opacity":"1","margin-top":"1vw"},900);
 
 
 
