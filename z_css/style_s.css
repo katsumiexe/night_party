@@ -565,17 +565,13 @@ header{
 }
 
 .box_6_0_1{
-	position	:absolute;
-	top			:15vw;
-	left		:0;
-	right		:0;
 	font-size	:3.5vw;
 	color		:#606060;
 	display		:block;
 	width		:50vw;
 	height		:30vw;
-	text-align	:center;
-	margin		:auto;
+	margin		:15vw auto 5vw auto;
+	opacity:0;
 }
 
 .box_6_1{

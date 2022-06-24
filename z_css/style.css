@@ -711,17 +711,14 @@ header{
 }
 
 .box_6_0_1{
-	position	:absolute;
-	top			:15vh;
-	left		:0;
-	right		:0;
+	position	:relative;
 	font-size	:2vh;
 	color		:#606060;
 	display		:block;
 	width		:30vh;
 	height		:20vh;
 	text-align	:center;
-	margin		:auto;
+	margin		:15vh auto 5vh auto;
 }
 
 
