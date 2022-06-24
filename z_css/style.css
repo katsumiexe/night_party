@@ -519,16 +519,18 @@ header{
 
 .box_2_1{
 	position		:relative;
+	display			:inline-block;
+	text-decoration	:none;
 	width			:70vh;
 	padding			:0;
 	height			:46vh;
-	border			:1.5vh solid #e0c0f0;
+	border			:1.5vh solid #d0a0a8;
 	border-radius	:2vh;
 	line-height		:3vh;
 	text-align		:left;
 	color			:#384240;
 	font-size		:2.1vh;
-	background		:linear-gradient(135deg,#e0e8f0,#d0d8e0);
+	background		:linear-gradient(135deg,#fff0fa,#e0d0da);
 	margin-top		:10vh;
 	opacity			:0;
 }
@@ -550,7 +552,7 @@ header{
 	font-size		:2vh;
 	padding			:1.5vh 1vh 1vh 1.5vh;
 	background		:#f0f0f0;
-	box-shadow		:0.2vh 0.2vh 0.5vh rgba(30,30,30,0.4) inset;
+	box-shadow		:0.2vh 0.2vh 0.5vh rgba(255,240,250,0.6) inset;
 }
 
 .box_5_left{
@@ -589,6 +591,10 @@ header{
 	color			:#101520;
 	text-align		:left;
 	opacity			:0;
+}
+
+#block_5_box_5{
+	width:53vh;flex-basis:53vh;
 }
 
 .box_5_title_s{
@@ -654,6 +660,9 @@ header{
 	text-align		:left;
 	opacity			:0;
 }
+
+
+
 
 .box_5_1_title{
 	position		:relative;

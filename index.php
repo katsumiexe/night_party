@@ -96,23 +96,23 @@
 			</div>
 
 			<div class="box_2_flex">
-				<div id="block_2_box_1" class="box_2_1">
+				<a href="./sample1" target="_BLANK" id="block_2_box_1" class="box_2_1">
 ソワレ
 					<div class="box_2_1_text">
 						キャスト情報を前面に出す、オーソドックスなスタイルです。<br>
 						スケジュールや写真ブログでキャストの露出を高めてアピールします。<br>
 						キャスト数が多く、入れ替えも頻繁な店舗様用です。<br>
 					</div>
-				</div>
+				</a>
 
-				<div id="block_2_box_2" class="box_2_1">
+				<a href="./sample2" target="_BLANK" id="block_2_box_2" class="box_2_1">
 コーマ
 					<div class="box_2_1_text">
-						コンテンツを1ページにまとめたシンプルなスタイルです。<br>
-						キャストスケジュール、ブログを廃し、更新関連はスタッフブログがメインとなります。<br>
+						コンテンツを1ページにまとめたスタイルです。<br>
+						スケジュール、ブログを廃し、更新関連はスタッフブログがメインとなります。<br>
 						キャスト数が少なく、サイトの更新自体を少なめにしたい店舗様用です。<br>
 					</div>
-				</div>
+				</a>
 			</div>
 		</div>
 	</article>
@@ -400,8 +400,9 @@
 				</div>
 			</div>
 
+	
 			<div class="box_5_right">
-				<div id="block_5_box_5" class="box_5_title" style="width:53vh;flex-basis:53vh;">有料オプション</div>
+				<div id="block_5_box_5" class="box_5_title">有料オプション</div>
 
 				<div id="block_5_box_6" class="box_5_1">
 					<div class="box_5_1_title">レンタルサーバー・ドメイン取得<span class="box_5_1_title_p">10,000円</span></div>
