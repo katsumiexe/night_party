@@ -166,6 +166,33 @@
 	font-size		:3vw;
 }
 
+.top_comm_in{
+	border				:1px solid #c8b880;
+	margin				:0.5vw;
+	position			:relative;
+}
+
+.top_comm_log{
+	font-size			:2.5vw;
+	line-height			:4vw;
+	padding				:2vw;
+}
+
+.top_comm_title{
+	border-bottom		:0.5vw double #f8e8c0;
+	font-size			:3vw;
+	font-weight			:700;
+	height				:6vw;
+	line-height			:6vw;
+	margin				:2vw auto;
+	width				:70vw;
+}
+
+.top_comm{
+	border				:0.5vw solid #c8b880;
+	margin				:2vw auto;
+	width				:90vw;
+}
 
 .top_img{
 	left			:100vw;

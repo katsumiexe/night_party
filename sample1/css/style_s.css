@@ -145,6 +145,36 @@
 	display:block;
 }
 
+.top_comm_in{
+	border				:1px solid #c8b880;
+	margin				:0.5vw;
+	position			:relative;
+}
+
+.top_comm_log{
+	font-size			:3.5vw;
+	line-height			:5vw;
+	padding				:1vw 2vw;
+}
+
+.top_comm_title{
+	border-bottom		:0.5vw double #f8e8c0;
+	font-size			:4vw;
+	font-weight			:700;
+	height				:8vw;
+	line-height			:8vw;
+	margin				:2vw auto;
+	width				:70vw;
+}
+
+.top_comm{
+	border				:0.5vw solid #c8b880;
+	margin				:2vw auto;
+	width				:90vw;
+}
+
+
+
 .event_click{
 	bottom			:1vw;
 	right			:2vw;
@@ -176,6 +206,9 @@
 	border-top		:0.5vw solid #fafafa;
 	border-right	:0.5vw solid #fafafa;
 }
+
+
+
 
 .foot{
 	width		:100vw;

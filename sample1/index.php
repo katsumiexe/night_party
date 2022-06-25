@@ -1,6 +1,13 @@
 <?php
 include_once('./library/sql.php');
 
+$sql ="SELECT * FROM ".TABLE_KEY."_contents";
+$sql.=" WHERE page='top'";
+$sql.=" ORDER BY id DESC";
+$sql.=" LIMIT 1";
+$result = mysqli_query($mysqli,$sql);
+$top_comm = mysqli_fetch_assoc($result);
+
 $h_time=$admin_config["start_time"]*100;
 $sql  ="SELECT id, tag_name, tag_icon,sort FROM ".TABLE_KEY."_tag ";
 $sql .=" WHERE tag_group='ribbon'";
@@ -56,15 +63,15 @@ if($result = mysqli_query($mysqli,$sql)){
 							$row["ribbon_c1"]	=$ribbon[$ribbon_sort[2]]["c1"];
 							$row["ribbon_c2"]	=$ribbon[$ribbon_sort[2]]["c2"];
 
-						}elseif((strtotime($day_8) - strtotime($row["ctime"]))/86400<$admin_config["new_commer_cnt"]){
-							$row["ribbon_name"]	=$ribbon[$ribbon_sort[3]]["name"];
-							$row["ribbon_c1"]	=$ribbon[$ribbon_sort[3]]["c1"];
-							$row["ribbon_c2"]	=$ribbon[$ribbon_sort[3]]["c2"];
-
 						}elseif($day_8 < $row["ctime"] && $admin_config["coming_soon"]==1){
 							$row["ribbon_name"]	=$ribbon[$ribbon_sort[1]]["name"];
 							$row["ribbon_c1"]	=$ribbon[$ribbon_sort[1]]["c1"];
 							$row["ribbon_c2"]	=$ribbon[$ribbon_sort[1]]["c2"];
+
+						}elseif((strtotime($day_8) - strtotime($row["ctime"]))/86400<$admin_config["new_commer_cnt"]){
+							$row["ribbon_name"]	=$ribbon[$ribbon_sort[3]]["name"];
+							$row["ribbon_c1"]	=$ribbon[$ribbon_sort[3]]["c1"];
+							$row["ribbon_c2"]	=$ribbon[$ribbon_sort[3]]["c2"];
 						}
 					}
 
@@ -264,10 +271,18 @@ var NewCnt=1;
 	</div>
 <?}?>
 
+	<?if($top_comm){?>
+	<article class="top_comm">
+		<div class="top_comm_in">
+			<h2 class="top_comm_title"><?=$top_comm["title"]?></h2>
+			<p class="top_comm_log"><?=str_replace("\n","<br>",$top_comm["contents"])?></p>
+		</div>
+	</article>
+	<?}?>
+
 	<div class="main_b">
 		<?if($count_news){?>
 		<h2 class="main_b_title">新着情報<a href="./news_list.php" class="news_all">一覧</a><div class="news_al">　</div></h2>
- 
 		<div class="main_b_top">
 			<?for($n=0;$n<$count_news;$n++){?>
 				<?if($news[$n]["category"]){?>

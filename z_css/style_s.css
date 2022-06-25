@@ -179,14 +179,18 @@ header{
 }
 
 .box_item_in{
+	padding			:1vw;
 	position		:absolute;
 	top				:0;
 	left			:0;
 	right			:auto;
 	bottom			:auto;
-	width			:44vw;
+	width			:43vw;
 	height			:38vw;
 	border			:0.5vw solid #60a0f0;
+	border			:none;
+	border			:1px solid #0000c0;
+	background		:#f0f8ff;
 }
 
 
@@ -202,7 +206,7 @@ header{
 	width			:40vw;	
 	font-size		:3.5vw;
 	line-height		:5vw;
-	padding			:1vw;
+	padding			:2vw 1.5vw;
 }
 
 .box_s{
