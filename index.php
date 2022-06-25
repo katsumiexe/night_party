@@ -147,7 +147,7 @@
 						</div>
 
 						<p class="box_item_p">
-こちらでサイトや、キャストのプロフィール項目等の設定を行えます。
+							サイトの表示に関することや、キャストのプロフィール項目などの設定を行えます。
 						</p>
 					</div>
 				</div>
@@ -161,9 +161,7 @@
 							</span>
 						</div>
 						<p class="box_item_p">
-
 							キャストのプロフィールや写真のほか、管理に便利なステータスやキャストの個人情報等も登録できます。
-
 						</p>
 					</div>
 				</div>
@@ -443,19 +441,17 @@
 		<div class="box_ab">
 			<h2 class="h2">ご依頼・お問合せ</h2>
 			<div class="h2_s">　</div>
-			<div class="box_6_0">
-				<div id="block_6_box_0" class="box_6_0_1">
+			<div id="block_6_box_0" class="box_6_0">
+				<div class="box_6_0_1">
 				ただいまお問合せ、ご依頼は「Coconara（ココナラ）」様にて承っています。
 				<div class="box_6_1">ココナラへ移動する</div>
 				</div>
 			</div>
 		</div>
+		<div></div>
+		<footer class="footer"></footer>
 	</article>
 </section>
-<footer class="footer">
-
-
-</footer>
 <form id="form_4" action="./sample1/mypage/index.php" method="post" target="_blank">
 	<input type="hidden" id="h_4" name="prm" value="0">
 </form>

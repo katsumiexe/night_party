@@ -202,7 +202,7 @@ if (window.matchMedia('(max-width: 960px)').matches) {
 
 		}else if( $(this).scrollTop() > $('#block_6').offset().top - Height && Flag_6==0){
 			Flag_6=1;
-			$('#block_6_box_0').delay(200).animate({"opacity":"1","margin-top":"5vw"},900);
+			$('#block_6_box_0').delay(900).animate({"opacity":"1","margin-top":"5vw"},900);
 
 
 

@@ -503,7 +503,7 @@ header{
 	height			:22vh;
 	border			:1px solid #0000c0;
 	color			:#384240;
-	background		:linear-gradient(135deg,#fafafa,#f0f0f0);
+	background		:linear-gradient(135deg,#fcfcfc,#fafafa);
 	text-align		:left;
 	opacity			:0;
 }
@@ -530,7 +530,7 @@ header{
 	text-align		:left;
 	color			:#384240;
 	font-size		:2.1vh;
-	background		:linear-gradient(135deg,#fff0fa,#e0d0da);
+	background		:linear-gradient(135deg,#fff8f8,#fff0f0);
 	margin-top		:10vh;
 	opacity			:0;
 }
@@ -544,14 +544,14 @@ header{
 	width			:40vh;
 	padding			:0;
 	height			:18vh;
-	border			:1px solid #303030;
+	border			:1px solid #ffd0d0;
 	border-radius	:5px;
 	line-height		:3vh;
 	text-align		:left;
 	color			:#384240;
 	font-size		:2vh;
 	padding			:1.5vh 1vh 1vh 1.5vh;
-	background		:#f0f0f0;
+	background		:#fcfcfc;
 	box-shadow		:0.2vh 0.2vh 0.5vh rgba(255,240,250,0.6) inset;
 }
 
@@ -580,31 +580,32 @@ header{
 }
 
 .box_5_title{
-	position		:relative;
-	margin			:10vh auto 1vh auto;
-	width			:111vh;
-	height			:6vh;
-	line-height		:7vh;
-	border-bottom	:0.5vh solid #202020;
-	font-size		:3.5vh;
-	font-weight		:700;
-	color			:#101520;
-	text-align		:left;
-	opacity			:0;
+	position			:relative;
+	margin				:10vh auto 1vh auto;
+	width				:111vh;
+	height				:6vh;
+	line-height			:7vh;
+	border-bottom		:0.5vh solid #202020;
+	font-size			:3.5vh;
+	font-weight			:700;
+	color				:#101520;
+	text-align			:left;
+	opacity				:0;
 }
 
 #block_5_box_5{
-	width:53vh;flex-basis:53vh;
+	width				:53vh;
+	flex-basis			:53vh;
 }
 
 .box_5_title_s{
-	display			:inline-block;
-	margin			:0 0.5vh;
-	height			:6vh;
-	line-height		:9vh;
-	font-size		:2vh;
-	color			:#101520;
-	text-align		:left;
+	display				:inline-block;
+	margin				:0 0.5vh;
+	height				:6vh;
+	line-height			:9vh;
+	font-size			:2vh;
+	color				:#101520;
+	text-align			:left;
 }
 
 .box_5_title_p{
@@ -637,7 +638,7 @@ header{
 	font-size		:2.5vh;
 	height			:4vh;
 	line-height		:4vh;
-	font-weight		:700;
+//	font-weight		:700;
 }
 
 .box_5_0_title_p{
@@ -706,8 +707,9 @@ header{
 	height		:40vh;
 	text-align	:left;
 	border		:0.5vh solid #c0a0e0;
-	margin		:3vh auto;
-	background:#fafafa;
+	margin		:15vh auto 3vh auto;
+	background	:#fafafa;
+	opacity:0;
 }
 
 .box_6_0_1{
@@ -718,7 +720,7 @@ header{
 	width		:30vh;
 	height		:20vh;
 	text-align	:center;
-	margin		:15vh auto 5vh auto;
+	margin		:5vh auto 5vh auto;
 }
 
 
@@ -737,16 +739,18 @@ header{
 	background	:#e0d0ff;
 	color		:#fafafa;
 	margin		:auto;
-	font-weight:700;
+	font-weight	:700;
 }
 
 .footer{
-	position	:sticky;
+	position	:absolute;
+	left		:0;
+	right		:0;
 	bottom		:0;
 	display		:block;
 	width		:1200px;
 	height		:10vh;
-	margin-top	:5vh;
+	margin		:auto;
 	background	:#903000;
 }
 
