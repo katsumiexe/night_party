@@ -187,10 +187,8 @@ header{
 	bottom			:auto;
 	width			:43vw;
 	height			:38vw;
-	border			:0.5vw solid #60a0f0;
-	border			:none;
 	border			:1px solid #0000c0;
-	background		:#f0f8ff;
+	background		:#f8faff;
 }
 
 
@@ -265,6 +263,7 @@ header{
 
 #block_4 .box_item_in{
 	border			:0.5vw solid #ffc0e0;
+	background		:#fff8fa;
 }
 
 #block_4 .box_item_title{
