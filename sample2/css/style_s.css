@@ -795,12 +795,12 @@
 }
 
 .main_a_comm{
-	height				:19vw;
-	left				:21vw;
+	height				:25vw;
+	left				:27vw;
 	padding				:0;
 	position			:absolute;
 	top					:0.5vw;
-	width				:70vw;
+	width				:60vw;
 }
 
 .main_a_date{
@@ -813,21 +813,21 @@
 }
 
 .main_a_img:hover{
-	height				:20vw;
-	width				:20vw;
+	height				:26vw;
+	width				:26vw;
 }
 
 .main_a_img_out{
-	height				:20vw;
-	width				:20vw;
+	height				:26vw;
+	width				:26vw;
 }
 
 .main_a_img{
-	height				:20vw;
+	height				:26vw;
 	left				:0;
 	position			:absolute;
-	top					:0;
-	width				:20vw;
+	top					:	0;
+	width				:26vw;
 }
 
 .main_a_more:hover{
@@ -848,7 +848,7 @@
 .main_a_title{
 	color				:#c8c0b0;
 	font-size			:4vw;
-	height				:12vw;
+	height				:18vw;
 	line-height			:6vw;
 	margin				:0.5vw 0.5vw 3vw 0.5vw;
 	width				:67vw;
@@ -859,39 +859,39 @@
 	border				:none;
 	border-bottom		:1px solid #fafafa;
 	flex-basis			:100vw;
-	height				:20vw;
+	height				:26vw;
 	margin				:0;
 	width				:100vw;
 }
 
 .main_al_0{
 	bottom				:0vw;
-	height				:20vw;
+	height				:26vw;
 	right				:0vw;
-	width				:10vw;
+	width				:12vw;
 }
 
 .main_al_1{
 	background			:#c8b880;
 	bottom				:0;
-	height				:20vw;
+	height				:26vw;
 	position			:absolute;
 	right				:0;
 	transform			:rotate(0);
-	width				:10vw;
+	width				:12vw;
 }
 
 .main_al_2{
 	border				:2px solid #302520;
 	border-radius		:50%;
 	bottom				:0;
-	height				:5vw;
+	height				:6vw;
 	left				:0;
 	margin				:auto;
 	position			:absolute;
 	right				:0;
 	top					:0;
-	width				:5vw;
+	width				:6vw;
 }
 
 .main_al_3{
@@ -901,7 +901,7 @@
 	height				:1.5vw;
 	margin				:auto;
 	position			:absolute;
-	right				:4.5vw;
+	right				:5.5vw;
 	top					:0;
 	transform			:rotate(-45deg);
 	transform-origin	:center;

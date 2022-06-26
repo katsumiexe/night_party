@@ -16,7 +16,6 @@ if($result = mysqli_query($mysqli,$sql)){
 	while($row = mysqli_fetch_assoc($result)){
 		$ribbon_sort[$row["sort"]]=$row["id"];
 		$ribbon[$row["id"]]["name"]=$row["tag_name"];
-
 		$tmp=hexdec(str_replace("#","",$row["tag_icon"]));
 		$tmp+=2631720;
 		$tmp=dechex($tmp);

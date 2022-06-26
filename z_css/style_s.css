@@ -150,7 +150,7 @@ header{
 	top				:53vw;
 	left			:1vw;
 	width			:94vw;
-	height			:125vw;
+	height			:127vw;
 	padding			:1vw;
 	border			:1vw solid #60a0f0;
 	border-radius	:2vw;
@@ -206,7 +206,7 @@ header{
 	width			:40vw;	
 	font-size		:3.5vw;
 	line-height		:5vw;
-	padding			:2vw 1.5vw;
+	padding			:1.2vw 1vw;
 }
 
 .box_s{
@@ -556,7 +556,7 @@ header{
 	position	:relative;
 	display		:block;
 	width		:70vw;
-	height		:40vw;
+	height		:50vw;
 	text-align	:left;
 	border		:0.5vw solid #c0a0e0;
 	margin		:15vw auto 5vw auto;
@@ -568,7 +568,7 @@ header{
 	color		:#606060;
 	display		:block;
 	width		:50vw;
-	height		:30vw;
+	height		:40vw;
 	margin		:5vw auto;
 }
 
