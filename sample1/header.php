@@ -48,7 +48,7 @@
 			</tr>
 			<tr>
 				<td class="head_b_2">営業時間</td>
-				<td class="head_b_3">19：00～LAST</td>
+				<td class="head_b_3">19:00～LAST</td>
 			</tr>
 
 			<tr>

@@ -24,8 +24,9 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 			});
 
 			if(BoxView == 1){
-				$('#block_1_box_1').delay(800).animate({"opacity":"1","margin-top":"1vh"},1000);
-				$('#block_1_box_2').delay(1200).animate({"opacity":"1","margin-top":"1vh"},900);
+				$('#block_1_box_0').delay(400).animate({"opacity":"1","margin-top":"1vh"},1000);
+				$('#block_1_box_1').delay(600).animate({"opacity":"1","margin-top":"1vh"},900);
+				$('#block_1_box_2').delay(1000).animate({"opacity":"1","margin-top":"1vh"},800);
 				DownBall();
 
 			}else if(BoxView == 2){

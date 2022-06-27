@@ -46,6 +46,8 @@
 	<article id="block_1" class="box">
 		<div class="box_ab">
 			<h2 class="h2">定額制サイトの「見えない罠」</h2>
+
+			<div id="block_1_box_0" class="box_1">
 			<div id="block_1_box_1" class="box_1_0">
 				<span class="box_1_0_title">そのホームページは「御社」のものですか？</span><br>
 				定額制サイトはその所有権が制作会社にあるため、使われている画像やロゴ等を<span class="border">自由に使う事が出来ません。</span><br>
@@ -59,11 +61,13 @@
 				月額管理費がかからない他、サイトの更新や変更の際は、弊社以外の他の制作会社に依頼することも可能です。<br>
 				もちろん弊社も末永く使っていただけますよう頑張ります！　<span class="border">切磋琢磨する環境だからこそ良い物が生まれるのです。</span><br>
 			</div>
+			</div>
+			
 
 			<div id="box_item_1" class="box_1_1">
 				<div id="ball1" class="box_1_ball"><span class="ball_txt">月額料金0円</span><span class="ball_icon"></span></div>
 				<p class="box_1_1_text">
-				買い切り型のシステムですので毎月の保守費用は0円。また、ホームページ、写真等制作物全ての所有権もお客様のものとなります。<br>
+				買い切り型ですので毎月の保守費用は0円。ホームページ、写真等制作物全ての所有権もお客様のものとなります。<br>
 				継続サポートももちろん歓迎です。必要に応じてご依頼くださいませ。
 				</p>
 			</div>

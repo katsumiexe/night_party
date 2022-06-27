@@ -374,13 +374,22 @@ header{
 	width			:38vh;
 }
 
+.box_1{
+	margin			:4vh auto 3vh auto;
+	width			:162vh;
+	padding			:1vh;
+	height			:42vh;
+	background		:#fc60fc;
+	opacity			:0;
+}
+
+
 .box_1_0{
-	margin			:4vh auto 2.5vh auto;
-	width			:135vh;
+	margin			:4vh auto 3vh 1vh;
+	width			:120vh;
 	padding			:1.5vh;
-	background		:linear-gradient(135deg,#fafafa,#eaeaea);
 	background		:#fcfcfc;
-	height			:18vh;
+	height			:15vh;
 	line-height		:4vh;
 	text-align		:left;
 	color			:#384240;
@@ -411,6 +420,7 @@ header{
 #box_item_3{
 	left			:114vh;
 }
+
 
 .box_1_1{
 	position		:absolute;

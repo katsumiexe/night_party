@@ -42,7 +42,7 @@
 		<table class="head_b_table">
 			<tr>
 				<td class="head_b_1">営業時間</td>
-				<td class="head_b_2">19：00～LAST</td>
+				<td class="head_b_2">19:00～LAST</td>
 			</tr>
 			<tr>
 				<td class="head_b_1">電話番号</td>

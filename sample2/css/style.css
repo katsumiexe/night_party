@@ -2426,12 +2426,13 @@ a{
 	color				:#c8b880;
 	display				:inline-block;
 	font-size			:50px;
-	font-weight			:800;
+	font-weight			:700;
 	height				:60px;
-	line-height			:60px;
-	margin				:0px auto 35px auto;;
+	line-height			:40px;
+	margin				:0px auto 35px auto;
 	text-align			:center;
 	width				:800px;
+	font-family			:serif;
 }
 
 .title_sub{

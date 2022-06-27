@@ -447,7 +447,7 @@ a{
 }
 
 .top_comm{
-	margin		:20px auto;
+	margin		:20px auto 50px auto;
 	position	:relative;
 	width		:800px;
 	border		:2px solid #c8b880;
@@ -468,6 +468,7 @@ a{
 	font-size	:20px;
 	font-weight	:700;
 	color		:#fafafa;
+	margin:0 auto;
 }
 
 .top_comm_log{
