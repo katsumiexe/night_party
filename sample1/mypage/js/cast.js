@@ -2920,6 +2920,9 @@ if(BaseTop =="顧客リスト　"){
 
 		}).done(function(data, textStatus, jqXHR){
 			base_64=$.trim(data);
+
+console.log(base_64);
+
 			$('.img_box').fadeOut(300);
 
 			var cvs = document.getElementById('cvs1');
@@ -3253,6 +3256,7 @@ if(BaseTop =="顧客リスト　"){
 			$(this).removeClass("op05");
 		}
 	});
+
 	$('.upload_trush').on('click',function(){	
 		var cvs = document.getElementById('cvs1');
 		var ctx = cvs.getContext('2d');

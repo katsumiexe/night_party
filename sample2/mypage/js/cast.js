@@ -2869,6 +2869,9 @@ if(BaseTop =="顧客リスト　"){
 
 
 	$('#img_set').on('click',function(){	
+
+	console.log(ImgCode);
+	
 		$('#wait').show();
 		$.each(StSort, function(index, value){
 			St_top[index]		=$("#stamp"+value).css('top');
@@ -2914,6 +2917,8 @@ if(BaseTop =="顧客リスト　"){
 		}).done(function(data, textStatus, jqXHR){
 			base_64=$.trim(data);
 			$('.img_box').fadeOut(300);
+
+console.log(base_64);
 
 			var cvs = document.getElementById('cvs1');
 			var ctx = cvs.getContext('2d');

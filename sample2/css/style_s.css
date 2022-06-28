@@ -345,6 +345,7 @@
 
 .box_1_in{
 	flex-wrap			:wrap;
+	border-top			:1px solid #fafafa;
 }
 
 .box_1{

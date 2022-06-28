@@ -28,6 +28,8 @@ $sql .=" VALUES('{$cast_data["id"]}','{$nick}','{$name}','{$now}','{$birth}','{$
 mysqli_query($mysqli,$sql);
 $tmp_auto=mysqli_insert_id($mysqli);
 
+echo $sql;
+
 if($img_code){
 	$enc_id=substr("00000".$tmp_auto,-6,6);
 	$cast_enc=$cast_data["id"] % 20;

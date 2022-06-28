@@ -15,6 +15,7 @@ $n_day=date("Ymd",$day_time+(86400*7));
 $post_id=$_REQUEST["post_id"];
 $sql="SELECT id,prm,genji FROM ".TABLE_KEY."_cast WHERE id='{$post_id}' AND cast_status<2 LIMIT 1";
 
+
 if($res = mysqli_query($mysqli,$sql)){
 	$cast_data = mysqli_fetch_assoc($res);
 

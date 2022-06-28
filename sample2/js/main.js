@@ -201,34 +201,11 @@ $(document).ready(function () {
 			$('.recruit_pop').delay(2000).fadeOut(1000);
 
 			$('.contact_list').val();
-
 		});
 	});
 
 	$('#recruit_ng').on('click',function(){
 		$('.recruit_pop').fadeOut(200);
 	});
-
-
-	$('.main_a').hover(function(){
-
-		$(this).find('.main_a_img').animate({Cnt:0}, {
-
-		$({Cnt:0}).animate({Cnt:20}, {
-			duration:100,
-			progress:function() {
-				$(this)find('.main_a_img').css({
-					'transform':'rotate(' + this.Rote + 'deg)',
-					'width':this.Top+"px",
-					'heght':this.Lef+"px",
-				});
-			},
-			});
-
-
-	},{
-
-	});
-
 
 });

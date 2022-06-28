@@ -104,36 +104,42 @@ if($img_code){
 
 if($task=="chg"){
 
-	$enc_id=substr("00000".$post_id,-6,6);
+	if($img_code){
+		$enc_id=substr("00000".$post_id,-6,6);
+		$sql ="SELECT prm,cast_id FROM ".TABLE_KEY."_customer";
+		$sql .=" WHERE `id`='{$post_id}'";
+		$sql .=" LIMIT 1";
+		$result = mysqli_query($mysqli,$sql);
+		$row = mysqli_fetch_assoc($result);
+		$row["prm"]++;
 
+		$cast_enc=$row["cast_id"] % 20;
+		for($n=0;$n<6;$n++){
+			$tmp=substr($enc_id,$n,1);
+			$img_name.=$dec[$cast_enc][$tmp];
+		}
 
-	$sql ="SELECT prm,cast_id FROM ".TABLE_KEY."_customer";
-	$sql .=" WHERE `id`='{$post_id}'";
-	$sql .=" LIMIT 1";
-	$result = mysqli_query($mysqli,$sql);
-	$row = mysqli_fetch_assoc($result);
-	$row["prm"]++;
+		$img_link="../../img/cast/{$box_no}/c/{$img_name}";
+		imagepng($img2,$img_link.".png");
+		if($admin_config["webp_select"] == 1){
+			imagewebp($img2,$img_link.".webp");
+		}
+		$img_64=substr($img_link,3).".png?t={$row["prm"]}";
 
-	$cast_enc=$row["cast_id"] % 20;
-	for($n=0;$n<6;$n++){
-		$tmp=substr($enc_id,$n,1);
-		$img_name.=$dec[$cast_enc][$tmp];
+		$sql ="UPDATE ".TABLE_KEY."_customer SET";
+		$sql .=" `face`='{$img_name}',";
+		$sql .=" `prm`='{$row["prm"]}'";
+		$sql .=" WHERE `id`='{$post_id}'";
+		mysqli_query($mysqli,$sql);
+
+	}else{
+		$sql ="UPDATE ".TABLE_KEY."_customer SET";
+		$sql .=" `face`='',";
+		$sql .=" `prm`=''";
+		$sql .=" WHERE `id`='{$post_id}'";
+		mysqli_query($mysqli,$sql);
+
 	}
-
-
-	$img_link="../../img/cast/{$box_no}/c/{$img_name}";
-	imagepng($img2,$img_link.".png");
-	if($admin_config["webp_select"] == 1){
-		imagewebp($img2,$img_link.".webp");
-	}
-	$img_64=substr($img_link,3).".png?t={$row["prm"]}";
-
-
-	$sql ="UPDATE ".TABLE_KEY."_customer SET";
-	$sql .=" `face`='{$img_name}',";
-	$sql .=" `prm`='{$row["prm"]}'";
-	$sql .=" WHERE `id`='{$post_id}'";
-	mysqli_query($mysqli,$sql);
 
 }else{
 	$tmpfname = tempnam('tmp', 'pngtmp_');

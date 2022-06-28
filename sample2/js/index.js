@@ -199,6 +199,7 @@ $(function(){
 		}
 	});
 
+	
 	$(window).on('scroll',function () {
 		if($(this).scrollTop() < TmpScroll){
 			$('.menu').stop(true,true).animate({"top":"200px"},1000);
@@ -215,7 +216,6 @@ $(function(){
 		Tmp=$(this).attr("id").replace("menu","box_");
 		Top=$("#"+Tmp).offset().top-100;
 		$('body, html').animate({ scrollTop:Top}, 1000);
-
 	});
 });
 

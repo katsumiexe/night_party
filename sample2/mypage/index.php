@@ -785,7 +785,9 @@ $log_enc="ss".$dec[$tmp_rnd][$tmp_set].$log_enc;
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="../js/jquery.exif.js"></script>
 <script src="../js/jquery.ui.touch-punch.min.js"></script>
-<script src="./js/cast.js?a=0>"></script>
+<script src="./js/cast.js?a=<?=time()?>>"></script>
+
+
 
 
 <script>

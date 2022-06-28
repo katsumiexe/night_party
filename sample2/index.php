@@ -327,7 +327,7 @@ var NewCnt=1;
 <form id="form_1" method="get" action="">
 <input id="s_code" type="hidden" name="post_id">
 </form>
-<script src="./js/index.js?t=5"></script>
+<script src="./js/index.js?t=6"></script>
 
 <section id="box_0" class="main_top">
 <?if($count_event==1){?>
