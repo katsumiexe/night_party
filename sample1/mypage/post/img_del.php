@@ -11,7 +11,7 @@ if($imgurl){
 	$sql_log ="UPDATE ".TABLE_KEY."_customer SET";
 	$sql_log.=" `face`=''";
 	$sql_log.=" WHERE id='{$c_id}'";
-	mysqli_query($mysqli,$sql)0;
+//	mysqli_query($mysqli,$sql)0;
 
 $link="../img/cast/".$tmp_dir."/c/".$imgurl;
 

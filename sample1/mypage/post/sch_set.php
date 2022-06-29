@@ -42,7 +42,7 @@ for($n=0;$n<7;$n++){
 
 if($sql_log_app){
 	$sql_log.=substr($sql_log_app,0,-1);
-	mysqli_query($mysqli,$sql_log);
+	//mysqli_query($mysqli,$sql_log);
 }
 
 echo json_encode($day_date);

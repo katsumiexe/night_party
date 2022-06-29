@@ -16,13 +16,13 @@ if($result = mysqli_query($mysqli,$sql)){
 			$sql =" UPDATE ".TABLE_KEY."_customer_group SET";
 			$sql.=" del='1'";
 			$sql.=" WHERE id='{$row["id"]}'";
-			mysqli_query($mysqli,$sql);
+//			mysqli_query($mysqli,$sql);
 echo $sql;
 		}else{
 			$sql =" UPDATE ".TABLE_KEY."_customer_group SET";
 			$sql.=" `sort`='{$sort}'";
 			$sql.=" WHERE id='{$row["id"]}'";
-			mysqli_query($mysqli,$sql);
+//			mysqli_query($mysqli,$sql);
 echo $sql;
 
 			$html.="<tr id=\"gp{$row["id"]}\">";

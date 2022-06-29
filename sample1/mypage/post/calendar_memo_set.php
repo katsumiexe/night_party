@@ -23,7 +23,7 @@ if($result = mysqli_query($mysqli,$sql)){
 		$sql	.=" (`date_8`,`cast_id`,`log`)";
 		$sql	.=" VALUES('{$set_date}','{$cast_data["id"]}','{$log}')";
 	}
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 }
 
 print("<input class=\"cal_m_{$set_date}\" type=\"hidden\" value=\"{$log}\">");

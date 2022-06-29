@@ -9,7 +9,7 @@ foreach($list as $a1 => $a2){
 	$sql =" UPDATE ".TABLE_KEY."_customer_group SET";
 	$sql.=" sort='{$b2}'";
 	$sql.=" WHERE id='{$b1}'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 }
 
 echo $sql;

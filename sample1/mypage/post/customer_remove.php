@@ -11,7 +11,7 @@ $sql="UPDATE ".TABLE_KEY."_customer SET";
 $sql.=" del='1'";
 $sql.=" WHERE cast_id='{$cast_data["id"]}'";
 $sql.=" AND id='{$c_id}'";
-mysqli_query($mysqli,$sql);
+//mysqli_query($mysqli,$sql);
 
 exit();
 ?>

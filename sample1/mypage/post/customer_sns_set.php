@@ -12,7 +12,7 @@ $kind		=$_POST['kind'];
 $sql	="UPDATE ".TABLE_KEY."_customer";
 $sql	.=" SET {$kind}='{$text}'";
 $sql	.=" WHERE id='{$c_id}'";
-mysqli_query($mysqli,$sql);
+//mysqli_query($mysqli,$sql);
 
 echo $kind;
 exit();

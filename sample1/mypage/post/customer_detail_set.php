@@ -24,7 +24,7 @@ if($id == "customer_group"){
 $sql ="UPDATE ".TABLE_KEY."_customer SET";
 $sql.=$app;
 $sql.=" WHERE id={$c_id}";
-mysqli_query($mysqli,$sql);
+//mysqli_query($mysqli,$sql);
 echo($sql);
 exit();
 ?>

@@ -138,8 +138,8 @@ foreach($list as $a1){
 $sql1=substr($sql1,0,-1);
 $sql2=substr($sql2,0,-1);
 
-mysqli_query($mysqli,$sql1);
-mysqli_query($mysqli,$sql2);
+//mysqli_query($mysqli,$sql1);
+//mysqli_query($mysqli,$sql2);
 
 $dat["result"]="<div class=\"filter_list\">";
 $dat["result"].="送信しました(".count($list)."件)";

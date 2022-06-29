@@ -128,8 +128,8 @@ if($chg){
 	$sql.="(`date`, `view_date`, `title`, `log`, `cast`, `tag`, `img`, `status`,`prm`)";
 	$sql.="VALUES";
 	$sql.="('{$now}','{$view_date}','{$ttl}','{$log}','{$cast_data["id"]}','{$tag}','{$img_name}','{$status}','0')";
-	mysqli_query($mysqli,$sql);
-	$tmp_auto=mysqli_insert_id($mysqli); 
+//	mysqli_query($mysqli,$sql);
+//	$tmp_auto=mysqli_insert_id($mysqli); 
 }
 echo $sql;
 

@@ -13,7 +13,7 @@ if($_POST["id"]){
 	$sql	 ="UPDATE ".TABLE_KEY."_customer SET";
 	$sql	.=$app;
 	$sql	.=" WHERE id='{$c_id}'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 	echo $sql;
 
 }else{
@@ -21,7 +21,7 @@ if($_POST["id"]){
 	$sql	 ="UPDATE ".TABLE_KEY."_customer SET";
 	$sql	.=" del=1";
 	$sql	.=" WHERE id='{$c_id}'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 $sel		=$_POST["sel"]+0;
 $asc		=$_POST["asc"]+0;

@@ -30,13 +30,13 @@ if($result = mysqli_query($mysqli,$sql)){
 		$sql .=" comm='{$value}'";
 		$sql .=" WHERE customer_id={$c_id}";
 		$sql .=" AND item='{$code}'";
-		mysqli_query($mysqli,$sql);
+//		mysqli_query($mysqli,$sql);
 	
 	}else{
 		$sql ="INSERT INTO ".TABLE_KEY."_customer_list";
 		$sql .=" (`cast_id`,`customer_id`, `item`, `comm`, `del`)values";
 		$sql .=" ('{$cast_data["id"]}','{$c_id}','{$code}','{$value}','0')";
-		mysqli_query($mysqli,$sql);
+//		mysqli_query($mysqli,$sql);
 	}
 }
 

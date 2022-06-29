@@ -27,8 +27,8 @@ $etime	=$hh_e.$ii_e;
 if(!$chg_id){
 	$sql ="INSERT INTO ".TABLE_KEY."_cast_log(`date`,`sdate`,`stime`,`etime`,`cast_id`,`customer_id`,`log`) VALUES ";
 	$sql.="('{$now}','{$sdate}','{$stime}','{$etime}','{$cast_data["id"]}','{$c_id}','{$log}')";
-	mysqli_query($mysqli,$sql);
-	$tmp_auto=mysqli_insert_id($mysqli);
+//	mysqli_query($mysqli,$sql);
+//	$tmp_auto=mysqli_insert_id($mysqli);
 
 	$dat.="<tr><td class=\"customer_memo_tag\">";
 	$dat.="<div class=\"customer_log_date\"> <span class=\"customer_log_icon\"></span>{$sdate}　{$stime} - {$etime}</div>";
@@ -56,7 +56,7 @@ if(!$chg_id){
 		$app.="</div>";
 	}
 	$sql=substr($sql,0,-1);
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 	$dat.=$app."</span></td></tr>";
 
 }else{
@@ -71,7 +71,7 @@ if(!$chg_id){
 
 		$sql.=" WHERE cast_id='{$cast_data["id"]}'";
 		$sql.=" AND sort='{$n}'";
-		mysqli_query($mysqli,$sql);
+//		mysqli_query($mysqli,$sql);
 	}
 }
 echo $dat;

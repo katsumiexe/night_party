@@ -26,7 +26,7 @@ a{
 }
 
 .access_h1{
-	border-bottom		: 2px dotted #c8c0b0;
+	border-bottom		:2px dotted #c8c0b0;
 	color				:#c8c0b0;
 	display				:block;
 	font-size			:24px;
@@ -62,7 +62,7 @@ a{
 }
 
 .access_tag{
-	border-bottom		:1px solid #c8c0b0;
+	border-bottom		: 1px solid #c8c0b0;
 	color				:#c8c0b0;
 	font-size			:18px;
 	font-weight			:800;

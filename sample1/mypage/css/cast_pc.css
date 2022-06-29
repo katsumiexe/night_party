@@ -3793,18 +3793,18 @@ input[type=range]::-moz-range-thumb{
 	left		:0;
 	right		:0;
 	bottom		:0;
-	width		:70vw;
-	height		:10vw;
-	line-height	:10vw;
+	width		:300px;
+	height		:100px;
+	line-height	:30px;
 	text-align	:center;
 	margin		:auto;
-	border		:0.5vw solid #906000;
+	border		:5px solid #906000;
 	background	:#faf0e5;
 	color		:#0000d0;
-	padding		:1.5vw;
-	font-size	:4vw;
-	z-index		:40;
-	box-shadow	:0 0 2vw 2vw rgba(5255,255,255,0.5);
+	padding		:10px;
+	font-size	:16px;
+	z-index		:100;
+	box-shadow	:0 0 5px 5px rgba(5255,255,255,0.5);
 }
 
 .log_item_set{

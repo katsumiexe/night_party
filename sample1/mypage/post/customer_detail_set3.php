@@ -11,7 +11,7 @@ $fav	=$_POST["fav"];
 $sql_log ="UPDATE ".TABLE_KEY."_customer SET";
 $sql_log .=" fav='{$fav}'";
 $sql_log .=" WHERE id={$c_id}";
-mysqli_query($mysqli,$sql_log);
+//mysqli_query($mysqli,$sql_log);
 
 echo $sql_log;
 

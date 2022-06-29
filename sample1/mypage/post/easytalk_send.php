@@ -96,7 +96,7 @@ if($send_not != 1){
 	$sql	.="(ssid,cast_id,customer_id,`del`,`date`,`mail`)";
 	$sql	.="VALUES";
 	$sql	.="('{$ssid_key}','{$cast_id}','{$customer_id}','0','{$now}','{$customer_mail}')";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 //------------------------------------------------
 	mb_language("Japanese"); 

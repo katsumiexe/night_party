@@ -20,10 +20,9 @@ $odr++;
 
 $sql ="INSERT INTO ".TABLE_KEY."_cast_log_table(`cast_id`,`item_name`,`item_icon`,`item_color`,`price`,`sort`) VALUES ";
 $sql.=" ('{$cast_data["id"]}','{$item_name}','{$item_icon}','{$item_color}','{$price}','{$odr}')";
-mysqli_query($mysqli,$sql);
+//mysqli_query($mysqli,$sql);
 
-
-$tmp_auto=mysqli_insert_id($mysqli);
+//$tmp_auto=mysqli_insert_id($mysqli);
 
 $html="<tr id=\"i{$tmp_auto}\">";
 $html.="<td class=\"log_td_del\"><span class=\"log_td_del_in\"></span></td>";

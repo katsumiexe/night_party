@@ -27,8 +27,8 @@ if($cds){
 $sql =" UPDATE ".TABLE_KEY."_cast_log_table SET";
 $sql.=$app;
 $sql.=" WHERE id='{$sort}'";
-//$sql.=" AND cast_id='{$cast_data["id"]}'";
-mysqli_query($mysqli,$sql);
+$sql.=" AND cast_id='{$cast_data["id"]}'";
+//mysqli_query($mysqli,$sql);
 
 echo $sql;
 exit();

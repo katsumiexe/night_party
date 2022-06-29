@@ -26,14 +26,14 @@ if($c_sort["cast_id"]){
 	$sql.=" c_sort_main='{$sel}',";
 	$sql.=" c_sort_asc='{$asc}'";
 	$sql.=" WHERE cast_id='{$cast_data["id"]}'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 }else{
 	$sql="INSERT INTO ".TABLE_KEY."_cast_config ";
 	$sql.="(cast_id, c_sort_main, c_sort_asc)";
 	$sql.="VALUES";
 	$sql.="('{$cast_data["id"]}','{$sel}','{$asc}')";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 }
 
 if($sel==1){

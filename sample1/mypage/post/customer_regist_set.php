@@ -25,8 +25,8 @@ if($yy && $mm && $dd){
 
 $sql ="INSERT INTO ".TABLE_KEY."_customer (`cast_id`,`nickname`,`name`,`regist_date`,`birth_day`,`fav`,`c_group`,`del`,`block`,`opt`,`infom`,`prm`)";
 $sql .=" VALUES('{$cast_data["id"]}','{$nick}','{$name}','{$now}','{$birth}','{$fav}','{$group}','0','0','0','0','0')";
-mysqli_query($mysqli,$sql);
-$tmp_auto=mysqli_insert_id($mysqli);
+//mysqli_query($mysqli,$sql);
+//$tmp_auto=mysqli_insert_id($mysqli);
 
 if($img_code){
 	$enc_id=substr("00000".$tmp_auto,-6,6);
@@ -49,7 +49,7 @@ if($img_code){
 	$sql .=" `face`='{$img_name}'";
 	$sql .=" WHERE `id`='{$tmp_auto}'";
 
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 	$tmp_img="<img src=\"".substr($img_link,3).".png\" class=\"mail_img\">";
 }else{

@@ -79,7 +79,7 @@ if($c_id){
 		$sql	 ="UPDATE ".TABLE_KEY."_easytalk SET";
 		$sql	.=" watch_date='{$now}'";
 		$sql	.=" WHERE customer_id='{$c_id}' AND cast_id='{$cast_data["id"]}' AND watch_date IS NULL";
-		mysqli_query($mysqli,$sql);
+//		mysqli_query($mysqli,$sql);
 	}
 }
 

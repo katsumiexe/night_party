@@ -40,7 +40,7 @@ $birth	=$yy.$mm.$dd;
 $sql_log ="UPDATE ".TABLE_KEY."_customer SET";
 $sql_log .=" birth_day='{$birth}'";
 $sql_log .=" WHERE id={$c_id}";
-mysqli_query($mysqli,$sql_log);
+//mysqli_query($mysqli,$sql_log);
 
 
 $dat["yy"]=$yy;

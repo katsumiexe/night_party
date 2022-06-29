@@ -24,7 +24,7 @@ for($n=0;$n<count($chglist);$n++){
 	$sql.=" sort='{$n1}'";
 	$sql.=" WHERE id='{$tmp}'";
 
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 	$html.="<tr id=\"i{$tmp}\">";
 	$html.="<td class=\"log_td_del\"><span class=\"log_td_del_in\"></span></td>";

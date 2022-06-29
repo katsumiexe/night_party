@@ -20,13 +20,13 @@ if($result = mysqli_query($mysqli,$sql)){
 			$sql=" UPDATE ".TABLE_KEY."_cast_log_table SET";
 			$sql.=" `sort`='{$sort}'"; 
 			$sql.=" WHERE `id`='{$row["id"]}'"; 
-			mysqli_query($mysqli,$sql);
+//			mysqli_query($mysqli,$sql);
 			$sort++;
 
 		}else{
 			$sql ="DELETE FROM ".TABLE_KEY."_cast_log_table"; 
 			$sql.=" WHERE `id`='{$list_id}'"; 
-			mysqli_query($mysqli,$sql);
+//			mysqli_query($mysqli,$sql);
 		}
 	}
 }

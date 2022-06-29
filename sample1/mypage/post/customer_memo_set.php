@@ -14,14 +14,14 @@ if($memo_id){
 	$sql.=$app;
 	$sql.=" `log`='{$log}'";
 	$sql.=" WHERE id='{$memo_id}'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 	$tmp_auto=$memo_id;
 
 }else{
 	$sql ="INSERT INTO ".TABLE_KEY."_customer_memo(`date`,cast_id,`customer_id`,`log`,del) VALUES ";
 	$sql.=" ('{$now}','{$cast_data["id"]}','{$c_id}','{$log}','0')";
-	mysqli_query($mysqli,$sql);
-	$tmp_auto=mysqli_insert_id($mysqli);
+//	mysqli_query($mysqli,$sql);
+//	$tmp_auto=mysqli_insert_id($mysqli);
 }
 
 if($log){

@@ -157,7 +157,7 @@ $sql	.=" WHERE customer_id='{$c_id}'";
 $sql	.=" AND cast_id='{$cast_data["id"]}'";
 $sql	.=" AND watch_date IS NULL";
 $sql	.=" AND send_flg=2";
-mysqli_query($mysqli,$sql);
+//mysqli_query($mysqli,$sql);
 echo $html;
 exit();
 ?>

@@ -7,5 +7,5 @@ $res_mail_id	=$_POST["res_mail_id"];
 $dat=date("Y-m-d H:i:s",time()+32400);
 $sql ="UPDATE ".TABLE_KEY."_castmail_receive SET watch_date='{$dat}'";
 $sql.=" WHERE res_mail_id='1'";
-mysqli_query($mysqli,$sql);
+//mysqli_query($mysqli,$sql);
 ?>

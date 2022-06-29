@@ -15,7 +15,7 @@ $sql	.=" title='{$title}',";
 $sql	.=" log='{$log}'";
 $sql	.=" WHERE cast_id={$cast_data["id"]}";
 $sql	.=" AND sort={$id}";
-mysqli_query($mysqli,$sql);
+//mysqli_query($mysqli,$sql);
 exit();
 ?>
 

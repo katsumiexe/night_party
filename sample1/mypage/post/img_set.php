@@ -130,14 +130,14 @@ if($task=="chg"){
 		$sql .=" `face`='{$img_name}',";
 		$sql .=" `prm`='{$row["prm"]}'";
 		$sql .=" WHERE `id`='{$post_id}'";
-		mysqli_query($mysqli,$sql);
+//		mysqli_query($mysqli,$sql);
 
 	}else{
 		$sql ="UPDATE ".TABLE_KEY."_customer SET";
 		$sql .=" `face`='',";
 		$sql .=" `prm`=''";
 		$sql .=" WHERE `id`='{$post_id}'";
-		mysqli_query($mysqli,$sql);
+//		mysqli_query($mysqli,$sql);
 
 	}
 

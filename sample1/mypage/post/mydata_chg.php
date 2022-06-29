@@ -11,8 +11,8 @@ $new_pass=$_POST["new_pass"];
 $sql="INSERT INTO ".TABLE_KEY."_mypage_chg(`cast_id`,`base_mail`,`base_pass`,`new_mail`,`new_pass`,`date`,`done`)";
 $sql.=" VALUES('{$cast_data["id"]}','{$cast_data["mail"]}','{$cast_data["login_pass"]}','{$new_mail}','{$new_pass}','{$now}','0')";
 
-mysqli_query($mysqli,$sql);
-$tmp_auto=mysqli_insert_id($mysqli);
+//mysqli_query($mysqli,$sql);
+//$tmp_auto=mysqli_insert_id($mysqli);
 
 for($n=0;$n<strlen($tmp_auto);$n++){
 	$ck=substr($tmp_auto,$n,1);

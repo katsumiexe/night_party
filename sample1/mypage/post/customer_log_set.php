@@ -24,7 +24,7 @@ if($del > 0){//■削除
 	mysqli_query($mysqli,$sql);
 
 	$sql="DELETE FROM ".TABLE_KEY."_cast_log_list WHERE master_id='{$del}'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 	exit();
 }
 
@@ -43,14 +43,14 @@ if($chg){//■変更
 	mysqli_query($mysqli,$sql);
 
 	$sql="DELETE FROM ".TABLE_KEY."_cast_log_list WHERE master_id='{$chg}'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 	$tmp_auto=$chg;
 
 }else{//新規
 	$sql ="INSERT INTO ".TABLE_KEY."_cast_log(`date`,`sdate`,`stime`,`etime`,`cast_id`,`customer_id`,`log`,`pts`,`days`,`del`) VALUES ";
 	$sql.=" ('{$now}','{$sdate}','{$stime}','{$etime}','{$cast_data["id"]}','{$c_id}','{$log}','{$pts}','{$days}','0')";
-	mysqli_query($mysqli,$sql);
-	$tmp_auto=mysqli_insert_id($mysqli);
+//	mysqli_query($mysqli,$sql);
+//	$tmp_auto=mysqli_insert_id($mysqli);
 }
 
 $log=str_replace("\n","<br>",$log);
@@ -95,7 +95,7 @@ if($item_name){
 		$app.="</div>";
 	}
 	$sql_log=substr($sql_log,0,-1);
-	mysqli_query($mysqli,$sql_log);
+//	mysqli_query($mysqli,$sql_log);
 }
 $dat.=$app;
 $dat.="</div>";
