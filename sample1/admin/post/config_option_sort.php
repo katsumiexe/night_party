@@ -10,7 +10,7 @@ foreach($list as $a1 => $a2){
 	$sql="UPDATE `".TABLE_KEY."_check_list` SET";
 	$sql.=" list_sort='{$n}'";
 	$sql.=" WHERE id={$tmp[2]}";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 }
 exit();
 ?>

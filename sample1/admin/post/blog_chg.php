@@ -19,7 +19,7 @@ $img_url		="../../img/profile/".$_POST["img_url"];
 
 
 if($del == 4){
-	$sql="UPDATE ".TABLE_KEY."_posts SET ";
+//	$sql="UPDATE ".TABLE_KEY."_posts SET ";
 	$sql.="status='4',";
 	$sql.="img=''";
 	$sql.=" WHERE id='{$id}'";
@@ -38,7 +38,7 @@ if($del == 4){
 		unlink($img_url."_s.webp");
 	}
 
-	$sql="UPDATE ".TABLE_KEY."_posts SET ";
+//	$sql="UPDATE ".TABLE_KEY."_posts SET ";
 	$sql.="view_date='{$date}',";
 	$sql.="status='{$status}',";
 	$sql.="title='{$title}',";

@@ -31,20 +31,20 @@ if($send && $admin_id && $admin_pass && $admin_mail){
 		$sql ="UPDATE ".TABLE_KEY."_config SET";
 		$sql .=" config_value='{$admin_id}'";
 		$sql .=" WHERE config_key='admin_id'";
-		mysqli_query($mysqli,$sql);
+//		mysqli_query($mysqli,$sql);
 
 		$sql ="UPDATE ".TABLE_KEY."_config SET";
 		$sql .=" config_value='{$admin_pass}'";
 		$sql .=" WHERE config_key='admin_pass'";
-		mysqli_query($mysqli,$sql);
+//		mysqli_query($mysqli,$sql);
 
 		$sql ="UPDATE ".TABLE_KEY."_config SET";
 		$sql .=" config_value='{$admin_mail}'";
 		$sql .=" WHERE config_key='admin_mail'";
-		mysqli_query($mysqli,$sql);
+//		mysqli_query($mysqli,$sql);
 
 		$sql ="UPDATE ".TABLE_KEY."_mypage_chg SET done='1' WHERE id='{$row["id"]}'";
-		mysqli_query($mysqli,$sql);
+//		mysqli_query($mysqli,$sql);
 
 		mb_language("Japanese"); 
 		mb_internal_encoding("UTF-8");

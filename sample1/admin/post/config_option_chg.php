@@ -12,13 +12,13 @@ if($tmp[0] == "ttl"){
 	$sql="UPDATE `".TABLE_KEY."_check_main` SET";
 	$sql.=" title='{$value}'";
 	$sql.=" WHERE id='{$a1}'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 }elseif($tmp[0] == "sel"){
 	$sql="UPDATE `".TABLE_KEY."_check_main` SET";
 	$sql.=" style='{$value}'";
 	$sql.=" WHERE id='{$a1}'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 }elseif($tmp[0] == "itm"){
 
@@ -40,13 +40,13 @@ if($tmp[0] == "ttl"){
 		$sql.=" VALUES('{$a1}','{$a2}','{$value}','0')";
 
 	}
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 	echo $sql;
 
 }elseif($tmp[0] == "new"){
 	$sql="INSERT INTO  `".TABLE_KEY."_check_list`(`host_id`,`list_sort`,`list_title`,`del`)";
 	$sql.=" VALUES('{$a1}','{$a2}','{$value}','0')";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 	$tmp_auto=mysqli_insert_id($mysqli);
 	echo "itm_".$a1."_".$tmp_auto;
 }

@@ -21,7 +21,7 @@ if($group == "staff_sort"){
 		$sql="UPDATE ".TABLE_KEY."_cast SET";
 		$sql.=" cast_sort='{$fs}'";
 		$sql.=" WHERE id={$a2}";
-		mysqli_query($mysqli,$sql);
+//		mysqli_query($mysqli,$sql);
 		$fs++;
 	}
 
@@ -73,7 +73,7 @@ if($group == "staff_sort"){
 		$sql="UPDATE ".TABLE_KEY."_cast SET";
 		$sql.=" cast_sort='{$a1}'";
 		$sql.=" WHERE id={$a2}";
-		mysqli_query($mysqli,$sql);
+//		mysqli_query($mysqli,$sql);
 	}
 
 	if(!$cl_b && !$cl_c && !$cl_d && !$cl_e && !$cl_f){
@@ -217,7 +217,7 @@ echo $html;
 		$sql="UPDATE ".TABLE_KEY."_contact_table SET";
 		$sql.=" sort='{$n}'";
 		$sql.=" WHERE id={$a2}";
-		mysqli_query($mysqli,$sql);
+//		mysqli_query($mysqli,$sql);
 	}
 echo $sql;
 
@@ -226,7 +226,7 @@ echo $sql;
 	foreach($list as $a1 => $a2){
 		$n++;
 		$a2=str_replace("sort_item","",$a2);
-		$sql="UPDATE ".TABLE_KEY."_contents SET";
+//		$sql="UPDATE ".TABLE_KEY."_contents SET";
 		$sql.=" sort='{$n}'";
 		$sql.=" WHERE id={$a2}";
 		mysqli_query($mysqli,$sql);

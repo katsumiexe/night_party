@@ -10,7 +10,7 @@ foreach($list as $a2){
 	$sql="UPDATE `".TABLE_KEY."_check_main` SET";
 	$sql.=" sort='{$n}'";
 	$sql.=" WHERE id={$tmp}";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 }
 echo $sql;
 

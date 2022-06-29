@@ -9,7 +9,7 @@ $sql=" UPDATE ".TABLE_KEY."_tag SET";
 $sql.=" {$tmp[0]}='{$val}'";
 $sql.=" WHERE id='{$tmp[1]}'";
 
-mysqli_query($mysqli,$sql);
+//mysqli_query($mysqli,$sql);
 echo $sql;
 exit();
 ?>

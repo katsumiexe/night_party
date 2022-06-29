@@ -14,6 +14,6 @@ $app.=" send_date='{$now}'";
 $app.=" WHERE list_id='{$id}'";
 
 echo $app;
-mysqli_query($mysqli,$app);
+//mysqli_query($mysqli,$app);
 exit();
 ?>

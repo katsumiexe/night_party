@@ -16,6 +16,6 @@ if(substr($id,0,5)=='tr_n_'){
 	$app.=" WHERE id='{$id}'";
 }
 echo $app;
-mysqli_query($mysqli,$app);
+//mysqli_query($mysqli,$app);
 exit();
 ?>

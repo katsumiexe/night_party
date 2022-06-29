@@ -68,8 +68,8 @@ if($_POST["notice_set"]){
 	
 	$sql	 ="INSERT INTO ".TABLE_KEY."_notice(`date`,`title`,`log`,`category`,`cast_group`,`del`)";
 	$sql	 .=" VALUES('{$display_date}','{$notice_title}','{$notice_contents}','{$notice_category}','{$cast_group}','0')";
-	mysqli_query($mysqli,$sql);
-	$tmp_auto=mysqli_insert_id($mysqli);
+//	mysqli_query($mysqli,$sql);
+//	$tmp_auto=mysqli_insert_id($mysqli);
 
 	foreach($gp_check as $a1 => $a2){
 		if($a1 >0 && $a2>0){
@@ -82,7 +82,7 @@ if($_POST["notice_set"]){
 		
 	$sql	 ="INSERT INTO ".TABLE_KEY."_notice_ck(`notice_id`,`cast_id`,`status`) VALUES ";
 	$sql	 .=$app_ck;
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 echo $sql;
 }

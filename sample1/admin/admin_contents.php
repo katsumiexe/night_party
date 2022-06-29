@@ -69,8 +69,8 @@ if($event_set_id){
 	if($event_set_id == "new" || $event_set_id == "top"){
 		$sql	 ="INSERT INTO ".TABLE_KEY."_contents(`date`,`display_date`,`event_date`,`sort`,`page`,`category`,`title`,`contents`,`contents_key`,`tag`,`status`)";
 		$sql	.=" VALUES('{$now}','{$display_date}','{$event_date}','0','{$post_id}','{$category}','{$event_title}','{$event_contents}','{$event_key}','{$event_tag}','{$event_status}')";
-		mysqli_query($mysqli,$sql);
-		$tmp_auto=mysqli_insert_id($mysqli);
+//		mysqli_query($mysqli,$sql);
+//		$tmp_auto=mysqli_insert_id($mysqli);
 
 		if(!$event_key){
 			$event_key=$tmp_auto;
@@ -79,7 +79,7 @@ if($event_set_id){
 		if($_POST["news_check"] == 1 && $event_title){
 			$sql	 ="INSERT INTO ".TABLE_KEY."_contents(`date`,`display_date`,`event_date`,`sort`,`page`,`category`,`title`,`contents_key`,`tag`,`status`)";
 			$sql	.=" VALUES('{$now}','{$display_date}','{$event_date}','0','news','{$category}','{$event_title}','{$event_key}','13','{$event_status}')";
-			mysqli_query($mysqli,$sql);
+//			mysqli_query($mysqli,$sql);
 		}
 
 	}else{
@@ -94,7 +94,7 @@ if($event_set_id){
 		$sql	.=" status='{$event_status}',";
 		$sql	.=" prm='{$prm}'";
 		$sql	.=" WHERE `id`='{$event_set_id}'";
-		mysqli_query($mysqli,$sql);
+//		mysqli_query($mysqli,$sql);
 		$tmp_auto=$event_set_id;
 	}
 
@@ -157,7 +157,7 @@ if($event_set_id){
 
 	$sql	 ="INSERT INTO  ".TABLE_KEY."_contents (`date`,`page`,`title`,`contents`,`contents_key`,`status`)";
 	$sql	.=" VALUES('{$now}','{$post_id}','{$page_title}','{$page_log}','{$page_key}','0')";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 }
 
 if($post_id == "news"){

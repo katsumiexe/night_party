@@ -24,6 +24,6 @@ if(substr($id,0,5) == "schen"){
 
 
 
-mysqli_query($mysqli,$app);
+//mysqli_query($mysqli,$app);
 exit();
 ?>

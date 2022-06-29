@@ -23,6 +23,6 @@ foreach($chg_s as $a1 => $a2){
 }
 
 $sql=substr($sql,0,-1);
-mysqli_query($mysqli,$sql);
+//mysqli_query($mysqli,$sql);
 exit();
 ?>

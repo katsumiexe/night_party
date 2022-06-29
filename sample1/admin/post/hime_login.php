@@ -13,7 +13,7 @@ if($id == 0){
 	$date_code=date("Y-m-d H:i:s",$code);
 
 	$sql	 ="INSERT INTO ".TABLE_KEY."_mypage_chg(`cast_id`,`date`) VALUES('0','{$date_code}') ";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 echo $sql;	
 	mb_language("Japanese"); 
 	mb_internal_encoding("UTF-8");

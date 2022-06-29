@@ -17,7 +17,7 @@ if($result = mysqli_query($mysqli,$sql)){
 $sort++;
 $sql	 ="INSERT INTO ".TABLE_KEY."_contact_table (`block`,`sort`,`name`,`type`,`ck`)";
 $sql	 .=" VALUES('1','{$sort}','{$name}','{$type}','{$ck}')";
-mysqli_query($mysqli,$sql);
+//mysqli_query($mysqli,$sql);
 $tmp_auto=mysqli_insert_id($mysqli);
 
 $log=<<<ABC

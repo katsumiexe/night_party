@@ -19,8 +19,8 @@ $sql=" INSERT INTO ".TABLE_KEY."_tag";
 $sql.=" (sort,	tag_group,tag_name,tag_icon,`del`)";
 $sql.=" VALUES('{$sort}','{$group}','{$name}','{$color}','0')";
 
-mysqli_query($mysqli,$sql);
-$tmp_auto=mysqli_insert_id($mysqli);
+//mysqli_query($mysqli,$sql);
+//$tmp_auto=mysqli_insert_id($mysqli);
 
 if($group == "prof"){
 $tmp[2]=" selected=\"selected\"";

@@ -11,13 +11,13 @@ if($val == 1){
 	$sql	.=" name='{$name}',";
 	$sql	.=" time='{$time}'";
 	$sql	.=" WHERE id='{$id}'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 }elseif($val == 2){
 	$sql	 ="UPDATE `".TABLE_KEY."_sch_table` SET";
 	$sql	.=" del='1'";
 	$sql	.=" WHERE id='{$id}'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 }elseif($val == 3){
 	if($time < $admin_config["start_time"]){
@@ -57,7 +57,7 @@ if($val == 1){
 		}else{
 			$sql	  ="INSERT INTO `".TABLE_KEY."_sch_table` (`in_out`,`sort`,`name`,`time`,`del`)";
 			$sql	 .=" VALUES('in','{$tmp_set}','{$name}','{$time}','0')";
-			mysqli_query($mysqli,$sql);
+//			mysqli_query($mysqli,$sql);
 			$tmp_auto=mysqli_insert_id($mysqli);
 			$tmp_name	=$name;
 			$tmp_time	=$time;

@@ -29,21 +29,21 @@ if(strpos("-".$id,"rec_")>0){
 		$sql	.=" `contents_key`='{$dat}'";
 		$sql	.=" WHERE id='{$res["id"]}'";
 	}
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 }elseif(strpos("-".$id,"name")>0){
 	$id=str_replace("name","",$id);
 	$sql	 ="UPDATE ".TABLE_KEY."_contact_table SET";
 	$sql	.=" name='{$dat}'";
 	$sql	.=" WHERE id='{$id}'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 }elseif(strpos("-".$id,"type")>0){
 	$id=str_replace("type","",$id);
 	$sql	 ="UPDATE ".TABLE_KEY."_contact_table SET";
 	$sql	.=" type='{$dat}'";
 	$sql	.=" WHERE id='{$id}'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 
 }elseif(strpos("-".$id,"chg")>0){
@@ -51,7 +51,7 @@ if(strpos("-".$id,"rec_")>0){
 	$sql	 ="UPDATE ".TABLE_KEY."_contact_table SET";
 	$sql	.=" ck='{$dat}'";
 	$sql	.=" WHERE id='{$id}'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 }
 exit();
 ?>

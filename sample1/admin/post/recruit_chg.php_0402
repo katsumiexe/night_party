@@ -29,7 +29,7 @@ if(strpos("-".$id,"rec_")>0){
 		$sql	.=" `contents_key`='{$dat}'";
 		$sql	.=" WHERE id='{$res["id"]}'";
 	}
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 
 }elseif(strpos("-".$id,"name")>0){
@@ -43,7 +43,7 @@ if(strpos("-".$id,"rec_")>0){
 		$sql	 ="INSERT INTO ".TABLE_KEY."_contact_table";
 		$sql	.="(log_{$id}_name) VALUES('{$dat}')";
 	}
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 
 }elseif(strpos("-".$id,"type")>0){
@@ -58,7 +58,7 @@ if(strpos("-".$id,"rec_")>0){
 	$sql	 ="UPDATE ".TABLE_KEY."_contact_table SET";
 	$sql	.=" log_{$id}_type='{$tmp}'";
 	$sql	.=" WHERE id='1'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 */
 
 	if($check["id"]>0){
@@ -70,7 +70,7 @@ if(strpos("-".$id,"rec_")>0){
 		$sql	 ="INSERT INTO ".TABLE_KEY."_contact_table";
 		$sql	.="(log_{$id}_type) VALUES('{$dat}')";
 	}
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 
 }elseif(strpos("-".$id,"chg")>0){
 	$id=str_replace("chg","",$id);
@@ -85,7 +85,7 @@ if(strpos("-".$id,"rec_")>0){
 	$sql	 ="UPDATE ".TABLE_KEY."_contact_table SET";
 	$sql	.=" log_{$id}_type='{$tmp}'";
 	$sql	.=" WHERE id='1'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 */
 
 	if($check["id"]>0){
@@ -97,7 +97,7 @@ if(strpos("-".$id,"rec_")>0){
 		$sql	 ="INSERT INTO ".TABLE_KEY."_contact_table";
 		$sql	.="(log_{$id}_vv) VALUES('{$dat}')";
 	}
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 }
 exit();
 ?>
