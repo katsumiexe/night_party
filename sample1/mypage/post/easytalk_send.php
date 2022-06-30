@@ -128,7 +128,7 @@ if($send_not != 1){
 	$body	.="{$admin_config["main_url"]}/ngt\n";
 	$body	.="080-1111-1111\n";
 	$body	.="{$admin_config["main_mail"]}\n";
-	mb_send_mail($to, $title, $body, $header);
+//	mb_send_mail($to, $title, $body, $header);
 }
 
 //------------------------------------------------
@@ -137,8 +137,8 @@ $sql	.="(send_date,customer_id,cast_id,send_flg,log,img,`mail_del`)";
 $sql	.="VALUES";
 $sql	.="('{$now}','{$customer_id}','{$cast_id}','{$send}','{$log}','{$img_name}','0')";
 
-mysqli_query($mysqli,$sql);
-$tmp_auto=mysqli_insert_id($mysqli);
+//mysqli_query($mysqli,$sql);
+//$tmp_auto=mysqli_insert_id($mysqli);
 $log=str_replace("\n","<br>",$log);
 
 $dat.="<div class=\"mail_box_b\">";		

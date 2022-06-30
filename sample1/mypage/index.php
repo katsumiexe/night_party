@@ -1168,6 +1168,7 @@ $(function(){
 <?}elseif($cast_page==3){?>
 <script>
 $(function(){
+/*
 	setInterval(function(){
 		$.ajax({
 			type:"post",
@@ -1227,7 +1228,9 @@ $(function(){
 		});
 
 	},5000);
+*/
 });
+
 </script>
 
 	<div class="main main_top">
