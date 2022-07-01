@@ -453,7 +453,7 @@
 			</div>
 		</div>
 		<div></div>
-		<footer class="footer"></footer>
+		<footer class="footer">copyright 2022 Night Party all right reserved.</footer>
 	</article>
 </section>
 <form id="form_4" action="./sample1/mypage/index.php" method="post" target="_blank">

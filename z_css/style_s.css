@@ -593,7 +593,10 @@ header{
 
 .footer{
 	width		:100vw;
-	height		:20vw;
+	height		:6vw;
+	line-height	:6vw;
+	font-size	:3.5vw;
+
 }
 
 
