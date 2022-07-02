@@ -294,7 +294,7 @@ header{
 }
 
 .box_1_0{
-	margin			:10vw auto;
+	margin			:10vw auto 3vw auto;;
 	width			:88vw;
 	padding			:2vw;
 	height			:52vw;
@@ -327,6 +327,14 @@ header{
 
 }
 
+.box_1{
+	margin			:5vw auto 3vw auto;
+	width			:98vw;
+	padding			:1vw;
+	height			:125vw;
+	background		:#fc60fc;
+	opacity			:0;
+}
 
 
 .box_1_1_text{
