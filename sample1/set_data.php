@@ -149,6 +149,7 @@ $sql.="
 ";
 
 mysqli_query($mysqli,$sql);
+echo $now;
 
 ?>
 
