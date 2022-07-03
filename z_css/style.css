@@ -665,14 +665,12 @@ header{
 
 .box_5_1{
 	position		:relative;
-	margin			:10vh auto 1vh auto;
+	margin			:1vh auto;
 	width			:53vh;
 	flex-basis		:53vh;
 	text-align		:left;
-	opacity			:0;
+//	opacity			:0;
 }
-
-
 
 
 .box_5_1_title{
@@ -789,6 +787,13 @@ header{
 	font-size		:1.8vh;
 	color			:#101520;
 }
+
+#block_5_box_6 > .box_5_1_title, #block_5_box_6 > .comm_p2{
+	opacity		:0;
+	margin-top	:10vh;
+
+}
+
 
 .top_comm{
 	position	:absolute;
