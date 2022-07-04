@@ -188,11 +188,11 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 				$('#box_right_b').delay(600).animate({"right":"2vh","opacity":"1"},800);
 
 			}else if(BoxView == 5){
-				$('#block_5_box_0').delay(600).animate({"opacity":"1","margin-top":"1vh"},600);
-				$('#block_5_box_1').delay(1000).animate({"opacity":"1","margin-top":"1vh"},600);
-				$('#block_5_box_3').delay(1100).animate({"opacity":"1","margin-top":"1vh"},600);
-				$('#block_5_box_4').delay(1200).animate({"opacity":"1","margin-top":"1vh"},600);
-				$('#block_5_box_5').delay(1200).animate({"opacity":"1","margin-top":"1vh"},600);
+				$('#block_5_box_0').delay(400).animate({"opacity":"1","margin-top":"1vh"},600);
+				$('#block_5_box_1').delay(700).animate({"opacity":"1","margin-top":"1vh"},600);
+				$('#block_5_box_3').delay(1100).animate({"opacity":"1","margin-top":"1vh"},500);
+				$('#block_5_box_4').delay(1200).animate({"opacity":"1","margin-top":"1vh"},500);
+				$('#block_5_box_5').delay(1200).animate({"opacity":"1","margin-top":"1vh"},500);
 
 //				$('#block_5_box_6').delay(1400).animate({"opacity":"1","margin-top":"1vh"},600);
 				var N=1200;
