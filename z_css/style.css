@@ -632,7 +632,7 @@ header{
 
 .box_5_0{
 	position		:relative;
-	margin			:2vh auto;
+	margin			:10vh auto 2vh auto;
 	width			:110vh;
 	flex-basis		:110vh;
 	border			:1px solid #101010;
