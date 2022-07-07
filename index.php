@@ -61,6 +61,10 @@
 				月額管理費がかからない他、サイトの更新や変更の際は、弊社以外の他の制作会社に依頼することも可能です。<br>
 				もちろん弊社も末永く使っていただけますよう頑張ります！　<span class="border">切磋琢磨する環境だからこそ良い物が生まれるのです。</span><br>
 			</div>
+
+				<img src="./z_img/img1.webp" class="box_item1_img" alt="staff_image">
+
+
 			</div>
 			
 
@@ -92,10 +96,13 @@
 	<article id="block_2" class="box">
 		<div class="box_ab">
 			<h2 class="h2">サンプルサイト</h2>
-			<div id="block_2_box_0" class="box_2_0">
+			<div id="block_2_box_0" class="box_2">
+			<div class="box_2_0">
 				「Night-Paty」は大きく2種類のテーマをご用意させていただきました。ここからお店の形態やイメージに合わせてカスタマイズさせていただきます。<br>
 				同じデザインを他店舗で使用することはありませんのでオリジナリティを出すことができます。<br>
 				完全オリジナルデザインも大歓迎です。担当にお客様のイメージをお伝えくださいませ。<br>
+			</div>
+				<img src="./z_img/img0.webp" class="box_item1_img" alt="staff_image">
 			</div>
 
 			<div class="box_2_flex">

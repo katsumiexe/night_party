@@ -356,6 +356,13 @@ header{
 	background		:#ffa0c0;
 }
 
+.box_item1_img{
+	position		:absolute;
+	bottom			:2vh;
+	right			:0;
+	margin			:auto;
+	width			:36vh;
+}
 .box_item2{
 	margin			:1.5vh;
 	width			:39vh;
@@ -375,11 +382,12 @@ header{
 }
 
 .box_1{
+	position		:relative;
 	margin			:4vh auto 3vh auto;
 	width			:162vh;
 	padding			:1vh;
 	height			:42vh;
-	background		:#fc60fc;
+	background		:#fafafa;
 	opacity			:0;
 }
 
@@ -389,12 +397,15 @@ header{
 	width			:120vh;
 	padding			:1.5vh;
 	background		:#fcfcfc;
+	background		:linear-gradient(#f0f0ff, #e0e0f0);
+	background		:#fffff0;
 	height			:15vh;
 	line-height		:4vh;
 	text-align		:left;
 	color			:#384240;
 	font-size		:2.2vh;
 	border-bottom	:3px solid #c00000;
+	border			:1px solid #909090;
 	opacity			:0;
 }
 
@@ -503,19 +514,26 @@ header{
 	top				:-80vh;
 }
 
+.box_2{
+	position		:relative;
+	margin			:4vh auto 3vh auto;
+	width			:162vh;
+	padding			:1vh;
+	height			:30vh;
+	background		:#fafafa;
+	opacity			:0;
+}
+
+
 .box_2_0{
 	display			:block;
-	margin			:10vh auto 1vh auto;
-	width			:132vh;
+	margin			:2vh auto auto 2vh;
+	width			:120vh;
 	padding			:1.5vh;
 	font-size		:2.2vh;
 	line-height		:3.5vh;
-	height			:22vh;
-	border			:1px solid #0000c0;
 	color			:#384240;
-	background		:linear-gradient(135deg,#fcfcfc,#fafafa);
 	text-align		:left;
-	opacity			:0;
 }
 
 .box_2_flex{
