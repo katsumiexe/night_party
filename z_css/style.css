@@ -586,7 +586,6 @@ header{
 	width			:32vh;
 	height			:5vh;
 	line-height		:6vh;
-//	background		:#fcfcfc;
 	padding			:0 1vh;
 	text-align		:left;
 	font-weight		:700;
@@ -613,7 +612,7 @@ header{
 
 .box_2_1_img{
 	position		:absolute;
-	bottom			:1vh;
+	top				:1vh;
 	left			:1vh;
 	width			:40vh;
 	height			:30vh;

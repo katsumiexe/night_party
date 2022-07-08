@@ -332,10 +332,12 @@ header{
 	width			:98vw;
 	padding			:1vw;
 	height			:125vw;
-	background		:#fc60fc;
 	opacity			:0;
 }
 
+.box_item1_img{
+	display:none;
+}
 
 .box_1_1_text{
 	position		:absolute;
@@ -352,6 +354,17 @@ header{
 	font-size		:3.5vw;
 	padding			:1vw;
 	margin			:0;
+}
+
+.box_1_2 {
+    height: 8vw;
+    line-height: 9vw;
+    font-size: 6vw;
+    margin: 1vw auto 4vw auto;
+    color: #dE5F7C;
+    font-weight: 700;
+    border-bottom: 1vw solid #FE7F9C;
+    padding: 0 1vw;
 }
 
 .box_1_ball{
@@ -400,9 +413,16 @@ header{
 	left			:0;
 }
 
+.box_2{
+	width			:94vw;
+	padding			:1vw;
+	height			:auto;
+	
+}
+
 .box_2_flex{
 	flex-wrap		:wrap;
-	width			:94vw;
+	width			:96vw;
 	padding			:0;
 	height			:auto;
 }
@@ -410,7 +430,7 @@ header{
 .box_2_0{
 	display			:flex;
 	justify-content	:space-between;
-	margin			:10vw auto 2vw auto;
+	margin			:1vw auto;
 	width			:90vw;
 	padding			:0;
 	height			:auto;
@@ -423,7 +443,7 @@ header{
 
 .box_2_1{
 	width			:94vw;
-	height			:80vw;
+	height			:105vw;
 	border			:0.5vw solid #e0c0f0;
 	border-radius	:2vw;
 	text-align		:left;
@@ -432,13 +452,39 @@ header{
 	margin			:10vw auto 5vw auto;;
 }
 
+
+.box_2_1_img{
+	top				:1vw;
+	left			:0;
+	right			:0;
+	margin			:auto;
+	width			:92vw;
+	height			:69vw;
+}
+
+.box_2_1_title{
+	position		:absolute;
+	top				:2vw;
+	right			:2vw;
+	width			:32vw;
+	height			:7vw;
+	line-height		:7vw;
+	padding			:0 1vw;
+	text-align		:center;
+	font-weight		:700;
+	color			:#ffffff;
+	background		:#b08088;
+	font-size		:4vw;
+}
+
+
 .box_2_1_text{
 	position		:absolute;
 	bottom			:2vw;
 	left			:0;
 	right			:0;
 	margin			:auto;	
-	width			:88vw;
+	width			:89vw;
 	height			:28vw;
 	border			:1px solid #303030;
 	border-radius	:1vw;
