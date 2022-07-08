@@ -46,27 +46,26 @@
 	<article id="block_1" class="box">
 		<div class="box_ab">
 			<h2 class="h2">定額制サイトの「見えない罠」</h2>
-
+			<div class="h2_s">　</div>
 			<div id="block_1_box_0" class="box_1">
-			<div id="block_1_box_1" class="box_1_0">
-				<span class="box_1_0_title">そのホームページは「御社」のものですか？</span><br>
-				定額制サイトはその所有権が制作会社にあるため、使われている画像やロゴ等を<span class="border">自由に使う事が出来ません。</span><br>
-				更新の依頼や修正、イベントバナーの作成に至るまで他社に依頼ができないので<span class="border">必然的に囲いこまれてしまいます。</span><br>
-				そんな制作会社が最も力を入れるのは新規顧客の獲得。<span class="border">そのような環境に未来はありますか？</span><br>
-			</div>
+				<div id="block_1_box_1" class="box_1_0">
+					<span class="box_1_0_title">そのホームページは「御社」のものですか？</span><br>
+					定額制サイトはその所有権が制作会社にあるため、使われている画像やロゴ等を<span class="border">自由に使う事が出来ません。</span><br>
+					更新の依頼や修正、イベントバナーの作成に至るまで他社に依頼ができないので<span class="border">必然的に囲いこまれてしまいます。</span><br>
+					そんな制作会社が最も力を入れるのは新規顧客の獲得。<span class="border">そのような環境に未来はありますか？</span><br>
+				</div>
 
-			<div id="block_1_box_2" class="box_1_0">
-				<span class="box_1_0_title">管理は制作会社に任せずにご自身で！</span><br>
-				Night-Partyは買い切りシステムですので、<span class="border">完成したその時から全てが御社の所有物になります。</span><br>
-				月額管理費がかからない他、サイトの更新や変更の際は、弊社以外の他の制作会社に依頼することも可能です。<br>
-				もちろん弊社も末永く使っていただけますよう頑張ります！　<span class="border">切磋琢磨する環境だからこそ良い物が生まれるのです。</span><br>
-			</div>
-
+				<div id="block_1_box_2" class="box_1_0">
+					<span class="box_1_0_title">管理は制作会社に任せずにご自身で！</span><br>
+					Night-Partyは買い切りシステムですので、<span class="border">完成したその時から全てが御社の所有物になります。</span><br>
+					月額管理費がかからない他、サイトの更新や変更の際は、弊社以外の他の制作会社に依頼することも可能です。<br>
+					もちろん弊社も末永く使っていただけますよう頑張ります！　<span class="border">切磋琢磨する環境だからこそ良い物が生まれるのです。</span><br>
+				</div>
 				<img src="./z_img/img1.webp" class="box_item1_img" alt="staff_image">
-
-
 			</div>
 			
+
+			<div class="box_1_2">Night-Party 3つのポイント</div>
 
 			<div id="box_item_1" class="box_1_1">
 				<div id="ball1" class="box_1_ball"><span class="ball_txt">月額料金0円</span><span class="ball_icon"></span></div>
@@ -96,6 +95,7 @@
 	<article id="block_2" class="box">
 		<div class="box_ab">
 			<h2 class="h2">サンプルサイト</h2>
+			<div class="h2_s">　</div>
 			<div id="block_2_box_0" class="box_2">
 			<div class="box_2_0">
 				「Night-Paty」は大きく2種類のテーマをご用意させていただきました。ここからお店の形態やイメージに合わせてカスタマイズさせていただきます。<br>
@@ -107,7 +107,9 @@
 
 			<div class="box_2_flex">
 				<a href="./sample1" target="_BLANK" id="block_2_box_1" class="box_2_1">
-ソワレ
+					<img src="./z_img/img_pc.jpg" class="box_2_1_img" alt="staff_image">
+					<div class="box_2_1_title">テーマ01:ソワレ</div>
+
 					<div class="box_2_1_text">
 						キャスト情報を前面に出す、オーソドックスなスタイルです。<br>
 						スケジュールや写真ブログでキャストの露出を高めてアピールします。<br>
@@ -116,7 +118,8 @@
 				</a>
 
 				<a href="./sample2" target="_BLANK" id="block_2_box_2" class="box_2_1">
-コーマ
+					<img src="./z_img/img_pc.jpg" class="box_2_1_img" alt="staff_image">
+					<div class="box_2_1_title">テーマ02:コーマ</div>
 					<div class="box_2_1_text">
 						コンテンツを1ページにまとめたスタイルです。<br>
 						スケジュール、ブログを廃し、更新関連はスタッフブログがメインとなります。<br>

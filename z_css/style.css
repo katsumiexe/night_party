@@ -383,11 +383,11 @@ header{
 
 .box_1{
 	position		:relative;
-	margin			:4vh auto 3vh auto;
+	margin			:5vh auto 2vh auto;
 	width			:162vh;
 	padding			:1vh;
 	height			:42vh;
-	background		:#fafafa;
+	background		:#ffffff;
 	opacity			:0;
 }
 
@@ -396,28 +396,28 @@ header{
 	margin			:4vh auto 3vh 1vh;
 	width			:120vh;
 	padding			:1.5vh;
-	background		:#fcfcfc;
-	background		:linear-gradient(#f0f0ff, #e0e0f0);
 	background		:#fffff0;
+	background		:#ecd0c0;
 	height			:15vh;
 	line-height		:4vh;
 	text-align		:left;
 	color			:#384240;
+	color			:#8b082c;
+	
 	font-size		:2.2vh;
-	border-bottom	:3px solid #c00000;
 	border			:1px solid #909090;
 	opacity			:0;
 }
 
 .box_1_0_title{
-	font-weight	:800; 
+	font-weight	:700; 
 	font-size	:2.5vh;
 }
 
 .border{
 	padding			:0 0.5vh;
 //	font-weight		:700;
-	background		:linear-gradient(transparent 50%, #ffe0e8 50%, #ffe0e8 100%);
+	background		:linear-gradient(transparent 50%, #ffe080 50%, #ffe080 100%);
 }
 
 #box_item_1{
@@ -440,6 +440,22 @@ header{
 	padding			:0;
 	height			:30vh;
 }
+
+
+.box_1_2{
+	display			:inline-block;
+	height			:6vh;
+	line-height		:7vh;
+	font-size		:4.5vh;
+	margin			:0 auto;
+	text-align		:center;
+	color			:#dE5F7C;
+	font-weight		:700;
+	border-bottom	:1vh solid #FE7F9C;
+	padding:0 1vh;
+
+}
+
 
 .box_1_1_text{
 	position		:absolute;
@@ -519,8 +535,8 @@ header{
 	margin			:4vh auto 3vh auto;
 	width			:162vh;
 	padding			:1vh;
-	height			:30vh;
-	background		:#fafafa;
+	height			:42vh;
+	background		:#ffffff	;
 	opacity			:0;
 }
 
@@ -540,18 +556,18 @@ header{
 	display			:flex;
 	justify-content	:space-between;
 	margin			:2vh auto 1vh auto;
-	width			:160vh;
+	width			:164vh;
 	padding			:0;
-	height			:50vh;
+	height			:40vh;
 }
 
 .box_2_1{
 	position		:relative;
 	display			:inline-block;
 	text-decoration	:none;
-	width			:70vh;
+	width			:78vh;
 	padding			:0;
-	height			:46vh;
+	height			:32vh;
 	border			:1.5vh solid #d0a0a8;
 	border-radius	:2vh;
 	line-height		:3vh;
@@ -563,25 +579,46 @@ header{
 	opacity			:0;
 }
 
+.box_2_1_title{
+	position		:absolute;
+	top				:1vh;
+	right			:1vh;
+	width			:32vh;
+	height			:5vh;
+	line-height		:6vh;
+//	background		:#fcfcfc;
+	padding			:0 1vh;
+	text-align		:left;
+	font-weight		:700;
+	color			:#b08088;
+	font-size		:2.5vh;
+}
 .box_2_1_text{
 	position		:absolute;
-	bottom			:2vh;
-	left			:0;
-	right			:0;
-	margin			:auto;	
-	width			:40vh;
-	padding			:0;
-	height			:18vh;
+	bottom			:1vh;
+	right			:1vh;
+	width			:32vh;
+	height			:23vh;
 	border			:1px solid #ffd0d0;
 	border-radius	:5px;
 	line-height		:3vh;
 	text-align		:left;
 	color			:#384240;
 	font-size		:2vh;
-	padding			:1.5vh 1vh 1vh 1.5vh;
+	padding			:1vh;
 	background		:#fcfcfc;
 	box-shadow		:0.2vh 0.2vh 0.5vh rgba(255,240,250,0.6) inset;
 }
+
+
+.box_2_1_img{
+	position		:absolute;
+	bottom			:1vh;
+	left			:1vh;
+	width			:40vh;
+	height			:30vh;
+}
+
 
 .box_5_left{
 	position			:relative;

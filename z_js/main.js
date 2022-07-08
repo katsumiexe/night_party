@@ -8,7 +8,7 @@ var DBall=0;
 
 var BoxView=0;
 var Lock=0;
-var BgColor=["","#d0e0c0","#cdf5e6","#c8d8ff","#ffe0f0","#e0a0e0","#e8d8a0"];
+var BgColor=["","#e0f0d0","#f0d0d8","#c8d8ff","#ffe0f0","#e0e0ea","#e8d8a0"];
 
 if (window.matchMedia('(min-width: 959px)').matches) {
 	$(window).on('scroll',function () {
