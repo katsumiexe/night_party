@@ -107,7 +107,7 @@
 
 			<div class="box_2_flex">
 				<a href="./sample1" target="_BLANK" id="block_2_box_1" class="box_2_1">
-					<img src="./z_img/img_pc.jpg" class="box_2_1_img" alt="staff_image">
+					<img src="./z_img/mock_1.webp" class="box_2_1_img" alt="mock_image">
 					<div class="box_2_1_title">テーマ01:ソワレ</div>
 
 					<div class="box_2_1_text">
@@ -118,7 +118,7 @@
 				</a>
 
 				<a href="./sample2" target="_BLANK" id="block_2_box_2" class="box_2_1">
-					<img src="./z_img/img_pc.jpg" class="box_2_1_img" alt="staff_image">
+					<img src="./z_img/mock_1.webp" class="box_2_1_img" alt="mock_image">
 					<div class="box_2_1_title">テーマ02:コーマ</div>
 					<div class="box_2_1_text">
 						コンテンツを1ページにまとめたスタイルです。<br>
