@@ -100,7 +100,6 @@ header{
 	top			:0;
 	width		:100vw;
 	height 		:auto;
-	min-height	:100vh;
 	margin		:0 auto;
 	background	:#f0f8ff;
 }
@@ -118,7 +117,7 @@ header{
 }
 
 #block_3,#block_4{
-	height:200vw;
+	height:195vw;
 
 }
 
