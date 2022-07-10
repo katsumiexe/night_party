@@ -154,7 +154,7 @@ header{
 	top				:53vw;
 	left			:1vw;
 	width			:94vw;
-	height			:127vw;
+	height			:122vw;
 	padding			:1vw;
 	border			:1vw solid #60a0f0;
 	border-radius	:2vw;
@@ -176,20 +176,19 @@ header{
 	position		:absolute;
 	width			:46vw;
 	padding			:0;
-	height			:40vw;
+	height			:39vw;
 	transform		:rotate(-15deg);
 	opacity			:0;
 	transform-origin:top right;
 }
 
 .box_item_in{
-	padding			:1vw;
 	position		:absolute;
 	top				:0;
 	left			:0;
 	right			:auto;
 	bottom			:auto;
-	width			:43vw;
+	width			:45vw;
 	height			:38vw;
 	border			:1px solid #0000c0;
 	background		:#f8faff;
@@ -200,15 +199,15 @@ header{
 	font-size		:3.5vw;
 	height			:7vw;
 	line-height		:7vw;
-	padding-left	:1vw;
+	padding-left	:2vw;
 }
 
 .box_item_p{
 	height			:28.5vw;
-	width			:40vw;	
+	width			:43vw;	
 	font-size		:3.5vw;
 	line-height		:5vw;
-	padding			:1.2vw 1vw;
+	padding			:1vw;
 }
 
 .box_s{
@@ -266,7 +265,7 @@ header{
 }
 
 #block_4 .box_item_in{
-	border			:0.5vw solid #ffc0e0;
+	border			:1px solid #ffc0e0;
 	background		:#fff8fa;
 }
 
