@@ -335,7 +335,7 @@ header{
 	width			:98vw;
 	padding			:1vw;
 	height			:125vw;
-	opacity			:0;
+	background		:none;
 }
 
 .box_item1_img{
@@ -360,14 +360,14 @@ header{
 }
 
 .box_1_2 {
-    height: 8vw;
-    line-height: 9vw;
-    font-size: 6vw;
-    margin: 1vw auto 4vw auto;
-    color: #dE5F7C;
-    font-weight: 700;
-    border-bottom: 1vw solid #FE7F9C;
-    padding: 0 1vw;
+    height			:8vw;
+    line-height		:9vw;
+    font-size		:6vw;
+    margin			:1vw auto 4vw auto;
+    color			:#dE5F7C;
+    font-weight		:700;
+    border-bottom	:1.5vw solid #dE5F7C;
+    padding			:0 1vw;
 }
 
 .box_1_ball{
@@ -375,6 +375,7 @@ header{
 	width			:96vw;
 	height			:12vw;
 	color			:#fafafa;
+	background		:none;
 }
 
 .ball_txt{
