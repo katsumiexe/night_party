@@ -740,7 +740,7 @@ td{
 		<td class="config_prof_name">twitter</td>
 		<td class="config_prof_style"><input id="twitter" type="text" value="<?=$admin_config["twitter"]?>" class="chg0 prof_name"></td>
 	</tr>
-
+<!--
 	<tr class="tr">
 		<td class="config_prof_sort"></td>
 		<td class="config_prof_name">Instagram</td>
@@ -752,6 +752,7 @@ td{
 		<td class="config_prof_name">FACEBOOK</td>
 		<td class="config_prof_style"><input type="text" value="<?=$admin_config["facebook"]?>" class="chg0 prof_name"></td>
 	</tr>
+-->
 </table>
 
 <div class="config_title">リボン</div>
