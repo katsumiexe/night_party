@@ -421,15 +421,15 @@ header{
 }
 
 #box_item_1{
-	left			:3vh;
+	left			:3.5vh;
 }
 
 #box_item_2{
-	left			:58.5vh;
+	left			:59vh;
 }
 
 #box_item_3{
-	left			:114vh;
+	left			:114.5vh;
 }
 
 .box_1_out{
@@ -440,12 +440,11 @@ header{
 	margin			:auto;
 	width			:100vw;
 	height			:34vh;
-	background		:rgba(80,80,80,0.4);
 }
 
 .box_1_1{
 	position		:absolute;
-	top				:75.5vh;
+	top				:76.5vh;
 	width			:53vh;
 	padding			:0;
 	height			:21vh;
