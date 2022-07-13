@@ -6,12 +6,9 @@
 <title>Night-Party</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet" href="./z_css/style.css?t=<?=time()?>">
 <link rel="stylesheet" href="./z_css/style_s.css?t=<?=time()?>">
-
-
 <style></style>
 <script src="./z_js/main.js?t=<?=time()?>"></script>
 <script src="./z_js/main_s.js?t=<?=time()?>"></script>
@@ -35,7 +32,7 @@
 <img src="./z_img/top_1.png" class="top_1" alt="top写真1">
 	<article id="block_0" class="box_top">
 		<div class="top_comm">
-			<h2 class="top_title">管理型CMS「Night-Party」</h2>
+			<h2 class="top_title">Night-Party</h2>
 			<p class="top_p">
 				Night-Partyは、ナイトワークに特化したCMS連動型サイトです。<br>
 				キャバクラ、デリヘル、メンズエステ、ガールズバーなど、<br>
@@ -76,7 +73,7 @@
 
 			<div id="box_item_2" class="box_1_1">
 				<p class="box_1_1_text">
-				次世代画像フォーマット「Webp（ウェッピー）」に標準対応。CMSからも、キャストがアップロードしたものも、全て自動でWebP変換します。<br>
+				次世代画像フォーマット「Webp（ウェッピー）」に標準対応。キャストがスマホからアップロードしたブログ用の写真も全て自動でWebP変換します。<br>
 				</p>
 			</div>
 
@@ -108,9 +105,18 @@
 			</div>
 
 			<div class="box_2_flex">
-				<a href="./sample1" target="_BLANK" id="block_2_box_1" class="box_2_1">
+				<a href="./sample2" target="_BLANK" id="block_2_box_2" class="box_2_1">
 					<img src="./z_img/mock_1.webp" class="box_2_1_img" alt="mock_image">
-					<div class="box_2_1_title">テーマ01:ソワレ</div>
+					<div class="box_2_1_title">テーマ01:コーマ</div>
+					<div class="box_2_1_text">
+						コンテンツを1ページにまとめたスタイルです。<br>
+						スケジュール、ブログを廃し、更新関連はスタッフブログがメインとなります。<br>
+						キャスト数が少なく、サイトの更新自体を少なめにしたい店舗様用です。<br>
+					</div>
+				</a>
+				<a href="./sample1" target="_BLANK" id="block_2_box_1" class="box_2_1">
+					<img src="./z_img/mock_2.webp" class="box_2_1_img" alt="mock_image">
+					<div class="box_2_1_title">テーマ02:ソワレ</div>
 
 					<div class="box_2_1_text">
 						キャスト情報を前面に出す、オーソドックスなスタイルです。<br>
@@ -119,15 +125,6 @@
 					</div>
 				</a>
 
-				<a href="./sample2" target="_BLANK" id="block_2_box_2" class="box_2_1">
-					<img src="./z_img/mock_1.webp" class="box_2_1_img" alt="mock_image">
-					<div class="box_2_1_title">テーマ02:コーマ</div>
-					<div class="box_2_1_text">
-						コンテンツを1ページにまとめたスタイルです。<br>
-						スケジュール、ブログを廃し、更新関連はスタッフブログがメインとなります。<br>
-						キャスト数が少なく、サイトの更新自体を少なめにしたい店舗様用です。<br>
-					</div>
-				</a>
 			</div>
 		</div>
 	</article>
@@ -223,6 +220,7 @@
 					</div>
 				</div>
 			</div>
+
 			<div id="box_right_a" class="box_flex_right">
 				<div class="box_item2">
 	不要な機能を排除し、シンプルに簡単、便利さを追求しました。<br>
@@ -230,6 +228,7 @@
 				<img src="./z_img/img2.webp" class="box_item2_img" alt="staff_image">
 				</div>
 			</div>
+
 		</div>
 	</article>
 
@@ -238,8 +237,8 @@
 			<h2 class="h2">キャスト用マイページHIME-Karte</h2>
 			<div class="h2_s">　</div>
 			<div class="box_flex_left">
-				<div id="box_item_b1" class="box_item">
 
+				<div id="box_item_b1" class="box_item">
 					<div class="box_item_in">
 						<div class="box_item_title">TOP
 							<span id="box_4_icon_1" class="box_item_icon">
@@ -415,7 +414,6 @@
 				</div>
 			</div>
 
-	
 			<div class="box_5_right">
 				<div id="block_5_box_5" class="box_5_title">有料オプション</div>
 
@@ -464,19 +462,22 @@
 				ただ今準備中です。<br>
 				正式販売開始は2023年夏以降を予定しています。<br>
 				それまでの期間の問合せ、ご依頼は「Coconara（ココナラ）」様にて承っています。
-				<div class="box_6_1">ココナラへ移動する</div>
 				</div>
+				<div class="box_6_1">ココナラへ移動する</div>
 			</div>
+
+
+
 		</div>
 		<div></div>
 		<footer class="footer">copyright 2022 Night Party all right reserved.</footer>
 	</article>
 </section>
-<form id="form_4" action="./sample1/mypage/index.php" method="post" target="_blank">
-	<input type="hidden" id="h_4" name="prm" value="0">
+<form id="form_b" action="./sample1/mypage/index.php" method="post" target="_blank">
+	<input type="hidden" id="h_b" name="prm" value="0">
 </form>
-<form id="form_3" action="./sample1/admin/index.php" method="post" target="_blank">
-	<input type="hidden" id="h_3" name="prm" value="0">
+<form id="form_a" action="./sample1/admin/index.php" method="post" target="_blank">
+	<input type="hidden" id="h_a" name="prm" value="0">
 </form>
 </body>
 </html>

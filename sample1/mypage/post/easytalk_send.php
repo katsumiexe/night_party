@@ -47,7 +47,7 @@ if($img_code){
 
 	$img2	= imagecreatetruecolor(600,600);
 	ImageCopyResampled($img2, $img, 0, 0, 0, 0, 600, 600, 600, 600);
-	imagepng($img2,$img_link.".png");
+//	imagepng($img2,$img_link.".png");
 
 	$img2	= imagecreatetruecolor(200,200);
 	ImageCopyResampled($img2, $img, 0, 0, 0, 0, 200, 200, 600, 600);

@@ -61,21 +61,21 @@ if($img_code){
 	$img	= imagecreatefromstring(base64_decode($img_code));	
 	$img2	= imagecreatetruecolor(600,600);
 	ImageCopyResampled($img2, $img, 0, 0, 0, 0, 600, 600, 600, 600);
-	imagepng($img2,$img_link.".png");
+//	imagepng($img2,$img_link.".png");
 
 	if($admin_config["webp_select"] == 1){
-		imagewebp($img2,$img_link.".webp");
+//		imagewebp($img2,$img_link.".webp");
 	}
 
 	$img2	= imagecreatetruecolor(200,200);
 	ImageCopyResampled($img2, $img, 0, 0, 0, 0, 200, 200, 600, 600);
 
-	imagepng($img2,$img_link."_s.png");
+//	imagepng($img2,$img_link."_s.png");
 		$tmp_img="../img/profile/{$cast_data["id"]}/{$img_name}_s.png?t=00";
 		$tmp_img2="../img/profile/{$cast_data["id"]}/{$img_name}.png?t=00";
 
 	if($admin_config["webp_select"] == 1){
-		imagewebp($img2,$img_link."_s.webp");
+//		imagewebp($img2,$img_link."_s.webp");
 		$tmp_img="../img/profile/{$cast_data["id"]}/{$img_name}_s.webp?t=00";
 		$tmp_img2="../img/profile/{$cast_data["id"]}/{$img_name}.webp?t=00";
 	}

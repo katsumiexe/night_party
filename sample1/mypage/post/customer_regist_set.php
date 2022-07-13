@@ -39,10 +39,10 @@ if($img_code){
 
 	$img_link="../../img/cast/{$box_no}/c/{$img_name}";
 	$new_img = imagecreatefromstring(base64_decode($img_code));	
-	imagepng($new_img,$img_link.".png");
+//	imagepng($new_img,$img_link.".png");
 
 	if($admin_config["webp_select"] == 1){
-		imagewebp($new_img,$img_link.".webp");
+//		imagewebp($new_img,$img_link.".webp");
 	}
 
 	$sql ="UPDATE ".TABLE_KEY."_customer SET";

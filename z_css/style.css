@@ -788,17 +788,17 @@ header{
 	font-size	:3vh;
 	color		:#606060;
 	display		:block;
-	width		:42vh;
-	height		:30vh;
+	width		:70vh;
+	height		:36vh;
 	line-height	:4.2vh;
 	text-align	:left;
-	margin		:5vh auto 5vh auto;
+	margin		:5vh auto 3vh auto;
 }
 
 
 .box_6_1{
 	position	:absolute;
-	bottom		:0;
+	bottom		:3vh;
 	left		:0;
 	right		:0;
 	display		:block;

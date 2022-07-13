@@ -266,12 +266,19 @@ if (window.matchMedia('(min-width: 959px)').matches) {
         $(this).find('.box_item_icon_1, .box_item_icon_3').animate({'right':'15vh'},100);
 	});
 
-	$(".box_item_icon").on('click',function () {
-		Tmp=$(this).attr('id').substr(4,1);
-		Tmp2=$(this).attr('id').substr(11,1);
+	$(".box_item").on('click',function () {
+		Tmp=$(this).attr('id').substr(9,1);
+		Tmp2=$(this).attr('id').substr(10,1);
+
+console.log(Tmp);
+console.log(Tmp2);
+
 		$("#h_" + Tmp).val(Tmp2);
 		$("#form_" + Tmp).submit();
 	});
+
+//box_item_b1
+
 
 	$(window).on('scroll',function () {
 		if($(this).scrollTop() < SC+200 && BoxView>0){
@@ -304,27 +311,6 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 		$('#ball1').delay(200).animate({'left':'170vh','top':'3vh'},400).animate({'left':'4.5vh','top':'5vh'},250);
 		$('#ball2').delay(250).animate({'left':'170vh','top':'8vh'},500).animate({'left':'60vh','top':'5vh'},250);
 		$('#ball3').delay(300).animate({'left':'170vh','top':'14vh'},600).animate({'left':'115.5vh','top':'5vh'},250);
-
-		$("#ball1 > .ball_txt").animate({'width':0,'padding':0},150).delay(800).animate({'width':'42.5vh',"padding-left":'10vh'},150);
-		$("#ball2 > .ball_txt").animate({'width':0,'padding':0},200).delay(900).animate({'width':'42.5vh',"padding-left":'10vh'},150);
-		$("#ball3 > .ball_txt").animate({'width':0,'padding':0},250).delay(1000).animate({'width':'42.5vh',"padding-left":'10vh'},150);
-	}
-
-	function UpBall2() {
-		$(".ball_txt").animate({'width':0,'padding':0},150).delay(700).animate({'width':'42.5vh',"padding-left":'10vh'},150);
-		$(".ball_icon").animate({'border-radius':'30px'},150).delay(700).animate({"border-radius":'10px'},150);
-
-		$('#ball1').delay(200).animate({'left':'170vh','top':'-40vh'},400).animate({'left':'1vh','top': "-102vh"},300);
-		$('#ball2').delay(200).animate({'left':'170vh','top':'-45vh'},450).animate({'left':'-54.5vh','top':"-91vh"},250);
-		$('#ball3').delay(200).animate({'left':'170vh','top':'-50vh'},500).animate({'left':'-110vh','top':"-80vh"},200);
-	}
-
-	function DownBall2() {
-		$(".ball_icon").animate({"border-radius":'5vh'},150).delay(700).animate({"border-radius":'1vh'},150);
-
-		$('#ball1').delay(200).animate({'left':'170vh','top':'-40vh'},400).animate({'left':'0px','top':'0'},250);
-		$('#ball2').delay(250).animate({'left':'170vh','top':'-40vh'},500).animate({'left':'0px','top':'0'},250);
-		$('#ball3').delay(300).animate({'left':'170vh','top':'-40vh'},600).animate({'left':'0px','top':'0'},250);
 
 		$("#ball1 > .ball_txt").animate({'width':0,'padding':0},150).delay(800).animate({'width':'42.5vh',"padding-left":'10vh'},150);
 		$("#ball2 > .ball_txt").animate({'width':0,'padding':0},200).delay(900).animate({'width':'42.5vh',"padding-left":'10vh'},150);

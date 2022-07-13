@@ -123,10 +123,10 @@ if($event_set_id){
 		imagepalettetotruecolor($img_tmp);
 
 		if($post_id=="recruit"){
-			imagejpeg($img_tmp,"../img/page/contents/recruit_top.jpg",100);
+//			imagejpeg($img_tmp,"../img/page/contents/recruit_top.jpg",100);
 
 			if($admin_config["webp_select"] == 1){
-				imagewebp($img_tmp,"../img/page/contents/recruit_top.webp");
+//				imagewebp($img_tmp,"../img/page/contents/recruit_top.webp");
 			}
 			$sql	 ="UPDATE ".TABLE_KEY."_contents SET";
 			$sql	.=" prm='{$prm}'";
@@ -135,11 +135,11 @@ if($event_set_id){
 			mysqli_query($mysqli,$sql);
 
 		}else{
-			imagejpeg($img_tmp,"../img/page/{$post_id}/{$post_id}_{$tmp_auto}.jpg",100);
-			imagepng($img_tmp,"../img/page/{$post_id}/{$post_id}_{$tmp_auto}.png");
+//			imagejpeg($img_tmp,"../img/page/{$post_id}/{$post_id}_{$tmp_auto}.jpg",100);
+//			imagepng($img_tmp,"../img/page/{$post_id}/{$post_id}_{$tmp_auto}.png");
 
 			if($admin_config["webp_select"] == 1){
-				imagewebp($img_tmp,"../img/page/{$post_id}/{$post_id}_{$tmp_auto}.webp");
+//				imagewebp($img_tmp,"../img/page/{$post_id}/{$post_id}_{$tmp_auto}.webp");
 			}
 		}
 	}

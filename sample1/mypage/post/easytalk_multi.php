@@ -23,13 +23,13 @@ if($img_code){
 
 	$img2	= imagecreatetruecolor(600,600);
 	ImageCopyResampled($img2, $img, 0, 0, 0, 0, 600, 600, 600, 600);
-	imagepng($img2,$img_link.".png");
-	imagewebp($img2,$img_link.".webp");
+//	imagepng($img2,$img_link.".png");
+//	imagewebp($img2,$img_link.".webp");
 
 	$img2	= imagecreatetruecolor(200,200);
 	ImageCopyResampled($img2, $img, 0, 0, 0, 0, 200, 200, 600, 600);
 	imagepng($img2,$img_link."_s.png");
-	imagewebp($img2,$img_link."_s.webp");
+//	imagewebp($img2,$img_link."_s.webp");
 
 	$tmp_img=substr($img_link,3).".png";
 }

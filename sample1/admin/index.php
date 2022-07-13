@@ -63,7 +63,7 @@ if($menu_post == "blog_write"){
 		imagepng($img2,$img_link.".png");
 
 		if($admin_config["webp_select"] == 1){
-			imagewebp($img2,$img_link.".webp");
+//			imagewebp($img2,$img_link.".webp");
 		}
 
 		$img2	= imagecreatetruecolor(300,300);
@@ -71,7 +71,7 @@ if($menu_post == "blog_write"){
 		imagepng($img2,$img_link."_s.png");
 
 		if($admin_config["webp_select"] == 1){
-			imagewebp($img2,$img_link."_s.webp");
+//			imagewebp($img2,$img_link."_s.webp");
 		}
 		imagedestroy($img2);
 	}
@@ -373,14 +373,14 @@ if($staff_set){
 						ImageCopyResampled($img2_n, $stamp_img, $left_n, $top_n, $left2, $top2, $width_n, $height_n, 430, 430);
 					}
 
-					imagejpeg($img2,$link."/".$a1.".jpg",100);
-					imagejpeg($img2_s,$link."/".$a1."_s.jpg",100);
-					imagejpeg($img2_n,$link."/".$a1."_n.jpg",100);
+//					imagejpeg($img2,$link."/".$a1.".jpg",100);
+//					imagejpeg($img2_s,$link."/".$a1."_s.jpg",100);
+//					imagejpeg($img2_n,$link."/".$a1."_n.jpg",100);
 
 if($admin_config["webp_select"] == 1){
-					imagewebp($img2,$link."/".$a1.".webp");
-					imagewebp($img2_s,$link."/".$a1."_s.webp");
-					imagewebp($img2_n,$link."/".$a1."_n.webp");
+//					imagewebp($img2,$link."/".$a1.".webp");
+//					imagewebp($img2_s,$link."/".$a1."_s.webp");
+//					imagewebp($img2_n,$link."/".$a1."_n.webp");
 }
 					imagedestroy($img2);
 					imagedestroy($img2_s);
