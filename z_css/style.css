@@ -432,13 +432,23 @@ header{
 	left			:114vh;
 }
 
+.box_1_out{
+	position		:fixed;
+	left			:0;
+	right			:0;
+	top				:62vh;
+	margin			:auto;
+	width			:100vw;
+	height			:34vh;
+	background		:rgba(80,80,80,0.4);
+}
 
 .box_1_1{
 	position		:absolute;
-	top				:67vh;
+	top				:75.5vh;
 	width			:53vh;
 	padding			:0;
-	height			:30vh;
+	height			:21vh;
 }
 
 
@@ -459,7 +469,7 @@ header{
 
 .box_1_1_text{
 	position		:absolute;
-	top				:9.5vh;
+	top				:0vh;
 	left			:0;
 	width			:49vh;
 	border			:1vh solid #FE7F9C;
@@ -516,18 +526,18 @@ header{
 }
 
 #ball1{
-	left			:1vh;
-	top				:-102vh;
+	left			:5vh;
+	top				:1vh;
 }
 
 #ball2{
-	left			:-54.5vh;
-	top				:-91vh;
+	left			:5vh;
+	top				:12vh;
 }
 
 #ball3{
-	left			:-110vh;
-	top				:-80vh;
+	left			:5vh;
+	top				:23vh;
 }
 
 .box_2{

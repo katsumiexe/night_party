@@ -285,7 +285,32 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 			SC=$(this).scrollTop();
 		}
 	});
+
 	function UpBall() {
+		$(".ball_txt").animate({'width':0,'padding':0},150).delay(700).animate({'width':'42.5vh',"padding-left":'10vh'},150);
+		$(".ball_icon").animate({'border-radius':'30px'},150).delay(700).animate({"border-radius":'10px'},150);
+		$('.box_1_out').animate({'width':'100vw'},500);
+
+		$('#ball1').delay(200).animate({'left':'170vh','top':'3vh'},400).animate({'left':'5vh','top': "1vh"},300);
+		$('#ball2').delay(200).animate({'left':'170vh','top':'-8vh'},450).animate({'left':'5vh','top':"12vh"},250);
+		$('#ball3').delay(200).animate({'left':'170vh','top':'14vh'},500).animate({'left':'5vh','top':"23vh"},200);
+
+	}
+
+	function DownBall() {
+		$(".ball_icon").animate({"border-radius":'5vh'},150).delay(700).animate({"border-radius":'1vh'},150);
+		$('.box_1_out').animate({'width':'170vh'},500);
+
+		$('#ball1').delay(200).animate({'left':'170vh','top':'3vh'},400).animate({'left':'3vh','top':'4vh'},250);
+		$('#ball2').delay(250).animate({'left':'170vh','top':'8vh'},500).animate({'left':'58.5vh','top':'4vh'},250);
+		$('#ball3').delay(300).animate({'left':'170vh','top':'14vh'},600).animate({'left':'114vh','top':'4vh'},250);
+
+		$("#ball1 > .ball_txt").animate({'width':0,'padding':0},150).delay(800).animate({'width':'42.5vh',"padding-left":'10vh'},150);
+		$("#ball2 > .ball_txt").animate({'width':0,'padding':0},200).delay(900).animate({'width':'42.5vh',"padding-left":'10vh'},150);
+		$("#ball3 > .ball_txt").animate({'width':0,'padding':0},250).delay(1000).animate({'width':'42.5vh',"padding-left":'10vh'},150);
+	}
+
+	function UpBall2() {
 		$(".ball_txt").animate({'width':0,'padding':0},150).delay(700).animate({'width':'42.5vh',"padding-left":'10vh'},150);
 		$(".ball_icon").animate({'border-radius':'30px'},150).delay(700).animate({"border-radius":'10px'},150);
 
@@ -294,7 +319,7 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 		$('#ball3').delay(200).animate({'left':'170vh','top':'-50vh'},500).animate({'left':'-110vh','top':"-80vh"},200);
 	}
 
-	function DownBall() {
+	function DownBall2() {
 		$(".ball_icon").animate({"border-radius":'5vh'},150).delay(700).animate({"border-radius":'1vh'},150);
 
 		$('#ball1').delay(200).animate({'left':'170vh','top':'-40vh'},400).animate({'left':'0px','top':'0'},250);

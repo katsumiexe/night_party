@@ -31,6 +31,7 @@
 
 <section class="main">
 <img src="./z_img/top_2.webp" class="top_0" alt="top写真0">
+<img src="./z_img/top_6.jpg" class="top_0" alt="top写真0">
 <img src="./z_img/top_1.png" class="top_1" alt="top写真1">
 	<article id="block_0" class="box_top">
 		<div class="top_comm">
@@ -66,9 +67,7 @@
 			
 
 			<div class="box_1_2">Night-Party 3つのポイント</div>
-
 			<div id="box_item_1" class="box_1_1">
-				<div id="ball1" class="box_1_ball"><span class="ball_txt">月額料金0円</span><span class="ball_icon"></span></div>
 				<p class="box_1_1_text">
 				買い切り型ですので毎月の保守費用は0円。ホームページ、写真等制作物全ての所有権もお客様のものとなります。<br>
 				継続サポートももちろん歓迎です。必要に応じてご依頼くださいませ。
@@ -76,18 +75,21 @@
 			</div>
 
 			<div id="box_item_2" class="box_1_1">
-				<div id="ball2" class="box_1_ball"><span class="ball_txt">自動WebP変換</span><span class="ball_icon"></span></div>
 				<p class="box_1_1_text">
 				次世代画像フォーマット「Webp（ウェッピー）」に標準対応。CMSからも、キャストがアップロードしたものも、全て自動でWebP変換します。<br>
 				</p>
 			</div>
 
 			<div id="box_item_3" class="box_1_1">
-				<div id="ball3" class="box_1_ball"><span class="ball_txt">3段階レスポンシブ</span><span class="ball_icon"></span></div>
 				<p class="box_1_1_text">
 					パソコン、スマホ対応はもちろんのこと、さらにタブレットも最適化した3段階レスポンシブを採用しています。<br>
 					タブレット利用者も増えています。「スマホと同じでいいや」では大事なお客様を逃がしてしまいます。
 				</p>
+			</div>
+			<div class="box_1_out">
+				<div id="ball1" class="box_1_ball"><span class="ball_txt">月額料金0円</span><span class="ball_icon"></span></div>
+				<div id="ball2" class="box_1_ball"><span class="ball_txt">自動WebP変換</span><span class="ball_icon"></span></div>
+				<div id="ball3" class="box_1_ball"><span class="ball_txt">3段階レスポンシブ</span><span class="ball_icon"></span></div>
 			</div>
 		</div>
 	</article>
@@ -459,7 +461,9 @@
 			<div class="h2_s">　</div>
 			<div id="block_6_box_0" class="box_6_0">
 				<div class="box_6_0_1">
-				ただいまお問合せ、ご依頼は「Coconara（ココナラ）」様にて承っています。
+				ただ今準備中です。<br>
+				正式販売開始は2023年夏以降を予定しています。<br>
+				それまでの期間の問合せ、ご依頼は「Coconara（ココナラ）」様にて承っています。
 				<div class="box_6_1">ココナラへ移動する</div>
 				</div>
 			</div>
