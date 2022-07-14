@@ -270,9 +270,6 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 		Tmp=$(this).attr('id').substr(9,1);
 		Tmp2=$(this).attr('id').substr(10,1);
 
-console.log(Tmp);
-console.log(Tmp2);
-
 		$("#h_" + Tmp).val(Tmp2);
 		$("#form_" + Tmp).submit();
 	});

@@ -396,16 +396,14 @@ header{
 	margin			:4vh auto 3vh 1vh;
 	width			:120vh;
 	padding			:1.5vh;
-	background		:#fffff0;
-	background		:#ecd0c0;
+	background		:#e8f0e0;
 	height			:15vh;
 	line-height		:4vh;
 	text-align		:left;
-	color			:#384240;
-	color			:#8b082c;
+	color			:#506070;
 	
 	font-size		:2.2vh;
-	border			:1px solid #909090;
+	border			:1px solid #404040;
 	opacity			:0;
 }
 
@@ -415,8 +413,9 @@ header{
 }
 
 .border{
-	padding			:0 0.5vh;
-	background		:linear-gradient(transparent 50%, #ffe080 50%, #ffe080 100%);
+	padding			:0 5px;
+	background		:linear-gradient(transparent 50%, #ffd8f8 50%, #ffd8f8 100%);
+	color			:#304050;
 }
 
 #box_item_1{
