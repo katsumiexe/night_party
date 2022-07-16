@@ -107,7 +107,7 @@
 			</div>
 
 			<div class="box_2_flex">
-				<a href="./sample2" target="_BLANK" id="block_2_box_2" class="box_2_1">
+				<a href="./sample2" target="_BLANK" id="block_2_box_1" class="box_2_1">
 					<img src="./z_img/mock_1.webp" class="box_2_1_img" alt="mock_image">
 					<div class="box_2_1_title">テーマ01:コーマ</div>
 					<div class="box_2_1_text">
@@ -116,7 +116,7 @@
 						キャスト数が少なく、サイトの更新自体を少なめにしたい店舗様用です。<br>
 					</div>
 				</a>
-				<a href="./sample1" target="_BLANK" id="block_2_box_1" class="box_2_1">
+				<a href="./sample1" target="_BLANK" id="block_2_box_2" class="box_2_1">
 					<img src="./z_img/mock_2.webp" class="box_2_1_img" alt="mock_image">
 					<div class="box_2_1_title">テーマ02:ソワレ</div>
 

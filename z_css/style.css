@@ -483,7 +483,7 @@ header{
 
 .box_1_ball{
 	position		:absolute;
-	width			:49vh;
+	width			:53vh;
 	height			:9vh;
 	color			:#fafafa;
 }
@@ -522,17 +522,17 @@ header{
 }
 
 #ball1{
-	left			:5vh;
+	left			:15vh;
 	top				:1vh;
 }
 
 #ball2{
-	left			:5vh;
+	left			:15vh;
 	top				:12vh;
 }
 
 #ball3{
-	left			:5vh;
+	left			:15vh;
 	top				:23vh;
 }
 
@@ -855,7 +855,7 @@ header{
 
 .top_comm{
 	position	:absolute;
-	left		:5vh;
+	left		:15vh;
 	top			:40vh;
 	width		:66vh;
 	height		:16vh;

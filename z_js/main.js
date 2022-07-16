@@ -30,9 +30,9 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 				DownBall();
 
 			}else if(BoxView == 2){
-				$('#block_2_box_0').delay(400).animate({"opacity":"1","margin-top":"1vh"},1000);
+				$('#block_2_box_0').delay(400).animate({"opacity":"1","margin-top":"1vh"},800);
 				$('#block_2_box_1').delay(800).animate({"opacity":"1","margin-top":"1vh"},800);
-				$('#block_2_box_2').delay(1200).animate({"opacity":"1","margin-top":"1vh"},600);
+				$('#block_2_box_2').delay(1000).animate({"opacity":"1","margin-top":"1vh"},600);
 
 			}else if(BoxView == 3){
 				$({Deg:-10, Opc:0, Top:20, Lef:5}).animate({Deg:0, Opc:1, Top:1, Lef:1}, {
@@ -234,6 +234,7 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 		$(window).scrollTop(200);
 	});
 
+/*
 	$(".box_1_ball").on('click',function(){
 		if(BoxView == 0){
 			Lock=1;
@@ -258,6 +259,7 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 			UpBall();
 		}
 	});
+*/
 
 	$(".box_item_in").hover(function () {
         $(this).find('.box_item_icon_1, .box_item_icon_3').animate({'right':'-1vh'},100);
@@ -273,9 +275,6 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 		$("#h_" + Tmp).val(Tmp2);
 		$("#form_" + Tmp).submit();
 	});
-
-//box_item_b1
-
 
 	$(window).on('scroll',function () {
 		if($(this).scrollTop() < SC+200 && BoxView>0){
@@ -295,9 +294,9 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 		$(".ball_icon").animate({'border-radius':'30px'},150).delay(700).animate({"border-radius":'10px'},150);
 		$('.box_1_out').animate({'width':'100vw'},500);
 
-		$('#ball1').delay(200).animate({'left':'170vh','top':'3vh'},400).animate({'left':'5vh','top': "1vh"},300);
-		$('#ball2').delay(200).animate({'left':'170vh','top':'-8vh'},450).animate({'left':'5vh','top':"12vh"},250);
-		$('#ball3').delay(200).animate({'left':'170vh','top':'14vh'},500).animate({'left':'5vh','top':"23vh"},200);
+		$('#ball1').delay(200).animate({'left':'170vh','top':'3vh'},400).animate({'left':'15vh','top': "1vh"},300);
+		$('#ball2').delay(200).animate({'left':'170vh','top':'-8vh'},450).animate({'left':'15vh','top':"12vh"},250);
+		$('#ball3').delay(200).animate({'left':'170vh','top':'14vh'},500).animate({'left':'15vh','top':"23vh"},200);
 
 	}
 
@@ -305,9 +304,9 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 		$(".ball_icon").animate({"border-radius":'5vh'},150).delay(700).animate({"border-radius":'1vh'},150);
 		$('.box_1_out').animate({'width':'170vh'},500);
 
-		$('#ball1').delay(200).animate({'left':'170vh','top':'3vh'},400).animate({'left':'4.5vh','top':'5vh'},250);
-		$('#ball2').delay(250).animate({'left':'170vh','top':'8vh'},500).animate({'left':'60vh','top':'5vh'},250);
-		$('#ball3').delay(300).animate({'left':'170vh','top':'14vh'},600).animate({'left':'115.5vh','top':'5vh'},250);
+		$('#ball1').delay(200).animate({'left':'170vh','top':'3vh'},400).animate({'left':'3.5vh','top':'5vh'},250);
+		$('#ball2').delay(250).animate({'left':'170vh','top':'8vh'},500).animate({'left':'59vh','top':'5vh'},250);
+		$('#ball3').delay(300).animate({'left':'170vh','top':'14vh'},600).animate({'left':'114.5vh','top':'5vh'},250);
 
 		$("#ball1 > .ball_txt").animate({'width':0,'padding':0},150).delay(800).animate({'width':'42.5vh',"padding-left":'10vh'},150);
 		$("#ball2 > .ball_txt").animate({'width':0,'padding':0},200).delay(900).animate({'width':'42.5vh',"padding-left":'10vh'},150);
