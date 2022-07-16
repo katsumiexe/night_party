@@ -578,11 +578,38 @@ a{
 	text-align			:left;
 }
 
-.contact_p{
-	height				:30px;
-	line-height			:30px;
-	padding-left		:5px;
+.contact_p,.contact_p_num,.contact_p_area{
+	font-size		:18px;
+	border			:1px solid #303030;
+	color			:#303030;
+	text-align		:left;
+	margin			:5px 20px;
+	background		:#fafafa;
 }
+
+
+.contact_p{
+	padding-left	:5px;
+	height			:30px;
+	line-height		:30px;
+}
+
+.contact_p_area{
+	padding			:5px;
+	height			:100px;
+	line-height		:25px;
+	overflow-y		:scroll;
+
+}
+
+.contact_p_num{
+	text-align		:right;
+	padding-right	:5px;
+	height			:30px;
+	line-height		:30px;
+	width			:80px;
+}
+
 
 .contact_tag{
 	color				:#f0d8a8;

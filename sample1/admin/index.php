@@ -687,16 +687,3 @@ $sel[$menu_post]="menu_sel";
 </div>
 </body>
 </html>
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
