@@ -75,7 +75,7 @@
 				<div id="block_1_box_2" class="box_1_0">
 					<span class="box_1_0_title">管理は制作会社に任せずにご自身で！</span><br>
 					Night-Partyは買い切りシステムですので、<span class="border">完成したその時から全てが御社の所有物になります。</span><br>
-					月額管理費がかからない他、サイトの更新や変更の際は、弊社以外の他の制作会社に依頼することも可能です。<br>
+					月額管理費がかからない他、サイトの更新や変更を弊社以外の他の制作会社に依頼することも可能です。<br>
 					もちろん弊社も末永く使っていただけますよう頑張ります！　<span class="border">切磋琢磨する環境だからこそ良い物が生まれるのです。</span><br>
 				</div>
 				<img src="./z_img/img1.webp" class="box_item1_img" alt="staff_image">
