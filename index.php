@@ -340,9 +340,7 @@
 			</div>
 		</div>
 	</article>
-	
-	
-
+		
 	<article id="block_5" class="box">
 		<div class="box_flex">
 			<h2 class="h2">お見積り</h2>
