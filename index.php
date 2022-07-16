@@ -2,10 +2,28 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Night-Party</title>
+<meta name="keywords" content="Night-Party,ナイトパーティ,HIME-Karte,ヒメカルテ,キャバクラ,風俗,セクキャバ,コンカフェ">
+<meta name="description" content="キャバクラ・ガールズバー・セクキャバ・コンカフェ・ホストクラブなど水商売に特化したCMSです。買い切り型のCMSですので月額管理費0円。お客様ノート『HIME-Karte（ヒメカルテ）』との連動し、さらに便利になりました">
+<meta name="author" content="Katsumi">
+<meta name="copyright" content="copyright 2022 NightParty all right reserved.">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="robots" content="max-image-preview:large">
 
+<meta property="fb:app_id" content="">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://night-party.com/z_img/top.jpg">
+<meta property="og:title" content="Night-Party|ナイトパーティ">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://night-party.com/">
+<meta property="og:site_name" content="Night-Party">
+<meta property="og:description" content="キャバクラ・ガールズバー・セクキャバ・コンカフェ・ホストクラブなど水商売に特化したCMSです。買い切り型のCMSですので月額管理費0円。お客様ノート『HIME-Karte（ヒメカルテ）』との連動し、さらに便利になりました">
 
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@serra_geddon">
+<title>NightParty『ナイトパーティ』ナイトクラブ向け高性能CMS</title>
+
+<link rel="canonical" href="https://night-party.com/">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -37,8 +55,7 @@
 			<h2 class="top_title">Night-Party</h2>
 			<p class="top_p">
 				Night-Partyは、ナイトワークに特化したCMS連動型サイトです。<br>
-				キャバクラ、デリヘル、メンズエステ、ガールズバーなど、<br>
-				キャストを売り込むタイプの接客業を対象に作られました。<br>
+				キャバクラ、デリヘル、メンズエステ、ガールズバーなど、キャストを売り込むタイプの接客業を対象に作られました。<br>
 			</p>
 		</div>
 	</article>
@@ -462,15 +479,17 @@
 				ただ今準備中です。<br>
 				正式販売開始は2023年夏以降を予定しています。<br>
 				それまでの期間の問合せ、ご依頼は「Coconara（ココナラ）」様にて承っています。
+				<div class="box_6_0_2">
+				2022.10.31まで<br>
+				ココナラからのお申込みが最大30,000円割引になります！<br>
+				</div>
 				</div>
 				<div class="box_6_1">ココナラへ移動する</div>
 			</div>
-
-
-
 		</div>
+
 		<div></div>
-		<footer class="footer">copyright 2022 Night Party all right reserved.</footer>
+		<footer class="footer">copyright 2022 NightParty all right reserved.</footer>
 	</article>
 </section>
 <form id="form_b" action="./sample1/mypage/index.php" method="post" target="_blank">

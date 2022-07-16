@@ -635,17 +635,30 @@ header{
 
 .box_6_0{
 	width		:86vw;
-	height		:50vw;
+	height		:76vw;
 	border		:0.5vw solid #c0a0e0;
 	margin		:15vw auto 5vw auto;
 }
 
 .box_6_0_1{
-	font-size	:3.5vw;
+	font-size	:4vw;
 	width		:80vw;
 	height		:40vw;
+	line-height	:5.5vw;
 	margin		:5vw auto;
 }
+
+
+.box_6_0_2{
+	border		:0.5vw solid #c00000;
+	font-size	:3.5vw;
+	width		:64vw;
+	line-height	:5vw;
+	margin		:1vw auto;
+	padding		:1vw;
+}
+
+
 
 .box_6_1{
 	bottom		:5vw;
@@ -677,8 +690,7 @@ header{
 	position	:fixed;
 	left		:0;
 	right		:0;
-	top			:auto;
-	bottom		:10vw;
+	top			:90vw;
 	width		:70vw;
 	height		:37vw;
 	padding		:2vw;

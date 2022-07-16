@@ -770,7 +770,7 @@ header{
 	position	:relative;
 	display		:block;
 	width		:80vh;
-	height		:40vh;
+	height		:50vh;
 	text-align	:left;
 	border		:0.5vh solid #c0a0e0;
 	margin		:15vh auto 3vh auto;
@@ -790,6 +790,20 @@ header{
 	margin		:5vh auto 3vh auto;
 }
 
+
+.box_6_0_2{
+	font-weight	:700;
+	color		:#c00000;
+	border		:0.5vh solid #c00000;
+	background	:#fffafa;
+	font-size	:2.5vh;
+	display		:block;
+	width		:64vh;
+	line-height	:4vh;
+	text-align	:left;
+	margin		:2vh auto;
+	padding		:1.5vh;
+}
 
 .box_6_1{
 	position	:absolute;
