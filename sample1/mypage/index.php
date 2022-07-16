@@ -1168,71 +1168,11 @@ $(function(){
 <?}elseif($cast_page==3){?>
 <script>
 $(function(){
-/*
-	setInterval(function(){
-		$.ajax({
-			type:"post",
-			url:"./post/easytalk_auto.php",
-			data:{
-				'c_id'		:Customer_id,
-				'face'		:$('#hidden_face').val(),
-				'midoku'	:$('.midoku').text(),
-			},
-			dataType: 'json',
-
-		}).done(function(data, textStatus, jqXHR){
-			console.log(data);
-			console.log(data.length);
-			console.log(data.midoku);
-
-			if(data["midoku"]){
-				var Mido=0;
-				$.each(data.midoku, function(index, val) {
-					$('#mail_hist'+index).addClass("mail_yet");
-					$('#mail_hist'+index).children('.mail_count').show();
-					$('#mail_hist'+index).children('.mail_date').text(val.slice(0,16));
-					$('#mail_hist'+index).children('.mail_log').text(val.slice(16));
-					Mido++;
-				});
-
-				$('#m3').html("<span class=\"menu_i\"></span><span class=\"menu_s\">EasyTalk</span><span class=\"easy_midoku\">"+Mido+"</span>");
-				$('.midoku_count').fadeIn(500).text(Mido);
-
-			}else{
-				$('.midoku_count').hide();
-				$('.midoku_btn').removeClass('midoku_on');
-				$('#m3').html("<span class=\"menu_i\"></span><span class=\"menu_s\">EasyTalk</span>");
-			}
-
-			if(data.kidoku>0){
-				$.when(
-					$('.midoku').after("<span class=\"kidoku\">既読</span>")
-				).done(function(){
-					$('.midoku').remove();
-					$('.bg').animate({'background-color':'#d0ffe0'},1000);
-				})
-			}
-
-			if(data.html){
-				$.when(
-					$('.new_set').after(data.html),
-
-				).done(function(){
-					$('.tl_append').slideDown(400);
-				});
-			}
-
-		}).fail(function(jqXHR, textStatus, errorThrown){
-			console.log(textStatus);
-			console.log(errorThrown);
-		});
-
-	},5000);
-*/
+	$('.mail_yet').on('click',function(){
+		$('.midoku_count,.easy_midoku').fadeOut(1000);
+	})
 });
-
 </script>
-
 	<div class="main main_top">
 		<div class="sub_header">
 			<div id="mail_select1" class="mail_select mail_select_on">一覧</div>

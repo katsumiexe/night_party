@@ -2,15 +2,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
 <title>Night-Party<?=$inc_title?></title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="./js/jquery.ui.touch-punch.min.js"></script>
 <script src="./js/main.js"></script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="./css/style.css?t=<?=time()?>">
-<link rel="stylesheet" href="./css/style_t.css?t=<?=time()?>">
-<link rel="stylesheet" href="./css/style_s.css?t=<?=time()?>">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/style_t.css">
+<link rel="stylesheet" href="./css/style_s.css">
  
 <style>
 @font-face {
