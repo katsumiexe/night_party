@@ -7,8 +7,8 @@ a{
 }
 
 .body{
-	background		:#000000;
 	background		:linear-gradient(90deg,#3a3830 0%, #9a9890 50%, #3a3830 100%);
+	background		:#fafafa;
 	margin			:0;
 	padding			:0;
 	line-height		:1.2;

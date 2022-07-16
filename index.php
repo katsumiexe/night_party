@@ -30,9 +30,8 @@
 </header>
 
 <section class="main">
-<img src="./z_img/top_2.webp" class="top_0" alt="top写真0">
-<img src="./z_img/top_6.jpg" class="top_0" alt="top写真0">
-<img src="./z_img/top_1.png" class="top_1" alt="top写真1">
+<img src="./z_img/top_0.webp?a=2" class="top_0" alt="top写真0">
+<img src="./z_img/top_1.png?a=2" class="top_1" alt="top写真1">
 	<article id="block_0" class="box_top">
 		<div class="top_comm">
 			<h2 class="top_title">Night-Party</h2>
@@ -52,7 +51,7 @@
 				<div id="block_1_box_1" class="box_1_0">
 					<span class="box_1_0_title">そのホームページは「御社」のものですか？</span><br>
 					定額制サイトはその所有権が制作会社にあるため、使われている画像やロゴ等を<span class="border">自由に使う事が出来ません。</span><br>
-					更新の依頼や修正、イベントバナーの作成に至るまで他社に依頼ができないので<span class="border">必然的に囲いこまれてしまいます。</span><br>
+					更新や修正、イベントバナーの作成に至るまで他社に依頼ができないので<span class="border">必然的に囲いこまれてしまいます。</span><br>
 					そんな制作会社が最も力を入れるのは新規顧客の獲得。<span class="border">そのような環境に未来はありますか？</span><br>
 				</div>
 
