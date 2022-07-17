@@ -120,7 +120,7 @@ if($chg){
 	$sql.=" prm='{$prm}',";
 	$sql.=" `status`='{$status}'";
 	$sql.=" WHERE id='{$chg}'";
-	mysqli_query($mysqli,$sql);
+//	mysqli_query($mysqli,$sql);
 	$tmp_auto=$chg; 
 
 }else{

@@ -431,6 +431,7 @@ $(function(){
 		}
 
 
+/*
 		$.ajax({
 			url:'./post/easytalk_list.php',
 			type:'post',
@@ -449,6 +450,8 @@ $(function(){
 				$('#m3').html("<span class=\"menu_i\"></span><span class=\"menu_s\">EasyTalk</span><span class=\"easy_midoku\">"+data["midoku"]+"</span>");
 			}
 		});
+*/
+
 	});
 
 	$('#send_ok').on('change',function (){

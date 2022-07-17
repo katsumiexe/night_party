@@ -294,9 +294,9 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 		$(".ball_icon").animate({'border-radius':'30px'},150).delay(700).animate({"border-radius":'10px'},150);
 		$('.box_1_out').animate({'width':'100vw'},500);
 
-		$('#ball1').delay(200).animate({'left':'170vh','top':'3vh'},400).animate({'left':'15vh','top': "1vh"},300);
-		$('#ball2').delay(200).animate({'left':'170vh','top':'-8vh'},450).animate({'left':'15vh','top':"12vh"},250);
-		$('#ball3').delay(200).animate({'left':'170vh','top':'14vh'},500).animate({'left':'15vh','top':"23vh"},200);
+		$('#ball1').delay(200).animate({'left':'170vh','top':'3vh'},400).animate({'left':'30vh','top': "1vh"},300);
+		$('#ball2').delay(200).animate({'left':'170vh','top':'-8vh'},450).animate({'left':'30vh','top':"12vh"},250);
+		$('#ball3').delay(200).animate({'left':'170vh','top':'14vh'},500).animate({'left':'30vh','top':"23vh"},200);
 
 	}
 
@@ -304,9 +304,9 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 		$(".ball_icon").animate({"border-radius":'5vh'},150).delay(700).animate({"border-radius":'1vh'},150);
 		$('.box_1_out').animate({'width':'170vh'},500);
 
-		$('#ball1').delay(200).animate({'left':'170vh','top':'3vh'},400).animate({'left':'3.5vh','top':'5vh'},250);
-		$('#ball2').delay(250).animate({'left':'170vh','top':'8vh'},500).animate({'left':'59vh','top':'5vh'},250);
-		$('#ball3').delay(300).animate({'left':'170vh','top':'14vh'},600).animate({'left':'114.5vh','top':'5vh'},250);
+		$('#ball1').delay(200).animate({'left':'170vh','top':'3vh'},400).animate({'left':'4.5vh','top':'5vh'},250);
+		$('#ball2').delay(250).animate({'left':'170vh','top':'8vh'},500).animate({'left':'60vh','top':'5vh'},250);
+		$('#ball3').delay(300).animate({'left':'170vh','top':'14vh'},600).animate({'left':'115.5vh','top':'5vh'},250);
 
 		$("#ball1 > .ball_txt").animate({'width':0,'padding':0},150).delay(800).animate({'width':'42.5vh',"padding-left":'10vh'},150);
 		$("#ball2 > .ball_txt").animate({'width':0,'padding':0},200).delay(900).animate({'width':'42.5vh',"padding-left":'10vh'},150);
