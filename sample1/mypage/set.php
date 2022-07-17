@@ -263,7 +263,6 @@ if($result = mysqli_query($mysqli,$sql)){
 		$ana_customer[$row["customer_id"]]["ken"]++;
 		$ana_customer[$row["customer_id"]]["kin"]	+=$row["pts"];
 
-
 	}
 }
 

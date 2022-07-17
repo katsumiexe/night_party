@@ -486,6 +486,10 @@ $(function(){
 
 	$('#box_mail_select1').on('click','.mail_hist',function () {
 		Page=1;
+		if($(this).hasClass('mail_yet')){
+			$(this).removeClass('mail_yet');
+		
+		}
 		Customer_id		=$(this).attr('id').replace('mail_hist','');
 		Customer_Nick	=$(this).children('.mail_nickname').text();
 		Customer_Name	=$(this).children('.mail_name').val();
