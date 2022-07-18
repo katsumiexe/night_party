@@ -2,17 +2,28 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Night-Party ヒアリングシート</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Night-Party ヒアリングシート</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+$(function(){ 
+	$('.ques').hover(function() {
+		$(this).children('.ans').fadeIn(300);
+	},function() {
+		$('.ans').fadeOut(200);
+	});
+});
 
 </script>
 <style>
+@font-face {
+	font-family: at_icon;
+	src: url("./sample1/font/nightparty_icon.ttf") format('truetype');
+}
+
 table{
 	border			:1px solid #303030;
 	margin			:5px;
@@ -51,7 +62,7 @@ input,select{
 }
 
 .ck_title{
-	margin			:1px 10px;
+	margin			:2px 5px;
 	background		:#906000;
 	color			:#fafafa;
 	height			:24px;
@@ -61,17 +72,17 @@ input,select{
 	text-align		:center;
 }
 
-
 .ck_box0{
 	display			:inline-block;
 	verticcal-align:top;
 	font-size		:14px;
 	position		:relative;
-	padding-left	:30px;
+	padding-left	:20px;
 	height			:30px;
 	line-height		:30px;
 	margin			:5px;
-	width			:150px;
+	width			:160px;
+	border-bottom:1px solid #202020;
 }
 
 .ck_box0:checked + .check1{
@@ -82,13 +93,13 @@ input,select{
 .ck_box3{
 	display				:none;
 	position			:absolute;
-	left				:5px;
+	left				:6px;
 	bottom				:0;
-	width				:20px;
-	height				:14px;
+	width				:16px;
+	height				:11px;
 	border-bottom		:4px solid #a00000;
 	border-left			:4px solid #a00000;
-	transform			:rotate(-50deg);
+	transform			:rotate(-55deg);
 	transform-origin	:left bottom
 }
 
@@ -102,12 +113,12 @@ input,select{
 .ck_box1{
 	display				:inline-block;
 	position			:absolute;
-	left				:5px;
+	left				:2px;
 	top					:0;
 	bottom				:0;
 	margin				:auto;
-	width				:16px;
-	height				:16px;
+	width				:12px;
+	height				:12px;
 	border				:2px solid #303030;
 	background			:#fafafa;
 }
@@ -121,23 +132,24 @@ input,select{
 	position		:absolute;
 	top				:0;
 	right			:5px;
-
+	font-family		:at_icon;
+	color			:#ff30c0;
 }
 
 .ans{
 	display			:none;
 	position		:absolute;
-	top				:20px;
+	top				:25px;
 	right			:-5px;
-	padding			:3px;
+	padding			:5px;
 	font-size		:13px;
 	background		:#fff0e0;
 	border			:1px solid #202020;
 	color			:#202020;	
-	line-height		:17px;
-	width			:120px;
+	line-height		:18px;
+	width			:150px;
 	z-index			:3;
-	text-align:left;
+	text-align		:left;
 }
 
 .w100{
@@ -201,45 +213,45 @@ input,select{
 <tr>
 	<td colspan="3">
 		<span class="td_tag">メールアドレス</span>
-		<input id="info_3" type="text" class="textbox w360">
+		<input id="info_4" type="text" class="textbox w360">
 	</td>
 </tr>
 
 <tr>
 	<td colspan="3">
 		<span class="td_tag">LINE</span>
-		<input id="info_3" type="text" class="textbox w360">
+		<input id="info_5" type="text" class="textbox w360">
 	</td>
 </tr>
 
 <tr>
 	<td colspan="3">
 		<span class="td_tag">twitter</span>
-		<input id="info_3" type="text" class="textbox w360">
+		<input id="info_6" type="text" class="textbox w360">
 	</td>
 </tr>
 
 <tr>
 	<td colspan="3">
 		<span class="td_tag">店舗形態</span>
-		<select id="info_3" class="textbox w360">
+		<select id="info_7" class="textbox w360">
 			<option></option>
-			<option value="info_3_1">キャバクラ</option>
-			<option value="info_3_2">セクキャバ</option>
-			<option value="info_3_3">ガールズバー</option>
+			<option value="キャバクラ">キャバクラ</option>
+			<option value="セクキャバ">セクキャバ</option>
+			<option value="ガールズバー">ガールズバー</option>
 
-			<option value="info_3_4">コンカフェ</option>
-			<option value="info_3_5">メイドカフェ</option>
-			<option value="info_3_6">アイドルカフェ</option>
+			<option value="デリヘル">デリヘル</option>
 
-			<option value="info_3_7">スポーツバー</option>
-			<option value="info_3_8">ダーツバー</option>
+			<option value="コンカフェ">コンカフェ</option>
+			<option value="メイドカフェ">メイドカフェ</option>
+			<option value="アイドルカフェ">アイドルカフェ</option>
+			<option value="スポーツバー">スポーツバー</option>
+			<option value="ダーツバー">ダーツバー</option>
 
-			<option value="info_3_9">SMバー</option>
-			<option value="info_3_10">ハプニングバー</option>
-			<option value="info_3_11">デリヘル</option>
+			<option value="SMバー">SMバー</option>
+			<option value="ハプニングバー">ハプニングバー</option>
 
-			<option value="info_3_12">その他</option>
+			<option value="その他">その他</option>
 		</select>
 	</td>
 </tr>
@@ -248,15 +260,15 @@ input,select{
 <tr>
 	<td>
 		<span class="td_tag">キャスト数</span>
-		<input id="info_3" type="text" class="textbox w40">人
+		<input id="info_8" type="text" class="textbox w40">人
 	</td>
 	<td>
 		<span class="td_tag">顧客年齢層</span>
-		<input id="info_3" type="text" class="textbox w40">歳
+		<input id="info_9" type="text" class="textbox w40">歳
 	</td>
 	<td>
 		<span class="td_tag">営業時間</span>
-		<input id="info_3" type="text" class="textbox w40">時 ～<input id="info_3" type="text" class="textbox w40">時
+		<input id="info_10" type="text" class="textbox w40">時 ～<input id="info_11" type="text" class="textbox w40">時
 	</td>
 </tr>
 </table>
@@ -276,7 +288,7 @@ input,select{
 					<span class="ck_box3"></span>
 				</span>
 				<span>Notice</span>
-				<span class="ques">●<span class="ans">店舗からキャストへ連絡事項の告知をするためのものです。</span></span>
+				<span class="ques"><span class="ans">店舗からキャストへ連絡事項の告知をするためのものです。</span></span>
 			</label>
 
 			<label for="check_2" class="ck_box0">
@@ -285,7 +297,7 @@ input,select{
 					<span class="ck_box3"></span>
 				</span>
 				<span>EasyTalk</span>
-				<span class="ques">●<span class="ans">キャストが顧客へ営業メールを送るためのものです。</span></span>
+				<span class="ques"><span class="ans">キャストが顧客へ営業メールを送るためのものです。</span></span>
 			</label>
 
 			<label for="check_3" class="ck_box0">
@@ -294,20 +306,19 @@ input,select{
 					<span class="ck_box3"></span>
 				</span>
 				<span>スケジュール</span>
-				<span class="ques">●<span class="ans">キャストの出勤日、時間を表示するためのものです。</span></span>
+				<span class="ques"><span class="ans">キャストの出勤日、時間を表示するためのものです。</span></span>
 			</label>
 		</td>
 
 		<td>
-<div class="ck_title">サイト内ページ</div>
-
+			<div class="ck_title">サイト内ページ</div>
 			<label for="check_4" class="ck_box0">
 				<span class="ck_box1">
 					<input id="check_4" type="checkbox" class="ck_box2" value="1" <?if($dat["check_1"] ==1){?>checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>TOP挨拶</span>
-				<span class="ques">●<span class="ans">ページのTOPに挨拶の一文を入れるためのものです。</span></span>
+				<span class="ques"><span class="ans">ページのTOPに挨拶の一文を入れるためのものです。</span></span>
 			</label>
 			<label for="check_5" class="ck_box0">
 				<span class="ck_box1">
@@ -315,7 +326,7 @@ input,select{
 					<span class="ck_box3"></span>
 				</span>
 				<span>ニュース</span>
-				<span class="ques">●<span class="ans">イベントやキャストに関する様々なお知らせを告知するためのものです。</span></span>
+				<span class="ques"><span class="ans">イベントやキャストに関する様々なお知らせを告知するためのものです。</span></span>
 			</label>
 
 			<label for="check_11" class="ck_box0">
@@ -324,7 +335,7 @@ input,select{
 					<span class="ck_box3"></span>
 				</span>
 				<span>システム</span>
-				<span class="ques">●<span class="ans">料金など、お店のシステムを告知するためのものです。</span></span>
+				<span class="ques"><span class="ans">料金など、お店のシステムを告知するためのものです。</span></span>
 			</label>
 
 			<label for="check_9" class="ck_box0">
@@ -333,7 +344,7 @@ input,select{
 					<span class="ck_box3"></span>
 				</span>
 				<span>キャストブログ</span>
-				<span class="ques">●<span class="ans">キャストがHIME-Karteより投稿するブログです。</span></span>
+				<span class="ques"><span class="ans">キャストがHIME-Karteより投稿するブログです。</span></span>
 			</label>
 
 			<label for="check_10" class="ck_box0">
@@ -342,7 +353,7 @@ input,select{
 					<span class="ck_box3"></span>
 				</span>
 				<span>スタッフブログ</span>
-				<span class="ques">●<span class="ans">スタッフが投稿するブログです。</span></span>
+				<span class="ques"><span class="ans">スタッフが投稿するブログです。</span></span>
 			</label>
 
 			<label for="check_6" class="ck_box0">
@@ -351,7 +362,7 @@ input,select{
 					<span class="ck_box3"></span>
 				</span>
 				<span>アクセス</span>
-				<span class="ques">●<span class="ans">お店の住所、連絡先、MAPを表示します。</span></span>
+				<span class="ques"><span class="ans">お店の住所、連絡先、MAPを表示します。</span></span>
 			</label>
 
 			<label for="check_7" class="ck_box0">
@@ -360,7 +371,7 @@ input,select{
 					<span class="ck_box3"></span>
 				</span>
 				<span>リクルート</span>
-				<span class="ques">●<span class="ans">キャストの求人受付です。</span></span>
+				<span class="ques"><span class="ans">キャストの求人受付です。</span></span>
 			</label>
 
 			<label for="check_8" class="ck_box0">
@@ -369,19 +380,19 @@ input,select{
 					<span class="ck_box3"></span>
 				</span>
 				<span>プライバシーポリシー</span>
-				<span class="ques">●<span class="ans">サイトとしての個人情報への取り組みを明記するためのものです。</span></span>
+				<span class="ques"><span class="ans">サイトとしての個人情報への取り組みを明記するためのものです。</span></span>
 			</label>
-
 		</td>
+
 		<td>
-<div class="ck_title">システムコンテンツ</div>
+			<div class="ck_title">システムコンテンツ</div>
 			<label for="check_12" class="ck_box0">
 				<span class="ck_box1">
 					<input id="check_12" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
-				<span>アナリティクス</span>
-				<span class="ques">●<span class="ans">サイトへのアクセス状況を調べるためのものです。</span></span>
+				<span>SSL設定</span>
+				<span class="ques"><span class="ans">サイトを暗号化し、安全なものにするためのものです。</span></span>
 			</label>
 
 			<label for="check_13" class="ck_box0">
@@ -389,17 +400,26 @@ input,select{
 					<input id="check_13" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
-				<span>サーチコンソール</span>
-				<span class="ques">●<span class="ans">検索評価の確認をするためのものです。</span></span>
+				<span>アナリティクス</span>
+				<span class="ques"><span class="ans">サイトへのアクセス状況を調べるためのものです。</span></span>
 			</label>
 
 			<label for="check_14" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_14" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
+				\	<input id="check_14" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
+					<span class="ck_box3"></span>
+				</span>
+				<span>サーチコンソール</span>
+				<span class="ques"><span class="ans">検索評価の確認をするためのものです。</span></span>
+			</label>
+
+			<label for="check_15" class="ck_box0">
+				<span class="ck_box1">
+					<input id="check_15" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>ファビコン</span>
-				<span class="ques">●<span class="ans">ブラウザのタイトルタブに自身のアイコンを表示します。</span></span>
+				<span class="ques"><span class="ans">ブラウザのタイトルタブに自身のアイコンを表示します。</span></span>
 			</label>
 		</td>
 	</tr>
