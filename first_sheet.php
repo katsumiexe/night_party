@@ -27,8 +27,8 @@ $(function(){
 table{
 	border			:1px solid #303030;
 	margin			:5px;
-	border-collapse	:collapse;
-	width			:440px;
+//	border-collapse	:collapse;
+	width			:480px;
 }
 
 td{
@@ -67,6 +67,7 @@ input,select{
 }
 
 .td_tag{
+	position		:relative;
 	display			:block;
 	font-size		:14px;
 	padding-left	:10px;
@@ -74,6 +75,18 @@ input,select{
 	height			:20px;
 	line-height		:22px;
 }
+
+.pay_price{
+	position		:absolute;
+	top				:0;
+	bottom			:0;
+	right			:0;
+	margin			:auto;
+	color			:#c00000;
+	font-weight		:700;
+}
+
+
 
 .ck_title{
 	margin			:5px;
@@ -88,7 +101,7 @@ input,select{
 
 .ck_box0{
 	display			:inline-block;
-	verticcal-align:top;
+	vertical-align	:top;
 	font-size		:14px;
 	position		:relative;
 	padding-left	:20px;
@@ -223,48 +236,48 @@ input,select{
 	<tr>
 		<td colspan="3">
 			<span class="td_tag">店舗名</span>
-			<input id="info_1" type="text" class="textbox w360">
+			<input id="info_1" name="info_1" type="text" class="textbox w360">
 		</td>
 	</tr>
 
 	<tr>
 		<td colspan="3">
 			<span class="td_tag">住所</span>
-			<input id="info_2" type="text" class="textbox w360">
+			<input id="info_2" name="info_2" type="text" class="textbox w360">
 		</td>
 	</tr>
 
 	<tr>
 		<td colspan="3">
 			<span class="td_tag">電話番号</span>
-			<input id="info_3" type="text" class="textbox w360">
+			<input id="info_3" name="info_3" class="textbox w360">
 		</td>
 	</tr>
 
 	<tr>
 		<td colspan="3">
 			<span class="td_tag">メールアドレス</span>
-			<input id="info_4" type="text" class="textbox w360">
+			<input id="info_4" name="info_4" type="text" class="textbox w360">
 		</td>
 	</tr>
 
 	<tr>
 		<td colspan="3">
 			<span class="td_tag">LINE</span>
-			<input id="info_5" type="text" class="textbox w360">
+			<input id="info_5" name="info_5" type="text" class="textbox w360">
 		</td>
 	</tr>
 
 	<tr>
 		<td colspan="3">
 			<span class="td_tag">twitter</span>
-			<input id="info_6" type="text" class="textbox w360">
+			<input id="info_6" name="info_6" type="text" class="textbox w360">
 		</td>
 	</tr>
 	<tr>
 		<td colspan="3">
 			<span class="td_tag">店舗形態</span>
-			<select id="info_7" class="textbox w360">
+			<select id="info_7" name="info_7" class="textbox w360">
 				<option></option>
 				<option value="キャバクラ">キャバクラ</option>
 				<option value="セクキャバ">セクキャバ</option>
@@ -284,15 +297,15 @@ input,select{
 	<tr>
 		<td>
 			<span class="td_tag">キャスト数</span>
-			<input id="info_8" type="text" class="textbox w40">人
+			<input id="info_8" name="info_8" type="text" class="textbox w40">人
 		</td>
 		<td>
 			<span class="td_tag">顧客年齢層</span>
-			<input id="info_9" type="text" class="textbox w40">歳
+			<input id="info_9" name="info_9" type="text" class="textbox w40">歳
 		</td>
 		<td>
 			<span class="td_tag">営業時間</span>
-			<input id="info_10" type="text" class="textbox w40">時 ～<input id="info_11" type="text" class="textbox w40">時
+			<input id="info_10" name="info_10" type="text" class="textbox w40">時 ～<input id="info_11" type="text" class="textbox w40">時
 		</td>
 	</tr>
 </table>
@@ -303,14 +316,14 @@ input,select{
 	</tr>
 		<td>
 			<span class="td_tag">イメージカラー</span>
-			<input id="dg_1" type="text" class="textbox w360">
+			<input id="dg_1" name="dg_3" type="text" class="textbox w360">
 		</td>
 	</tr>
 	<tr>
 		<td>
 			<span class="td_tag">イメージサイトURL</span>
 			<input id="dg_2" type="text" class="textbox w360">
-			<textarea id="dg_3" class="textarea w360"></textarea>
+			<textarea id="dg_3"v class="textarea w360"></textarea>
 		</td>
 	</tr>
 	<tr>
@@ -557,7 +570,44 @@ input,select{
 	</tr>
 </table>
 
+<table class="table_3">
+	<tr>
+		<td class="td_title" colspan="3">有料オプション</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="td_tag">ドメイン・ブラウザ設定 <span class="pay_price">10,000円</span></span>
+			<textarea id="pay_0" name="pay_0" class="textarea w360"></textarea>
 
+			<span class="td_tag">TOPバナー追加(1200px × 480px) <span class="pay_price">10,000円</span></span>
+			<textarea id="pay_1" name="pay_1" class="textarea w360"></textarea>
+
+			<span class="td_tag">TOPバナー追加(1200px × 480px) <span class="pay_price">10,000円</span></span>
+			<textarea id="pay_2" name="pay_2" class="textarea w360"></textarea>
+
+			<span class="td_tag">TOPバナー追加(1200px × 480px) <span class="pay_price">10,000円</span></span>
+			<textarea id="pay_3" name="pay_3" class="textarea w360"></textarea>
+
+			<span class="td_tag">サイドバナー詳細(600px × 150px) <span class="pay_price">5,000円</span></span>
+			<textarea id="pay_4" name="pay_4" class="textarea w360"></textarea>
+
+			<span class="td_tag">サイドバナー詳細(600px × 150px) <span class="pay_price">5,000円</span></span>
+			<textarea id="pay_5" name="pay_5" class="textarea w360"></textarea>
+
+			<span class="td_tag">サイドバナー詳細(600px × 150px)<span class="pay_price"> 5,000円</span></span>
+			<textarea id="pay_6" name="pay_6" class="textarea w360"></textarea>
+
+			<span class="td_tag">ページ追加 <span class="pay_price">12,000円～</span></span>
+			<textarea id="pay_7" name="pay_7" class="textarea w360"></textarea>
+
+			<span class="td_tag">出張撮影(東京/神奈川/千葉/埼玉　2時間) <span class="pay_price">20,000円</span></span>
+			<textarea id="pay_8" name="pay_8" class="textarea w360"></textarea>
+
+			<span class="td_tag">ロゴ作成(1200px × 1200px) <span class="pay_price">10,000円</span></span>
+			<textarea id="pay_9" name="pay_9" class="textarea w360"></textarea>
+		</td>
+	</tr>
+</table>
 
 </div>
 </body>
