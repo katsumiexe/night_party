@@ -38,9 +38,23 @@ td{
 input,select{
 	height		:30px;
 	line-height	:30px;
-	padding-left:5px;
+	padding-left:10px;
 	border		:1px solid #303030;
 	margin		:0 5px 5px 5px;
+}
+
+.textarea,.textarea2{
+	height		:100px;
+	font-size	:15px;
+	line-height	:22px;
+	padding		:5px;
+	border		:1px solid #303030;
+	margin		:0 5px 5px 5px;
+	resize		:none;
+}
+
+.textarea2{
+	height		:200px;
 }
 
 .td_title{
@@ -62,7 +76,7 @@ input,select{
 }
 
 .ck_title{
-	margin			:2px 5px;
+	margin			:5px;
 	background		:#906000;
 	color			:#fafafa;
 	height			:24px;
@@ -185,103 +199,124 @@ input,select{
 <div class="box_1">ヒアリングシート</div>
 
 <div class="box_2">
-<table class="table_1">
+
+	<table class="table_1">
+		<tr>
+			<td colspan="3" class="td_title">店舗基本情報</td>
+		</tr>
 	<tr>
-		<td colspan="3" class="td_title">店舗基本情報</td>
+		<td colspan="3">
+			<span class="td_tag">店舗名</span>
+			<input id="info_1" type="text" class="textbox w360">
+		</td>
 	</tr>
-<tr>
-	<td colspan="3">
-		<span class="td_tag">店舗名</span>
-		<input id="info_1" type="text" class="textbox w360">
-	</td>
-</tr>
 
-<tr>
-	<td colspan="3">
-		<span class="td_tag">住所</span>
-		<input id="info_2" type="text" class="textbox w360">
-	</td>
-</tr>
+	<tr>
+		<td colspan="3">
+			<span class="td_tag">住所</span>
+			<input id="info_2" type="text" class="textbox w360">
+		</td>
+	</tr>
 
-<tr>
-	<td colspan="3">
-		<span class="td_tag">電話番号</span>
-		<input id="info_3" type="text" class="textbox w360">
-	</td>
-</tr>
+	<tr>
+		<td colspan="3">
+			<span class="td_tag">電話番号</span>
+			<input id="info_3" type="text" class="textbox w360">
+		</td>
+	</tr>
 
-<tr>
-	<td colspan="3">
-		<span class="td_tag">メールアドレス</span>
-		<input id="info_4" type="text" class="textbox w360">
-	</td>
-</tr>
+	<tr>
+		<td colspan="3">
+			<span class="td_tag">メールアドレス</span>
+			<input id="info_4" type="text" class="textbox w360">
+		</td>
+	</tr>
 
-<tr>
-	<td colspan="3">
-		<span class="td_tag">LINE</span>
-		<input id="info_5" type="text" class="textbox w360">
-	</td>
-</tr>
+	<tr>
+		<td colspan="3">
+			<span class="td_tag">LINE</span>
+			<input id="info_5" type="text" class="textbox w360">
+		</td>
+	</tr>
 
-<tr>
-	<td colspan="3">
-		<span class="td_tag">twitter</span>
-		<input id="info_6" type="text" class="textbox w360">
-	</td>
-</tr>
+	<tr>
+		<td colspan="3">
+			<span class="td_tag">twitter</span>
+			<input id="info_6" type="text" class="textbox w360">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<span class="td_tag">店舗形態</span>
+			<select id="info_7" class="textbox w360">
+				<option></option>
+				<option value="キャバクラ">キャバクラ</option>
+				<option value="セクキャバ">セクキャバ</option>
+				<option value="ガールズバー">ガールズバー</option>
 
-<tr>
-	<td colspan="3">
-		<span class="td_tag">店舗形態</span>
-		<select id="info_7" class="textbox w360">
-			<option></option>
-			<option value="キャバクラ">キャバクラ</option>
-			<option value="セクキャバ">セクキャバ</option>
-			<option value="ガールズバー">ガールズバー</option>
+				<option value="デリヘル">デリヘル</option>
 
-			<option value="デリヘル">デリヘル</option>
+				<option value="コンカフェ">コンカフェ</option>
+				<option value="メイドカフェ">メイドカフェ</option>
+				<option value="アイドルカフェ">アイドルカフェ</option>
+				<option value="スポーツバー">スポーツバー</option>
+				<option value="ダーツバー">ダーツバー</option>
 
-			<option value="コンカフェ">コンカフェ</option>
-			<option value="メイドカフェ">メイドカフェ</option>
-			<option value="アイドルカフェ">アイドルカフェ</option>
-			<option value="スポーツバー">スポーツバー</option>
-			<option value="ダーツバー">ダーツバー</option>
+				<option value="SMバー">SMバー</option>
+				<option value="ハプニングバー">ハプニングバー</option>
 
-			<option value="SMバー">SMバー</option>
-			<option value="ハプニングバー">ハプニングバー</option>
-
-			<option value="その他">その他</option>
-		</select>
-	</td>
-</tr>
-
-
-<tr>
-	<td>
-		<span class="td_tag">キャスト数</span>
-		<input id="info_8" type="text" class="textbox w40">人
-	</td>
-	<td>
-		<span class="td_tag">顧客年齢層</span>
-		<input id="info_9" type="text" class="textbox w40">歳
-	</td>
-	<td>
-		<span class="td_tag">営業時間</span>
-		<input id="info_10" type="text" class="textbox w40">時 ～<input id="info_11" type="text" class="textbox w40">時
-	</td>
-</tr>
+				<option value="その他">その他</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="td_tag">キャスト数</span>
+			<input id="info_8" type="text" class="textbox w40">人
+		</td>
+		<td>
+			<span class="td_tag">顧客年齢層</span>
+			<input id="info_9" type="text" class="textbox w40">歳
+		</td>
+		<td>
+			<span class="td_tag">営業時間</span>
+			<input id="info_10" type="text" class="textbox w40">時 ～<input id="info_11" type="text" class="textbox w40">時
+		</td>
+	</tr>
 </table>
 
 <table class="table_2">
+	<tr>
+		<td class="td_title" colspan="3">サイトデザイン</td>
+	</tr>
+		<td>
+			<span class="td_tag">イメージカラー</span>
+			<input id="dg_1" type="text" class="textbox w360">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="td_tag">イメージサイトURL</span>
+			<input id="dg_2" type="text" class="textbox w360">
+			<textarea id="dg_3" class="textarea w360"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="td_tag">その他ご要望</span>
+			<textarea id="dg_4" class="textarea2 w360"></textarea>
+		</td>
+	</tr>
+</table>
+
+<table class="table_3">
 	<tr>
 		<td class="td_title" colspan="3">使用コンテンツ</td>
 	</tr>
 
 	<tr>
 		<td>
-
-<div class="ck_title">CMSコンテンツ</div>
+		<div class="ck_title">CMSコンテンツ</div>
 			<label for="check_1" class="ck_box0">
 				<span class="ck_box1">
 					<input id="check_1" type="checkbox" class="ck_box2" value="1" <?if($dat["check_1"] ==1){?>checked="checked"<?}?>>
@@ -424,6 +459,8 @@ input,select{
 		</td>
 	</tr>
 </table>
+</div>
+
 
 
 </body>
