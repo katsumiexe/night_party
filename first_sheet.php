@@ -199,11 +199,10 @@ input,select{
 <div class="box_1">ヒアリングシート</div>
 
 <div class="box_2">
-
-	<table class="table_1">
-		<tr>
-			<td colspan="3" class="td_title">店舗基本情報</td>
-		</tr>
+<table class="table_1">
+	<tr>
+		<td colspan="3" class="td_title">店舗基本情報</td>
+	</tr>
 	<tr>
 		<td colspan="3">
 			<span class="td_tag">店舗名</span>
@@ -253,18 +252,14 @@ input,select{
 				<option value="キャバクラ">キャバクラ</option>
 				<option value="セクキャバ">セクキャバ</option>
 				<option value="ガールズバー">ガールズバー</option>
-
 				<option value="デリヘル">デリヘル</option>
-
 				<option value="コンカフェ">コンカフェ</option>
 				<option value="メイドカフェ">メイドカフェ</option>
 				<option value="アイドルカフェ">アイドルカフェ</option>
 				<option value="スポーツバー">スポーツバー</option>
 				<option value="ダーツバー">ダーツバー</option>
-
 				<option value="SMバー">SMバー</option>
 				<option value="ハプニングバー">ハプニングバー</option>
-
 				<option value="その他">その他</option>
 			</select>
 		</td>
@@ -441,8 +436,8 @@ input,select{
 
 			<label for="check_14" class="ck_box0">
 				<span class="ck_box1">
-				\	<input id="check_14" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
-					<span class="ck_box3"></span>
+				<input id="check_14" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
+				<span class="ck_box3"></span>
 				</span>
 				<span>サーチコンソール</span>
 				<span class="ques"><span class="ans">検索評価の確認をするためのものです。</span></span>
@@ -460,8 +455,5 @@ input,select{
 	</tr>
 </table>
 </div>
-
-
-
 </body>
 </html>
