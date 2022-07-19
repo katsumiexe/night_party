@@ -166,6 +166,20 @@ input,select{
 	text-align		:left;
 }
 
+
+
+.nese{
+	display			:inline-block;
+	line-height		:30px;
+	height			:30px;
+	width			:50px;
+	text-align		:center;
+	font-size		:14px;
+	background		:#ffd0d0;
+	border			:1px solid #202020;
+}
+
+
 .w100{
 	width:100px;
 }
@@ -179,8 +193,12 @@ input,select{
 	width:240px;
 }
 
+.w300{
+	width:300px;
+}
+
 .w360{
-	width:400px;
+	width:360px;
 }
 
 
@@ -302,6 +320,91 @@ input,select{
 		</td>
 	</tr>
 </table>
+
+<table class="table_3">
+	<tr>
+		<td class="td_title" colspan="3">キャスト設定</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="td_tag">キャストプロフィール</span>
+			<input id="pf_1" type="text" class="textbox w360">
+			<input id="pf_2" type="text" class="textbox w360">
+			<input id="pf_3" type="text" class="textbox w360">
+			<input id="pf_4" type="text" class="textbox w360">
+			<input id="pf_5" type="text" class="textbox w360">
+			<input id="pf_6" type="text" class="textbox w360">
+			<input id="pf_7" type="text" class="textbox w360">
+			<input id="pf_8" type="text" class="textbox w360">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="td_tag">オプション名</span>
+			<input id="op_0" type="text" class="textbox w360">
+			<input id="op_1" type="text" class="textbox w180">
+			<input id="op_2" type="text" class="textbox w180">
+			<input id="op_3" type="text" class="textbox w180">
+			<input id="op_4" type="text" class="textbox w180">
+			<input id="op_5" type="text" class="textbox w180">
+			<input id="op_6" type="text" class="textbox w180">
+			<input id="op_7" type="text" class="textbox w180">
+			<input id="op_8" type="text" class="textbox w180">
+			<input id="op_9" type="text" class="textbox w180">
+			<input id="op_10" type="text" class="textbox w180">
+			<input id="op_11" type="text" class="textbox w180">
+			<input id="op_12" type="text" class="textbox w180">
+		</td>
+	</tr>
+</table>
+
+<table class="table_3">
+	<tr>
+		<td class="td_title" colspan="3">システム</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="td_tag">本文</span>
+			<textarea id="rec_0" class="textarea2 w360"></textarea>
+		</td>
+	</tr>
+</table>
+
+<table class="table_3">
+	<tr>
+		<td class="td_title" colspan="3">リクルート</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="td_tag">本文</span>
+			<textarea id="rec_0" class="textarea2 w360"></textarea>
+			<span class="td_tag">確認項目</span>
+			<input id="rec_1" type="text" class="textbox w300"><label class="nese">必須</label>
+			<input id="rec_2" type="text" class="textbox w300"><label class="nese">必須</label>
+			<input id="rec_3" type="text" class="textbox w300"><label class="nese">必須</label>
+			<input id="rec_4" type="text" class="textbox w300"><label class="nese">必須</label>
+			<input id="rec_5" type="text" class="textbox w300"><label class="nese">必須</label>
+			<input id="rec_6" type="text" class="textbox w300"><label class="nese">必須</label>
+			<input id="rec_7" type="text" class="textbox w300"><label class="nese">必須</label>
+			<input id="rec_8" type="text" class="textbox w300"><label class="nese">必須</label>
+		</td>
+	</tr>
+</table>
+
+<table class="table_3">
+	<tr>
+		<td class="td_title" colspan="3">バナー</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="td_tag">TOPバナー詳細(1200px × 480px)</span>
+			<textarea id="rec_0" class="textarea w360"></textarea>
+			<span class="td_tag">サイドバナー詳細(600px × 150px)</span>
+			<textarea id="rec_0" class="textarea w360"></textarea>
+		</td>
+	</tr>
+</table>
+
 
 <table class="table_3">
 	<tr>
@@ -453,6 +556,9 @@ input,select{
 		</td>
 	</tr>
 </table>
+
+
+
 </div>
 </body>
 </html>
