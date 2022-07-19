@@ -36,25 +36,25 @@ td{
 }
 
 input,select{
-	height		:30px;
-	line-height	:30px;
-	padding-left:10px;
-	border		:1px solid #303030;
-	margin		:0 5px 5px 5px;
+	height			:30px;
+	line-height		:30px;
+	padding-left	:10px;
+	border			:1px solid #303030;
+	margin			:0 5px 5px 5px;
 }
 
 .textarea,.textarea2{
-	height		:100px;
-	font-size	:15px;
-	line-height	:22px;
-	padding		:5px;
-	border		:1px solid #303030;
-	margin		:0 5px 5px 5px;
-	resize		:none;
+	height			:100px;
+	font-size		:15px;
+	line-height		:22px;
+	padding			:5px;
+	border			:1px solid #303030;
+	margin			:0 5px 5px 5px;
+	resize			:none;
 }
 
 .textarea2{
-	height		:200px;
+	height			:200px;
 }
 
 .td_title{
@@ -197,7 +197,6 @@ input,select{
 </head>
 <body>
 <div class="box_1">ヒアリングシート</div>
-
 <div class="box_2">
 <table class="table_1">
 	<tr>
