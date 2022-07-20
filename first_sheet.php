@@ -94,6 +94,16 @@ input,select{
 	width			:100%;
 }
 
+.td_tag2{
+	position		:relative;
+	display			:block;
+	font-size		:16px;
+	font-weight		:700;
+	height			:40px;
+	line-height		:50px;
+	width			:100%;
+}
+
 .pay_price{
 	position		:absolute;
 	top				:0;
@@ -125,7 +135,6 @@ input,select{
 	line-height		:30px;
 	margin			:5px;
 	width			:160px;
-	border-bottom	:1px solid #202020;
 }
 
 .ck_box0:checked + .check1{
@@ -315,9 +324,9 @@ input,select{
 
 <div class="title_1">　サイトデザイン<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag" style="display:inline-block; width:380px;">　イメージサイトURL</span><span class="td_tag w160" style="display:inline-block;">　イメージカラー</span>
-<input id="dg_2" type="text" class="textbox w360"><input id="dg_1" name="dg_3" type="text" class="textbox w160">
+<input id="info_12" type="text" class="textbox w360"><input id="info_13" name="dg_3" type="text" class="textbox w160">
 <span class="td_tag">　ご要望</span>
-<textarea id="dg_4" class="textarea2 w540"></textarea>
+<textarea id="info_14" class="textarea2 w540"></textarea>
 
 
 
@@ -351,7 +360,7 @@ input,select{
 
 <div class="title_1">　システム<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　本文</span>
-<textarea id="rec_0" class="textarea2 w560"></textarea>
+<textarea id="pg_0" class="textarea2 w560"></textarea>
 
 
 <div class="title_1">　リクルート<button type="button" class="tmp_btn">下書き保存</button></div>
@@ -370,7 +379,7 @@ input,select{
 
 <div class="title_1">　プライバシーポリシー<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　本文</span>
-<textarea id="rec_0" class="textarea2 w560">
+<textarea id="pg_1" class="textarea2 w560">
 『○○』（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。
 第1条　個人情報
 「個人情報」とは，個人情報保護法にいう「個人情報」を指すものとし，生存する個人に関する情報であって，当該情報に含まれる氏名，生年月日，住所，電話番号，連絡先その他の記述等により特定の個人を識別できる情報及び容貌，指紋，声紋にかかるデータ，及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。
@@ -387,36 +396,36 @@ input,select{
 
 <div class="title_1">　バナー<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　TOPバナー詳細(1200px × 480px)</span>
-<textarea id="rec_0" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<textarea id="bn_0" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 <span class="td_tag">　サイドバナー詳細(600px × 150px)</span>
-<textarea id="rec_0" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<textarea id="bn_1" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 
 <div class="title_1">　使用コンテンツ<button type="button" class="tmp_btn">下書き保存</button></div>
 <table class="table_3">
 	<tr>
 		<td>
 		<div class="ck_title">CMSコンテンツ</div>
-			<label for="check_1" class="ck_box0">
+			<label for="ck_1" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_1" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_1" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>Notice</span>
 				<span class="ques"><span class="ans">店舗からキャストへ連絡事項の告知をするためのものです。</span></span>
 			</label>
 
-			<label for="check_2" class="ck_box0">
+			<label for="ck_2" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_2" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_2" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>EasyTalk</span>
 				<span class="ques"><span class="ans">キャストが顧客へ営業メールを送るためのものです。</span></span>
 			</label>
 
-			<label for="check_3" class="ck_box0">
+			<label for="ck_3" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_3" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_3" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>スケジュール</span>
@@ -426,71 +435,71 @@ input,select{
 
 		<td>
 			<div class="ck_title">サイト内ページ</div>
-			<label for="check_4" class="ck_box0">
+			<label for="ck_4" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_4" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_4" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>TOP挨拶</span>
 				<span class="ques"><span class="ans">ページのTOPに挨拶の一文を入れるためのものです。</span></span>
 			</label>
-			<label for="check_5" class="ck_box0">
+			<label for="ck_5" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_5" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_5" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>ニュース</span>
 				<span class="ques"><span class="ans">イベントやキャストに関する様々なお知らせを告知するためのものです。</span></span>
 			</label>
 
-			<label for="check_11" class="ck_box0">
+			<label for="ck_6" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_11" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_6" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>システム</span>
 				<span class="ques"><span class="ans">料金など、お店のシステムを告知するためのものです。</span></span>
 			</label>
 
-			<label for="check_9" class="ck_box0">
+			<label for="ck_7" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_9" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_7" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>キャストブログ</span>
 				<span class="ques"><span class="ans">キャストがHIME-Karteより投稿するブログです。</span></span>
 			</label>
 
-			<label for="check_10" class="ck_box0">
+			<label for="ck_8" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_10" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_8" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>スタッフブログ</span>
 				<span class="ques"><span class="ans">スタッフが投稿するブログです。</span></span>
 			</label>
 
-			<label for="check_6" class="ck_box0">
+			<label for="ck_9" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_6" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_9" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>アクセス</span>
 				<span class="ques"><span class="ans">お店の住所、連絡先、MAPを表示します。</span></span>
 			</label>
 
-			<label for="check_7" class="ck_box0">
+			<label for="ck_10" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_7" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_10" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>リクルート</span>
 				<span class="ques"><span class="ans">キャストの求人受付です。</span></span>
 			</label>
 
-			<label for="check_8" class="ck_box0">
+			<label for="ck_11" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_8" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_11" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>プライバシーポリシー</span>
@@ -500,36 +509,36 @@ input,select{
 
 		<td>
 			<div class="ck_title">システムコンテンツ</div>
-			<label for="check_12" class="ck_box0">
+			<label for="ck_12" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_12" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_12" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>SSL設定</span>
 				<span class="ques"><span class="ans">サイトを暗号化し、安全なものにするためのものです。</span></span>
 			</label>
 
-			<label for="check_13" class="ck_box0">
+			<label for="ck_13" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_13" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_13" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>アナリティクス</span>
 				<span class="ques"><span class="ans">サイトへのアクセス状況を調べるためのものです。</span></span>
 			</label>
 
-			<label for="check_14" class="ck_box0">
+			<label for="ck_14" class="ck_box0">
 				<span class="ck_box1">
-				<input id="check_14" type="checkbox" class="ck_box2" value="1" checked="checked">
+				<input id="ck_14" type="checkbox" class="ck_box2" value="1" checked="checked">
 				<span class="ck_box3"></span>
 				</span>
 				<span>サーチコンソール</span>
 				<span class="ques"><span class="ans">検索評価の確認をするためのものです。</span></span>
 			</label>
 
-			<label for="check_15" class="ck_box0">
+			<label for="ck_15" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_15" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_15" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>ファビコン</span>
@@ -540,35 +549,126 @@ input,select{
 </table>
 
 <div class="title_1">　有料オプション<button type="button" class="tmp_btn">下書き保存</button></div>
-<span class="td_tag">　ドメイン・ブラウザ設定 (登録＋10か月分)<span class="pay_price">10,000円</span></span>
+
+<span class="td_tag2">
+	<label for="pay_c_0" class="ck_box0" style="width:400px;">
+		<span class="ck_box1">
+			<input id="pay_c_0" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<span class="ck_box3"></span>
+		</span>
+		<span>ドメイン・ブラウザ設定 (登録＋10か月分)</span>
+	</label>
+	<span class="pay_price">10,000円</span>
+</span>
 <textarea id="pay_0" name="pay_0" class="textarea w560" placeholder="ご希望のドメインをご記載下さい。"></textarea>
 
-<span class="td_tag">　TOPバナー追加(1200px × 480px) <span class="pay_price">8,000円</span></span>
-<textarea id="pay_1" name="pay_1" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<span class="td_tag2">
+	<label for="pay_c_1" class="ck_box0" style="width:400px;">
+		<span class="ck_box1">
+			<input id="pay_c_1" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<span class="ck_box3"></span>
+		</span>
+		<span>TOPバナー追加(1200px × 480px)</span>
+	</label>
+	<span class="pay_price">8,000円</span>
+</span>
+<textarea id="pay_1" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 
-<span class="td_tag">　TOPバナー追加(1200px × 480px) <span class="pay_price">8,000円</span></span>
-<textarea id="pay_2" name="pay_2" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<span class="td_tag2">
+	<label for="pay_c_2" class="ck_box0" style="width:400px;">
+		<span class="ck_box1">
+			<input id="pay_c_2" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<span class="ck_box3"></span>
+		</span>
+		<span>TOPバナー追加(1200px × 480px)</span>
+	</label>
+	<span class="pay_price">8,000円</span>
+</span>
+<textarea id="pay_2" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 
-<span class="td_tag">　TOPバナー追加(1200px × 480px) <span class="pay_price">8,000円</span></span>
-<textarea id="pay_3" name="pay_3" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<span class="td_tag2">
+	<label for="pay_c_3" class="ck_box0" style="width:400px;">
+		<span class="ck_box1">
+			<input id="pay_c_3" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<span class="ck_box3"></span>
+		</span>
+		<span>TOPバナー追加(1200px × 480px)</span>
+	</label>
+	<span class="pay_price">8,000円</span>
+</span>
+<textarea id="pay_3" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 
-<span class="td_tag">　サイドバナー詳細(600px × 150px) <span class="pay_price">4,000円</span></span>
-<textarea id="pay_4" name="pay_4" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<span class="td_tag2">
+	<label for="pay_c_4" class="ck_box0" style="width:400px;">
+		<span class="ck_box1">
+			<input id="pay_c_4" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<span class="ck_box3"></span>
+		</span>
+		<span>サイドバナー詳細(600px × 150px)</span>
+	</label>
+	<span class="pay_price">4,000円</span>
+</span>
+<textarea id="pay_4" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 
-<span class="td_tag">　サイドバナー詳細(600px × 150px) <span class="pay_price">4,000円</span></span>
-<textarea id="pay_5" name="pay_5" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<span class="td_tag2">
+	<label for="pay_c_5" class="ck_box0" style="width:400px;">
+		<span class="ck_box1">
+			<input id="pay_c_5" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<span class="ck_box3"></span>
+		</span>
+		<span>サイドバナー詳細(600px × 150px)</span>
+	</label>
+	<span class="pay_price">4,000円</span>
+</span>
+<textarea id="pay_5" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 
-<span class="td_tag">　サイドバナー詳細(600px × 150px)<span class="pay_price"> 4,000円</span></span>
-<textarea id="pay_6" name="pay_6" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<span class="td_tag2">
+	<label for="pay_c_6" class="ck_box0" style="width:400px;">
+		<span class="ck_box1">
+			<input id="pay_c_6" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<span class="ck_box3"></span>
+		</span>
+		<span>サイドバナー詳細(600px × 150px)</span>
+	</label>
+	<span class="pay_price">4,000円</span>
+</span>
+<textarea id="pay_6" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 
-<span class="td_tag">　ページ追加 <span class="pay_price">12,000円～</span></span>
-<textarea id="pay_7" name="pay_7" class="textarea w560" placeholder="希望ページ詳細をご記載下さい。"></textarea>
+<span class="td_tag2">
+	<label for="pay_c_7" class="ck_box0" style="width:400px;">
+		<span class="ck_box1">
+			<input id="pay_c_7" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<span class="ck_box3"></span>
+		</span>
+		<span>ページ追加</span>
+	</label>
+	<span class="pay_price">12,000円～</span>
+</span>
+<textarea id="pay_7" class="textarea w560" placeholder="希望されるページの詳細をご記載下さい。"></textarea>
 
-<span class="td_tag">　出張撮影(東京/神奈川/千葉/埼玉　2時間) <span class="pay_price">20,000円</span></span>
-<textarea id="pay_8" name="pay_8" class="textarea w560" placeholder="ご希望される日時（曜日）、お時間帯をご記載下さい。"></textarea>
+<span class="td_tag2">
+	<label for="pay_c_8" class="ck_box0" style="width:400px;">
+		<span class="ck_box1">
+			<input id="pay_c_8" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<span class="ck_box3"></span>
+		</span>
+		<span>出張撮影(東京/神奈川/千葉/埼玉　2時間)</span>
+	</label>
+	<span class="pay_price">20,000円</span>
+</span>
+<textarea id="pay_8" class="textarea w560" placeholder="希望される日時（曜日）、お時間帯をご記載下さい。"></textarea>
 
-<span class="td_tag">　ロゴ作成(単色　1200px × 1200px) <span class="pay_price">10,000円</span></span>
-<textarea id="pay_9" name="pay_9" class="textarea w560" placeholder="ご希望される色、イメージをご記載下さい。"></textarea>
+<span class="td_tag2">
+	<label for="pay_c_9" class="ck_box0" style="width:400px;">
+		<span class="ck_box1">
+			<input id="pay_c_9" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<span class="ck_box3"></span>
+		</span>
+		<span>ロゴ作成(単色　1200px × 1200px)</span>
+	</label>
+	<span class="pay_price">10,000円</span>
+</span>
+<textarea id="pay_9" class="textarea w560" placeholder="希望される色、イメージをご記載下さい。"></textarea>
 </div>
 </body>
 </html>
