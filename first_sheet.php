@@ -192,7 +192,6 @@ input,select{
 	border			:1px solid #202020;
 }
 
-
 .rec_c{
 	display:none;
 }
@@ -267,7 +266,6 @@ input,select{
 
 <span class="td_tag">　LINE</span>
 <input id="info_5" name="info_5" type="text" class="textbox w360">
-
 
 <span class="td_tag">　twitter</span>
 <input id="info_6" name="info_6" type="text" class="textbox w360">
