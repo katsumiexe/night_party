@@ -84,7 +84,7 @@ input,select{
 	position		:absolute;
 	top				:0;
 	bottom			:0;
-	right			:0;
+	right			:20px;
 	margin			:auto;
 	color			:#c00000;
 	font-weight		:700;
@@ -318,7 +318,7 @@ input,select{
 <input id="pf_7" type="text" class="textbox w360">
 <input id="pf_8" type="text" class="textbox w360">
 
-<span class="td_tag">オプション名</span>
+<span class="td_tag">　オプション名</span>
 <input id="op_0" type="text" class="textbox w360" placeholder="特徴"><br>
 <input id="op_1" type="text" class="textbox w180" placeholder="理系">
 <input id="op_2" type="text" class="textbox w180" placeholder="体育会系">
@@ -372,9 +372,10 @@ input,select{
 
 <div class="title_1">　バナー</div>
 <span class="td_tag">　TOPバナー詳細(1200px × 480px)</span>
-<textarea id="rec_0" class="textarea w360"></textarea>
+<textarea id="rec_0" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 <span class="td_tag">　サイドバナー詳細(600px × 150px)</span>
-<textarea id="rec_0" class="textarea w360"></textarea>
+<textarea id="rec_0" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+
 
 
 <div class="title_1">　使用コンテンツ</div>
@@ -384,7 +385,7 @@ input,select{
 		<div class="ck_title">CMSコンテンツ</div>
 			<label for="check_1" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_1" type="checkbox" class="ck_box2" value="1" <?if($dat["check_1"] ==1){?>checked="checked"<?}?>>
+					<input id="check_1" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>Notice</span>
@@ -393,7 +394,7 @@ input,select{
 
 			<label for="check_2" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_2" type="checkbox" class="ck_box2" value="1" <?if($dat["check_2"] ==1){?>checked="checked"<?}?>>
+					<input id="check_2" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>EasyTalk</span>
@@ -402,7 +403,7 @@ input,select{
 
 			<label for="check_3" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_3" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
+					<input id="check_3" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>スケジュール</span>
@@ -414,7 +415,7 @@ input,select{
 			<div class="ck_title">サイト内ページ</div>
 			<label for="check_4" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_4" type="checkbox" class="ck_box2" value="1" <?if($dat["check_1"] ==1){?>checked="checked"<?}?>>
+					<input id="check_4" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>TOP挨拶</span>
@@ -422,7 +423,7 @@ input,select{
 			</label>
 			<label for="check_5" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_5" type="checkbox" class="ck_box2" value="1" <?if($dat["check_2"] ==1){?>checked="checked"<?}?>>
+					<input id="check_5" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>ニュース</span>
@@ -431,7 +432,7 @@ input,select{
 
 			<label for="check_11" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_11" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
+					<input id="check_11" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>システム</span>
@@ -440,7 +441,7 @@ input,select{
 
 			<label for="check_9" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_9" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
+					<input id="check_9" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>キャストブログ</span>
@@ -449,7 +450,7 @@ input,select{
 
 			<label for="check_10" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_10" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
+					<input id="check_10" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>スタッフブログ</span>
@@ -458,7 +459,7 @@ input,select{
 
 			<label for="check_6" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_6" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
+					<input id="check_6" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>アクセス</span>
@@ -467,7 +468,7 @@ input,select{
 
 			<label for="check_7" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_7" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
+					<input id="check_7" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>リクルート</span>
@@ -476,7 +477,7 @@ input,select{
 
 			<label for="check_8" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_8" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
+					<input id="check_8" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>プライバシーポリシー</span>
@@ -488,7 +489,7 @@ input,select{
 			<div class="ck_title">システムコンテンツ</div>
 			<label for="check_12" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_12" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
+					<input id="check_12" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>SSL設定</span>
@@ -497,7 +498,7 @@ input,select{
 
 			<label for="check_13" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_13" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
+					<input id="check_13" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>アナリティクス</span>
@@ -506,7 +507,7 @@ input,select{
 
 			<label for="check_14" class="ck_box0">
 				<span class="ck_box1">
-				<input id="check_14" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
+				<input id="check_14" type="checkbox" class="ck_box2" value="1" checked="checked">
 				<span class="ck_box3"></span>
 				</span>
 				<span>サーチコンソール</span>
@@ -515,7 +516,7 @@ input,select{
 
 			<label for="check_15" class="ck_box0">
 				<span class="ck_box1">
-					<input id="check_15" type="checkbox" class="ck_box2" value="1" <?if($dat["check_3"] ==1){?>checked="checked"<?}?>>
+					<input id="check_15" type="checkbox" class="ck_box2" value="1" checked="checked">
 					<span class="ck_box3"></span>
 				</span>
 				<span>ファビコン</span>
@@ -526,35 +527,35 @@ input,select{
 </table>
 
 <div class="title_1">　有料オプション</div>
-<span class="td_tag">ドメイン・ブラウザ設定 <span class="pay_price">10,000円</span></span>
-<textarea id="pay_0" name="pay_0" class="textarea w560"></textarea>
+<span class="td_tag">　ドメイン・ブラウザ設定 (登録＋10か月分)<span class="pay_price">10,000円</span></span>
+<textarea id="pay_0" name="pay_0" class="textarea w560" placeholder="ご希望のドメインをご記載下さい。"></textarea>
 
-<span class="td_tag">TOPバナー追加(1200px × 480px) <span class="pay_price">10,000円</span></span>
-<textarea id="pay_1" name="pay_1" class="textarea w560"></textarea>
+<span class="td_tag">　TOPバナー追加(1200px × 480px) <span class="pay_price">8,000円</span></span>
+<textarea id="pay_1" name="pay_1" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 
-<span class="td_tag">TOPバナー追加(1200px × 480px) <span class="pay_price">10,000円</span></span>
-<textarea id="pay_2" name="pay_2" class="textarea w560"></textarea>
+<span class="td_tag">　TOPバナー追加(1200px × 480px) <span class="pay_price">8,000円</span></span>
+<textarea id="pay_2" name="pay_2" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 
-<span class="td_tag">TOPバナー追加(1200px × 480px) <span class="pay_price">10,000円</span></span>
-<textarea id="pay_3" name="pay_3" class="textarea w560"></textarea>
+<span class="td_tag">　TOPバナー追加(1200px × 480px) <span class="pay_price">8,000円</span></span>
+<textarea id="pay_3" name="pay_3" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 
-<span class="td_tag">サイドバナー詳細(600px × 150px) <span class="pay_price">5,000円</span></span>
-<textarea id="pay_4" name="pay_4" class="textarea w560"></textarea>
+<span class="td_tag">　サイドバナー詳細(600px × 150px) <span class="pay_price">4,000円</span></span>
+<textarea id="pay_4" name="pay_4" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 
-<span class="td_tag">サイドバナー詳細(600px × 150px) <span class="pay_price">5,000円</span></span>
-<textarea id="pay_5" name="pay_5" class="textarea w560"></textarea>
+<span class="td_tag">　サイドバナー詳細(600px × 150px) <span class="pay_price">4,000円</span></span>
+<textarea id="pay_5" name="pay_5" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 
-<span class="td_tag">サイドバナー詳細(600px × 150px)<span class="pay_price"> 5,000円</span></span>
-<textarea id="pay_6" name="pay_6" class="textarea w560"></textarea>
+<span class="td_tag">　サイドバナー詳細(600px × 150px)<span class="pay_price"> 4,000円</span></span>
+<textarea id="pay_6" name="pay_6" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 
-<span class="td_tag">ページ追加 <span class="pay_price">12,000円～</span></span>
-<textarea id="pay_7" name="pay_7" class="textarea w560"></textarea>
+<span class="td_tag">　ページ追加 <span class="pay_price">12,000円～</span></span>
+<textarea id="pay_7" name="pay_7" class="textarea w560" placeholder="希望ページ詳細をご記載下さい。"></textarea>
 
-<span class="td_tag">出張撮影(東京/神奈川/千葉/埼玉　2時間) <span class="pay_price">20,000円</span></span>
-<textarea id="pay_8" name="pay_8" class="textarea w560"></textarea>
+<span class="td_tag">　出張撮影(東京/神奈川/千葉/埼玉　2時間) <span class="pay_price">20,000円</span></span>
+<textarea id="pay_8" name="pay_8" class="textarea w560" placeholder="ご希望される日時（曜日）、お時間帯をご記載下さい。"></textarea>
 
-<span class="td_tag">ロゴ作成(1200px × 1200px) <span class="pay_price">10,000円</span></span>
-<textarea id="pay_9" name="pay_9" class="textarea w560"></textarea>
+<span class="td_tag">　ロゴ作成(単色　1200px × 1200px) <span class="pay_price">10,000円</span></span>
+<textarea id="pay_9" name="pay_9" class="textarea w560" placeholder="ご希望される色、イメージをご記載下さい。"></textarea>
 </div>
 </body>
 </html>
