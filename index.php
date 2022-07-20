@@ -24,6 +24,8 @@
 <title>NightParty『ナイトパーティ』ナイトクラブ向け高性能CMS</title>
 
 <link rel="canonical" href="https://night-party.com/">
+<link rel="icon" href="z_img/fav.png">
+<link rel="apple-touch-icon" href="z_img/fav.png">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>

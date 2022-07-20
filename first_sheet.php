@@ -68,6 +68,7 @@ input,select{
 	line-height		:40px;
 	text-align		:left;
 	width			:100%;
+	margin			:30px auto 5px auto;
 }
 
 .td_tag{
@@ -299,7 +300,7 @@ input,select{
 
 
 <div class="title_1">　サイトデザイン</div>
-<span class="td_tag w360" style="display:inline-block;">　イメージサイトURL</span><span class="td_tag w160" style="display:inline-block;">　イメージカラー</span>
+<span class="td_tag" style="display:inline-block; width:380px;">　イメージサイトURL</span><span class="td_tag w160" style="display:inline-block;">　イメージカラー</span>
 <input id="dg_2" type="text" class="textbox w360"><input id="dg_1" name="dg_3" type="text" class="textbox w160">
 <span class="td_tag">　ご要望</span>
 <textarea id="dg_4" class="textarea2 w540"></textarea>
