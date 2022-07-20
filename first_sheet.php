@@ -376,8 +376,6 @@ input,select{
 <span class="td_tag">　サイドバナー詳細(600px × 150px)</span>
 <textarea id="rec_0" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 
-
-
 <div class="title_1">　使用コンテンツ</div>
 <table class="table_3">
 	<tr>
