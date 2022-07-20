@@ -61,6 +61,7 @@ input,select{
 }
 
 .title_1{
+	position		:relative;
 	background		:#6060a0;
 	color			:#fafafa;
 	font-size		:18px;
@@ -69,6 +70,18 @@ input,select{
 	text-align		:left;
 	width			:100%;
 	margin			:30px auto 5px auto;
+}
+
+.tmp_btn{
+	position		:absolute;
+	top				:0;
+	bottom			:0;
+	right			:5px;
+	margin			:auto;
+	font-size		:12px;
+	height			:30px;
+	line-height		:30px;
+	
 }
 
 .td_tag{
@@ -251,7 +264,8 @@ input,select{
 <div class="box_1">ヒアリングシート</div>
 <div class="box_2">
 
-<div class="title_1">　店舗基本情報</div>
+
+<div class="title_1">　店舗基本情報<button type="button" class="tmp_btn">下書き保存</button></div>
 
 <span class="td_tag">　店舗名</span>
 <input id="info_1" name="info_1" type="text" class="textbox w360">
@@ -299,7 +313,7 @@ input,select{
 
 
 
-<div class="title_1">　サイトデザイン</div>
+<div class="title_1">　サイトデザイン<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag" style="display:inline-block; width:380px;">　イメージサイトURL</span><span class="td_tag w160" style="display:inline-block;">　イメージカラー</span>
 <input id="dg_2" type="text" class="textbox w360"><input id="dg_1" name="dg_3" type="text" class="textbox w160">
 <span class="td_tag">　ご要望</span>
@@ -307,7 +321,7 @@ input,select{
 
 
 
-<div class="title_1">　キャスト設定</div>
+<div class="title_1">　キャスト設定<button type="button" class="tmp_btn">下書き保存</button></div>
 
 <span class="td_tag">　キャストプロフィール</span>
 <input id="pf_1" type="text" class="textbox w360" placeholder="誕生日／年齢">
@@ -335,12 +349,12 @@ input,select{
 <input id="op_12" type="text" class="textbox w180">
 
 
-<div class="title_1">　システム</div>
+<div class="title_1">　システム<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　本文</span>
 <textarea id="rec_0" class="textarea2 w560"></textarea>
 
 
-<div class="title_1">　リクルート</div>
+<div class="title_1">　リクルート<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　本文</span>
 <textarea id="rec_0" class="textarea2 w560"></textarea>
 <span class="td_tag">　確認項目</span>
@@ -354,7 +368,7 @@ input,select{
 <input id="rec_8" type="text" class="textbox w300"><input type="checkbox" id="rec_c_8" name="rec_c_8" class="rec_c"><label for="rec_c_8" class="nese">必須</label>
 
 
-<div class="title_1">　プライバシーポリシー</div>
+<div class="title_1">　プライバシーポリシー<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　本文</span>
 <textarea id="rec_0" class="textarea2 w560">
 『○○』（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。
@@ -371,13 +385,13 @@ input,select{
 ユーザーにご自身の登録情報の閲覧や変更，削除，ご利用状況の閲覧を行っていただくため
 </textarea>
 
-<div class="title_1">　バナー</div>
+<div class="title_1">　バナー<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　TOPバナー詳細(1200px × 480px)</span>
 <textarea id="rec_0" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 <span class="td_tag">　サイドバナー詳細(600px × 150px)</span>
 <textarea id="rec_0" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
 
-<div class="title_1">　使用コンテンツ</div>
+<div class="title_1">　使用コンテンツ<button type="button" class="tmp_btn">下書き保存</button></div>
 <table class="table_3">
 	<tr>
 		<td>
@@ -525,7 +539,7 @@ input,select{
 	</tr>
 </table>
 
-<div class="title_1">　有料オプション</div>
+<div class="title_1">　有料オプション<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　ドメイン・ブラウザ設定 (登録＋10か月分)<span class="pay_price">10,000円</span></span>
 <textarea id="pay_0" name="pay_0" class="textarea w560" placeholder="ご希望のドメインをご記載下さい。"></textarea>
 
