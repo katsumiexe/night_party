@@ -24,12 +24,6 @@ $(function(){
 	src: url("./sample1/font/nightparty_icon.ttf") format('truetype');
 }
 
-table{
-	border			:1px solid #303030;
-	margin			:5px;
-//	border-collapse	:collapse;
-	width			:480px;
-}
 
 td{
 	vertical-align:top;
@@ -66,14 +60,24 @@ input,select{
 	text-align		:center;
 }
 
+.title_1{
+	background		:#6060a0;
+	color			:#fafafa;
+	font-size		:18px;
+	height			:40px;
+	line-height		:40px;
+	text-align		:left;
+	width			:100%;
+}
+
 .td_tag{
 	position		:relative;
 	display			:block;
-	font-size		:14px;
-	padding-left	:10px;
+	font-size		:16px;
 	font-weight		:700;
-	height			:20px;
-	line-height		:22px;
+	height			:30px;
+	line-height		:40px;
+	width			:100%;
 }
 
 .pay_price{
@@ -85,8 +89,6 @@ input,select{
 	color			:#c00000;
 	font-weight		:700;
 }
-
-
 
 .ck_title{
 	margin			:5px;
@@ -109,7 +111,7 @@ input,select{
 	line-height		:30px;
 	margin			:5px;
 	width			:160px;
-	border-bottom:1px solid #202020;
+	border-bottom	:1px solid #202020;
 }
 
 .ck_box0:checked + .check1{
@@ -179,8 +181,6 @@ input,select{
 	text-align		:left;
 }
 
-
-
 .nese{
 	display			:inline-block;
 	line-height		:30px;
@@ -188,10 +188,26 @@ input,select{
 	width			:50px;
 	text-align		:center;
 	font-size		:14px;
-	background		:#ffd0d0;
+	background		:#f0f0f0;
 	border			:1px solid #202020;
 }
 
+
+.rec_c{
+	display:none;
+}
+
+.rec_c:checked + label{
+	background:#ffe0e0;
+}
+
+.w40{
+	width:40px;
+}
+
+.w60{
+	width:60px;
+}
 
 .w100{
 	width:100px;
@@ -200,7 +216,6 @@ input,select{
 .w160{
 	width:160px;
 }
-
 
 .w240{
 	width:240px;
@@ -214,204 +229,135 @@ input,select{
 	width:360px;
 }
 
-
-.w60{
-	width:60px;
-
+.w540{
+	width:540px;
 }
-.w40{
-	width:40px;
+
+.w560{
+	width:560px;
+}
+
+.box_2{
+	width		:100%;
+	max-width	:600px;
+	margin		:0 auto;
+	background	:#fafafa;
 
 }
 
 </style>
 </head>
-<body>
+<body style="background:#eaeaea">
 <div class="box_1">ヒアリングシート</div>
 <div class="box_2">
-<table class="table_1">
-	<tr>
-		<td colspan="3" class="td_title">店舗基本情報</td>
-	</tr>
-	<tr>
-		<td colspan="3">
-			<span class="td_tag">店舗名</span>
-			<input id="info_1" name="info_1" type="text" class="textbox w360">
-		</td>
-	</tr>
 
-	<tr>
-		<td colspan="3">
-			<span class="td_tag">住所</span>
-			<input id="info_2" name="info_2" type="text" class="textbox w360">
-		</td>
-	</tr>
+<div class="title_1">　店舗基本情報</div>
 
-	<tr>
-		<td colspan="3">
-			<span class="td_tag">電話番号</span>
-			<input id="info_3" name="info_3" class="textbox w360">
-		</td>
-	</tr>
+<span class="td_tag">　店舗名</span>
+<input id="info_1" name="info_1" type="text" class="textbox w360">
 
-	<tr>
-		<td colspan="3">
-			<span class="td_tag">メールアドレス</span>
-			<input id="info_4" name="info_4" type="text" class="textbox w360">
-		</td>
-	</tr>
+<span class="td_tag">　ご住所</span>
+<input id="info_2" name="info_2" type="text" class="textbox w360">
 
-	<tr>
-		<td colspan="3">
-			<span class="td_tag">LINE</span>
-			<input id="info_5" name="info_5" type="text" class="textbox w360">
-		</td>
-	</tr>
+<span class="td_tag">　お電話番号</span>
+<input id="info_3" name="info_3" class="textbox w360">
 
-	<tr>
-		<td colspan="3">
-			<span class="td_tag">twitter</span>
-			<input id="info_6" name="info_6" type="text" class="textbox w360">
-		</td>
-	</tr>
-	<tr>
-		<td colspan="3">
-			<span class="td_tag">店舗形態</span>
-			<select id="info_7" name="info_7" class="textbox w360">
-				<option></option>
-				<option value="キャバクラ">キャバクラ</option>
-				<option value="セクキャバ">セクキャバ</option>
-				<option value="ガールズバー">ガールズバー</option>
-				<option value="デリヘル">デリヘル</option>
-				<option value="コンカフェ">コンカフェ</option>
-				<option value="メイドカフェ">メイドカフェ</option>
-				<option value="アイドルカフェ">アイドルカフェ</option>
-				<option value="スポーツバー">スポーツバー</option>
-				<option value="ダーツバー">ダーツバー</option>
-				<option value="SMバー">SMバー</option>
-				<option value="ハプニングバー">ハプニングバー</option>
-				<option value="その他">その他</option>
-			</select>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<span class="td_tag">キャスト数</span>
-			<input id="info_8" name="info_8" type="text" class="textbox w40">人
-		</td>
-		<td>
-			<span class="td_tag">顧客年齢層</span>
-			<input id="info_9" name="info_9" type="text" class="textbox w40">歳
-		</td>
-		<td>
-			<span class="td_tag">営業時間</span>
-			<input id="info_10" name="info_10" type="text" class="textbox w40">時 ～<input id="info_11" type="text" class="textbox w40">時
-		</td>
-	</tr>
-</table>
+<span class="td_tag">　メールアドレス</span>
+<input id="info_4" name="info_4" type="text" class="textbox w360">
 
-<table class="table_2">
-	<tr>
-		<td class="td_title" colspan="3">サイトデザイン</td>
-	</tr>
-		<td>
-			<span class="td_tag">イメージカラー</span>
-			<input id="dg_1" name="dg_3" type="text" class="textbox w360">
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<span class="td_tag">イメージサイトURL</span>
-			<input id="dg_2" type="text" class="textbox w360">
-			<textarea id="dg_3"v class="textarea w360"></textarea>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<span class="td_tag">その他ご要望</span>
-			<textarea id="dg_4" class="textarea2 w360"></textarea>
-		</td>
-	</tr>
-</table>
+<span class="td_tag">　LINE</span>
+<input id="info_5" name="info_5" type="text" class="textbox w360">
 
-<table class="table_3">
-	<tr>
-		<td class="td_title" colspan="3">キャスト設定</td>
-	</tr>
-	<tr>
-		<td>
-			<span class="td_tag">キャストプロフィール</span>
-			<input id="pf_1" type="text" class="textbox w360">
-			<input id="pf_2" type="text" class="textbox w360">
-			<input id="pf_3" type="text" class="textbox w360">
-			<input id="pf_4" type="text" class="textbox w360">
-			<input id="pf_5" type="text" class="textbox w360">
-			<input id="pf_6" type="text" class="textbox w360">
-			<input id="pf_7" type="text" class="textbox w360">
-			<input id="pf_8" type="text" class="textbox w360">
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<span class="td_tag">オプション名</span>
-			<input id="op_0" type="text" class="textbox w360">
-			<input id="op_1" type="text" class="textbox w180">
-			<input id="op_2" type="text" class="textbox w180">
-			<input id="op_3" type="text" class="textbox w180">
-			<input id="op_4" type="text" class="textbox w180">
-			<input id="op_5" type="text" class="textbox w180">
-			<input id="op_6" type="text" class="textbox w180">
-			<input id="op_7" type="text" class="textbox w180">
-			<input id="op_8" type="text" class="textbox w180">
-			<input id="op_9" type="text" class="textbox w180">
-			<input id="op_10" type="text" class="textbox w180">
-			<input id="op_11" type="text" class="textbox w180">
-			<input id="op_12" type="text" class="textbox w180">
-		</td>
-	</tr>
-</table>
 
-<table class="table_3">
-	<tr>
-		<td class="td_title" colspan="3">システム</td>
-	</tr>
-	<tr>
-		<td>
-			<span class="td_tag">本文</span>
-			<textarea id="rec_0" class="textarea2 w360"></textarea>
-		</td>
-	</tr>
-</table>
+<span class="td_tag">　twitter</span>
+<input id="info_6" name="info_6" type="text" class="textbox w360">
 
-<table class="table_3">
-	<tr>
-		<td class="td_title" colspan="3">リクルート</td>
-	</tr>
-	<tr>
-		<td>
-			<span class="td_tag">本文</span>
-			<textarea id="rec_0" class="textarea2 w360"></textarea>
-			<span class="td_tag">確認項目</span>
-			<input id="rec_1" type="text" class="textbox w300" placeholder="お名前"><label class="nese">必須</label>
-			<input id="rec_2" type="text" class="textbox w300" placeholder="ご住所"><label class="nese">必須</label>
-			<input id="rec_3" type="text" class="textbox w300"><label class="nese">必須</label>
-			<input id="rec_4" type="text" class="textbox w300"><label class="nese">必須</label>
-			<input id="rec_5" type="text" class="textbox w300"><label class="nese">必須</label>
-			<input id="rec_6" type="text" class="textbox w300"><label class="nese">必須</label>
-			<input id="rec_7" type="text" class="textbox w300"><label class="nese">必須</label>
-			<input id="rec_8" type="text" class="textbox w300"><label class="nese">必須</label>
-		</td>
-	</tr>
-</table>
+<span class="td_tag">　店舗形態</span>
+<select id="info_7" name="info_7" class="textbox w360">
+	<option></option>
+	<option value="キャバクラ">キャバクラ</option>
+	<option value="セクキャバ">セクキャバ</option>
+	<option value="ガールズバー">ガールズバー</option>
+	<option value="デリヘル">デリヘル</option>
+	<option value="コンカフェ">コンカフェ</option>
+	<option value="メイドカフェ">メイドカフェ</option>
+	<option value="アイドルカフェ">アイドルカフェ</option>
+	<option value="スポーツバー">スポーツバー</option>
+	<option value="ダーツバー">ダーツバー</option>
+	<option value="SMバー">SMバー</option>
+	<option value="ハプニングバー">ハプニングバー</option>
+	<option value="その他">その他</option>
+</select>
 
-<table class="table_3">
-	<tr>
-		<td class="td_title" colspan="3">プライバシーポリシー</td>
-	</tr>
-	<tr>
-		<td>
-			<span class="td_tag">本文</span>
-			<textarea id="rec_0" class="textarea2 w360">
+<span class="td_tag">　キャスト数</span>
+<input id="info_8" name="info_8" type="text" class="textbox w120">人
+
+<span class="td_tag">　顧客年齢層</span>
+<input id="info_9" name="info_9" type="text" class="textbox w120">歳
+
+<span class="td_tag">　営業時間</span>
+<input id="info_10" name="info_10" type="text" class="textbox w40">時 ～<input id="info_11" type="text" class="textbox w40">時
+
+
+
+<div class="title_1">　サイトデザイン</div>
+<span class="td_tag w360" style="display:inline-block;">　イメージサイトURL</span><span class="td_tag w160" style="display:inline-block;">　イメージカラー</span>
+<input id="dg_2" type="text" class="textbox w360"><input id="dg_1" name="dg_3" type="text" class="textbox w160">
+<span class="td_tag">　ご要望</span>
+<textarea id="dg_4" class="textarea2 w540"></textarea>
+
+
+
+<div class="title_1">　キャスト設定</div>
+
+<span class="td_tag">　キャストプロフィール</span>
+<input id="pf_1" type="text" class="textbox w360" placeholder="誕生日／年齢">
+<input id="pf_2" type="text" class="textbox w360" placeholder="趣味">
+<input id="pf_3" type="text" class="textbox w360" placeholder="好きな食べ物">
+<input id="pf_4" type="text" class="textbox w360" placeholder="お酒">
+<input id="pf_5" type="text" class="textbox w360">
+<input id="pf_6" type="text" class="textbox w360">
+<input id="pf_7" type="text" class="textbox w360">
+<input id="pf_8" type="text" class="textbox w360">
+
+<span class="td_tag">オプション名</span>
+<input id="op_0" type="text" class="textbox w360" placeholder="特徴"><br>
+<input id="op_1" type="text" class="textbox w180" placeholder="理系">
+<input id="op_2" type="text" class="textbox w180" placeholder="体育会系">
+<input id="op_3" type="text" class="textbox w180" placeholder="お話好き">
+<input id="op_4" type="text" class="textbox w180" placeholder="オタク">
+<input id="op_5" type="text" class="textbox w180" placeholder="巨乳">
+<input id="op_6" type="text" class="textbox w180" placeholder="モデル体型">
+<input id="op_7" type="text" class="textbox w180">
+<input id="op_8" type="text" class="textbox w180">
+<input id="op_9" type="text" class="textbox w180">
+<input id="op_10" type="text" class="textbox w180">
+<input id="op_11" type="text" class="textbox w180">
+<input id="op_12" type="text" class="textbox w180">
+
+
+<div class="title_1">　システム</div>
+<span class="td_tag">　本文</span>
+<textarea id="rec_0" class="textarea2 w560"></textarea>
+
+
+<div class="title_1">　リクルート</div>
+<span class="td_tag">　本文</span>
+<textarea id="rec_0" class="textarea2 w560"></textarea>
+<span class="td_tag">　確認項目</span>
+<input id="rec_1" type="text" class="textbox w300" placeholder="お名前"><input type="checkbox" id="rec_c_1" name="rec_c_1" class="rec_c" ><label for="rec_c_1" class="nese">必須</label>
+<input id="rec_2" type="text" class="textbox w300" placeholder="ご住所"><input type="checkbox" id="rec_c_2" name="rec_c_2" class="rec_c"><label for="rec_c_2" class="nese">必須</label>
+<input id="rec_3" type="text" class="textbox w300"><input type="checkbox" id="rec_c_3" name="rec_c_3" class="rec_c"><label for="rec_c_3" class="nese">必須</label>
+<input id="rec_4" type="text" class="textbox w300"><input type="checkbox" id="rec_c_4" name="rec_c_4" class="rec_c"><label for="rec_c_4" class="nese">必須</label>
+<input id="rec_5" type="text" class="textbox w300"><input type="checkbox" id="rec_c_5" name="rec_c_5" class="rec_c"><label for="rec_c_5" class="nese">必須</label>
+<input id="rec_6" type="text" class="textbox w300"><input type="checkbox" id="rec_c_6" name="rec_c_6" class="rec_c"><label for="rec_c_6" class="nese">必須</label>
+<input id="rec_7" type="text" class="textbox w300"><input type="checkbox" id="rec_c_7" name="rec_c_7" class="rec_c"><label for="rec_c_7" class="nese">必須</label>
+<input id="rec_8" type="text" class="textbox w300"><input type="checkbox" id="rec_c_8" name="rec_c_8" class="rec_c"><label for="rec_c_8" class="nese">必須</label>
+
+
+<div class="title_1">　プライバシーポリシー</div>
+<span class="td_tag">　本文</span>
+<textarea id="rec_0" class="textarea2 w560">
 			『○○』（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。
 第1条　個人情報
 「個人情報」とは，個人情報保護法にいう「個人情報」を指すものとし，生存する個人に関する情報であって，当該情報に含まれる氏名，生年月日，住所，電話番号，連絡先その他の記述等により特定の個人を識別できる情報及び容貌，指紋，声紋にかかるデータ，及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。
@@ -424,33 +370,18 @@ input,select{
 メンテナンス，重要なお知らせなど必要に応じたご連絡のため
 利用規約に違反したユーザーや，不正・不当な目的でサービスを利用しようとするユーザーの特定をし，ご利用をお断りするため
 ユーザーにご自身の登録情報の閲覧や変更，削除，ご利用状況の閲覧を行っていただくため
-			
-			</textarea>
-		</td>
-	</tr>
-</table>
+</textarea>
 
 
+<div class="title_1">　バナー</div>
+<span class="td_tag">　TOPバナー詳細(1200px × 480px)</span>
+<textarea id="rec_0" class="textarea w360"></textarea>
+<span class="td_tag">　サイドバナー詳細(600px × 150px)</span>
+<textarea id="rec_0" class="textarea w360"></textarea>
+
+
+<div class="title_1">　使用コンテンツ</div>
 <table class="table_3">
-	<tr>
-		<td class="td_title" colspan="3">バナー</td>
-	</tr>
-	<tr>
-		<td>
-			<span class="td_tag">TOPバナー詳細(1200px × 480px)</span>
-			<textarea id="rec_0" class="textarea w360"></textarea>
-			<span class="td_tag">サイドバナー詳細(600px × 150px)</span>
-			<textarea id="rec_0" class="textarea w360"></textarea>
-		</td>
-	</tr>
-</table>
-
-
-<table class="table_3">
-	<tr>
-		<td class="td_title" colspan="3">使用コンテンツ</td>
-	</tr>
-
 	<tr>
 		<td>
 		<div class="ck_title">CMSコンテンツ</div>
@@ -597,44 +528,38 @@ input,select{
 	</tr>
 </table>
 
-<table class="table_3">
-	<tr>
-		<td class="td_title" colspan="3">有料オプション</td>
-	</tr>
-	<tr>
-		<td>
-			<span class="td_tag">ドメイン・ブラウザ設定 <span class="pay_price">10,000円</span></span>
-			<textarea id="pay_0" name="pay_0" class="textarea w360"></textarea>
+<div class="title_1">　有料オプション</div>
 
-			<span class="td_tag">TOPバナー追加(1200px × 480px) <span class="pay_price">10,000円</span></span>
-			<textarea id="pay_1" name="pay_1" class="textarea w360"></textarea>
+<span class="td_tag">ドメイン・ブラウザ設定 <span class="pay_price">10,000円</span></span>
+<textarea id="pay_0" name="pay_0" class="textarea w360"></textarea>
 
-			<span class="td_tag">TOPバナー追加(1200px × 480px) <span class="pay_price">10,000円</span></span>
-			<textarea id="pay_2" name="pay_2" class="textarea w360"></textarea>
+<span class="td_tag">TOPバナー追加(1200px × 480px) <span class="pay_price">10,000円</span></span>
+<textarea id="pay_1" name="pay_1" class="textarea w360"></textarea>
 
-			<span class="td_tag">TOPバナー追加(1200px × 480px) <span class="pay_price">10,000円</span></span>
-			<textarea id="pay_3" name="pay_3" class="textarea w360"></textarea>
+<span class="td_tag">TOPバナー追加(1200px × 480px) <span class="pay_price">10,000円</span></span>
+<textarea id="pay_2" name="pay_2" class="textarea w360"></textarea>
 
-			<span class="td_tag">サイドバナー詳細(600px × 150px) <span class="pay_price">5,000円</span></span>
-			<textarea id="pay_4" name="pay_4" class="textarea w360"></textarea>
+<span class="td_tag">TOPバナー追加(1200px × 480px) <span class="pay_price">10,000円</span></span>
+<textarea id="pay_3" name="pay_3" class="textarea w360"></textarea>
 
-			<span class="td_tag">サイドバナー詳細(600px × 150px) <span class="pay_price">5,000円</span></span>
-			<textarea id="pay_5" name="pay_5" class="textarea w360"></textarea>
+<span class="td_tag">サイドバナー詳細(600px × 150px) <span class="pay_price">5,000円</span></span>
+<textarea id="pay_4" name="pay_4" class="textarea w360"></textarea>
 
-			<span class="td_tag">サイドバナー詳細(600px × 150px)<span class="pay_price"> 5,000円</span></span>
-			<textarea id="pay_6" name="pay_6" class="textarea w360"></textarea>
+<span class="td_tag">サイドバナー詳細(600px × 150px) <span class="pay_price">5,000円</span></span>
+<textarea id="pay_5" name="pay_5" class="textarea w360"></textarea>
 
-			<span class="td_tag">ページ追加 <span class="pay_price">12,000円～</span></span>
-			<textarea id="pay_7" name="pay_7" class="textarea w360"></textarea>
+<span class="td_tag">サイドバナー詳細(600px × 150px)<span class="pay_price"> 5,000円</span></span>
+<textarea id="pay_6" name="pay_6" class="textarea w360"></textarea>
 
-			<span class="td_tag">出張撮影(東京/神奈川/千葉/埼玉　2時間) <span class="pay_price">20,000円</span></span>
-			<textarea id="pay_8" name="pay_8" class="textarea w360"></textarea>
+<span class="td_tag">ページ追加 <span class="pay_price">12,000円～</span></span>
+<textarea id="pay_7" name="pay_7" class="textarea w360"></textarea>
 
-			<span class="td_tag">ロゴ作成(1200px × 1200px) <span class="pay_price">10,000円</span></span>
-			<textarea id="pay_9" name="pay_9" class="textarea w360"></textarea>
-		</td>
-	</tr>
-</table>
+<span class="td_tag">出張撮影(東京/神奈川/千葉/埼玉　2時間) <span class="pay_price">20,000円</span></span>
+<textarea id="pay_8" name="pay_8" class="textarea w360"></textarea>
+
+<span class="td_tag">ロゴ作成(1200px × 1200px) <span class="pay_price">10,000円</span></span>
+<textarea id="pay_9" name="pay_9" class="textarea w360"></textarea>
+
 
 </div>
 </body>
