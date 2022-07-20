@@ -356,7 +356,7 @@ input,select{
 <div class="title_1">　プライバシーポリシー</div>
 <span class="td_tag">　本文</span>
 <textarea id="rec_0" class="textarea2 w560">
-			『○○』（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。
+『○○』（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。
 第1条　個人情報
 「個人情報」とは，個人情報保護法にいう「個人情報」を指すものとし，生存する個人に関する情報であって，当該情報に含まれる氏名，生年月日，住所，電話番号，連絡先その他の記述等により特定の個人を識別できる情報及び容貌，指紋，声紋にかかるデータ，及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。
 第2条　個人情報の収集方法
@@ -369,7 +369,6 @@ input,select{
 利用規約に違反したユーザーや，不正・不当な目的でサービスを利用しようとするユーザーの特定をし，ご利用をお断りするため
 ユーザーにご自身の登録情報の閲覧や変更，削除，ご利用状況の閲覧を行っていただくため
 </textarea>
-
 
 <div class="title_1">　バナー</div>
 <span class="td_tag">　TOPバナー詳細(1200px × 480px)</span>
@@ -527,38 +526,35 @@ input,select{
 </table>
 
 <div class="title_1">　有料オプション</div>
-
 <span class="td_tag">ドメイン・ブラウザ設定 <span class="pay_price">10,000円</span></span>
-<textarea id="pay_0" name="pay_0" class="textarea w360"></textarea>
+<textarea id="pay_0" name="pay_0" class="textarea w560"></textarea>
 
 <span class="td_tag">TOPバナー追加(1200px × 480px) <span class="pay_price">10,000円</span></span>
-<textarea id="pay_1" name="pay_1" class="textarea w360"></textarea>
+<textarea id="pay_1" name="pay_1" class="textarea w560"></textarea>
 
 <span class="td_tag">TOPバナー追加(1200px × 480px) <span class="pay_price">10,000円</span></span>
-<textarea id="pay_2" name="pay_2" class="textarea w360"></textarea>
+<textarea id="pay_2" name="pay_2" class="textarea w560"></textarea>
 
 <span class="td_tag">TOPバナー追加(1200px × 480px) <span class="pay_price">10,000円</span></span>
-<textarea id="pay_3" name="pay_3" class="textarea w360"></textarea>
+<textarea id="pay_3" name="pay_3" class="textarea w560"></textarea>
 
 <span class="td_tag">サイドバナー詳細(600px × 150px) <span class="pay_price">5,000円</span></span>
-<textarea id="pay_4" name="pay_4" class="textarea w360"></textarea>
+<textarea id="pay_4" name="pay_4" class="textarea w560"></textarea>
 
 <span class="td_tag">サイドバナー詳細(600px × 150px) <span class="pay_price">5,000円</span></span>
-<textarea id="pay_5" name="pay_5" class="textarea w360"></textarea>
+<textarea id="pay_5" name="pay_5" class="textarea w560"></textarea>
 
 <span class="td_tag">サイドバナー詳細(600px × 150px)<span class="pay_price"> 5,000円</span></span>
-<textarea id="pay_6" name="pay_6" class="textarea w360"></textarea>
+<textarea id="pay_6" name="pay_6" class="textarea w560"></textarea>
 
 <span class="td_tag">ページ追加 <span class="pay_price">12,000円～</span></span>
-<textarea id="pay_7" name="pay_7" class="textarea w360"></textarea>
+<textarea id="pay_7" name="pay_7" class="textarea w560"></textarea>
 
 <span class="td_tag">出張撮影(東京/神奈川/千葉/埼玉　2時間) <span class="pay_price">20,000円</span></span>
-<textarea id="pay_8" name="pay_8" class="textarea w360"></textarea>
+<textarea id="pay_8" name="pay_8" class="textarea w560"></textarea>
 
 <span class="td_tag">ロゴ作成(1200px × 1200px) <span class="pay_price">10,000円</span></span>
-<textarea id="pay_9" name="pay_9" class="textarea w360"></textarea>
-
-
+<textarea id="pay_9" name="pay_9" class="textarea w560"></textarea>
 </div>
 </body>
 </html>
