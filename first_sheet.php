@@ -93,7 +93,7 @@ input,select{
 	font-size		:12px;
 	height			:30px;
 	line-height		:30px;
-	width			:120px;
+	width			:100px;
 }
 
 .tmp_btn2{
@@ -315,12 +315,8 @@ input,select{
 <span class="td_tag">　twitter</span>
 <input id="info_6" name="info_6" type="text" class="textbox w360" value="<?=$dat["info_6"]?>">
 
-
-
-<? if($dat[""]==""){?> selected="selected"<?}?>
-
 <span class="td_tag">　店舗形態</span>
-<select id="info_7" name="info_7" class="textbox w360">
+<select id="info_7" name="info_7" class="textbox" style="width:375px;">
 	<option></option>
 	<option value="キャバクラ"<? if($dat["info_1"]=="キャバクラ"){?> selected="selected"<?}?>>キャバクラ</option>
 	<option value="セクキャバ"<? if($dat["info_1"]=="セクキャバ"){?> selected="selected"<?}?>>セクキャバ</option>
@@ -334,17 +330,15 @@ input,select{
 	<option value="SMバー"<? if($dat["info_1"]=="SMバー"){?> selected="selected"<?}?>>SMバー</option>
 	<option value="ハプニングバー"<? if($dat["info_1"]=="ハプニングバー"){?> selected="selected"<?}?>>ハプニングバー</option>
 	<option value="その他"<? if($dat["info_1"]=="その他"){?> selected="selected"<?}?>>その他</option>
-</select>
+</select><br>
 
-<span class="td_tag">　キャスト数</span>
-<input id="info_8" name="info_8" type="text" value="<?=$dat["info_8"]?>" class="textbox w120">人
+<span class="td_tag" style="display:inline-block; width:155px;">　キャスト数</span>
+<span class="td_tag" style="display:inline-block; width:155px;">　顧客年齢層</span>
+<span class="td_tag" style="display:inline-block; width:155px;">　営業時間</span><br>
 
-<span class="td_tag">　顧客年齢層</span>
-<input id="info_9" name="info_9" type="text" value="<?=$dat["info_9"]?>" class="textbox w120">歳
-
-<span class="td_tag">　営業時間</span>
+<input id="info_8" name="info_8" type="text" value="<?=$dat["info_8"]?>" class="textbox w100">人　
+<input id="info_9" name="info_9" type="text" value="<?=$dat["info_9"]?>" class="textbox w100">歳　
 <input id="info_10" name="info_10" type="text" value="<?=$dat["info_10"]?>" class="textbox w40">時 ～<input id="info_11" type="text" value="<?=$dat["info_11"]?>" class="textbox w40">時
-
 
 
 <div class="title_1">　サイトデザイン<button type="button" class="tmp_btn">下書き保存</button></div>
