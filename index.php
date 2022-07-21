@@ -24,6 +24,8 @@
 <title>NightParty『ナイトパーティ』ナイトクラブ向け高性能CMS</title>
 
 <link rel="canonical" href="https://night-party.com/">
+<link rel="icon" href="z_img/fav.png">
+<link rel="apple-touch-icon" href="z_img/fav.png">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -434,6 +436,7 @@
 			<div class="box_5_right">
 				<div id="block_5_box_5" class="box_5_title">有料オプション</div>
 
+
 				<div id="block_5_box_6" class="box_5_1">
 					<p class="box_5_1_title">レンタルサーバー・ドメイン取得<span class="box_5_1_title_p">10,000円</span></p>
 					<p class="comm_p2">
@@ -476,11 +479,9 @@
 			<div class="h2_s">　</div>
 			<div id="block_6_box_0" class="box_6_0">
 				<div class="box_6_0_1">
-				ただ今準備中です。<br>
-				正式販売開始は2023年夏以降を予定しています。<br>
-				それまでの期間の問合せ、ご依頼は「Coconara（ココナラ）」様にて承っています。
+				ただ今の期間のお問合せ、ご依頼は「Coconara（ココナラ）」様にて承っています。
 				<div class="box_6_0_2">
-				<span style="font-weight:800; color:#d00000">2022.10.31まで</span><br>
+				<span style="font-weight:800; color:#d00000">2022.08.31まで</span><br>
 				ココナラからのお申込みを30,000円引で承っています。<br>
 				</div>
 				</div>
