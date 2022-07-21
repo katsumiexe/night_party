@@ -1,6 +1,17 @@
 <?php
 include_once('./sample1/library/sql.php');
 
+$code	=$_REQUEST["code"];
+
+$sql ="SELECT * FROM sheet";
+$sql.=" WHERE code='{$code}'";
+$sql.=" ORDER BY id DESC";
+$sql.=" LIMIT 1";
+$result = mysqli_query($mysqli,$sql);
+$dat = mysqli_fetch_assoc($result);
+
+
+
 ?>
 <!DOCTYPE html>
 <head>
@@ -73,7 +84,7 @@ input,select{
 	margin			:30px auto 5px auto;
 }
 
-.tmp_btn{
+.tmp_btn,.tmp_btn2{
 	position		:absolute;
 	top				:0;
 	bottom			:0;
@@ -82,8 +93,15 @@ input,select{
 	font-size		:12px;
 	height			:30px;
 	line-height		:30px;
-	
+	width			:120px;
 }
+
+.tmp_btn2{
+	background		:#c00000;
+	color			:#fafafa;
+}
+
+
 
 .td_tag{
 	position		:relative;
@@ -260,103 +278,109 @@ input,select{
 	width:560px;
 }
 
-.box_2{
-	width		:100%;
-	max-width	:600px;
-	margin		:0 auto;
-	background	:#fafafa;
+.box_1,.box_2{
+	position		:relative;
+	width			:100%;
+	max-width		:600px;
+	margin			:0 auto;
+	background		:#fafafa;
 
 }
 
 </style>
 </head>
 <body style="background:#eaeaea">
-<div class="box_1">ヒアリングシート</div>
+<div class="box_1"><?=$dat["user"]?>様 ヒアリングシート<button type="button" class="tmp_btn2">送信</button></div>
+
 <div class="box_2">
 
 
 <div class="title_1">　店舗基本情報<button type="button" class="tmp_btn">下書き保存</button></div>
 
 <span class="td_tag">　店舗名</span>
-<input id="info_1" name="info_1" type="text" class="textbox w360">
+<input id="info_1" name="info_1" type="text" class="textbox w360" value="<?=$dat["info_1"]?>">
 
 <span class="td_tag">　ご住所</span>
-<input id="info_2" name="info_2" type="text" class="textbox w360">
+<input id="info_2" name="info_2" type="text" class="textbox w360" value="<?=$dat["info_2"]?>">
 
 <span class="td_tag">　お電話番号</span>
-<input id="info_3" name="info_3" class="textbox w360">
+<input id="info_3" name="info_3" class="textbox w360" value="<?=$dat["info_3"]?>">
 
 <span class="td_tag">　メールアドレス</span>
-<input id="info_4" name="info_4" type="text" class="textbox w360">
+<input id="info_4" name="info_4" type="text" class="textbox w360" value="<?=$dat["info_4"]?>">
 
 <span class="td_tag">　LINE</span>
-<input id="info_5" name="info_5" type="text" class="textbox w360">
+<input id="info_5" name="info_5" type="text" class="textbox w360" value="<?=$dat["info_5"]?>">
 
 <span class="td_tag">　twitter</span>
-<input id="info_6" name="info_6" type="text" class="textbox w360">
+<input id="info_6" name="info_6" type="text" class="textbox w360" value="<?=$dat["info_6"]?>">
+
+
+
+<? if($dat[""]==""){?> selected="selected"<?}?>
 
 <span class="td_tag">　店舗形態</span>
 <select id="info_7" name="info_7" class="textbox w360">
 	<option></option>
-	<option value="キャバクラ">キャバクラ</option>
-	<option value="セクキャバ">セクキャバ</option>
-	<option value="ガールズバー">ガールズバー</option>
-	<option value="デリヘル">デリヘル</option>
-	<option value="コンカフェ">コンカフェ</option>
-	<option value="メイドカフェ">メイドカフェ</option>
-	<option value="アイドルカフェ">アイドルカフェ</option>
-	<option value="スポーツバー">スポーツバー</option>
-	<option value="ダーツバー">ダーツバー</option>
-	<option value="SMバー">SMバー</option>
-	<option value="ハプニングバー">ハプニングバー</option>
-	<option value="その他">その他</option>
+	<option value="キャバクラ"<? if($dat["info_1"]=="キャバクラ"){?> selected="selected"<?}?>>キャバクラ</option>
+	<option value="セクキャバ"<? if($dat["info_1"]=="セクキャバ"){?> selected="selected"<?}?>>セクキャバ</option>
+	<option value="ガールズバー"<? if($dat["info_1"]=="ガールズバー"){?> selected="selected"<?}?>>ガールズバー</option>
+	<option value="デリヘル"<? if($dat["info_1"]=="デリヘル"){?> selected="selected"<?}?>>デリヘル</option>
+	<option value="コンカフェ"<? if($dat["info_1"]=="コンカフェ"){?> selected="selected"<?}?>>コンカフェ</option>
+	<option value="メイドカフェ"<? if($dat["info_1"]=="メイドカフェ"){?> selected="selected"<?}?>>メイドカフェ</option>
+	<option value="アイドルカフェ"<? if($dat["info_1"]=="アイドルカフェ"){?> selected="selected"<?}?>>アイドルカフェ</option>
+	<option value="スポーツバー"<? if($dat["info_1"]=="スポーツバー"){?> selected="selected"<?}?>>スポーツバー</option>
+	<option value="ダーツバー"<? if($dat["info_1"]=="ダーツバー"){?> selected="selected"<?}?>>ダーツバー</option>
+	<option value="SMバー"<? if($dat["info_1"]=="SMバー"){?> selected="selected"<?}?>>SMバー</option>
+	<option value="ハプニングバー"<? if($dat["info_1"]=="ハプニングバー"){?> selected="selected"<?}?>>ハプニングバー</option>
+	<option value="その他"<? if($dat["info_1"]=="その他"){?> selected="selected"<?}?>>その他</option>
 </select>
 
 <span class="td_tag">　キャスト数</span>
-<input id="info_8" name="info_8" type="text" class="textbox w120">人
+<input id="info_8" name="info_8" type="text" value="<?=$dat["info_8"]?>" class="textbox w120">人
 
 <span class="td_tag">　顧客年齢層</span>
-<input id="info_9" name="info_9" type="text" class="textbox w120">歳
+<input id="info_9" name="info_9" type="text" value="<?=$dat["info_9"]?>" class="textbox w120">歳
 
 <span class="td_tag">　営業時間</span>
-<input id="info_10" name="info_10" type="text" class="textbox w40">時 ～<input id="info_11" type="text" class="textbox w40">時
+<input id="info_10" name="info_10" type="text" value="<?=$dat["info_10"]?>" class="textbox w40">時 ～<input id="info_11" type="text" value="<?=$dat["info_11"]?>" class="textbox w40">時
 
 
 
 <div class="title_1">　サイトデザイン<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag" style="display:inline-block; width:380px;">　イメージサイトURL</span><span class="td_tag w160" style="display:inline-block;">　イメージカラー</span>
-<input id="info_12" type="text" class="textbox w360"><input id="info_13" name="dg_3" type="text" class="textbox w160">
+<input id="info_12" type="text" value="<?=$dat["info_12"]?>" class="textbox w360"><input id="info_13" name="dg_3" type="text" class="textbox w160">
 <span class="td_tag">　ご要望</span>
-<textarea id="info_14" class="textarea2 w540"></textarea>
+<textarea id="info_13" value="<?=$dat[""]?>" class="textarea2 w540"><?=$dat["info_13"]?></textarea>
 
 
 
 <div class="title_1">　キャスト設定<button type="button" class="tmp_btn">下書き保存</button></div>
 
 <span class="td_tag">　キャストプロフィール</span>
-<input id="pf_1" type="text" class="textbox w360" placeholder="誕生日／年齢">
-<input id="pf_2" type="text" class="textbox w360" placeholder="趣味">
-<input id="pf_3" type="text" class="textbox w360" placeholder="好きな食べ物">
-<input id="pf_4" type="text" class="textbox w360" placeholder="お酒">
-<input id="pf_5" type="text" class="textbox w360">
-<input id="pf_6" type="text" class="textbox w360">
-<input id="pf_7" type="text" class="textbox w360">
-<input id="pf_8" type="text" class="textbox w360">
+<input id="pf_1" type="text" value="<?=$dat["pf_1"]?>" class="textbox w360" placeholder="誕生日／年齢">
+<input id="pf_2" type="text" value="<?=$dat["pf_2"]?>" class="textbox w360" placeholder="趣味">
+<input id="pf_3" type="text" value="<?=$dat["pf_3"]?>" class="textbox w360" placeholder="好きな食べ物">
+<input id="pf_4" type="text" value="<?=$dat["pf_4"]?>" class="textbox w360" placeholder="お酒">
+<input id="pf_5" type="text" value="<?=$dat["pf_5"]?>" class="textbox w360">
+<input id="pf_6" type="text" value="<?=$dat["pf_6"]?>" class="textbox w360">
+<input id="pf_7" type="text" value="<?=$dat["pf_7"]?>" class="textbox w360">
+<input id="pf_8" type="text" value="<?=$dat["pf_8"]?>" class="textbox w360">
+
 
 <span class="td_tag">　オプション名</span>
-<input id="op_0" type="text" class="textbox w360" placeholder="特徴"><br>
-<input id="op_1" type="text" class="textbox w180" placeholder="理系">
-<input id="op_2" type="text" class="textbox w180" placeholder="体育会系">
-<input id="op_3" type="text" class="textbox w180" placeholder="お話好き">
-<input id="op_4" type="text" class="textbox w180" placeholder="オタク">
-<input id="op_5" type="text" class="textbox w180" placeholder="巨乳">
-<input id="op_6" type="text" class="textbox w180" placeholder="モデル体型">
-<input id="op_7" type="text" class="textbox w180">
-<input id="op_8" type="text" class="textbox w180">
-<input id="op_9" type="text" class="textbox w180">
-<input id="op_10" type="text" class="textbox w180">
-<input id="op_11" type="text" class="textbox w180">
-<input id="op_12" type="text" class="textbox w180">
+<input id="op_0" type="text" class="textbox w360" value="<?=$dat["op_0"]?>"  placeholder="特徴"><br>
+<input id="op_1" type="text" class="textbox w180" value="<?=$dat["op_1"]?>" placeholder="理系">
+<input id="op_2" type="text" class="textbox w180" value="<?=$dat["op_2"]?>" placeholder="体育会系">
+<input id="op_3" type="text" class="textbox w180" value="<?=$dat["op_3"]?>" placeholder="お話好き">
+<input id="op_4" type="text" class="textbox w180" value="<?=$dat["op_4"]?>" placeholder="オタク">
+<input id="op_5" type="text" class="textbox w180" value="<?=$dat["op_5"]?>" placeholder="巨乳">
+<input id="op_6" type="text" class="textbox w180" value="<?=$dat["op_6"]?>" placeholder="モデル体型">
+<input id="op_7" type="text" class="textbox w180" value="<?=$dat["op_7"]?>">
+<input id="op_8" type="text" class="textbox w180" value="<?=$dat["op_8"]?>">
+<input id="op_9" type="text" class="textbox w180" value="<?=$dat["op_9"]?>">
+<input id="op_10" type="text" class="textbox w180" value="<?=$dat["op10_"]?>">
+<input id="op_11" type="text" class="textbox w180" value="<?=$dat["op_11"]?>">
 
 
 <div class="title_1">　システム<button type="button" class="tmp_btn">下書き保存</button></div>
@@ -366,16 +390,20 @@ input,select{
 
 <div class="title_1">　リクルート<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　本文</span>
-<textarea id="rec_0" class="textarea2 w560"></textarea>
+<textarea id="rec_0" class="textarea2 w560"><?=$dat["rec_0"]?></textarea>
 <span class="td_tag">　確認項目</span>
-<input id="rec_1" type="text" class="textbox w300" placeholder="お名前"><input type="checkbox" id="rec_c_1" name="rec_c_1" class="rec_c" ><label for="rec_c_1" class="nese">必須</label>
-<input id="rec_2" type="text" class="textbox w300" placeholder="ご住所"><input type="checkbox" id="rec_c_2" name="rec_c_2" class="rec_c"><label for="rec_c_2" class="nese">必須</label>
-<input id="rec_3" type="text" class="textbox w300"><input type="checkbox" id="rec_c_3" name="rec_c_3" class="rec_c"><label for="rec_c_3" class="nese">必須</label>
-<input id="rec_4" type="text" class="textbox w300"><input type="checkbox" id="rec_c_4" name="rec_c_4" class="rec_c"><label for="rec_c_4" class="nese">必須</label>
-<input id="rec_5" type="text" class="textbox w300"><input type="checkbox" id="rec_c_5" name="rec_c_5" class="rec_c"><label for="rec_c_5" class="nese">必須</label>
-<input id="rec_6" type="text" class="textbox w300"><input type="checkbox" id="rec_c_6" name="rec_c_6" class="rec_c"><label for="rec_c_6" class="nese">必須</label>
-<input id="rec_7" type="text" class="textbox w300"><input type="checkbox" id="rec_c_7" name="rec_c_7" class="rec_c"><label for="rec_c_7" class="nese">必須</label>
-<input id="rec_8" type="text" class="textbox w300"><input type="checkbox" id="rec_c_8" name="rec_c_8" class="rec_c"><label for="rec_c_8" class="nese">必須</label>
+
+<input id="rec_1" type="text" value="<?=$dat["rec_1"]?>" class="textbox w300" placeholder="お名前"><input type="checkbox" value="1" <? if($dat["rec_c_1"]=="1"){?> checked="checked"<?}?> id="rec_c_1" name="rec_c_1" class="rec_c" ><label for="rec_c_1" class="nese">必須</label>
+<input id="rec_2" type="text" value="<?=$dat["rec_2"]?>" class="textbox w300" placeholder="ご住所"><input type="checkbox" value="1" <? if($dat["rec_c_2"]=="1"){?> checked="checked"<?}?> id="rec_c_2" name="rec_c_2" class="rec_c"><label for="rec_c_2" class="nese">必須</label>
+<input id="rec_3" type="text" value="<?=$dat["rec_3"]?>" class="textbox w300"><input type="checkbox" id="rec_c_3" value="1" <? if($dat["rec_c_3"]=="1"){?> checked="checked"<?}?> name="rec_c_3" class="rec_c"><label for="rec_c_3" class="nese">必須</label>
+<input id="rec_4" type="text" value="<?=$dat["rec_4"]?>" class="textbox w300"><input type="checkbox" id="rec_c_4" value="1" <? if($dat["rec_c_4"]=="1"){?> checked="checked"<?}?> name="rec_c_4" class="rec_c"><label for="rec_c_4" class="nese">必須</label>
+<input id="rec_5" type="text" value="<?=$dat["rec_5"]?>" class="textbox w300"><input type="checkbox" id="rec_c_5" value="1" <? if($dat["rec_c_5"]=="1"){?> checked="checked"<?}?> name="rec_c_5" class="rec_c"><label for="rec_c_5" class="nese">必須</label>
+<input id="rec_6" type="text" value="<?=$dat["rec_6"]?>" class="textbox w300"><input type="checkbox" id="rec_c_6" value="1" <? if($dat["rec_c_6"]=="1"){?> checked="checked"<?}?> name="rec_c_6" class="rec_c"><label for="rec_c_6" class="nese">必須</label>
+<input id="rec_7" type="text" value="<?=$dat["rec_7"]?>" class="textbox w300"><input type="checkbox" id="rec_c_7" value="1" <? if($dat["rec_c_7"]=="1"){?> checked="checked"<?}?> name="rec_c_7" class="rec_c"><label for="rec_c_7" class="nese">必須</label>
+<input id="rec_8" type="text" value="<?=$dat["rec_8"]?>" class="textbox w300"><input type="checkbox" id="rec_c_8" value="1" <? if($dat["rec_c_8"]=="1"){?> checked="checked"<?}?> name="rec_c_8" class="rec_c"><label for="rec_c_8" class="nese">必須</label>
+
+
+
 
 
 <div class="title_1">　プライバシーポリシー<button type="button" class="tmp_btn">下書き保存</button></div>
@@ -397,10 +425,13 @@ input,select{
 
 <div class="title_1">　バナー<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　TOPバナー詳細(1200px × 480px)</span>
-<textarea id="bn_0" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<textarea id="bn_0" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["bn_0"]?></textarea>
 <span class="td_tag">　サイドバナー詳細(600px × 150px)</span>
-<textarea id="bn_1" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<textarea id="bn_1" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["bn_1"]?></textarea>
 
+
+
+ 
 <div class="title_1">　使用コンテンツ<button type="button" class="tmp_btn">下書き保存</button></div>
 <table class="table_3">
 	<tr>
@@ -408,7 +439,7 @@ input,select{
 		<div class="ck_title">CMSコンテンツ</div>
 			<label for="ck_1" class="ck_box0">
 				<span class="ck_box1">
-					<input id="ck_1" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_1" type="checkbox" class="ck_box2" value="1"  <? if($dat["ck_1"]=="1"){?> checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>Notice</span>
@@ -417,7 +448,7 @@ input,select{
 
 			<label for="ck_2" class="ck_box0">
 				<span class="ck_box1">
-					<input id="ck_2" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_2" type="checkbox" class="ck_box2" value="1"  <? if($dat["ck_2"]=="1"){?> checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>EasyTalk</span>
@@ -426,7 +457,7 @@ input,select{
 
 			<label for="ck_3" class="ck_box0">
 				<span class="ck_box1">
-					<input id="ck_3" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_3" type="checkbox" class="ck_box2" value="1"  <? if($dat["ck_3"]=="1"){?> checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>スケジュール</span>
@@ -438,7 +469,7 @@ input,select{
 			<div class="ck_title">サイト内ページ</div>
 			<label for="ck_4" class="ck_box0">
 				<span class="ck_box1">
-					<input id="ck_4" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_4" type="checkbox" class="ck_box2" value="1"  <? if($dat["ck_4"]=="1"){?> checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>TOP挨拶</span>
@@ -446,7 +477,7 @@ input,select{
 			</label>
 			<label for="ck_5" class="ck_box0">
 				<span class="ck_box1">
-					<input id="ck_5" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_5" type="checkbox" class="ck_box2" value="1"  <? if($dat["ck_5"]=="1"){?> checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>ニュース</span>
@@ -455,7 +486,7 @@ input,select{
 
 			<label for="ck_6" class="ck_box0">
 				<span class="ck_box1">
-					<input id="ck_6" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_6" type="checkbox" class="ck_box2" value="1"  <? if($dat["ck_6"]=="1"){?> checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>システム</span>
@@ -464,7 +495,7 @@ input,select{
 
 			<label for="ck_7" class="ck_box0">
 				<span class="ck_box1">
-					<input id="ck_7" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_7" type="checkbox" class="ck_box2" value="1"  <? if($dat["ck_7"]=="1"){?> checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>キャストブログ</span>
@@ -473,7 +504,7 @@ input,select{
 
 			<label for="ck_8" class="ck_box0">
 				<span class="ck_box1">
-					<input id="ck_8" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_8" type="checkbox" class="ck_box2" value="1"  <? if($dat["ck_8"]=="1"){?> checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>スタッフブログ</span>
@@ -482,7 +513,7 @@ input,select{
 
 			<label for="ck_9" class="ck_box0">
 				<span class="ck_box1">
-					<input id="ck_9" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_9" type="checkbox" class="ck_box2" value="1"  <? if($dat["ck_9"]=="1"){?> checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>アクセス</span>
@@ -491,7 +522,7 @@ input,select{
 
 			<label for="ck_10" class="ck_box0">
 				<span class="ck_box1">
-					<input id="ck_10" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_10" type="checkbox" class="ck_box2" value="1"  <? if($dat["ck_10"]=="1"){?> checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>リクルート</span>
@@ -500,7 +531,7 @@ input,select{
 
 			<label for="ck_11" class="ck_box0">
 				<span class="ck_box1">
-					<input id="ck_11" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_11" type="checkbox" class="ck_box2" value="1"  <? if($dat["ck_11"]=="1"){?> checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>プライバシーポリシー</span>
@@ -512,7 +543,7 @@ input,select{
 			<div class="ck_title">システムコンテンツ</div>
 			<label for="ck_12" class="ck_box0">
 				<span class="ck_box1">
-					<input id="ck_12" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_12" type="checkbox" class="ck_box2" value="1"  <? if($dat["ck_12"]=="1"){?> checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>SSL設定</span>
@@ -521,7 +552,7 @@ input,select{
 
 			<label for="ck_13" class="ck_box0">
 				<span class="ck_box1">
-					<input id="ck_13" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_13" type="checkbox" class="ck_box2" value="1"  <? if($dat["ck_13"]=="1"){?> checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>アナリティクス</span>
@@ -530,7 +561,7 @@ input,select{
 
 			<label for="ck_14" class="ck_box0">
 				<span class="ck_box1">
-				<input id="ck_14" type="checkbox" class="ck_box2" value="1" checked="checked">
+				<input id="ck_14" type="checkbox" class="ck_box2" value="1"  <? if($dat["ck_14"]=="1"){?> checked="checked"<?}?>>
 				<span class="ck_box3"></span>
 				</span>
 				<span>サーチコンソール</span>
@@ -539,7 +570,7 @@ input,select{
 
 			<label for="ck_15" class="ck_box0">
 				<span class="ck_box1">
-					<input id="ck_15" type="checkbox" class="ck_box2" value="1" checked="checked">
+					<input id="ck_15" type="checkbox" class="ck_box2" value="1" <? if($dat["ck_15"]=="1"){?> checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
 				<span>ファビコン</span>
@@ -549,127 +580,129 @@ input,select{
 	</tr>
 </table>
 
+
+ 
 <div class="title_1">　有料オプション<button type="button" class="tmp_btn">下書き保存</button></div>
 
 <span class="td_tag2">
 	<label for="pay_c_0" class="ck_box0" style="width:400px;">
 		<span class="ck_box1">
-			<input id="pay_c_0" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<input id="pay_c_0" type="checkbox" class="ck_box2" value="1"  <? if($dat["pay_c_0"]=="1"){?> checked="checked"<?}?>>
 			<span class="ck_box3"></span>
 		</span>
 		<span>ドメイン・ブラウザ設定 (登録＋10か月分)</span>
 	</label>
 	<span class="pay_price">10,000円</span>
 </span>
-<textarea id="pay_0" name="pay_0" class="textarea w560" placeholder="ご希望のドメインをご記載下さい。"></textarea>
+<textarea id="pay_0" name="pay_0" class="textarea w560" placeholder="ご希望のドメインをご記載下さい。"><?=$dat["pay_0"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_1" class="ck_box0" style="width:400px;">
 		<span class="ck_box1">
-			<input id="pay_c_1" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<input id="pay_c_1" type="checkbox" class="ck_box2" value="1"  <? if($dat["pay_c_1"]=="1"){?> checked="checked"<?}?>>
 			<span class="ck_box3"></span>
 		</span>
 		<span>TOPバナー追加(1200px × 480px)</span>
 	</label>
 	<span class="pay_price">8,000円</span>
 </span>
-<textarea id="pay_1" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<textarea id="pay_1" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_1"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_2" class="ck_box0" style="width:400px;">
 		<span class="ck_box1">
-			<input id="pay_c_2" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<input id="pay_c_2" type="checkbox" class="ck_box2" value="1"  <? if($dat["pay_c_2"]=="1"){?> checked="checked"<?}?>>
 			<span class="ck_box3"></span>
 		</span>
 		<span>TOPバナー追加(1200px × 480px)</span>
 	</label>
 	<span class="pay_price">8,000円</span>
 </span>
-<textarea id="pay_2" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<textarea id="pay_2" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_2"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_3" class="ck_box0" style="width:400px;">
 		<span class="ck_box1">
-			<input id="pay_c_3" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<input id="pay_c_3" type="checkbox" class="ck_box2" value="1"  <? if($dat["pay_c_3"]=="1"){?> checked="checked"<?}?>>
 			<span class="ck_box3"></span>
 		</span>
 		<span>TOPバナー追加(1200px × 480px)</span>
 	</label>
 	<span class="pay_price">8,000円</span>
 </span>
-<textarea id="pay_3" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<textarea id="pay_3" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_3"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_4" class="ck_box0" style="width:400px;">
 		<span class="ck_box1">
-			<input id="pay_c_4" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<input id="pay_c_4" type="checkbox" class="ck_box2" value="1"  <? if($dat["pay_c_4"]=="1"){?> checked="checked"<?}?>>
 			<span class="ck_box3"></span>
 		</span>
 		<span>サイドバナー詳細(600px × 150px)</span>
 	</label>
 	<span class="pay_price">4,000円</span>
 </span>
-<textarea id="pay_4" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<textarea id="pay_4" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_4"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_5" class="ck_box0" style="width:400px;">
 		<span class="ck_box1">
-			<input id="pay_c_5" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<input id="pay_c_5" type="checkbox" class="ck_box2" value="1"  <? if($dat["pay_c_5"]=="1"){?> checked="checked"<?}?>>
 			<span class="ck_box3"></span>
 		</span>
 		<span>サイドバナー詳細(600px × 150px)</span>
 	</label>
 	<span class="pay_price">4,000円</span>
 </span>
-<textarea id="pay_5" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<textarea id="pay_5" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_5"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_6" class="ck_box0" style="width:400px;">
 		<span class="ck_box1">
-			<input id="pay_c_6" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<input id="pay_c_6" type="checkbox" class="ck_box2" value="1"  <? if($dat["pay_c_6"]=="1"){?> checked="checked"<?}?>>
 			<span class="ck_box3"></span>
 		</span>
 		<span>サイドバナー詳細(600px × 150px)</span>
 	</label>
 	<span class="pay_price">4,000円</span>
 </span>
-<textarea id="pay_6" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"></textarea>
+<textarea id="pay_6" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_6"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_7" class="ck_box0" style="width:400px;">
 		<span class="ck_box1">
-			<input id="pay_c_7" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<input id="pay_c_7" type="checkbox" class="ck_box2" value="1"  <? if($dat["pay_c_7"]=="1"){?> checked="checked"<?}?>>
 			<span class="ck_box3"></span>
 		</span>
 		<span>ページ追加</span>
 	</label>
 	<span class="pay_price">12,000円～</span>
 </span>
-<textarea id="pay_7" class="textarea w560" placeholder="希望されるページの詳細をご記載下さい。"></textarea>
+<textarea id="pay_7" class="textarea w560" placeholder="希望されるページの詳細をご記載下さい。"><?=$dat["pay_7"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_8" class="ck_box0" style="width:400px;">
 		<span class="ck_box1">
-			<input id="pay_c_8" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<input id="pay_c_8" type="checkbox" class="ck_box2" value="1"  <? if($dat["pay_c_8"]=="1"){?> checked="checked"<?}?>>
 			<span class="ck_box3"></span>
 		</span>
 		<span>出張撮影(東京/神奈川/千葉/埼玉　2時間)</span>
 	</label>
 	<span class="pay_price">20,000円</span>
 </span>
-<textarea id="pay_8" class="textarea w560" placeholder="希望される日時（曜日）、お時間帯をご記載下さい。"></textarea>
+<textarea id="pay_8" class="textarea w560" placeholder="希望される日時（曜日）、お時間帯をご記載下さい。"><?=$dat["pay_8"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_9" class="ck_box0" style="width:400px;">
 		<span class="ck_box1">
-			<input id="pay_c_9" type="checkbox" class="ck_box2" value="1" checked="checked">
+			<input id="pay_c_9" type="checkbox" class="ck_box2" value="1"  <? if($dat["pay_c_9"]=="1"){?> checked="checked"<?}?>>
 			<span class="ck_box3"></span>
 		</span>
 		<span>ロゴ作成(単色　1200px × 1200px)</span>
 	</label>
 	<span class="pay_price">10,000円</span>
 </span>
-<textarea id="pay_9" class="textarea w560" placeholder="希望される色、イメージをご記載下さい。"></textarea>
+<textarea id="pay_9" class="textarea w560" placeholder="希望される色、イメージをご記載下さい。"><?=$dat["pay_9"]?></textarea>
 </div>
 </body>
 </html>
