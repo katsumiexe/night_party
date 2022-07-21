@@ -1,4 +1,5 @@
 <?php
+include_once('./sample1/library/sql.php');
 
 ?>
 <!DOCTYPE html>
