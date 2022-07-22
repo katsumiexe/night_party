@@ -1,5 +1,5 @@
 <?php
-include_once('./sample1/library/sql.php');
+include_once("./sample1/library/sql.php");
 
 $code	=$_REQUEST["code"];
 
@@ -22,6 +22,7 @@ $dat = mysqli_fetch_assoc($result);
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(function(){ 
+	var Fin=0;
 	$('.ques').hover(function() {
 		$(this).children('.ans').fadeIn(300);
 	},function() {
@@ -29,11 +30,17 @@ $(function(){
 	});
 
 	$('.tmp_btn').on('click',function() {
+		if($(this).attr('id') == "fin"){
+			Fin=1;
+		}
+
 		$.ajax({
-			url:'./post/sheet_set.php',
+			url:'./z_post/sheet_set.php',
 			type: 'post',
 			data:{
-
+				'fin':Fin,
+				'code':'<?=$dat["code"]?>',
+	
 				'info_1':$('#info_1').val(),
 				'info_2':$('#info_2').val(),
 				'info_3':$('#info_3').val(),
@@ -135,7 +142,10 @@ $(function(){
 			},
 
 		}).done(function(data, textStatus, jqXHR){
-
+console.log(data);
+		}).fail(function(jqXHR, textStatus, errorThrown){
+			console.log(textStatus);
+			console.log(errorThrown);
 		});
 	});
 });
