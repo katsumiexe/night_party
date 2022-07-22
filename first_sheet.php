@@ -23,6 +23,44 @@ $dat = mysqli_fetch_assoc($result);
 <script>
 $(function(){ 
 	var Fin=0;
+
+	var Ck1=0;
+	var Ck2=0;
+	var Ck3=0;
+	var Ck4=0;
+	var Ck5=0;
+	var Ck6=0;
+	var Ck7=0;
+	var Ck8=0;
+	var Ck9=0;
+	var Ck10=0;
+	var Ck11=0;
+	var Ck12=0;
+	var Ck13=0;
+	var Ck14=0;
+	var Ck15=0;
+
+	var PayC0=0;
+	var PayC1=0;
+	var PayC2=0;
+	var PayC3=0;
+	var PayC4=0;
+	var PayC5=0;
+	var PayC6=0;
+	var PayC7=0;
+	var PayC8=0;
+	var PayC9=0;
+
+	var RecC1=0;
+	var RecC2=0;
+	var RecC3=0;
+	var RecC4=0;
+	var RecC5=0;
+	var RecC6=0;
+	var RecC7=0;
+	var RecC8=0;
+
+
 	$('.ques').hover(function() {
 		$(this).children('.ans').fadeIn(300);
 	},function() {
@@ -33,6 +71,133 @@ $(function(){
 		if($(this).attr('id') == "fin"){
 			Fin=1;
 		}
+
+		if($('#ck_1').prop('checked')==true){
+			Ck1=1;
+		}
+
+		if($('#ck_2').prop('checked')==true){
+			Ck2=1;
+		}
+
+		if($('#ck_3').prop('checked')==true){
+			Ck3=1;
+		}
+
+		if($('#ck_4').prop('checked')==true){
+			Ck4=1;
+		}
+
+		if($('#ck_5').prop('checked')==true){
+			Ck5=1;
+		}
+
+		if($('#ck_6').prop('checked')==true){
+			Ck6=1;
+		}
+
+		if($('#ck_7').prop('checked')==true){
+			Ck7=1;
+		}
+
+		if($('#ck_8').prop('checked')==true){
+			Ck8=1;
+		}
+
+		if($('#ck_9').prop('checked')==true){
+			Ck9=1;
+		}
+
+		if($('#ck_10').prop('checked')==true){
+			Ck10=1;
+		}
+
+		if($('#ck_11').prop('checked')==true){
+			Ck11=1;
+		}
+
+		if($('#ck_12').prop('checked')==true){
+			Ck12=1;
+		}
+
+		if($('#ck_13').prop('checked')==true){
+			Ck13=1;
+		}
+
+		if($('#ck_14').prop('checked')==true){
+			Ck14=1;
+		}
+
+		if($('#ck_15').prop('checked')==true){
+			Ck15=1;
+		}
+
+		if($('#rec_c_1').prop('checked')==true){
+			RecC1=1;
+		}
+
+		if($('#Rec_c_2').prop('checked')==true){
+			RecC2=1;
+		}
+
+		if($('#rec_c_3').prop('checked')==true){
+			RecC3=1;
+		}
+
+		if($('#rec_c_4').prop('checked')==true){
+			RecC4=1;
+		}
+
+		if($('#rec_c_5').prop('checked')==true){
+			RecC5=1;
+		}
+
+		if($('#rec_c_6').prop('checked')==true){
+			RecC6=1;
+		}
+
+		if($('#rec_c_7').prop('checked')==true){
+			RecC7=1;
+		}
+
+		if($('#rec_c_8').prop('checked')==true){
+			RecC8=1;
+		}
+
+		if($('#pay_c_0').prop('checked')==true){
+			PayC0=1;
+		}
+		if($('#pay_c_1').prop('checked')==true){
+			PayC1=1;
+		}
+		if($('#pay_c_2').prop('checked')==true){
+			PayC2=1;
+		}
+		if($('#pay_c_3').prop('checked')==true){
+			PayC3=1;
+		}
+		if($('#pay_c_4').prop('checked')==true){
+			PayC4=1;
+		}
+		if($('#pay_c_5').prop('checked')==true){
+			PayC5=1;
+		}
+		if($('#pay_c_6').prop('checked')==true){
+			PayC6=1;
+		}
+		if($('#pay_c_7').prop('checked')==true){
+			PayC7=1;
+		}
+		if($('#pay_c_8').prop('checked')==true){
+			PayC8=1;
+		}
+
+		if($('#pay_c_9').prop('checked')==true){
+			PayC9=1;
+		}
+
+
+
 
 		$.ajax({
 			url:'./z_post/sheet_set.php',
@@ -90,33 +255,33 @@ $(function(){
 				'rec_7':$('#rec_7').val(),
 				'rec_8':$('#rec_8').val(),
 
-				'rec_c_1':$('#rec_c_1').val(),
-				'rec_c_2':$('#rec_c_2').val(),
-				'rec_c_3':$('#rec_c_3').val(),
-				'rec_c_4':$('#rec_c_4').val(),
-				'rec_c_5':$('#rec_c_5').val(),
-				'rec_c_6':$('#rec_c_6').val(),
-				'rec_c_7':$('#rec_c_7').val(),
-				'rec_c_8':$('#rec_c_8').val(),
+				'rec_c_1':RecC1,
+				'rec_c_2':RecC2,
+				'rec_c_3':RecC3,
+				'rec_c_4':RecC4,
+				'rec_c_5':RecC5,
+				'rec_c_6':RecC6,
+				'rec_c_7':RecC7,
+				'rec_c_8':RecC8,
 
 				'bn_0':$('#bn_0').val(),
 				'bn_1':$('#bn_1').val(),
 
-				'ck_1':$('#ck_1').val(),
-				'ck_2':$('#ck_2').val(),
-				'ck_3':$('#ck_3').val(),
-				'ck_4':$('#ck_4').val(),
-				'ck_5':$('#ck_5').val(),
-				'ck_6':$('#ck_6').val(),
-				'ck_7':$('#ck_7').val(),
-				'ck_8':$('#ck_8').val(),
-				'ck_9':$('#ck_9').val(),
-				'ck_10':$('#ck_10').val(),
-				'ck_11':$('#ck_11').val(),
-				'ck_12':$('#ck_12').val(),
-				'ck_13':$('#ck_13').val(),
-				'ck_14':$('#ck_14').val(),
-				'ck_15':$('#ck_15').val(),
+				'ck_1':Ck1,
+				'ck_2':Ck2,
+				'ck_3':Ck3,
+				'ck_4':Ck4,
+				'ck_5':Ck5,
+				'ck_6':Ck6,
+				'ck_7':Ck7,
+				'ck_8':Ck8,
+				'ck_9':Ck9,
+				'ck_10':Ck10,
+				'ck_11':Ck11,
+				'ck_12':Ck12,
+				'ck_13':Ck13,
+				'ck_14':Ck14,
+				'ck_15':Ck15,
 
 				'pay_0':$('#pay_0').val(),
 				'pay_1':$('#pay_1').val(),
@@ -129,16 +294,16 @@ $(function(){
 				'pay_8':$('#pay_8').val(),
 				'pay_9':$('#pay_9').val(),
 
-				'pay_c_0':$('#pay_c_0').val(),
-				'pay_c_1':$('#pay_c_1').val(),
-				'pay_c_2':$('#pay_c_2').val(),
-				'pay_c_3':$('#pay_c_3').val(),
-				'pay_c_4':$('#pay_c_4').val(),
-				'pay_c_5':$('#pay_c_5').val(),
-				'pay_c_6':$('#pay_c_6').val(),
-				'pay_c_7':$('#pay_c_7').val(),
-				'pay_c_8':$('#pay_c_8').val(),
-				'pay_c_9':$('#pay_c_9').val(),
+				'pay_c_0':PayC0,
+				'pay_c_1':PayC1,
+				'pay_c_2':PayC2,
+				'pay_c_3':PayC3,
+				'pay_c_4':PayC4,
+				'pay_c_5':PayC5,
+				'pay_c_6':PayC6,
+				'pay_c_7':PayC7,
+				'pay_c_8':PayC8,
+				'pay_c_9':PayC9,
 			},
 
 		}).done(function(data, textStatus, jqXHR){

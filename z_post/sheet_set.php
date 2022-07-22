@@ -80,8 +80,6 @@ $sql	 ="UPDATE sheet SET
 ";
 mysqli_query($mysqli,$sql);
 
-echo $sql;
-
 $sql	 ="UPDATE sheet_pay SET
  `pay_0`='{$_POST["pay_0"]}',
 `pay_1`='{$_POST["pay_1"]}',
@@ -103,8 +101,10 @@ $sql	 ="UPDATE sheet_pay SET
 `pay_c_7`='{$_POST["pay_c_7"]}',
 `pay_c_8`='{$_POST["pay_c_8"]}',
 `pay_c_9`='{$_POST["pay_c_9"]}'
- WHERE `code`='{$_POST["code"]}'
+ WHERE `pay_code`='{$_POST["code"]}'
 ";
+
+echo $sql;
 
 mysqli_query($mysqli,$sql);
 exit()
