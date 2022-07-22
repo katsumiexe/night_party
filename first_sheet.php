@@ -4,15 +4,15 @@ include_once('./sample1/library/sql.php');
 $code	=$_REQUEST["code"];
 
 $sql ="SELECT * FROM sheet";
+$sql.=" LEFT JOIN sheet_pay ON sheet.code=sheet_pay.pay_code";
 $sql.=" WHERE code='{$code}'";
 $sql.=" ORDER BY id DESC";
 $sql.=" LIMIT 1";
 $result = mysqli_query($mysqli,$sql);
 $dat = mysqli_fetch_assoc($result);
-
-
-
 ?>
+
+
 <!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
@@ -27,15 +27,125 @@ $(function(){
 	},function() {
 		$('.ans').fadeOut(200);
 	});
-});
 
+	$('.tmp_btn').on('click',function() {
+		$.ajax({
+			url:'./post/sheet_set.php',
+			type: 'post',
+			data:{
+
+				'info_1':$('#info_1').val(),
+				'info_2':$('#info_2').val(),
+				'info_3':$('#info_3').val(),
+				'info_4':$('#info_4').val(),
+				'info_5':$('#info_5').val(),
+				'info_6':$('#info_6').val(),
+				'info_7':$('#info_7').val(),
+				'info_8':$('#info_8').val(),
+				'info_9':$('#info_9').val(),
+				'info_10':$('#info_10').val(),
+				'info_11':$('#info_11').val(),
+				'info_12':$('#info_12').val(),
+				'info_13':$('#info_13').val(),
+
+				'pf_0':$('#pf_0').val(),
+				'pf_1':$('#pf_1').val(),
+				'pf_2':$('#pf_2').val(),
+				'pf_3':$('#pf_3').val(),
+				'pf_4':$('#pf_4').val(),
+				'pf_5':$('#pf_5').val(),
+				'pf_6':$('#pf_6').val(),
+				'pf_7':$('#pf_7').val(),
+
+				'op_0':$('#op_0').val(),
+				'op_1':$('#op_1').val(),
+				'op_2':$('#op_2').val(),
+				'op_3':$('#op_3').val(),
+				'op_4':$('#op_4').val(),
+				'op_5':$('#op_5').val(),
+				'op_6':$('#op_6').val(),
+				'op_7':$('#op_7').val(),
+				'op_8':$('#op_8').val(),
+				'op_9':$('#op_9').val(),
+				'op_10':$('#op_10').val(),
+				'op_11':$('#op_11').val(),
+
+				'pg_0':$('#pg_0').val(),
+				'pg_1':$('#pg_1').val(),
+
+				'rec_0':$('#rec_0').val(),
+				'rec_1':$('#rec_1').val(),
+				'rec_2':$('#rec_2').val(),
+				'rec_3':$('#rec_3').val(),
+				'rec_4':$('#rec_4').val(),
+				'rec_5':$('#rec_5').val(),
+				'rec_6':$('#rec_6').val(),
+				'rec_7':$('#rec_7').val(),
+				'rec_8':$('#rec_8').val(),
+
+				'rec_c_1':$('#rec_c_1').val(),
+				'rec_c_2':$('#rec_c_2').val(),
+				'rec_c_3':$('#rec_c_3').val(),
+				'rec_c_4':$('#rec_c_4').val(),
+				'rec_c_5':$('#rec_c_5').val(),
+				'rec_c_6':$('#rec_c_6').val(),
+				'rec_c_7':$('#rec_c_7').val(),
+				'rec_c_8':$('#rec_c_8').val(),
+
+				'bn_0':$('#bn_0').val(),
+				'bn_1':$('#bn_1').val(),
+
+				'ck_1':$('#ck_1').val(),
+				'ck_2':$('#ck_2').val(),
+				'ck_3':$('#ck_3').val(),
+				'ck_4':$('#ck_4').val(),
+				'ck_5':$('#ck_5').val(),
+				'ck_6':$('#ck_6').val(),
+				'ck_7':$('#ck_7').val(),
+				'ck_8':$('#ck_8').val(),
+				'ck_9':$('#ck_9').val(),
+				'ck_10':$('#ck_10').val(),
+				'ck_11':$('#ck_11').val(),
+				'ck_12':$('#ck_12').val(),
+				'ck_13':$('#ck_13').val(),
+				'ck_14':$('#ck_14').val(),
+				'ck_15':$('#ck_15').val(),
+
+				'pay_0':$('#pay_0').val(),
+				'pay_1':$('#pay_1').val(),
+				'pay_2':$('#pay_2').val(),
+				'pay_3':$('#pay_3').val(),
+				'pay_4':$('#pay_4').val(),
+				'pay_5':$('#pay_5').val(),
+				'pay_6':$('#pay_6').val(),
+				'pay_7':$('#pay_7').val(),
+				'pay_8':$('#pay_8').val(),
+				'pay_9':$('#pay_9').val(),
+
+				'pay_c_0':$('#pay_c_0').val(),
+				'pay_c_1':$('#pay_c_1').val(),
+				'pay_c_2':$('#pay_c_2').val(),
+				'pay_c_3':$('#pay_c_3').val(),
+				'pay_c_4':$('#pay_c_4').val(),
+				'pay_c_5':$('#pay_c_5').val(),
+				'pay_c_6':$('#pay_c_6').val(),
+				'pay_c_7':$('#pay_c_7').val(),
+				'pay_c_8':$('#pay_c_8').val(),
+				'pay_c_9':$('#pay_c_9').val(),
+			},
+
+		}).done(function(data, textStatus, jqXHR){
+
+		});
+	});
+});
 </script>
+
 <style>
 @font-face {
 	font-family: at_icon;
 	src: url("./sample1/font/nightparty_icon.ttf") format('truetype');
 }
-
 
 td{
 	vertical-align:top;
@@ -250,6 +360,10 @@ input,select{
 	width:60px;
 }
 
+.w80{
+	width:80px;
+}
+
 .w100{
 	width:100px;
 }
@@ -287,16 +401,77 @@ input,select{
 
 }
 
+.wr{
+	text-align		:right;
+	padding-right	:10px;
+}
+
+.info_0_out{
+	width		:100%;
+	position	:relative;
+	height		:60px;
+}
+
+.info_0_a,.info_0_b{
+	display:block;
+	width		:280px;
+	height		:40px;
+	position	:absolute;
+	top			:0;
+	line-height	:40px;
+	color		:#ffffff;
+	font-size	:18px;
+	text-align	:center;
+}
+
+.info_0_a{
+	background	:#c4c4c4;
+	left		:5px;
+	border-radius:10px 0 0 0;
+}
+
+.info_0_b{
+	background	:#0000f0;
+	right		:5px;
+	border-radius:0 10px 0 0;
+}
+
+.info_0_a:after{
+	position	:absolute;
+	top			:0;
+	right		:0px;
+	content		:"";
+	transform	: skew(25deg);
+	width		:30px;
+	height		:40px;
+	background	:#c4c4c4;
+	display		:block;
+	transform-origin:top left;
+}
+
+.info_0_b:before{
+	position	:absolute;
+	top			:0;
+	left		:-30px;
+	content		:"";
+	transform	: skew(-25deg);
+	width		:30px;
+	height		:40px;
+	background	:#0000f0;
+	display		:block;
+	transform-origin:bottom right;
+}
 </style>
 </head>
+
 <body style="background:#eaeaea">
 <div class="box_1"><?=$dat["user"]?>様 ヒアリングシート<button type="button" class="tmp_btn2">送信</button></div>
-
 <div class="box_2">
 
 
-<div class="title_1">　店舗基本情報<button type="button" class="tmp_btn">下書き保存</button></div>
 
+
+<div class="title_1">　店舗基本情報<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　店舗名</span>
 <input id="info_1" name="info_1" type="text" class="textbox w360" value="<?=$dat["info_1"]?>">
 
@@ -332,34 +507,38 @@ input,select{
 	<option value="その他"<? if($dat["info_1"]=="その他"){?> selected="selected"<?}?>>その他</option>
 </select><br>
 
-<span class="td_tag" style="display:inline-block; width:155px;">　キャスト数</span>
-<span class="td_tag" style="display:inline-block; width:155px;">　顧客年齢層</span>
-<span class="td_tag" style="display:inline-block; width:155px;">　営業時間</span><br>
+<span class="td_tag" style="display:inline-block; width:145px;">　キャスト数</span>
+<span class="td_tag" style="display:inline-block; width:145px;">　顧客年齢層</span>
+<span class="td_tag" style="display:inline-block; width:145px;">　営業時間</span><br>
 
-<input id="info_8" name="info_8" type="text" value="<?=$dat["info_8"]?>" class="textbox w100">人　
-<input id="info_9" name="info_9" type="text" value="<?=$dat["info_9"]?>" class="textbox w100">歳　
-<input id="info_10" name="info_10" type="text" value="<?=$dat["info_10"]?>" class="textbox w40">時 ～<input id="info_11" type="text" value="<?=$dat["info_11"]?>" class="textbox w40">時
-
+<input id="info_8" name="info_8" type="text" value="<?=$dat["info_8"]?>" class="textbox w80 wr">人　
+<input id="info_9" name="info_9" type="text" value="<?=$dat["info_9"]?>" class="textbox w80 wr">歳　
+<input id="info_10" name="info_10" type="text" value="<?=$dat["info_10"]?>" class="textbox w40 wr">時 ～<input id="info_11" type="text" value="<?=$dat["info_11"]?>" class="textbox w40 wr">時
 
 <div class="title_1">　サイトデザイン<button type="button" class="tmp_btn">下書き保存</button></div>
+
+<div class="info_0_out">
+<input id="info_0a" name="info_0" type="radio" class="info_0"><label for="info_0a" class="info_0_a">テーマ01：ソワレ</label>
+<input id="info_0b" name="info_0" type="radio" class="info_0"><label for="info_0b" class="info_0_b">テーマ02：コーマ</label>
+</div>
+
+
 <span class="td_tag" style="display:inline-block; width:380px;">　イメージサイトURL</span><span class="td_tag w160" style="display:inline-block;">　イメージカラー</span>
 <input id="info_12" type="text" value="<?=$dat["info_12"]?>" class="textbox w360"><input id="info_13" name="dg_3" type="text" class="textbox w160">
 <span class="td_tag">　ご要望</span>
 <textarea id="info_13" value="<?=$dat[""]?>" class="textarea2 w540"><?=$dat["info_13"]?></textarea>
 
 
-
 <div class="title_1">　キャスト設定<button type="button" class="tmp_btn">下書き保存</button></div>
-
 <span class="td_tag">　キャストプロフィール</span>
-<input id="pf_1" type="text" value="<?=$dat["pf_1"]?>" class="textbox w360" placeholder="誕生日／年齢">
-<input id="pf_2" type="text" value="<?=$dat["pf_2"]?>" class="textbox w360" placeholder="趣味">
-<input id="pf_3" type="text" value="<?=$dat["pf_3"]?>" class="textbox w360" placeholder="好きな食べ物">
-<input id="pf_4" type="text" value="<?=$dat["pf_4"]?>" class="textbox w360" placeholder="お酒">
+<input id="pf_0" type="text" value="<?=$dat["pf_0"]?>" class="textbox w360" placeholder="誕生日／年齢">
+<input id="pf_1" type="text" value="<?=$dat["pf_1"]?>" class="textbox w360" placeholder="趣味">
+<input id="pf_2" type="text" value="<?=$dat["pf_2"]?>" class="textbox w360" placeholder="好きな食べ物">
+<input id="pf_3" type="text" value="<?=$dat["pf_3"]?>" class="textbox w360" placeholder="お酒">
+<input id="pf_4" type="text" value="<?=$dat["pf_4"]?>" class="textbox w360">
 <input id="pf_5" type="text" value="<?=$dat["pf_5"]?>" class="textbox w360">
 <input id="pf_6" type="text" value="<?=$dat["pf_6"]?>" class="textbox w360">
 <input id="pf_7" type="text" value="<?=$dat["pf_7"]?>" class="textbox w360">
-<input id="pf_8" type="text" value="<?=$dat["pf_8"]?>" class="textbox w360">
 
 
 <span class="td_tag">　オプション名</span>
@@ -375,7 +554,6 @@ input,select{
 <input id="op_9" type="text" class="textbox w180" value="<?=$dat["op_9"]?>">
 <input id="op_10" type="text" class="textbox w180" value="<?=$dat["op10_"]?>">
 <input id="op_11" type="text" class="textbox w180" value="<?=$dat["op_11"]?>">
-
 
 <div class="title_1">　システム<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　本文</span>
@@ -395,10 +573,6 @@ input,select{
 <input id="rec_6" type="text" value="<?=$dat["rec_6"]?>" class="textbox w300"><input type="checkbox" id="rec_c_6" value="1" <? if($dat["rec_c_6"]=="1"){?> checked="checked"<?}?> name="rec_c_6" class="rec_c"><label for="rec_c_6" class="nese">必須</label>
 <input id="rec_7" type="text" value="<?=$dat["rec_7"]?>" class="textbox w300"><input type="checkbox" id="rec_c_7" value="1" <? if($dat["rec_c_7"]=="1"){?> checked="checked"<?}?> name="rec_c_7" class="rec_c"><label for="rec_c_7" class="nese">必須</label>
 <input id="rec_8" type="text" value="<?=$dat["rec_8"]?>" class="textbox w300"><input type="checkbox" id="rec_c_8" value="1" <? if($dat["rec_c_8"]=="1"){?> checked="checked"<?}?> name="rec_c_8" class="rec_c"><label for="rec_c_8" class="nese">必須</label>
-
-
-
-
 
 <div class="title_1">　プライバシーポリシー<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　本文</span>
