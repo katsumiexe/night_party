@@ -68,6 +68,9 @@ $(function(){
 	});
 
 	$('.tmp_btn').on('click',function() {
+
+		$('.back').show();
+		
 		if($(this).attr('id') == "fin"){
 			Fin=1;
 		}
@@ -196,9 +199,6 @@ $(function(){
 			PayC9=1;
 		}
 
-
-
-
 		$.ajax({
 			url:'./z_post/sheet_set.php',
 			type: 'post',
@@ -307,7 +307,8 @@ $(function(){
 			},
 
 		}).done(function(data, textStatus, jqXHR){
-console.log(data);
+			$('.back').fadeOut(100);
+	
 		}).fail(function(jqXHR, textStatus, errorThrown){
 			console.log(textStatus);
 			console.log(errorThrown);
@@ -636,6 +637,18 @@ input,select{
 	display		:block;
 	transform-origin:bottom right;
 }
+
+.back{
+	display:none;
+	position	:fixed;
+	top			:-5vh;
+	left		:-5vw;
+	height		:110vh;
+	width		:110vw;
+	background	:rgba(30,30,30,0.2);
+	z-index		:10;
+}
+
 </style>
 </head>
 
@@ -1047,5 +1060,7 @@ input,select{
 </span>
 <textarea id="pay_9" class="textarea w560" placeholder="希望される色、イメージをご記載下さい。"><?=$dat["pay_9"]?></textarea>
 </div>
+
+<div class="back"></div>
 </body>
 </html>
