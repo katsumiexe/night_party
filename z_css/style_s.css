@@ -595,6 +595,7 @@ header{
 }
 
 .box_5_1{
+	opacity			:0;
 	position		:relative;
 	margin			:1vw auto;
 	width			:96vw;
