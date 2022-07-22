@@ -203,12 +203,12 @@ if (window.matchMedia('(max-width: 960px)').matches) {
 			$('#block_5_box_3').delay(600).animate({"opacity":"1","margin-top":"1vw"},800);
 			$('#block_5_box_4').delay(800).animate({"opacity":"1","margin-top":"1vw"},800);
 			$('#block_5_box_5').delay(1000).animate({"opacity":"1","margin-top":"1vw"},800);
-			$('#block_5_box_6 p').delay(1200).animate({"opacity":"1","margin-top":"1vw"},800);
+			$('#block_5_box_6, p').delay(1200).animate({"opacity":"1","margin-top":"1vw"},800);
 
 
 		}else if( $(this).scrollTop() > $('#block_6').offset().top - Height && Flag_6==0){
 			Flag_6=1;
-			$('#block_6_box_0').delay(900).animate({"opacity":"1","margin-top":"5vw"},900);
+			$('#block_6_box_0').delay(400).animate({"opacity":"1","margin-top":"5vw"},900);
 
 
 
