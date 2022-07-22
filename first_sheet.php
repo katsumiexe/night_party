@@ -135,37 +135,38 @@ $(function(){
 			Ck15=1;
 		}
 
-		if($('#rec_c_1').prop('checked')==true){
+		if($('#rec_c_1').prop('checked')==true && $('#rec_1').val()){
 			RecC1=1;
 		}
 
-		if($('#Rec_c_2').prop('checked')==true){
+		if($('#rec_c_2').prop('checked')==true && $('#rec_2').val()){
 			RecC2=1;
 		}
 
-		if($('#rec_c_3').prop('checked')==true){
+		if($('#rec_c_3').prop('checked')==true && $('#rec_3').val()){
 			RecC3=1;
 		}
 
-		if($('#rec_c_4').prop('checked')==true){
+		if($('#rec_c_4').prop('checked')==true && $('#rec_4').val()){
 			RecC4=1;
 		}
 
-		if($('#rec_c_5').prop('checked')==true){
+		if($('#rec_c_5').prop('checked')==true && $('#rec_5').val()){
 			RecC5=1;
 		}
 
-		if($('#rec_c_6').prop('checked')==true){
+		if($('#rec_c_6').prop('checked')==true && $('#rec_6').val()){
 			RecC6=1;
 		}
 
-		if($('#rec_c_7').prop('checked')==true){
+		if($('#rec_c_7').prop('checked')==true && $('#rec_7').val()){
 			RecC7=1;
 		}
 
-		if($('#rec_c_8').prop('checked')==true){
+		if($('#rec_c_8').prop('checked')==true && $('#rec_8').val()){
 			RecC8=1;
 		}
+
 
 		if($('#pay_c_0').prop('checked')==true){
 			PayC0=1;
@@ -682,18 +683,18 @@ input,select{
 <span class="td_tag">　店舗形態</span>
 <select id="info_7" name="info_7" class="textbox" style="width:375px;">
 	<option></option>
-	<option value="キャバクラ"<? if($dat["info_1"]=="キャバクラ"){?> selected="selected"<?}?>>キャバクラ</option>
-	<option value="セクキャバ"<? if($dat["info_1"]=="セクキャバ"){?> selected="selected"<?}?>>セクキャバ</option>
-	<option value="ガールズバー"<? if($dat["info_1"]=="ガールズバー"){?> selected="selected"<?}?>>ガールズバー</option>
-	<option value="デリヘル"<? if($dat["info_1"]=="デリヘル"){?> selected="selected"<?}?>>デリヘル</option>
-	<option value="コンカフェ"<? if($dat["info_1"]=="コンカフェ"){?> selected="selected"<?}?>>コンカフェ</option>
-	<option value="メイドカフェ"<? if($dat["info_1"]=="メイドカフェ"){?> selected="selected"<?}?>>メイドカフェ</option>
-	<option value="アイドルカフェ"<? if($dat["info_1"]=="アイドルカフェ"){?> selected="selected"<?}?>>アイドルカフェ</option>
-	<option value="スポーツバー"<? if($dat["info_1"]=="スポーツバー"){?> selected="selected"<?}?>>スポーツバー</option>
-	<option value="ダーツバー"<? if($dat["info_1"]=="ダーツバー"){?> selected="selected"<?}?>>ダーツバー</option>
-	<option value="SMバー"<? if($dat["info_1"]=="SMバー"){?> selected="selected"<?}?>>SMバー</option>
-	<option value="ハプニングバー"<? if($dat["info_1"]=="ハプニングバー"){?> selected="selected"<?}?>>ハプニングバー</option>
-	<option value="その他"<? if($dat["info_1"]=="その他"){?> selected="selected"<?}?>>その他</option>
+	<option value="キャバクラ"<? if($dat["info_7"]=="キャバクラ"){?> selected="selected"<?}?>>キャバクラ</option>
+	<option value="セクキャバ"<? if($dat["info_7"]=="セクキャバ"){?> selected="selected"<?}?>>セクキャバ</option>
+	<option value="ガールズバー"<? if($dat["info_7"]=="ガールズバー"){?> selected="selected"<?}?>>ガールズバー</option>
+	<option value="デリヘル"<? if($dat["info_7"]=="デリヘル"){?> selected="selected"<?}?>>デリヘル</option>
+	<option value="コンカフェ"<? if($dat["info_7"]=="コンカフェ"){?> selected="selected"<?}?>>コンカフェ</option>
+	<option value="メイドカフェ"<? if($dat["info_7"]=="メイドカフェ"){?> selected="selected"<?}?>>メイドカフェ</option>
+	<option value="アイドルカフェ"<? if($dat["info_7"]=="アイドルカフェ"){?> selected="selected"<?}?>>アイドルカフェ</option>
+	<option value="スポーツバー"<? if($dat["info_7"]=="スポーツバー"){?> selected="selected"<?}?>>スポーツバー</option>
+	<option value="ダーツバー"<? if($dat["info_7"]=="ダーツバー"){?> selected="selected"<?}?>>ダーツバー</option>
+	<option value="SMバー"<? if($dat["info_7"]=="SMバー"){?> selected="selected"<?}?>>SMバー</option>
+	<option value="ハプニングバー"<? if($dat["info_7"]=="ハプニングバー"){?> selected="selected"<?}?>>ハプニングバー</option>
+	<option value="その他"<? if($dat["info_7"]=="その他"){?> selected="selected"<?}?>>その他</option>
 </select><br>
 
 <span class="td_tag" style="display:inline-block; width:145px;">　キャスト数</span>
@@ -746,7 +747,7 @@ input,select{
 
 <div class="title_1">　システム<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　本文</span>
-<textarea id="pg_0" class="textarea2 w560"></textarea>
+<textarea id="pg_0" class="textarea2 w560"><?=$dat["pg_0"]?></textarea>
 
 
 <div class="title_1">　リクルート<button type="button" class="tmp_btn">下書き保存</button></div>
@@ -765,21 +766,7 @@ input,select{
 
 <div class="title_1">　プライバシーポリシー<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　本文</span>
-<textarea id="pg_1" class="textarea2 w560">
-『○○』（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。
-第1条　個人情報
-「個人情報」とは，個人情報保護法にいう「個人情報」を指すものとし，生存する個人に関する情報であって，当該情報に含まれる氏名，生年月日，住所，電話番号，連絡先その他の記述等により特定の個人を識別できる情報及び容貌，指紋，声紋にかかるデータ，及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。
-第2条　個人情報の収集方法
-当社は，ユーザーが利用登録をする際に氏名，生年月日，住所，電話番号，メールアドレス，銀行口座番号，クレジットカード番号，運転免許証番号などの個人情報をお尋ねすることがあります。また，ユーザーと提携先などとの間でなされたユーザーの個人情報を含む取引記録や決済に関する情報を,当社の提携先（情報提供元，広告主，広告配信先などを含みます。以下，｢提携先｣といいます。）などから収集することがあります。
-第3条　個人情報の利用目的
-当社が個人情報を収集・利用する目的は，以下のとおりです。 当社サービスの提供・運営のため
-ユーザーからのお問い合わせに回答するため（本人確認を行うことを含む）
-ユーザーが利用中のサービスの新機能，更新情報，キャンペーン等及び当社が提供する他のサービスの案内のメールを送付するため
-メンテナンス，重要なお知らせなど必要に応じたご連絡のため
-利用規約に違反したユーザーや，不正・不当な目的でサービスを利用しようとするユーザーの特定をし，ご利用をお断りするため
-ユーザーにご自身の登録情報の閲覧や変更，削除，ご利用状況の閲覧を行っていただくため
-</textarea>
-
+<textarea id="pg_1" class="textarea2 w560"><?=$dat["pg_1"]?></textarea>
 <div class="title_1">　バナー<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　TOPバナー詳細(1200px × 480px)</span>
 <textarea id="bn_0" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["bn_0"]?></textarea>

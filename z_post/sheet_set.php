@@ -19,6 +19,7 @@ $sql	 ="UPDATE sheet SET
  `info_11`='{$_POST["info_11"]}',
  `info_12`='{$_POST["info_12"]}',
  `info_13`='{$_POST["info_13"]}',
+ `info_14`='{$_POST["info_14"]}',
 
 `pf_0`='{$_POST["pf_0"]}',
 `pf_1`='{$_POST["pf_1"]}',
