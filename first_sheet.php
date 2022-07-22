@@ -219,6 +219,7 @@ $(function(){
 				'info_11':$('#info_11').val(),
 				'info_12':$('#info_12').val(),
 				'info_13':$('#info_13').val(),
+				'info_14':$('#info_14').val(),
 
 				'pf_0':$('#pf_0').val(),
 				'pf_1':$('#pf_1').val(),
@@ -699,9 +700,9 @@ input,select{
 
 
 <span class="td_tag" style="display:inline-block; width:380px;">　イメージサイトURL</span><span class="td_tag w160" style="display:inline-block;">　イメージカラー</span>
-<input id="info_12" type="text" value="<?=$dat["info_12"]?>" class="textbox w360"><input id="info_13" name="dg_3" type="text" class="textbox w160">
+<input id="info_12" type="text" value="<?=$dat["info_12"]?>" class="textbox w360"><input id="info_13" name="dg_3" value="<?=$dat["info_13"]?>" type="text" class="textbox w160">
 <span class="td_tag">　ご要望</span>
-<textarea id="info_13" value="<?=$dat[""]?>" class="textarea2 w540"><?=$dat["info_13"]?></textarea>
+<textarea id="info_14" class="textarea2 w540"><?=$dat["info_14"]?></textarea>
 
 
 <div class="title_1">　キャスト設定<button type="button" class="tmp_btn">下書き保存</button></div>
