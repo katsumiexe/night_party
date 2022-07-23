@@ -587,7 +587,16 @@ input,select{
 .info_0_out{
 	width		:100%;
 	position	:relative;
-	height		:60px;
+	height		:200px;
+}
+
+.info_0_in1, .info_0_in2{
+	width		:590px;
+	position	:absolute;
+	top			:40px;
+	height		:160px;
+	left		:5px;
+	background	:#9080ff;
 }
 
 .info_0_a,.info_0_b{
@@ -603,13 +612,13 @@ input,select{
 }
 
 .info_0_a{
-	background	:#c4c4c4;
+	background	:#ffc0d0;
 	left		:5px;
 	border-radius:10px 0 0 0;
 }
 
 .info_0_b{
-	background	:#0000f0;
+	background	:#9080ff;
 	right		:5px;
 	border-radius:0 10px 0 0;
 }
@@ -619,10 +628,10 @@ input,select{
 	top			:0;
 	right		:0px;
 	content		:"";
-	transform	: skew(25deg);
+	transform	:skew(25deg);
 	width		:30px;
 	height		:40px;
-	background	:#c4c4c4;
+	background	:#ffc0d0;
 	display		:block;
 	transform-origin:top left;
 }
@@ -635,7 +644,7 @@ input,select{
 	transform	: skew(-25deg);
 	width		:30px;
 	height		:40px;
-	background	:#0000f0;
+	background	:#9080ff;
 	display		:block;
 	transform-origin:bottom right;
 }
@@ -710,6 +719,8 @@ input,select{
 <div class="info_0_out">
 <input id="info_0a" name="info_0" type="radio" class="info_0"><label for="info_0a" class="info_0_a">テーマ01：ソワレ</label>
 <input id="info_0b" name="info_0" type="radio" class="info_0"><label for="info_0b" class="info_0_b">テーマ02：コーマ</label>
+<div class="info_0_in1"></div>
+<div class="info_0_in2"></div>
 </div>
 
 
