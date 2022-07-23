@@ -75,6 +75,14 @@ $(function(){
 			Fin=1;
 		}
 
+
+		if($('#info_0a').prop('checked')==true){
+				Info0=0;
+		}
+		if($('#info_0b').prop('checked')==true){
+				Info0=1;
+		}
+
 		if($('#ck_1').prop('checked')==true){
 			Ck1=1;
 		}
@@ -207,6 +215,7 @@ $(function(){
 				'fin':Fin,
 				'code':'<?=$dat["code"]?>',
 	
+				'info_0':Info0,
 				'info_1':$('#info_1').val(),
 				'info_2':$('#info_2').val(),
 				'info_3':$('#info_3').val(),
@@ -316,6 +325,13 @@ $(function(){
 			console.log(errorThrown);
 		});
 	});
+
+	$('.info_0').on('change',function(){
+		Tmp=$(this).attr("id");
+		$(".info_0_in").css("z-index","1");
+		$("#"+Tmp+"_in").css("z-index","2");
+	});
+
 });
 </script>
 
@@ -570,27 +586,39 @@ input,select{
 	width:560px;
 }
 
-.box_1,.box_2{
+.box_1{
 	position		:relative;
 	width			:100%;
 	max-width		:600px;
 	margin			:0 auto;
 	background		:#fafafa;
-
 }
 
+.box_1_in{
+	position		:relative;
+	width			:100%;
+	max-width		:590px;
+	margin			:0 auto;
+	background		:#00a000;
+	height			:50px;
+	padding-left	:10px;
+	line-height		:50px;
+}
 .wr{
 	text-align		:right;
 	padding-right	:10px;
 }
 
+.info_0{
+	display		:none;
+}
 .info_0_out{
 	width		:100%;
 	position	:relative;
 	height		:200px;
 }
 
-.info_0_in1, .info_0_in2{
+.info_0_in{
 	width		:590px;
 	position	:absolute;
 	top			:40px;
@@ -599,8 +627,21 @@ input,select{
 	background	:#9080ff;
 }
 
-.info_0_a,.info_0_b{
-	display:block;
+#info_0a_in{
+	background	:#ffa0b0;
+}
+
+#info_0b_in{
+	background	:#9080ff;
+}
+
+.info_0:checked + label{
+	z-index		:9;
+}
+
+
+.info_0_a{
+	display		:block;
 	width		:280px;
 	height		:40px;
 	position	:absolute;
@@ -611,19 +652,19 @@ input,select{
 	text-align	:center;
 }
 
-.info_0_a{
-	background	:#ffc0d0;
+#info_0_a{
+	background	:#ffa0b0;
 	left		:5px;
 	border-radius:10px 0 0 0;
 }
 
-.info_0_b{
+#info_0_b{
 	background	:#9080ff;
 	right		:5px;
 	border-radius:0 10px 0 0;
 }
 
-.info_0_a:after{
+#info_0_a:after{
 	position	:absolute;
 	top			:0;
 	right		:0px;
@@ -631,12 +672,12 @@ input,select{
 	transform	:skew(25deg);
 	width		:30px;
 	height		:40px;
-	background	:#ffc0d0;
+	background	:#ffa0b0;
 	display		:block;
 	transform-origin:top left;
 }
 
-.info_0_b:before{
+#info_0_b:before{
 	position	:absolute;
 	top			:0;
 	left		:-30px;
@@ -664,13 +705,12 @@ input,select{
 </head>
 
 <body style="background:#eaeaea">
-<div class="box_1"><?=$dat["user"]?>様 ヒアリングシート<button type="button" class="tmp_btn2">送信</button></div>
-<div class="box_2">
 
-
-
-
-<div class="title_1">　店舗基本情報<button type="button" class="tmp_btn">下書き保存</button></div>
+<div class="box_1">
+<div class="box_1_in">
+<?=$dat["user"]?>様 ヒアリングシート<button type="button" class="tmp_btn2">登録</button>
+</div>
+<div class="title_1" style="margin-top:0;">　店舗基本情報<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　店舗名</span>
 <input id="info_1" name="info_1" type="text" class="textbox w360" value="<?=$dat["info_1"]?>">
 
@@ -717,11 +757,12 @@ input,select{
 <div class="title_1">　サイトデザイン<button type="button" class="tmp_btn">下書き保存</button></div>
 
 <div class="info_0_out">
-<input id="info_0a" name="info_0" type="radio" class="info_0"><label for="info_0a" class="info_0_a">テーマ01：ソワレ</label>
-<input id="info_0b" name="info_0" type="radio" class="info_0"><label for="info_0b" class="info_0_b">テーマ02：コーマ</label>
-<div class="info_0_in1"></div>
-<div class="info_0_in2"></div>
+<input id="info_0a" name="info_0" type="radio" value="0" class="info_0" <?if($dat["info_0"] ==0){?> checked="checked"<?}?>><label id="info_0_a" for="info_0a" class="info_0_a">テーマ01：コーマ</label>
+<input id="info_0b" name="info_0" type="radio" value="1" class="info_0" <?if($dat["info_0"] ==1){?> checked="checked"<?}?>><label id="info_0_b" for="info_0b" class="info_0_a">テーマ02：ソワレ</label>
+<div id="info_0a_in" class="info_0_in" <?if($dat["info_0"] ==0){?> style="z-index:2"<?}?>></div>
+<div id="info_0b_in" class="info_0_in" <?if($dat["info_0"] ==1){?> style="z-index:2"<?}?>></div>
 </div>
+
 
 
 <span class="td_tag" style="display:inline-block; width:380px;">　イメージサイトURL</span><span class="td_tag w160" style="display:inline-block;">　イメージカラー</span>
