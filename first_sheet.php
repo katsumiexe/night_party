@@ -61,18 +61,23 @@ $(function(){
 	var RecC8=0;
 
 
+<?if($dat["fin"] == 1){?>
+	$('input,select,textarea').prop("disabled",true);
+<?}?>
+
 	$('.ques').hover(function() {
 		$(this).children('.ans').fadeIn(300);
 	},function() {
 		$('.ans').fadeOut(200);
 	});
 
-	$('.tmp_btn').on('click',function() {
+	$('.tmp_btn ,.tmp_btn2').on('click',function() {
 
 		$('.back').show();
 		
 		if($(this).attr('id') == "fin"){
 			Fin=1;
+			$('input,select,textarea').prop("disabled",true);
 		}
 
 
@@ -359,7 +364,8 @@ input,select{
 	line-height		:22px;
 	padding			:5px;
 	border			:1px solid #303030;
-	margin			:0 5px 5px 5px;
+	margin			:0 15px;
+	width			:560px;
 	resize			:none;
 }
 
@@ -367,13 +373,9 @@ input,select{
 	height			:200px;
 }
 
-.td_title{
-	background		:#000090;
-	color			:#fafafa;
-	font-size		:16px;
-	height			:30px;
-	line-height		:30px;
-	text-align		:center;
+.table_3{
+	table-layout: fixed;
+	width: 100%;
 }
 
 .title_1{
@@ -424,14 +426,15 @@ input,select{
 	font-weight		:700;
 	height			:40px;
 	line-height		:50px;
-	width			:100%;
+	width			:560px;
+	margin			:0 20px;
 }
 
 .pay_price{
 	position		:absolute;
 	top				:0;
 	bottom			:0;
-	right			:20px;
+	right			:0;
 	margin			:auto;
 	color			:#c00000;
 	font-weight		:700;
@@ -453,11 +456,13 @@ input,select{
 	vertical-align	:top;
 	font-size		:14px;
 	position		:relative;
-	padding-left	:20px;
+	padding-left	:25px;
 	height			:30px;
 	line-height		:30px;
-	margin			:5px;
-	width			:160px;
+	margin			:5px auto;
+	width			:155px;
+	text-align		:left;
+
 }
 
 .ck_box0:checked + .check1{
@@ -488,7 +493,7 @@ input,select{
 .ck_box1{
 	display				:inline-block;
 	position			:absolute;
-	left				:2px;
+	left				:5px;
 	top					:0;
 	bottom				:0;
 	margin				:auto;
@@ -599,11 +604,28 @@ input,select{
 	width			:100%;
 	max-width		:590px;
 	margin			:0 auto;
-	background		:#00a000;
+	background		:#1000a0;
 	height			:50px;
 	padding-left	:10px;
 	line-height		:50px;
+	color			:#fafafa;
+	font-size		:14px;
+	font-weight		:600;
 }
+
+.box_1_in2{
+	width			:90%;
+	margin			:10px auto;
+	background		:#fefefe;
+	padding			:10px 5px;
+	line-height		:20px;
+	color			:#303030;
+	font-size		:14px;
+	text-align		:left;
+	border:1px solid #303030;
+}
+
+
 .wr{
 	text-align		:right;
 	padding-right	:10px;
@@ -624,7 +646,8 @@ input,select{
 	top			:40px;
 	height		:160px;
 	left		:5px;
-	background	:#9080ff;
+	background	:0010d0;
+	color:		#fafafa;
 }
 
 #info_0a_in{
@@ -708,8 +731,16 @@ input,select{
 
 <div class="box_1">
 <div class="box_1_in">
-<?=$dat["user"]?>様 ヒアリングシート<button type="button" class="tmp_btn2">登録</button>
+ヒアリングシート <?=$dat["user"]?>様<button id="fin" type="button" class="tmp_btn2">登録</button>
 </div>
+<div class="box_1_in2">
+下記に関しまして、可能な限り記載いただけます様お願い致します。<br>
+わからない、不明な点に関しては未記入でも結構でございます。<br>
+画像添付はできませんので、必要な際は別途お送りいただけます様お願いします。<br>
+記載が完了しましたら、右上の「登録」をクリック下さいませ。<br>
+</div>
+
+
 <div class="title_1" style="margin-top:0;">　店舗基本情報<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　店舗名</span>
 <input id="info_1" name="info_1" type="text" class="textbox w360" value="<?=$dat["info_1"]?>">
@@ -768,7 +799,7 @@ input,select{
 <span class="td_tag" style="display:inline-block; width:380px;">　イメージサイトURL</span><span class="td_tag w160" style="display:inline-block;">　イメージカラー</span>
 <input id="info_12" type="text" value="<?=$dat["info_12"]?>" class="textbox w360"><input id="info_13" name="dg_3" value="<?=$dat["info_13"]?>" type="text" class="textbox w160">
 <span class="td_tag">　ご要望</span>
-<textarea id="info_14" class="textarea2 w540"><?=$dat["info_14"]?></textarea>
+<textarea id="info_14" class="textarea2"><?=$dat["info_14"]?></textarea>
 
 
 <div class="title_1">　キャスト設定<button type="button" class="tmp_btn">下書き保存</button></div>
@@ -799,12 +830,11 @@ input,select{
 
 <div class="title_1">　システム<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　本文</span>
-<textarea id="pg_0" class="textarea2 w560"><?=$dat["pg_0"]?></textarea>
-
+<textarea id="pg_0" class="textarea2"><?=$dat["pg_0"]?></textarea>
 
 <div class="title_1">　リクルート<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　本文</span>
-<textarea id="rec_0" class="textarea2 w560"><?=$dat["rec_0"]?></textarea>
+<textarea id="rec_0" class="textarea2"><?=$dat["rec_0"]?></textarea>
 <span class="td_tag">　確認項目</span>
 
 <input id="rec_1" type="text" value="<?=$dat["rec_1"]?>" class="textbox w300" placeholder="お名前"><input type="checkbox" value="1" <? if($dat["rec_c_1"]=="1"){?> checked="checked"<?}?> id="rec_c_1" name="rec_c_1" class="rec_c" ><label for="rec_c_1" class="nese">必須</label>
@@ -816,14 +846,14 @@ input,select{
 <input id="rec_7" type="text" value="<?=$dat["rec_7"]?>" class="textbox w300"><input type="checkbox" id="rec_c_7" value="1" <? if($dat["rec_c_7"]=="1"){?> checked="checked"<?}?> name="rec_c_7" class="rec_c"><label for="rec_c_7" class="nese">必須</label>
 <input id="rec_8" type="text" value="<?=$dat["rec_8"]?>" class="textbox w300"><input type="checkbox" id="rec_c_8" value="1" <? if($dat["rec_c_8"]=="1"){?> checked="checked"<?}?> name="rec_c_8" class="rec_c"><label for="rec_c_8" class="nese">必須</label>
 
-<div class="title_1">　プライバシーポリシー<button type="button" class="tmp_btn">下書き保存</button></div>
+<div class="title_1">　ポリシー<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　本文</span>
-<textarea id="pg_1" class="textarea2 w560"><?=$dat["pg_1"]?></textarea>
+<textarea id="pg_1" class="textarea2"><?=$dat["pg_1"]?></textarea>
 <div class="title_1">　バナー<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　TOPバナー詳細(1200px × 480px)</span>
-<textarea id="bn_0" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["bn_0"]?></textarea>
+<textarea id="bn_0" class="textarea" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["bn_0"]?></textarea>
 <span class="td_tag">　サイドバナー詳細(600px × 150px)</span>
-<textarea id="bn_1" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["bn_1"]?></textarea>
+<textarea id="bn_1" class="textarea" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["bn_1"]?></textarea>
 
 
 
@@ -831,7 +861,7 @@ input,select{
 <div class="title_1">　使用コンテンツ<button type="button" class="tmp_btn">下書き保存</button></div>
 <table class="table_3">
 	<tr>
-		<td>
+		<td style="text-align:center;">
 		<div class="ck_title">CMSコンテンツ</div>
 			<label for="ck_1" class="ck_box0">
 				<span class="ck_box1">
@@ -861,7 +891,7 @@ input,select{
 			</label>
 		</td>
 
-		<td>
+		<td style="text-align:center;">
 			<div class="ck_title">サイト内ページ</div>
 			<label for="ck_4" class="ck_box0">
 				<span class="ck_box1">
@@ -930,12 +960,12 @@ input,select{
 					<input id="ck_11" type="checkbox" class="ck_box2" value="1"  <? if($dat["ck_11"]=="1"){?> checked="checked"<?}?>>
 					<span class="ck_box3"></span>
 				</span>
-				<span>プライバシーポリシー</span>
+				<span>ポリシー</span>
 				<span class="ques"><span class="ans">サイトとしての個人情報への取り組みを明記するためのものです。</span></span>
 			</label>
 		</td>
 
-		<td>
+		<td style="text-align:center;">
 			<div class="ck_title">システムコンテンツ</div>
 			<label for="ck_12" class="ck_box0">
 				<span class="ck_box1">
@@ -990,7 +1020,7 @@ input,select{
 	</label>
 	<span class="pay_price">10,000円</span>
 </span>
-<textarea id="pay_0" name="pay_0" class="textarea w560" placeholder="ご希望のドメインをご記載下さい。"><?=$dat["pay_0"]?></textarea>
+<textarea id="pay_0" name="pay_0" class="textarea" placeholder="ご希望のドメインをご記載下さい。"><?=$dat["pay_0"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_1" class="ck_box0" style="width:400px;">
@@ -1002,7 +1032,7 @@ input,select{
 	</label>
 	<span class="pay_price">8,000円</span>
 </span>
-<textarea id="pay_1" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_1"]?></textarea>
+<textarea id="pay_1" class="textarea" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_1"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_2" class="ck_box0" style="width:400px;">
@@ -1014,7 +1044,7 @@ input,select{
 	</label>
 	<span class="pay_price">8,000円</span>
 </span>
-<textarea id="pay_2" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_2"]?></textarea>
+<textarea id="pay_2" class="textarea" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_2"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_3" class="ck_box0" style="width:400px;">
@@ -1026,7 +1056,7 @@ input,select{
 	</label>
 	<span class="pay_price">8,000円</span>
 </span>
-<textarea id="pay_3" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_3"]?></textarea>
+<textarea id="pay_3" class="textarea" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_3"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_4" class="ck_box0" style="width:400px;">
@@ -1038,7 +1068,7 @@ input,select{
 	</label>
 	<span class="pay_price">4,000円</span>
 </span>
-<textarea id="pay_4" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_4"]?></textarea>
+<textarea id="pay_4" class="textarea" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_4"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_5" class="ck_box0" style="width:400px;">
@@ -1050,7 +1080,7 @@ input,select{
 	</label>
 	<span class="pay_price">4,000円</span>
 </span>
-<textarea id="pay_5" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_5"]?></textarea>
+<textarea id="pay_5" class="textarea" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_5"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_6" class="ck_box0" style="width:400px;">
@@ -1062,7 +1092,7 @@ input,select{
 	</label>
 	<span class="pay_price">4,000円</span>
 </span>
-<textarea id="pay_6" class="textarea w560" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_6"]?></textarea>
+<textarea id="pay_6" class="textarea" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_6"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_7" class="ck_box0" style="width:400px;">
@@ -1074,7 +1104,7 @@ input,select{
 	</label>
 	<span class="pay_price">12,000円～</span>
 </span>
-<textarea id="pay_7" class="textarea w560" placeholder="希望されるページの詳細をご記載下さい。"><?=$dat["pay_7"]?></textarea>
+<textarea id="pay_7" class="textarea" placeholder="希望されるページの詳細をご記載下さい。"><?=$dat["pay_7"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_8" class="ck_box0" style="width:400px;">
@@ -1086,7 +1116,7 @@ input,select{
 	</label>
 	<span class="pay_price">20,000円</span>
 </span>
-<textarea id="pay_8" class="textarea w560" placeholder="希望される日時（曜日）、お時間帯をご記載下さい。"><?=$dat["pay_8"]?></textarea>
+<textarea id="pay_8" class="textarea" placeholder="希望される日時（曜日）、お時間帯をご記載下さい。"><?=$dat["pay_8"]?></textarea>
 
 <span class="td_tag2">
 	<label for="pay_c_9" class="ck_box0" style="width:400px;">
@@ -1098,7 +1128,7 @@ input,select{
 	</label>
 	<span class="pay_price">10,000円</span>
 </span>
-<textarea id="pay_9" class="textarea w560" placeholder="希望される色、イメージをご記載下さい。"><?=$dat["pay_9"]?></textarea>
+<textarea id="pay_9" class="textarea" placeholder="希望される色、イメージをご記載下さい。"><?=$dat["pay_9"]?></textarea>
 </div>
 
 <div class="back"></div>

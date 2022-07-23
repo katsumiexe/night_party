@@ -6,6 +6,7 @@ ini_set('error_reporting', E_ALL);
 */
 
 $sql	 ="UPDATE sheet SET
+ `fin`='{$_POST["fin"]}',
  `info_0`='{$_POST["info_0"]}',
  `info_1`='{$_POST["info_1"]}',
  `info_2`='{$_POST["info_2"]}',
