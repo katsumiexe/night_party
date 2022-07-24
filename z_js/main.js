@@ -30,9 +30,9 @@ if (window.matchMedia('(min-width: 959px)').matches) {
 				DownBall();
 
 			}else if(BoxView == 2){
-				$('#block_2_box_0').delay(400).animate({"opacity":"1","margin-top":"1vh"},800);
-				$('#block_2_box_1').delay(800).animate({"opacity":"1","margin-top":"1vh"},800);
-				$('#block_2_box_2').delay(1000).animate({"opacity":"1","margin-top":"1vh"},600);
+				$('#block_2_box_0').delay(200).animate({"opacity":"1","margin-top":"1vh"},800);
+				$('#block_2_box_1').delay(400).animate({"opacity":"1","margin-top":"1vh"},800);
+				$('#block_2_box_2').delay(800).animate({"opacity":"1","margin-top":"1vh"},600);
 
 			}else if(BoxView == 3){
 				$({Deg:-10, Opc:0, Top:20, Lef:5}).animate({Deg:0, Opc:1, Top:1, Lef:1}, {

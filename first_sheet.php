@@ -355,7 +355,20 @@ input,select{
 	line-height		:30px;
 	padding-left	:10px;
 	border			:1px solid #303030;
-	margin			:0 5px 5px 5px;
+	margin			:0 0 5px 5px;
+}
+
+.textbox{
+	margin-left		:15px;
+}
+
+.textbox2{
+	height			:30px;
+	line-height		:30px;
+	padding-left	:10px;
+	border			:1px solid #303030;
+	margin			:0 0 5px 10px;
+	width			:160px;
 }
 
 .textarea,.textarea2{
@@ -571,6 +584,10 @@ input,select{
 	width:160px;
 }
 
+.w180{
+	width:180px;
+}
+
 .w240{
 	width:240px;
 }
@@ -625,6 +642,17 @@ input,select{
 	border:1px solid #303030;
 }
 
+.box_1_in3{
+	width			:90%;
+	margin			:5px auto;
+	background		:#fff0f0;
+	padding			:10px 5px;
+	line-height		:20px;
+	color			:#d00000;
+	font-size		:14px;
+	text-align		:left;
+	border			:1px solid #d00000;
+}
 
 .wr{
 	text-align		:right;
@@ -733,13 +761,19 @@ input,select{
 <div class="box_1_in">
 ヒアリングシート <?=$dat["user"]?>様<button id="fin" type="button" class="tmp_btn2">登録</button>
 </div>
+<?if($dat["fin"] == 1){?>
+<div class="box_1_in3">
+ありがとうございました。<br>
+修正、変更がありましたら直接ココナラのメッセージでご連絡下さいませ。
+</div>
+<? } else {?>
 <div class="box_1_in2">
 下記に関しまして、可能な限り記載いただけます様お願い致します。<br>
 わからない、不明な点に関しては未記入でも結構でございます。<br>
 画像添付はできませんので、必要な際は別途お送りいただけます様お願いします。<br>
 記載が完了しましたら、右上の「登録」をクリック下さいませ。<br>
 </div>
-
+<? } ?>
 
 <div class="title_1" style="margin-top:0;">　店舗基本情報<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　店舗名</span>
@@ -777,9 +811,9 @@ input,select{
 	<option value="その他"<? if($dat["info_7"]=="その他"){?> selected="selected"<?}?>>その他</option>
 </select><br>
 
-<span class="td_tag" style="display:inline-block; width:145px;">　キャスト数</span>
-<span class="td_tag" style="display:inline-block; width:145px;">　顧客年齢層</span>
-<span class="td_tag" style="display:inline-block; width:145px;">　営業時間</span><br>
+<span class="td_tag" style="display:inline-block; width:150px;">　キャスト数</span>
+<span class="td_tag" style="display:inline-block; width:150px;">　顧客年齢層</span>
+<span class="td_tag" style="display:inline-block; width:150px;">　営業時間</span><br>
 
 <input id="info_8" name="info_8" type="text" value="<?=$dat["info_8"]?>" class="textbox w80 wr">人　
 <input id="info_9" name="info_9" type="text" value="<?=$dat["info_9"]?>" class="textbox w80 wr">歳　
@@ -794,13 +828,10 @@ input,select{
 <div id="info_0b_in" class="info_0_in" <?if($dat["info_0"] ==1){?> style="z-index:2"<?}?>></div>
 </div>
 
-
-
 <span class="td_tag" style="display:inline-block; width:380px;">　イメージサイトURL</span><span class="td_tag w160" style="display:inline-block;">　イメージカラー</span>
 <input id="info_12" type="text" value="<?=$dat["info_12"]?>" class="textbox w360"><input id="info_13" name="dg_3" value="<?=$dat["info_13"]?>" type="text" class="textbox w160">
 <span class="td_tag">　ご要望</span>
 <textarea id="info_14" class="textarea2"><?=$dat["info_14"]?></textarea>
-
 
 <div class="title_1">　キャスト設定<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　キャストプロフィール</span>
@@ -813,20 +844,19 @@ input,select{
 <input id="pf_6" type="text" value="<?=$dat["pf_6"]?>" class="textbox w360">
 <input id="pf_7" type="text" value="<?=$dat["pf_7"]?>" class="textbox w360">
 
-
 <span class="td_tag">　オプション名</span>
 <input id="op_0" type="text" class="textbox w360" value="<?=$dat["op_0"]?>"  placeholder="特徴"><br>
-<input id="op_1" type="text" class="textbox w180" value="<?=$dat["op_1"]?>" placeholder="理系">
-<input id="op_2" type="text" class="textbox w180" value="<?=$dat["op_2"]?>" placeholder="体育会系">
-<input id="op_3" type="text" class="textbox w180" value="<?=$dat["op_3"]?>" placeholder="お話好き">
-<input id="op_4" type="text" class="textbox w180" value="<?=$dat["op_4"]?>" placeholder="オタク">
-<input id="op_5" type="text" class="textbox w180" value="<?=$dat["op_5"]?>" placeholder="巨乳">
-<input id="op_6" type="text" class="textbox w180" value="<?=$dat["op_6"]?>" placeholder="モデル体型">
-<input id="op_7" type="text" class="textbox w180" value="<?=$dat["op_7"]?>">
-<input id="op_8" type="text" class="textbox w180" value="<?=$dat["op_8"]?>">
-<input id="op_9" type="text" class="textbox w180" value="<?=$dat["op_9"]?>">
-<input id="op_10" type="text" class="textbox w180" value="<?=$dat["op10_"]?>">
-<input id="op_11" type="text" class="textbox w180" value="<?=$dat["op_11"]?>">
+<input id="op_1" type="text" class="textbox2 " value="<?=$dat["op_1"]?>" placeholder="理系">
+<input id="op_2" type="text" class="textbox2 " value="<?=$dat["op_2"]?>" placeholder="体育会系">
+<input id="op_3" type="text" class="textbox2 " value="<?=$dat["op_3"]?>" placeholder="お話好き">
+<input id="op_4" type="text" class="textbox2 " value="<?=$dat["op_4"]?>" placeholder="オタク">
+<input id="op_5" type="text" class="textbox2 " value="<?=$dat["op_5"]?>" placeholder="巨乳">
+<input id="op_6" type="text" class="textbox2 " value="<?=$dat["op_6"]?>" placeholder="モデル体型">
+<input id="op_7" type="text" class="textbox2 " value="<?=$dat["op_7"]?>">
+<input id="op_8" type="text" class="textbox2 " value="<?=$dat["op_8"]?>">
+<input id="op_9" type="text" class="textbox2 " value="<?=$dat["op_9"]?>">
+<input id="op_10" type="text" class="textbox2 " value="<?=$dat["op10_"]?>">
+<input id="op_11" type="text" class="textbox2 " value="<?=$dat["op_11"]?>">
 
 <div class="title_1">　システム<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　本文</span>
@@ -844,7 +874,7 @@ input,select{
 <input id="rec_5" type="text" value="<?=$dat["rec_5"]?>" class="textbox w300"><input type="checkbox" id="rec_c_5" value="1" <? if($dat["rec_c_5"]=="1"){?> checked="checked"<?}?> name="rec_c_5" class="rec_c"><label for="rec_c_5" class="nese">必須</label>
 <input id="rec_6" type="text" value="<?=$dat["rec_6"]?>" class="textbox w300"><input type="checkbox" id="rec_c_6" value="1" <? if($dat["rec_c_6"]=="1"){?> checked="checked"<?}?> name="rec_c_6" class="rec_c"><label for="rec_c_6" class="nese">必須</label>
 <input id="rec_7" type="text" value="<?=$dat["rec_7"]?>" class="textbox w300"><input type="checkbox" id="rec_c_7" value="1" <? if($dat["rec_c_7"]=="1"){?> checked="checked"<?}?> name="rec_c_7" class="rec_c"><label for="rec_c_7" class="nese">必須</label>
-<input id="rec_8" type="text" value="<?=$dat["rec_8"]?>" class="textbox w300"><input type="checkbox" id="rec_c_8" value="1" <? if($dat["rec_c_8"]=="1"){?> checked="checked"<?}?> name="rec_c_8" class="rec_c"><label for="rec_c_8" class="nese">必須</label>
+<input id="rec_8" type="text" value="<?=$dat["rec_8"]?>" class="textbox w300"><input type="checkbox" id="rec_c_8" value="1" <? if($dat["rec_c_8"]=="1"){?> checked="checked"<?}?> name="rec_c_8" class="rec_c"><label for="rec_c_8" class="nese">必須</label>																																																																																																																																																																																																																																																																																																																																																																																																								
 
 <div class="title_1">　ポリシー<button type="button" class="tmp_btn">下書き保存</button></div>
 <span class="td_tag">　本文</span>
@@ -854,14 +884,11 @@ input,select{
 <textarea id="bn_0" class="textarea" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["bn_0"]?></textarea>
 <span class="td_tag">　サイドバナー詳細(600px × 150px)</span>
 <textarea id="bn_1" class="textarea" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["bn_1"]?></textarea>
-
-
-
  
 <div class="title_1">　使用コンテンツ<button type="button" class="tmp_btn">下書き保存</button></div>
 <table class="table_3">
 	<tr>
-		<td style="text-align:center;">
+		<td style="text-align:center; border-right:1px solid #202020">
 		<div class="ck_title">CMSコンテンツ</div>
 			<label for="ck_1" class="ck_box0">
 				<span class="ck_box1">
@@ -891,7 +918,7 @@ input,select{
 			</label>
 		</td>
 
-		<td style="text-align:center;">
+		<td style="text-align:center; border-right:1px solid #202020;">
 			<div class="ck_title">サイト内ページ</div>
 			<label for="ck_4" class="ck_box0">
 				<span class="ck_box1">

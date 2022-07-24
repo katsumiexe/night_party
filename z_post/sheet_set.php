@@ -4,9 +4,11 @@ include_once('../sample1/library/sql.php');
 ini_set('display_errors', 1 );
 ini_set('error_reporting', E_ALL);
 */
+$now=date("Y-m-d H:i:s");
 
 $sql	 ="UPDATE sheet SET
  `fin`='{$_POST["fin"]}',
+ `date`='{$now}',
  `info_0`='{$_POST["info_0"]}',
  `info_1`='{$_POST["info_1"]}',
  `info_2`='{$_POST["info_2"]}',
