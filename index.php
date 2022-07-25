@@ -249,10 +249,8 @@
 				<img src="./z_img/img2.webp" class="box_item2_img" alt="staff_image">
 				</div>
 			</div>
-
 		</div>
 	</article>
-
 	<article id="block_4" class="box">
 		<div class="box_ab">
 			<h2 class="h2">キャスト用マイページHIME-Karte</h2>
