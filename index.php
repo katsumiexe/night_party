@@ -486,7 +486,6 @@
 				<div class="box_6_1">ココナラへ移動する</div>
 			</div>
 		</div>
-
 		<div></div>
 		<footer class="footer">copyright 2022 NightParty all right reserved.</footer>
 	</article>

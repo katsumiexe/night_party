@@ -55,6 +55,7 @@ if($_POST["notice_set"]){
 	$notice_title		=$_POST["notice_title"];
 	$notice_contents	=$_POST["notice_contents"];
 	$gp_check			=$_POST["gp_check"];
+	$notice_log_id		=$_POST["notice_log_id"];
 
 	foreach($gp_check as $a1 => $a2){
 		if($a1 >0 && $a2>0){
@@ -65,26 +66,36 @@ if($_POST["notice_set"]){
 
 	$display_date		=substr($display_date,0,10)." ".substr($display_date,11,5).":00";
 	$cast_group=substr($cast_group,0,-1);
-	
-	$sql	 ="INSERT INTO ".TABLE_KEY."_notice(`date`,`title`,`log`,`category`,`cast_group`,`del`)";
-	$sql	 .=" VALUES('{$display_date}','{$notice_title}','{$notice_contents}','{$notice_category}','{$cast_group}','0')";
-//	mysqli_query($mysqli,$sql);
-//	$tmp_auto=mysqli_insert_id($mysqli);
 
-	foreach($gp_check as $a1 => $a2){
-		if($a1 >0 && $a2>0){
-			foreach($gp[$a1] as $b1 => $b2){
-				$app_ck.="('{$tmp_auto}','{$b1}','1'),";
+	if($notice_log_id){
+		$sql	 ="UPDATE ".TABLE_KEY."_notice SET";
+		$sql	 .="`date`='{$display_date}',";
+		$sql	 .="`title`='{$notice_title}',";
+		$sql	 .="`log`='{$notice_contents}',";
+		$sql	 .="`category`='{$notice_category}',";
+		$sql	 .="`cast_group`='{$cast_group}'";
+		$sql	 .=" WHERE id='{$notice_log_id}'";
+		mysqli_query($mysqli,$sql);
+
+	}else{
+		$sql	 ="INSERT INTO ".TABLE_KEY."_notice(`date`,`title`,`log`,`category`,`cast_group`,`del`)";
+		$sql	 .=" VALUES('{$display_date}','{$notice_title}','{$notice_contents}','{$notice_category}','{$cast_group}','0')";
+		mysqli_query($mysqli,$sql);
+		$tmp_auto=mysqli_insert_id($mysqli);
+
+		foreach($gp_check as $a1 => $a2){
+			if($a1 >0 && $a2>0){
+				foreach($gp[$a1] as $b1 => $b2){
+					$app_ck.="('{$tmp_auto}','{$b1}','1'),";
+				}
 			}
 		}
-	}
-	$app_ck=substr($app_ck,0,-1);
+		$app_ck=substr($app_ck,0,-1);
 		
-	$sql	 ="INSERT INTO ".TABLE_KEY."_notice_ck(`notice_id`,`cast_id`,`status`) VALUES ";
-	$sql	 .=$app_ck;
-//	mysqli_query($mysqli,$sql);
-
-echo $sql;
+		$sql	 ="INSERT INTO ".TABLE_KEY."_notice_ck(`notice_id`,`cast_id`,`status`) VALUES ";
+		$sql	 .=$app_ck;
+		mysqli_query($mysqli,$sql);
+	}
 }
 
 $sql	 ="SELECT * FROM ".TABLE_KEY."_notice";
@@ -102,10 +113,16 @@ if($result = mysqli_query($mysqli,$sql)){
 			$row["group"]="";
 			for($n=0;$n<count($s);$n++){
 				$row["group"].="<span class=\"group_item\">{$tag["cast_group"][$s[$n]]}</span>/";
+				$row["gp_val"].=$s[$n]."|";
 			}
 			$row["group"]=substr($row["group"],0,-1);
+			$row["gp_val"]=substr($row["gp_val"],0,-1);
 
+			$row["log"]=str_replace("\r\n","<br>",$row["log"]);
+			$row["log"]=str_replace("\r","<br>",$row["log"]);
 			$row["log"]=str_replace("\n","<br>",$row["log"]);
+			$row["date_val"]=substr($row["date"],0,10)."T".substr($row["date"],11,18);
+
 			$row["date"]=str_replace("-",".",substr($row["date"],0,16));
 
 			$sql	 ="SELECT id, genji, cast_group, K.status FROM ".TABLE_KEY."_notice_ck AS K";
@@ -164,9 +181,6 @@ if($pg>1){
 if($pg<$pg_max){
 	$pg_n=$pg+1;
 }
-
-
-
 ?>
 
 <style>
@@ -298,7 +312,7 @@ input[type=radio]:checked + label{
 	border			:1px solid #303030;
 	margin			:5px;
 	width			:840px;
-	height			:140px;
+	height			:300px;
 	background		:#fafafa;
 }
 
@@ -325,6 +339,7 @@ input[type=radio]:checked + label{
 	border-radius	:5px;
 	background		:#fafafa;
 	overflow-y		:scroll;
+	display			:none;
 }
 
 .group_box{
@@ -347,6 +362,7 @@ input[type=radio]:checked + label{
 	margin			:5px auto;
 	padding			:5px;
 	border			:1px solid #303030;
+	display			:none;
 }
 
 .notice_pager{
@@ -388,16 +404,79 @@ input[type=radio]:checked + label{
 	background		:#0000d0;
 }
 
+#notice_log_del,#notice_log_chg{
+	display:none;
+}
 -->
 </style>
 <script>
 $(function(){ 
 	var Cnt=0;
 
+	$('#notice_new').on('click',function(){ 
+		$('.notice_log').slideUp(200);
+		$('#notice_log_del,#notice_log_chg').hide();
+
+		if($(this).hasClass('c1')){
+			$(this).removeClass('c1')
+			$('.notice_regist').slideUp(200);
+
+		}else{
+			$(this).addClass('c1')
+			$('.notice_regist').slideDown(200);
+			$('#notice_log_id').val("");
+		}
+	});
+
+	$('#notice_log_del').on('click',function(){ 
+		if (!confirm('削除します。よろしいですか')) {
+			return false;
+		}else{
+			TmpId=$('#notice_log_id').val();
+			$.ajax({
+				url:'./post/notice_del.php',
+				type: 'post',
+				data:{
+					'id':TmpId,
+				},
+			}).done(function(data, textStatus, jqXHR){
+				$('.notice_log').html("").slideUp(200);
+				$('#tr_list'+TmpId).hide();
+
+
+			}).fail(function(jqXHR, textStatus, errorThrown){
+				console.log(textStatus);
+				console.log(errorThrown);
+			});
+		}
+	});
+
+	$('#notice_log_chg').on('click',function(){ 
+		$('.gp_check').prop('checked',false);
+		var TmpId=$('#notice_log_id').val();
+		$('#notice_log_del,#notice_log_chg').hide();
+		$('.notice_log').html("").slideUp(200);
+		$('.notice_regist').slideDown(200);
+
+		$('#notice_reg_date').val($('#tr_list'+TmpId).find('.date_val').val());
+		$('#notice_reg_title').val($('#tr_list'+TmpId).find('.notice_title_in').html());
+		$('#notice_reg_cate').val($('#tr_list'+TmpId).find('.cate_val').val());
+		$('#notice_reg_text').val($('#tr_list'+TmpId).children('.notice_hidden').html().replace(/<br>/g,'\n'));
+
+		TmpGp=$('#tr_list'+TmpId).find('.gp_val').val().split('|');
+		$.each(TmpGp, function(index, value) {
+			$('#gp_check' + value).prop('checked',true);
+		});
+
+	});
+
 	$('.tr_list').on('click',function(){ 
-		var TmpId=$(this).attr('id');
+		var TmpId=$(this).attr('id').replace('tr_list','');
 		var Tmp=$(this).children('.notice_hidden').html();
-		$('.notice_log').html(Tmp);
+		$('.notice_log').html(Tmp).slideDown(200);
+		$('#notice_log_del,#notice_log_chg').show();
+		$('.notice_regist').slideUp(200);
+		$('#notice_log_id').val(TmpId);
 
 		$('.c_pink2').removeClass('done1 done2');
 		$.ajax({
@@ -409,10 +488,7 @@ $(function(){
 			dataType: 'json',
 
 		}).done(function(data, textStatus, jqXHR){
-			console.log(data)
-
 			$.each(data, function(index, value) {
-				console.log(index + ': ' + value);
 				$('#m' + index).addClass('done' + value);
 			});
 
@@ -451,7 +527,6 @@ $(function(){
 });
 </script>
 <header class="head">
-
 <form id="main_form" method="post">
 	<input id="pg" type="hidden" name="pg">
 	<input type="hidden" name="send" value="1">
@@ -472,11 +547,12 @@ $(function(){
 		<option value="<?=$a1?>"><?=$a2?></span>
 	<?}?>
 </select>
+<button id="notice_new" type="button" class="event_reg_btn">新規</button>
 </form>
 
 <div class="pager">
 <div id="pp<?=$pg_p?>" class="page_p pg_off">前へ</div>
-<?for($s=$pager_st;$s<$pager_ed+1;$s++){?>
+<?for($s=$pager_st;$s<$pager_ed+8;$s++){?>
 <?if($pg == $s){?>
 <div class="page pg_on"><?=$s?></div>
 <?}else{?>
@@ -497,12 +573,16 @@ $(function(){
 				<td class="td_top w300">グループ</td>
 			</tr>
 			<?for($n=0;$n<$count_dat;$n++){?>
-			<tr id="<?=$dat[$n]["id"]?>" class="tr_list">
+			<tr id="tr_list<?=$dat[$n]["id"]?>" class="tr_list">
 				<td class="notice_list"><?=$dat[$n]["date"]?></td>
 				<td class="notice_list"><div class="notice_title_in"><?=$dat[$n]["title"]?></div></td>
 				<td class="notice_list"><div class="notice_category_in"><?=$tag["notice_category"][$dat[$n]["category"]]?></td>
 				<td class="notice_list"><?=$dat[$n]["group"]?></td>
 				<td class="notice_hidden"><?=$dat[$n]["log"]?></td>
+
+				<input type="hidden" value="<?=$dat[$n]["gp_val"]?>" class="gp_val">
+				<input type="hidden" value="<?=$dat[$n]["category"]?>" class="cate_val">
+				<input type="hidden" value="<?=$dat[$n]["date_val"]?>" class="date_val">
 			</tr>
 			<?}?>
 		</table>
@@ -513,16 +593,16 @@ $(function(){
 				<input type="hidden" name="notice_set" value="new">
 
 				<span class="event_tag">日付</span>
-				<input type="datetime-local" name="display_date" class="w200" value="<?=date("Y-m-d")?>T<?=date("H:i")?>" autocomplete="off">
+				<input id="notice_reg_date" type="datetime-local" name="display_date" class="w200" value="<?=date("Y-m-d",$now_time)?>T<?=date("H:i",$now_time)?>" autocomplete="off">
 
 				<span class="event_tag" style="width:70px;">カテゴリ</span>
-				<select name="notice_category" style="width:120px;">
+				<select id="notice_reg_cate" name="notice_category" style="width:120px;">
 					<?foreach($tag["notice_category"] as $a1 => $a2){?>
 						<option value="<?=$a1?>"><?=$a2?></option>
 					<? } ?>
 				</select>
 				<span class="event_tag">TITLE</span>
-				<input type="text" name="notice_title" style="width:270px;" value="">
+				<input id="notice_reg_title" type="text" name="notice_title" style="width:270px;" value="">
 				<button type="submit" class="event_reg_btn">登録</button><br>
 
 				<div class="group_box">
@@ -531,33 +611,17 @@ $(function(){
 						<label id="p_check<?=$a1?>" for="gp_check<?=$a1?>" class="p_check_btn"><?=$a2?></label>
 					<?}?>
 				</div>
-				<textarea name="notice_contents" class="notice_txt"></textarea>
+				<textarea id="notice_reg_text" name="notice_contents" class="notice_txt"></textarea>
+				<input id="notice_log_id" name="notice_log_id" type="hidden">
 			</form>
 		</div>
+
 		<div class="notice_log"></div>
+		<button id="notice_log_del" type="button" class="event_reg_btn c2">削除</button>　
+		<button id="notice_log_chg" type="button" class="event_reg_btn c4">修正</button>
+
 	</div>
-
 	<div class="sub_box">
-<!--
-		<ul class="cate_ul c_blue">
-			<li class="cate_title">MENU</li>
-			<li class="cate_li c_blue2">投稿</li>
-			<li class="cate_li c_blue2">検索</li>
-		</ul>
-
-		<ul class="cate_ul c_green">
-			<li class="cate_title">グループ</li>
-			<?foreach($tag["cast_group"] as $a1 => $a2){?>
-			<li id="group_<?=$a1?>" class="cate_li c_green2"><?=$a2?></li><?}?>
-		</ul>
-
-		<ul class="cate_ul c_green">
-			<li class="cate_title">カテゴリー</li>
-			<li id="category_0" class="cate_li c_green2">全て</li>
-			<?foreach($tag["notice_category"] as $a1 => $a2){?>
-			<li id="category_<?=$a1?>" class="cate_li c_green2"><?=$a2?></li><?}?>
-		</ul>
--->
 		<ul class="cate_ul c_pink">
 			<li class="cate_title">スタッフ</li>
 			<?foreach($staff_dat as $a1 => $a2){?>

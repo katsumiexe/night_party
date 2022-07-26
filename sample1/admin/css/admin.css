@@ -36,13 +36,6 @@ input[type="checkbox"],input[type="radio"]{
 	z-index			:100;
 }
 
-
-.ck_login_id_err{
-	font-size	:13px;
-	font-weight	:700;
-	color		:#a00000;
-}
-
 .pop{
 	display			:none;
 	position		:absolute;
@@ -229,7 +222,7 @@ input[type="checkbox"],input[type="radio"]{
 	display			:inline-flex;
 	margin			:0;
 	padding			:0 5px;	
-	width			:1140px;
+	width			:1150px;
 }
 
 .timeline-Footer{font-size:0 !important}
@@ -1469,6 +1462,7 @@ ul {
 .c1{background:#fff0e0;}
 .c2{background:#ffe0e8;}
 .c3{background:#e0e0e0;}
+.c4{background:#e0e0ff;}
 
 .b{background:#fafafa;}
 .b0{background:#fafafa;}
