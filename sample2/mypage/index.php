@@ -808,13 +808,17 @@ const MyPass="<?=$cast_data["login_pass"]?>";
 
 /*var ChgList=[<?=$log_list_cnt?>];*/
 const SNS_LINK={
-	customer_line:"https://line_me/",
+	customer_line:"https://line.me/R/",
 	customer_twitter:"https://twitter.com/",
 	customer_insta:"https://instagram.com/",
 	customer_facebook:"https://facebook.com/",
 	customer_tel:"tel",
 	customer_web:"",
 };
+
+//https://line.me/R/ti/p/onlyme_staff
+
+
 
 $(function(){
 <?if($c_sort["c_sort_group"] >0){?> 

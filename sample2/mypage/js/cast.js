@@ -1076,6 +1076,10 @@ if(BaseTop =="顧客リスト　"){
 					$('#sns_form_hidden').val('3');
 					$('#sns_form_customer').val(C_Id);
 
+				}else if(Tmp == 'customer_line'){
+					$('.sns_jump').addClass('jump_on c2_'+Tmp);
+					$('#sns_form').attr('action',SNS_LINK[Tmp]);
+
 				}else{
 					$('.sns_jump').addClass('jump_on c2_'+Tmp);
 					$('#sns_form').attr('action',SNS_LINK[Tmp]+$('#h_'+Tmp).val());
