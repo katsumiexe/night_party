@@ -104,23 +104,30 @@ if($row["id"]){
 
 
 if($_REQUEST["pg"] || $_SESSION["pg_code"]){
+
+	$url=$_SERVER['REQUEST_URI'];
+	$tmp=explode("/",$url);
+	$f_key=array_key_last($tmp);
+	$f_mark=$tmp[$f_key];
+
 	if($_REQUEST["pg"]){
 		$pg_code=$_REQUEST["pg"];
-		$_SESSION["pg_code"]=$_REQUEST["pg"]
+		$_SESSION["pc_code"]=$pg_code;
 
 	}else{
 		$pg_code=$_SESSION["pg_code"];
-
 	}
 
+	$parm=$_REQUEST["cast_page"];
+	$value="mypage";
 	$t_re=$_SERVER["HTTP_REFERER"];
 	$t_ua=$_SERVER['HTTP_USER_AGENT'];
 	$t_ip=$_SERVER["REMOTE_ADDR"];
 
 	if(!$t_re) $t_re="null";
 	if(!$t_ua) $t_ua="null";
-	$sql="INSERT INTO ".TABLE_KEY."_log(`date`,`ref`,`ua`,`ip`,`page`,`parm`,`value`,`code`,`days`) VALUES('{$now}','{$t_re}','{$t_ua}','{$t_ip}','{$f_mark}','{$parm}','{$value}','{$pg_code}','{$now_8}')";
+	$sql="INSERT INTO log(`date`,`ref`,`ua`,`ip`,`page`,`parm`,`value`,`code`,`days`) VALUES('{$now}','{$t_re}','{$t_ua}','{$t_ip}','{$f_mark}','{$parm}','{$value}','{$pg_code}','{$now_8}')";
+	mysqli_query($mysqli,$sql);
 }
-
 
 ?>
