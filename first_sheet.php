@@ -1071,6 +1071,7 @@ input,select{
 	</label>
 	<span class="pay_price">8,000円</span>
 </span>
+
 <textarea id="pay_2" class="textarea" placeholder="イメージと用途（店舗イメージ、イベント、求人用など）をご記載下さい。"><?=$dat["pay_2"]?></textarea>
 
 <span class="td_tag2">

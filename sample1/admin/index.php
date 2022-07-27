@@ -446,10 +446,10 @@ $sel[$menu_post]="menu_sel";
 <title>Night-party</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="../js/jquery.ui.touch-punch.min.js?t=<?=time()?>"></script>
-<script src="./js/admin.js?t=<?=time()?>"></script>
+<script src="../js/jquery.ui.touch-punch.min.js>"></script>
+<script src="./js/admin.js"></script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="./css/admin.css?t=<?=time()?>">
+<link rel="stylesheet" href="./css/admin.css">
 
 <style>
 @font-face {
