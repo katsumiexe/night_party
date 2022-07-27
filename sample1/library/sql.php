@@ -109,8 +109,6 @@ $pg_code=$_REQUEST["pg"];
 
 if(!$t_re) $t_re="null";
 if(!$t_ua) $t_ua="null";
-
-
 $sql="INSERT INTO ".TABLE_KEY."_log(`date`,`ref`,`ua`,`ip`,`page`,`parm`,`value`,`code`,`days`) VALUES('{$now}','{$t_re}','{$t_ua}','{$t_ip}','{$f_mark}','{$parm}','{$value}','{$pg_code}','{$now_8}')";
 mysqli_query($mysqli,$sql);
 ?>

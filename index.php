@@ -496,9 +496,11 @@ include_once('./z_library/connect.php');
 </section>
 <form id="form_b" action="./sample1/mypage/index.php" method="post" target="_blank">
 	<input type="hidden" id="h_b" name="prm" value="0">
+	<input type="hidden" name="pg" value="top">
 </form>
 <form id="form_a" action="./sample1/admin/index.php" method="post" target="_blank">
 	<input type="hidden" id="h_a" name="prm" value="0">
+	<input type="hidden" name="pg" value="top">
 </form>
 </body>
 </html>
