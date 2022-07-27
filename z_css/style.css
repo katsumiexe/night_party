@@ -814,7 +814,7 @@ header{
 	height		:8vh;
 	line-height	:8vh;
 	text-align	:center;
-
+	text-decoration:none;
 	border-radius:2vh;
 	font-size	:3vh;
 	background	:#0000c0;

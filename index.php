@@ -483,11 +483,11 @@ include_once('./z_library/connect.php');
 				<div class="box_6_0_1">
 				ただ今の期間のお問合せ、ご依頼は「Coconara（ココナラ）」様にて承っています。
 				<div class="box_6_0_2">
-				<span style="font-weight:800; color:#d00000">2022.08.31まで</span><br>
+				<span style="font-weight:800; color:#d00000">2022.09.30まで</span><br>
 				ココナラからのお申込みを30,000円引で承っています。<br>
 				</div>
 				</div>
-				<div class="box_6_1">ココナラへ移動する</div>
+				<a href="https://coconala.com/services/2374687" class="box_6_1">ココナラへ移動する</a>
 			</div>
 		</div>
 		<div></div>
