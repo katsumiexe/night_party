@@ -1,13 +1,23 @@
 <?
 include_once('./z_library/connect.php');
+if($code=="coconala"){
+	$keyword="Night-Party,ナイトパーティ,HIME-Karte,ヒメカルテ,メイド喫茶,コンカフェ,ガールズバー,アイドルカフェ,CMS";
+	$description="メイド喫茶・アイドルカフェ・コンカフェ・ガールズバーなどキャストによる接客を行う店舗に特化したCMSです。買い切り型のCMSですので月額管理費0円。お客様ノート『HIME-Karte（ヒメカルテ）』との連動し、さらに便利になりました";
+	$top_word="Night-Partyは、ナイトワークに特化したCMS連動型サイトです。<br>メイド喫茶、コンカフェ、アイドルカフェ、ガールズバーなど、キャストによる接客を行う店舗を対象に作られました。<br>";
+}else{
+	$keyword="Night-Party,ナイトパーティ,HIME-Karte,ヒメカルテ,キャバクラ,風俗,セクキャバ,コンカフェ,CMS";
+	$description="キャバクラ・ガールズバー・セクキャバ・コンカフェ・ホストクラブなど水商売に特化したCMSです。買い切り型のCMSですので月額管理費0円。お客様ノート『HIME-Karte（ヒメカルテ）』との連動し、さらに便利になりました";
+	$top_word="Night-Partyは、ナイトワークに特化したCMS連動型サイトです。<br>キャバクラ、デリヘル、メンズエステ、ガールズバーなど、キャストによる接客を行う店舗を対象に作られました。<br>";
+}
+
 ?>
 
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="keywords" content="Night-Party,ナイトパーティ,HIME-Karte,ヒメカルテ,キャバクラ,風俗,セクキャバ,コンカフェ">
-<meta name="description" content="キャバクラ・ガールズバー・セクキャバ・コンカフェ・ホストクラブなど水商売に特化したCMSです。買い切り型のCMSですので月額管理費0円。お客様ノート『HIME-Karte（ヒメカルテ）』との連動し、さらに便利になりました">
+<meta name="keywords" content="<?=$keyword?>">
+<meta name="description" content="<?=$description?>">
 <meta name="author" content="Katsumi">
 <meta name="copyright" content="copyright 2022 NightParty all right reserved.">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
@@ -21,11 +31,11 @@ include_once('./z_library/connect.php');
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://night-party.com/">
 <meta property="og:site_name" content="Night-Party">
-<meta property="og:description" content="キャバクラ・ガールズバー・セクキャバ・コンカフェ・ホストクラブなど水商売に特化したCMSです。買い切り型のCMSですので月額管理費0円。お客様ノート『HIME-Karte（ヒメカルテ）』との連動し、さらに便利になりました">
+<meta property="og:description" content="<?=$description?>">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@serra_geddon">
-<title>NightParty『ナイトパーティ』ナイトクラブ向け高性能CMS</title>
+<title>NightParty『ナイトパーティ』ナイトワーク向け高性能CMS</title>
 
 <link rel="canonical" href="https://night-party.com/">
 <link rel="icon" href="z_img/fav.png">
@@ -59,10 +69,7 @@ include_once('./z_library/connect.php');
 	<article id="block_0" class="box_top">
 		<div class="top_comm">
 			<h2 class="top_title">Night-Party</h2>
-			<p class="top_p">
-				Night-Partyは、ナイトワークに特化したCMS連動型サイトです。<br>
-				キャバクラ、デリヘル、メンズエステ、ガールズバーなど、キャストを売り込むタイプの接客業を対象に作られました。<br>
-			</p>
+			<p class="top_p"><?=$top_word?></p>
 		</div>
 	</article>
 
@@ -442,7 +449,7 @@ include_once('./z_library/connect.php');
 				<div id="block_5_box_6" class="box_5_1">
 					<p class="box_5_1_title">レンタルサーバー・ドメイン取得<span class="box_5_1_title_p">10,000円</span></p>
 					<p class="comm_p2">
-						WebP対応、アダルトOKのSSD高速レンタルサーバー、comドメインで手配させていただきます。<br>
+						WebP対応、SSD高速レンタルサーバー、comドメインで手配させていただきます。<br>
 						<span style="font-weight:700">初回10カ月分込み</span>。それ以降はサーバー、ドメイン併せて年間で10000円前後かかります。<br>
 					</p>
 
