@@ -42,11 +42,11 @@ if($code=="coconala"){
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="./z_css/style.css?t=<?=time()?>">
-<link rel="stylesheet" href="./z_css/style_s.css?t=<?=time()?>">
+<link rel="stylesheet" href="./z_css/style.css">
+<link rel="stylesheet" href="./z_css/style_s.css">
 <style></style>
-<script src="./z_js/main.js?t=<?=time()?>"></script>
-<script src="./z_js/main_s.js?t=<?=time()?>"></script>
+<script src="./z_js/main.js"></script>
+<script src="./z_js/main_s.js"></script>
 </head>
 <body class="body">
 <header id="header">
