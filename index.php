@@ -9,9 +9,7 @@ if($code=="coconala"){
 	$description="キャバクラ・ガールズバー・セクキャバ・コンカフェ・ホストクラブなど水商売に特化したCMSです。買い切り型のCMSですので月額管理費0円。お客様ノート『HIME-Karte（ヒメカルテ）』との連動し、さらに便利になりました";
 	$top_word="Night-Partyは、ナイトワークに特化したCMS連動型サイトです。<br>キャバクラ、デリヘル、メンズエステ、ガールズバーなど、キャストによる接客を行う店舗を対象に作られました。<br>";
 }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -57,9 +55,9 @@ if($code=="coconala"){
 		<span id="menu1" class="menu_in">機能</span>
 		<span id="menu2" class="menu_in">サイトサンプル</span>
 		<span id="menu3" class="menu_in">CMS</span>
-		<span id="menu4" class="menu_in">ヒメカルテ</span>
-		<span id="menu5" class="menu_in">お申込み</span>
-		<span id="menu6" class="menu_in">お問合せ</span>
+		<span id="menu4" class="menu_in">HIME-Karte</span>
+		<span id="menu5" class="menu_in">お見積もり</span>
+		<span id="menu6" class="menu_in">お申込み</span>
 	</div>
 </header>
 
