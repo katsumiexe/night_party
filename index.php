@@ -9,9 +9,7 @@ if($code=="coconala"){
 	$description="キャバクラ・ガールズバー・セクキャバ・コンカフェ・ホストクラブなど水商売に特化したCMSです。買い切り型のCMSですので月額管理費0円。お客様ノート『HIME-Karte（ヒメカルテ）』との連動し、さらに便利になりました";
 	$top_word="Night-Partyは、ナイトワークに特化したCMS連動型サイトです。<br>キャバクラ、デリヘル、メンズエステ、ガールズバーなど、キャストによる接客を行う店舗を対象に作られました。<br>";
 }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -44,11 +42,20 @@ if($code=="coconala"){
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="./z_css/style.css?t=<?=time()?>">
-<link rel="stylesheet" href="./z_css/style_s.css?t=<?=time()?>">
+<link rel="stylesheet" href="./z_css/style.css">
+<link rel="stylesheet" href="./z_css/style_s.css">
 <style></style>
-<script src="./z_js/main.js?t=<?=time()?>"></script>
-<script src="./z_js/main_s.js?t=<?=time()?>"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3LMPEPRX6G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3LMPEPRX6G');
+</script>
+<script src="./z_js/main.js"></script>
+<script src="./z_js/main_s.js"></script>
 </head>
 <body class="body">
 <header id="header">
@@ -57,9 +64,9 @@ if($code=="coconala"){
 		<span id="menu1" class="menu_in">機能</span>
 		<span id="menu2" class="menu_in">サイトサンプル</span>
 		<span id="menu3" class="menu_in">CMS</span>
-		<span id="menu4" class="menu_in">ヒメカルテ</span>
-		<span id="menu5" class="menu_in">お申込み</span>
-		<span id="menu6" class="menu_in">お問合せ</span>
+		<span id="menu4" class="menu_in">HIME-Karte</span>
+		<span id="menu5" class="menu_in">お見積もり</span>
+		<span id="menu6" class="menu_in">お申込み</span>
 	</div>
 </header>
 
