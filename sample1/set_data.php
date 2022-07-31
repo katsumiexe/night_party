@@ -46,17 +46,18 @@ $ed_8	=date("Ym01",strtotime($st_8)+3456000);
 
 $sql="INSERT INTO NP_schedule (`date`,`sche_date`,`cast_id`,`stime`,`etime`,`signet`)VALUES";
 for($n=12345;$n<12357;$n++){
-	for($f=$st_8;$f<$st_8+$t;$f++){
-		if(rand(1,10) > 4){
-			$s1=rand(0,4);
-			$e1=rand(0,4);
-			$sql.="('{$now}','{$f}','{$n}','{$sch_st[$s1]}','{$sch_ed[$e1]}','1'),";
+	if($n != 12350){
+		for($f=$st_8;$f<$st_8+$t;$f++){
+			if(rand(1,10) > 4){
+				$s1=rand(0,4);
+				$e1=rand(0,4);
+				$sql.="('{$now}','{$f}','{$n}','{$sch_st[$s1]}','{$sch_ed[$e1]}','1'),";
 
-			if($n==12346){
-				$check[$f]=$sch_st[$s1];
+				if($n==12346){
+					$check[$f]=$sch_st[$s1];
+				}
 			}
 		}
-
 	}
 }
 $sql=substr($sql,0,-1);
