@@ -45,15 +45,6 @@ if($code=="coconala"){
 <link rel="stylesheet" href="./z_css/style.css">
 <link rel="stylesheet" href="./z_css/style_s.css">
 <style></style>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3LMPEPRX6G"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3LMPEPRX6G');
-</script>
 <script src="./z_js/main.js"></script>
 <script src="./z_js/main_s.js"></script>
 </head>
