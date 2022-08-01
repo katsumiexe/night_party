@@ -65,11 +65,13 @@ $holiday = curl_exec($cp);
 curl_close($cp);
 $ob_holiday = json_decode($holiday,true);
 
+
+var_dump($ob_holiday);
+
+
 $day_md_1	=date("md",$day_time+86400);
 $day_md_2	=date("md",$day_time+172800);
-
 $chg_flg=$_REQUEST["chg_flg"];
-
 
 $sql="SELECT * FROM ".TABLE_KEY."_cast";
 $sql.=" WHERE id='12346'";
