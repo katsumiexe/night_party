@@ -68,7 +68,7 @@ $day_month	=date("Y-m-01 00:00:00",$day_time);
 $day_8_1	=date("Ymd",$day_time+86400);
 $day_8_2	=date("Ymd",$day_time+172800);
 
-$url = "https://katsumiexe.github.io/pages/holiday.json";
+$url = "https://night-party.com/box/holiday.json";
 $cp = curl_init();
 curl_setopt($cp, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($cp, CURLOPT_URL, $url);
